@@ -33,12 +33,12 @@ const Step1 = () => {
     <>
       <ThinkTogetherHeader title="그림과 기호를 보고 무엇을 의미하는지 말해 보자." />
 
-      <ContentContainer>
+      <ContentContainer className="absolute left-[40px] bottom-[100px]">
         <img src={IMAGE.src} />
       </ContentContainer>
 
-      <ExampleAnswerButton />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30" />
+      <ExampleAnswerButton active={false} onClick={() => {}} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" />
     </>
   );
 };
@@ -64,7 +64,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30" />
+      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" />
     </>
   );
 };
