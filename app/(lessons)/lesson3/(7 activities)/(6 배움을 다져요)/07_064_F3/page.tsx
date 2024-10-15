@@ -16,7 +16,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={
-          "내가 관심 있는 분야에서 사용하는 한자어를 골라 사전에서 뜻풀이를 찾아보고 단어장으로 정리해 보자."
+          "한자 카드를 결합하여 문장의 빈칸에 해당하는 단어를 만들어 보자."
         }
         sound=""
       />

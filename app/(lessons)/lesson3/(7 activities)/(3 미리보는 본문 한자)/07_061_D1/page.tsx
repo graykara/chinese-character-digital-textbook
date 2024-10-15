@@ -5,9 +5,10 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
-import EXAMPLE from "./example.png";
-import IMAGE1 from "./image1.png";
+import HOW_BADGE from "./how-badge.png";
+import TASK_BADGE from "./task-badge.png";
 import IMAGE2 from "./image2.png";
+import IMAGE3 from "./image3.png";
 import { StepContainer } from "@/app/components/step-container";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -31,34 +32,56 @@ export default function Page() {
       <TitleContainer className="mt-10">
         <p className="tracking-tight flex items-start gap-5">
           <img src="/ui/flower-icon.png" />
-          제시된 한자 카드를 보고, 설명에 해당하는 한자를 써 보자.
+          과제를 풀고 비밀번호의 마지막 숫자를 획득하여 방을 탈출해 보자.
         </p>
       </TitleContainer>
 
       <ContentContainer className="!justify-start pt-8">
-        <div className="w-full flex justify-center">
-          <img src={EXAMPLE.src} />
-        </div>
-        <div className="relative w-full pb-20">
-          {step === 1 && (
-            <div className="relative mt-10">
-              <img src={IMAGE1.src} alt="" />
-            </div>
-          )}
-          {step === 2 && (
-            <div className="relative mt-10">
-              <img src={IMAGE2.src} alt="" />
-            </div>
-          )}
-        </div>
+        {step === 1 && <Step1 />}
+        {step === 2 && <Step2 />}
+        {step === 3 && <Step3 />}
       </ContentContainer>
 
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
     </>
   );
 }
+
+const Step1 = () => {
+  return (
+    <div>
+      <header className="mb-5">
+        <img src={HOW_BADGE.src} />
+      </header>
+
+      <div className="flex gap-5">
+        <span className="text-[#408ac9] font-bold">1</span>
+        빙고 판에 나온 한자 중 과제에 해당하는 한자에 빗금을 친다.
+      </div>
+      <div className="flex gap-5">
+        <span className="text-[#408ac9] font-bold">2</span>
+        모든 과제를 해결하였을 때 빙고 판에 보이는 숫자를 비밀번호 칸에 쓴다.
+      </div>
+    </div>
+  );
+};
+
+const Step2 = () => {
+  return (
+    <div>
+      <header className="mb-5">
+        <img src={TASK_BADGE.src} />
+      </header>
+
+      <img src={IMAGE2.src} />
+    </div>
+  );
+};
+
+const Step3 = () => {
+  return (
+    <div className="overflow-hidden">
+      <img src={IMAGE3.src} />
+    </div>
+  );
+};

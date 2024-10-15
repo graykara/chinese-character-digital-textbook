@@ -9,12 +9,12 @@ export default function Page() {
       background={IMAGE.src}
       goals={[
         {
-          text: "단어를 읽고 풀이할 수 있다.",
-          sound: "/sound/2/34_goal/1.mp3",
+          text: "성어를 바르게 읽고 풀이할 수 있다.",
+          sound: "/sound/3/60_goal/1.mp3",
         },
         {
-          text: "단어의 짜임을 구변할 수 있다.",
-          sound: "/sound/2/34_goal/2.mp3",
+          text: "언어생활 속 성어를 알고 맥락에 맞게 활용하며 소통할 수 있다.",
+          sound: "/sound/3/60_goal/2.mp3",
         },
       ]}
     />

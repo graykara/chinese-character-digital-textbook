@@ -1,6 +1,5 @@
 "use client";
 
-import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
@@ -9,8 +8,6 @@ import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 
 export default function Page() {
