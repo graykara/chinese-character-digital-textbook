@@ -79,38 +79,38 @@ const navigation = [
   { path: "lesson3/07_058_A1", page: 58 }, // 3단원
   { path: "lesson3/07_058_A2", page: 58 },
   { path: "lesson3/07_058_A3", page: 58 },
-  { path: "lesson3/07_060_B1", page: 58 }, // 7차시
-  { path: "lesson3/07_060_C1", page: 58 },
-  { path: "lesson3/07_061_D1", page: 58 },
-  { path: "lesson3/07_062_L1", page: 58 },
-  { path: "lesson3/07_062_E1", page: 58 },
-  { path: "lesson3/07_063_E2", page: 58 },
-  { path: "lesson3/07_064_F1", page: 58 },
-  { path: "lesson3/07_064_F2", page: 58 },
-  { path: "lesson3/07_064_F3", page: 58 },
-  { path: "lesson3/07_065_G1", page: 58 },
-  { path: "lesson3/07_065_H1", page: 58 },
-  { path: "lesson3/08_066_B1", page: 58 }, // 8차시
-  { path: "lesson3/08_066_C1", page: 58 },
-  { path: "lesson3/08_067_D1", page: 58 },
-  { path: "lesson3/08_068_L1", page: 58 },
-  { path: "lesson3/08_068_E1", page: 58 },
-  { path: "lesson3/08_070_F1", page: 58 },
-  { path: "lesson3/08_070_F2", page: 58 },
-  { path: "lesson3/08_071_G1", page: 58 },
-  { path: "lesson3/08_071_H1", page: 58 },
-  { path: "lesson3/09_072_B1", page: 58 }, // 9차시
-  { path: "lesson3/10_078_B1", page: 58 }, // 10차시
-  { path: "lesson3/10_078_C1", page: 58 },
-  { path: "lesson3/10_079_D1", page: 58 },
-  { path: "lesson3/10_081_L1", page: 58 },
-  { path: "lesson3/10_081_E1", page: 58 },
-  { path: "lesson3/10_082_F1", page: 58 },
-  { path: "lesson3/10_082_F2", page: 58 },
-  { path: "lesson3/10_082_F3", page: 58 },
-  { path: "lesson3/10_083_G1", page: 58 },
-  { path: "lesson3/10_083_H1", page: 58 },
-  { path: "lesson3/10_083_H1", page: 58 }, // 3단원 마무리
+  { path: "lesson3/07_060_B1", page: 60 }, // 7차시
+  { path: "lesson3/07_060_C1", page: 60 },
+  { path: "lesson3/07_061_D1", page: 61 },
+  { path: "lesson3/07_062_L1", page: 62 },
+  { path: "lesson3/07_062_E1", page: 62 },
+  { path: "lesson3/07_063_E2", page: 63 },
+  { path: "lesson3/07_064_F1", page: 64 },
+  { path: "lesson3/07_064_F2", page: 64 },
+  { path: "lesson3/07_064_F3", page: 64 },
+  { path: "lesson3/07_065_G1", page: 65 },
+  { path: "lesson3/07_065_H1", page: 65 },
+  { path: "lesson3/08_066_B1", page: 66 }, // 8차시
+  { path: "lesson3/08_066_C1", page: 66 },
+  { path: "lesson3/08_067_D1", page: 67 },
+  { path: "lesson3/08_068_L1", page: 68 },
+  { path: "lesson3/08_068_E1", page: 68 },
+  { path: "lesson3/08_070_F1", page: 70 },
+  { path: "lesson3/08_070_F2", page: 70 },
+  { path: "lesson3/08_071_G1", page: 71 },
+  { path: "lesson3/08_071_H1", page: 71 },
+  { path: "lesson3/09_072_B1", page: 72 }, // 9차시
+  { path: "lesson3/10_078_B1", page: 78 }, // 10차시
+  { path: "lesson3/10_078_C1", page: 78 },
+  { path: "lesson3/10_079_D1", page: 79 },
+  { path: "lesson3/10_081_L1", page: 81 },
+  { path: "lesson3/10_081_E1", page: 81 },
+  { path: "lesson3/10_082_F1", page: 82 },
+  { path: "lesson3/10_082_F2", page: 82 },
+  { path: "lesson3/10_082_F3", page: 82 },
+  { path: "lesson3/10_083_G1", page: 83 },
+  { path: "lesson3/10_083_H1", page: 83 },
+  { path: "lesson3/10_083_H1", page: 83 }, // 3단원 마무리
 ];
 
 const extractPathInfo = (pathname: string) => {
