@@ -44,7 +44,7 @@ export const StepContainerArrow = ({
           <button
             key={index}
             onClick={() => onStepChange(index + 1)}
-            className={`w-8 h-8 rounded-full ${
+            className={`w-6 h-6 m-1 rounded-full ${
               step === index + 1 ? "bg-[#2d6879]" : "bg-[#bcbac4]"
             }`}
           />

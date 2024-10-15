@@ -9,6 +9,7 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자4.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -38,7 +39,7 @@ export default function Page() {
           고대 한자가 의미하는 뜻을 한 단어로 써 보고 자신과 친구의 생각을
           비교해 보자.
         </p>
-        <BuddyButton className="absolute bottom-3 left-[250px]" />
+        <BuddyButton className="absolute bottom-3 left-[280px]" />
       </TitleContainer>
 
       <ContentContainer className="!justify-start pt-4">
@@ -105,6 +106,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

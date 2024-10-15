@@ -14,6 +14,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -40,10 +41,10 @@ export default function Page() {
             active={showResource}
             className="mx-5 inline-block"
             text="하나"
-            width={180}
+            width={210}
             height={80}
-          />{" "}
-          라는 뜻을 나타냄
+          />{"\xa0"}
+          라는 뜻을 나타냄.
         </div>
       ),
       resource: IMAGE2.src,
@@ -61,7 +62,7 @@ export default function Page() {
             text="위"
             width={180}
             height={80}
-          />
+          />{"\xa0"}
           에 점을 찍어{" "}
           <FlippableCard
             active={showResource}
@@ -69,7 +70,7 @@ export default function Page() {
             text="위"
             width={180}
             height={80}
-          />{" "}
+          />{"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
@@ -88,7 +89,7 @@ export default function Page() {
             text="아래"
             width={180}
             height={80}
-          />
+          />{"\xa0"}
           에 점을 찍어{" "}
           <FlippableCard
             active={showResource}
@@ -96,7 +97,7 @@ export default function Page() {
             text="아래"
             width={180}
             height={80}
-          />{" "}
+          />{"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
@@ -113,18 +114,18 @@ export default function Page() {
             active={showResource}
             className="mx-5 inline-block"
             text="화"
-            width={180}
+            width={120}
             height={80}
-          />
+          />{"\xa0"}
           부분에 선을 그어
           <FlippableCard
             active={showResource}
             className="mx-5 inline-block"
             text="월식"
-            width={180}
+            width={170}
             height={80}
-          />{" "}
-          이라는 뜻을 나타냄
+          />{"\xa0"}
+          이라는 뜻을 나타냄.
         </div>
       ),
       resource: IMAGE5.src,
@@ -142,7 +143,7 @@ export default function Page() {
             text="일식"
             width={180}
             height={80}
-          />
+          />{"\xa0"}
           이라는 뜻을 나타냄.
         </div>
       ),
@@ -173,13 +174,13 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr]">
-            <div className="relative">
-              <div className="relative left-[220px] w-[750px] text-center text-[160px]">
+          <ContentContainer className="w-[1400px] h-full grid grid-cols-[1fr]">
+            <div className="relative left-[0px] -top-[50px]">
+              <div className="relative top-[80px] w-[1400px] text-center text-[215px]">
                 <span className="font-haeseo">{data[step - 2]?.chinese}</span>
               </div>
               <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-[180px__750px] gap-10">
+                <div className="grid grid-cols-[280px__750px] gap-10">
                   <PillButton
                     active={showReading}
                     onClick={() => {
@@ -195,12 +196,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[80px]  ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`text-center text-main-content text-[60px] h-[60px]  ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__750px] gap-10">
+                <div className="grid grid-cols-[280px__750px] gap-10">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -209,7 +210,7 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[80px]  ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`text-center text-main-content text-[60px] h-[60px]  ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
@@ -222,11 +223,12 @@ export default function Page() {
                     checkboxColor="#41466f"
                     backgroundColor="#7278a6"
                   />
-                  <div key={step}>
+                  <div key={step} className="text-[50px] leading-[62px] tracking-[-1.5px]">
                     {data[step - 2]?.content ?? null}
-                    <div className="mt-10 w-[750px] h-[100px] flex justify-center">
+                    <div className="mt-10 w-[1000px] h-[115px] flex justify-center">
                       <div>
-                        <img src={data[step - 2]?.resource} alt="resource" />
+                        <img src={data[step - 2]?.resource} alt="resource" className="inset-y-1/2"/> 
+                        {/* 이미지가 위아래 가운데에 위치하게 해주세요 */}
                       </div>
                     </div>
                   </div>
@@ -236,6 +238,7 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

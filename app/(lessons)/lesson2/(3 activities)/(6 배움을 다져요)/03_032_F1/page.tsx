@@ -12,6 +12,9 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { Check } from "lucide-react";
 import { Howl } from "howler";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자29.png";
+import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자30.png";
+import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자31.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -107,6 +110,7 @@ const Step1 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
@@ -123,7 +127,7 @@ const Step2 = () => {
       />
 
       <ContentContainer className="!justify-start">
-        <div className="relative mt-10">
+        <div className="relative -left-[40px]">
           <img src={IMAGE2.src} />
 
           <InputWithPen
@@ -161,6 +165,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
@@ -189,7 +194,7 @@ const Step3 = () => {
       />
 
       <ContentContainer className="!justify-start">
-        <div className="relative mt-10">
+        <div className="relative mt-1">
           <img src={IMAGE3.src} />
 
           <div className="absolute left-[379px] top-[65px] grid grid-cols-[290px__285px__305px__48px] gap-y-[110px]">
@@ -222,6 +227,7 @@ const Step3 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND3.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
