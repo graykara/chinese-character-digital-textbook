@@ -10,18 +10,20 @@ export const ThinkTogetherHeader = ({
 }) => {
   return (
     <>
-      <div className="animate__animated animate__fadeIn relative flex justify-center pb-[30px]">
-        <img src={IMAGE.src} alt="image" className="block" />
+      <div className="animate__animated animate__fadeIn relative pb-[30px]">
+        <div className="flex justify-center">
+          <img src={IMAGE.src} alt="image" className="block" />
+        </div>
 
-      <ul className="list-disc marker:text-[#567c56] pl-3">
-        <li className="absolute top-[177px] left-[200px] text-[55px] leading-[62px] tracking-[-2.5px] max-w-[1300px] break-keep">
-          {title}
-        </li>
-      </ul>
-      <div className="relative left-[250px] text-[50px] max-w-[1300px]">
-        {subTitle}
+        <ul className="list-disc marker:text-[#567c56] pl-3">
+          <li className="absolute top-[177px] left-[200px] text-[55px] leading-[62px] tracking-[-2.5px] max-w-[1300px] break-keep">
+            {title}
+          </li>
+        </ul>
+        <div className="relative left-[200px] text-[50px] max-w-[1300px]">
+          {subTitle}
+        </div>
       </div>
-    </div>
     </>
   );
 };
