@@ -12,7 +12,7 @@ export const ContentContainer = ({
 }: Props) => {
   return (
     <div
-      className={`relative h-full w-[1400px] mx-auto flex flex-col justify-center items-center overflow-x-hidden overflow-y-auto ${className}`}
+      className={`relative h-full w-[1500px] mx-auto flex flex-col justify-center items-center overflow-x-hidden overflow-y-auto ${className}`}
       style={style}
     >
       {children}

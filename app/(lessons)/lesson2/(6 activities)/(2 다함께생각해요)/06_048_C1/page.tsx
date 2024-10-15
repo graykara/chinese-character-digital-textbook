@@ -2,19 +2,21 @@
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
+import IMAGE2_BEFORE from "./image2-before.png";
+import IMAGE2_AFTER from "./image2-after.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useContext, useState } from "react";
-import { PageInfoContext } from "@/app/utils/page-info";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { useState } from "react";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
-import { Textarea } from "@/app/components/textarea";
+import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   return (
     <>
+      <ThinkTogetherHeader title="다음 글을 읽고 빈칸에 들어갈 말을 써 보자." />
+
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -25,8 +27,6 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ThinkTogetherHeader title="대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여 그 뜻을 찾아보자." />
-
       <ContentContainer>
         <VideoThumbnail
           thumbnail={IMAGE.src}
@@ -39,25 +39,18 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [answer, setAnswer] = useState("");
 
   return (
     <>
-      <ThinkTogetherHeader title="만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자." />
-
-      <ContentContainer>
-        <Textarea
-          value={
-            showAnswer
-              ? "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면 "
-              : answer
-          }
-          onChange={(e) => setAnswer(e)}
-          className={`${showAnswer ? "text-example" : ""}`}
-        />
+      <ContentContainer className="!justify-start pt-10">
+        {showAnswer ? (
+          <img src={IMAGE2_AFTER.src} />
+        ) : (
+          <img src={IMAGE2_BEFORE.src} />
+        )}
       </ContentContainer>
 
-      <ExampleAnswerButton
+      <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />

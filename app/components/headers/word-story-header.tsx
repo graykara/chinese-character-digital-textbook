@@ -6,7 +6,9 @@ export const WordStoryHeader = ({ title }: { title: string | ReactNode }) => {
     <HeaderContainer className="mt-10 flex items-end gap-5">
       <img src="/header/word-story.png" alt="culture-header" />
 
-      <p className="font-cookierun text-[#cd482d]">{title}</p>
+      <p className="animate__animated animate__flipInX animate__delay-1s font-cookierun text-[#cd482d]">
+        {title}
+      </p>
     </HeaderContainer>
   );
 };

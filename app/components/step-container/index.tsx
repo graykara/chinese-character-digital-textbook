@@ -29,7 +29,7 @@ export const StepContainer = ({
   }, [step]);
 
   return (
-    <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-10 flex justify-center gap-[40px]">
+    <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-7 flex justify-center gap-[40px]">
       {Array.from({ length: maxStep }).map((_, index) => (
         <button
           key={index}

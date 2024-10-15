@@ -27,18 +27,10 @@ export default function Page() {
 
   return (
     <>
-      <WordStoryHeader
-        title={
-          <>
-            바다라고 다 같은 바다가 아니다! ‘
-            <span className="font-haeseo">海</span>’와 ‘
-            <span className="font-haeseo">洋</span>’의 차이
-          </>
-        }
-      />
+      <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"} />
 
       <ContentContainer>
-        {step === 1 && (
+        {step === 2 && (
           <div className="relative">
             <ReadingButton
               className="absolute right-0 -top-[100px]"
@@ -50,24 +42,23 @@ export default function Page() {
                 isReading ? "text-reading" : ""
               }`}
             >
-              ‘넓고 큰 바다’를 ‘海洋’이라고 일컫는다. 여기서 ‘
-              <span className="font-haeseo">海</span>’와 ‘
-              <span className="font-haeseo">洋</span>’
+              “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의
               <br />
-              모두 바다를 뜻하지만, 그 쓰임에는 차이가 있다. 동해, 서해,
+              ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
               <br />
-              지중해 등의 용례에서 확인되듯이 ‘~
-              <span className="font-haeseo">海</span>’는 육지와 접해 있는 <br />
-              바다를 가리킬 때 사용하고, ‘~
-              <span className="font-haeseo">洋</span>’은 태평양, 대서양, 인도양
+              ‘매우’라는 뜻의 ‘<span className="font-haeseo">甚</span>(심)’과
+              ‘깊다’라는 뜻의 ‘<span className="font-haeseo">深</span>(심)’이
+              결합된
               <br />
-              등에서 확인되듯이 육지와 멀리 떨어진 큰 바다를 가리킬 때<br />
-              사용한다.
+              단어로, ‘매우 깊다’는 의미이다. 따라서{" "}
+              <span className="font-haeseo">眞心</span>(진심) 어린
               <br />
+              감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와<br />
+              같이 쓸 수 있다.
             </div>
           </div>
         )}
-        {step === 2 && (
+        {step === 1 && (
           <div className="relative">
             <img src={IMAGE2.src} />
           </div>

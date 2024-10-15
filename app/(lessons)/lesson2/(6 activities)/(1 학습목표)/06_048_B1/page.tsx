@@ -13,7 +13,7 @@ export default function Page() {
           sound: "/sound/2/34_goal/1.mp3",
         },
         {
-          text: "단어를 맥락에 맞게 활용하여 소통할 수 있다.",
+          text: "단어의 짜임을 구변할 수 있다.",
           sound: "/sound/2/34_goal/2.mp3",
         },
       ]}

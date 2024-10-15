@@ -15,7 +15,7 @@ export const StrengthenLearningWordHeader = ({ title, sound }: Props) => {
         src="/header/strengthen-learning-word.png"
       />
 
-      <div className="absolute left-[150px] top-[190px] flex gap-2 w-[1300px] animate__animated animate__delay-1s animate__flipInX">
+      <div className="absolute left-[150px] top-[190px] flex gap-2 w-[1300px] animate__animated animate__delay-1s animate__flipInX break-keep">
         <img
           src="/ui/flower-icon.png"
           className="flex-none w-[49px] h-[49px] mt-1"
