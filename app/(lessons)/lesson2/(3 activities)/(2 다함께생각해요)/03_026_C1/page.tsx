@@ -50,11 +50,11 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader title={
         <>글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.
-        <BuddyButton className="absolute left-[600px] top-[85px]" />
+        <BuddyButton className="absolute left-[800px] top-[70px]" />
         </>} />
 
-      <ContentContainer className="!justify-start mt-20">
-        <img src={IMAGE2.src} />
+      <ContentContainer className="!justify-start mt-20 mb-[100px]">
+        <img src={IMAGE2.src} className="absolute top-[35px] left-[20px]"/>
         {showAnswer ? (
           <img src={IMAGE3.src} className="absolute top-[280px]" />
         ) : null}
