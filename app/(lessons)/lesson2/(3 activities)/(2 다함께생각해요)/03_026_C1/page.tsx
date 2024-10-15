@@ -10,10 +10,12 @@ import { useContext, useState } from "react";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자2.png"
+import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자3.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("다 함께 생각해");
+  setSubtitle("다 함께 생각해요");
 
   const [step, setStep] = useState(1);
 
@@ -36,6 +38,7 @@ const Step1 = () => {
       </ContentContainer>
 
       <ExampleAnswerButton />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30" />
     </>
   );
 };
@@ -61,6 +64,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30" />
     </>
   );
 };
