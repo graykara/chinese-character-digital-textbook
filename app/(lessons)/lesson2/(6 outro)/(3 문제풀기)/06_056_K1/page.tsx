@@ -1,134 +1,258 @@
 "use client";
 
+import { SolveProblemPageTemplate } from "@/app/pages/solve-problem-page-template";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
-import IMAGE3 from "./image3.png";
-import IMAGE4 from "./image4.png";
 import { StepContainer } from "@/app/components/step-container";
-import { useContext, useState } from "react";
-import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { useContext, useEffect, useState } from "react";
+import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("활동하기");
+  setSubtitle("문제 풀기");
 
   const [step, setStep] = useState(1);
-
-  return (
-    <>
-      <ActivityPageTemplate lesson={1}>
-        <div className="h-full flex flex-col justify-center items-center">
-          {step === 1 ? <Content1 /> : null}
-          {step === 2 ? <Content2 /> : null}
-          {step === 3 ? <Content3 /> : null}
-
-          <div className="fixed bottom-0">
-            <StepContainer maxStep={3} step={step} onStepChange={setStep} />
-          </div>
-        </div>
-      </ActivityPageTemplate>
-    </>
-  );
-}
-
-const Content1 = () => {
-  return (
-    <div className="w-full h-full flex flex-col justify-center items-start">
-      <header className="mb-10">
-        <img src={IMAGE1.src} />
-      </header>
-      <p className="text-[55px]">
-        문자도는 문자의 뜻과 관계있는 옛이야기의 소재를 문자의 획 안이나
-        <br />그 주변에 그려 넣어 글자를 구성한 그림이다. 내 이름의 뜻이나 나와
-        <br />
-        관련된 소재 등이 드러나도록 내 이름으로 문자도를 그려 보자.
-      </p>
-    </div>
-  );
-};
-
-const Content2 = () => {
-  return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <div className="relative">
-        <img src={IMAGE2.src} />
-      </div>
-    </div>
-  );
-};
-
-const Content3 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
 
+  const questions = [
+    "한자의 음과 뜻이 옳은 것은?",
+    "대화 속 밑줄 친 부분을 한자로 바꿔 쓰시오.",
+    <>
+      <span className="border border-black rounded-lg">보기</span>와 같은 원리로
+      만들어진 한자는?
+    </>,
+    "빈칸에 알맞은 한자를 쓰시오.",
+    "단어장의 내용을 보고 ㉠에 들어갈 단어를 한자로 쓰시오.",
+    "단어의 짜임이 옳은 것은?",
+    <>
+      한자 어휘의 활용이 옳지 <span className="underline">않은</span> 것은?
+    </>,
+    "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
+  ];
+
+  useEffect(() => {
+    setShowAnswer(false);
+  }, [step]);
+
   return (
     <>
-      <div className="w-full min-h-full overflow-y-scroll flex justify-center">
-        <div className="relative w-[1283px] h-[1516px] py-10">
-          <img src={IMAGE3.src} className="w-full h-full" />
-
-          {!showAnswer ? (
-            <input
-              key={1}
-              defaultValue={""}
-              className="absolute w-[410px] bg-transparent left-[150px] top-[237px] text-center"
-            />
-          ) : (
-            <input
-              value="김대선"
-              className="text-example absolute w-[410px] bg-transparent left-[150px] top-[237px] text-center"
-              readOnly
-            />
-          )}
-          {!showAnswer ? (
-            <input
-              key={2}
-              defaultValue={""}
-              className="absolute w-[410px] bg-transparent left-[700px] top-[237px] text-center"
-            />
-          ) : (
-            <textarea
-              value={`'크게 이루다'는 뜻으로\n큰 인물이 되라는 이름.`}
-              className="text-example text-[25px] absolute w-[410px] bg-transparent left-[700px] top-[237px] text-center"
-              readOnly
-            />
-          )}
-          {!showAnswer ? (
-            <input
-              key={3}
-              defaultValue={""}
-              className="absolute w-[960px] bg-transparent left-[150px] top-[395px]"
-            />
-          ) : (
-            <input
-              value="노래방, 떡볶이, 미용사"
-              className="text-example absolute w-[960px] bg-transparent left-[150px] top-[395px]"
-              readOnly
-            />
-          )}
-
-          {!showAnswer ? (
-            <textarea
-              className="absolute w-[960px] bg-transparent left-[150px] top-[1150px] resize-none"
-              rows={3}
-            />
-          ) : (
-            <></>
-          )}
-
-          {showAnswer ? (
-            <img
-              src={IMAGE4.src}
-              className="absolute left-1/2 top-[600px] -translate-x-1/2"
-            />
-          ) : null}
+      <RightTopStepContainer
+        maxStep={9}
+        step={step}
+        onStepChange={setStep}
+        className="bg-transparent !top-[120px] !right-[200px]"
+      />
+      <SolveProblemPageTemplate
+        lesson={1}
+        number={step}
+        question={questions[step - 1]}
+      >
+        <div className="h-full flex flex-col justify-between items-center">
+          {step === 1 ? <Question1 showAnswer={showAnswer} /> : null}
+          {step === 2 ? <Question2 showAnswer={showAnswer} /> : null}
+          {step === 3 ? <Question3 showAnswer={showAnswer} /> : null}
         </div>
-      </div>
-      <ExampleAnswerButton
+      </SolveProblemPageTemplate>
+
+      <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
     </>
+  );
+}
+
+const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+
+  useEffect(() => {
+    if (showAnswer) {
+      setAnswer1("文");
+      setAnswer2("대");
+    } else {
+      setAnswer1("");
+      setAnswer2("");
+    }
+  }, [showAnswer]);
+
+  return (
+    <div className="h-full flex flex-col justify-center items-center">
+      <div className="relative">
+        <img src={IMAGE1.src} />
+        <input
+          value={answer1}
+          onChange={(e) => setAnswer1(e.target.value)}
+          className={`absolute left-[243px] top-[50px] w-[100px] text-center bg-transparent font-haeseo text-[100px] ${
+            showAnswer ? "text-answer" : ""
+          }`}
+          readOnly={showAnswer}
+        />
+        <input
+          value={answer2}
+          onChange={(e) => setAnswer2(e.target.value)}
+          className={`absolute left-[723px] top-[275px] w-[100px] text-center bg-transparent text-[80px] ${
+            showAnswer ? "text-answer" : ""
+          }`}
+          readOnly={showAnswer}
+        />
+      </div>
+    </div>
+  );
+};
+
+const Question2 = ({ showAnswer }: { showAnswer: boolean }) => {
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+  const [answer3, setAnswer3] = useState("");
+
+  useEffect(() => {
+    if (showAnswer) {
+      setAnswer1("日");
+      setAnswer2("出");
+      setAnswer3("口");
+    } else {
+      setAnswer1("");
+      setAnswer2("");
+      setAnswer3("");
+    }
+  }, [showAnswer]);
+
+  return (
+    <div className="h-full flex flex-col justify-center items-center">
+      <div className="relative">
+        <img src={IMAGE2.src} />
+        <input
+          value={answer1}
+          onChange={(e) => setAnswer1(e.target.value)}
+          className={`absolute left-[840px] top-[40px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
+            showAnswer ? "text-answer" : ""
+          }`}
+          readOnly={showAnswer}
+        />
+        <input
+          value={answer2}
+          onChange={(e) => setAnswer2(e.target.value)}
+          className={`absolute left-[1062px] top-[40px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
+            showAnswer ? "text-answer" : ""
+          }`}
+          readOnly={showAnswer}
+        />
+        <input
+          value={answer3}
+          onChange={(e) => setAnswer3(e.target.value)}
+          className={`absolute left-[1062px] top-[250px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
+            showAnswer ? "text-answer" : ""
+          }`}
+          readOnly={showAnswer}
+        />
+      </div>
+    </div>
+  );
+};
+
+const Question3 = ({ showAnswer }: { showAnswer: boolean }) => {
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+  const [answer3, setAnswer3] = useState("");
+  const [answer4, setAnswer4] = useState("");
+  const [answer5, setAnswer5] = useState("");
+
+  useEffect(() => {
+    if (showAnswer) {
+      setAnswer1("X");
+      setAnswer2("O");
+      setAnswer3("O");
+      setAnswer4("X");
+      setAnswer5("O");
+    } else {
+      setAnswer1("");
+      setAnswer2("");
+      setAnswer3("");
+      setAnswer4("");
+      setAnswer5("");
+    }
+  }, [showAnswer]);
+
+  return (
+    <div className="w-[1400px] h-full flex flex-col justify-center">
+      <div className="flex justify-between">
+        <p>(1) 받침은 맨 처음에 쓴다.</p>
+        <div>
+          (
+          <input
+            value={answer1}
+            onChange={(e) => setAnswer1(e.currentTarget.value)}
+            className={`w-[100px] text-center ${
+              showAnswer ? "text-answer" : ""
+            }`}
+            readOnly={showAnswer}
+          />
+          )
+        </div>
+      </div>
+      <div className="flex justify-between">
+        <p>(2) 꿰뚫는 획은 나중에 쓴다.</p>
+        <div>
+          (
+          <input
+            value={answer2}
+            onChange={(e) => setAnswer2(e.currentTarget.value)}
+            className={`w-[100px] text-center ${
+              showAnswer ? "text-answer" : ""
+            }`}
+            readOnly={showAnswer}
+          />
+          )
+        </div>
+      </div>
+      <div className="flex justify-between">
+        <p>(3) 왼쪽에서 오른쪽으로 쓴다.</p>
+        <div>
+          (
+          <input
+            value={answer3}
+            onChange={(e) => setAnswer3(e.currentTarget.value)}
+            className={`w-[100px] text-center ${
+              showAnswer ? "text-answer" : ""
+            }`}
+            readOnly={showAnswer}
+          />
+          )
+        </div>
+      </div>
+      <div className="flex justify-between">
+        <p>(4) 안쪽과 바깥쪽이 있을 때는 안쪽을 먼저 쓴다.</p>
+        <div>
+          (
+          <input
+            value={answer4}
+            onChange={(e) => setAnswer4(e.currentTarget.value)}
+            className={`w-[100px] text-center ${
+              showAnswer ? "text-answer" : ""
+            }`}
+            readOnly={showAnswer}
+          />
+          )
+        </div>
+      </div>
+      <div className="flex justify-between">
+        <p>(5) 가로획과 세로획이 교차하면 가로획을 먼저 쓴다.</p>
+        <div>
+          (
+          <input
+            value={answer5}
+            onChange={(e) => setAnswer5(e.currentTarget.value)}
+            className={`w-[100px] text-center ${
+              showAnswer ? "text-answer" : ""
+            }`}
+            readOnly={showAnswer}
+          />
+          )
+        </div>
+      </div>
+    </div>
   );
 };

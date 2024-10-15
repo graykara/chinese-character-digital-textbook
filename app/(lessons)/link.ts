@@ -74,8 +74,8 @@ const navigation = [
   { path: "lesson2/06_052_F2", page: 52 },
   { path: "lesson2/06_053_G1", page: 53 },
   { path: "lesson2/06_054_I1", page: 54 }, // 2단원 마무리
-  { path: "lesson2/06_055_J1", page: 55 },
-  { path: "lesson2/06_056_K1", page: 56 },
+  { path: "lesson2/06_055_J1", page: 55 }, // 활동하기
+  { path: "lesson2/06_056_K1", page: 56 }, // 문제풀기
 ];
 
 const extractPathInfo = (pathname: string) => {

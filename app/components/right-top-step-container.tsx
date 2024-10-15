@@ -7,10 +7,12 @@ export const RightTopStepContainer = ({
   maxStep,
   step,
   onStepChange,
+  className = "",
 }: {
   maxStep: number;
   step: number;
   onStepChange: (step: number) => void;
+  className?: string;
 }) => {
   const { currentStep, setCurrentStep, setMaxStep } =
     useContext(PageInfoContext);
@@ -29,7 +31,9 @@ export const RightTopStepContainer = ({
   }, [step]);
 
   return (
-    <nav className="fixed right-[120px] top-[130px] flex justify-start items-center gap-[20px] rounded-l-full bg-[#e3e3e3] h-[90px] pl-[18px] pr-[40px] z-[1]">
+    <nav
+      className={`fixed right-[120px] top-[130px] flex justify-start items-center gap-[20px] rounded-l-full bg-[#e3e3e3] h-[90px] pl-[18px] pr-[40px] z-[1] ${className}`}
+    >
       {Array.from({ length: maxStep }).map((_, index) => (
         <button
           key={index}
