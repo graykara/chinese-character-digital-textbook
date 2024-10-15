@@ -30,23 +30,24 @@ export const StepContainerArrow = ({
     onStepChange(currentStep);
   }, [currentStep]);
 
-useEffect(() => {
-setCurrentStep(step)
-}, [step])
+  useEffect(() => {
+    setCurrentStep(step);
+  }, [step]);
 
   return (
-    <nav className={`flex justify-center gap-6 mb-10 ${className}`}>
+    <nav className={`flex justify-center gap-6 ${className}`}>
       <button onClick={() => onStepChange(step - 1)} disabled={step <= 1}>
         <img src={step <= 1 ? LEFT.src : CAN_PRESS_LEFT.src} alt="left" />
       </button>
       <div className="flex items-center gap-5">
         {Array.from({ length: maxStep }).map((_, index) => (
           <button
+            key={index}
             onClick={() => onStepChange(index + 1)}
             className={`w-8 h-8 rounded-full ${
               step === index + 1 ? "bg-[#2d6879]" : "bg-[#bcbac4]"
             }`}
-          ></button>
+          />
         ))}
       </div>
       <button onClick={() => onStepChange(step + 1)} disabled={step >= maxStep}>

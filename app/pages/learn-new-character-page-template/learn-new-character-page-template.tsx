@@ -107,7 +107,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
                     <>
                       {Array.from(Array(character.reading.length)).map(
                         (_, index) => (
-                          <span className="mr-4">
+                          <span key={index} className="mr-4">
                             <span className="font-chosun font-bold text-main-content mr-4">
                               {character.reading[index]}
                             </span>
@@ -141,7 +141,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         maxStep={pages}
         step={step}
         onStepChange={setStep}
-        className="absolute w-full bottom-[15px] mb-0"
+        className="absolute w-full bottom-3 mb-0"
       />
     </div>
   );

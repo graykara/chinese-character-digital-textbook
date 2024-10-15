@@ -1,10 +1,9 @@
 "use client";
 
 import GOAL_TITLE from "./assets/goal-title.png";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Howl } from "howler";
 import { ReadingButton } from "@/app/components/buttons/reading-button";
-import { PageInfoContext } from "@/app/utils/page-info";
 
 export const GoalPageTemplate = ({
   background,
@@ -13,9 +12,6 @@ export const GoalPageTemplate = ({
   background: string;
   goals: { text: string; sound: string }[];
 }) => {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("학습 목표");
-
   const [isReading, setIsReading] = useState(false);
   const [currentSoundSrc, setCurrentSoundSrc] = useState("");
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -38,7 +34,7 @@ export const GoalPageTemplate = ({
           onplay: () => {
             setCurrentSoundSrc(sound);
           },
-        })
+        }),
     );
   }, [goals]);
 
