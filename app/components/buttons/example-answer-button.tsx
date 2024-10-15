@@ -9,7 +9,7 @@ export const ExampleAnswerButton = ({
 }) => {
   return (
     <button
-      className="absolute bottom-0 right-32"
+      className="absolute bottom-0 right-28"
       onClick={() => {
         clickSound.play();
         onClick();

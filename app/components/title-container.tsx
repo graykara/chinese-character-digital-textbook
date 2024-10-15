@@ -7,7 +7,7 @@ interface Props extends PropsWithChildren {
 export const TitleContainer = ({ className = "", children }: Props) => {
   return (
     <div
-      className={`animate__animated animate__flipInX relative max-w-[1500px] ml-[130px] break-keep ${className}`}
+      className={`animate__animated animate__flipInX relative ml-[172px] text-[55px] leading-[62px] tracking-[-2.5px] max-w-[1400px] mx-auto break-keep ${className}`}
     >
       {children}
     </div>

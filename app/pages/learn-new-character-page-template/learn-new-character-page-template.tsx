@@ -62,12 +62,12 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
       }}
     >
       <button
-        className="absolute right-[120px] top-[60px] animate__animated animate__slideInRight"
+        className="absolute right-[110px] top-[60px] animate__animated animate__slideInRight"
         onClick={() => setShowKorean(!showKorean)}
       >
         <img src={showKorean ? ACTIVE_BUTTON.src : BUTTON.src} alt="button" />
       </button>
-      <div className="w-[1540px] absolute left-1/2 -translate-x-1/2 top-[150px] grid grid-cols-4 gap-x-[12px]">
+      <div className="w-[1540px] absolute left-1/2 -translate-x-1/2 top-[160px] grid grid-cols-4 gap-x-[20px] gap-y-[12px]">
         {characters
           .filter((_, i) => (step - 1) * 8 <= i && i < step * 8)
           .map((character, _index) => {
@@ -92,7 +92,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
               >
                 <p className="font-haeseo text-[170px]">{character.chinese}</p>
                 <div
-                  className={`relative -top-10 animate__animated opacity-0 ${
+                  className={`relative -top-9 animate__animated opacity-0 ${
                     indexes[index] === -1
                       ? ""
                       : indexes[index] === 1
@@ -141,8 +141,8 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         maxStep={pages}
         step={step}
         onStepChange={setStep}
-        className="absolute w-full bottom-3 mb-0"
+        className="absolute w-full bottom-[-35px] mb-0"
       />
-    </div>
+    </div>  
   );
 };

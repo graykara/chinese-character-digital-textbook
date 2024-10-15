@@ -19,6 +19,7 @@ import { ResourceButton } from "@/app/components/buttons/resource-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Modal } from "@/app/components/modal";
 import { Howl } from "howler";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자8.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -92,12 +93,12 @@ export default function Page() {
           <img src={IMAGE1.src} alt="image1" />
         ) : (
           <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr__452px]">
-            <div className="relative">
-              <div className="absolute left-[180px] -top-[240px] w-[770px] text-center text-[160px]">
+            <div className="relative left-[100px] top-[50px]">
+              <div className="absolute left-[120px] -top-[270px] w-[770px] text-center text-[215px]">
                 <span className="font-haeseo">{data[step - 2]?.chinese}</span>
               </div>
               <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-[180px__1fr]">
+                <div className="grid grid-cols-[50px__1fr]">
                   <PillButton
                     active={showReading}
                     onClick={() => {
@@ -110,12 +111,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[80px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`text-center text-main-content text-[60px] h-[60px] mb-[10px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__1fr]">
+                <div className="grid grid-cols-[50px__1fr]">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -124,7 +125,7 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[80px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`text-center text-main-content text-[60px] h-[60px] mb-[10px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
@@ -133,7 +134,7 @@ export default function Page() {
               </div>
             </div>
             <div>
-              <div className="relative">
+              <div className="relative top-[50px] -left-[10px]">
                 <img src={CONTAINER.src} alt="container" />
 
                 <FlippableCard
@@ -174,6 +175,7 @@ export default function Page() {
           </div>
         </div>
       </Modal>
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

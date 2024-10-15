@@ -12,6 +12,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자32.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -60,7 +61,7 @@ export default function Page() {
 
       <ContentContainer className="!justify-start !items-start">
         <DndProvider backend={HTML5Backend}>
-          <div className="w-full grid grid-cols-6 mb-10">
+          <div className="relative w-[1300px] grid grid-cols-6 mb-10 left-[70px]">
             {hanjaCards.map((hanja, index) => (
               <div
                 key={index}
@@ -77,7 +78,7 @@ export default function Page() {
                   index={index}
                   moveCard={() => {}}
                 >
-                  <div className="w-32 h-32 bg-[#d9e6e6] border-8 border-[#edf4f3] flex justify-center items-center rounded-xl font-haeseo text-[60px]">
+                  <div className="w-32 h-32 bg-[#d9e6e6] border-8 border-[#edf4f3] flex justify-center items-center rounded-xl font-haeseo text-[80px]">
                     {hanja}
                   </div>
                 </DraggableHanjaCard>
@@ -87,19 +88,19 @@ export default function Page() {
 
           <div className={showAnswer ? "text-answer" : ""}>
             {step === 1 && (
-              <div className="relative">
+              <div className="relative left-[100px] top-[50px]">
                 <img src={IMAGE1.src} />
 
                 <div className="absolute left-[115px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[0] : droppedHanja[0]}
                     </div>
                   </HanjaDropZone>
                 </div>
                 <div className="absolute left-[265px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[3] : droppedHanja[1]}
                     </div>
                   </HanjaDropZone>
@@ -107,19 +108,19 @@ export default function Page() {
               </div>
             )}
             {step === 2 && (
-              <div className="relative">
+              <div className="relative left-[100px] top-[50px]">
                 <img src={IMAGE2.src} />
 
                 <div className="absolute left-[115px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[2] : droppedHanja[0]}
                     </div>
                   </HanjaDropZone>
                 </div>
                 <div className="absolute left-[265px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[1] : droppedHanja[1]}
                     </div>
                   </HanjaDropZone>
@@ -127,19 +128,19 @@ export default function Page() {
               </div>
             )}
             {step === 3 && (
-              <div className="relative">
+              <div className="relative left-[100px] top-[50px]">
                 <img src={IMAGE3.src} />
 
                 <div className="absolute left-[115px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[5] : droppedHanja[0]}
                     </div>
                   </HanjaDropZone>
                 </div>
                 <div className="absolute left-[265px] top-[85px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[60px]">
+                    <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[4] : droppedHanja[1]}
                     </div>
                   </HanjaDropZone>
@@ -156,6 +157,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      {/* <img src={BACKGROUND3.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
