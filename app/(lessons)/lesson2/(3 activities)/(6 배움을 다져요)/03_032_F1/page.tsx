@@ -135,28 +135,28 @@ const Step2 = () => {
             showAnswer={showAnswer}
             className="text-[55px] text-center w-[100px] bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute top-[25px] left-[440px]"
+            containerClassName="absolute top-[30px] left-[440px]"
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
             className="text-[55px] text-center w-[100px] bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute top-[25px] left-[635px]"
+            containerClassName="absolute top-[30px] left-[635px]"
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
-            className="font-haeseo text-[55px] text-center w-[100px] bg-transparent"
+            className="font-haeseo text-[65px] text-center w-[100px] bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute bottom-[60px] left-[315px]"
+            containerClassName="absolute bottom-[50px] left-[315px]"
           />
           <InputWithPen
             answer={answers[3]}
             showAnswer={showAnswer}
-            className="font-haeseo text-[55px] text-center w-[100px] bg-transparent"
+            className="font-haeseo text-[65px] text-center w-[120px] bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute bottom-[60px] left-[510px]"
+            containerClassName="absolute bottom-[50px] left-[492px]"
           />
         </div>
       </ContentContainer>
@@ -197,7 +197,7 @@ const Step3 = () => {
         <div className="relative mt-1">
           <img src={IMAGE3.src} />
 
-          <div className="absolute left-[379px] top-[65px] grid grid-cols-[290px__285px__305px__48px] gap-y-[110px]">
+          <div className="absolute left-[390px] top-[65px] grid grid-cols-[293px__295px__310px__48px] gap-y-[110px]">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((v) => (
               <div key={v} className={`relative w-12 h-12`}>
                 <button

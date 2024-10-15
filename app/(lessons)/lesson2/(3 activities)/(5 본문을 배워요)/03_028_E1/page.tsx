@@ -94,7 +94,7 @@ export default function Page() {
         ) : (
           <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr__452px]">
             <div className="relative left-[100px] top-[50px]">
-              <div className="absolute left-[120px] -top-[270px] w-[770px] text-center text-[215px]">
+              <div className="absolute left-[160px] -top-[270px] w-[770px] text-center text-[215px]">
                 <span className="font-haeseo">{data[step - 2]?.chinese}</span>
               </div>
               <div className="flex flex-col gap-16">
