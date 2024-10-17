@@ -29,7 +29,7 @@ export default function Page() {
             <p className="text-[40px] leading-[60px] tracking-[-2.5px] break-keep">
               바르게 고친 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.
             </p>
-            <SmartButton link="https://stdict.korean.go.kr/main/main.do" />
+            <SmartButton link="https://stdict.korean.go.kr/main/main.do" className="ml-3"/>
           </div>
         }
       />

@@ -8,6 +8,7 @@ import IMAGE4 from "./4.png";
 import IMAGE5 from "./5.png";
 import EXAMPLE from "./example.png";
 import ANSWER_BUTTON from "./answer-button.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘11.png"
@@ -63,7 +64,7 @@ export default function Page() {
         <img src={EXAMPLE.src} />
       </ContentContainer>
 
-      <ContentContainer className="!justify-start py-20 gap-[100px] mb-[50px]">
+      <ContentContainer className="!justify-start py-20 pr-10 gap-[100px] mb-[50px]">
         {data.map(({ resource }) => (
           <div
             key={resource}
