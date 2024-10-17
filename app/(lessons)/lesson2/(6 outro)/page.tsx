@@ -4,7 +4,6 @@ import { SummaryPageTemplate } from "@/app/pages/summary-page-template";
 import IMAGE from "./image.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext } from "react";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘28.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -31,7 +30,6 @@ export default function Page() {
         </div>
       </div>
     </SummaryPageTemplate>
-    <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

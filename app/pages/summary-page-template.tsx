@@ -13,7 +13,7 @@ export const SummaryPageTemplate = ({ lesson, children }: Props) => {
         background: `url('/background/summary-background.png')`,
       }}
     >
-      <div className="absolute left-[19px] top-[114px] w-[86px] h-[96px] flex justify-center items-center">
+      <div className="absolute left-[8px] top-[114px] w-[100px] h-[96px] flex justify-center items-center">
         <LessonIcon lesson={lesson} />
       </div>
 

@@ -57,7 +57,7 @@ const Step1 = () => {
   return (
     <div className="relative w-[1460px]">
       <ReadingButton
-        className="absolute right-0 -top-[100px]"
+        className="absolute right-0 -top-[90px]"
         active={isReading}
         onClick={() => sound.play()}
       />
@@ -66,11 +66,7 @@ const Step1 = () => {
           isReading ? "text-reading" : ""
         }`}
       >
-        둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의
-        <br />
-        결합 관계를 단어의 짜임이라고 한다. 단어의 짜임에는
-        <br />
-        병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.
+        둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다. 단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.
       </div>
 
       <div className="w-[1500px]">

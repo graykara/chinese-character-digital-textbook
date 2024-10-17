@@ -46,7 +46,7 @@ export default function Page() {
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate
-        lesson={1}
+        lesson={2}
         number={step}
         question={questions[step - 1]}
       >

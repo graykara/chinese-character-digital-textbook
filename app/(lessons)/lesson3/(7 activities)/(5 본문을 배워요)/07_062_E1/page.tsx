@@ -58,23 +58,7 @@ export default function Page() {
           />
         </div>
       ),
-      equation: [
-        {
-          chinese: "木",
-          text: "나무",
-          sound: "/sound/2/36/1.mp3",
-        },
-        {
-          chinese: "木",
-          text: "나무",
-          sound: "/sound/2/36/1.mp3",
-        },
-        {
-          chinese: "林",
-          text: "수풀",
-          sound: "/sound/2/36/2.mp3",
-        },
-      ],
+
     },
     {
       sound: "/sound/2/36/4.mp3",
@@ -108,23 +92,7 @@ export default function Page() {
           />{" "}
         </div>
       ),
-      equation: [
-        {
-          chinese: "人",
-          text: "사람",
-          sound: "/sound/2/36/3.mp3",
-        },
-        {
-          chinese: "木",
-          text: "나무",
-          sound: "/sound/2/36/1.mp3",
-        },
-        {
-          chinese: "休",
-          text: "쉬다",
-          sound: "/sound/2/36/4.mp3",
-        },
-      ],
+
     },
     {
       sound: "/sound/2/36/7.mp3",
@@ -158,23 +126,7 @@ export default function Page() {
           />{" "}
         </div>
       ),
-      equation: [
-        {
-          chinese: "日",
-          text: "해",
-          sound: "/sound/2/36/5.mp3",
-        },
-        {
-          chinese: "月",
-          text: "달",
-          sound: "/sound/2/36/6.mp3",
-        },
-        {
-          chinese: "明",
-          text: "밝다",
-          sound: "/sound/2/36/7.mp3",
-        },
-      ],
+
     },
     {
       sound: "/sound/2/36/10.mp3",
@@ -200,23 +152,7 @@ export default function Page() {
           />{" "}
         </div>
       ),
-      equation: [
-        {
-          chinese: "女",
-          text: "여자",
-          sound: "/sound/2/36/8.mp3",
-        },
-        {
-          chinese: "子",
-          text: "자녀",
-          sound: "/sound/2/36/9.mp3",
-        },
-        {
-          chinese: "好",
-          text: "좋다",
-          sound: "/sound/2/36/10.mp3",
-        },
-      ],
+
     },
     {
       sound: "/sound/2/36/13.mp3",
@@ -243,23 +179,7 @@ export default function Page() {
           />
         </div>
       ),
-      equation: [
-        {
-          chinese: "夕",
-          text: "저녁",
-          sound: "/sound/2/36/11.mp3",
-        },
-        {
-          chinese: "口",
-          text: "입",
-          sound: "/sound/2/36/12.mp3",
-        },
-        {
-          chinese: "名",
-          text: "이름",
-          sound: "/sound/2/36/13.mp3",
-        },
-      ],
+
     },
   ];
 
@@ -267,20 +187,20 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={6} step={step} onStepChange={setStep} />
-        {step === 1 ? (
+        {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
-        ) : (
+        ) : ( */}
           <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr]">
             <div className="relative">
               <div className="relative left-[220px] w-[750px] text-center text-[160px]">
-                <span className="font-haeseo">{data[step - 2]?.chinese}</span>
+                <span className="font-haeseo">{data[step - 1]?.chinese}</span>
               </div>
               <div className="flex flex-col gap-16">
                 <div className="grid grid-cols-[180px__750px] gap-10">
                   <PillButton
                     active={showReading}
                     onClick={() => {
-                      if (!showReading) SOUND(data[step - 2].sound).play();
+                      if (!showReading) SOUND(data[step - 1].sound).play();
                       setShowReading(!showReading);
                     }}
                     text="읽기"
@@ -290,7 +210,7 @@ export default function Page() {
                   <div
                     className={`text-center text-main-content text-[60px] h-[80px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
-                    {showReading ? data[step - 2]?.reading : null}
+                    {showReading ? data[step - 1]?.reading : null}
                   </div>
                 </div>
                 <div className="grid grid-cols-[180px__750px] gap-10">
@@ -304,7 +224,7 @@ export default function Page() {
                   <div
                     className={`text-center text-main-content text-[60px] h-[80px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
-                    {showMeaning ? data[step - 2]?.meaning : null}
+                    {showMeaning ? data[step - 1]?.meaning : null}
                   </div>
                 </div>
                 <div className="grid grid-cols-[180px__1fr] gap-10">
@@ -316,38 +236,8 @@ export default function Page() {
                     backgroundColor="#7278a6"
                   />
                   <div key={step}>
-                    <div className="flex items-center gap-5">
-                      <div
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[80px] cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center"
-                        onClick={() =>
-                          SOUND(data[step - 2]?.equation[0].sound).play()
-                        }
-                      >
-                        {data[step - 2]?.equation[0].chinese}
-                      </div>
-                      <span>{data[step - 2].equation[0].text}</span>
-                      <Plus size={50} color="gray" />
-                      <div
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[80px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
-                        onClick={() =>
-                          SOUND(data[step - 2]?.equation[1].sound).play()
-                        }
-                      >
-                        {data[step - 2]?.equation[1].chinese}
-                      </div>
-                      <span>{data[step - 2].equation[1].text}</span>
-                      <MoveRight size={50} color="gray" />
-                      <div
-                        className="font-haeseo text-[80px] cursor-pointer"
-                        onClick={() =>
-                          SOUND(data[step - 2]?.equation[2].sound).play()
-                        }
-                      >
-                        {data[step - 2]?.equation[2].chinese}
-                      </div>
-                      <span>{data[step - 2].equation[2].text}</span>
-                    </div>
-                    <div>{data[step - 2]?.content ?? null}</div>
+              
+                    <div>{data[step - 1]?.content ?? null}</div>
                   </div>
                 </div>
               </div>
