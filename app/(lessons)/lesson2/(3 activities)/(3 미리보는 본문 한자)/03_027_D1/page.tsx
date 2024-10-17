@@ -34,7 +34,8 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10">
+      {/* <TitleContainer className="mt-10"> */}
+      <TitleContainer className="mt-10 ml-[175px]">
         <p>
           고대 한자가 의미하는 뜻을 한 단어로 써 보고 자신과 친구의 생각을
           비교해 보자.
@@ -106,7 +107,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
