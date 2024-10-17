@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어127.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -25,6 +26,7 @@ export default function Page() {
       </ContentContainer>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

@@ -10,6 +10,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어118.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -354,6 +355,7 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

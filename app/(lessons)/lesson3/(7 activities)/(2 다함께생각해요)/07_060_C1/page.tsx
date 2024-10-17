@@ -14,6 +14,8 @@ import { WritingButton } from "@/app/components/buttons/writing-button";
 import { TitleContainer } from "@/app/components/title-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { Textarea } from "@/app/components/textarea";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어12.png"
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어13.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -52,6 +54,7 @@ const Step1 = () => {
           video="/video/animation/3-7_60.mp4"
         />
       </ContentContainer>
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -76,6 +79,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

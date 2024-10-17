@@ -4,6 +4,7 @@ import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png"
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -46,6 +47,7 @@ export default function Page() {
           </div>
         </div>
       </CreativityPageTemplate>
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

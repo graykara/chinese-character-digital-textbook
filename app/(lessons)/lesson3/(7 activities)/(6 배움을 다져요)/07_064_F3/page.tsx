@@ -10,6 +10,9 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어124.png"
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어125.png"
+import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어126.png"
 
 export default function Page() {
   return (
@@ -45,6 +48,7 @@ const Step1 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

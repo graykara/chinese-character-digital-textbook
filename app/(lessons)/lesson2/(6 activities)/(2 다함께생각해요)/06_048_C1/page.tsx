@@ -9,6 +9,8 @@ import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘2.png"
+import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘3.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -33,6 +35,7 @@ const Step1 = () => {
           video="/video/animation/2-4_34.mp4"
         />
       </ContentContainer>
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -54,6 +57,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

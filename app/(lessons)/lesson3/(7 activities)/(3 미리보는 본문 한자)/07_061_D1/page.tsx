@@ -13,6 +13,9 @@ import { StepContainer } from "@/app/components/step-container";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어14.png"
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어15.png"
+import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어16.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -43,6 +46,7 @@ export default function Page() {
       </ContentContainer>
 
       <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
