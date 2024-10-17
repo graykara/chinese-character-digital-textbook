@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘14.png"
+import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘15.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -27,7 +29,7 @@ export default function Page() {
 
   return (
     <>
-      <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"} />
+      <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"}/>
 
       <ContentContainer>
         {step === 2 && (
@@ -59,13 +61,14 @@ export default function Page() {
           </div>
         )}
         {step === 1 && (
-          <div className="relative">
+          <div className="relative -top-10 -left-5">
             <img src={IMAGE2.src} />
           </div>
         )}
       </ContentContainer>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
