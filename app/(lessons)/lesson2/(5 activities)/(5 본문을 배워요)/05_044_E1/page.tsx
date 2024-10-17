@@ -13,7 +13,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘6.png"
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -70,34 +70,29 @@ export default function Page() {
     },
     {
       //left part
-      chinese: "問安",
-      reading: "문 안",
-      sound: "/sound/2/44/1.mp3",
+      chinese: "今日",
+      reading: "금 일",
+      sound: "/sound/2/44/3.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          안부를{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="물음."
-            width={220}
-            height={80}
-          />
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[70px]">
+          지금 지나가고
+          <br />
+          있는 이날.
         </div>
       ),
     },
     {
       //right part
-      sound: "/sound/2/44/2.mp3",
-      chinese: "無難",
-      reading: "무 난",
+      sound: "/sound/2/44/4.mp3",
+      chinese: "休業",
+      reading: "휴 업",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          어려움이{" "}
+          일을{" "}
           <FlippableCard
             active={showMeaning2}
             className="mx-5 inline-block"
-            text="없음."
+            text="쉼."
             width={220}
             height={80}
           />
@@ -107,16 +102,16 @@ export default function Page() {
     },
     {
       //left part
-      chinese: "問安",
-      reading: "문 안",
-      sound: "/sound/2/44/1.mp3",
+      chinese: "植樹",
+      reading: "식 수",
+      sound: "/sound/2/44/5.mp3",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          안부를{" "}
+          나무를{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="물음."
+            text="심음."
             width={220}
             height={80}
           />
@@ -125,16 +120,16 @@ export default function Page() {
     },
     {
       //right part
-      sound: "/sound/2/44/2.mp3",
-      chinese: "無難",
-      reading: "무 난",
+      sound: "/sound/2/44/6.mp3",
+      chinese: "食水",
+      reading: "식 수",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          어려움이{" "}
+          먹는{" "}
           <FlippableCard
             active={showMeaning2}
             className="mx-5 inline-block"
-            text="없음."
+            text="물."
             width={220}
             height={80}
           />
@@ -144,16 +139,16 @@ export default function Page() {
     },
     {
       //left part
-      chinese: "問安",
-      reading: "문 안",
-      sound: "/sound/2/44/1.mp3",
+      chinese: "義士",
+      reading: "의 사",
+      sound: "/sound/2/44/7.mp3",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          안부를{" "}
+          의로운{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="물음."
+            text="사람."
             width={220}
             height={80}
           />
@@ -162,19 +157,20 @@ export default function Page() {
     },
     {
       //right part
-      sound: "/sound/2/44/2.mp3",
-      chinese: "無難",
-      reading: "무 난",
+      sound: "/sound/2/44/8.mp3",
+      chinese: "意思",
+      reading: "의 사",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          어려움이{" "}
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
+          뜻과{" "}
           <FlippableCard
             active={showMeaning2}
             className="mx-5 inline-block"
-            text="없음."
+            text="생각."
             width={220}
             height={80}
           />
+          무엇을 하고자 하는 생각.
         </div>
       ),
       resource: IMAGE5.src,
@@ -262,14 +258,14 @@ export default function Page() {
 
           <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
-              <img src={data[step*2 - 1]?.resource} alt="resource" className="absolute bottom-[60px] right-16" />
+              <img src={data[step*2 - 1]?.resource} alt="resource" className={step === 4 ? ("absolute bottom-[60px] items-center") : ("absolute bottom-[60px] right-16")} />
             </div>
           </div>
 
         </ContentContainer>
 
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
