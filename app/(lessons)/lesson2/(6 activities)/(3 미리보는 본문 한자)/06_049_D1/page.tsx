@@ -33,18 +33,18 @@ export default function Page() {
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start pt-8">
-        <div className="w-full flex justify-center">
+      <ContentContainer className="!justify-start mt-4 pl-10">
+        <div className="w-full flex">
           <img src={EXAMPLE.src} />
         </div>
         <div className="relative w-full pb-20">
           {step === 1 && (
-            <div className="relative mt-10">
+            <div className="relative mt-14 mb-10">
               <img src={IMAGE1.src} alt="" />
             </div>
           )}
           {step === 2 && (
-            <div className="relative mt-10">
+            <div className="relative mt-14">
               <img src={IMAGE2.src} alt="" />
             </div>
           )}
@@ -57,7 +57,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

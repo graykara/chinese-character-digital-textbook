@@ -33,7 +33,7 @@ const Step1 = () => {
   return (
     <>
       <ContentContainer className="!justify-start">
-        <div className="relative">
+        <div className="relative left-5 top-5">
           {showAnswer ? (
             <img src={IMAGE_AFTER.src} />
           ) : (

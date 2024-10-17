@@ -55,14 +55,14 @@ const Step1 = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative w-[1460px]">
       <ReadingButton
         className="absolute right-0 -top-[100px]"
         active={isReading}
         onClick={() => sound.play()}
       />
       <div
-        className={`bg-[#f4ede1] rounded-3xl p-10 ${
+        className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1.5px] break-keep ${
           isReading ? "text-reading" : ""
         }`}
       >

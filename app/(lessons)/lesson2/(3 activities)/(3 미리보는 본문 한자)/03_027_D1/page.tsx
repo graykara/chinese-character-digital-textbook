@@ -43,7 +43,7 @@ export default function Page() {
         <BuddyButton className="absolute bottom-3 left-[280px]" />
       </TitleContainer>
 
-      <ContentContainer className="!justify-start pt-4">
+      <ContentContainer className="!justify-start pt-4 -left-10">
         <div className="relative">
           {step === 1 && <img src={IMAGE1.src} alt="" />}
           {step === 2 && <img src={IMAGE2.src} alt="" />}
