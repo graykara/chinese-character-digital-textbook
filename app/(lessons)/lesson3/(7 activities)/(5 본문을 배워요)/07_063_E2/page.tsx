@@ -32,7 +32,6 @@ export default function Page() {
             sound: "/sound/3/063/1.mp3",
           },
         ]}
-        type="1"
       />
       {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
