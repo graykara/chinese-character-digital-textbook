@@ -1,6 +1,6 @@
 "use client";
 
-import { SoundButton } from "@/app/components/buttons/sound-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
@@ -33,11 +33,10 @@ export default function Page() {
     <>
       <CultureHeader title={"청렴한 관리 황희 정승"} />
 
-      <SoundButton
+      <SoundButton2
         className="absolute top-[110px] left-[890px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => sound.play()}
-        type="2"
       />
 
       <ContentContainer>

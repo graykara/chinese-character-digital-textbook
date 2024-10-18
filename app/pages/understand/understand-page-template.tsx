@@ -3,16 +3,14 @@
 import UNDERSTATND_TITLE from "./assets/understanding-title.png";
 import { useEffect, useMemo, useState } from "react";
 import { Howl } from "howler";
-import { SoundButton } from "@/app/components/buttons/sound-button";
+import { SoundButton1 } from "@/app/components/buttons/sound-button1";
 
 export const UnderstandPageTemplate = ({
   background,
   texts,
-  type,
 }: {
   background: string;
   texts: { text: string; sound: string }[];
-  type: string;
 }) => {
   const [isReading, setIsReading] = useState(false);
   const [currentSoundSrc, setCurrentSoundSrc] = useState("");
@@ -74,11 +72,10 @@ export const UnderstandPageTemplate = ({
           className="animate__animated animate__flipInX"
           src={UNDERSTATND_TITLE.src}
         />
-        <SoundButton
+        <SoundButton1
           active={isReading}
           onClick={() => setIsReading(true)}
           className="absolute right-[127px] animate__animated animate__bounceIn animate__delay-2s z-10"
-          type={type}
         />
       </header>
 
