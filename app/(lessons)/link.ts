@@ -111,6 +111,19 @@ const navigation = [
   { path: "lesson3/10_083_G1", page: 83 },
   { path: "lesson3/10_083_H1", page: 83 },
   { path: "lesson3/10_083_H1", page: 83 }, // 3단원 마무리
+
+
+  { path: "lesson5/13_108_B1", page: 108 }, // 13차시
+  { path: "lesson5/13_108_C1", page: 108 },
+  { path: "lesson5/13_109_D1", page: 109 },
+  { path: "lesson5/13_111_L1", page: 111 },
+  { path: "lesson5/13_111_E1", page: 111 },
+  { path: "lesson5/13_111_E2", page: 111 },
+  { path: "lesson5/13_112_F1", page: 112 },
+  { path: "lesson5/13_112_F2", page: 112 },
+  { path: "lesson5/13_112_F3", page: 112 },
+  { path: "lesson5/13_113_G1", page: 113 },
+  { path: "lesson5/13_113_H1", page: 113 },
 ];
 
 const extractPathInfo = (pathname: string) => {
