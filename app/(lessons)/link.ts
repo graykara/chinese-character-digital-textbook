@@ -121,7 +121,6 @@ const navigation = [
   { path: "lesson5/13_111_E2", page: 111 },
   { path: "lesson5/13_112_F1", page: 112 },
   { path: "lesson5/13_112_F2", page: 112 },
-  { path: "lesson5/13_112_F3", page: 112 },
   { path: "lesson5/13_113_G1", page: 113 },
   { path: "lesson5/13_113_H1", page: 113 },
 ];

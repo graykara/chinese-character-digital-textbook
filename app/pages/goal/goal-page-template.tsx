@@ -66,8 +66,8 @@ export const GoalPageTemplate = ({
   }, [sounds]);
 
   return (
-    <div className="w-full h-full bg-[#d5e7e8] flex flex-col justify-center items-center">
-      <header className="w-[1450px] mx-auto flex justify-between items-end mb-4">
+    <div className="w-full h-full bg-[#d5e7e8] flex flex-col justify-center items-center pb-[100px] pl-4">
+      <header className="w-[1450px] mx-auto flex justify-between items-end mb-2">
         <img
           className="animate__animated animate__flipInX"
           src={GOAL_TITLE.src}
@@ -83,16 +83,16 @@ export const GoalPageTemplate = ({
         <ReadingButton
           active={isReading}
           onClick={() => setIsReading(true)}
-          className="animate__animated animate__bounceIn animate__delay-2s"
+          className="pb-3 -mr-4 animate__animated animate__bounceIn animate__delay-2s"
         />
       </header>
 
-      <div className="relative">
+      <div className="relative left-2">
         <img src={background} alt="background" />
-        <ul className="absolute left-[100px] top-[55px] list-disc marker:text-[#d5454f] text-[55px] animate__animated animate__fadeIn animate__delay-1s">
+        <ul className="absolute left-[120px] top-[70px] list-disc marker:text-[#d5454f] text-[55px] animate__animated animate__fadeIn animate__delay-1s">
           {goals.map(({ text, sound }) => (
             <li
-              className={`tracking-tight leading-[70px] mb-8 animate__animated ${
+              className={`tracking-tighter leading-[70px] break-keep mb-8 animate__animated ${
                 sound === currentSoundSrc ? "animate__bounce" : ""
               }`}
             >
