@@ -8,9 +8,11 @@ import { SoundButton } from "@/app/components/buttons/sound-button";
 export const UnderstandPageTemplate = ({
   background,
   texts,
+  type,
 }: {
   background: string;
   texts: { text: string; sound: string }[];
+  type: string;
 }) => {
   const [isReading, setIsReading] = useState(false);
   const [currentSoundSrc, setCurrentSoundSrc] = useState("");
@@ -76,6 +78,7 @@ export const UnderstandPageTemplate = ({
           active={isReading}
           onClick={() => setIsReading(true)}
           className="absolute right-[127px] animate__animated animate__bounceIn animate__delay-2s z-10"
+          type={type}
         />
       </header>
 

@@ -4,10 +4,12 @@ export const SoundButton = ({
   active,
   onClick,
   className = "",
+  type,
 }: {
   active: boolean;
   onClick: () => void;
   className?: string;
+  type: string;
 }) => {
   return (
     <button
@@ -19,7 +21,7 @@ export const SoundButton = ({
     >
       <img
         src={
-          active ? "/ui/sound_button.png" : "/ui/sound_button.png"
+          active ? `/ui/sound_button${type}.png` : `/ui/sound_button${type}.png`
         }
         className="animate__animated animate__pulse animate__repeat-3"
       />
