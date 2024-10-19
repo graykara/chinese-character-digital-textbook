@@ -112,6 +112,31 @@ const navigation = [
   { path: "lesson3/10_083_H1", page: 83 },
   { path: "lesson3/10_083_H1", page: 83 }, // 3단원 마무리
 
+  { path: "lesson4/11_088_A1", page: 88 }, // 4단원
+  { path: "lesson4/11_088_A2", page: 88 },
+  { path: "lesson4/11_088_A3", page: 88 },
+  { path: "lesson4/11_090_B1", page: 90 }, // 학습목표
+  { path: "lesson4/11_090_C1", page: 90 },
+  { path: "lesson4/11_091_D1", page: 91 },
+  { path: "lesson4/11_093_L1", page: 93 },
+  { path: "lesson4/11_093_E1", page: 93 },
+  { path: "lesson4/11_094_F1", page: 94 },
+  { path: "lesson4/11_094_F2", page: 94 },
+  { path: "lesson4/11_094_F3", page: 94 },
+  { path: "lesson4/11_095_G1", page: 95 },
+  { path: "lesson4/11_095_H1", page: 95 }, // 11차시 마무리
+  { path: "lesson4/12_096_B1", page: 96 }, // 12차시
+  { path: "lesson4/12_096_C1", page: 96 },
+  { path: "lesson4/12_097_D1", page: 97 },
+  { path: "lesson4/12_099_L1", page: 99 },
+  { path: "lesson4/12_099_E1", page: 99 },
+  { path: "lesson4/12_100_F1", page: 100 },
+  { path: "lesson4/12_100_F2", page: 100 },
+  { path: "lesson4/12_101_G1", page: 101 },
+  { path: "lesson4/12_101_H1", page: 101 }, // 12차시 마무리
+  { path: "lesson4/12_102_I1", page: 101 }, // 4단원 정리하기
+  { path: "lesson4/12_103_J1", page: 101 },
+  { path: "lesson4/12_104_K1", page: 101 }, // 4단원 마무리
 
   { path: "lesson5/13_108_B1", page: 108 }, // 13차시
   { path: "lesson5/13_108_C1", page: 108 },

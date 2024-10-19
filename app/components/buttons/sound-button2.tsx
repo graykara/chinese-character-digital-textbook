@@ -18,9 +18,7 @@ export const SoundButton2 = ({
       className={`flex-none ${className}`}
     >
       <img
-        src={
-          active ? "/ui/sound_button2.png" : "/ui/sound_button2.png"
-        }
+        src={active ? "/ui/sound_button2.png" : "/ui/sound_button2.png"}
         className="animate__animated animate__pulse animate__repeat-3"
       />
     </button>
