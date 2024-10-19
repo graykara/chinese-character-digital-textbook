@@ -9,6 +9,7 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘4.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -32,18 +33,18 @@ export default function Page() {
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start pt-8">
-        <div className="w-full flex justify-center">
+      <ContentContainer className="!justify-start mt-4 pl-10">
+        <div className="w-full flex">
           <img src={EXAMPLE.src} />
         </div>
         <div className="relative w-full pb-20">
           {step === 1 && (
-            <div className="relative mt-10">
+            <div className="relative mt-14 mb-10">
               <img src={IMAGE1.src} alt="" />
             </div>
           )}
           {step === 2 && (
-            <div className="relative mt-10">
+            <div className="relative mt-14">
               <img src={IMAGE2.src} alt="" />
             </div>
           )}
@@ -56,6 +57,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

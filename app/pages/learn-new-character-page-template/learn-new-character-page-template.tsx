@@ -141,7 +141,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         maxStep={pages}
         step={step}
         onStepChange={setStep}
-        className="absolute w-full bottom-[-35px] mb-0"
+        className="absolute w-full bottom-[5px] mb-0"
       />
     </div>  
   );

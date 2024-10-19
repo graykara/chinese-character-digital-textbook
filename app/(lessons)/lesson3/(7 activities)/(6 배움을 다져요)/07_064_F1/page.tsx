@@ -6,6 +6,7 @@ import EXAMPLE from "./example.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어120.png"
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -141,6 +142,7 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

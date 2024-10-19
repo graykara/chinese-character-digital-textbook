@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘28.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -45,7 +46,7 @@ export default function Page() {
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate
-        lesson={1}
+        lesson={2}
         number={step}
         question={questions[step - 1]}
       >
@@ -60,6 +61,7 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

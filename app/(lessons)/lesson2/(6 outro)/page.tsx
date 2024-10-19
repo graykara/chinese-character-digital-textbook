@@ -10,6 +10,7 @@ export default function Page() {
   setSubtitle("정리하기");
 
   return (
+    <>
     <SummaryPageTemplate lesson={1}>
       <div className="w-full h-full">
         <div className="relative pl-[90px]">
@@ -29,5 +30,6 @@ export default function Page() {
         </div>
       </div>
     </SummaryPageTemplate>
+    </>
   );
 }

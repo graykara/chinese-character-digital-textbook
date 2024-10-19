@@ -38,7 +38,7 @@ const Step1 = () => {
       </ContentContainer>
 
       <ExampleAnswerButton active={false} onClick={() => {}} />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" /> */}
     </>
   );
 };
@@ -50,13 +50,13 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader title={
         <>글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.
-        <BuddyButton className="absolute left-[800px] top-[70px]" />
+        <BuddyButton className="absolute left-[625px] top-[70px]" />
         </>} />
 
       <ContentContainer className="!justify-start mt-20 mb-[100px]">
-        <img src={IMAGE2.src} className="absolute top-[35px] left-[20px]"/>
+        <img src={IMAGE2.src} className="absolute top-[35px] left-[70px]"/>
         {showAnswer ? (
-          <img src={IMAGE3.src} className="absolute top-[280px]" />
+          <img src={IMAGE3.src} className="absolute top-[230px] left-[400px]" />
         ) : null}
       </ContentContainer>
 
@@ -64,7 +64,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" />
+      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" /> */}
     </>
   );
 };

@@ -7,10 +7,10 @@ import IMAGE3 from "./image3.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png"
 
 export default function Page() {
   return (
@@ -40,9 +40,9 @@ const Step1 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
+      <ContentContainer className="!justify-start left-10">
         <div className="relative">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid grid-cols-3 gap-16">
             <img src={IMAGE1.src} />
             <img src={IMAGE2.src} />
             <img src={IMAGE3.src} />
@@ -50,10 +50,11 @@ const Step1 = () => {
         </div>
       </ContentContainer>
 
-      <ExampleAnswerButton
+      <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };

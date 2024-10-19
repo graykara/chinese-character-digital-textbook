@@ -61,7 +61,7 @@ export default function Page() {
 
       <ContentContainer className="!justify-start !items-start">
         <DndProvider backend={HTML5Backend}>
-          <div className="relative w-[1300px] grid grid-cols-6 mb-10 left-[70px]">
+          <div className="relative w-[1300px] grid grid-cols-6 mb-10 left-[120px]">
             {hanjaCards.map((hanja, index) => (
               <div
                 key={index}
