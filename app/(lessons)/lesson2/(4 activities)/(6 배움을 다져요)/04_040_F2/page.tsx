@@ -17,17 +17,6 @@ export default function Page() {
 
   return (
     <>
-      <StrengthenLearningWordHeader
-        title={
-          <div>
-            <span className="border border-black rounded-lg inline">보기</span>{" "}
-            의 한자를 활용하여 다음 글의 밑줄 친 부분을 한자로 쓰고,
-            <br />그 뜻도 써 보자.
-          </div>
-        }
-        sound=""
-      />
-
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
 
@@ -41,16 +30,27 @@ const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const sounds = [
-    "/sound/2/40_011.mp3",
-    "/sound/2/40_012.mp3",
-    "/sound/2/40_013.mp3",
-    "/sound/2/40_014.mp3",
-    "/sound/2/40_001.mp3",
-    "/sound/2/40_015.mp3",
-  ];
+    "010",
+    "011",
+    "012",
+    "013",
+    "000",
+    "014",
+  ].map((sound) => `/sound/2/p040_word${sound}.mp3`);
 
   return (
     <>
+      <StrengthenLearningWordHeader
+        title={
+          <div>
+            <span className="border border-black rounded-lg inline">보기</span>{" "}
+            의 한자를 활용하여 다음 글의 밑줄 친 부분을 한자로 쓰고,
+            <br />그 뜻도 써 보자.
+          </div>
+        }
+        sound="2/40-i-2.mp3"
+      />
+
       <ContentContainer className="!justify-start">
         <div className="relative">
           {showAnswer ? (
@@ -103,13 +103,22 @@ const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const sounds = [
-    "/sound/2/40_016.mp3",
-    "/sound/2/40_017.mp3",
-    "/sound/2/40_018.mp3",
-  ];
+    "015",
+    "016",
+    "017",
+  ].map((sound) => `/sound/2/p040_word${sound}.mp3`);
 
   return (
     <>
+      <StrengthenLearningWordHeader
+        title={
+          <div>
+            밑줄 친 한자의 뜻을 활용하여 자연스러운 풀이가 되도록 빈칸을 채워 보자.
+          </div>
+        }
+        sound="2/40-i-3.mp3"
+      />
+
       <ContentContainer className="!justify-start">
         <div className="relative mt-10">
           <img src={IMAGE2.src} />
