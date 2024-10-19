@@ -12,6 +12,7 @@ export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const sounds = [
+    "000",
     "001",
     "002",
     "003",
@@ -21,14 +22,13 @@ export default function Page() {
     "007",
     "008",
     "009",
-    "010",
-  ].map((sound) => `/sound/2/40_${sound}.mp3`);
+  ].map((sound) => `/sound/2/p040_word${sound}.mp3`);
 
   return (
     <>
       <StrengthenLearningMainContentHeader
         title="사다리 타기를 하고 서로 만나는 한자를 결합하였을 때 완성되는 한자를 써 보자."
-        sound=""
+        sound="/sound/2/40-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start">
