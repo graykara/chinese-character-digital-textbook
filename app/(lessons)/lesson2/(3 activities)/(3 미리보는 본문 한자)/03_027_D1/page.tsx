@@ -48,7 +48,7 @@ export default function Page() {
           {step === 1 && <img src={IMAGE1.src} alt="" />}
           {step === 2 && <img src={IMAGE2.src} alt="" />}
 
-          <div className="absolute left-[130px] top-[230px] grid grid-cols-5 gap-[28px]">
+          <div className="absolute left-[130px] top-[230px] grid grid-cols-5 gap-[24px]">
             <input
               key={(step - 1) * 5 + 1}
               className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
@@ -71,7 +71,7 @@ export default function Page() {
             />
           </div>
 
-          <div className="absolute left-[130px] top-[420px] grid grid-cols-5 gap-[28px]">
+          <div className="absolute left-[130px] top-[420px] grid grid-cols-5 gap-[24px]">
             <input
               value={showAnswer ? selectedAnswer[0] : ""}
               className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
@@ -107,7 +107,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

@@ -54,9 +54,9 @@ const Step2 = () => {
         </>} />
 
       <ContentContainer className="!justify-start mt-20 mb-[100px]">
-        <img src={IMAGE2.src} className="absolute top-[35px] left-[20px]"/>
+        <img src={IMAGE2.src} className="absolute top-[35px] left-[70px]"/>
         {showAnswer ? (
-          <img src={IMAGE3.src} className="absolute top-[280px]" />
+          <img src={IMAGE3.src} className="absolute top-[230px] left-[400px]" />
         ) : null}
       </ContentContainer>
 

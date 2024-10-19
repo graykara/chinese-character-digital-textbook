@@ -1,6 +1,6 @@
 "use client";
 
-import { ReadingButton } from "@/app/components/buttons/reading-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
@@ -34,15 +34,16 @@ export default function Page() {
       <ContentContainer>
         {step === 2 && (
           <div className="relative -top-[10px] w-[1460px]">
-            <ReadingButton
-              className="absolute right-0 -top-[100px]"
+
+            <SoundButton2
+              className="absolute -top-[150px] left-[1150px] animate__animated animate__bounceIn animate__delay-1s z-10"
               active={isReading}
               onClick={() => sound.play()}
             />
+
             <div
-              className={`bg-[#f4ede1] rounded-[50px] px-20 pt-12 pb-8 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] px-20 pt-12 pb-8 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
               ‘매우’라는 뜻의 ‘<span className="font-haeseo">甚</span>(심)’과

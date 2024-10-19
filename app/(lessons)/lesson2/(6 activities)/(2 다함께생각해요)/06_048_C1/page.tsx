@@ -7,7 +7,7 @@ import IMAGE2_AFTER from "./image2-after.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
-import { VideoThumbnail } from "@/app/components/video-thumbnail";
+import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘2.png"
@@ -31,7 +31,7 @@ const Step1 = () => {
   return (
     <>
       <ContentContainer>
-        <VideoThumbnail
+        <VideoThumbnail_big
           thumbnail={IMAGE.src}
           video="/video/animation/2-4_34.mp4"
         />
