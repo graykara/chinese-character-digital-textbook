@@ -3,11 +3,12 @@
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext } from "react";
 import ReactPlayer from "react-player";
+import BACKGROUND1 from "@/app/bgpng_temp/intro/1단원_왜 배워요_.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("단원도입");
-  
+
   return (
     <>
       <ReactPlayer
@@ -17,6 +18,7 @@ export default function Page() {
         muted
         playing
       />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
