@@ -29,39 +29,46 @@ export default function Page() {
 
   return (
     <>
-      <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"}/>
+      <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"} />
+      {step === 2 && (
+        <>
+          <SoundButton2
+            className="absolute top-[110px] left-[1300px] animate__animated animate__bounceIn animate__delay-1s z-10"
+            active={isReading}
+            onClick={() => sound.play()}
+          />
 
-      <ContentContainer>
-        {step === 2 && (
-          <div className="relative -top-[10px] w-[1460px]">
+          <ContentContainer>
 
-            <SoundButton2
-              className="absolute -top-[150px] left-[1150px] animate__animated animate__bounceIn animate__delay-1s z-10"
-              active={isReading}
-              onClick={() => sound.play()}
-            />
+            <div className="relative -top-[5px] w-[1460px]">
 
-            <div
-              className={`bg-[#f4ede1] rounded-[50px] px-20 pt-12 pb-8 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
-                }`}
-            >
-              “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
-              ‘매우’라는 뜻의 ‘<span className="font-haeseo">甚</span>(심)’과
-              ‘깊다’라는 뜻의 ‘<span className="font-haeseo">深</span>(심)’이
-              결합된 단어로, ‘매우 깊다’는 의미이다. 따라서{" "}
-              <span className="font-haeseo">眞心</span>(진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와 같이 쓸 수 있다.
+              <div
+                className={`bg-[#f4ede1] rounded-[50px] px-20 py-14 text-[55px] leading-[84px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                  }`}
+              >
+                “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
+                ‘매우’라는 뜻의 ‘<span className="font-haeseo text-[60px] leading-tight">甚</span>(심)’과
+                ‘깊다’라는 뜻의 ‘<span className="font-haeseo text-[60px] leading-tight">深</span>(심)’이
+                결합된 단어로, ‘매우 깊다’는 의미이다. 따라서{" "}
+                <span className="font-haeseo text-[60px] leading-tight">眞心</span>(진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와 같이 쓸 수 있다.
+              </div>
             </div>
-          </div>
-        )}
-        {step === 1 && (
-          <div className="relative -top-12 -left-5">
-            <img src={IMAGE2.src} />
-          </div>
-        )}
-      </ContentContainer>
+
+          </ContentContainer>
+        </>
+      )}
+      {step === 1 && (
+        <>
+          <ContentContainer>
+            <div className="relative -top-12 -left-5">
+              <img src={IMAGE2.src} />
+            </div>
+          </ContentContainer>
+        </>
+      )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
