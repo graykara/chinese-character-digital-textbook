@@ -23,7 +23,7 @@ export const VideoThumbnail = ({
     <>
       <div
         style={{ width, height }}
-        className="relative bg-white rounded-3xl border-[5px] border-[#7178a3] flex justify-center items-center p-10"
+        className="relative bg-white rounded-3xl border-[5px] border-[#7178a3] flex justify-center items-center p-5"
       >
         <img src={thumbnail} className="w-full h-full object-contain" />
 
@@ -72,7 +72,7 @@ export const VideoThumbnail_big = ({
     <>
       <div
         style={{ width, height }}
-        className="relative bg-white rounded-3xl border-[5px] border-[#7178a3] flex justify-center items-center p-10 -mt-20"
+        className="relative bg-white rounded-3xl border-[5px] border-[#7178a3] flex justify-center items-center p-5 -mt-20"
       >
         <img src={thumbnail} className="w-full h-full object-contain" />
 
