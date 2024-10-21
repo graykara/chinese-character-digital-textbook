@@ -5,8 +5,8 @@ import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
 import { useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘23.png"
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘24.png"
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘23.png";
+import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘24.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -29,15 +29,17 @@ const Step1 = () => {
   return (
     <div className="relative pl-[90px]">
       <div className="flex items-center gap-1">
-        <div className="animate__animated animate__flipInX absolute -left-11 -top-1 w-[60px] h-[60px] rounded-full bg-[#73210d] flex justify-center items-center">
-          <span className="font-cookierun text-white -ml-1">1</span>
+        <div className="animate__animated animate__flipInX absolute -left-11 -top-1 w-[60px] h-[60px] rounded-full bg-[#e64532] flex justify-center items-center">
+          <span className="font-cookierun text-white -ml-1">11</span>
         </div>
         <div className="relative -ml-14 -mt-2">
-          <span className="font-cookierun">한자가 만들어진 원리</span>
+          <span className="font-cookierun text-[#74210d]">
+            나에게 힘이 되는 글
+          </span>
         </div>
       </div>
 
-      <div className="ml-12 mt-7">
+      <div className="-ml-10 -mt-10">
         <img
           src={IMAGE.src}
           className="animate__animated animate__fadeIn relative top-2"
