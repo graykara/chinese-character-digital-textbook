@@ -1,5 +1,6 @@
 "use client";
 
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
@@ -13,6 +14,20 @@ export default function Page() {
   useEffect(() => {
     setShowAnswer(false);
   }, [step]);
+
+  const [isReading, setIsReading] = useState(false);
+
+  const sound = new Howl({
+    src: "/sound/3/65-i2.mp3",
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+
+  useEffect(() => {
+    return () => {
+      sound.stop();
+    };
+  }, []);
 
   const items = [
     "마음에 드는 성어를 검색하여 찾는다.",
@@ -29,6 +44,12 @@ export default function Page() {
         <header className="relative left-[450px] -top-5 text-[50px]">
           <CreativityTitleHeader title="‘성어 책갈피’ 만들기" />
         </header>
+
+        <SoundButton2
+            className="absolute -top-[13px] left-[1065px] animate__animated animate__bounceIn animate__delay-1s z-10"
+            active={isReading}
+            onClick={() => sound.play()}
+          />
 
         <div className="grid grid-cols-[450px__1fr] gap-3 mt-5">
           <div className="relaitve h-full flex justify-end items-end pr-5 pl-4">
@@ -47,7 +68,7 @@ export default function Page() {
           </div>
         </div>
       </CreativityPageTemplate>
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

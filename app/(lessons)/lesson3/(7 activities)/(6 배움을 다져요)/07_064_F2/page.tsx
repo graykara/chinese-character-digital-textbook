@@ -98,7 +98,7 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title={"성어가 사용된 사례를 디지털 도구로 찾아 써 보자."}
-        sound=""
+        sound="/sound/3/64-i-2.mp3"
       />
 
       <ContentContainer className="!justify-start">

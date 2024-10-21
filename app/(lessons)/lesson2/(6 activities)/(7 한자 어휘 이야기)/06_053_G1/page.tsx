@@ -1,6 +1,6 @@
 "use client";
 
-import { ReadingButton } from "@/app/components/buttons/reading-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
@@ -18,23 +18,27 @@ export default function Page() {
   return (
     <>
       <WordStoryHeader title={"단어의 짜임"} />
-
-      <ContentContainer>
-        {step === 1 && <Step1 />}
-        {step === 2 && (
-          <div className="relative w-[1500px]">
-            <img src={IMAGE2.src} />
-          </div>
-        )}
-        {step === 3 && (
-          <div className="relative w-[1500px]">
-            <img src={IMAGE3.src} />
-          </div>
-        )}
-      </ContentContainer>
-
+      {step === 1 && <Step1 />}
+      {step === 2 && (
+        <>
+          <ContentContainer>
+            <div className="relative w-[1500px]">
+              <img src={IMAGE2.src} />
+            </div>
+          </ContentContainer>
+        </>
+      )}
+      {step === 3 && (
+        <>
+          <ContentContainer>
+            <div className="relative w-[1500px]">
+              <img src={IMAGE3.src} />
+            </div>
+          </ContentContainer>
+        </>
+      )}
       <StepContainer maxStep={3} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
@@ -55,23 +59,28 @@ const Step1 = () => {
   }, []);
 
   return (
-    <div className="relative w-[1460px]">
-      <ReadingButton
-        className="absolute right-0 -top-[90px]"
+    <>
+      <SoundButton2
+        className="absolute top-[110px] left-[710px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => sound.play()}
       />
-      <div
-        className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1.5px] break-keep ${
-          isReading ? "text-reading" : ""
-        }`}
-      >
-        둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다. 단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.
-      </div>
 
-      <div className="w-[1500px]">
-        <img src={IMAGE1.src} className="mt-10" />
-      </div>
-    </div>
+      <ContentContainer>
+        <div className="relative w-[1460px]">
+
+          <div
+            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1px] break-keep ${isReading ? "text-reading" : ""
+              }`}
+          >
+            둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다. 단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.
+          </div>
+
+          <div className="w-[1500px]">
+            <img src={IMAGE1.src} className="mt-10" />
+          </div>
+        </div>
+      </ContentContainer>
+    </>
   );
 };

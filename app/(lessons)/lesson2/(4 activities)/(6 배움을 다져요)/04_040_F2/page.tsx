@@ -11,6 +11,8 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자21.png"
+import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자22.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -51,7 +53,7 @@ const Step1 = () => {
         sound="2/40-i-2.mp3"
       />
 
-      <ContentContainer className="!justify-start">
+      <ContentContainer className="!justify-start left-14 -top-7">
         <div className="relative">
           {showAnswer ? (
             <img src={IMAGE1_AFTER.src} />
@@ -72,28 +74,32 @@ const Step1 = () => {
           <InputWithPen
             answer={answers[0]}
             showAnswer={showAnswer}
-            className="text-center w-[320px] bg-transparent"
-            containerClassName="absolute bottom-[0px] left-[60px]"
+            className="text-center w-[320px] mt-4 bg-transparent"
+            penClassName="left-7 -translate-x-1/2 h-[55px]"
+            containerClassName="absolute -bottom-3 left-[65px] text-[50px]"
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
-            className="text-center w-[320px] bg-transparent"
-            containerClassName="absolute bottom-[0px] left-[550px]"
+            className="text-center w-[320px] mt-4 bg-transparent"
+            penClassName="left-7 -translate-x-1/2 h-[55px]"
+            containerClassName="absolute -bottom-3 left-[570px] text-[50px]"
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
-            className="text-center w-[320px] bg-transparent"
-            containerClassName="absolute bottom-[0px] left-[1030px]"
+            className="text-center w-[320px] mt-4 bg-transparent"
+            penClassName="left-7 -translate-x-1/2 h-[55px]"
+            containerClassName="absolute -bottom-3 left-[1070px] text-[50px]"
           />
         </div>
       </ContentContainer>
 
-      <ExampleAnswerButton
+      <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
@@ -119,7 +125,7 @@ const Step2 = () => {
         sound="2/40-i-3.mp3"
       />
 
-      <ContentContainer className="!justify-start">
+      <ContentContainer className="!justify-start left-12 top-6">
         <div className="relative mt-10">
           <img src={IMAGE2.src} />
 
@@ -137,22 +143,22 @@ const Step2 = () => {
             answer={answers[0]}
             showAnswer={showAnswer}
             className="text-center w-[150px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2 h-[45px]"
-            containerClassName="absolute bottom-[35px] left-[70px]"
+            penClassName="left-8 -translate-x-1/2 h-[42px] top-[30px]"
+            containerClassName="absolute bottom-[40px] left-[75px]"
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
             className="text-center w-[170px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2 h-[45px]"
-            containerClassName="absolute -bottom-[10px] left-[645px]"
+            penClassName="left-8 -translate-x-1/2 h-[42px] top-[30px]"
+            containerClassName="absolute -bottom-[15px] left-[655px]"
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
             className="text-center w-[150px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2 h-[45px]"
-            containerClassName="absolute bottom-[95px] left-[1130px]"
+            penClassName="left-6 -translate-x-1/2 h-[42px] top-[30px]"
+            containerClassName="absolute bottom-[95px] left-[1155px]"
           />
         </div>
       </ContentContainer>
@@ -161,6 +167,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };

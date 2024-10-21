@@ -10,6 +10,9 @@ import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+// import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자4.png"
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자5.png"
+
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -125,6 +128,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
