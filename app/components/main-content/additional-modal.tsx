@@ -10,7 +10,7 @@ interface Props {
 export const AdditionalModal = ({ open, onClose, items }: Props) => {
   return (
     <Modal open={open} onClose={onClose} hideCloseButtom showAnimation={false}>
-      <div className="fixed w-[1760px] h-[990px] left-[40px] top-[130px] bg-white bg-opacity-50 flex justify-center items-center">
+      <div className="fixed w-[1760px] h-[990px] left-[40px] top-[90px] bg-white bg-opacity-50 flex justify-center items-center">
         <div className="relative bg-[#7278a6] rounded-[20px] w-[900px] px-[20px] pb-[20px]">
           <button className="absolute top-5 right-5" onClick={onClose}>
             <img src="/ui/close-icon-white.png" />
