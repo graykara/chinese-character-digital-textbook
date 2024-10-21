@@ -148,6 +148,46 @@ const navigation = [
   { path: "lesson5/13_112_F2", page: 112 },
   { path: "lesson5/13_113_G1", page: 113 },
   { path: "lesson5/13_113_H1", page: 113 },
+
+  { path: "lesson5/14_114_B1", page: 114 }, // 14차시
+  { path: "lesson5/14_114_C1", page: 114 },
+  { path: "lesson5/14_115_D1", page: 115 },
+  { path: "lesson5/14_117_L1", page: 117 },
+  { path: "lesson5/14_117_E1", page: 117 },
+  { path: "lesson5/14_117_E2", page: 117 },
+  { path: "lesson5/14_118_F1", page: 118 },
+  { path: "lesson5/14_118_F2", page: 118 },
+  { path: "lesson5/14_118_F3", page: 118 },
+  { path: "lesson5/14_119_G1", page: 119 },
+  { path: "lesson5/14_119_H1", page: 119 }, // 14차시 마무리
+
+  { path: "lesson5/15_120_B1", page: 120 }, // 15차시
+  { path: "lesson5/15_120_C1", page: 120 },
+  { path: "lesson5/15_121_D1", page: 121 },
+  { path: "lesson5/15_123_L1", page: 123 },
+  { path: "lesson5/15_123_E1", page: 123 },
+  { path: "lesson5/15_123_E2", page: 123 },
+  { path: "lesson5/15_124_F1", page: 124 },
+  { path: "lesson5/15_124_F2", page: 124 },
+  { path: "lesson5/15_124_F3", page: 124 },
+  { path: "lesson5/15_125_G1", page: 125 },
+  { path: "lesson5/15_125_H1", page: 125 }, // 15차시 마무리
+
+  { path: "lesson5/16_126_B1", page: 126 }, // 16차시
+  { path: "lesson5/16_126_C1", page: 126 },
+  { path: "lesson5/16_127_D1", page: 127 },
+  { path: "lesson5/16_129_L1", page: 129 },
+  { path: "lesson5/16_129_E1", page: 129 },
+  { path: "lesson5/16_129_E2", page: 129 },
+  { path: "lesson5/16_130_F1", page: 130 },
+  { path: "lesson5/16_130_F2", page: 130 },
+  { path: "lesson5/16_130_F3", page: 130 },
+  { path: "lesson5/16_131_G1", page: 131 },
+  { path: "lesson5/16_131_H1", page: 131 }, // 16차시 마무리
+
+  { path: "lesson5/16_132_I1", page: 132 },
+  { path: "lesson5/16_133_J1", page: 133 },
+  { path: "lesson5/16_134_K1", page: 134 },
 ];
 
 const extractPathInfo = (pathname: string) => {
