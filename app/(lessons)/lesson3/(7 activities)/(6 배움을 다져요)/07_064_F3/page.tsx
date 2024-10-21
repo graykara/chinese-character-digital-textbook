@@ -12,9 +12,9 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어124.png"
-import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어125.png"
-import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어126.png"
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어124.png";
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어125.png";
+import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어126.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -50,9 +50,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={
-          <>
-            한자 카드를 결합하여 문장의 빈칸에 해당하는 단어를 만들어 보자.
-          </>
+          <>한자 카드를 결합하여 문장의 빈칸에 해당하는 단어를 만들어 보자.</>
         }
         sound="/sound/3/64-i-3.mp3"
       />
@@ -169,7 +167,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={3} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

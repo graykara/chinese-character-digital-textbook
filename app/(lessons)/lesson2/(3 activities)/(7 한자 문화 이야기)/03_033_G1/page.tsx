@@ -50,15 +50,39 @@ export default function Page() {
           />
           <ContentContainer>
             <div className="relative -top-[55px] w-[1460px]">
-
               <div
-                className={`bg-[#f4ede1] rounded-[50px] px-20 pt-16 pb-12 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
-                  }`}
+                className={`bg-[#f4ede1] rounded-[50px] px-20 pt-16 pb-12 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${
+                  isReading ? "text-reading" : ""
+                }`}
               >
-                오늘날에는 아라비아 숫자를 주로 사용하지만, 예전에는 한자로 숫자를 적었다. 그런데 ‘
-                <span className="font-haeseo text-[60px] leading-tight">一</span>
-                ’은 ‘<span className="font-haeseo text-[60px] leading-tight">八</span>’을 제외한 거의 모든 숫자로 위조할 수 있고, ‘<span className="font-haeseo text-[60px] leading-tight">二</span>’는
-                ‘<span className="font-haeseo text-[60px] leading-tight">三</span>’, ‘<span className="font-haeseo text-[60px] leading-tight">四</span>’, ‘<span className="font-haeseo text-[60px] leading-tight">五</span>’ 등 더 큰 숫자로 쉽게 꾸며낼 수 있다. 이를 막기 위해 쓰는 한자가 ‘갖은자’로, 보통 쓰는 숫자 한자와 음은 같지만 획이 복잡하다.
+                오늘날에는 아라비아 숫자를 주로 사용하지만, 예전에는 한자로
+                숫자를 적었다. 그런데 ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  一
+                </span>
+                ’은 ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  八
+                </span>
+                ’을 제외한 거의 모든 숫자로 위조할 수 있고, ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  二
+                </span>
+                ’는 ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  三
+                </span>
+                ’, ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  四
+                </span>
+                ’, ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  五
+                </span>
+                ’ 등 더 큰 숫자로 쉽게 꾸며낼 수 있다. 이를 막기 위해 쓰는
+                한자가 ‘갖은자’로, 보통 쓰는 숫자 한자와 음은 같지만 획이
+                복잡하다.
               </div>
             </div>
           </ContentContainer>
@@ -85,7 +109,7 @@ export default function Page() {
       )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

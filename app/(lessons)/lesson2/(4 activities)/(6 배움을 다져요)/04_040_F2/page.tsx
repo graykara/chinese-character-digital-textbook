@@ -11,8 +11,8 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자21.png"
-import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자22.png"
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자21.png";
+import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자22.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -31,14 +31,9 @@ const Step1 = () => {
   const answers = ["쉬는 날.", "산과 숲.", "넓고 큰 바다."];
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const sounds = [
-    "010",
-    "011",
-    "012",
-    "013",
-    "000",
-    "014",
-  ].map((sound) => `/sound/2/p040_word${sound}.mp3`);
+  const sounds = ["010", "011", "012", "013", "000", "014"].map(
+    (sound) => `/sound/2/p040_word${sound}.mp3`,
+  );
 
   return (
     <>
@@ -99,7 +94,7 @@ const Step1 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
@@ -108,18 +103,17 @@ const Step2 = () => {
   const answers = ["쉬는", "바다", "서양"];
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const sounds = [
-    "015",
-    "016",
-    "017",
-  ].map((sound) => `/sound/2/p040_word${sound}.mp3`);
+  const sounds = ["015", "016", "017"].map(
+    (sound) => `/sound/2/p040_word${sound}.mp3`,
+  );
 
   return (
     <>
       <StrengthenLearningWordHeader
         title={
           <div>
-            밑줄 친 한자의 뜻을 활용하여 자연스러운 풀이가 되도록 빈칸을 채워 보자.
+            밑줄 친 한자의 뜻을 활용하여 자연스러운 풀이가 되도록 빈칸을 채워
+            보자.
           </div>
         }
         sound="2/40-i-3.mp3"
@@ -167,7 +161,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };

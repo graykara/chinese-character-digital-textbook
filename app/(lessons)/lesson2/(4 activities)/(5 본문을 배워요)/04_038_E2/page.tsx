@@ -9,7 +9,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자15.png" //14-
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자15.png"; //14-
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -180,8 +180,10 @@ export default function Page() {
                       >
                         {data[step - 2]?.equation[0].chinese}
                       </span>
-                      <span className="text-[40px] ml-1 mt-2">{data[step - 2].equation[0].text}</span>
-                      <Plus size={50} color="gray" className="-ml-1"/>
+                      <span className="text-[40px] ml-1 mt-2">
+                        {data[step - 2].equation[0].text}
+                      </span>
+                      <Plus size={50} color="gray" className="-ml-1" />
                       <span
                         className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
                         onClick={() =>
@@ -190,8 +192,10 @@ export default function Page() {
                       >
                         {data[step - 2]?.equation[1].chinese}
                       </span>
-                      <span className="text-[40px] ml-1 mt-2">{data[step - 2].equation[1].text}</span>
-                      <MoveRight size={50} color="gray" className="-ml-1"/>
+                      <span className="text-[40px] ml-1 mt-2">
+                        {data[step - 2].equation[1].text}
+                      </span>
+                      <MoveRight size={50} color="gray" className="-ml-1" />
                       <span
                         className="font-haeseo text-[90px] ml-5 -mt-2 cursor-pointer"
                         onClick={() =>
@@ -209,7 +213,7 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

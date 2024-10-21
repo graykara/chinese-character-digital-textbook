@@ -9,9 +9,8 @@ import { PageInfoContext } from "@/app/utils/page-info";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { Textarea } from "@/app/components/textarea";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자2.png"
-import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자3.png"
-
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자3.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -39,7 +38,7 @@ const Step1 = () => {
           video="/video/animation/2-4_34.mp4"
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
@@ -68,7 +67,10 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 };

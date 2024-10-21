@@ -43,7 +43,8 @@ export default function Page() {
             text="하나"
             width={210}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
@@ -62,15 +63,16 @@ export default function Page() {
             text="위"
             width={180}
             height={80}
-          />{"\xa0"}
-          에 점을 찍어{" "}
+          />
+          {"\xa0"}에 점을 찍어{" "}
           <FlippableCard
             active={showResource}
             className="mx-5 inline-block"
             text="위"
             width={180}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
@@ -89,15 +91,16 @@ export default function Page() {
             text="아래"
             width={180}
             height={80}
-          />{"\xa0"}
-          에 점을 찍어{" "}
+          />
+          {"\xa0"}에 점을 찍어{" "}
           <FlippableCard
             active={showResource}
             className="mx-5 inline-block"
             text="아래"
             width={180}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
@@ -116,7 +119,8 @@ export default function Page() {
             text="화"
             width={120}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           부분에 선을 그어
           <FlippableCard
             active={showResource}
@@ -124,7 +128,8 @@ export default function Page() {
             text="월식"
             width={170}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           이라는 뜻을 나타냄.
         </div>
       ),
@@ -143,7 +148,8 @@ export default function Page() {
             text="일식"
             width={180}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           이라는 뜻을 나타냄.
         </div>
       ),
@@ -223,11 +229,18 @@ export default function Page() {
                     checkboxColor="#41466f"
                     backgroundColor="#7278a6"
                   />
-                  <div key={step} className="text-[50px] leading-[62px] tracking-[-1.5px]">
+                  <div
+                    key={step}
+                    className="text-[50px] leading-[62px] tracking-[-1.5px]"
+                  >
                     {data[step - 2]?.content ?? null}
                     <div className="mt-10 w-[1000px] h-[115px] flex justify-center">
                       <div>
-                        <img src={data[step - 2]?.resource} alt="resource" className="inset-y-1/2"/> 
+                        <img
+                          src={data[step - 2]?.resource}
+                          alt="resource"
+                          className="inset-y-1/2"
+                        />
                         {/* 이미지가 위아래 가운데에 위치하게 해주세요 */}
                       </div>
                     </div>
@@ -238,7 +251,7 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

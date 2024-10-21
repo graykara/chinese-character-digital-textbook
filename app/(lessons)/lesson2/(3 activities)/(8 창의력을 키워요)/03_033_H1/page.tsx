@@ -14,7 +14,10 @@ export default function Page() {
 
   return (
     <>
-      <img src={IMAGE.src} className="relative top-[23px] left-[45px] w-[97%]"/>
+      <img
+        src={IMAGE.src}
+        className="relative top-[23px] left-[45px] w-[97%]"
+      />
 
       {/* 체크표시 넣어주세요. 위에는 항상 보이는 체크마크이고 아래는 예시 답안 눌렀을 때만 보여야합니다. */}
       <InputWithPen
@@ -36,7 +39,10 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

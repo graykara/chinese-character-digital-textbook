@@ -84,7 +84,7 @@ const Content = ({
       </ContentContainer>
       {/* <img
         src={BACKGROUND1.src}
-        className="absolute left-0 top-0 opacity-25 pointer-events-none"
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       /> */}
     </>
   );

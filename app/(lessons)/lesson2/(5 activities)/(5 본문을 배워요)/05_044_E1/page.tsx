@@ -13,7 +13,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png"
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -184,14 +184,14 @@ export default function Page() {
         <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
           <div className="relative mb-[260px]">
             <div className="relative top-7 left-[135px] w-[550px] text-center text-[180px] tracking-widest">
-              <span className="font-haeseo">{data[step*2 - 2]?.chinese}</span>
+              <span className="font-haeseo">{data[step * 2 - 2]?.chinese}</span>
             </div>
             <div className="flex flex-col gap-16">
               <div className="grid grid-cols-[180px__1fr] gap-12">
                 <PillButton
                   active={showReading}
                   onClick={() => {
-                    if (!showReading) SOUND(data[step*2 - 2].sound).play();
+                    if (!showReading) SOUND(data[step * 2 - 2].sound).play();
                     setShowReading(!showReading);
                   }}
                   text="읽기"
@@ -201,7 +201,7 @@ export default function Page() {
                 <div
                   className={` text-main-content text-[55px] h-[55px] tracking-widest ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                 >
-                  {showReading ? data[step*2 - 2]?.reading : null}
+                  {showReading ? data[step * 2 - 2]?.reading : null}
                 </div>
               </div>
               <div className="grid grid-cols-[180px__1fr] gap-12 bg-transparent">
@@ -212,23 +212,21 @@ export default function Page() {
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div key={step}>
-                  {data[step*2 - 2]?.content ?? null}
-                </div>
+                <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
               </div>
             </div>
           </div>
 
           <div className="relative mb-[260px]">
             <div className="relative top-7 left-[135px] w-[550px] text-center text-[180px] tracking-widest">
-              <span className="font-haeseo">{data[step*2 - 1]?.chinese}</span>
+              <span className="font-haeseo">{data[step * 2 - 1]?.chinese}</span>
             </div>
             <div className="flex flex-col gap-16">
               <div className="grid grid-cols-[180px__1fr] gap-12">
                 <PillButton
                   active={showReading2}
                   onClick={() => {
-                    if (!showReading2) SOUND(data[step*2 - 1].sound).play();
+                    if (!showReading2) SOUND(data[step * 2 - 1].sound).play();
                     setShowReading2(!showReading2);
                   }}
                   text="읽기"
@@ -238,7 +236,7 @@ export default function Page() {
                 <div
                   className={` text-main-content text-[55px] h-[55px] tracking-widest ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
                 >
-                  {showReading2 ? data[step*2 - 1]?.reading : null}
+                  {showReading2 ? data[step * 2 - 1]?.reading : null}
                 </div>
               </div>
               <div className="grid grid-cols-[180px__1fr] gap-12 bg-transparent">
@@ -249,23 +247,27 @@ export default function Page() {
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div key={step}>
-                  {data[step*2 - 1]?.content ?? null}
-                </div>
+                <div key={step}>{data[step * 2 - 1]?.content ?? null}</div>
               </div>
             </div>
           </div>
 
           <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
-              <img src={data[step*2 - 1]?.resource} alt="resource" className={step === 4 ? ("absolute bottom-[60px] items-center") : ("absolute bottom-[60px] right-16")} />
+              <img
+                src={data[step * 2 - 1]?.resource}
+                alt="resource"
+                className={
+                  step === 4
+                    ? "absolute bottom-[60px] items-center"
+                    : "absolute bottom-[60px] right-16"
+                }
+              />
             </div>
           </div>
-
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

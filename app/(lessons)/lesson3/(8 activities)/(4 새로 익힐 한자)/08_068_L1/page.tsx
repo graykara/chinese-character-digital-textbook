@@ -32,8 +32,8 @@ export default function Page() {
           },
           {
             chinese: "易",
-            reading: ["역","이"],
-            meaning: ["바꾸다","쉽다"],
+            reading: ["역", "이"],
+            meaning: ["바꾸다", "쉽다"],
             sound: "/sound/3/08words/5.mp3",
           },
           {
@@ -86,7 +86,7 @@ export default function Page() {
           },
         ]}
       />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

@@ -6,9 +6,9 @@ import IMAGE_AFTER from "./image-after.png";
 import { useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
-import { HeaderContainer } from "@/app/components/headers/header-container"
+import { HeaderContainer } from "@/app/components/headers/header-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자25.png"
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자25.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -16,7 +16,6 @@ export default function Page() {
   return (
     <>
       <CreativityPageTemplate>
-
         <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
           <CreativityTitleHeader
             title="만들자! 나만의 창의 한자"
@@ -35,7 +34,6 @@ export default function Page() {
             <img src={IMAGE_BEFORE.src} />
           )}
         </div>
-
       </CreativityPageTemplate>
 
       <InputWithPen
@@ -58,7 +56,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

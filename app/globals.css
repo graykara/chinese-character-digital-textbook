@@ -1,26 +1,26 @@
 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
 
 @font-face {
-  font-family: "Haeseo";
-  src: url("/fonts/Haeseo_S.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "Haeseo";
+    src: url("/fonts/Haeseo_S.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "ChosunSm";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "ChosunSm";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "CookieRun";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "CookieRun";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @tailwind base;
@@ -28,12 +28,54 @@
 @tailwind utilities;
 
 body {
-  font-size: 45px;
-  font-family: "NanumBarunGothic", sans-serif;
-  /* letter-spacing: -2.5px; */
+    font-size: 45px;
+    font-family: "NanumBarunGothic", sans-serif;
+    /* letter-spacing: -2.5px; */
 }
 
 input:focus,
 textarea:focus {
-  outline: none;
+    outline: none;
+}
+
+.debug {
+    display: none;
+}
+
+.animate__animated.animate__fadeInDown2 {
+    animation: fadeInDown2 1s;
+    animation-fill-mode: forwards;
+}
+
+.animate__animated.animate__fadeOutUp2 {
+    animation: fadeOutUp2 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown2 {
+    0% {
+        -webkit-transform: translate3d(-50%, -100%, 0);
+        transform: translate3d(-50%, -100%, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate3d(-50%, 0%, 0);
+        transform: translate3d(-50%, 0%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp2 {
+    0% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        display: none;
+        -webkit-transform: translate3d(-50%, -100%, 0);
+        transform: translate3d(-50%, -100%, 0);
+        opacity: 0;
+    }
 }

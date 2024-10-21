@@ -11,8 +11,8 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { Textarea } from "@/app/components/textarea";
 import { SmartButton } from "@/app/components/buttons/smart-button";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘2.png"
-import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘3.png"
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘3.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -29,7 +29,10 @@ export default function Page() {
             <p className="text-[40px] leading-[60px] tracking-[-2.5px] break-keep">
               바르게 고친 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.
             </p>
-            <SmartButton link="https://stdict.korean.go.kr/main/main.do" className="ml-3"/>
+            <SmartButton
+              link="https://stdict.korean.go.kr/main/main.do"
+              className="ml-3"
+            />
           </div>
         }
       />
@@ -52,20 +55,30 @@ const Step1 = () => {
           height={460}
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answers = ["금새", "금세", "지금 바로. '금시에'가 줄어든 말.", "심여", "심혈", "마음과 힘을 아울러 이르는 말.", "문안", "무난", "별로 어려움이 없음."];
+  const answers = [
+    "금새",
+    "금세",
+    "지금 바로. '금시에'가 줄어든 말.",
+    "심여",
+    "심혈",
+    "마음과 힘을 아울러 이르는 말.",
+    "문안",
+    "무난",
+    "별로 어려움이 없음.",
+  ];
   const [selectedAnswer, setAnswer] = useState(answers);
 
   return (
     <>
       <ContentContainer>
-        <img src={IMAGE2.src} className="absolute top-[0px] left-[85px]"/>
+        <img src={IMAGE2.src} className="absolute top-[0px] left-[85px]" />
         <InputWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -129,14 +142,13 @@ const Step2 = () => {
           penClassName="left-10 -translate-x-1/2"
           containerClassName="absolute top-[247px] left-[820px]"
         />
-        
       </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 };

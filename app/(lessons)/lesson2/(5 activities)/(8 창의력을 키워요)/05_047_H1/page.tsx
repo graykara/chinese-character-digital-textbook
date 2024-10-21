@@ -8,8 +8,8 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘16.png"
-import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png"
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘16.png";
+import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -27,13 +27,18 @@ export default function Page() {
       </CreativityPageTemplate>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
 
 const Step1 = () => {
-  const answers = ["지금 지나가고 있는 이날.", "일이 있는 바로 그날.", "오늘의 바로 다음 날.", "특정 시점의 그다음 날."];
+  const answers = [
+    "지금 지나가고 있는 이날.",
+    "일이 있는 바로 그날.",
+    "오늘의 바로 다음 날.",
+    "특정 시점의 그다음 날.",
+  ];
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>

@@ -5,7 +5,7 @@ import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png"
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -46,10 +46,10 @@ export default function Page() {
         </header>
 
         <SoundButton2
-            className="absolute -top-[13px] left-[1065px] animate__animated animate__bounceIn animate__delay-1s z-10"
-            active={isReading}
-            onClick={() => sound.play()}
-          />
+          className="absolute -top-[13px] left-[1065px] animate__animated animate__bounceIn animate__delay-1s z-10"
+          active={isReading}
+          onClick={() => sound.play()}
+        />
 
         <div className="grid grid-cols-[450px__1fr] gap-3 mt-5">
           <div className="relaitve h-full flex justify-end items-end pr-5 pl-4">
@@ -68,7 +68,7 @@ export default function Page() {
           </div>
         </div>
       </CreativityPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { UnderstandPageTemplate } from "@/app/pages/understand/understand-page-template";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭17.png"
+import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭17.png";
 
 export default function Page() {
   return (
@@ -15,7 +15,7 @@ export default function Page() {
           },
         ]}
       />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘14.png"
-import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘15.png"
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘14.png";
+import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘15.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -39,21 +39,30 @@ export default function Page() {
           />
 
           <ContentContainer>
-
             <div className="relative -top-[5px] w-[1460px]">
-
               <div
-                className={`bg-[#f4ede1] rounded-[50px] px-20 py-14 text-[55px] leading-[84px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
-                  }`}
+                className={`bg-[#f4ede1] rounded-[50px] px-20 py-14 text-[55px] leading-[84px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${
+                  isReading ? "text-reading" : ""
+                }`}
               >
-                “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
-                ‘매우’라는 뜻의 ‘<span className="font-haeseo text-[60px] leading-tight">甚</span>(심)’과
-                ‘깊다’라는 뜻의 ‘<span className="font-haeseo text-[60px] leading-tight">深</span>(심)’이
-                결합된 단어로, ‘매우 깊다’는 의미이다. 따라서{" "}
-                <span className="font-haeseo text-[60px] leading-tight">眞心</span>(진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와 같이 쓸 수 있다.
+                “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의
+                ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.
+                ‘매우’라는 뜻의 ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  甚
+                </span>
+                (심)’과 ‘깊다’라는 뜻의 ‘
+                <span className="font-haeseo text-[60px] leading-tight">
+                  深
+                </span>
+                (심)’이 결합된 단어로, ‘매우 깊다’는 의미이다. 따라서{" "}
+                <span className="font-haeseo text-[60px] leading-tight">
+                  眞心
+                </span>
+                (진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한
+                위로’ 와 같이 쓸 수 있다.
               </div>
             </div>
-
           </ContentContainer>
         </>
       )}
@@ -68,7 +77,7 @@ export default function Page() {
       )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

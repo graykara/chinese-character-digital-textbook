@@ -16,7 +16,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘8.png"
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘8.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -44,7 +44,8 @@ export default function Page() {
             text="국민이"
             width={220}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           주인임.
         </div>
       ),
@@ -62,7 +63,8 @@ export default function Page() {
             text="던짐"
             width={220}
             height={80}
-          />{"\xa0[냄]"}
+          />
+          {"\xa0[냄]"}
         </div>
       ),
     },
@@ -78,7 +80,8 @@ export default function Page() {
             text="말하는"
             width={220}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           사람
         </div>
       ),
@@ -112,7 +115,8 @@ export default function Page() {
             text="듣는"
             width={220}
             height={80}
-          />{"\xa0"}
+          />
+          {"\xa0"}
           사람.
         </div>
       ),
@@ -180,67 +184,79 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
-          <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-            <div className="absolute top-36 left-5">
-              { step === 1 || step === 2 ? (
-                <img src={IMAGE2.src} alt="society" />
-              ) : step === 3 || step === 4 || step === 5 ? (
-                <img src={IMAGE3.src} alt="language" />
-              ) : (
-                <img src={IMAGE4.src} alt="geography" />
-              )}
+        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
+          <div className="absolute top-36 left-5">
+            {step === 1 || step === 2 ? (
+              <img src={IMAGE2.src} alt="society" />
+            ) : step === 3 || step === 4 || step === 5 ? (
+              <img src={IMAGE3.src} alt="language" />
+            ) : (
+              <img src={IMAGE4.src} alt="geography" />
+            )}
+          </div>
+          <div className="relative mb-[230px]">
+            <div className="relative -mt-10 left-[300px] w-[550px] text-center text-[190px] tracking-widest">
+              <span className="font-haeseo">{data[step - 1]?.chinese}</span>
             </div>
-            <div className="relative mb-[230px]">
-              <div className="relative -mt-10 left-[300px] w-[550px] text-center text-[190px] tracking-widest">
-                <span className="font-haeseo">{data[step - 1]?.chinese}</span>
-              </div>
-              <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-[180px__700px] gap-10 -mt-14">
-                  <PillButton
-                    active={showReading}
-                    onClick={() => {
-                      if (!showReading) SOUND(data[step - 1].sound).play();
-                      setShowReading(!showReading);
-                    }}
-                    text="읽기"
-                    checkboxColor="#23425e"
-                    backgroundColor="#3a5e7c"
-                  />
-                  <div
-                    className={`text-center text-main-content text-[60px] h-[60px] -mt-4 ${showReading ? "animate__animated animate__slideInDown" : ""}`}
-                  >
-                    {showReading ? data[step - 1]?.reading : null}
-                  </div>
-                </div>
-                <div className="grid grid-cols-[180px__1fr] gap-10">
-                  <PillButton
-                    active={showMeaning}
-                    onClick={() => setShowMeaning(!showMeaning)}
-                    text="뜻"
-                    checkboxColor="#306875"
-                    backgroundColor="#4f9aab"
-                  />
-                  <div key={step}>
-                    <div>{data[step - 1]?.content ?? null}</div>
-                  </div>
+            <div className="flex flex-col gap-16">
+              <div className="grid grid-cols-[180px__700px] gap-10 -mt-14">
+                <PillButton
+                  active={showReading}
+                  onClick={() => {
+                    if (!showReading) SOUND(data[step - 1].sound).play();
+                    setShowReading(!showReading);
+                  }}
+                  text="읽기"
+                  checkboxColor="#23425e"
+                  backgroundColor="#3a5e7c"
+                />
+                <div
+                  className={`text-center text-main-content text-[60px] h-[60px] -mt-4 ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                >
+                  {showReading ? data[step - 1]?.reading : null}
                 </div>
               </div>
+              <div className="grid grid-cols-[180px__1fr] gap-10">
+                <PillButton
+                  active={showMeaning}
+                  onClick={() => setShowMeaning(!showMeaning)}
+                  text="뜻"
+                  checkboxColor="#306875"
+                  backgroundColor="#4f9aab"
+                />
+                <div key={step}>
+                  <div>{data[step - 1]?.content ?? null}</div>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
+          </div>
+          <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
-              { step === 1 || step === 2 ? (
-                <img src={IMAGE5.src} alt="figure1" className="absolute bottom-[60px] right-0" />
+              {step === 1 || step === 2 ? (
+                <img
+                  src={IMAGE5.src}
+                  alt="figure1"
+                  className="absolute bottom-[60px] right-0"
+                />
               ) : step === 3 || step === 4 || step === 5 ? (
-                <img src={IMAGE6.src} alt="figure2" className="absolute bottom-[60px] right-5" />
+                <img
+                  src={IMAGE6.src}
+                  alt="figure2"
+                  className="absolute bottom-[60px] right-5"
+                />
               ) : (
-                <img src={IMAGE7.src} alt="figure3" className="absolute bottom-[60px] right-5" />
+                <img
+                  src={IMAGE7.src}
+                  alt="figure3"
+                  className="absolute bottom-[60px] right-5"
+                />
               )}
             </div>
           </div>
-          </ContentContainer>
+        </ContentContainer>
         {/* )} */}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }

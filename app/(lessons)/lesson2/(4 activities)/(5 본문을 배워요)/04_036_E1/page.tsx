@@ -10,7 +10,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png" //7-12
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png"; //7-12
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -55,7 +55,8 @@ export default function Page() {
             text="수풀"
             width={210}
             height={80}
-          />{"\xa0\xa0"}’
+          />
+          {"\xa0\xa0"}’
         </div>
       ),
       equation: [
@@ -105,7 +106,8 @@ export default function Page() {
             text="쉬다"
             width={210}
             height={80}
-          />{"\xa0"}’
+          />
+          {"\xa0"}’
         </div>
       ),
       equation: [
@@ -155,7 +157,8 @@ export default function Page() {
             text="밝다"
             width={210}
             height={80}
-          />{"\xa0"}’
+          />
+          {"\xa0"}’
         </div>
       ),
       equation: [
@@ -197,7 +200,8 @@ export default function Page() {
             text="좋다"
             width={210}
             height={80}
-          />{"\xa0"}’
+          />
+          {"\xa0"}’
         </div>
       ),
       equation: [
@@ -240,7 +244,8 @@ export default function Page() {
             text="이름"
             width={204}
             height={80}
-          />{"\xa0\xa0"}’
+          />
+          {"\xa0\xa0"}’
         </div>
       ),
       equation: [
@@ -325,8 +330,10 @@ export default function Page() {
                       >
                         {data[step - 2]?.equation[0].chinese}
                       </div>
-                      <span className="text-[40px] ml-1 mt-2">{data[step - 2].equation[0].text}</span>
-                      <Plus size={45} color="gray" className="-ml-1"/>
+                      <span className="text-[40px] ml-1 mt-2">
+                        {data[step - 2].equation[0].text}
+                      </span>
+                      <Plus size={45} color="gray" className="-ml-1" />
                       <div
                         className="flex-none w-[100px] h-[100px] font-haeseo text-[70px] -mt-1 cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
                         onClick={() =>
@@ -335,8 +342,10 @@ export default function Page() {
                       >
                         {data[step - 2]?.equation[1].chinese}
                       </div>
-                      <span className="text-[40px] ml-1 mt-2">{data[step - 2].equation[1].text}</span>
-                      <MoveRight size={50} color="gray" className="-ml-1"/>
+                      <span className="text-[40px] ml-1 mt-2">
+                        {data[step - 2].equation[1].text}
+                      </span>
+                      <MoveRight size={50} color="gray" className="-ml-1" />
                       <div
                         className="font-haeseo text-[90px] ml-5 -mt-2 cursor-pointer"
                         onClick={() =>
@@ -345,9 +354,13 @@ export default function Page() {
                       >
                         {data[step - 2]?.equation[2].chinese}
                       </div>
-                      <span className="text-[40px] ml-0 mt-2">{data[step - 2].equation[2].text}</span>
+                      <span className="text-[40px] ml-0 mt-2">
+                        {data[step - 2].equation[2].text}
+                      </span>
                     </div>
-                    <div className="-ml-8 mt-5">{data[step - 2]?.content ?? null}</div>
+                    <div className="-ml-8 mt-5">
+                      {data[step - 2]?.content ?? null}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -355,7 +368,7 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
