@@ -6,7 +6,7 @@ import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
 import IMAGE from "./bg_1.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭4.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕4.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);

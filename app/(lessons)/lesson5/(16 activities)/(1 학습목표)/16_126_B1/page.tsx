@@ -2,7 +2,7 @@
 
 import { GoalPageTemplate } from "@/app/pages/goal/goal-page-template";
 import IMAGE from "./image.png";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭1.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕1.png";
 
 export default function Page() {
   return (
@@ -12,11 +12,11 @@ export default function Page() {
         goals={[
           {
             text: "글을 의미에 맞게 읽고 바르게 풀이할 수 있다.",
-            sound: "/sound/5/108_goal/1.mp3",
+            sound: "/sound/5/126_goal/1.mp3",
           },
           {
-            text: "신중한 언행으로 상대를 배려하는 선인들의 가르침을 본받아 바람직한 인성을 함양할 수 있다.",
-            sound: "/sound/5/108_goal/2.mp3",
+            text: "베풂과 나눔 정신을 보여준 선인들의 가르침을 본받아 바람직한 인성을 함양할 수 있다.",
+            sound: "/sound/5/126_goal/2.mp3",
           },
         ]}
       />

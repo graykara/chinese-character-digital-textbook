@@ -8,8 +8,8 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭19.png";
-import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭20.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕19.png";
+import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕20.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
