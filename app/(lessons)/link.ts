@@ -138,6 +138,10 @@ const navigation = [
   { path: "lesson4/12_103_J1", page: 101 },
   { path: "lesson4/12_104_K1", page: 101 }, // 4단원 마무리
 
+  { path: "lesson5/13_106_A1", page: 106 }, // 5단원 시작
+  { path: "lesson5/13_106_A2", page: 106 },
+  { path: "lesson5/13_106_A3", page: 106 },
+
   { path: "lesson5/13_108_B1", page: 108 }, // 13차시
   { path: "lesson5/13_108_C1", page: 108 },
   { path: "lesson5/13_109_D1", page: 109 },
