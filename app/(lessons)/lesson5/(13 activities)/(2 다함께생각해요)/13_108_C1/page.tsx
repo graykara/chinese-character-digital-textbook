@@ -9,8 +9,8 @@ import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭2.png"
-import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭3.png"
+import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭3.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -35,14 +35,19 @@ const Step1 = () => {
           video="/video/animation/5-13_108.mp4"
         />
       </ContentContainer>
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 };
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer = ["누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다."];
+  const answer = [
+    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
+  ];
 
   return (
     <>
@@ -62,14 +67,16 @@ const Step2 = () => {
             containerClassName="relative top-16"
           />
         </div>
-
       </ContentContainer>
 
       <ExampleAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 };

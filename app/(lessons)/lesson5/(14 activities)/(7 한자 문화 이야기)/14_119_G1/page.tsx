@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭22.png";
-import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭23.png";
+import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요20.png";
+import BACKGROUND2 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요21.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 
 export default function Page() {
@@ -47,14 +47,12 @@ export default function Page() {
                 isReading ? "text-reading" : ""
               }`}
             >
-              조선 초기의 문신 황희는 우의정, 좌의정, 영의정 등 최고의 벼슬을
-              두루 거쳤기에 황희 정승이라 불린다. 세종 때에는 무려 18년간
-              영의정으로 재임하였다.
+              우리나라를 비롯한 세계 여러 나라들은 동물의 복지·보호
               <br />
+              ·학대 방지를 위한 관련 법을 만들어 시행하고 있다.
               <br />
-              어느 눈 내리는 겨울날, 황희 정승의 단벌 관복의 솜을 뜯어내어
-              빨래하고 있는데 갑자기 입 하라는 소식이 왔다. 황희는 급히 얼기설기
-              솜을 꿰맨 관복을 입고 궁에 들어가게 되었다.
+              그리고 최근에는 동물의 건강이나 안전 및 습성 존중 등<br />
+              복지 요소를 강화하는 추세에 있다.
             </div>
           </div>
         )}

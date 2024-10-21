@@ -10,11 +10,19 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png"
+import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
 
 export default function Page() {
-  const answers1 = ["낮말은 새가 듣고 밤말은 쥐가 듣는다.", "일아무도 안 듣는데서라도 말조심을 해야한다."];
-  const answers2 = ["스토리보드 작성하기.", "필요한 역할 분담하기.", "각 장면을 내용에 맞게 촬영하기.", "영상 완성하여 발표하기."];
+  const answers1 = [
+    "낮말은 새가 듣고 밤말은 쥐가 듣는다.",
+    "일아무도 안 듣는데서라도 말조심을 해야한다.",
+  ];
+  const answers2 = [
+    "스토리보드 작성하기.",
+    "필요한 역할 분담하기.",
+    "각 장면을 내용에 맞게 촬영하기.",
+    "영상 완성하여 발표하기.",
+  ];
   const [showAnswer, setShowAnswer] = useState(false);
   // const [step, setStep] = useState(1);
 
@@ -22,22 +30,15 @@ export default function Page() {
   //   setShowAnswer(false);
   // }, [step]);
 
-
-
-
   return (
     <>
-
       <CreativityPageTemplate>
         <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader
-            title="말과 관련된 속담으로 짧은 영상 만들기"
-          ></CreativityTitleHeader>
+          <CreativityTitleHeader title="말과 관련된 속담으로 짧은 영상 만들기"></CreativityTitleHeader>
         </header>
       </CreativityPageTemplate>
 
       {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
-
 
       <TitleContainer className="ml-4 mt-4">
         <div className="flex items-center gap-4">
@@ -47,8 +48,8 @@ export default function Page() {
       </TitleContainer>
 
       <div className="absolute  ">
-            <img src={IMAGE.src} />
-          </div>
+        <img src={IMAGE.src} />
+      </div>
 
       <InputWithPen
         answer={answers1[0]}
@@ -84,7 +85,10 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

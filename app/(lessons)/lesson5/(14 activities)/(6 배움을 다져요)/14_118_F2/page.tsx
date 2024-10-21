@@ -7,14 +7,13 @@ import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭21.png"
+import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요21.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
   const asnwers = ["家畜", "同行", "劣惡"];
 
   return (
-
     <>
       <StrengthenLearningWordHeader
         title={
@@ -27,15 +26,16 @@ export default function Page() {
 
       <ContentContainer className="!justify-start -top-[50px] left-16">
         <img src={IMAGE1.src} />
-
-
       </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }
