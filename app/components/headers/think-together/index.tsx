@@ -16,7 +16,7 @@ export const ThinkTogetherHeader = ({
         </div>
 
         <ul className="list-disc marker:text-[#567c56] pl-3">
-          <li className="absolute top-[177px] left-[200px] text-[55px] leading-[62px] tracking-[-2.5px] max-w-[1300px] break-keep">
+          <li className="-mt-[40px] ml-[180px] text-[55px] leading-[62px] tracking-[-2.5px] max-w-[1300px] break-keep">
             {title}
           </li>
         </ul>

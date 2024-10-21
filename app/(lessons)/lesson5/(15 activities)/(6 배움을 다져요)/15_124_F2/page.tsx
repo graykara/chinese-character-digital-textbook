@@ -16,11 +16,7 @@ export default function Page() {
   return (
     <>
       <StrengthenLearningWordHeader
-        title={
-          <p className="-mr-20">
-            한자 카드를 결합하여 아래의 설명에 해당하는 단어를 만들어 보자.
-          </p>
-        }
+        title={"한자 카드를 참고하여 문장의 의미에 맞는 한자의 음을 써 보자."}
         sound=""
       />
 

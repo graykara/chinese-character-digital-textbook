@@ -1,16 +1,14 @@
 "use client";
 
-import IMAGE from "./bg_6.png";
-import IMAGE1 from "./bg_5.png";
-import IMAGE2 from "./bg_2.png";
+import IMAGE1 from "./image1.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
-import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살24.png";
+import { ContentContainer } from "@/app/components/content-container";
 
 export default function Page() {
   const answers1 = [
@@ -24,66 +22,27 @@ export default function Page() {
     "영상 완성하여 발표하기.",
   ];
   const [showAnswer, setShowAnswer] = useState(false);
-  // const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1);
 
-  // useEffect(() => {
-  //   setShowAnswer(false);
-  // }, [step]);
+  useEffect(() => {
+    setShowAnswer(false);
+  }, [step]);
 
   return (
     <>
       <CreativityPageTemplate>
-        <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="말과 관련된 속담으로 짧은 영상 만들기"></CreativityTitleHeader>
-        </header>
+        <TitleContainer className="ml-4 mt-4">
+          <div className="flex items-center gap-4">
+            <img src="/ui/flower-icon-2.png" />
+            질문에 답하며 자신의 공부 집중도를 확인해 보자.
+          </div>
+        </TitleContainer>
+        <ContentContainer>
+          <img src={IMAGE1.src} />
+        </ContentContainer>
       </CreativityPageTemplate>
 
-      {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
-
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
-          <img src="/ui/flower-icon-2.png" />
-          다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
-        </div>
-      </TitleContainer>
-
-      <div className="absolute  ">
-        <img src={IMAGE.src} />
-      </div>
-
-      <InputWithPen
-        answer={answers1[0]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[172px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers1[1]}
-        showAnswer={showAnswer}
-        className="text-example ext-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[317px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers2[2]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[463px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers2[3]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[608px] left-[280px]"
-      />
-
-      <ExampleAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
+      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
 
       <img
         src={BACKGROUND1.src}

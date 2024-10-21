@@ -1,8 +1,8 @@
 "use client";
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
-import IMAGE from "./image.png";
-import IMAGE2 from "./bg_3.png";
+import IMAGE1 from "./image1.png";
+import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
@@ -17,7 +17,15 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자." />
+      <ThinkTogetherHeader
+        title="빈칸에 들어갈 단어를 써 보고, 어떤 일에 집중했던 자신의 경험을 써 보자."
+        subTitle={
+          <p className="text-[40px] relative -left-10">
+            <span className="mr-4">*</span>
+            빈칸에 들어갈 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.
+          </p>
+        }
+      />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -30,10 +38,7 @@ const Step1 = () => {
   return (
     <>
       <ContentContainer>
-        <VideoThumbnail_big
-          thumbnail={IMAGE.src}
-          video="/video/animation/5-13_108.mp4"
-        />
+        <img src={IMAGE1.src} />
       </ContentContainer>
       <img
         src={BACKGROUND1.src}
