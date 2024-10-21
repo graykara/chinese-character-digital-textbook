@@ -5,36 +5,36 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
 import { Howl } from "howler";
-import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
-import IMAGE3 from "./image3.png";
+import QR from "./qr.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘19.png"
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘20.png"
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘19.png";
+import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘20.png";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
+import { CultureHeader } from "@/app/components/headers/culture-header";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   return (
     <>
-      <WordStoryHeader title={"단어의 짜임"} />
+      <CultureHeader title="정조의 인재 등용 산실, 규장각" />
 
-      <ContentContainer>
-        {step === 1 && <Step1 />}
-        {step === 2 && (
-          <div className="relative w-[1500px]">
+      {step === 1 && <Step1 />}
+      {step === 2 && (
+        <>
+          <img src={QR.src} className="absolute right-[80px] top-[80px]" />
+          <ContentContainer>
             <img src={IMAGE2.src} />
-          </div>
-        )}
-        {step === 3 && (
-          <div className="relative w-[1500px]">
-            <img src={IMAGE3.src} />
-          </div>
-        )}
-      </ContentContainer>
+          </ContentContainer>
+        </>
+      )}
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      {/* <img
+        src={BACKGROUND1.src}
+        className="absolute left-0 top-0 opacity-25 pointer-events-none"
+      /> */}
     </>
   );
 }
@@ -43,7 +43,7 @@ const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
 
   const sound = new Howl({
-    src: "/sound/2/53_story.mp3",
+    src: "/sound/4/101_story.mp3",
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
@@ -55,23 +55,41 @@ const Step1 = () => {
   }, []);
 
   return (
-    <div className="relative w-[1460px]">
-      <ReadingButton
-        className="absolute right-0 -top-[90px]"
+    <>
+      <SoundButton2
+        className="absolute left-[1050px] top-[110px]"
         active={isReading}
         onClick={() => sound.play()}
       />
-      <div
-        className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1.5px] break-keep ${
-          isReading ? "text-reading" : ""
-        }`}
-      >
-        둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다. 단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.
-      </div>
-
-      <div className="w-[1500px]">
-        <img src={IMAGE1.src} className="mt-10" />
-      </div>
-    </div>
+      <ContentContainer>
+        <div className="relative w-[1460px]">
+          <div
+            className={`bg-[#f4ede1] rounded-[50px] px-5 pt-6 pb-4 text-[45px] tracking-[-1.5px] break-keep ${
+              isReading ? "text-reading" : ""
+            }`}
+          >
+            규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문
+            연구소이다.
+            <br />
+            정조는 신분과 당파에 관계없이 문예와 학식이 뛰어난 이를 규장각
+            실무자로
+            <br />
+            선발하였는데, “천하에는 하나의 재능도 없는 사람은 없으니 만약 많은
+            사람을
+            <br />
+            모아 각각 그의 장점을 써서 재능을 서로 통용하게 한다면, 세상에는
+            버려진 사람이
+            <br />
+            없을 것이고 사람은 재능을 버리는 일이 없을 것이다.”라는 신념을
+            가지고 있었기
+            <br />
+            때문이다. 당시 서자라는 신분적 한계에도 규장각을 통해 재능을 펼친
+            학자로는
+            <br />
+            이덕무, 유득공, 박제가 등이 있다.
+          </div>
+        </div>
+      </ContentContainer>
+    </>
   );
 };
