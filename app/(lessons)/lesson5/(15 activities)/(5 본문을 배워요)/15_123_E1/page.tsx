@@ -8,7 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭14.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살14.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);

@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭22.png";
-import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭23.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살22.png";
+import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살23.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 
 export default function Page() {

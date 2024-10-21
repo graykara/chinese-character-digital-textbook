@@ -1,7 +1,7 @@
 "use client";
 
 import { UnderstandPageTemplate } from "@/app/pages/understand/understand-page-template";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭17.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살17.png";
 
 export default function Page() {
   return (

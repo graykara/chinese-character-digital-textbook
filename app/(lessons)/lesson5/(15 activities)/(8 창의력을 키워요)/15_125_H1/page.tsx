@@ -10,7 +10,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살24.png";
 
 export default function Page() {
   const answers1 = [

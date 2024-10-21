@@ -9,8 +9,8 @@ import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭2.png";
-import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭3.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살3.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
