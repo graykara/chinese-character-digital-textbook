@@ -6,14 +6,13 @@ import { ContentContainer } from "@/app/components/content-container";
 import { useState } from "react";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕2.png";
-import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕3.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
     <>
-      <ThinkTogetherHeader title="이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자." />
+      <ThinkTogetherHeader title="다양한 나눔의 사례를 보고 내가 생각하는 나눔과 내가 실천한 나눔의 사례를 적어 보자." />
 
       <Step1 />
 

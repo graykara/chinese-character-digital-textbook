@@ -17,9 +17,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={
-          <p className="-mr-20">
-            한자 카드를 결합하여 아래의 설명에 해당하는 단어를 만들어 보자.
-          </p>
+          " 주어진 풀이를 참고하여 ①~④에 알맞은 한자를 써 넣어 단어를 완성해 보자."
         }
         sound=""
       />

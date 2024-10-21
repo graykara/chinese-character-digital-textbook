@@ -9,6 +9,7 @@ import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕14.png";
+import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -25,76 +26,111 @@ export default function Page() {
 
   const data = [
     {
-      chinese: ["雖畜物", "이나\xa0", "其心與人同也", "라"],
-      reading:
-        "수\xa0\xa0\xa0축\xa0\xa0\xa0물\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0기\xa0\xa0\xa0심\xa0\xa0\xa0여\xa0\xa0\xa0인\xa0\xa0\xa0동\xa0\xa0\xa0야",
-      sound: "/sound/5/110/2.mp3",
+      chinese: [
+        { letter: "萬", reading: "만" },
+        { letter: "德", reading: "덕" },
+        { letter: "이", isKor: true },
+        { letter: "取", reading: "취" },
+        { letter: "十", reading: "십" },
+        { letter: "之", reading: "지" },
+        { letter: "一", reading: "일" },
+        { letter: "하여", isKor: true },
+        { letter: "以", reading: "이" },
+        { letter: "活", reading: "활" },
+        { letter: "親", reading: "친" },
+        { letter: "族", reading: "족" },
+        { letter: "하고", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px] -mr-20">
-          비록{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+          만덕이{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="가축"
+            text="십분의 일"
             width={170}
             height={80}
           />
-          &nbsp; 이라도 그 마음은
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="사람과"
-            width={200}
-            height={80}
-          />
-          &nbsp; 같습니다.
+          을 취하여 친족을 살리고,
         </div>
       ),
     },
     {
-      chinese: ["此勝則彼劣", "이니\xa0", "使牛聞之", "면"],
-      reading:
-        "차\xa0\xa0\xa0승\xa0\xa0\xa0즉\xa0\xa0\xa0피\xa0\xa0\xa0렬\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0사\xa0\xa0\xa0우\xa0\xa0\xa0문\xa0\xa0\xa0지",
-      sound: "/sound/5/110/3.mp3",
+      chinese: [
+        { letter: "其", reading: "기" },
+        { letter: "餘", reading: "여" },
+        { letter: "盡", reading: "진" },
+        { letter: "輸", reading: "수" },
+        { letter: "之", reading: "지" },
+        { letter: "官", reading: "관" },
+        { letter: "이라", isKor: true },
+      ],
+      sound: "/sound/5/116/2.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter -mt-4 leading-loose font-bold -mr-10">
-          {"이것(누런 소)이 "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 mt-2 inline-block"
-            text="나으면"
-            width={220}
-            height={80}
-          />
-          {"\xa0\xa0저것(검은 소)은"}
-          <FlippableCard
-            active={showMeaning}
-            className="mt-2 inline-block"
-            text="못한 것이니"
-            width={300}
-            height={80}
-          />
-          {"\xa0\xa0\xa0"}
-          소로 하여금 그것을 듣게 하면,
+        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+          나머지는 모두 관아로 실어 보냈다.
         </div>
       ),
     },
     {
-      chinese: ["寧無不平之心乎", "리오?"],
-      reading:
-        "영\xa0\xa0\xa0무\xa0\xa0\xa0불\xa0\xa0\xa0평\xa0\xa0\xa0지\xa0\xa0\xa0심\xa0\xa0\xa0호",
-      sound: "/sound/5/110/4.mp3",
+      chinese: [
+        { letter: "浮", reading: "부" },
+        { letter: "黃", reading: "황" },
+        { letter: "者", reading: "자" },
+        { letter: "가", isKor: true },
+        { letter: "聞", reading: "문" },
+        { letter: "之", reading: "지" },
+        { letter: "하고", isKor: true },
+        { letter: "集", reading: "집" },
+        { letter: "官", reading: "관" },
+        { letter: "庭", reading: "정" },
+        { letter: "如", reading: "여" },
+        { letter: "雲", reading: "운" },
+        { letter: "이라", isKor: true },
+      ],
+      sound: "/sound/5/116/3.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter -mt-4 leading-loose font-bold -mr-10">
-          어찌{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+          굶주려 병든 사람들이 그것을 듣고 관청의 뜰에{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 mt-2 inline-block"
-            text="불평"
+            className="mx-5 inline-block"
+            text="구름과 같이"
+            width={170}
+            height={80}
+          />{" "}
+          모여들었다.
+        </div>
+      ),
+    },
+    {
+      chinese: [
+        { letter: "男", reading: "남" },
+        { letter: "若", reading: "약" },
+        { letter: "女", reading: "여" },
+        { letter: "가", isKor: true },
+        { letter: "出", reading: "출" },
+        { letter: "而", reading: "이" },
+        { letter: "頌", reading: "송" },
+        { letter: "萬", reading: "만" },
+        { letter: "德", reading: "덕" },
+        { letter: "之", reading: "지" },
+        { letter: "恩", reading: "은" },
+        { letter: "하니라", isKor: true },
+      ],
+      sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
+      content: (
+        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+          남자와 여자들이 나와서{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="만덕의 은혜"
             width={170}
             height={80}
           />
-          &nbsp; 하는 마음이 없겠습니까?
+          를 칭송하였다.
         </div>
       ),
     },
@@ -103,57 +139,19 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={3} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
         <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
           <div className="absolute top-[228px] left-[150px]">
-            <div className="relative items-start left-[210px] w-[1100px]">
-              <span className="font-haeseo text-[100px] text-left">
-                {data[step - 1]?.chinese[0]}
-              </span>
-              <span className="text-[50px] text-left">
-                {data[step - 1]?.chinese[1]}
-              </span>
-              <span className="font-haeseo text-[100px] text-left">
-                {data[step - 1]?.chinese[2]}
-              </span>
-              <span className="text-[50px] text-left">
-                {data[step - 1]?.chinese[3]}
-              </span>
-            </div>
-            <div className="flex flex-col gap-16 mt-5">
-              <div className="grid grid-cols-[180px__1fr] gap-10">
-                <PillButton
-                  active={showReading}
-                  onClick={() => {
-                    if (!showReading) SOUND(data[step - 1].sound).play();
-                    setShowReading(!showReading);
-                  }}
-                  text="읽기"
-                  checkboxColor="#23425e"
-                  backgroundColor="#3a5e7c"
-                />
-                <div
-                  className={`text-main-content text-[60px] h-[60px] -mt-3 ml-5 tracking-wide ${showReading ? "animate__animated animate__slideInDown" : ""}`}
-                >
-                  {showReading ? data[step - 1]?.reading : null}
-                </div>
-              </div>
-              <div className="grid grid-cols-[180px__1100px] gap-10">
-                <PillButton
-                  active={showMeaning}
-                  onClick={() => setShowMeaning(!showMeaning)}
-                  text="풀이"
-                  checkboxColor="#306875"
-                  backgroundColor="#4f9aab"
-                />
-                <div key={step}>
-                  <div>{data[step - 1]?.content ?? null}</div>
-                </div>
-              </div>
-            </div>
+            <MainContentChineseAndReading
+              data={data[step - 1]}
+              showReading={showReading}
+              setShowReading={setShowReading}
+              showMeaning={showMeaning}
+              setShowMeaning={setShowMeaning}
+            />
           </div>
         </ContentContainer>
         {/* )} */}

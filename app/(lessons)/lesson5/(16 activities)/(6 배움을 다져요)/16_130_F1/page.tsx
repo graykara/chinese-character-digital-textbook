@@ -34,11 +34,7 @@ const Step1 = () => {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={
-          <p className="-mr-20">
-            본문 내용을 참고하여 황희와 농부의 이야기를 대본으로 완성해 보자.
-          </p>
-        }
+        title={"풀이에 맞도록 한자 카드를 배열하여 써 보자."}
         sound=""
       />
       <ContentContainer className="!justify-start -top-[90px] left-7">
@@ -66,11 +62,7 @@ const Step2 = () => {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={
-          <p className="-mr-20">
-            ‘나의 언어생활 점검표’를 작성하여 자신의 언어생활을 돌아보자.
-          </p>
-        }
+        title={"‘나눔’하면 연상되는 단어를 써서 의미망을 완성해 보자."}
         sound=""
       />
       <ContentContainer className="!justify-start -top-[50px] left-9">

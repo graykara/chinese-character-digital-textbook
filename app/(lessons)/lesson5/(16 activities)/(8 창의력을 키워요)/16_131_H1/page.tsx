@@ -1,8 +1,6 @@
 "use client";
 
-import IMAGE from "./bg_6.png";
-import IMAGE1 from "./bg_5.png";
-import IMAGE2 from "./bg_2.png";
+import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
@@ -11,6 +9,7 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
+import { ContentContainer } from "@/app/components/content-container";
 
 export default function Page() {
   const answers1 = [
@@ -34,8 +33,12 @@ export default function Page() {
     <>
       <CreativityPageTemplate>
         <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="말과 관련된 속담으로 짧은 영상 만들기"></CreativityTitleHeader>
+          <CreativityTitleHeader title="우리 반의 ‘선행왕’ 선정하기" />
         </header>
+
+        <ContentContainer className="!items-start">
+          <img src={IMAGE.src} />
+        </ContentContainer>
       </CreativityPageTemplate>
 
       {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
@@ -46,39 +49,6 @@ export default function Page() {
           다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
         </div>
       </TitleContainer>
-
-      <div className="absolute  ">
-        <img src={IMAGE.src} />
-      </div>
-
-      <InputWithPen
-        answer={answers1[0]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[172px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers1[1]}
-        showAnswer={showAnswer}
-        className="text-example ext-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[317px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers2[2]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[463px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers2[3]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[608px] left-[280px]"
-      />
 
       <ExampleAnswerButton
         active={showAnswer}

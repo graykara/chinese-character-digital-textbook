@@ -183,7 +183,6 @@ const navigation = [
   { path: "lesson5/16_129_E2", page: 129 },
   { path: "lesson5/16_130_F1", page: 130 },
   { path: "lesson5/16_130_F2", page: 130 },
-  { path: "lesson5/16_130_F3", page: 130 },
   { path: "lesson5/16_131_G1", page: 131 },
   { path: "lesson5/16_131_H1", page: 131 }, // 16차시 마무리
 
