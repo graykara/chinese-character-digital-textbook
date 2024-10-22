@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘28.png";
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘33.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);

@@ -16,7 +16,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘8.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글8.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);

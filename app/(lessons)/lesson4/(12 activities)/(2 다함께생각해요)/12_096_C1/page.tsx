@@ -10,8 +10,8 @@ import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘2.png";
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘3.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글3.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 
 export default function Page() {
@@ -40,7 +40,7 @@ const Step1 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

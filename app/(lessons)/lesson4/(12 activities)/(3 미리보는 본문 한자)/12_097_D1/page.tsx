@@ -9,7 +9,7 @@ import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import { StepContainer } from "@/app/components/step-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘4.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글4.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 
 export default function Page() {
