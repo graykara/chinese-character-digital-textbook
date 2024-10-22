@@ -102,7 +102,7 @@ export default function Page() {
       </ContentContainer>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

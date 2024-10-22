@@ -15,9 +15,10 @@ import TITLE from "./title.png";
 import ICON from "./image.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { useContext, useState } from "react";
-import { VideoThumbnail } from "@/app/components/video-thumbnail";
+import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { StepContainerArrow } from "@/app/components/step-container-arrow/step-container-arrow";
 import { PageInfoContext } from "@/app/utils/page-info";
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아20.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -71,20 +72,21 @@ export default function Page() {
       </HeaderContainer>
 
       <ContentContainer>
-        <div className="relative">
-          <div className="relative -left-[120px] mb-20">
-            <img src={TITLE.src} alt="title" className="mb-4" />
-            <img src={ICON.src} alt="icon" className="absolute" />
+          <div className="absolute left-[130px] top-9">
+            <img src={TITLE.src} alt="title" className="" />
+            <img src={ICON.src} alt="icon" className="pt-2" />
           </div>
+          <div className="absolute left-[250px] top-[250px]">
           {data
             .filter((_, index) => index + 1 === step)
             .map(({ image, video }) => (
-              <VideoThumbnail key={image} thumbnail={image} video={video} />
+              <VideoThumbnail_big key={image} thumbnail={image} video={video} width={1030} height={560}/>
             ))}
-        </div>
+          </div>
       </ContentContainer>
 
-      <StepContainerArrow maxStep={9} step={step} onStepChange={setStep} />
+      <StepContainerArrow maxStep={9} step={step} onStepChange={setStep} className="absolute w-full bottom-[5px] mb-7"/>
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

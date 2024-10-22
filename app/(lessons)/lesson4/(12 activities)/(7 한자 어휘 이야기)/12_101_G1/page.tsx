@@ -9,7 +9,6 @@ import IMAGE2 from "./image2.png";
 import QR from "./qr.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘19.png";
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘20.png";
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 
@@ -90,6 +89,7 @@ const Step1 = () => {
           </div>
         </div>
       </ContentContainer>
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

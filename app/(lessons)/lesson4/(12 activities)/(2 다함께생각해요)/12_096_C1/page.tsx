@@ -60,7 +60,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

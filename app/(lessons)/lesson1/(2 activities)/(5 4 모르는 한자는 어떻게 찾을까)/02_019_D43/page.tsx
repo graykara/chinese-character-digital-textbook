@@ -7,18 +7,36 @@ import IMAGE2 from "./image2.png";
 import TITLE from "./title.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
-import { ReadingButton } from "@/app/components/buttons/reading-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { StepContainer } from "@/app/components/step-container";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("모르는 한자는 어떻게 찾을까?");
 
   const [step, setStep] = useState(1);
+
+  const [isReading, setIsReading] = useState(false);
+
+  const sound = new Howl({
+    src: "/sound/1/19-2.mp3",
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+  useEffect(() => {
+    sound.stop();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      sound.stop();
+    };
+  }, []);
 
   const [showAnswer, setShowAnswer] = useState(false);
   const answers = ["휴", "바다", "언", "말씀"];
@@ -32,34 +50,46 @@ export default function Page() {
 
       <AdditionalDataButton
         className="absolute top-12 right-[100px]"
-        onClick={() => {}}
+        onClick={() => { }}
       />
 
-      <ContentContainer className="!justify-start !items-start pt-10">
-        <div className="relative w-full">
-          <img src={TITLE.src} className="relative -ml-5 -mt-1" />
-          {step === 1 ? (
-            <div className="absolute right-0 top-1/2 -translate-y-1/2">
-              <ReadingButton active={false} onClick={() => {}} />
-            </div>
-          ) : null}
+      <ContentContainer className="!justify-start pt-[45px] ml-[175px]">
+        <div className="relative w-full mb-10">
+          <img src={TITLE.src} alt="title" className="-ml-5" />
+          <SoundButton2
+            active={isReading}
+            onClick={() => sound.play()}
+            className="absolute top-1/2 -translate-y-1/2 left-[400px]"
+          />
         </div>
-        <p className="relative w-full my-5">
+        <p className="w-[1500px] left-0 -mt-5 text-[50px] tracking-tighter leading-[68px] break-keep">
           디지털 사전의 검색창을 이용하여 한자를 손쉽게 검색할 수 있다.
-          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+          <div className="absolute right-[150px] top-16">
             {step === 2 ? (
               <SmartButton link="https://hanja.dict.naver.com" />
             ) : null}
           </div>
         </p>
         {step === 1 ? (
-          <div className="w-full flex justify-center mt-10">
+          <div className="w-full flex justify-center mt-[110px] -ml-14">
             <img src={IMAGE.src} />
           </div>
         ) : (
-          <div className="w-full flex justify-center mt-10">
+          <div className="w-full flex justify-center mt-[45px] -ml-[110px]">
             <div className="relative">
               <img src={IMAGE2.src} />
+
+              {!values[0] && !showAnswer ? (
+              <img
+                src="/ui/textarea-pen.png"
+                className="absolute pointer-events-none"
+                style={{
+                  height: 48,
+                  top: 295,
+                  left: 125
+                }}
+              />
+            ) : null}
               <input
                 value={showAnswer ? answers[0] : values[0]}
                 onChange={(e) =>
@@ -69,10 +99,20 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[120px] bottom-[28px] w-[100px] bg-transparent text-center ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[120px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
+              {!values[1] && !showAnswer ? (
+              <img
+                src="/ui/textarea-pen.png"
+                className="absolute pointer-events-none"
+                style={{
+                  height: 48,
+                  top: 295,
+                  left: 805
+                }}
+              />
+            ) : null}
               <input
                 value={showAnswer ? answers[1] : values[1]}
                 onChange={(e) =>
@@ -82,10 +122,20 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[770px] bottom-[28px] w-[100px] bg-transparent text-center ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[800px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
+              {!values[2] && !showAnswer ? (
+              <img
+                src="/ui/textarea-pen.png"
+                className="absolute pointer-events-none"
+                style={{
+                  height: 48,
+                  top: 295,
+                  left: 1115
+                }}
+              />
+            ) : null}
               <input
                 value={showAnswer ? answers[2] : values[2]}
                 onChange={(e) =>
@@ -95,10 +145,20 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1070px] bottom-[28px] w-[100px] bg-transparent text-center ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[1110px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
+              {!values[3] && !showAnswer ? (
+              <img
+                src="/ui/textarea-pen.png"
+                className="absolute pointer-events-none"
+                style={{
+                  height: 48,
+                  top: 295,
+                  left: 1295
+                }}
+              />
+            ) : null}
               <input
                 value={showAnswer ? answers[3] : values[3]}
                 onChange={(e) =>
@@ -108,9 +168,8 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1245px] bottom-[28px] w-[100px] bg-transparent text-center ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[1290px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
             </div>
           </div>
@@ -125,6 +184,8 @@ export default function Page() {
           onClick={() => setShowAnswer(!showAnswer)}
         />
       ) : null}
+
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

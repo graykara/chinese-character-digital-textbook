@@ -7,6 +7,7 @@ import { CreativityTitleHeader } from "@/app/components/headers/creativity-title
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘19.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -45,6 +46,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
