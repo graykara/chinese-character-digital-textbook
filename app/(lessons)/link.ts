@@ -118,7 +118,6 @@ const navigation = [
   { path: "lesson3/10_082_F2", page: 82 },
   { path: "lesson3/10_082_F3", page: 82 },
   { path: "lesson3/10_083_G1", page: 83 },
-  { path: "lesson3/10_083_H1", page: 83 },
   { path: "lesson3/10_083_H1", page: 83 }, // 3단원 마무리
 
   { path: "lesson4/11_088_A1", page: 88 }, // 4단원
