@@ -1,7 +1,7 @@
 "use client";
 
 import { UnderstandPageTemplate } from "@/app/pages/understand/understand-page-template";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕17.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕20.png";
 
 export default function Page() {
   return (

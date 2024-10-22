@@ -7,7 +7,7 @@ import { useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리28.png";
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
 
 export default function Page() {

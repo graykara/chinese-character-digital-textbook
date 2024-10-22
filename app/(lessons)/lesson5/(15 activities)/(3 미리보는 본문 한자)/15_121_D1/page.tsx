@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살4.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살5.png";
 import { StepContainer } from "@/app/components/step-container";
 
 export default function Page() {

@@ -5,8 +5,8 @@ import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
 import { useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘23.png";
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘24.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글34.png";
+import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글35.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -20,7 +20,7 @@ export default function Page() {
         </div>
       </SummaryPageTemplate>
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

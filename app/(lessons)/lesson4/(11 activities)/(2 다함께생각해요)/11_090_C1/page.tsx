@@ -11,8 +11,8 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { Textarea } from "@/app/components/textarea";
 import { SmartButton } from "@/app/components/buttons/smart-button";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘2.png";
-import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘3.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리2.png";
+import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리3.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 
 export default function Page() {

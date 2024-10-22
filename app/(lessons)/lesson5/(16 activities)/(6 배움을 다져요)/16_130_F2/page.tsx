@@ -7,7 +7,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕21.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);

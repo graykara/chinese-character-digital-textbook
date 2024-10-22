@@ -15,7 +15,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘18.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글26.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
