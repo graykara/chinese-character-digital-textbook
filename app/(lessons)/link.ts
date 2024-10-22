@@ -101,6 +101,14 @@ const navigation = [
   { path: "lesson3/08_071_G1", page: 71 },
   { path: "lesson3/08_071_H1", page: 71 },
   { path: "lesson3/09_072_B1", page: 72 }, // 9차시
+  { path: "lesson3/09_072_C1", page: 72 },
+  { path: "lesson3/09_073_D1", page: 72 },
+  { path: "lesson3/09_074_L1", page: 72 },
+  { path: "lesson3/09_074_E1", page: 72 },
+  { path: "lesson3/09_076_F1", page: 72 },
+  { path: "lesson3/09_076_F2", page: 72 },
+  { path: "lesson3/09_077_G1", page: 72 },
+  { path: "lesson3/09_077_H1", page: 72 },
   { path: "lesson3/10_078_B1", page: 78 }, // 10차시
   { path: "lesson3/10_078_C1", page: 78 },
   { path: "lesson3/10_079_D1", page: 79 },
