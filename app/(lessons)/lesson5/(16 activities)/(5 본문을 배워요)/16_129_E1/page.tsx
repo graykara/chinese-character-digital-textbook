@@ -1,14 +1,13 @@
 "use client";
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕6.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕16.png"; //6~9~12~16
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -31,9 +30,11 @@ export default function Page() {
         { letter: "德", reading: "덕" },
         { letter: "이", isKor: true },
         { letter: "取", reading: "취" },
+        { letter: "十", reading: "십" },
         {
-          letter: ["十","之","一"],
-          reading: ["십","지","일"],
+          letter: "之",
+          // reading: "십\xa0\xa0\xa0지\xa0\xa0\xa0일",
+          reading: "지",
           additional: (
             <>
               <span
@@ -46,6 +47,7 @@ export default function Page() {
             </>
           ),
         },
+        { letter: "一", reading: "일" },
         { letter: "하여", isKor: true },
         { letter: "以", reading: "이" },
         {
@@ -69,13 +71,13 @@ export default function Page() {
       ],
       sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           만덕이{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-5 mr-7 inline-block"
             text="십분의 일"
-            width={280}
+            width={270}
             height={80}
           />
           을 취하여 친족을 살리고,
@@ -122,7 +124,7 @@ export default function Page() {
       ],
       sound: "/sound/5/116/2.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           나머지는 모두 관아로 실어 보냈다.
         </div>
       ),
@@ -130,20 +132,18 @@ export default function Page() {
     {
       chinese: [
         {
-          letter: ["浮","黃"],
-          reading: ["부","황"],
+          letter: "浮",
+          reading: "부",
           additional: (
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word004.mp3").play()}
                 className="font-haeseo cursor-pointer"
-              >
-                浮黃
-              </span>
-              : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
+              >浮黃</span> : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
             </>
           ),
         },
+        { letter: "黃", reading: "황" },
         { letter: "者", reading: "자" },
         { letter: "가", isKor: true },
         { letter: "聞", reading: "문" },
@@ -186,13 +186,13 @@ export default function Page() {
       ],
       sound: "/sound/5/116/3.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          굶주려 병든 사람들이 그것을 듣고 관청의 뜰에{" "}
+        <div className="flex flex-wrap text-[50px] tracking-normal leading-[95px] -mt-[10px] font-bold mr-20">
+          굶주려 병든 사람들이 그것을 듣고 관청의 뜰에
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-0 mr-6 inline-block"
             text="구름과 같이"
-            width={320}
+            width={310}
             height={80}
           />{" "}
           모여들었다.
@@ -258,13 +258,13 @@ export default function Page() {
       ],
       sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          남자와 여자들이 나와서{" "}
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
+          남자와 여자들이 나와서
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-5 mr-6 inline-block"
             text="만덕의 은혜"
-            width={320}
+            width={310}
             height={80}
           />
           를 칭송하였다.
@@ -280,8 +280,8 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-          <div className="absolute top-[228px] left-[150px]">
+        <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
+          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
             <MainContentChineseAndReading
               data={data[step - 1]}
               showReading={showReading}

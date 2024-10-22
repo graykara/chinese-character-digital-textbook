@@ -8,7 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png"; //7~11~12~15
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -42,21 +42,21 @@ export default function Page() {
       ],
       sound: "/sound/5/116/1.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
           풀 속의{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-4 mr-5 inline-block"
             text="돌"
-            width={170}
+            width={130}
             height={80}
           />
           을 보고{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-5 mr-6 inline-block"
             text="호랑이"
-            width={170}
+            width={210}
             height={80}
           />
           라고 여겨 그것을 쏘니,
@@ -79,11 +79,11 @@ export default function Page() {
       ],
       sound: "/sound/5/116/2.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold mr-10">
           돌에 적중하여{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-3 mr-6 inline-block"
             text="화살"
             width={170}
             height={80}
@@ -93,7 +93,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="돌"
-            width={170}
+            width={130}
             height={80}
           />
           이었다.
@@ -179,11 +179,11 @@ export default function Page() {
       ],
       sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           끝내{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="ml-4 mr-6 inline-block"
             text="다시"
             width={170}
             height={80}
@@ -201,8 +201,8 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-          <div className="absolute top-[228px] left-[150px]">
+        <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
+          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
             <MainContentChineseAndReading
               data={data[step - 1]}
               showReading={showReading}

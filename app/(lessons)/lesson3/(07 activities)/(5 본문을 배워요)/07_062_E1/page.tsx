@@ -1,15 +1,14 @@
 "use client";
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
-import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
+// import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
+// import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png"
 
 export default function Page() {
@@ -190,6 +189,12 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
+
+{/* <AdditionalDataButton
+        className="absolute top-[150px] right-[150px]"
+        onClick={() => {}}
+      /> */}
+
           <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr]">
             <div className="relative">
               <div className="relative left-[220px] w-[750px] text-center text-[160px]">
@@ -243,7 +248,7 @@ export default function Page() {
               </div>
             </div>
           </ContentContainer>
-        )}
+
       </LearnMainContentPageTemplate>
       <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>

@@ -1,222 +1,536 @@
 "use client";
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import IMAGE2 from "./bg_2.png";
-import IMAGE3 from "./bg_3.png";
-import IMAGE4 from "./bg_4.png";
-import IMAGE5 from "./bg_5.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
-import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리5.png";
+import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png"; //5~9~15~22~24
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
-  const [showReading2, setShowReading2] = useState(false);
-  const [showMeaning2, setShowMeaning2] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    setShowReading2(false);
-    setShowMeaning2(false);
   }, [step]);
 
   const data = [
     {
-      //left part
-      chinese: "問安",
-      reading: "문 안",
-      sound: "/sound/2/44/1.mp3",
+      chinese: [
+        { letter: "去", reading: "인", className: "text-[120px] leading-[155px]"},
+        { letter: "言", reading: "시", className: "text-[120px] leading-[155px]" },
+        { letter: "美", reading: "물", className: "text-[120px] leading-[155px]" },
+        {
+          letter: "라야",
+          isKor: true,
+          className: "mr-5",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        {
+          letter: "來",
+          reading: "이",
+          className: "text-[120px] leading-[155px]",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        { letter: "言", reading: "귀", className: "text-[120px] leading-[155px]" },    
+        { letter: "美", reading: "물", className: "text-[120px] leading-[155px]" },
+        { letter: "니라.", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          안부를{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          사람으로서 만물을 보면{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="물음."
-            width={220}
+            text="사람"
+            width={165}
             height={80}
           />
-        </div>
-      ),
-    },
-    {
-      //right part
-      sound: "/sound/2/44/2.mp3",
-      chinese: "無難",
-      reading: "무 난",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          어려움이{" "}
-          <FlippableCard
-            active={showMeaning2}
-            className="mx-5 inline-block"
-            text="없음."
-            width={220}
-            height={80}
-          />
-        </div>
-      ),
-      resource: IMAGE2.src,
-    },
-    {
-      //left part
-      chinese: "今日",
-      reading: "금 일",
-      sound: "/sound/2/44/3.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[70px]">
-          지금 지나가고
-          <br />
-          있는 이날.
-        </div>
-      ),
-    },
-    {
-      //right part
-      sound: "/sound/2/44/4.mp3",
-      chinese: "休業",
-      reading: "휴 업",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          일을{" "}
-          <FlippableCard
-            active={showMeaning2}
-            className="mx-5 inline-block"
-            text="쉼."
-            width={220}
-            height={80}
-          />
-        </div>
-      ),
-      resource: IMAGE3.src,
-    },
-    {
-      //left part
-      chinese: "植樹",
-      reading: "식 수",
-      sound: "/sound/2/44/5.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          나무를{" "}
+          이 귀하고{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="심음."
-            width={220}
+            text="만물"
+            width={165}
             height={80}
           />
+          천하며
         </div>
       ),
     },
     {
-      //right part
-      sound: "/sound/2/44/6.mp3",
-      chinese: "食水",
-      reading: "식 수",
+      chinese: [ 
+        {
+          letter: "己",
+          reading: "기",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        {
+          letter: "所",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        { letter: "不", reading: "시", },
+        { letter: "欲", reading: "물", },
+        { letter: "을", isKor: true, className: "mr-5" },
+        {
+          letter: "勿",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),//己所不欲을 勿施於人하라.
+        },   
+        { letter: "施", reading: "물" },
+        {
+          letter: "於",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        {
+          letter: "人",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        { letter: "하라.", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          먹는{" "}
-          <FlippableCard
-            active={showMeaning2}
-            className="mx-5 inline-block"
-            text="물."
-            width={220}
-            height={80}
-          />
-        </div>
-      ),
-      resource: IMAGE4.src,
-    },
-    {
-      //left part
-      chinese: "義士",
-      reading: "의 사",
-      sound: "/sound/2/44/7.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
-          의로운{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          사람으로서 만물을 보면{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람."
-            width={220}
+            text="사람"
+            width={165}
             height={80}
           />
+          이 귀하고{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="만물"
+            width={165}
+            height={80}
+          />
+          천하며
         </div>
       ),
     },
     {
-      //right part
-      sound: "/sound/2/44/8.mp3",
-      chinese: "意思",
-      reading: "의 사",
+      chinese: [ 
+        {
+          letter: "己",
+          reading: "기",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        {
+          letter: "所",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        { letter: "不", reading: "시", },
+        { letter: "欲", reading: "물", },
+        { letter: "을", isKor: true, className: "mr-5" },
+        {
+          letter: "勿",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),//己所不欲을 勿施於人하라.
+        },   
+        { letter: "施", reading: "물" },
+        {
+          letter: "於",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        {
+          letter: "人",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        { letter: "하라.", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          뜻과{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          사람으로서 만물을 보면{" "}
           <FlippableCard
-            active={showMeaning2}
+            active={showMeaning}
             className="mx-5 inline-block"
-            text="생각."
-            width={220}
+            text="사람"
+            width={165}
             height={80}
           />
-          무엇을 하고자 하는 생각.
+          이 귀하고{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="만물"
+            width={165}
+            height={80}
+          />
+          천하며
         </div>
       ),
-      resource: IMAGE5.src,
+    },
+    {
+      chinese: [ 
+        {
+          letter: "己",
+          reading: "기",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        {
+          letter: "所",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        { letter: "不", reading: "시", },
+        { letter: "欲", reading: "물", },
+        { letter: "을", isKor: true, className: "mr-5" },
+        {
+          letter: "勿",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),//己所不欲을 勿施於人하라.
+        },   
+        { letter: "施", reading: "물" },
+        {
+          letter: "於",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        {
+          letter: "人",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        { letter: "하라.", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3",
+      content: (
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          사람으로서 만물을 보면{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="사람"
+            width={165}
+            height={80}
+          />
+          이 귀하고{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="만물"
+            width={165}
+            height={80}
+          />
+          천하며
+        </div>
+      ),
+    },
+    {
+      chinese: [ 
+        {
+          letter: "己",
+          reading: "기",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        {
+          letter: "所",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        },
+        { letter: "不", reading: "시", },
+        { letter: "欲", reading: "물", },
+        { letter: "을", isKor: true, className: "mr-5" },
+        {
+          letter: "勿",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),//己所不欲을 勿施於人하라.
+        },   
+        { letter: "施", reading: "물" },
+        {
+          letter: "於",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        {
+          letter: "人",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : 그리고
+            </p>
+          ),
+        }, 
+        { letter: "하라.", isKor: true },
+      ],
+      sound: "/sound/5/116/1.mp3",
+      content: (
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          사람으로서 만물을 보면{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="사람"
+            width={165}
+            height={80}
+          />
+          이 귀하고{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="만물"
+            width={165}
+            height={80}
+          />
+          천하며
+        </div>
+      ),
     },
   ];
 
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
-          <div className="relative mb-[260px]">
-            <div className="relative top-7 left-[135px] w-[550px] text-center text-[180px] tracking-widest">
-              <span className="font-haeseo">{data[step]?.chinese}</span>
-            </div>
-            <div className="flex flex-col gap-16">
-              <div className="grid grid-cols-[180px__1fr] gap-12">
-                <PillButton
-                  active={showReading}
-                  onClick={() => {
-                    if (!showReading) SOUND(data[step].sound).play();
-                    setShowReading(!showReading);
-                  }}
-                  text="읽기"
-                  checkboxColor="#23425e"
-                  backgroundColor="#3a5e7c"
-                />
-                <div
-                  className={` text-main-content text-[55px] h-[55px] tracking-widest ${showReading ? "animate__animated animate__slideInDown" : ""}`}
-                >
-                  {showReading ? data[step]?.reading : null}
-                </div>
-              </div>
-              <div className="grid grid-cols-[180px__1fr] gap-12 bg-transparent">
-                <PillButton
-                  active={showMeaning}
-                  onClick={() => setShowMeaning(!showMeaning)}
-                  text="풀이"
-                  checkboxColor="#306875"
-                  backgroundColor="#4f9aab"
-                />
-                <div key={step}>{data[step]?.content ?? null}</div>
-              </div>
-            </div>
+        <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+        {/* {step === 1 ? (
+          <img src={IMAGE1.src} alt="image1" />
+        ) : ( */}
+        <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
+          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
+            <MainContentChineseAndReading
+              data={data[step - 1]}
+              showReading={showReading}
+              setShowReading={setShowReading}
+              showMeaning={showMeaning}
+              setShowMeaning={setShowMeaning}
+            />
           </div>
         </ContentContainer>
+        {/* )} */}
       </LearnMainContentPageTemplate>
       <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
