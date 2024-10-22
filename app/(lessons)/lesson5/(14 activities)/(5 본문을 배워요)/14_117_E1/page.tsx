@@ -8,7 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요14.png";
+import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요9.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -33,8 +33,8 @@ export default function Page() {
           additional: (
             <>
               <span
-                onClick={() => SOUND("/sound/5/117_001.mp3").play()}
-                className="font-haeseo"
+                onClick={() => SOUND("/sound/5/p117_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
               >
                 以
               </span>
@@ -54,8 +54,8 @@ export default function Page() {
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/117_002.mp3").play()}
-                className="font-haeseo"
+                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
               >
                 而
               </span>
@@ -190,7 +190,7 @@ export default function Page() {
         </ContentContainer>
         {/* )} */}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

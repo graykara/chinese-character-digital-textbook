@@ -8,7 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕14.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕6.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -31,17 +31,43 @@ export default function Page() {
         { letter: "德", reading: "덕" },
         { letter: "이", isKor: true },
         { letter: "取", reading: "취" },
-        { letter: "十", reading: "십" },
-        { letter: "之", reading: "지" },
-        { letter: "一", reading: "일" },
+        {
+          letter: ["十","之","一"],
+          reading: ["십","지","일"],
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                十之一
+              </span>
+              : 열의 하나 → 1/10
+            </>
+          ),
+        },
         { letter: "하여", isKor: true },
         { letter: "以", reading: "이" },
-        { letter: "活", reading: "활" },
+        {
+          letter: "活",
+          reading: "활",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                活
+              </span>
+              : 살리다
+            </p>
+          ),
+        },
         { letter: "親", reading: "친" },
         { letter: "族", reading: "족" },
         { letter: "하고", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           만덕이{" "}
@@ -49,7 +75,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="십분의 일"
-            width={170}
+            width={280}
             height={80}
           />
           을 취하여 친족을 살리고,
@@ -59,8 +85,36 @@ export default function Page() {
     {
       chinese: [
         { letter: "其", reading: "기" },
-        { letter: "餘", reading: "여" },
-        { letter: "盡", reading: "진" },
+        {
+          letter: "餘",
+          reading: "여",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                餘
+              </span>
+              : 나머지
+            </>
+          ),
+        },
+        {
+          letter: "盡",
+          reading: "진",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word003.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                盡
+              </span>
+              : 모두
+            </p>
+          ),
+        },
         { letter: "輸", reading: "수" },
         { letter: "之", reading: "지" },
         { letter: "官", reading: "관" },
@@ -75,17 +129,58 @@ export default function Page() {
     },
     {
       chinese: [
-        { letter: "浮", reading: "부" },
-        { letter: "黃", reading: "황" },
+        {
+          letter: ["浮","黃"],
+          reading: ["부","황"],
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word004.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                浮黃
+              </span>
+              : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
+            </>
+          ),
+        },
         { letter: "者", reading: "자" },
         { letter: "가", isKor: true },
         { letter: "聞", reading: "문" },
-        { letter: "之", reading: "지" },
+        {
+          letter: "之",
+          reading: "지",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word005.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                之
+              </span>
+              : 그것
+            </p>
+          ),
+        },
         { letter: "하고", isKor: true },
         { letter: "集", reading: "집" },
         { letter: "官", reading: "관" },
         { letter: "庭", reading: "정" },
-        { letter: "如", reading: "여" },
+        {
+          letter: "如",
+          reading: "여",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word006.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                如
+              </span>
+              : 같다
+            </p>
+          ),
+        },
         { letter: "雲", reading: "운" },
         { letter: "이라", isKor: true },
       ],
@@ -97,7 +192,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="구름과 같이"
-            width={170}
+            width={320}
             height={80}
           />{" "}
           모여들었다.
@@ -107,12 +202,54 @@ export default function Page() {
     {
       chinese: [
         { letter: "男", reading: "남" },
-        { letter: "若", reading: "약" },
+        {
+          letter: "若",
+          reading: "약",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word007.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                若
+              </span>
+              : ① 같다, ② ~와/과
+            </>
+          ),
+        },
         { letter: "女", reading: "여" },
         { letter: "가", isKor: true },
         { letter: "出", reading: "출" },
-        { letter: "而", reading: "이" },
-        { letter: "頌", reading: "송" },
+        {
+          letter: "而",
+          reading: "이",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word008.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                而
+              </span>
+              : ~해서
+            </p>
+          ),
+        },
+        {
+          letter: "頌",
+          reading: "송",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p129_word009.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                頌
+              </span>
+              : 기리다, 칭송하다
+            </p>
+          ),
+        },
         { letter: "萬", reading: "만" },
         { letter: "德", reading: "덕" },
         { letter: "之", reading: "지" },
@@ -127,7 +264,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="만덕의 은혜"
-            width={170}
+            width={320}
             height={80}
           />
           를 칭송하였다.
@@ -156,7 +293,7 @@ export default function Page() {
         </ContentContainer>
         {/* )} */}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

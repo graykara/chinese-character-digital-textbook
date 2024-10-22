@@ -60,61 +60,90 @@ export default function Page() {
               <div className="rounded-full bg-[#f9e7b8] tracking-normal text-[35px] w-[180px] text-center py-1">
                 틀린 말
               </div>
-              {!value && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 55,
-                  top: 110,
-                  left: 60
-                }}
-              />
-            ) : null}
+              {!value.text1 && !showAnswer ? (
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 55,
+                    top: 110,
+                    left: 120
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answer.answer1 : value.text1}
                 onChange={(e) =>
                   setValue({ ...value, text1: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
-                  showAnswer ? "text-red-500" : ""
-                }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                  }`}
               />
+              {!value.text2 && !showAnswer ? (
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 55,
+                    top: 220,
+                    left: 120
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answer.answer2 : value.text2}
                 onChange={(e) =>
                   setValue({ ...value, text2: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
-                  showAnswer ? "text-red-500" : ""
-                }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                  }`}
               />
             </div>
             <div className="mx-5 relative w-[30px] h-full">
               <p className="text-[40px] absolute top-[110px]">⇒</p>
-              <p className="text-[40px] absolute top-[210px]">⇒</p>
+              <p className="text-[40px] absolute top-[220px]">⇒</p>
             </div>
             <div className="flex flex-col items-center gap-5">
               <div className="rounded-full bg-[#c2e6ec] tracking-normal text-[35px] w-[180px] text-center py-1">
                 바른 말
               </div>
+              {!value.text3 && !showAnswer ? (
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 55,
+                    top: 110,
+                    left: 510
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answer.answer3 : value.text3}
                 onChange={(e) =>
                   setValue({ ...value, text3: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
-                  showAnswer ? "text-red-500" : ""
-                }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                  }`}
               />
+              {!value.text4 && !showAnswer ? (
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 55,
+                    top: 220,
+                    left: 510
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answer.answer4 : value.text4}
                 onChange={(e) =>
                   setValue({ ...value, text4: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
-                  showAnswer ? "text-red-500" : ""
-                }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                  }`}
               />
             </div>
           </div>
@@ -125,7 +154,7 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리29.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -35,6 +35,7 @@ export default function Page() {
       </ContentContainer>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

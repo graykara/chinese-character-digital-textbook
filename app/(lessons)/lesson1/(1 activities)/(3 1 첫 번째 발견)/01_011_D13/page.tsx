@@ -13,7 +13,7 @@ import { GroupButton } from "@/app/components/buttons/group-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어6.png"
 
-export default function Page13_2() {
+export default function Page() {
   const answer =
     "책상, 의자, 공책, 연필, 필통, 칠판, 창문, 시계,게시판, 휴지통";
   const [value, setValue] = useState("");
@@ -33,8 +33,7 @@ export default function Page13_2() {
       <ExerciseHeader
         text={
           <>
-            우리 교실 안에 있는 물건 중 이름이 한자어인 것을 10개 이상 찾아
-            써보자.
+            우리 교실 안에 있는 물건 중 이름이 한자어인 것을 10개 이상 찾아 써보자.
             <img src={TEXT.src} className="mt-2" />
           </>
         }
@@ -64,7 +63,7 @@ export default function Page13_2() {
             <textarea
               value={showAnswer ? answer : value}
               onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none w-[850px] left-0 top-[70px] text-[45px] leading-[80px] tracking-tighter break-keep bg-transparent ml-5 py-0  ${showAnswer ? "text-answer ml-5" : ""
+              className={`absolute resize-none w-[850px] left-0 top-[70px] text-[45px] leading-[80px] tracking-tighter break-keep bg-transparent ml-6 py-0  ${showAnswer ? "text-example ml-6" : ""
                 }`}
               rows={2}
             ></textarea>
@@ -76,7 +75,7 @@ export default function Page13_2() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

@@ -5,18 +5,35 @@ import HEADER from "./header.png";
 import TEXT1 from "./text1.png";
 import TEXT2 from "./text2.png";
 import IMAGE from "./image.png";
-import { ReadingButton } from "@/app/components/buttons/reading-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("한자의 부수");
 
   const [buttonActive, setButtonActive] = useState<number[]>([]);
+
+  const [isReading, setIsReading] = useState(false);
+  const sound = new Howl({
+    src: "/sound/1/18.mp3",
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+  useEffect(() => {
+    sound.stop();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      sound.stop();
+    };
+  }, []);
 
   const sounds = [
     "/sound/1/18_004.mp3",
@@ -32,14 +49,14 @@ export default function Page() {
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 
-      <ReadingButton
-        className="absolute top-10 right-[100px]"
-        active
-        onClick={() => {}}
+      <SoundButton2
+        className="absolute top-[60px] left-[470px]"
+        active={isReading}
+        onClick={() => sound.play()}
       />
 
       <ContentContainer className="!justify-start !items-start">
-        <div className="relative mb-[50px]">
+        <div className="relative -mt-1 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
           <p>
             부수(部首)는 자전에서 한자를 찾을 때 기준이 되는 글자의 한 부분으로
             대개 한자의 의미와 관련이 깊다.
@@ -47,16 +64,16 @@ export default function Page() {
           <img
             src={TEXT1.src}
             alt="text1"
-            className="absolute left-[350px] top-[75px]"
+            className="absolute left-[510px] top-[65px]"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mt-14 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
           <p>부수는 때로 위치에 따라 모양이 변하기도 한다. </p>
-          <img src={TEXT2.src} alt="text1" />
+          <img src={TEXT2.src} alt="text1" className="mt-4"/>
         </div>
 
-        <div className="w-full flex justify-center mt-10">
+        <div className="w-full flex justify-center mt-1 ml-6">
           <div className="relative">
             <img src={IMAGE.src} />
 
@@ -85,6 +102,7 @@ export default function Page() {
           </div>
         </div>
       </ContentContainer>
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

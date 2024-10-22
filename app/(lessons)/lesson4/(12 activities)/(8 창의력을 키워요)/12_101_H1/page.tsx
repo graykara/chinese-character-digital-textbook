@@ -7,6 +7,7 @@ import { CreativityTitleHeader } from "@/app/components/headers/creativity-title
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글31.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -23,6 +24,7 @@ export default function Page() {
       </CreativityPageTemplate>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

@@ -8,7 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살14.png";
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -103,8 +103,36 @@ export default function Page() {
     {
       chinese: [
         { letter: "因", reading: "인" },
-        { letter: "復", reading: "부" },
-        { letter: "更", reading: "갱" },
+        {
+          letter: "復",
+          reading: "부",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word004.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                復
+              </span>
+              : ① (부) 다시, ② (복) 돌아오다
+            </>
+          ),
+        },
+        {
+          letter: "更",
+          reading: "갱",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word005.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                更
+              </span>
+              : ① (갱) 다시, ② (경) 고치다
+            </>
+          ),
+        },
         { letter: "射", reading: "사" },
         { letter: "之", reading: "지" },
         { letter: "나", isKor: true },
@@ -132,7 +160,21 @@ export default function Page() {
         { letter: "復", reading: "부" },
         { letter: "入", reading: "입" },
         { letter: "石", reading: "석" },
-        { letter: "矢", reading: "의" },
+        {
+          letter: "矢",
+          reading: "의",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word006.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                矢
+              </span>
+              : ~이다
+            </>
+          ),
+        },
         { letter: "러라", isKor: true },
       ],
       sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
@@ -172,7 +214,7 @@ export default function Page() {
         </ContentContainer>
         {/* )} */}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

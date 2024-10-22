@@ -7,7 +7,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요21.png";
+import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요19.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);

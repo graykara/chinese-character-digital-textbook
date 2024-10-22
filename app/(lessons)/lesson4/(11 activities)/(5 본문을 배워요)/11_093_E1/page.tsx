@@ -13,7 +13,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리5.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -218,7 +218,7 @@ export default function Page() {
           </div>
         </ContentContainer>
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

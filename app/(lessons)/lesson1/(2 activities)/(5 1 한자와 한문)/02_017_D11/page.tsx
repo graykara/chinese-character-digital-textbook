@@ -38,6 +38,7 @@ export default function Page() {
       sound.stop();
     };
   }, []);
+  
   return (
     <>
       <HeaderContainer className="mt-10">
@@ -54,17 +55,13 @@ export default function Page() {
           />
         </div>
 
-        <div className="flex mt-3 -ml-20">
-          <p className="text-[50px] tracking-tighter leading-[70px] break-keep w-[800px]">
-            <span className="font-haeseo text-[55px] leading-tight">漢字</span>(한자)는 하나의 글자가
-            모양·음·뜻을 모두 갖추고 있는 문자이다.
-            <br/>예를 들어, ‘
-            <span className="font-haeseo text-[55px] leading-tight">大</span>’ 자의 모양은 사람이 양팔을
-            벌린 형태[<span className="font-haeseo text-[55px] leading-tight">大</span>]이며, 음은
-            ‘대’이고, 뜻은 ‘크다’이다.
+        <div className="flex mt-3 -ml-[100px]">
+          <p className="text-[50px] tracking-tighter leading-[68px] break-keep w-[800px]">
+            <span className="font-haeseo text-[55px] leading-tight">漢字</span>(한자)는 하나의 글자가 모양·음·뜻을 모두 갖추고 있는 문자이다.
+            <br/>예를 들어, ‘<span className="font-haeseo text-[55px] leading-tight">大</span>’ 자의 모양은 사람이 양팔을 벌린 형태[<span className="font-haeseo text-[55px] leading-tight">大</span>]이며, 음은 ‘대’이고, 뜻은 ‘크다’이다.
           </p>
 
-          <div className="relative flex-none -mt-[80px] -ml-[20px]">
+          <div className="relative flex-none -mt-[90px] -ml-[20px]">
             <img src={IMAGE.src} />
 
             {isButton1Clicked ? null : (
@@ -103,7 +100,7 @@ export default function Page() {
           </div>
         </div>
       </ContentContainer>
-      {/* <img src={BACKGROUND.src} className="absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

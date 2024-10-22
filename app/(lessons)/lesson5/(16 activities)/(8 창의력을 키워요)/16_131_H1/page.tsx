@@ -8,7 +8,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕27.png";
 import { ContentContainer } from "@/app/components/content-container";
 
 export default function Page() {

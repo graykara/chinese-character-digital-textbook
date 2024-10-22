@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘14.png";
-import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘15.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리31.png";
+import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리32.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 
 export default function Page() {
@@ -102,7 +102,7 @@ export default function Page() {
       </ContentContainer>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

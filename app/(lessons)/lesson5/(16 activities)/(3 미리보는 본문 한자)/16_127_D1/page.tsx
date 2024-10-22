@@ -8,7 +8,8 @@ import IMAGE1 from "./image1.png";
 import IMAGE2_BEFORE from "./image2-before.png";
 import IMAGE2_AFTER from "./image2-after.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕4.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕3.png";
+import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕4.png";
 import { StepContainer } from "@/app/components/step-container";
 
 export default function Page() {
@@ -61,7 +62,7 @@ export default function Page() {
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
 
       <img
-        src={BACKGROUND1.src}
+        src={BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
