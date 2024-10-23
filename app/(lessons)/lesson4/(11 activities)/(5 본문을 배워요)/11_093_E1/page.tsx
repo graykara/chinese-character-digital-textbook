@@ -24,9 +24,9 @@ export default function Page() {
   const data = [
     {
       chinese: [
-        { letter: "去", reading: "인", className: "text-[120px] leading-[155px]"},
-        { letter: "言", reading: "시", className: "text-[120px] leading-[155px]" },
-        { letter: "美", reading: "물", className: "text-[120px] leading-[155px]" },
+        { letter: "去", reading: "거", className: "text-[120px] leading-[155px]"},
+        { letter: "言", reading: "언", className: "text-[120px] leading-[155px]" },
+        { letter: "美", reading: "미", className: "text-[120px] leading-[155px]" },
         {
           letter: "라야",
           isKor: true,
@@ -37,52 +37,61 @@ export default function Page() {
                 onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                而 
               </span>
-              : 그리고
+                문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사 나 어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어 읽는다.
             </p>
-          ),
+          ), //보충은 끊어 읽기로 변경되어야 하고 한글 텍스트만 적용해야됨.
         },
         {
           letter: "來",
-          reading: "이",
+          reading: "내",
           className: "text-[120px] leading-[155px]",
           additional: (
             <p>
+              <span>
+                음운 법칙에 맞게 읽기
+              </span>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word000.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+              : ① 來言
               </span>
-              : 그리고
+                (내언)
+              <span
+                onClick={() => SOUND("/sound/4/p093_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+              , ② 來日
+              </span>
+                (내일)
+              <span
+                onClick={() => SOUND("/sound/4/p093_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+              , ③ 去來
+              </span>
+                (거래)
             </p>
-          ),
+          ), //음운 법칙게 맞게 읽기: 다음 줄바꿈 필요
         },
-        { letter: "言", reading: "귀", className: "text-[120px] leading-[155px]" },    
-        { letter: "美", reading: "물", className: "text-[120px] leading-[155px]" },
+        { letter: "言", reading: "언", className: "text-[120px] leading-[155px]" },    
+        { letter: "美", reading: "미", className: "text-[120px] leading-[155px]" },
         { letter: "니라.", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3",
+      sound: "/sound/4/92/1.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
+          가는 말이 고와야{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람"
-            width={165}
+            text="오는 말"
+            width={220}
             height={80}
           />
-          이 귀하고{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="만물"
-            width={165}
-            height={80}
-          />
-          천하며
+          이 곱다.{" "}
         </div>
       ),
     },
@@ -94,419 +103,283 @@ export default function Page() {
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word003.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                己
               </span>
-              : 그리고
+              : ① 몸, ② 자기
             </p>
           ),
         },
         {
           letter: "所",
-          reading: "이",
+          reading: "소",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word004.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                所
               </span>
-              : 그리고
+              : ~하는바(것)
             </p>
           ),
         },
-        { letter: "不", reading: "시", },
-        { letter: "欲", reading: "물", },
+        { letter: "不", reading: "불", },
+        { letter: "欲", reading: "욕", },
         { letter: "을", isKor: true, className: "mr-5" },
         {
           letter: "勿",
-          reading: "이",
+          reading: "물",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word005.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                勿
               </span>
-              : 그리고
+              : ~하지 마라
             </p>
-          ),//己所不欲을 勿施於人하라.
+          ),
         },   
-        { letter: "施", reading: "물" },
+        { letter: "施", reading: "시" },
         {
           letter: "於",
-          reading: "이",
+          reading: "어",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word006.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                於
               </span>
-              : 그리고
+              : ~에게
             </p>
           ),
         }, 
         {
           letter: "人",
-          reading: "이",
+          reading: "인",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word007.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                人
               </span>
-              : 그리고
+              : ① 사람, ② 남
             </p>
           ),
         }, 
         { letter: "하라.", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3",
+      sound: "/sound/4/92/2.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
+          자기가{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람"
-            width={165}
+            text="하고자 하지 않는 (것)"
+            width={500}
             height={80}
           />
-          이 귀하고{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="만물"
-            width={165}
-            height={80}
-          />
-          천하며
+          을/를 남에게 베풀지 마라.
         </div>
       ),
     },
     {
       chinese: [ 
         {
-          letter: "己",
-          reading: "기",
+          letter: "無",
+          reading: "무",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word008.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                無
               </span>
-              : 그리고
+              : ① 없다, ② ~하지마라
             </p>
           ),
         },
         {
-          letter: "所",
-          reading: "이",
+          letter: "道",
+          reading: "도",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word009.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                道
               </span>
-              : 그리고
+              : ① 길, ② 말하다
             </p>
           ),
         },
-        { letter: "不", reading: "시", },
-        { letter: "欲", reading: "물", },
-        { letter: "을", isKor: true, className: "mr-5" },
+        { letter: "人", reading: "인", },
         {
-          letter: "勿",
-          reading: "이",
+          letter: "之",
+          reading: "지",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word010.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                之
               </span>
-              : 그리고
-            </p>
-          ),//己所不欲을 勿施於人하라.
-        },   
-        { letter: "施", reading: "물" },
-        {
-          letter: "於",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
+              : ~의
             </p>
           ),
-        }, 
+        },
         {
-          letter: "人",
-          reading: "이",
+          letter: "短",
+          reading: "단",
           additional: (
             <p>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word011.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                短
               </span>
-              : 그리고
+              : ① 짧다, ② 단점
+            </p>
+          ),
+        },
+        { letter: "하고", isKor: true, className: "mr-5" }, 
+        { letter: "無", reading: "무" },
+        { letter: "說", reading: "설" },
+        { letter: "己", reading: "기" },
+        { letter: "之", reading: "지" },
+        {
+          letter: "長",
+          reading: "장",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/4/p093_word012.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                長
+              </span>
+              : ① 길다, ② 장점
             </p>
           ),
         }, 
         { letter: "하라.", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3",
+      sound: "/sound/4/92/3.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
+          남의 단점을 말하지{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람"
+            text="말고"
             width={165}
             height={80}
           />
-          이 귀하고{" "}
+          자기의{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="만물"
+            text="장점"
             width={165}
             height={80}
           />
-          천하며
+          을 말하지 마라.
         </div>
       ),
     },
     {
       chinese: [ 
+        { letter: "愛", reading: "애" },
+        { letter: "人", reading: "인" },
+        { letter: "者", reading: "자" },
+        { letter: "는", isKor: true, className: "mr-5" }, 
+        { letter: "人", reading: "인" },
+        { letter: "恒", reading: "항" },
+        { letter: "愛", reading: "애" },
         {
-          letter: "己",
-          reading: "기",
+          letter: "之",
+          reading: "지",
           additional: (
-            <p>
+            <>
               <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
+                onClick={() => SOUND("/sound/4/p093_word013.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
-                而
+                之
               </span>
-              : 그리고
-            </p>
+              : 그 
+              <span
+                onClick={() => SOUND("/sound/4/p093_word014.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                → 愛人者
+              </span>
+            </>
           ),
         },
-        {
-          letter: "所",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        },
-        { letter: "不", reading: "시", },
-        { letter: "欲", reading: "물", },
-        { letter: "을", isKor: true, className: "mr-5" },
-        {
-          letter: "勿",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),//己所不欲을 勿施於人하라.
-        },   
-        { letter: "施", reading: "물" },
-        {
-          letter: "於",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        }, 
-        {
-          letter: "人",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        }, 
-        { letter: "하라.", isKor: true },
+        { letter: "하고", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3",
+      sound: "/sound/4/92/4.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
+          남을 사랑하는 사람은{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람"
-            width={165}
+            text="남"
+            width={140}
             height={80}
           />
-          이 귀하고{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="만물"
-            width={165}
-            height={80}
-          />
-          천하며
+          도 항상 그를 사랑하고,
         </div>
       ),
     },
     {
       chinese: [ 
-        {
-          letter: "己",
-          reading: "기",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        },
-        {
-          letter: "所",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        },
-        { letter: "不", reading: "시", },
-        { letter: "欲", reading: "물", },
-        { letter: "을", isKor: true, className: "mr-5" },
-        {
-          letter: "勿",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),//己所不欲을 勿施於人하라.
-        },   
-        { letter: "施", reading: "물" },
-        {
-          letter: "於",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        }, 
-        {
-          letter: "人",
-          reading: "이",
-          additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而
-              </span>
-              : 그리고
-            </p>
-          ),
-        }, 
-        { letter: "하라.", isKor: true },
+        { letter: "敬", reading: "경" },
+        { letter: "人", reading: "인" },
+        { letter: "者", reading: "자" },
+        { letter: "는", isKor: true, className: "mr-5" }, 
+        { letter: "人", reading: "인" },
+        { letter: "恒", reading: "항" },
+        { letter: "敬", reading: "경" },
+        { letter: "之", reading: "지" },
+        { letter: "니라.", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3",
+      sound: "/sound/4/92/5.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
+          남을{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="사람"
+            text="공경"
             width={165}
             height={80}
           />
-          이 귀하고{" "}
+          하는 사람은 남도{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="만물"
+            text="항상"
             width={165}
             height={80}
           />
-          천하며
+          그를 공경한다.
         </div>
       ),
     },

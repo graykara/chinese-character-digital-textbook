@@ -8,6 +8,7 @@ import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
+import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭14.png";
 
 export default function Page() {
@@ -25,12 +26,50 @@ export default function Page() {
 
   const data = [
     {
-      chinese: ["雖畜物", "이나\xa0", "其心與人同也", "라"],
-      reading:
-        "수\xa0\xa0\xa0축\xa0\xa0\xa0물\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0기\xa0\xa0\xa0심\xa0\xa0\xa0여\xa0\xa0\xa0인\xa0\xa0\xa0동\xa0\xa0\xa0야",
+      chinese: [
+        {
+          letter: "雖",
+          reading: "수",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                雖
+              </span>
+              : 비록 ~일지라도
+            </>
+          ),
+        },
+        { letter: "畜", reading: "축" },
+        { letter: "物", reading: "물" },
+        { letter: "이나", isKor: true, className: "mr-5" },
+        { letter: "其", reading: "기" },
+        { letter: "心", reading: "심" },
+        {
+          letter: "與",
+          reading: "여",
+          additional: (
+            <p>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                與
+              </span>
+              : ① 더불어, ② 주다, ③ ~와/과
+            </p>
+          ),
+        },
+        { letter: "人", reading: "인" },
+        { letter: "同", reading: "동" },
+        { letter: "也", reading: "야" },
+        { letter: "라.", isKor: true },
+      ],
       sound: "/sound/5/110/2.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px] -mr-20">
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
           비록{" "}
           <FlippableCard
             active={showMeaning}
@@ -39,7 +78,7 @@ export default function Page() {
             width={170}
             height={80}
           />
-          &nbsp; 이라도 그 마음은
+          이라도 그 마음은{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
@@ -47,54 +86,154 @@ export default function Page() {
             width={200}
             height={80}
           />
-          &nbsp; 같습니다.
+          같습니다.
         </div>
       ),
     },
     {
-      chinese: ["此勝則彼劣", "이니\xa0", "使牛聞之", "면"],
-      reading:
-        "차\xa0\xa0\xa0승\xa0\xa0\xa0즉\xa0\xa0\xa0피\xa0\xa0\xa0렬\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0사\xa0\xa0\xa0우\xa0\xa0\xa0문\xa0\xa0\xa0지",
+      chinese: [
+        { letter: "此", reading: "차" },
+        {
+          letter: "勝",
+          reading: "승",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                勝
+              </span>
+              : ① 이기다, ② 낫다
+            </>
+          ),
+        },
+        {
+          letter: "則",
+          reading: "즉",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word003.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                則
+              </span>
+              : ~하면
+            </>
+          ),
+        },
+        { letter: "彼", reading: "피" },
+        {
+          letter: "劣",
+          reading: "렬",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word004.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                劣
+              </span>
+              : 못하다
+            </>
+          ),
+        },
+        { letter: "이니", isKor: true, className: "mr-5" },
+        {
+          letter: "使",
+          reading: "사",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word005.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                使
+              </span>
+              : ~로 하여금 ~하게 하다
+            </>
+          ),
+        },
+        { letter: "牛", reading: "우" },
+        { letter: "聞", reading: "문" },
+        { letter: "之", reading: "지" },
+        { letter: "면", isKor: true },
+      ],
       sound: "/sound/5/110/3.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter -mt-4 leading-loose font-bold -mr-10">
-          {"이것(누런 소)이 "}
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          이것(누런 소)이{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 mt-2 inline-block"
+            className="mx-5 inline-block"
             text="나으면"
             width={220}
             height={80}
           />
-          {"\xa0\xa0저것(검은 소)은"}
+          저것(검은 소)은{" "}
           <FlippableCard
             active={showMeaning}
-            className="mt-2 inline-block"
+            className="mx-5 inline-block"
             text="못한 것이니"
             width={300}
             height={80}
           />
-          {"\xa0\xa0\xa0"}
           소로 하여금 그것을 듣게 하면,
         </div>
       ),
     },
     {
-      chinese: ["寧無不平之心乎", "리오?"],
-      reading:
-        "영\xa0\xa0\xa0무\xa0\xa0\xa0불\xa0\xa0\xa0평\xa0\xa0\xa0지\xa0\xa0\xa0심\xa0\xa0\xa0호",
+      chinese: [
+        {
+          letter: "寧",
+          reading: "영",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word006.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                寧~乎
+              </span>
+              : 어찌~겠는가?
+            </>
+          ),
+        },
+        { letter: "無", reading: "무" },
+        {
+          letter: "不",
+          reading: "불",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p111_word007.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                不平(불평)
+              </span>
+              : 마음에 들지 아니하여 못마땅하게 여김. 
+            </>
+          ),
+        },
+        { letter: "平", reading: "평" },
+        { letter: "之", reading: "지" },
+        { letter: "心", reading: "심" },
+        { letter: "乎", reading: "호" },
+        { letter: "리오?", isKor: true },
+      ],
       sound: "/sound/5/110/4.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter -mt-4 leading-loose font-bold -mr-10">
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
           어찌{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 mt-2 inline-block"
+            className="mx-5 inline-block"
             text="불평"
             width={170}
             height={80}
           />
-          &nbsp; 하는 마음이 없겠습니까?
+          하는 마음이 없겠습니까?
         </div>
       ),
     },
@@ -107,53 +246,15 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-          <div className="absolute top-[228px] left-[150px]">
-            <div className="relative items-start left-[210px] w-[1100px]">
-              <span className="font-haeseo text-[100px] text-left">
-                {data[step - 1]?.chinese[0]}
-              </span>
-              <span className="text-[50px] text-left">
-                {data[step - 1]?.chinese[1]}
-              </span>
-              <span className="font-haeseo text-[100px] text-left">
-                {data[step - 1]?.chinese[2]}
-              </span>
-              <span className="text-[50px] text-left">
-                {data[step - 1]?.chinese[3]}
-              </span>
-            </div>
-            <div className="flex flex-col gap-16 mt-5">
-              <div className="grid grid-cols-[180px__1fr] gap-10">
-                <PillButton
-                  active={showReading}
-                  onClick={() => {
-                    if (!showReading) SOUND(data[step - 1].sound).play();
-                    setShowReading(!showReading);
-                  }}
-                  text="읽기"
-                  checkboxColor="#23425e"
-                  backgroundColor="#3a5e7c"
-                />
-                <div
-                  className={`text-main-content text-[60px] h-[60px] -mt-3 ml-5 tracking-wide ${showReading ? "animate__animated animate__slideInDown" : ""}`}
-                >
-                  {showReading ? data[step - 1]?.reading : null}
-                </div>
-              </div>
-              <div className="grid grid-cols-[180px__1100px] gap-10">
-                <PillButton
-                  active={showMeaning}
-                  onClick={() => setShowMeaning(!showMeaning)}
-                  text="풀이"
-                  checkboxColor="#306875"
-                  backgroundColor="#4f9aab"
-                />
-                <div key={step}>
-                  <div>{data[step - 1]?.content ?? null}</div>
-                </div>
-              </div>
-            </div>
+        <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
+          <div className="absolute w-[1480px] top-[228px] left-[280px]">
+            <MainContentChineseAndReading
+              data={data[step - 1]}
+              showReading={showReading}
+              setShowReading={setShowReading}
+              showMeaning={showMeaning}
+              setShowMeaning={setShowMeaning}
+            />
           </div>
         </ContentContainer>
         {/* )} */}
