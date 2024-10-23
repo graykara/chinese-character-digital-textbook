@@ -1,6 +1,6 @@
 "use client";
 
-import { ReadingButton } from "@/app/components/buttons/reading-button";
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
@@ -8,9 +8,9 @@ import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import QR from "./qr.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
-import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글29.png";
-import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글29.png";
+
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -23,17 +23,14 @@ export default function Page() {
       {step === 2 && (
         <>
           <img src={QR.src} className="absolute right-[80px] top-[80px]" />
-          <ContentContainer>
+          <ContentContainer className="-top-10 -left-1">
             <img src={IMAGE2.src} />
           </ContentContainer>
         </>
       )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img
-        src={BACKGROUND1.src}
-        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
@@ -61,11 +58,10 @@ const Step1 = () => {
         onClick={() => sound.play()}
       />
       <ContentContainer>
-        <div className="relative w-[1460px]">
+        <div className="relative -top-[70px] w-[1460px]">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] px-5 pt-6 pb-4 text-[45px] tracking-[-1.5px] break-keep ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] pl-9 pr-2 py-6 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+              }`}
           >
             규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문
             연구소이다.
@@ -89,7 +85,6 @@ const Step1 = () => {
           </div>
         </div>
       </ContentContainer>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
