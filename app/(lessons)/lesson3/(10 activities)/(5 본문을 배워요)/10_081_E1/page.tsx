@@ -30,7 +30,7 @@ export default function Page() {
         { letter: "水", reading: "수" },
         { letter: "陣", reading: "진" },
       ],
-      sound: "/sound/5/117/1.mp3",
+      sound: "/sound/3/80/1.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           물을{" "}
@@ -38,7 +38,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="등지고"
-            width={170}
+            width={220}
             height={80}
           />{" "}
           지는 진.
@@ -54,10 +54,38 @@ export default function Page() {
       chinese: [
         { letter: "多", reading: "다" },
         { letter: "多", reading: "다" },
-        { letter: "益", reading: "익" },
-        { letter: "善", reading: "선" },
+        {
+          letter: "益",
+          reading: "익",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p081_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                益
+              </span>
+              : ① 더하다, ② 더욱
+            </>
+          ),
+        },
+        {
+          letter: "善",
+          reading: "선",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p081_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                善
+              </span>
+              : ① 착하다, ② 좋다
+            </>
+          ),
+        },
       ],
-      sound: "/sound/5/117/2.mp3",
+      sound: "/sound/3/80/2.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           많으면 많을수록 더욱{" "}
@@ -83,7 +111,7 @@ export default function Page() {
         { letter: "成", reading: "성" },
         { letter: "虎", reading: "호" },
       ],
-      sound: "/sound/5/117/3.mp3",
+      sound: "/sound/3/80/3.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           세 사람이면{" "}
@@ -91,7 +119,7 @@ export default function Page() {
             active={showMeaning}
             className="mx-5 inline-block"
             text="호랑이"
-            width={170}
+            width={220}
             height={80}
           />
           를 만듦.
@@ -107,10 +135,24 @@ export default function Page() {
       chinese: [
         { letter: "結", reading: "결" },
         { letter: "草", reading: "초" },
-        { letter: "報", reading: "보" },
+        {
+          letter: "報",
+          reading: "보",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p081_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                報
+              </span>
+              : ① 알리다, ② 갚다
+            </>
+          ),
+        },
         { letter: "恩", reading: "은" },
       ],
-      sound: "/sound/5/117/4.mp3",
+      sound: "/sound/3/80/4.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           <FlippableCard

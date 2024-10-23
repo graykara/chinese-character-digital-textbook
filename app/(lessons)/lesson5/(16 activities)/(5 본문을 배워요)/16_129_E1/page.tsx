@@ -120,9 +120,9 @@ export default function Page() {
         { letter: "輸", reading: "수" },
         { letter: "之", reading: "지" },
         { letter: "官", reading: "관" },
-        { letter: "이라", isKor: true },
+        { letter: "이라.", isKor: true },
       ],
-      sound: "/sound/5/116/2.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           나머지는 모두 관아로 실어 보냈다.
@@ -182,9 +182,9 @@ export default function Page() {
           ),
         },
         { letter: "雲", reading: "운" },
-        { letter: "이라", isKor: true },
+        { letter: "이라.", isKor: true },
       ],
-      sound: "/sound/5/116/3.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/3.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal leading-[95px] -mt-[10px] font-bold mr-20">
           굶주려 병든 사람들이 그것을 듣고 관청의 뜰에
@@ -254,9 +254,9 @@ export default function Page() {
         { letter: "德", reading: "덕" },
         { letter: "之", reading: "지" },
         { letter: "恩", reading: "은" },
-        { letter: "하니라", isKor: true },
+        { letter: "하니라.", isKor: true },
       ],
-      sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/4.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           남자와 여자들이 나와서

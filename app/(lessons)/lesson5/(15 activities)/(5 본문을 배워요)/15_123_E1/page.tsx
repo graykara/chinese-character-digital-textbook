@@ -29,18 +29,65 @@ export default function Page() {
       chinese: [
         { letter: "見", reading: "견" },
         { letter: "草", reading: "초" },
-        { letter: "中", reading: "중" },
+        {
+          letter: "中",
+          reading: "중",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                中
+              </span>
+              : ① 가운데, 속, ② 적중하다
+            </>
+          ),
+        },
         { letter: "石", reading: "석" },
         { letter: "하고", isKor: true, className: "mr-5" },
-        { letter: "以", reading: "이" },
+        {
+          letter: "以",
+          reading: "이",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                以爲
+              </span>
+              : ~라고 여기다.
+            </>
+          ),
+        },
         { letter: "爲", reading: "위" },
         { letter: "虎", reading: "호" },
         { letter: "而", reading: "이" },
         { letter: "射", reading: "사" },
-        { letter: "之", reading: "지" },
+        {
+          letter: "之",
+          reading: "지",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                之
+              </span>
+              <span
+                onClick={() => SOUND("/sound/5/p123_word003.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                → 草中石
+              </span>
+            </>
+          ),
+        },
         { letter: "니", isKor: true },
       ],
-      sound: "/sound/5/116/1.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/2.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
           풀 속의{" "}
@@ -73,11 +120,11 @@ export default function Page() {
         { letter: "視", reading: "시" },
         { letter: "之", reading: "지" },
         { letter: "하니", isKor: true, className: "mr-5" },
-        { letter: "視", reading: "시" },
-        { letter: "之", reading: "지" },
-        { letter: "라", isKor: true },
+        { letter: "石", reading: "석" },
+        { letter: "也", reading: "야" },
+        { letter: "라.", isKor: true },
       ],
-      sound: "/sound/5/116/2.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/3'.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold mr-10">
           돌에 적중하여{" "}
@@ -137,7 +184,7 @@ export default function Page() {
         { letter: "之", reading: "지" },
         { letter: "나", isKor: true },
       ],
-      sound: "/sound/5/116/3.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           인하여{" "}
@@ -175,9 +222,9 @@ export default function Page() {
             </>
           ),
         },
-        { letter: "러라", isKor: true },
+        { letter: "러라.", isKor: true },
       ],
-      sound: "/sound/5/116/4.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           끝내{" "}
