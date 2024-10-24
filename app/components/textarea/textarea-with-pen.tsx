@@ -33,27 +33,25 @@ export const TextareaWithPen = ({
   }, [showAnswer]);
 
   return (
-    <div className={containerClassName || ""}>
-      <div className="relative w-fit">
-        <textarea
-          ref={inputRef}
-          {...props}
-          value={value}
-          onChange={(e) => {
-            setValue(e.currentTarget.value);
-            props.onChange?.(e);
-          }}
-        ></textarea>
+    <div className={`relative w-fit ${containerClassName || ""}`}>
+      <textarea
+        ref={inputRef}
+        {...props}
+        value={value}
+        onChange={(e) => {
+          setValue(e.currentTarget.value);
+          props.onChange?.(e);
+        }}
+      ></textarea>
 
-        {value === "" && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
-              penClassName || ""
-            }`}
-          />
-        ) : null}
-      </div>
+      {value === "" && !showAnswer ? (
+        <img
+          src="/ui/textarea-pen.png"
+          className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
+            penClassName || ""
+          }`}
+        />
+      ) : null}
     </div>
   );
 };

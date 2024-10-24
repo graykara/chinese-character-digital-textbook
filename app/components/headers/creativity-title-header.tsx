@@ -12,10 +12,11 @@ export const CreativityTitleHeader = ({
   return (
     <div className={containerClassName}>
       <div
-        className={`animate__animated animate__flipInX w-fit flex justify-center items-center ${className}`}
+        className={`relative bg-[#963600] px-[60px] rounded-full flex justify-center items-center ${className}`}
       >
-        <img src="/header/creativity-title.png" />
-        <p className="absolute text-white">{title}</p>
+        <div className="absolute left-5 w-4 h-4 rounded-full bg-black" />
+        <div className="absolute right-5 w-4 h-4 rounded-full bg-black" />
+        <p className="text-white">{title}</p>
       </div>
     </div>
   );

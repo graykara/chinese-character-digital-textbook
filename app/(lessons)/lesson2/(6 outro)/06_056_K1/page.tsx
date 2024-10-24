@@ -15,6 +15,7 @@ import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number-icon";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -93,6 +94,7 @@ export default function Page() {
 const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
     <div className="w-full h-full pl-[85px] pt-[20px]">
+      <TextareaWithPen answer="ASdfasdf" />
       <SelectionQuiz
         showAnswer={showAnswer}
         options={[
