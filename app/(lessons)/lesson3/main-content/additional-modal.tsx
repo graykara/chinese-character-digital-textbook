@@ -19,7 +19,7 @@ export const AdditionalModal = ({ open, onClose, items }: Props) => {
           <div className="bg-white rounded-[20px] p-5">
             {items.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
-                <div className="h-[67px] flex items-center">
+                <div className="flex-none w-[67px] h-[67px] flex items-center">
                   <img src="/ui/additional-list-icon.png" />
                 </div>
                 {item}
