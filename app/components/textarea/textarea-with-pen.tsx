@@ -7,14 +7,14 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   containerClassName?: string;
 }
 
-export const InputWithPen = ({
+export const TextareaWithPen = ({
   answer,
   showAnswer,
   penClassName,
   containerClassName,
   ...props
 }: Props) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState(props.value || "");
 
   useEffect(() => {
@@ -33,25 +33,27 @@ export const InputWithPen = ({
   }, [showAnswer]);
 
   return (
-    <div className={`relative w-fit ${containerClassName || ""}`}>
-      <input
-        ref={inputRef}
-        {...props}
-        value={value}
-        onChange={(e) => {
-          setValue(e.currentTarget.value);
-          props.onChange?.(e);
-        }}
-      />
+    <div className={containerClassName || ""}>
+      <div className="relative w-fit">
+        <textarea
+          ref={inputRef}
+          {...props}
+          value={value}
+          onChange={(e) => {
+            setValue(e.currentTarget.value);
+            props.onChange?.(e);
+          }}
+        ></textarea>
 
-      {value === "" && !showAnswer ? (
-        <img
-          src="/ui/textarea-pen.png"
-          className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
-            penClassName || ""
-          }`}
-        />
-      ) : null}
+        {value === "" && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
+              penClassName || ""
+            }`}
+          />
+        ) : null}
+      </div>
     </div>
   );
 };
