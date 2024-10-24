@@ -4,6 +4,8 @@ import { SolveProblemPageTemplate } from "@/app/pages/solve-problem-page-templat
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import IMAGE5 from "./image5.png";
+import IMAGE8 from "./image8.png";
+import IMAGE9 from "./image9.png";
 import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
@@ -12,6 +14,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운
 import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number-icon";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -34,6 +37,7 @@ export default function Page() {
       한자 어휘의 활용이 옳지 <span className="underline">않은</span> 것은?
     </>,
     "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
+    "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
   ];
 
   useEffect(() => {
@@ -52,6 +56,7 @@ export default function Page() {
         lesson={2}
         number={step}
         question={questions[step - 1]}
+        hideIconNumbers={[8, 9]}
       >
         <div className="h-full flex flex-col justify-between items-center">
           {step === 1 ? <Question1 showAnswer={showAnswer} /> : null}
@@ -271,6 +276,97 @@ const Question7 = ({ showAnswer }: { showAnswer: boolean }) => {
   );
 };
 
-const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {};
+const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {
+  return (
+    <div className="w-full">
+      <div className="flex justify-center mb-5">
+        <img src={IMAGE8.src} />
+      </div>
+      <div className="flex items-center gap-4 mb-5">
+        <ProblemNumberIcon number={8} />
+        ㉠~㉣에 들어갈 내용을 한글로 쓰시오.
+      </div>
 
-const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {};
+      <div className="grid grid-cols-2 w-[1300px] gap-y-[32px] px-[32px] pl-10">
+        <div className="flex items-center">
+          (1) ㉠ :{" "}
+          <InputWithPen
+            answer="자연"
+            showAnswer={showAnswer}
+            containerClassName="border-b border-black ml-4"
+            className="bg-transparent w-[400px] text-center"
+            penClassName="h-[40px] left-1/2 -translate-x-1/2"
+          />
+        </div>
+        <div className="flex items-center">
+          (2) ㉡ :{" "}
+          <InputWithPen
+            answer="상하"
+            showAnswer={showAnswer}
+            containerClassName="border-b border-black ml-4"
+            className="bg-transparent w-[400px] text-center"
+            penClassName="h-[40px] left-1/2 -translate-x-1/2"
+          />
+        </div>
+        <div className="flex items-center">
+          (3) ㉢ :{" "}
+          <InputWithPen
+            answer="물수"
+            showAnswer={showAnswer}
+            containerClassName="border-b border-black ml-4"
+            className="bg-transparent w-[400px] text-center"
+            penClassName="h-[40px] left-1/2 -translate-x-1/2"
+          />
+        </div>
+        <div className="flex items-center">
+          (4) ㉣ :{" "}
+          <InputWithPen
+            answer="물"
+            showAnswer={showAnswer}
+            containerClassName="border-b border-black ml-4"
+            className="bg-transparent w-[400px] text-center"
+            penClassName="h-[40px] left-1/2 -translate-x-1/2"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
+  return (
+    <div className="w-full">
+      <div className="flex justify-center mb-5">
+        <img src={IMAGE8.src} />
+      </div>
+      <div className="flex items-start gap-4 mb-5">
+        <ProblemNumberIcon number={9} />
+        칠판에 쓰인 세 개의 단어 중 하나를 선택하고, 그 단어를 활용하여
+        <br />
+        짧은 글을 쓰시오. ※ 선택한 단어는 한자로 쓰기.
+      </div>
+
+      <div className="relative ml-20">
+        <img src={IMAGE9.src} />
+
+        <InputWithPen
+          isExample
+          answer="산천"
+          showAnswer={showAnswer}
+          containerClassName="!absolute left-[12px] top-[78px]"
+          className="bg-transparent w-[400px] text-center text-[40px]"
+          penClassName="h-[40px] left-1/2 -translate-x-1/2"
+        />
+
+        <InputWithPen
+          isExample
+          answer="아름답게 핀 진달래꽃이 山川에 가득하다."
+          showAnswer={showAnswer}
+          containerClassName="!absolute left-[420px] top-[78px]"
+          className="bg-transparent w-[720px] text-center text-[40px]"
+          penClassName="h-[40px] left-1/2 -translate-x-1/2"
+        />
+      </div>
+    </div>
+  );
+};

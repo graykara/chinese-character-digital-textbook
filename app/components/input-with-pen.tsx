@@ -5,6 +5,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   showAnswer?: boolean;
   penClassName?: string;
   containerClassName?: string;
+  isExample?: boolean;
 }
 
 export const InputWithPen = ({
@@ -12,6 +13,7 @@ export const InputWithPen = ({
   showAnswer,
   penClassName,
   containerClassName,
+  isExample = false,
   ...props
 }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -20,14 +22,15 @@ export const InputWithPen = ({
   useEffect(() => {
     if (showAnswer && inputRef.current) {
       setValue(answer || "");
-      inputRef.current.className += " text-answer";
+      inputRef.current.className += isExample
+        ? " text-example"
+        : " text-answer";
       inputRef.current.readOnly = true;
     } else if (!showAnswer && inputRef.current) {
       setValue("");
-      inputRef.current.className = inputRef.current.className.replace(
-        "text-answer",
-        "",
-      );
+      inputRef.current.className = inputRef.current.className
+        .replace("text-answer", "")
+        .replace("text-example", "");
       inputRef.current.readOnly = false;
     }
   }, [showAnswer]);
