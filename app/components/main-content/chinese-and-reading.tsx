@@ -45,7 +45,7 @@ export const MainContentChineseAndReading = ({
 
   return (
     <>
-      <div className="relative items-start left-[210px] w-[1100px]">
+      <div className="relative items-start left-[210px] w-[1270px]">
         <div className="flex items-baseline">
           {chinese.map(
             ({ letter, reading, additional, isKor, className }, index) => {
@@ -58,7 +58,7 @@ export const MainContentChineseAndReading = ({
                           setSelectedAdditional(additional);
                           setShowAdditionalModal(true);
                         }}
-                        className="w-[128px] absolute bottom-[130px] left-1/2 -translate-x-1/2 flex justify-center"
+                        className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
                       >
                         <img src="/ui/additional-bubble-button.png" />
                       </button>
@@ -68,7 +68,7 @@ export const MainContentChineseAndReading = ({
                           setSelectedAdditional(additional);
                           setShowAdditionalModal(true);
                         }}
-                        className="w-[128px] absolute bottom-[130px] left-1/2 -translate-x-1/2 flex justify-center"
+                        className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
                       >
                         <img src="/ui/additional-button.png" />
                       </button>
@@ -108,7 +108,7 @@ export const MainContentChineseAndReading = ({
           backgroundColor="#3a5e7c"
         />
       </div>
-      <div className="grid grid-cols-[180px__1100px] gap-10 mt-16">
+      <div className="grid grid-cols-[180px__1300px] gap-10 mt-12">
         <PillButton
           active={showMeaning}
           onClick={() => setShowMeaning(!showMeaning)}

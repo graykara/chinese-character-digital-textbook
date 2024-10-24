@@ -21,7 +21,7 @@ export default function Page() {
         sound=""
       />
 
-      <ContentContainer className="!justify-start !items-start left-[150px] -top-16">
+      <ContentContainer className="!justify-start !items-start left-[160px] -top-12">
         {step === 1 && (
           <div>
             <img src={IMAGE1.src} />

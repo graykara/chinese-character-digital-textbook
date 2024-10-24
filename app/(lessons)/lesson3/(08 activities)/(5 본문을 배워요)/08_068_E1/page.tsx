@@ -31,7 +31,7 @@ export default function Page() {
         { letter: "蛇", reading: "사" },
         { letter: "尾", reading: "미" },
       ],
-      sound: "/sound/5/117/1.mp3",
+      sound: "/sound/3/68/1.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           용 머리에 뱀{" "}
@@ -52,12 +52,54 @@ export default function Page() {
     },
     {
       chinese: [
-        { letter: "易", reading: "역" },
-        { letter: "地", reading: "지" },
+        {
+          letter: "易",
+          reading: "역",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p069_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                易
+              </span>
+              : ① (역) 바꾸다, ② (이) 쉽다
+            </>
+          ),
+        },
+        {
+          letter: "地",
+          reading: "지",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p069_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                地
+              </span>
+              : ① 땅, ② 처지
+            </>
+          ),
+        },
         { letter: "思", reading: "사" },
-        { letter: "之", reading: "지" },
+        {
+          letter: "之",
+          reading: "지",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p069_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                之
+              </span>
+              : 그것
+            </>
+          ),
+        },
       ],
-      sound: "/sound/5/117/2.mp3",
+      sound: "/sound/3/68/2.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           <FlippableCard
@@ -71,8 +113,8 @@ export default function Page() {
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="생각할"
-            width={170}
+            text="생각함"
+            width={210}
             height={80}
           />
         </div>
@@ -86,11 +128,25 @@ export default function Page() {
     {
       chinese: [
         { letter: "苦", reading: "고" },
-        { letter: "盡", reading: "진" },
+        {
+          letter: "盡",
+          reading: "진",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/3/p069_word003.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                盡
+              </span>
+              : ① 다하다, ② 모두
+            </>
+          ),
+        },
         { letter: "甘", reading: "감" },
         { letter: "來", reading: "래" },
       ],
-      sound: "/sound/5/117/3.mp3",
+      sound: "/sound/3/68/3.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           쓴 것이{" "}
@@ -117,7 +173,7 @@ export default function Page() {
         { letter: "加", reading: "가" },
         { letter: "霜", reading: "상" },
       ],
-      sound: "/sound/5/117/4.mp3",
+      sound: "/sound/3/68/4.mp3",
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           <FlippableCard

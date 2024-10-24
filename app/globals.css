@@ -9,16 +9,14 @@
 
 @font-face {
     font-family: "ChosunSm";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff")
-        format("woff");
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "CookieRun";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
-        format("woff");
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +37,7 @@ textarea:focus {
 }
 
 .debug {
-    display: none;
+    /* display: none; */
 }
 
 .animate__animated.animate__fadeInDown2 {
@@ -58,6 +56,7 @@ textarea:focus {
         transform: translate3d(-50%, -100%, 0);
         opacity: 0;
     }
+
     100% {
         -webkit-transform: translate3d(-50%, 0%, 0);
         transform: translate3d(-50%, 0%, 0);
@@ -71,6 +70,7 @@ textarea:focus {
         transform: translate3d(-50%, 0, 0);
         opacity: 1;
     }
+
     100% {
         visibility: hidden;
         display: none;
@@ -78,4 +78,32 @@ textarea:focus {
         transform: translate3d(-50%, -100%, 0);
         opacity: 0;
     }
+}
+
+.bg-white {
+    background:
+        linear-gradient(-90deg, rgba(0, 0, 0, .01) 5px, transparent 5px),
+        linear-gradient(rgba(0, 0, 0, .01) 5px, transparent 5px),
+        linear-gradient(-90deg, rgba(0, 0, 0, .03) 5px, transparent 5px),
+        linear-gradient(rgba(0, 0, 0, .03) 5px, transparent 5px),
+        linear-gradient(-90deg, rgba(0, 0, 0, .03) 5px, transparent 5px),
+        linear-gradient(rgba(0, 0, 0, .03) 5px, transparent 5px),
+
+        linear-gradient(-90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(-90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        rgb(255 255 255 / var(--tw-bg-opacity));
+    background-size:
+        50px 50px,
+        50px 50px,
+        100px 100px,
+        100px 100px,
+        200px 200px,
+        200px 200px,
+
+        500px 500px,
+        500px 500px,
+        500px 500px,
+        500px 500px;
 }

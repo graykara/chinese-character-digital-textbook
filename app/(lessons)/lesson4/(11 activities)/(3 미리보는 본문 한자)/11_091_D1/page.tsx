@@ -18,12 +18,12 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer2 className="mt-10 flex items-start gap-4">
+      <TitleContainer2 className="mt-10 flex items-start gap-4 text-[55px] tracking-tighter">
         <img src="/ui/flower-icon.png" />
         <p>제시된 한자 카드를 보고, 설명에 알맞은 단어를 한자로 써 보자.</p>
       </TitleContainer2>
 
-      <ContentContainer className="!justify-start pt-8">
+      <ContentContainer className="!justify-start pt-5 left-16">
         {showAnswer ? (
           <img src={IMAGE_AFTER.src} alt="" />
         ) : (

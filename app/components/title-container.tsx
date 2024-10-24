@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 
 interface Props extends PropsWithChildren {
   className?: string;
+  sound?: string;
 }
 
 export const TitleContainer = ({ className = "", children }: Props) => {

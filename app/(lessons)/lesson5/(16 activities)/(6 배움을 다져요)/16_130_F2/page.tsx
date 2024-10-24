@@ -19,7 +19,7 @@ export default function Page() {
         title={
           " 주어진 풀이를 참고하여 ①~④에 알맞은 한자를 써 넣어 단어를 완성해 보자."
         }
-        sound=""
+        sound="/sound/5/130-i.mp3"
       />
 
       <ContentContainer className="!justify-start -top-[50px] left-16">

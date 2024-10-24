@@ -16,6 +16,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
+import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글8.png";
 
 export default function Page() {
@@ -33,140 +34,285 @@ export default function Page() {
 
   const data = [
     {
-      chinese: "民主",
-      reading: "민\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0주",
-      sound: "/sound/2/50/1.mp3",
+      chinese: [
+        { letter: "有", reading: "유" },
+        { letter: "志", reading: "지" },
+        { letter: "者", reading: "자" },
+        { letter: "는", isKor: true, className: "mr-5" },
+        { letter: "事", reading: "사" },
+        { letter: "竟", reading: "경" },
+        { letter: "成", reading: "성" },
+        {
+          letter: "也",
+          reading: "야",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word000.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                也
+              </span>
+              : ~이다
+            </>
+          ),
+        },
+        { letter: "라.", isKor: true },
+      ],
+      sound: "/sound/4/98/1.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
+        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+          뜻이 있는{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
-            text="국민이"
-            width={220}
+            className="ml-4 mr-5 inline-block"
+            text="사람(자)"
+            width={240}
             height={80}
           />
-          &nbsp; 주인임.
-        </div>
-      ),
-    },
-    {
-      chinese: "投票",
-      reading: "투\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0표",
-      sound: "/sound/2/50/2.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          표를{" "}
+          은/는 일이{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
-            text="던짐"
-            width={220}
+            className="ml-5 mr-6 inline-block"
+            text="마침내"
+            width={210}
             height={80}
           />
-          {"\xa0[냄]"}
+          이루어진다.
         </div>
       ),
     },
     {
-      chinese: "話者",
-      reading: "화\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0자",
-      sound: "/sound/2/50/3.mp3",
+      chinese: [
+        { letter: "天", reading: "천" },
+        { letter: "下", reading: "하" },
+        { letter: "無", reading: "무" },
+        { letter: "無", reading: "무" },
+        { letter: "一", reading: "일" },
+        { letter: "能", reading: "능" },
+        {
+          letter: "之",
+          reading: "지",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word001.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                之
+              </span>
+              : ~하는
+            </>
+          ),
+        },
+        { letter: "人", reading: "인" },
+        { letter: "이라.", isKor: true },
+      ],
+      sound: "/sound/4/98/2.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold mr-10">
+          세상에 한 가지의 재능도{" "}
           <FlippableCard
             active={showMeaning}
-            className="mx-5 inline-block"
-            text="말하는"
-            width={220}
+            className="ml-3 mr-6 inline-block"
+            text="없는"
+            width={170}
             height={80}
           />
-          &nbsp; 사람
-        </div>
-      ),
-    },
-    {
-      chinese: "共感",
-      reading: "공\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0감",
-      sound: "/sound/2/50/4.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          함께{" "}
+          사람은{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="느낌."
-            width={220}
-            height={80}
-          />
-        </div>
-      ),
-    },
-    {
-      chinese: "聽者",
-      reading: "청\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0자",
-      sound: "/sound/2/50/5.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="듣는"
-            width={220}
-            height={80}
-          />
-          &nbsp; 사람.
-        </div>
-      ),
-    },
-    {
-      chinese: "寒冷",
-      reading: "한\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0랭",
-      sound: "/sound/2/51/1.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          춥고 차가움.
-        </div>
-      ),
-    },
-    {
-      chinese: "溫暖",
-      reading: "온\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0난",
-      sound: "/sound/2/51/2.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          따뜻함.
-        </div>
-      ),
-    },
-    {
-      chinese: "多濕",
-      reading: "다\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0습",
-      sound: "/sound/2/51/3.mp3",
-      content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          습기가{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="많음."
-            width={220}
+            text="없다."
+            width={170}
             height={80}
           />
         </div>
       ),
     },
     {
-      chinese: "密林",
-      reading: "밀\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0림",
-      sound: "/sound/2/51/4.mp3",
+      chinese: [
+        { letter: "不", reading: "불" },
+        {
+          letter: "經",
+          reading: "경",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word002.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                經
+              </span>
+              : ① 지나다, ② 경험하다
+            </>
+          ),
+        },
+        { letter: "一", reading: "일" },
+        { letter: "事", reading: "사" },
+        { letter: "면", isKor: true, className: "mr-5" },
+        { letter: "不", reading: "부" },
+        {
+          letter: "長",
+          reading: "장",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word003.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                長
+              </span>
+              : 자라다
+            </>
+          ),
+        },
+        { letter: "一", reading: "일" },
+        { letter: "智", reading: "지" },
+        { letter: "니라.", isKor: true },
+      ],
+      sound: "/sound/4/98/3.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
-          빽빽한{" "}
+        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+          한 가지{" "}
           <FlippableCard
             active={showMeaning}
             className="mx-5 inline-block"
-            text="숲."
+            text="일"
+            width={130}
+            height={80}
+          />
+          을 경험하지 않으면, 한 가지 지혜가
+          <FlippableCard
+            active={showMeaning}
+            className="mx-5 inline-block"
+            text="자라지"
             width={220}
+            height={80}
+          />
+          않는다.
+        </div>
+      ),
+    },
+    {
+      chinese: [
+        { letter: "人", reading: "인" },
+        { letter: "一", reading: "일" },
+        { letter: "能", reading: "능" },
+        {
+          letter: "之",
+          reading: "지",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word004.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                之
+              </span>
+              : 그것
+            </>
+          ),
+        },
+        { letter: "면", isKor: true, className: "mr-5" },
+        {
+          letter: "己",
+          reading: "기",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word005.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                己
+              </span>
+              : 나
+            </>
+          ),
+        },
+        {
+          letter: "百",
+          reading: "백",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word006.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                百
+              </span>
+              : 백 번 하다
+            </>
+          ),
+        },
+        { letter: "之", reading: "지" },
+        { letter: "하고", isKor: true },
+      ],
+      sound: "/sound/4/98/4.mp3",
+      content: (
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
+          남이{" "}
+          <FlippableCard
+            active={showMeaning}
+            className="ml-4 mr-6 inline-block"
+            text="한 번에"
+            width={240}
+            height={80}
+          />
+          그것을 할 수 있으면
+          <FlippableCard
+            active={showMeaning}
+            className="ml-4 mr-6 inline-block"
+            text="나"
+            width={130}
+            height={80}
+          />
+          는 그것을 백 번 하고,
+        </div>
+      ),
+    },
+    {
+      chinese: [
+        { letter: "人", reading: "인" },
+        { letter: "十", reading: "십" },
+        { letter: "能", reading: "능" },
+        { letter: "之", reading: "지" },
+        { letter: "면", isKor: true, className: "mr-5" },
+        { letter: "己", reading: "기" },
+        {
+          letter: "千",
+          reading: "천",
+          additional: (
+            <>
+              <span
+                onClick={() => SOUND("/sound/4/p099_word007.mp3").play()}
+                className="font-haeseo cursor-pointer"
+              >
+                千
+              </span>
+              : 천 번 하다
+            </>
+          ),
+        },
+        { letter: "之", reading: "지" },
+        { letter: "니라.", isKor: true },
+      ],
+      sound: "/sound/4/98/5.mp3",
+      content: (
+        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
+          <FlippableCard
+            active={showMeaning}
+            className="ml-4 mr-6 inline-block"
+            text="남"
+            width={130}
+            height={80}
+          />
+          이 열 번에 그것을 할 수 있으면 나는 그것을
+          <FlippableCard
+            active={showMeaning}
+            className="ml-4 mr-6 inline-block"
+            text="천 번 한다."
+            width={280}
             height={80}
           />
         </div>
@@ -181,74 +327,15 @@ export default function Page() {
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-          <div className="absolute top-36 left-5">
-            {step === 1 || step === 2 ? (
-              <img src={IMAGE2.src} alt="society" />
-            ) : step === 3 || step === 4 || step === 5 ? (
-              <img src={IMAGE3.src} alt="language" />
-            ) : (
-              <img src={IMAGE4.src} alt="geography" />
-            )}
-          </div>
-          <div className="relative mb-[230px]">
-            <div className="relative -mt-10 left-[300px] w-[550px] text-center text-[190px] tracking-widest">
-              <span className="font-haeseo">{data[step - 1]?.chinese}</span>
-            </div>
-            <div className="flex flex-col gap-16">
-              <div className="grid grid-cols-[180px__700px] gap-10 -mt-14">
-                <PillButton
-                  active={showReading}
-                  onClick={() => {
-                    if (!showReading) SOUND(data[step - 1].sound).play();
-                    setShowReading(!showReading);
-                  }}
-                  text="읽기"
-                  checkboxColor="#23425e"
-                  backgroundColor="#3a5e7c"
-                />
-                <div
-                  className={`text-center text-main-content text-[60px] h-[60px] -mt-4 ${showReading ? "animate__animated animate__slideInDown" : ""}`}
-                >
-                  {showReading ? data[step - 1]?.reading : null}
-                </div>
-              </div>
-              <div className="grid grid-cols-[180px__1fr] gap-10">
-                <PillButton
-                  active={showMeaning}
-                  onClick={() => setShowMeaning(!showMeaning)}
-                  text="뜻"
-                  checkboxColor="#306875"
-                  backgroundColor="#4f9aab"
-                />
-                <div key={step}>
-                  <div>{data[step - 1]?.content ?? null}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
-            <div>
-              {step === 1 || step === 2 ? (
-                <img
-                  src={IMAGE5.src}
-                  alt="figure1"
-                  className="absolute bottom-[60px] right-0"
-                />
-              ) : step === 3 || step === 4 || step === 5 ? (
-                <img
-                  src={IMAGE6.src}
-                  alt="figure2"
-                  className="absolute bottom-[60px] right-5"
-                />
-              ) : (
-                <img
-                  src={IMAGE7.src}
-                  alt="figure3"
-                  className="absolute bottom-[60px] right-5"
-                />
-              )}
-            </div>
+        <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
+          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
+            <MainContentChineseAndReading
+              data={data[step - 1]}
+              showReading={showReading}
+              setShowReading={setShowReading}
+              showMeaning={showMeaning}
+              setShowMeaning={setShowMeaning}
+            />
           </div>
         </ContentContainer>
         {/* )} */}

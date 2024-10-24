@@ -3,10 +3,12 @@ import IMAGE from "./image.png";
 
 export const ThinkTogetherHeader = ({
   title = "제목을 입력하세요.",
+  sound = "",
   subTitle = "",
   className = "",
 }: {
   title: string | ReactNode;
+  sound?: string;
   subTitle?: string | ReactNode;
   className?: string | ReactNode;
 }) => {

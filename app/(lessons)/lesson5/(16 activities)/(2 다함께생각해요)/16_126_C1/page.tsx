@@ -12,7 +12,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="다양한 나눔의 사례를 보고 내가 생각하는 나눔과 내가 실천한 나눔의 사례를 적어 보자." />
+      <ThinkTogetherHeader 
+        title={"다양한 나눔의 사례를 보고 내가 생각하는 나눔과 내가 실천한 나눔의 사례를 적어 보자."}
+        sound="/sound/5/126-i.mp3"
+      />
 
       <Step1 />
 

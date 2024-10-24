@@ -7,10 +7,13 @@ import { useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리28.png";
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
+import { WritingButton } from "@/app/components/buttons/writing-button";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리28.png";
+
 
 export default function Page() {
+  const answer = "다른 사람에게 존중 받기 위해서는 내가 먼저 존중해야 한다.";
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
@@ -19,9 +22,21 @@ export default function Page() {
         sound=""
       />
 
-      <ContentContainer className="!justify-start left-10 -top-16">
+      <div className="absolute top-[205px] left-[1220px]">
+        <WritingButton />
+      </div>
+
+      <ContentContainer className="!justify-start left-10 -top-12">
         <img src={IMAGE.src} />
+        <InputWithPen
+              answer={answer}
+              showAnswer={showAnswer}
+              className="text-answer text-[45px] tracking-tighter w-[1210px] bg-transparent"
+              penClassName="w-[46px] -mt-0 -ml-2"
+              containerClassName="absolute left-[190px] top-[180px]"
+            />
       </ContentContainer>
+
 
       <CheckAnswerButton
         active={showAnswer}
