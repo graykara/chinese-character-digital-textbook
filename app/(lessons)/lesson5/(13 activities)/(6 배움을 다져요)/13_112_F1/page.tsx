@@ -46,9 +46,9 @@ const Step1 = () => {
         <InputWithPen
           answer={answer1}
           showAnswer={showAnswer}
-          className="text-[45px] w-[100px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2 w-[52px]"
-          containerClassName="absolute top-[215px] left-[700px]"
+          className={`"w-[600px] bg-transparent text-[40px]  tracking-tight ${showAnswer ? "text-example" : ""}`}
+          penClassName="-left-3 -mt-2 w-[52px]"
+          containerClassName="absolute top-[210px] left-[730px] mt-1 ml-1"
         />
         {!value && !showAnswer ? (
           <img
@@ -56,15 +56,15 @@ const Step1 = () => {
             className="absolute pointer-events-none"
             style={{
               height: 52,
-              top: 215,
-              left: 720
+              top: 420,
+              left: 365
             }}
           />
         ) : null}
         <textarea
           value={showAnswer ? answer2 : value}
           onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1020px] left-[360px] top-[450px] pt-1 ml-5 text-[45px] tracking-tighter break-keep leading-[42px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
+          className={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
             }`}
           rows={2}
         ></textarea>
