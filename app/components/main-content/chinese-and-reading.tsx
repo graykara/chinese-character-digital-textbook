@@ -10,6 +10,7 @@ type Data = {
     letter: string;
     reading?: string;
     additional?: string | ReactNode;
+    additionalTitle?: string | ReactNode;
     isKor?: boolean;
     className?: string;
   }[];
@@ -38,6 +39,9 @@ export const MainContentChineseAndReading = ({
   const [selectedAdditional, setSelectedAdditional] = useState<
     string | ReactNode | null
   >(null);
+  const [additionalTitle, setAdditionalTitle] = useState<
+    string | ReactNode | null
+  >("보충");
 
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
 
@@ -46,9 +50,19 @@ export const MainContentChineseAndReading = ({
   return (
     <>
       <div className="relative items-start left-[210px] w-[1270px]">
-        <div className="flex items-baseline">
+        <div className="flex items-end">
           {chinese.map(
-            ({ letter, reading, additional, isKor, className }, index) => {
+            (
+              {
+                letter,
+                reading,
+                additional,
+                isKor,
+                className,
+                additionalTitle,
+              },
+              index,
+            ) => {
               return (
                 <div key={index} className="relative">
                   {additional &&
@@ -57,6 +71,7 @@ export const MainContentChineseAndReading = ({
                         onClick={() => {
                           setSelectedAdditional(additional);
                           setShowAdditionalModal(true);
+                          setAdditionalTitle(additionalTitle || "보충");
                         }}
                         className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
                       >
@@ -66,6 +81,7 @@ export const MainContentChineseAndReading = ({
                       <button
                         onClick={() => {
                           setSelectedAdditional(additional);
+                          setAdditionalTitle(additionalTitle || "보충");
                           setShowAdditionalModal(true);
                         }}
                         className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
@@ -74,7 +90,7 @@ export const MainContentChineseAndReading = ({
                       </button>
                     ))}
                   <span
-                    className={`text-left ${isKor ? "text-[50px]" : "font-haeseo text-[100px]"} ${className || ""}`}
+                    className={`text-left ${isKor ? "text-[50px] relative bottom-3" : "font-haeseo text-[100px]"} ${className || ""}`}
                   >
                     {letter}
                   </span>
@@ -125,6 +141,7 @@ export const MainContentChineseAndReading = ({
         open={showAdditionalModal}
         onClose={() => setShowAdditionalModal(false)}
         items={[selectedAdditional]}
+        title={additionalTitle}
       />
     </>
   );

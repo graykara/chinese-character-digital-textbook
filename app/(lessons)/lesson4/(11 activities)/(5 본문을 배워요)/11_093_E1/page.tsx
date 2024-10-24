@@ -24,60 +24,84 @@ export default function Page() {
   const data = [
     {
       chinese: [
-        { letter: "去", reading: "거", className: "text-[120px] leading-[155px]"},
-        { letter: "言", reading: "언", className: "text-[120px] leading-[155px]" },
-        { letter: "美", reading: "미", className: "text-[120px] leading-[155px]" },
+        {
+          letter: "去",
+          reading: "거",
+          className: "text-[120px] leading-[155px]",
+        },
+        {
+          letter: "言",
+          reading: "언",
+          className: "text-[120px] leading-[155px]",
+        },
+        {
+          letter: "美",
+          reading: "미",
+          className: "text-[120px] leading-[155px]",
+        },
         {
           letter: "라야",
           isKor: true,
           className: "mr-5",
           additional: (
-            <p>
-              <span
-                onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-                而 
-              </span>
-                문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사 나 어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어 읽는다.
+            <p className="tracking-tighter">
+              문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사 나
+              어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어
+              읽는다.
             </p>
-          ), //보충은 끊어 읽기로 변경되어야 하고 한글 텍스트만 적용해야됨.
+          ),
+          additionalTitle: (
+            <p className="flex items-center gap-2">
+              <img src="/ui/gam.png" />
+              끊어 읽기
+            </p>
+          ),
         },
         {
           letter: "來",
           reading: "내",
           className: "text-[120px] leading-[155px]",
           additional: (
-            <p>
-              <span>
-                음운 법칙에 맞게 읽기
-              </span>
-              <span
-                onClick={() => SOUND("/sound/4/p093_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-              : ① 來言
-              </span>
-                (내언)
-              <span
-                onClick={() => SOUND("/sound/4/p093_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-              , ② 來日
-              </span>
-                (내일)
-              <span
-                onClick={() => SOUND("/sound/4/p093_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
-              >
-              , ③ 去來
-              </span>
-                (거래)
-            </p>
+            <div>
+              <p>음운 법칙에 맞게 읽기 :</p>
+              <p className="tracking-tighter">
+                ①{" "}
+                <span
+                  onClick={() => SOUND("/sound/4/p093_word000.mp3").play()}
+                  className="font-haeseo cursor-pointer"
+                >
+                  來言
+                </span>
+                (<span className="text-answer">내</span>
+                언), ②
+                <span
+                  onClick={() => SOUND("/sound/4/p093_word001.mp3").play()}
+                  className="font-haeseo cursor-pointer"
+                >
+                  來日
+                </span>
+                (<span className="text-answer">내</span>일), ③
+                <span
+                  onClick={() => SOUND("/sound/4/p093_word002.mp3").play()}
+                  className="font-haeseo cursor-pointer"
+                >
+                  去來
+                </span>
+                (거<span className="text-answer">래</span>)
+              </p>
+            </div>
           ), //음운 법칙게 맞게 읽기: 다음 줄바꿈 필요
         },
-        { letter: "言", reading: "언", className: "text-[120px] leading-[155px]" },    
-        { letter: "美", reading: "미", className: "text-[120px] leading-[155px]" },
+        {
+          letter: "言",
+          reading: "언",
+          className: "text-[120px] leading-[155px]",
+        },
+        {
+          letter: "美",
+          reading: "미",
+          className: "text-[120px] leading-[155px]",
+        },
         { letter: "니라.", isKor: true },
       ],
       sound: "/sound/4/92/1.mp3",
@@ -96,20 +120,20 @@ export default function Page() {
       ),
     },
     {
-      chinese: [ 
+      chinese: [
         {
           letter: "己",
           reading: "기",
           additional: (
-            <p>
+            <>
               <span
                 onClick={() => SOUND("/sound/4/p093_word003.mp3").play()}
                 className="font-haeseo cursor-pointer"
               >
                 己
               </span>
-              : ① 몸, ② 자기
-            </p>
+              : ① 몸, ②<span className="underline">자기</span>
+            </>
           ),
         },
         {
@@ -127,8 +151,8 @@ export default function Page() {
             </p>
           ),
         },
-        { letter: "不", reading: "불", },
-        { letter: "欲", reading: "욕", },
+        { letter: "不", reading: "불" },
+        { letter: "欲", reading: "욕" },
         { letter: "을", isKor: true, className: "mr-5" },
         {
           letter: "勿",
@@ -144,7 +168,7 @@ export default function Page() {
               : ~하지 마라
             </p>
           ),
-        },   
+        },
         { letter: "施", reading: "시" },
         {
           letter: "於",
@@ -160,7 +184,7 @@ export default function Page() {
               : ~에게
             </p>
           ),
-        }, 
+        },
         {
           letter: "人",
           reading: "인",
@@ -175,7 +199,7 @@ export default function Page() {
               : ① 사람, ② 남
             </p>
           ),
-        }, 
+        },
         { letter: "하라.", isKor: true },
       ],
       sound: "/sound/4/92/2.mp3",
@@ -194,7 +218,7 @@ export default function Page() {
       ),
     },
     {
-      chinese: [ 
+      chinese: [
         {
           letter: "無",
           reading: "무",
@@ -225,7 +249,7 @@ export default function Page() {
             </p>
           ),
         },
-        { letter: "人", reading: "인", },
+        { letter: "人", reading: "인" },
         {
           letter: "之",
           reading: "지",
@@ -256,7 +280,7 @@ export default function Page() {
             </p>
           ),
         },
-        { letter: "하고", isKor: true, className: "mr-5" }, 
+        { letter: "하고", isKor: true, className: "mr-5" },
         { letter: "無", reading: "무" },
         { letter: "說", reading: "설" },
         { letter: "己", reading: "기" },
@@ -275,7 +299,7 @@ export default function Page() {
               : ① 길다, ② 장점
             </p>
           ),
-        }, 
+        },
         { letter: "하라.", isKor: true },
       ],
       sound: "/sound/4/92/3.mp3",
@@ -302,11 +326,11 @@ export default function Page() {
       ),
     },
     {
-      chinese: [ 
+      chinese: [
         { letter: "愛", reading: "애" },
         { letter: "人", reading: "인" },
         { letter: "者", reading: "자" },
-        { letter: "는", isKor: true, className: "mr-5" }, 
+        { letter: "는", isKor: true, className: "mr-5" },
         { letter: "人", reading: "인" },
         { letter: "恒", reading: "항" },
         { letter: "愛", reading: "애" },
@@ -321,7 +345,7 @@ export default function Page() {
               >
                 之
               </span>
-              : 그 
+              : 그
               <span
                 onClick={() => SOUND("/sound/4/p093_word014.mp3").play()}
                 className="font-haeseo cursor-pointer"
@@ -349,11 +373,11 @@ export default function Page() {
       ),
     },
     {
-      chinese: [ 
+      chinese: [
         { letter: "敬", reading: "경" },
         { letter: "人", reading: "인" },
         { letter: "者", reading: "자" },
-        { letter: "는", isKor: true, className: "mr-5" }, 
+        { letter: "는", isKor: true, className: "mr-5" },
         { letter: "人", reading: "인" },
         { letter: "恒", reading: "항" },
         { letter: "敬", reading: "경" },
@@ -389,11 +413,8 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
-          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
+          <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
               data={data[step - 1]}
               showReading={showReading}
@@ -403,9 +424,11 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-        {/* )} */}
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }
