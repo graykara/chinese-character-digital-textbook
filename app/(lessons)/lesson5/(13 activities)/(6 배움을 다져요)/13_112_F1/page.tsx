@@ -8,6 +8,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { WritingButton } from "@/app/components/buttons/writing-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭19.png";
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭20.png";
@@ -41,6 +42,9 @@ const Step1 = () => {
         }
         sound=""
       />
+      <div className="absolute top-[135px] left-[1565px] flex items-center gap-5">
+        <WritingButton />
+      </div>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
         <InputWithPen
