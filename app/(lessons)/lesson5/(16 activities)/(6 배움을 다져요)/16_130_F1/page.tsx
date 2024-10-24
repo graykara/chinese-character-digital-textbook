@@ -35,7 +35,7 @@ const Step1 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title={"풀이에 맞도록 한자 카드를 배열하여 써 보자."}
-        sound=""
+        sound="/sound/5/130-i-1.mp3"
       />
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
@@ -63,7 +63,7 @@ const Step2 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title={"‘나눔’하면 연상되는 단어를 써서 의미망을 완성해 보자."}
-        sound=""
+        sound="/sound/5/130-i-3.mp3"
       />
       <ContentContainer className="!justify-start -top-[50px] left-9">
         <img src={IMAGE2.src} />

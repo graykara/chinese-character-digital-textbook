@@ -27,11 +27,12 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10">
+      <TitleContainer className="mt-10"
+        sound="/sound/5/127-i.mp3">
         <p className="tracking-tighter flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />
           제시된 한자 카드를 보고, 사다리를 타고 내려갔을 때 완성되는 한자를 써
-          보자..
+          보자.
         </p>
       </TitleContainer>
 
