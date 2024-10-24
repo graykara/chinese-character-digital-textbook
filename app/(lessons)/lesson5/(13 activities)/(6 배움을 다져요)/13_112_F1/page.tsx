@@ -7,6 +7,7 @@ import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { InputWithPen } from "@/app/components/input-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭19.png";
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭20.png";
@@ -26,10 +27,9 @@ export default function Page() {
 
 const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer1 = ["누런 소가 더 일을 잘합니다"];
-  const answer2 = [
-    "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.",
-  ];
+  const answer1 = "누런 소가 더 일을 잘합니다";
+  const answer2 = "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.";
+  const [value, setValue] = useState("");
 
   return (
     <>
@@ -43,7 +43,31 @@ const Step1 = () => {
       />
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
-        <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px]"></div>
+        <InputWithPen
+          answer={answer1}
+          showAnswer={showAnswer}
+          className="text-[45px] w-[100px] bg-transparent"
+          penClassName="left-1/2 -translate-x-1/2 -mt-2 w-[52px]"
+          containerClassName="absolute top-[215px] left-[700px]"
+        />
+        {!value && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 52,
+              top: 215,
+              left: 720
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answer2 : value}
+          onChange={(e) => setValue(e.target.value)}
+          className={`absolute resize-none w-[1020px] left-[360px] top-[450px] pt-1 ml-5 text-[45px] tracking-tighter break-keep leading-[42px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
+            }`}
+          rows={2}
+        ></textarea>
       </ContentContainer>
 
       <ExampleAnswerButton
