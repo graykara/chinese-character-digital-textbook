@@ -144,7 +144,7 @@ export default function Page() {
               >
                 經
               </span>
-              : ① 지나다, ② 경험하다
+              : ① 지나다, ②<span className="underline">경험하다</span>
             </>
           ),
         },

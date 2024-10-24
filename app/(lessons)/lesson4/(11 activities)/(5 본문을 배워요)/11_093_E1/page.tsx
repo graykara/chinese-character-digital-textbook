@@ -9,6 +9,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png"; //5~9~15~22~24
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -45,7 +46,7 @@ export default function Page() {
           className: "mr-5",
           additional: (
             <p className="tracking-tighter">
-              문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사 나
+              문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사나
               어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어
               읽는다.
             </p>
@@ -196,7 +197,7 @@ export default function Page() {
               >
                 人
               </span>
-              : ① 사람, ② 남
+              : ① 사람, ②<span className="underline">남</span>
             </p>
           ),
         },
@@ -230,7 +231,7 @@ export default function Page() {
               >
                 無
               </span>
-              : ① 없다, ② ~하지마라
+              : ① 없다, ②<span className="underline">~하지마라</span>
             </p>
           ),
         },
@@ -245,7 +246,7 @@ export default function Page() {
               >
                 道
               </span>
-              : ① 길, ② 말하다
+              : ① 길, ②<span className="underline">말하다</span>
             </p>
           ),
         },
@@ -276,7 +277,7 @@ export default function Page() {
               >
                 短
               </span>
-              : ① 짧다, ② 단점
+              : ① 짧다, ②<span className="underline">단점</span>
             </p>
           ),
         },
@@ -296,7 +297,7 @@ export default function Page() {
               >
                 長
               </span>
-              : ① 길다, ② 장점
+              : ① 길다, ②<span className="underline">장점</span>
             </p>
           ),
         },
