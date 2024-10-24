@@ -20,6 +20,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Modal } from "@/app/components/modal";
 import { Howl } from "howler";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자8.png";
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -89,6 +90,12 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
+
+        <MainContentVideoButton
+          video="/video/writing/28p_1.mp4"
+          className="absolute left-[112px] top-[40px]"
+        />
+
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : (

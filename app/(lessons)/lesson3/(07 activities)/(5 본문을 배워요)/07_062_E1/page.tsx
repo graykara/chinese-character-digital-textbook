@@ -11,6 +11,7 @@ import { MainContentChineseAndReading } from "@/app/components/main-content/chin
 // import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png"
 import { MainContent } from "../../../main-content";
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -160,6 +161,12 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+
+        <MainContentVideoButton
+          video="/video/writing/62p_1.mp4"
+          className="absolute left-[112px] top-[40px]"
+        />
+        
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}

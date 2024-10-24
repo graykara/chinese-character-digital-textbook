@@ -10,6 +10,7 @@ import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자15.png"; //14-
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -122,6 +123,12 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+
+        <MainContentVideoButton
+          video="/video/writing/38p_1.mp4"
+          className="absolute left-[112px] top-[40px]"
+        />
+
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : (

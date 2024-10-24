@@ -213,7 +213,7 @@ export default function Page() {
               >
                 若
               </span>
-              : ① 같다, ② ~와/과
+              : ① 같다, ②<span className="underline">~와/과</span>
             </>
           ),
         },
