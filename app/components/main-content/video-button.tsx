@@ -6,10 +6,11 @@ import ReactPlayer from "react-player";
 
 interface Props {
   video: string;
+  buttomImage?: string;
   className?: string;
 }
 
-export const MainContentVideoButton = ({ className, video }: Props) => {
+export const MainContentVideoButton = ({ className, buttomImage = "/ui/video-button.png", video }: Props) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -18,7 +19,7 @@ export const MainContentVideoButton = ({ className, video }: Props) => {
         className={`z-[3] ${className ?? ""}`}
         onClick={() => setShowModal(true)}
       >
-        <img src="/ui/video-button.png" />
+        <img src={buttomImage} />
       </button>
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">

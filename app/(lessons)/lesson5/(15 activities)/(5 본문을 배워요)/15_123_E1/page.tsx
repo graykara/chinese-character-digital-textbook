@@ -40,7 +40,7 @@ export default function Page() {
               >
                 中
               </span>
-              : ① 가운데, 속, ② 적중하다
+              : ①<span className="underline">가운데, 속</span>, ②<span className="underline">적중하다</span>
             </>
           ),
         },
@@ -161,7 +161,7 @@ export default function Page() {
               >
                 復
               </span>
-              : ① (부) 다시, ② (복) 돌아오다
+              : ① (부)<span className="underline">다시</span>, ② (복) 돌아오다
             </>
           ),
         },
@@ -176,7 +176,7 @@ export default function Page() {
               >
                 更
               </span>
-              : ① (갱) 다시, ② (경) 고치다
+              : ① (갱)<span className="underline">다시</span>, ② (경) 고치다
             </>
           ),
         },

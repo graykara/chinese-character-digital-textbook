@@ -28,11 +28,12 @@ export default function Page() {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title="사다리 타기를 하고 서로 만나는 한자를 결합하였을 때 완성되는 한자를 써 보자."
+        title={<p className="text-[45px] tracking-[-0.5px] -mr-20">사다리 타기를 하고 서로 만나는 한자를 결합하였을 때 완성되는 한자를 써 보자.</p>}
         sound="/sound/2/40-i-1.mp3"
+        className="w-[1600px] mr-0"
       />
 
-      <ContentContainer className="!justify-start">
+      <ContentContainer className="!justify-start -top-16 -left-5">
         <div className="relative">
           {showAnswer ? (
             <img src={IMAGE1_AFTER.src} />

@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어2.png";
+import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어19.png";
 import { MainContent } from "../../../main-content";
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -176,6 +177,13 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+
+        <MainContentVideoButton
+          video="/video/writing/74p_1.mp4"
+          className="absolute left-[112px] top-[40px]"
+          buttomImage="/ui/video-button2.png"
+        />
+
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}

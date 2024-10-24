@@ -8,6 +8,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
+import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요17.png";
@@ -82,7 +83,7 @@ const Step1 = () => {
         />
       </ContentContainer>
 
-      <ExampleAnswerButton
+      <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />

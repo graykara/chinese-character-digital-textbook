@@ -50,7 +50,7 @@ const Step1 = () => {
         <InputWithPen
           answer={answer1}
           showAnswer={showAnswer}
-          className={`"w-[600px] bg-transparent text-[40px]  tracking-tight ${showAnswer ? "text-example" : ""}`}
+          className={`w-[600px] bg-transparent text-[40px]  tracking-tight ${showAnswer ? "text-example" : ""}`}
           penClassName="-left-3 -mt-2 w-[52px]"
           containerClassName="absolute top-[210px] left-[730px] mt-1 ml-1"
         />

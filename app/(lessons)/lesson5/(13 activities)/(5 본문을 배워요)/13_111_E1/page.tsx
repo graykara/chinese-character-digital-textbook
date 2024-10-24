@@ -58,7 +58,7 @@ export default function Page() {
               >
                 與
               </span>
-              : ① 더불어, ② 주다, ③ ~와/과
+              : ① 더불어, ② 주다, ③<span className="underline">~와/과</span>
             </p>
           ),
         },
@@ -104,7 +104,7 @@ export default function Page() {
               >
                 勝
               </span>
-              : ① 이기다, ② 낫다
+              : ① 이기다, ②<span className="underline">낫다</span>
             </>
           ),
         },
