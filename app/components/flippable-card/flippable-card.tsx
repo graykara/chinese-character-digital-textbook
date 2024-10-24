@@ -8,7 +8,7 @@ import FLIP_ICON from "./flip-icon.png";
 import { clickSound } from "@/app/utils/click-sound";
 
 interface Props {
-  active?: boolean;
+  active: boolean | null;
   text: string | ReactNode;
   width: number;
   height: number;
@@ -30,7 +30,9 @@ export const FlippableCard = ({
   contentClassName = "",
   iconColor = "default",
 }: Props) => {
-  const [isFlipped, setIsFlipped] = useState(active || false);
+  const [isFlipped, setIsFlipped] = useState<boolean | null>(active);
+
+  console.log(isFlipped);
 
   const handleFlip = () => {
     clickSound.play();
@@ -38,7 +40,7 @@ export const FlippableCard = ({
   };
 
   useEffect(() => {
-    setIsFlipped(active || false);
+    setIsFlipped(active);
   }, [active]);
 
   const clickIcon =
@@ -58,7 +60,7 @@ export const FlippableCard = ({
       }}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] ${
+        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${
           isFlipped ? "[transform:rotateX(-180deg)]" : ""
         }`}
       >

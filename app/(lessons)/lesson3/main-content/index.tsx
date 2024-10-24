@@ -20,8 +20,8 @@ type Data = {
 
 interface Props {
   data: Data;
-  showReading: boolean;
-  showMeaning: boolean;
+  showReading: boolean | null;
+  showMeaning: boolean | null;
   showMeaning2: boolean;
   setShowReading: (value: boolean) => void;
   setShowMeaning: (value: boolean) => void;
@@ -87,13 +87,13 @@ export const MainContent = ({
                     className={`absolute -bottom-24 left-1/2 -translate-x-1/2 animate__animated
                   ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}
                   >
-                    {showReading ? (
+                    {showReading !== null && (
                       <span
                         className={`text-main-content text-[60px] font-chosun font-bold`}
                       >
                         {reading}
                       </span>
-                    ) : null}
+                    )}
                   </div>
                 </div>
               );
@@ -103,7 +103,7 @@ export const MainContent = ({
       </div>
       <div className="grid grid-cols-[180px__1fr] gap-10 mt-5">
         <PillButton
-          active={showReading}
+          active={showReading ?? false}
           onClick={() => {
             if (!showReading) SOUND(sound).play();
             setShowReading(!showReading);
@@ -115,7 +115,7 @@ export const MainContent = ({
       </div>
       <div className="grid grid-cols-[180px__1100px] gap-10 mt-16">
         <PillButton
-          active={showMeaning}
+          active={showMeaning ?? false}
           onClick={() => setShowMeaning(!showMeaning)}
           text="겉뜻"
           checkboxColor="#306875"

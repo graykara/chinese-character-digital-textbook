@@ -4,27 +4,23 @@ import { RightTopStepContainer } from "@/app/components/right-top-step-container
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 // import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png"
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png";
 import { MainContent } from "../../../main-content";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
-  const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showReading, setShowReading] = useState<boolean | null>(null);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showMeaning2, setShowMeaning2] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
-    setShowReading(false);
-    setShowMeaning(false);
-    // setShowResource(false);
+    setShowReading(null);
+    setShowMeaning(null);
   }, [step]);
 
   const data = [
@@ -40,6 +36,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           열 가운데{" "}
           <FlippableCard
+            key="1"
             active={showMeaning}
             className="mx-5 inline-block"
             text="여덟이나 아홉."
@@ -80,6 +77,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           말의 귀에{" "}
           <FlippableCard
+            key="2"
             active={showMeaning}
             className="mx-5 inline-block"
             text="동쪽 바람"
@@ -105,6 +103,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           <FlippableCard
+            key="3"
             active={showMeaning}
             className="mx-5 inline-block"
             text="위"
@@ -132,6 +131,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
           우물 속에{" "}
           <FlippableCard
+            key="4"
             active={showMeaning}
             className="mx-5 inline-block"
             text="앉아"
@@ -140,6 +140,7 @@ export default function Page() {
           />
           하늘을{" "}
           <FlippableCard
+            key="5"
             active={showMeaning}
             className="mx-5 inline-block"
             text="봄"
@@ -166,7 +167,7 @@ export default function Page() {
           video="/video/writing/62p_1.mp4"
           className="absolute left-[112px] top-[40px]"
         />
-        
+
         {/* {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />
         ) : ( */}
