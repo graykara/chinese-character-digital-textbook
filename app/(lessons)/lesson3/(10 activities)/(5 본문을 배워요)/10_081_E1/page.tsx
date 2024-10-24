@@ -8,6 +8,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어2.png";
 import { MainContent } from "../../../main-content";
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -185,9 +186,12 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
+
+        <MainContentVideoButton
+          video="/video/어쩌구"
+          className="absolute left-[100px] top-[100px]"
+        />
+
         <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
           <div className="absolute top-[228px] left-[150px]">
             <MainContent
