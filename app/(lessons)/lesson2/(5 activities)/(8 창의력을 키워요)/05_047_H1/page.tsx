@@ -4,9 +4,10 @@ import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
+import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
+import { TitleContainer } from "@/app/components/title-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘16.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png";
@@ -27,7 +28,7 @@ export default function Page() {
       </CreativityPageTemplate>
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
@@ -42,13 +43,16 @@ const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
+      <TitleContainer
+        className="-left-24 mt-4"
+        sound="">
+        <div className="flex items-center gap-5 text-[55px] tracking-tight">
           <img src="/ui/flower-icon-2.png" />
           다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
         </div>
       </TitleContainer>
-      <div className="relaitve h-full flex justify-end items-end pr-5">
+
+      <div className="relaitve h-full flex justify-end items-end pr-3">
         <img src={IMAGE.src} />
       </div>
 
@@ -93,13 +97,16 @@ const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
+      <TitleContainer
+        className="-left-24 mt-4"
+        sound="">
+        <div className="flex items-center gap-7 text-[55px] tracking-tight">
           <img src="/ui/flower-icon-2.png" />
           글의 내용에 알맞은 단어를 골라 보자.
         </div>
       </TitleContainer>
-      <div className="relaitve h-full flex justify-end items-end pr-5">
+
+      <div className="relaitve h-full flex justify-end items-end pr-3">
         <img src={IMAGE2.src} />
       </div>
 

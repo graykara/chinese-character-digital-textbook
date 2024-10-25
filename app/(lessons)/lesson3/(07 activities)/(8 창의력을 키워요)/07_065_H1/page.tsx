@@ -5,6 +5,8 @@ import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
+import { TitleContainer } from "@/app/components/title-container";
+import { ContentContainer } from "@/app/components/content-container";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png";
 
 export default function Page() {
@@ -18,7 +20,7 @@ export default function Page() {
   const [isReading, setIsReading] = useState(false);
 
   const sound = new Howl({
-    src: "/sound/3/65-i2.mp3",
+    src: "/sound/3/65-i.mp3",
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
@@ -41,34 +43,38 @@ export default function Page() {
   return (
     <>
       <CreativityPageTemplate>
-        <header className="relative left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="‘성어 책갈피’ 만들기" />
-        </header>
+        <CreativityTitleHeader
+          title="‘성어 책갈피’ 만들기"
+          containerClassName="-mt-5"
+        />
 
         <SoundButton2
-          className="absolute -top-[13px] left-[1065px] animate__animated animate__bounceIn animate__delay-1s z-10"
+          className="absolute -top-[13px] left-[1095px] animate__animated animate__bounceIn animate__delay-1s z-10"
           active={isReading}
           onClick={() => sound.play()}
         />
 
-        <div className="grid grid-cols-[450px__1fr] gap-3 mt-5">
-          <div className="relaitve h-full flex justify-end items-end pr-5 pl-4">
-            <img src={IMAGE.src} />
-          </div>
+        <ContentContainer className="-left-16 -top-2">
+          <div className="grid grid-cols-[450px__1fr] gap-3 mt-5">
+            <div className="relaitve h-full flex justify-end items-end pr-5 pl-4">
+              <img src={IMAGE.src} />
+            </div>
 
-          <div className="flex flex-col gap-14 pt-[52px]">
-            {items.map((item, index) => (
-              <div key={index} className="flex items-center gap-5">
-                <div className="bg-red-500 text-white w-10 h-10 rounded-full flex justify-center items-center text-[30px] tracking-tightest">
-                  {index + 1}
+            <div className="flex flex-col gap-14 pt-8">
+              {items.map((item, index) => (
+                <div key={index} className="flex items-center gap-5 pr-4">
+                  <div className="bg-red-500 text-white w-9 h-9 rounded-full flex justify-center items-center text-[28px] tracking-tightest">
+                    {index + 1}
+                  </div>
+                  <p className="text-[30px] tracking-tight mb-1">{item}</p>
                 </div>
-                <p className="text-[30px]">{item}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </ContentContainer>
       </CreativityPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

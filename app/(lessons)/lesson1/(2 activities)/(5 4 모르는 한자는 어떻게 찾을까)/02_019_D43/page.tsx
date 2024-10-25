@@ -49,10 +49,10 @@ export default function Page() {
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 
-      {step !== 1 ? (
+      {step === 2 ? (
       <SmartButton
         link="https://hanja.dict.naver.com"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[234px] top-[230px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-1s absolute right-[234px] top-[230px] z-10" />
         ) : null }
 
       <ContentContainer className="!justify-start pt-[45px] ml-[175px]">

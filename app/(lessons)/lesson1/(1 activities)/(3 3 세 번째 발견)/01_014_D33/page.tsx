@@ -25,6 +25,14 @@ export default function Page() {
     <>
       <Header />
 
+      <ExerciseHeader
+        text={
+          <>
+            <p className="tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
+          </>
+        }
+      />
+
       <WritingButton
         className="animate__animated animate__fadeIn animate__delay-1s absolute right-[314px] top-[202px] z-1" />
       <SmartButton
@@ -34,17 +42,8 @@ export default function Page() {
         src={QR.src} 
         className="absolute right-[227px] top-[368px] z-1" />
 
-      <ExerciseHeader
-        text={
-          <>
-            <p className="tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
-          </>
-        }
-      />
-
       <div className="relative">
         <img src={IMAGE.src} className="mx-auto -mt-8" />
-
 
         {!value && !showAnswer ? (
             <img

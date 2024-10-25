@@ -25,15 +25,10 @@ export default function Page() {
         sound=""
       />
     ) : (
-      <>
       <StrengthenLearningMainContentHeader
         title={"성어와 의미가 통하는 우리말 속담을 디지털 도구로 찾아 써보자. "}
         sound=""
       />
-      <SmartButton
-        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1" />
-        </>
     )}
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -50,6 +45,10 @@ const Step1 = () => {
 
   return (
     <>
+      <SmartButton
+        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1" />
+
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />
         {!value && !showAnswer ? (
@@ -91,6 +90,10 @@ const Step2 = () => {
 
   return (
     <>
+      <SmartButton
+        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%A0%EC%A7%84%EA%B0%90%EB%9E%98"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1" />
+
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE2.src} />
         {!value && !showAnswer ? (

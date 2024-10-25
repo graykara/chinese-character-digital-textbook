@@ -22,6 +22,9 @@ export default function Page() {
         sound=""
       />
 
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[255px] left-[560px] z-1" />
+
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -32,7 +35,7 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ContentContainer>
+      <ContentContainer className="-top-12 left-4">
         <img src={IMAGE.src} />
       </ContentContainer>
       <img
@@ -51,12 +54,9 @@ const Step2 = () => {
 
   return (
     <>
-      <ContentContainer className="">
+      <ContentContainer className="-top-16 -left-10">
         <img src={IMAGE2.src} />
       </ContentContainer>
-
-      <WritingButton
-        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[50px] left-[100px] z-1" />
 
       <ExampleAnswerButton
         active={showAnswer}

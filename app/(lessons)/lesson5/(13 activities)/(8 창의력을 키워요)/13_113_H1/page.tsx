@@ -3,6 +3,7 @@
 import IMAGE from "./bg_6.png";
 import IMAGE1 from "./bg_5.png";
 import IMAGE2 from "./bg_2.png";
+import IMAGE_BUTTON from "./button.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
@@ -25,63 +26,54 @@ export default function Page() {
     "영상 완성하여 발표하기.",
   ];
   const [showAnswer, setShowAnswer] = useState(false);
-  // const [step, setStep] = useState(1);
-
-  // useEffect(() => {
-  //   setShowAnswer(false);
-  // }, [step]);
 
   return (
     <>
       <CreativityPageTemplate>
-        <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="말과 관련된 속담으로 짧은 영상 만들기"></CreativityTitleHeader>
-        </header>
+        <CreativityTitleHeader
+          title="말과 관련된 속담으로 짧은 영상 만들기"
+          containerClassName="-mt-5"
+        />
+        {/* <TitleContainer
+          className="ml-[85px] mt-6"
+          sound="">
+          <div className="flex items-center gap-1 text-[45px] tracking-[-2px] -ml-[70px] -mr-20">
+            내가 시간과 노력을 들여서 이루고 싶은 것을 생각해 보고 구체적인 계획을 쓰고 발표해 보자.
+          </div>
+        </TitleContainer> */}
+        {/* <div className="relative left-[120px] top-[105px]">
+          <img src={IMAGE1.src} />
+        </div> */}
+        <div className="relative left-[150px] top-[40px]">
+          <img src={IMAGE.src} />
+        </div>
       </CreativityPageTemplate>
 
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[100px] top-[664px] z-1" />
-
-      {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
-
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
-          <img src="/ui/flower-icon-2.png" />
-          다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
-        </div>
-      </TitleContainer>
-
-      <div className="absolute  ">
-        <img src={IMAGE.src} />
-      </div>
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[80px] top-[664px] z-1" />
 
       <InputWithPen
         answer={answers1[0]}
         showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
+        className="text-[45px] text-center w-[720px] bg-transparent"
         penClassName="left-0 w-[60px] top-[35px]"
         containerClassName="absolute top-[172px] left-[280px]"
+        isExample
       />
       <InputWithPen
         answer={answers1[1]}
         showAnswer={showAnswer}
-        className="text-example ext-[50px] text-center w-[720px] bg-transparent"
+        className="text-[45px] text-center w-[720px] bg-transparent"
         penClassName="left-0 w-[60px] top-[35px]"
         containerClassName="absolute top-[317px] left-[280px]"
+        isExample
       />
-      <InputWithPen
-        answer={answers2[2]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[463px] left-[280px]"
-      />
-      <InputWithPen
-        answer={answers2[3]}
-        showAnswer={showAnswer}
-        className="text-example text-[50px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[608px] left-[280px]"
-      />
+
+      <div className="absolute w-[930px] grid grid-cols-4 gap-[60px] left-[580px] bottom-[93px]">
+        <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+        <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+        <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+        <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+      </div>
 
       <ExampleAnswerButton
         active={showAnswer}
