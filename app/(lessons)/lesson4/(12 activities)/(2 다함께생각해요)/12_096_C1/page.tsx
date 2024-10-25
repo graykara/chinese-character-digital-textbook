@@ -30,7 +30,10 @@ const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
-      <ThinkTogetherHeader title="나에게 힘이 되었던 말을 써 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">나에게 힘이 되었던 말을 써 보자.</p>}
+        sound=""
+      />
 
       <ContentContainer className="!justify-start">
         <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[300px]"></div>
@@ -50,7 +53,10 @@ const Step2 = () => {
 
   return (
     <>
-      <ThinkTogetherHeader title="학급 친구들과 함께 ‘힘이 되는 말’ 세 가지를 뽑아 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">학급 친구들과 함께 ‘힘이 되는 말’ 세 가지를 뽑아 보자.</p>}
+        sound=""
+      />
 
       <ContentContainer className="!justify-start">
         <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[500px]"></div>

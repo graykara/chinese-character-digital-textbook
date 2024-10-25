@@ -18,7 +18,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="밑줄 친 부분의 뜻이 무엇일지 생각해 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">밑줄 친 부분의 뜻이 무엇일지 생각해 보자.</p>}
+        sound=""
+      />
 
       <div className="h-full flex justify-center items-center">
         <VideoThumbnail_big

@@ -16,7 +16,7 @@ import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어3.
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("다 함께 생각해요");
-  
+
   const [step, setStep] = useState(1);
 
   const answer = "도로와 유적 표지판에서 한자 표기를 보았다.";
@@ -25,7 +25,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="한자를 만난 경험을 떠올려 보자."/>
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">한자를 만난 경험을 떠올려 보자.</p>}
+        sound=""
+      />
 
       {step === 1 ? (
         <div className="h-full flex justify-center items-center">
@@ -64,9 +67,8 @@ export default function Page() {
                 <textarea
                   value={showAnswer ? answer : value}
                   onChange={(e) => setValue(e.target.value)}
-                  className={`absolute resize-none left-0 top-0 text-[55px] bg-transparent w-full h-full ml-3 px-16 py-11 leading-[76px] ${
-                    showAnswer ? "text-example ml-3" : ""
-                  }`}
+                  className={`absolute resize-none left-0 top-0 text-[55px] bg-transparent w-full h-full ml-3 px-16 py-11 leading-[76px] ${showAnswer ? "text-example ml-3" : ""
+                    }`}
                   rows={3}
                 ></textarea>
                 <img src={TEXTAREA.src} className="" />

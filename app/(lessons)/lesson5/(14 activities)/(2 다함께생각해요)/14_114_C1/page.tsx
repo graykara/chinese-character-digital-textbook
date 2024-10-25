@@ -17,9 +17,8 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
-        title={
-          "다음과 같이 동물을 구분하였을 때 각 동물이 겪을 수 있는 문제점을 생각하여 써 보자."
-        }
+        title={<p className="-ml-2">다음과 같이 동물을 구분하였을 때 각 동물이 겪을 수 있는 문제점을 생각하여 써 보자.</p>}
+        sound=""
       />
 
       {step === 1 && <Step1 />}

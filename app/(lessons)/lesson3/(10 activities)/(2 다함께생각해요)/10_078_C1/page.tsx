@@ -12,7 +12,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="성어 성격 유형 검사를 풀어 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">성어 성격 유형 검사를 풀어 보자.</p>}
+        sound=""
+      />
 
       <ContentContainer>
         <img src={IMAGE1.src} />

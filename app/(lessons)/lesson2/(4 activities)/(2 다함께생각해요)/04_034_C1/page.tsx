@@ -20,6 +20,10 @@ export default function Page() {
 
   return (
     <>
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자.</p>}
+        sound=""
+      />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -30,8 +34,6 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ThinkTogetherHeader title="만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자." />
-
       <ContentContainer>
         <VideoThumbnail_big
           thumbnail={IMAGE.src}
@@ -49,8 +51,6 @@ const Step2 = () => {
 
   return (
     <>
-      <ThinkTogetherHeader title="만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자." />
-
       <ContentContainer>
         <Textarea
           value={

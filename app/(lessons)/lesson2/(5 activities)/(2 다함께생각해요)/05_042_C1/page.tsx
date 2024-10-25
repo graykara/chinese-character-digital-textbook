@@ -1,6 +1,6 @@
 "use client";
 
-import { ThinkTogetherHeader2 } from "@/app/components/headers/think-together";
+import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
 import IMAGE2 from "./bgTextArea.png";
 import { ContentContainer } from "@/app/components/content-container";
@@ -19,8 +19,11 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader2
-        title="대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여 그 뜻을 찾아보자."
+      <ThinkTogetherHeader
+        title={
+          <p className="-ml-2 text-[52px] leading-[60px] tracking-[-2.5px]">대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여 그 뜻을 찾아보자.</p>
+        }
+        sound=""
         subTitle={
           <div className="animate__animated animate__fadeIn flex items-center mt-14">
             <p className="text-[#df865a] absolute -left-[36px] text-[30px]">
