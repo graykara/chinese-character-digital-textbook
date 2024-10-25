@@ -9,6 +9,13 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("단원도입");
 
+  const sound = [
+    { text: "한자는 ‘또 다른 우리의 문자’입니다.", start: 0, end: 4276 },
+    { text: "우리는 한자를 삼국 시대 이전, 문자가 없던 시절은 물론이고 한글이 창제된 이후에도 사용하였습니다.", start: 4276, end: 13432 },
+    { text: "따라서 우리 문화의 핵심은 한자로 기록되어 있고, 우리 언어생활 속 수많은 어휘  역시 한자로 이루어져 있습니다.", start: 13432, end: 22968 },
+    { text: "그러므로 우리는 한자와 한문에 대한 기초적인 지식을 이해할 필요가 있습니다.", start: 22968, end: 30380 },
+  ];
+
   return (
     <>
       <ReactPlayer

@@ -20,6 +20,11 @@ export default function Page() {
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
+  [
+    { text: "한·중·일 삼국은 지리적으로 매우 가깝고 ‘한자 문화권’이라는 공통점이 있는 만큼 성어를 사용하는 문화 역시 비슷하다.", start: 0, end: 10308 },
+    { text: "다만 각 나라의 문화적 특성, 한자 사용의 차이에 따라 성어를 표현하는 방식이 다르게 나타나기도 한다.", start: 10308, end: 18830 },
+    { text: "이는 ‘결심이 굳지 못함.’을 뜻하는 성어에서도 확인해 볼 수 있다.", start: 18830, end: 24868 },
+  ];
 
   useEffect(() => {
     return () => {
