@@ -20,6 +20,12 @@ export default function Page() {
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
+  [
+    { text: "오늘날에는 아라비아 숫자를 주로 사용하지만, 예전에는 한자로 숫자를 적었다.", start: 0, end: 7300 },
+    { text: "그런데 ‘一’은 ‘八’을 제외한 거의 모든 숫자로 위조할 수 있고, ‘二’는 ‘三’, ‘四’, ‘五’ 등 더 큰 숫자로 쉽게 꾸며낼 수 있다.", start: 7300, end: 17626 },
+    { text: "이를 막기 위해 쓰는 한자가 ‘갖은자’로, 보통 쓰는 숫자 한자와 음은 같지만 획이 복잡하다.", start: 17626, end: 26383 },
+  ];
+  
   const sounds = [
     new Howl({ src: "/sound/2/31/1.mp3" }),
     new Howl({ src: "/sound/2/31/2.mp3" }),

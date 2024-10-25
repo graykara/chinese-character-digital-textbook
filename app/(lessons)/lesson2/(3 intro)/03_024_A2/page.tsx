@@ -9,6 +9,13 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("단원도입");
 
+  const sound = [
+    { text: "한자는 사물의 모양을 본뜬 그림에서 시작하여 오랜 세월을 거쳐 그 모양이 변해서 지금의 형태가 되었습니다.", start: 0, end: 10454 },
+    { text: "또한 눈에 보이지 않는 생각이나 개념을 점과 선으로 나타내거나, 둘 이상의 한자를 합쳐 새로운 한자를 만들기도 하였습니다.", start: 10454, end: 21522 },
+    { text: "이러한 한자의 형성 과정을 이해하면 한자의 모양·음·뜻을 보다 효과적으로 익힐 수 있습니다.", start: 21522, end: 30424 },
+    { text: "나아가 일상의 많은 한자 어휘를 쉽게 이해하여 문해력 향상에도 큰 도움이 됩니다.", start: 30424, end: 38922 },
+  ];
+
   return (
     <>
       <ReactPlayer
