@@ -63,7 +63,7 @@ export default function Page() {
         <img src={IMAGE1.src} />
 
         <DndProvider backend={HTML5Backend}>
-          <div className="absolute w-[550px] height-[400px] grid grid-cols-3 gap-[20px] left-[50px] ">
+          <div className="absolute w-[510px] height-[400px] grid grid-cols-3 gap-[30px] left-[60px] ">
             {hanjaCards.map((hanja, index) => (
               <div
                 key={index}
@@ -80,7 +80,7 @@ export default function Page() {
                   index={index}
                   moveCard={() => { }}
                 >
-                  <div className="w-[170px] h-[140px] bg-red-400 flex justify-center items-center font-haeseo text-[80px]">
+                  <div className="w-[165px] h-[135px] bg-red-400 flex justify-center items-center font-haeseo text-[80px]">
                     {hanja}
                   </div>
                 </DraggableHanjaCard>
