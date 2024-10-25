@@ -3,7 +3,7 @@
 import { SoundButton1 } from "@/app/components/buttons/sound-button1";
 import { useEffect, useMemo, useState } from "react";
 import { Howl } from "howler";
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어11.png"
 
 export default function Page() {
@@ -23,9 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-1 pb-3 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <div className="w-[1600px] h-full mx-auto flex flex-col justify-center items-center px-[150px] mb-[200px]">
 

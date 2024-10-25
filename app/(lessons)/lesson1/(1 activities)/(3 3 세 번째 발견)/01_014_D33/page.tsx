@@ -19,9 +19,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
         text="아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자."

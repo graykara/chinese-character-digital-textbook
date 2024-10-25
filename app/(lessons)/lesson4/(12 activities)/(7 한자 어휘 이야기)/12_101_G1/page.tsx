@@ -6,10 +6,12 @@ import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
+import { QRButton } from "@/app/components/buttons/qr-button";
 import QR from "./qr.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글29.png";
+import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글30.png";
 
 
 export default function Page() {
@@ -22,7 +24,7 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && (
         <>
-          <img src={QR.src} className="absolute right-[80px] top-[80px]" />
+          <QRButton src={QR.src} className="absolute right-[150px] top-[120px] z-1" />
           <ContentContainer className="-top-10 -left-1">
             <img src={IMAGE2.src} />
           </ContentContainer>
@@ -30,7 +32,7 @@ export default function Page() {
       )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

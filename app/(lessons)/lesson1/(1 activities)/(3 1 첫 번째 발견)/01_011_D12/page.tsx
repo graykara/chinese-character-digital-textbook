@@ -1,6 +1,6 @@
 "use client";
 
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE1 from "./exercise1.png";
 import THUMBNAIL from "./thumbnail.png";
@@ -23,9 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
         text="대화에서 한자 어휘라고 생각하는 것에 모두 ○표 해 보자."

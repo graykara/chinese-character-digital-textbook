@@ -1,6 +1,6 @@
 "use client";
 
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE4 from "./exercise4.png";
 import THUMBNAIL from "./thumbnail.png";
@@ -38,9 +38,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
         text="뉴스 기사에서 틀린 말을 모두 찾아 바르게 고쳐 보자."

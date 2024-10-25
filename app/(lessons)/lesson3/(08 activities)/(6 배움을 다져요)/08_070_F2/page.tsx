@@ -27,7 +27,7 @@ export default function Page() {
       <div className="absolute top-[400px] right-[60px]">
         <SmartButton
           link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
-          className="w-[100px]"
+          className="animate__animated animate__bounceIn animate__delay-1s"
         />
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { ExerciseHeader, ExerciseHeader2 } from "@/app/components/exercise-header";
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
@@ -70,9 +70,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-12 -pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader2
         text="한자 문화권 나라의 길거리를 담은 사진이다. 각 사진 속의 한자가 무엇을 뜻하는지 알아 보자."

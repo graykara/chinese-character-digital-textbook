@@ -2,7 +2,7 @@
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { StepContainer } from "@/app/components/step-container";
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { useEffect, useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
 import IMAGE1 from "./image1.png";
@@ -54,9 +54,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-1 pb-3 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ContentContainer className="flex flex-col items-center -mt-[150px]">
         <img src={data[step - 1]?.image} className="h-[420px] mb-[150px]" />
