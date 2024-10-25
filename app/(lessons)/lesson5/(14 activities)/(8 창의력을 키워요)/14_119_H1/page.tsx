@@ -10,6 +10,8 @@ import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요22.png";
 import { ContentContainer } from "@/app/components/content-container";
+import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
   const answers1 = [
@@ -46,6 +48,9 @@ export default function Page() {
           </div>
         </ContentContainer>
       </CreativityPageTemplate>
+
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[350px] top-[186px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[220px] top-[186px] z-1" />
 
       <ExampleAnswerButton
         active={showAnswer}

@@ -274,10 +274,12 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={6} step={step} onStepChange={setStep} />
 
+        {step !== 1 ? (
         <MainContentVideoButton
           video="/video/writing/36p_1.mp4"
           className="absolute left-[112px] top-[40px]"
         />
+        ) : null }
 
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" />

@@ -29,14 +29,15 @@ export default function Page() {
         sound=""
         subTitle={
           <div className="absolute top-5 -right-16 flex items-center gap-5">
-            <SmartButton
-              link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
-              className="w-[100px]"
-            />
-            <WritingButton />
           </div>
         }
       />
+      <SmartButton
+              link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
+              className="animate__animated animate__fadeIn animate__delay-2s absolute right-[314px] top-[236px] z-1 w-[100px]"
+            />
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute right-[184px] top-[262px] z-1" />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

@@ -110,9 +110,8 @@ const Step2 = () => {
         sound=""
         className="w-[1600px]"
       />
-      <div className="absolute top-[145px] right-[85px] flex items-center gap-5">
-        <WritingButton />
-      </div>
+      <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[145px] right-[85px] flex items-center gap-5 z-1" />
+      
       <ContentContainer className="!justify-start -top-[75px] left-[50px] -mb-20">
         <img src={IMAGE2.src} />
         {!value && !showAnswer ? (

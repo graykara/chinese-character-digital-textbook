@@ -25,7 +25,7 @@ export default function Page() {
       />
 
       <div className="absolute top-[210px] left-[1200px] flex items-center gap-5">
-        <WritingButton />
+        <WritingButton className="animate__animated animate__fadeIn animate__delay-1s" />
       </div>
       
       <ContentContainer className="!justify-start -top-[65px] left-9">

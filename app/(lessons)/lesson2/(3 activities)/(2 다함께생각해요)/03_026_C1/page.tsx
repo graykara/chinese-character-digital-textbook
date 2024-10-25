@@ -56,7 +56,7 @@ const Step2 = () => {
         sound=""
       />
 
-      <BuddyButton className="absolute left-[800px] top-[240px]" />
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
 
       <ContentContainer className="!justify-start mt-20 mb-[100px]">
         <img src={IMAGE2.src} className="absolute top-[30px] left-[70px]" />

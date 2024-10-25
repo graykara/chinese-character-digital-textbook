@@ -31,7 +31,7 @@ export default function Page() {
         sound=""
       />
       <SmartButton
-        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
+        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
         className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1" />
         </>
     )}

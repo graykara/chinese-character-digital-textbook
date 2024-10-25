@@ -42,9 +42,9 @@ const Step1 = () => {
         }
         sound=""
       />
-      <div className="absolute top-[135px] left-[1565px] flex items-center gap-5">
-        <WritingButton />
-      </div>
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
+        
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
         <InputWithPen

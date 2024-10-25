@@ -40,7 +40,7 @@ export default function Page() {
           고대 한자가 의미하는 뜻을 한 단어로 써 보고 자신과 친구의 생각을
           비교해 보자.
         </p>
-        <BuddyButton className="absolute bottom-3 left-[280px]" />
+        <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute bottom-3 left-[280px] z-1" />
       </TitleContainer>
 
       <ContentContainer className="!justify-start pt-4 -left-10">

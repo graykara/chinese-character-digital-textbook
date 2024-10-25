@@ -24,7 +24,9 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && (
         <>
-          <QRButton src={QR.src} className="absolute right-[150px] top-[120px] z-1" />
+          <QRButton 
+          src={QR.src} 
+          className="absolute right-[150px] top-[124px] z-1" />
           <ContentContainer className="-top-10 -left-1">
             <img src={IMAGE2.src} />
           </ContentContainer>
