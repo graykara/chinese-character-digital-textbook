@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
-import IMAGE1 from "./bg_2.png";
+import IMAGE1 from "./bg_1-2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";

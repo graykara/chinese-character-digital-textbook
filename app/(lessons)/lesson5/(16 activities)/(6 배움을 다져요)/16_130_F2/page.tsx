@@ -11,7 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만�
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const asnwers = ["家畜", "同行", "劣惡"];
+  const answers = ["浮", "聞", "集", "活"];
 
   return (
     <>
@@ -22,18 +22,46 @@ export default function Page() {
         sound="/sound/5/130-i.mp3"
       />
 
-      <ContentContainer className="!justify-start -top-[50px] left-16">
+      <ContentContainer className="!justify-start -top-[38px] left-[90px]">
         <img src={IMAGE1.src} />
+        <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
+          penClassName="ml-5 -mt-1 h-[50px]"
+          containerClassName="absolute top-[15px] left-[75px] -mt-1 ml-1"
+        />
+        <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
+          penClassName="ml-5 -mt-1 h-[50px]"
+          containerClassName="absolute top-[120px] left-[505px] -mt-1 ml-1"
+        />
+        <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
+          penClassName="ml-5 -mt-1 h-[50px]"
+          containerClassName="absolute top-[445px] left-[180px] -mt-1 ml-1"
+        />
+        <InputWithPen
+          answer={answers[3]}
+          showAnswer={showAnswer}
+          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
+          penClassName="ml-5 -mt-1 h-[50px]"
+          containerClassName="absolute top-[445px] left-[505px] -mt-1 ml-1"
+        />
       </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img
+      {/* <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      />
+      /> */}
     </>
   );
 }
