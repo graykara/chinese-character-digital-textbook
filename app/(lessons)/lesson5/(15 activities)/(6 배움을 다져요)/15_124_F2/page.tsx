@@ -11,7 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살21
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const asnwers = ["家畜", "同行", "劣惡"];
+  const answers = ["왕", "복", "부", "흥", "갱", "신", "경", "신"];
 
   return (
     <>
@@ -20,18 +20,77 @@ export default function Page() {
         sound=""
       />
 
-      <ContentContainer className="!justify-start -top-[50px] left-16">
+      <ContentContainer className="!justify-start -top-[75px] left-[100px]">
         <img src={IMAGE1.src} />
+        {/* <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[52px] left-[740px] -mt-1 ml-1"
+        /> */}
+        <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[52px] left-[809px] -mt-1 ml-1"
+        />
+
+        <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[158px] left-[928px] -mt-1 ml-1"
+        />
+        {/* <InputWithPen
+          answer={answers[3]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[158px] left-[997px] -mt-1 ml-1"
+        /> */}
+
+        <InputWithPen
+          answer={answers[4]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[355px] left-[889px] -mt-1 ml-1"
+        />
+        {/* <InputWithPen
+          answer={answers[5]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[355px] left-[958px] -mt-1 ml-1"
+        /> */}
+
+        <InputWithPen
+          answer={answers[6]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[462px] left-[929px] -mt-1 ml-1"
+        />
+        {/* <InputWithPen
+          answer={answers[7]}
+          showAnswer={showAnswer}
+          className={`w-[60px] text-center bg-transparent text-[45px] tracking-tighter`}
+          penClassName="ml-3 -mt-1 h-[40px]"
+          containerClassName="absolute top-[462px] left-[998px] -mt-1 ml-1"
+        /> */}
       </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img
+      {/* <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      />
+      /> */}
     </>
   );
 }

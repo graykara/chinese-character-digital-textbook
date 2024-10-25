@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
-import IMAGE1 from "./bg_1.png";
+import IMAGE1 from "./bg_1-2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
@@ -63,7 +63,7 @@ export default function Page() {
         <img src={IMAGE1.src} />
 
         <DndProvider backend={HTML5Backend}>
-          <div className="absolute w-[510px] height-[400px] grid grid-cols-3 gap-[30px] left-[60px] ">
+          <div className="absolute w-[520px] height-[400px] grid grid-cols-3 gap-[30px] left-[60px] ">
             {hanjaCards.map((hanja, index) => (
               <div
                 key={index}
@@ -80,7 +80,7 @@ export default function Page() {
                   index={index}
                   moveCard={() => { }}
                 >
-                  <div className="w-[165px] h-[135px] bg-red-400 flex justify-center items-center font-haeseo text-[80px]">
+                  <div className="w-[165px] h-[135px] pb-[15px] bg-transparent flex justify-center items-center font-haeseo text-[80px]">
                     {hanja}
                   </div>
                 </DraggableHanjaCard>
@@ -91,14 +91,14 @@ export default function Page() {
             <div className="absolute right-[450px] top-[20px]">
               <div className="absolute left-0 ">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[0] : droppedHanja[0]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[105px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[2] : droppedHanja[1]}
                   </div>
                 </HanjaDropZone>
@@ -108,14 +108,14 @@ export default function Page() {
             <div className="absolute right-[450px] top-[139px]">
               <div className="absolute left-0 ">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[7] : droppedHanja[2]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[105px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[1] : droppedHanja[3]}
                   </div>
                 </HanjaDropZone>
@@ -125,14 +125,14 @@ export default function Page() {
             <div className="absolute right-[450px] top-[258px]">
               <div className="absolute left-0 ">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[0] : droppedHanja[4]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[105px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[4] : droppedHanja[5]}
                   </div>
                 </HanjaDropZone>
@@ -142,28 +142,28 @@ export default function Page() {
             <div className="absolute right-[450px] top-[377px]">
               <div className="absolute left-0 ">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[3] : droppedHanja[6]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[105px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[8] : droppedHanja[7]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[210px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[5] : droppedHanja[8]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div className="absolute left-[315px]">
                 <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-blue-400">
+                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
                     {showAnswer ? hanjaCards[6] : droppedHanja[9]}
                   </div>
                 </HanjaDropZone>

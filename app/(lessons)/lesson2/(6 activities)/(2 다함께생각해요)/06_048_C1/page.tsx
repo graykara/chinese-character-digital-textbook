@@ -18,7 +18,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="다음 글을 읽고 빈칸에 들어갈 말을 써 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">다음 글을 읽고 빈칸에 들어갈 말을 써 보자.</p>}
+        sound="" 
+      />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

@@ -1,6 +1,6 @@
 "use client";
 
-import { ThinkTogetherHeader, ThinkTogetherHeader2 } from "@/app/components/headers/think-together";
+import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -31,7 +31,10 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ThinkTogetherHeader title={<p className="-ml-2">그림과 기호를 보고 무엇을 의미하는지 말해 보자.</p>}></ThinkTogetherHeader>
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">그림과 기호를 보고 무엇을 의미하는지 말해 보자.</p>}
+        sound=""
+      />
 
       <ContentContainer className="absolute left-[40px] bottom-[110px]">
         <img src={IMAGE.src} />
@@ -48,9 +51,10 @@ const Step2 = () => {
 
   return (
     <>
-      <ThinkTogetherHeader2
-        title={<p className="-ml-3 tracking-[-1px]">글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.</p>}>
-      </ThinkTogetherHeader2>
+      <ThinkTogetherHeader
+        title={<p className="-ml-3 text-[52px] leading-[60px] tracking-[-1px]">글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.</p>}
+        sound=""
+      />
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
 

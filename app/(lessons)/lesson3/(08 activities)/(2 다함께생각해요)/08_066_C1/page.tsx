@@ -17,7 +17,8 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
-        title="대화를 읽고 ㉠~㉢에 들어갈 말을 찾아 써 보자."
+        title={<p className="-ml-2">대화를 읽고 ㉠~㉢에 들어갈 말을 찾아 써 보자.</p>}
+        sound=""
         subTitle={
           <p className="tracking-tighter">
             * ㉡, ㉢에 들어갈 성어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.

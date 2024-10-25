@@ -1,6 +1,6 @@
 "use client";
 
-import { ThinkTogetherHeader2 } from "@/app/components/headers/think-together";
+import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
 import IMAGE2_BEFORE from "./image2-before.png";
 import IMAGE2_AFTER from "./image2-after.png";
@@ -22,8 +22,11 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader2
-        title="아래 성어의 의미를 디지털 도구 등을 활용하여 찾고, 성어를 사용하면 어떤 효과가 있을지 써 보자."
+      <ThinkTogetherHeader
+        title={
+          <p className="-ml-2 text-[52px] leading-[60px] tracking-[-2.5px]">아래 성어의 의미를 디지털 도구 등을 활용하여 찾고, 성어를 사용하면 어떤 효과가 있을지 써 보자.</p>
+        }
+        sound=""
         subTitle={
           <div className="absolute top-5 -right-16 flex items-center gap-5">
           </div>
