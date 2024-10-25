@@ -11,6 +11,7 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
   const answers1 = [
@@ -37,6 +38,8 @@ export default function Page() {
           <CreativityTitleHeader title="말과 관련된 속담으로 짧은 영상 만들기"></CreativityTitleHeader>
         </header>
       </CreativityPageTemplate>
+
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[100px] top-[664px] z-1" />
 
       {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
 

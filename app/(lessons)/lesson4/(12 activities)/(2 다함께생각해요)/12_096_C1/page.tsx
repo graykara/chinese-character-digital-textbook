@@ -13,6 +13,8 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글3.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -51,6 +53,9 @@ const Step2 = () => {
   return (
     <>
       <ThinkTogetherHeader title="학급 친구들과 함께 ‘힘이 되는 말’ 세 가지를 뽑아 보자." />
+
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[350px] top-[186px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[220px] top-[186px] z-1" />
 
       <ContentContainer className="!justify-start">
         <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[500px]"></div>

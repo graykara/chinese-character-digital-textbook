@@ -37,7 +37,7 @@ export default function Page() {
       <div><p className="ml-[250px] -mt-5 text-[55px] text-[#1b1b1b] tracking-tighter break-keep leading-[60px] "><span className="text-[#AD6C35] text-[55px]">*</span> 부록의 미니 자전을 이용해도 좋습니다.</p></div>
 
       <SmartButton
-        link=""
+        link="https://hanja.dict.naver.com/#/main"
         className="animate__animated animate__bounceIn animate__delay-2s absolute right-[150px] top-[275px] z-1" />
 
       {step === 1 && <Step1 />}

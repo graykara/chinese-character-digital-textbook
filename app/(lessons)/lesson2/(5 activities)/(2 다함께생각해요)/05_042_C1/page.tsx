@@ -31,7 +31,7 @@ export default function Page() {
             </p>
             <SmartButton
               link="https://stdict.korean.go.kr/main/main.do"
-              className="ml-3"
+              className="animate__animated animate__bounceIn animate__delay-2s ml-3"
             />
           </div>
         }

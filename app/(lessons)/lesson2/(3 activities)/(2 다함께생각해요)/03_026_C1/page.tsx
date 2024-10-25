@@ -52,7 +52,7 @@ const Step2 = () => {
         title={<p className="-ml-3 tracking-[-1px]">글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.</p>}>
       </ThinkTogetherHeader2>
 
-      <BuddyButton className="absolute left-[800px] top-[240px]" />
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
 
       <ContentContainer className="!justify-start mt-20 mb-[100px]">
         <img src={IMAGE2.src} className="absolute top-[30px] left-[70px]" />

@@ -33,7 +33,7 @@ export default function Page() {
           아래 의미를 지닌 그림을 서로 합치면 어떤 의미가 될지 자유롭게 말해
           보자.
         </p>
-        <BuddyButton className="absolute bottom-3 -right-28" />
+        <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute bottom-3 -right-28 z-1" />
       </TitleContainer>
 
       <ContentContainer className="!justify-start pt-8">

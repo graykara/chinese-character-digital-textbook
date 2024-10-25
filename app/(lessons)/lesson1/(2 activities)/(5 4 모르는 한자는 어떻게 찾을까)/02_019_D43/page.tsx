@@ -49,13 +49,11 @@ export default function Page() {
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 
-      { step === 2 ? (
-        <div className="absolute right-[240px] top-[230px] z-1">
-        <SmartButton
-          link="https://stdict.korean.go.kr/"
-          className="animate__animated animate__bounceIn animate__delay-1s" />
-      </div>
-      ) : null }
+      {step !== 1 ? (
+      <SmartButton
+        link="https://hanja.dict.naver.com"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[234px] top-[230px] z-1" />
+        ) : null }
 
       <ContentContainer className="!justify-start pt-[45px] ml-[175px]">
         <div className="relative w-full mb-10">

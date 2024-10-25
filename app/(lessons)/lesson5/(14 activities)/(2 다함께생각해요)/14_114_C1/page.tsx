@@ -10,6 +10,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요3.png";
+import { WritingButton } from "@/app/components/buttons/writing-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -54,6 +55,9 @@ const Step2 = () => {
       <ContentContainer className="">
         <img src={IMAGE2.src} />
       </ContentContainer>
+
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[50px] left-[100px] z-1" />
 
       <ExampleAnswerButton
         active={showAnswer}

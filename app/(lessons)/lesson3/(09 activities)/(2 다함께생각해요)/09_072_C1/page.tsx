@@ -8,6 +8,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
+import { SmartButton } from "@/app/components/buttons/smart-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -16,6 +17,19 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader title="다음 대화를 통해 '고사'의 뜻을 알아보고, 디지털 도구로 '오십보백보(五十步百步)'의 유래를 찾아 그 내용을 정리해 보자." />
+      {step !== 2 ? (
+      <SmartButton
+        link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%98%A4%EC%8B%AD%EB%B3%B4%EB%B0%B1%EB%B3%B4"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[166px] top-[220px] z-1 w-[100px]" 
+        />
+        ) : null }
+      
+      {step !== 1 ? (
+      <SmartButton
+        link="https://stdict.korean.go.kr/main/main.do"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[166px] top-[220px] z-1 w-[100px]" 
+        />
+        ) : null }
 
       <ContentContainer>
         {step === 1 && <VideoThumbnail_big thumbnail={IMAGE1.src} video="" />}

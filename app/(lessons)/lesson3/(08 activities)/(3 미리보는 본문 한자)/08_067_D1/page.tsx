@@ -14,6 +14,8 @@ import BLANK4 from "./blank4.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어3.png";
 import { StepContainer } from "@/app/components/step-container";
+import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -29,6 +31,9 @@ export default function Page() {
       <HeaderContainer>
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
+
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[1050px] top-[232px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[920px] top-[232px] z-1" />
 
       <TitleContainer className="mt-10">
         <p className="tracking-tighter flex items-start gap-5 break-keep">

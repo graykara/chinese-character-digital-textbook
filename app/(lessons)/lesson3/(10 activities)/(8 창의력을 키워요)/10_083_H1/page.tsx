@@ -8,6 +8,8 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { TitleContainer } from "@/app/components/title-container";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕27.png";
 import { ContentContainer } from "@/app/components/content-container";
+import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -18,6 +20,9 @@ export default function Page() {
         <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
           <CreativityTitleHeader title="성어 프레젠테이션 발표 대회" />
         </header>
+
+        <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[200px] top-[5px] z-1" />
+        <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[70px] top-[5px] z-1" />
 
         <ContentContainer className="!items-start">
           {/* <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full text-center">
