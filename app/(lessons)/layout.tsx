@@ -52,6 +52,7 @@ export default function RootLayout({
         <div className="grid grid-cols-[40px__1760px__1fr]">
           <div className="flex justify-end items-center">
             {1 < currentStep ? (
+              <div className="mt-0">
               <button
                 onMouseOver={() => setHoverPrev(true)}
                 onMouseLeave={() => setHoverPrev(false)}
@@ -66,6 +67,7 @@ export default function RootLayout({
                   className={hoverPrev ? "" : "hidden"}
                 />
               </button>
+              </div>
             ) : (
               <AudioLink href={getPrevPage(pathname) ?? ""}>
                 <button
@@ -90,6 +92,7 @@ export default function RootLayout({
           </div>
           <div className="flex justify-start items-center">
             {currentStep < maxStep ? (
+              <div className="mt-0">
               <button
                 onMouseOver={() => setHoverNext(true)}
                 onMouseLeave={() => setHoverNext(false)}
@@ -104,6 +107,7 @@ export default function RootLayout({
                   className={hoverNext ? "" : "hidden"}
                 />
               </button>
+              </div>
             ) : (
               <AudioLink href={getNextPage(pathname) ?? ""}>
                 <button
