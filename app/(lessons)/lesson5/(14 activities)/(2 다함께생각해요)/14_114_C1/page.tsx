@@ -48,14 +48,78 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer = [
-    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
+  const answers = [
+    "인간에 대한 학대, 유기",
+    "무분별한 실험으로 인한 동물의 생명 경시",
+    "불법 포획으로 인한 멸종 위기"
   ];
+  const [value1, setValue1] = useState("");
+  const [value2, setValue2] = useState("");
+  const [value3, setValue3] = useState("");
 
   return (
     <>
       <ContentContainer className="-top-16 -left-10">
         <img src={IMAGE2.src} />
+
+        {!value1 && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 50,
+              top: 110,
+              left: 250
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answers[0] : value1}
+          onChange={(e) => setValue1(e.target.value)}
+          className={`absolute resize-none w-[320px] left-[250px] top-[105px] text-[40px] leading-[72px] tracking-tighter break-keep bg-transparent pl-6 py-1  ${showAnswer ? "text-example" : ""
+            }`}
+          rows={6}
+        ></textarea>
+
+        {!value2 && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 50,
+              top: 110,
+              left: 645
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answers[1] : value2}
+          onChange={(e) => setValue2(e.target.value)}
+          className={`absolute resize-none w-[320px] left-[645px] top-[105px] text-[40px] leading-[72px] tracking-tighter break-keep bg-transparent pl-6 py-1  ${showAnswer ? "text-example" : ""
+            }`}
+          rows={6}
+        ></textarea>
+
+        {!value3 && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 50,
+              top: 110,
+              left: 1040
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answers[2] : value3}
+          onChange={(e) => setValue3(e.target.value)}
+          className={`absolute resize-none w-[320px] left-[1040px] top-[105px] text-[40px] leading-[72px] tracking-tighter break-keep bg-transparent pl-6 py-1  ${showAnswer ? "text-example" : ""
+            }`}
+          rows={6}
+        ></textarea>
+
+
       </ContentContainer>
 
       <ExampleAnswerButton

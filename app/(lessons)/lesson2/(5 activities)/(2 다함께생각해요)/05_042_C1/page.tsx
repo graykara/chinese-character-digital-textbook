@@ -25,17 +25,14 @@ export default function Page() {
         }
         sound=""
         subTitle={
-          <div className="animate__animated animate__fadeIn flex items-center mt-14">
-            <p className="text-[#df865a] absolute -left-[36px] text-[30px]">
-              *
-            </p>
-            <p className="text-[40px] leading-[60px] tracking-[-2.5px] break-keep">
-              바르게 고친 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.
-            </p>
+          <div className="animate__animated animate__fadeIn flex items-center -mt-10">
+            <p className="-ml-[42px] mt-1 text-[40px] text-[#1b1b1b] tracking-tighter break-keep leading-[55px] "><span className="text-[#df865a] text-[45px] -mr-1">*</span> 바르게 고친 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.</p>
+
             <SmartButton
               link="https://stdict.korean.go.kr/main/main.do"
               className="animate__animated animate__bounceIn animate__delay-2s ml-3"
             />
+
           </div>
         }
       />
@@ -50,15 +47,15 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ContentContainer className="!justify-start py-2 -top-8">
+      <ContentContainer className="!justify-start py-2 -top-5">
         <VideoThumbnail
           thumbnail={IMAGE.src}
           video="/video/animation/2-4_34.mp4"
-          width={850}
+          width={860}
           height={460}
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -81,7 +78,7 @@ const Step2 = () => {
   return (
     <>
       <ContentContainer>
-        <img src={IMAGE2.src} className="absolute top-[0px] left-[85px]" />
+        <img src={IMAGE2.src} className="absolute top-1 left-[85px]" />
         <InputWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -151,7 +148,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

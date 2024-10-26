@@ -39,7 +39,7 @@ const Step1 = () => {
           video="/video/animation/2-4_34.mp4"
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -62,14 +62,14 @@ const Step2 = () => {
             answer={answer[0]}
             showAnswer={showAnswer}
             className="text-center w-[80px] h-[80px] text-[60px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
+            penClassName="left-1/2 -translate-x-1/2 -mt-1"
             containerClassName="relative top-0"
           />
           <InputWithPen
             answer={answer[1]}
             showAnswer={showAnswer}
             className="text-center w-[80px] h-[80px] text-[60px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
+            penClassName="left-1/2 -translate-x-1/2 -mt-1"
             containerClassName="relative top-0"
           />
         </div>

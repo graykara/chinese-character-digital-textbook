@@ -58,7 +58,7 @@ const Step2 = () => {
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
 
-      <ContentContainer className="!justify-start mt-20 mb-[100px]">
+      <ContentContainer className="!justify-start mt-0 mb-[100px]">
         <img src={IMAGE2.src} className="absolute top-[30px] left-[70px]" />
         {showAnswer ? (
           <img src={IMAGE3.src} className="absolute top-[210px] left-[390px]" />

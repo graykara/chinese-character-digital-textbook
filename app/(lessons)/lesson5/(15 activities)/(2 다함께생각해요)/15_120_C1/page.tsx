@@ -99,16 +99,18 @@ const Step2 = () => {
           <InputWithPen
             answer={answer[0]}
             showAnswer={showAnswer}
-            className="text-[38px] text-example w-[1000px] h-[80px] tracking-tighter bg-transparent"
+            className="text-[38px] w-[1000px] h-[80px] tracking-tighter bg-transparent"
             penClassName="left-0 -mt-2 h-[50px]"
             containerClassName="absolute top-[35px] left-[346px]"
+            isExample
           />
           <InputWithPen
             answer={answer[1]}
             showAnswer={showAnswer}
-            className="text-[38px] text-example w-[1178px] h-[80px] tracking-tighter bg-transparent"
+            className="text-[38px] w-[1178px] h-[80px] tracking-tighter bg-transparent"
             penClassName="left-0 -mt-2 h-[50px]"
             containerClassName="absolute top-[155px] left-[168px]"
+            isExample
           />
       </ContentContainer>
 

@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
-        title={<p className="text-[55px] leading-[72px] tracking-tighter -mt-2 -ml-2 -mr-1">말풍선 속의 말을 긍정적이거나 칭찬하는 표현으로 바꾸어 빈칸에 써 보자.</p>}
+        title={<p className="text-[55px] leading-[72px] tracking-tighter -mt-2 -ml-2 -mr-1">말풍선 속의 말을 긍정적이거나 칭찬하는 표현으로 바꾸어 빈칸에<br/>써 보자.</p>}
         sound=""
       />
       <Step1 />
@@ -26,44 +26,49 @@ const Step1 = () => {
 
   return (
     <>
-      <ContentContainer className="-top-3 left-2">
+      <ContentContainer className="-top-16 left-2">
 
         <div className="relative tracking-tighter">
           <img src={IMAGE.src} />
           <InputWithPen
             answer={answers[0]}
             showAnswer={showAnswer}
-            className="text-example text-[50px] text-center w-[500px] bg-transparent"
+            className="text-[50px] text-center w-[500px] bg-transparent"
             penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
             containerClassName="absolute left-[845px] top-[30px] mt-1 pl-5"
+            isExample
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
-            className="text-example text-[50px] text-center w-[500px] bg-transparent"
+            className="text-[50px] text-center w-[500px] bg-transparent"
             penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
             containerClassName="absolute left-[845px] top-[133px] mt-1 pl-5"
+            isExample
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
-            className="text-example text-[50px] text-center w-[500px] bg-transparent"
+            className="text-[50px] text-center w-[500px] bg-transparent"
             penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
             containerClassName="absolute left-[845px] top-[234px] mt-1 pl-5"
+            isExample
           />
           <InputWithPen
             answer={answers[3]}
             showAnswer={showAnswer}
-            className="text-example text-[50px] text-center w-[500px] bg-transparent"
+            className="text-[50px] text-center w-[500px] bg-transparent"
             penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
             containerClassName="absolute left-[845px] top-[335px] mt-1 pl-5"
+            isExample
           />
           <InputWithPen
             answer={answers[4]}
             showAnswer={showAnswer}
-            className="text-example text-[50px] text-center w-[500px] bg-transparent"
+            className="text-[50px] text-center w-[500px] bg-transparent"
             penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
             containerClassName="absolute left-[845px] top-[436px] mt-1 pl-5"
+            isExample
           />
         </div>
 

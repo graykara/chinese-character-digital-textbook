@@ -10,8 +10,8 @@ import SYMBOL from "./symbol.png";
 import TEXTAREA from "./textarea.png";
 import EXAMPLE_ANSWER from "./example-answer.png";
 import { PageInfoContext } from "@/app/utils/page-info";
-// import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어2.png"
-import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어3.png"
+import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어2.png"
+import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어3.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -31,7 +31,7 @@ export default function Page() {
       />
 
       {step === 1 ? (
-        <div className="h-full flex justify-center items-center">
+        <div className="h-full flex justify-center items-center -mt-10">
           <VideoThumbnail_big
             thumbnail={VIDEO_THUMBNAIL.src}
             video="/video/animation/1-1_10.mp4"
@@ -43,7 +43,7 @@ export default function Page() {
 
       {step === 2 ? (
         <>
-          <div className="h-full flex justify-center items-center mb-[100px]">
+          <div className="h-full flex justify-center items-center -mt-[130px]">
             <div>
               <div className="animate__animated animate__flipInX flex items-center gap-4">
                 <img src={SYMBOL.src} className="mb-3" />
@@ -85,7 +85,7 @@ export default function Page() {
       ) : null}
 
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
