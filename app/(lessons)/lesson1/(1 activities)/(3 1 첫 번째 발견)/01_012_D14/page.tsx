@@ -53,7 +53,7 @@ export default function Page() {
 
           <div className="relative top-1">
             
-            <div className="absolute top-6 left-[75px] text-[50px] tracking-tighter">
+            <div className="absolute top-5 left-[75px] text-[45px] tracking-tighter">
             {step === 1 ?
               "우천 시" : "연패" }
             </div>
@@ -73,7 +73,7 @@ export default function Page() {
                 (step === 1 ? answer1 : answer2)
                  : value}
               onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none left-0 top-[100px] text-[50px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
+              className={`absolute resize-none left-0 top-[100px] text-[45px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
                 }`}
               rows={3}
             ></textarea>

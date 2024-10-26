@@ -12,7 +12,11 @@ import IMAGE3 from "./image3.png";
 import IMAGE4 from "./image4.png";
 import IMAGE5 from "./image5.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어24.png"
+import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어22.png"
+import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어23.png"
+import BACKGROUND3 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어24.png"
+import BACKGROUND4 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어25.png"
+import BACKGROUND5 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어26.png"
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -22,14 +26,14 @@ export default function Page() {
       image: IMAGE1.src,
       fontSize: 50,
       answer: "출구전용은\n‘나가는 길로만 씀.’\n이라는 뜻이야.",
-      position: { x: 650, y: 30 },
+      position: { x: 640, y: 30 },
       rows: 3,
     },
     {
       image: IMAGE2.src,
       fontSize: 50,
       answer: "입구는\n‘들어가는 길.’\n이라는 뜻이야.",
-      position: { x: 650, y: 30 },
+      position: { x: 640, y: 30 },
       rows: 3,
     },
     {
@@ -76,7 +80,7 @@ export default function Page() {
         text="한자 문화권 나라의 길거리를 담은 사진이다. 각 사진 속의 한자가 무엇을 뜻하는지 알아 보자."
       />
 
-      <ContentContainer className="-top-6">
+      <ContentContainer className="-top-6 left-20">
         {quizes.map((quiz, index) => {
           return (
             <div
@@ -112,7 +116,13 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+        step === 2 ? BACKGROUND2.src :
+        step === 3 ? BACKGROUND3.src :
+        step === 4 ? BACKGROUND4.src :
+        step === 5 ? BACKGROUND5.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

@@ -12,10 +12,13 @@ import BLANK2 from "./blank2.png";
 import BLANK3 from "./blank3.png";
 import BLANK4 from "./blank4.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어3.png";
 import { StepContainer } from "@/app/components/step-container";
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { GroupButton } from "@/app/components/buttons/group-button";
+import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어25.png";
+import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어26.png";
+import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어27.png";
+import BACKGROUND4 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어28.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -32,7 +35,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[1050px] top-[232px] z-1" />
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[1055px] top-[230px] w-[100px] z-1" />
       <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[920px] top-[232px] z-1" />
 
       <TitleContainer className="mt-10">
@@ -44,12 +47,12 @@ export default function Page() {
       </TitleContainer>
 
       <ContentContainer className="!justify-start mt-5 pl-12">
-        <img src={EXAMPLE.src} className="mb-10" />
+        <img src={EXAMPLE.src} className="mt-6 -ml-14 mb-10" />
         <div className="flex items-center gap-10">
           <button>
             <img src={LEFT.src} />
           </button>
-          <div className="w-[800px] h-[300px] flex justify-center items-center">
+          <div className="-mt-5 -ml-14 w-[800px] h-[300px] flex justify-center items-center">
             {step === 1 && <img src={BLANK1.src} />}
             {step === 2 && <img src={BLANK2.src} />}
             {step === 3 && <img src={BLANK3.src} />}
@@ -67,6 +70,13 @@ export default function Page() {
       />
 
       <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+        step === 2 ? BACKGROUND2.src :
+        step === 3 ? BACKGROUND3.src :
+        step === 4 ? BACKGROUND4.src : ""
+        } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

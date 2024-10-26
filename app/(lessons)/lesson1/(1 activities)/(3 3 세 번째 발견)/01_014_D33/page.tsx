@@ -28,22 +28,22 @@ export default function Page() {
       <ExerciseHeader
         text={
           <>
-            <p className="tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
+            <p className="text-[45px] tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
           </>
         }
       />
 
       <WritingButton
-        className="animate__animated animate__fadeIn animate__delay-1s absolute right-[314px] top-[202px] z-1" />
+        className="animate__animated animate__fadeIn animate__delay-1s absolute right-[325px] top-[200px] z-1" />
       <SmartButton
         link="https://sillok.history.go.kr/intro/intro.do"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[166px] top-[157px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[177px] top-[155px] z-1" />
       <QRButton 
         src={QR.src} 
         className="absolute right-[227px] top-[368px] z-1" />
 
       <div className="relative">
-        <img src={IMAGE.src} className="mx-auto -mt-8" />
+        <img src={IMAGE.src} className="mx-auto mt-6" />
 
         {!value && !showAnswer ? (
             <img
@@ -51,7 +51,7 @@ export default function Page() {
               className="absolute pointer-events-none"
               style={{
                 height: 45,
-                top: 380,
+                top: 435,
                 left: 580
               }}
             />
@@ -60,7 +60,7 @@ export default function Page() {
           value={showAnswer ? answer : value}
           onChange={(e) => setValue(e.currentTarget.value)}
           className={`text-[35px] text-center leading-[30px] tracking-tight absolute w-[570px] left-[570px] bottom-[140px] border-b-2 border-black bg-transparent ${
-            showAnswer ? "text-red-500" : ""
+            showAnswer ? "text-answer" : ""
           }`}
         />
       </div>

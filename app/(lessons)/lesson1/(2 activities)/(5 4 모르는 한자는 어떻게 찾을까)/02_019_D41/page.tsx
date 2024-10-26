@@ -53,7 +53,7 @@ export default function Page() {
           </p>
 
 
-        <div className="relative mt-20 -ml-20">
+        <div className="relative mt-20 -ml-24">
             <img src={IMAGE.src} className=""/>
           </div>
       </ContentContainer>

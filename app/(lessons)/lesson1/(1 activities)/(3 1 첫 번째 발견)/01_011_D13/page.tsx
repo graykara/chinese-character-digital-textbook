@@ -30,24 +30,24 @@ export default function Page() {
         className="animate__animated animate__fadeIn animate__delay-1s absolute right-[340px] top-[85px] z-1" />
       <SmartButton
         link="https://stdict.korean.go.kr/"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[180px] top-[40px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[185px] top-[40px] z-1" />
       <QRButton 
         src={QR.src} 
-        className="absolute right-[110px] top-[350px] z-1" />
+        className="absolute right-[105px] top-[350px] z-1" />
 
       <ExerciseHeader
         text={
           <>
             <p className="tracking-[-2.5px]">우리 교실 안에 있는 물건 중 이름이 한자어인 것을 10개 이상 찾아 써보자.</p>
-            <img src={TEXT.src} className="mt-2" />
+            <p className="ml-[0px] mt-0 text-[35px] text-[#1b1b1b] tracking-tighter break-keep leading-[55px] "><span className="text-[#884F36] text-[45px] -mr-1">*</span> 국어사전으로 한자어인지 확인해 보자.</p>
           </>
         }
         image={EXERCISE2.src}
       />
 
       <div className="w-[1400px] h-full mx-auto flex justify-center items-center ">
-        <img src={BLACKBOARD.src} className="absolute -translate-x-5 -translate-y-2" />
-        <div className="relative w-[850px] mb-[450px]">
+        <img src={BLACKBOARD.src} className="absolute -translate-x-5 -translate-y-5" />
+        <div className="relative w-[850px] mb-[475px]">
 
           <div className="absolute left-0  text-[#9d9483] tracking-tighter">
             &lt;예 공책, 칠판&gt;

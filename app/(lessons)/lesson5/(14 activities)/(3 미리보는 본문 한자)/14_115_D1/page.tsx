@@ -29,7 +29,7 @@ export default function Page() {
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start mt-5 pl-12">
+      <ContentContainer className="!justify-start pl-12">
         <div className="relative w-full">
           <img src={IMAGE.src} />
 

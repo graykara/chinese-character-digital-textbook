@@ -54,7 +54,7 @@ export default function Page() {
             <textarea
               value={showAnswer ? answer : value}
               onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none left-0 top-5 text-[50px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
+              className={`absolute resize-none left-0 top-5 text-[45px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tighter break-keep ${showAnswer ? "text-answer ml-3" : ""
                 }`}
               rows={3}
             ></textarea>

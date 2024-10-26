@@ -84,7 +84,7 @@ export const FlippableCard = ({
           </div>
           <img
             src={FLIP_ICON.src}
-            className="absolute -top-7 -right-9 w-[62px]"
+            className="absolute -top-10 -right-12 w-[62px]"
             alt="Flip icon"
           />
         </div>
