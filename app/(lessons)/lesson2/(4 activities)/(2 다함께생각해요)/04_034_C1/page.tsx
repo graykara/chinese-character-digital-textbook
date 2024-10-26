@@ -78,7 +78,7 @@ const Step2 = () => {
         <textarea
           value={showAnswer ? answer : value}
           onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tighter break-keep bg-transparent pl-[75px] py-1  ${showAnswer ? "text-example" : ""
+          className={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
             }`}
           rows={3}
         ></textarea>
