@@ -20,8 +20,8 @@ type Data = {
 
 interface Props {
   data: Data;
-  showReading: boolean;
-  showMeaning: boolean;
+  showReading: boolean | null;
+  showMeaning: boolean | null;
   showMeaning2: boolean;
   setShowReading: (value: boolean) => void;
   setShowMeaning: (value: boolean) => void;
@@ -87,8 +87,7 @@ export const MainContent = ({
                       </span>
                       <div
                         className={`absolute -mt-10 left-1/2 -translate-x-1/2 animate__animated
-                  ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}
-                      >
+                  ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}>
                         {showReading ? (
                           <span
                             className={`text-main-content text-[60px] font-chosun`}

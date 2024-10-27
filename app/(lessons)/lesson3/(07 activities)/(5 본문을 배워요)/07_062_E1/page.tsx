@@ -16,13 +16,13 @@ import { MainContentVideoButton } from "@/app/components/main-content/video-butt
 export default function Page() {
   const [step, setStep] = useState(1);
 
-  const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showReading, setShowReading] = useState<boolean | null>(null);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
   useEffect(() => {
-    setShowReading(false);
-    setShowMeaning(false);
+    setShowReading(null);
+    setShowMeaning(null);
   }, [step]);
 
   const data = [
@@ -176,7 +176,6 @@ export default function Page() {
             showMeaning2={showMeaning2}
             setShowMeaning2={setShowMeaning2}
           />
-
         </ContentContainer>
       </LearnMainContentPageTemplate>
       <img src={
