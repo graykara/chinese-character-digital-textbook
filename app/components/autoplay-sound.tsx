@@ -2,12 +2,16 @@
 
 import React, { useEffect, useRef } from "react";
 
-const AutoplaySound: React.FC = () => {
+const AutoplaySound: React.FC = ({
+  sound = "/sound/common/activity_start.mp3",
+}: {
+  sound?: string;
+}) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const attemptPlay = async () => {
-      audioRef.current = new Audio("/sound/common/activity_start.mp3");
+      audioRef.current = new Audio(sound);
       audioRef.current.muted = true;
 
       try {

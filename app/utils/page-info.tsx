@@ -12,6 +12,13 @@ export const PageInfoContext = createContext<{
   navigationDirection: "prev" | "next" | null;
   setNavigationDirection: Dispatch<SetStateAction<"prev" | "next" | null>>;
   pageNumber: number;
+
+  currentLesson: number;
+  setCurrentLesson: Dispatch<SetStateAction<number>>;
+  currentChapter: number;
+  setCurrentChapter: Dispatch<SetStateAction<number>>;
+  currentSubChapter: string;
+  setCurrentSubChapter: Dispatch<SetStateAction<string>>;
 }>({
   title: "",
   subtitle: "",
@@ -24,4 +31,10 @@ export const PageInfoContext = createContext<{
   navigationDirection: null,
   setNavigationDirection: () => {},
   pageNumber: 1,
+  currentLesson: 1,
+  setCurrentLesson: () => {},
+  currentChapter: 1,
+  setCurrentChapter: () => {},
+  currentSubChapter: "",
+  setCurrentSubChapter: () => {},
 });

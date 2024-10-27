@@ -1,9 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../components/navbar";
 import { usePathname } from "next/navigation";
-import { getNextPage, getPageNumberOfPath, getPrevPage } from "./link";
+import {
+  getChapterNumberOfPath,
+  getLessonNumberOfPath,
+  getNextPage,
+  getPageNumberOfPath,
+  getPrevPage,
+  getSubChatperOfPath,
+} from "./link";
 
 import "animate.css";
 import { FloatingButtonContainer } from "../components/floating-button-container";
@@ -30,6 +37,16 @@ export default function RootLayout({
     "prev" | "next" | null
   >(null);
 
+  const [currentLesson, setCurrentLesson] = useState(1);
+  const [currentChapter, setCurrentChapter] = useState(1);
+  const [currentSubChapter, setCurrentSubChapter] = useState("");
+
+  useEffect(() => {
+    setCurrentLesson(getLessonNumberOfPath(pathname) || 1);
+    setCurrentChapter(getChapterNumberOfPath(pathname) || 1);
+    setCurrentSubChapter(getSubChatperOfPath(pathname) || "");
+  }, [pathname]);
+
   return (
     <PageInfoContext.Provider
       value={{
@@ -44,6 +61,12 @@ export default function RootLayout({
         navigationDirection,
         setNavigationDirection,
         pageNumber,
+        currentLesson,
+        currentChapter,
+        setCurrentLesson,
+        setCurrentChapter,
+        currentSubChapter,
+        setCurrentSubChapter,
       }}
     >
       <AudioProvider>
