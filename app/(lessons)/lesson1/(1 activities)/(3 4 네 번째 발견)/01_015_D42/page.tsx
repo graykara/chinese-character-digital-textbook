@@ -96,9 +96,8 @@ export default function Page() {
                 }}
               >
                 <textarea
-                  className={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${
-                    showAnswer ? "text-example" : ""
-                  }`}
+                  className={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${showAnswer ? "text-example" : ""
+                    }`}
                   style={{ fontSize: quiz.fontSize + "px" }}
                   value={showAnswer ? quiz.answer : value}
                   onChange={(e) => setValue(e.currentTarget.value)}
@@ -118,10 +117,10 @@ export default function Page() {
       />
       <img src={
         step === 1 ? BACKGROUND1.src :
-        step === 2 ? BACKGROUND2.src :
-        step === 3 ? BACKGROUND3.src :
-        step === 4 ? BACKGROUND4.src :
-        step === 5 ? BACKGROUND5.src : ""
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src :
+                step === 5 ? BACKGROUND5.src : ""
       } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

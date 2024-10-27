@@ -40,7 +40,7 @@ export default function Page() {
           />
 
           <div className="relative top-1">
-            { !value && !showAnswer ? (
+            {!value && !showAnswer ? (
               <img
                 src="/ui/textarea-pen.png"
                 className="absolute pointer-events-none"

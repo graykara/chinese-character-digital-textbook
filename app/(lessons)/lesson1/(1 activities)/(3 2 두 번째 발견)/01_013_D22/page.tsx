@@ -102,9 +102,9 @@ export default function Page() {
       />
       <img src={
         step === 1 ? BACKGROUND1.src :
-        step === 2 ? BACKGROUND2.src :
-        step === 3 ? BACKGROUND3.src :
-        step === 4 ? BACKGROUND4.src : ""
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src : ""
       } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

@@ -38,30 +38,29 @@ export default function Page() {
       <SmartButton
         link="https://sillok.history.go.kr/intro/intro.do"
         className="animate__animated animate__bounceIn animate__delay-2s absolute right-[177px] top-[155px] z-1" />
-      <QRButton 
-        src={QR.src} 
+      <QRButton
+        src={QR.src}
         className="absolute right-[227px] top-[368px] z-1" />
 
       <div className="relative">
         <img src={IMAGE.src} className="mx-auto mt-6" />
 
         {!value && !showAnswer ? (
-            <img
-              src="/ui/textarea-pen.png"
-              className="absolute pointer-events-none"
-              style={{
-                height: 45,
-                top: 435,
-                left: 580
-              }}
-            />
-          ) : null}
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 45,
+              top: 435,
+              left: 580
+            }}
+          />
+        ) : null}
         <input
           value={showAnswer ? answer : value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className={`text-[35px] text-center leading-[30px] tracking-tight absolute w-[570px] left-[570px] bottom-[140px] border-b-2 border-black bg-transparent ${
-            showAnswer ? "text-answer" : ""
-          }`}
+          className={`text-[35px] text-center leading-[30px] tracking-tight absolute w-[570px] left-[570px] bottom-[140px] border-b-2 border-black bg-transparent ${showAnswer ? "text-answer" : ""
+            }`}
         />
       </div>
 

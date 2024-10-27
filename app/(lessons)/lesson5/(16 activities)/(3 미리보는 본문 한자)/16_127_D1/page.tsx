@@ -27,23 +27,23 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10"
+      <TitleContainer 
+        className="mt-10"
         sound="/sound/5/127-i.mp3">
-        <p className="tracking-tighter flex items-start gap-5 break-keep">
+        <p className="tracking-[-5px] text-[54px] flex items-start gap-3 break-keep">
           <img src="/ui/flower-icon.png" />
-          제시된 한자 카드를 보고, 사다리를 타고 내려갔을 때 완성되는 한자를 써
-          보자.
+          제시된 한자 카드를 보고, 사다리를 타고 내려갔을 때 완성되는 한자를 써 보자.
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start mt-5 pl-12">
+      <ContentContainer className="!justify-start -mt-5 pl-12">
         {step === 1 && (
-          <div className="w-full flex">
+          <div className="w-full flex mt-[130px] -ml-3">
             <img src={IMAGE1.src} />
           </div>
         )}
         {step === 2 && (
-          <div>
+          <div className="mt-8 -ml-12">
             {showAnswer ? (
               <img src={IMAGE2_AFTER.src} />
             ) : (
@@ -63,7 +63,7 @@ export default function Page() {
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
 
       <img
-        src={BACKGROUND2.src}
+        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
