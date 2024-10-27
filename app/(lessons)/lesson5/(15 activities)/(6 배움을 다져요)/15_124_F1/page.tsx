@@ -72,12 +72,8 @@ const Step2 = () => {
         sound=""
       />
 
-      <div className="absolute top-[210px] left-[1400px] flex items-center gap-5">
-        <WritingButton />
-      </div>
-      <div className="absolute top-[210px] left-[1520px] flex items-center gap-5">
-        <GroupButton />
-      </div>
+      <WritingButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[210px] left-[1400px] flex items-center gap-5" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-3s absolute top-[210px] left-[1520px] flex items-center gap-5" />
 
       <ContentContainer className="!justify-start -top-[40px] left-[75px]">
         <img src={IMAGE2.src} />

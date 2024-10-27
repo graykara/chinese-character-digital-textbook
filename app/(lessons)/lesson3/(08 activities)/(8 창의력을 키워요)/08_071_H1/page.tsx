@@ -1,12 +1,13 @@
 "use client";
 
-import IMAGE from "./image.png";
+import IMAGE_BEFORE from "./image_before.png";
+import IMAGE_AFTER from "./image_after.png";
 import { useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { TitleContainer } from "@/app/components/title-container";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕27.png";
+import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어230.png";
 import { ContentContainer } from "@/app/components/content-container";
 
 export default function Page() {
@@ -15,27 +16,22 @@ export default function Page() {
   return (
     <>
       <CreativityPageTemplate>
-        <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title=" 4단 만화로 그리는 성어" />
-        </header>
-
-        <ContentContainer className="!items-start">
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full text-center">
+        <CreativityTitleHeader
+          title="4단 만화로 그리는 성어"
+          containerClassName="-mt-5 -translate-x-[65px]"
+        />
+        <TitleContainer
+          className="ml-[85px] mt-2"
+          sound="">
+          <div className="flex items-center gap-1 text-[40px] tracking-[-0.5px] ml-[165px]">
             학습한 성어 두 개 이상을 담아낸 내용으로 4단 만화를 그려 보자.
           </div>
+        </TitleContainer>
 
-          <img src={IMAGE.src} />
-        </ContentContainer>
-      </CreativityPageTemplate>
-
-      {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
-
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
-          <img src="/ui/flower-icon-2.png" />
-          다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
+        <div className="ml-5 mt-6">
+          <img src={!showAnswer ? IMAGE_BEFORE.src : IMAGE_AFTER.src} />
         </div>
-      </TitleContainer>
+      </CreativityPageTemplate>
 
       <ExampleAnswerButton
         active={showAnswer}

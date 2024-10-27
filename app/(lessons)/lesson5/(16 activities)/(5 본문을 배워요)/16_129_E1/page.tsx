@@ -3,11 +3,13 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕16.png"; //6~9~12~16
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕6.png";
+import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕9.png";
+import BACKGROUND3 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕12.png";
+import BACKGROUND4 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕16.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -15,12 +17,10 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    // setShowResource(false);
   }, [step]);
 
   const data = [
@@ -33,7 +33,6 @@ export default function Page() {
         { letter: "十", reading: "십" },
         {
           letter: "之",
-          // reading: "십\xa0\xa0\xa0지\xa0\xa0\xa0일",
           reading: "지",
           additional: (
             <>
@@ -72,10 +71,10 @@ export default function Page() {
       sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
-          만덕이{" "}
-          <FlippableCard
+          만덕이
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-5 mr-7 inline-block"
+            className="-mt-2 ml-5 mr-7 inline-block"
             text="십분의 일"
             width={270}
             height={80}
@@ -186,15 +185,15 @@ export default function Page() {
       ],
       sound: "/sound/5/128/3.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-normal leading-[95px] -mt-[10px] font-bold mr-20">
+        <div className="flex flex-wrap text-[50px] leading-[95px] -mt-[10px] font-bold mr-20">
           굶주려 병든 사람들이 그것을 듣고 관청의 뜰에
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-0 mr-6 inline-block"
+            className="mt-1 mr-6 inline-block"
             text="구름과 같이"
             width={310}
             height={80}
-          />{" "}
+          />
           모여들었다.
         </div>
       ),
@@ -260,9 +259,9 @@ export default function Page() {
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           남자와 여자들이 나와서
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-5 mr-6 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="만덕의 은혜"
             width={310}
             height={80}
@@ -277,11 +276,9 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
+
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
-          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
+          <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
               data={data[step - 1]}
               showReading={showReading}
@@ -291,9 +288,14 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-        {/* )} */}
+
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

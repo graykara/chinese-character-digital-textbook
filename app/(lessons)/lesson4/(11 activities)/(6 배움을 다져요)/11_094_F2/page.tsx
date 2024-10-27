@@ -21,10 +21,9 @@ export default function Page() {
         title="문장의 의미를 생각해 보고, 질문에 답해 보자."
         sound=""
       />
-
-      <div className="absolute top-[205px] left-[1220px]">
-        <WritingButton />
-      </div>
+      
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[205px] left-[1220px] z-1" />
 
       <ContentContainer className="!justify-start left-10 -top-12">
         <img src={IMAGE.src} />

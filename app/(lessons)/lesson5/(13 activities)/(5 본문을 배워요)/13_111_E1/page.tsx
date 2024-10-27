@@ -1,27 +1,25 @@
 "use client";
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
-import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭14.png";
+import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭6.png";
+import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭9.png";
+import BACKGROUND3 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭14.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    // setShowResource(false);
   }, [step]);
 
   const data = [
@@ -58,7 +56,7 @@ export default function Page() {
               >
                 與
               </span>
-              : ① 더불어, ② 주다, ③<span className="underline">~와/과</span>
+              : ① 더불어, ② 주다, ③<span className="underline underline-offset-2">~와/과</span>
             </p>
           ),
         },
@@ -69,19 +67,19 @@ export default function Page() {
       ],
       sound: "/sound/5/110/2.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          비록{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          비록
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="가축"
             width={170}
             height={80}
           />
-          이라도 그 마음은{" "}
-          <FlippableCard
+          이라도 그 마음은
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="사람과"
             width={200}
             height={80}
@@ -104,7 +102,7 @@ export default function Page() {
               >
                 勝
               </span>
-              : ① 이기다, ②<span className="underline">낫다</span>
+              : ① 이기다, ②<span className="underline underline-offset-2">낫다</span>
             </>
           ),
         },
@@ -162,25 +160,29 @@ export default function Page() {
       ],
       sound: "/sound/5/110/3.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          이것(누런 소)이{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="나으면"
-            width={220}
-            height={80}
-          />
-          저것(검은 소)은{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="못한 것이니"
-            width={300}
-            height={80}
-          />
-          소로 하여금 그것을 듣게 하면,
-        </div>
+        <>
+          <div className="flex flex-wrap text-[50px] font-bold">
+            이것(누런 소)이
+            <FlippableCard_60
+              active={showMeaning}
+              className="-mt-2 ml-5 mr-6 inline-block"
+              text="나으면"
+              width={220}
+              height={80}
+            />
+            저것(검은 소)은
+          </div>
+          <div className="flex flex-wrap mt-10 text-[50px] font-bold">
+            <FlippableCard_60
+              active={showMeaning}
+              className="-mt-2 mr-6 inline-block"
+              text="못한 것이니"
+              width={300}
+              height={80}
+            />
+            소로 하여금 그것을 듣게 하면,
+          </div>
+        </>
       ),
     },
     {
@@ -212,7 +214,7 @@ export default function Page() {
               >
                 不平(불평)
               </span>
-              : 마음에 들지 아니하여 못마땅하게 여김. 
+              : 마음에 들지 아니하여 못마땅하게 여김.
             </>
           ),
         },
@@ -224,11 +226,11 @@ export default function Page() {
       ],
       sound: "/sound/5/110/4.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          어찌{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          어찌
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="불평"
             width={170}
             height={80}
@@ -243,9 +245,7 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={3} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
+
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
           <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
@@ -257,9 +257,13 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-        {/* )} */}
+
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

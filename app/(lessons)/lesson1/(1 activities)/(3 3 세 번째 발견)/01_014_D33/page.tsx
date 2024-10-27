@@ -7,6 +7,10 @@ import { ExerciseHeader } from "@/app/components/exercise-header";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import HEADER from "../assets/header.png";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어20.png"
+import { WritingButton } from "@/app/components/buttons/writing-button";
+import { SmartButton } from "@/app/components/buttons/smart-button";
+import { QRButton } from "@/app/components/buttons/qr-button";
+import QR from "./qr.png";
 
 export default function Page() {
   const answer = "조선 태조 때부터 철종까지의 역사적 사실";
@@ -19,38 +23,44 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
-        text="아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자."
-        showSmartButton
-        showWritingButton
-        smartLink="https://sillok.history.go.kr/intro/intro.do"
+        text={
+          <>
+            <p className="text-[45px] tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
+          </>
+        }
       />
 
-      <div className="relative">
-        <img src={IMAGE.src} className="mx-auto -mt-8" />
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute right-[325px] top-[200px] z-1" />
+      <SmartButton
+        link="https://sillok.history.go.kr/intro/intro.do"
+        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[177px] top-[155px] z-1" />
+      <QRButton
+        src={QR.src}
+        className="absolute right-[227px] top-[368px] z-1" />
 
+      <div className="relative">
+        <img src={IMAGE.src} className="mx-auto mt-6" />
 
         {!value && !showAnswer ? (
-            <img
-              src="/ui/textarea-pen.png"
-              className="absolute pointer-events-none"
-              style={{
-                height: 45,
-                top: 380,
-                left: 580
-              }}
-            />
-          ) : null}
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 45,
+              top: 435,
+              left: 580
+            }}
+          />
+        ) : null}
         <input
           value={showAnswer ? answer : value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className={`text-[35px] text-center leading-[30px] tracking-tight absolute w-[570px] left-[570px] bottom-[140px] border-b-2 border-black bg-transparent ${
-            showAnswer ? "text-red-500" : ""
-          }`}
+          className={`text-[35px] text-center leading-[30px] tracking-tight absolute w-[570px] left-[570px] bottom-[140px] border-b-2 border-black bg-transparent ${showAnswer ? "text-answer" : ""
+            }`}
         />
       </div>
 

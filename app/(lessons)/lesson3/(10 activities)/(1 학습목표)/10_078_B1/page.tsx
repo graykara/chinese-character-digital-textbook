@@ -2,7 +2,7 @@
 
 import { GoalPageTemplate } from "@/app/pages/goal/goal-page-template";
 import IMAGE from "./image.png";
-import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어21.png";
+import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어21.png";
 
 export default function Page() {
   return (

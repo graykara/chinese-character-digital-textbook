@@ -20,6 +20,12 @@ export default function Page() {
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
+  [
+    { text: "한·중·일 3국에서 숫자 ‘4’는 불길한 숫자로 통한다.", start: 0, end: 5566 },
+    { text: "이는 한자 문화권 3국 언어의 ‘4’ 발음[사, 쓰(sì), 시(し)]에서 ‘죽을 사(死)’가 연상되기 때문이다.", start: 5566, end: 12082 },
+    { text: "한국의 인천 국제공항에는 44번 탑승구가 없으며, 많은 호텔이나 병원도 4층을 F층으로 표기한다.", start: 12082, end: 21222 },
+    { text: "일본도 4층이나 4호 병실이 없는 병원이 많으며, 중국은 전화번호나 자동차 번호에 ‘4’ 자가 들어가는 것을 꺼린다.", start: 21222, end: 30876 },
+  ];
 
   useEffect(() => {
     return () => {

@@ -35,6 +35,7 @@ export default function Page() {
             reading: ["역", "이"],
             meaning: ["바꾸다", "쉽다"],
             sound: "/sound/3/08words/5.mp3",
+            fontSize: 38,
           },
           {
             chinese: "之",

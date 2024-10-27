@@ -13,7 +13,8 @@ import { useContext, useEffect, useState } from "react";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png"
+import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아16.png"
+import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png"
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -48,10 +49,11 @@ export default function Page() {
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 
-      <AdditionalDataButton
-        className="absolute top-12 right-[100px]"
-        onClick={() => { }}
-      />
+      {step === 2 ? (
+      <SmartButton
+        link="https://hanja.dict.naver.com"
+        className="animate__animated animate__bounceIn animate__delay-1s absolute right-[234px] top-[230px] z-10" />
+        ) : null }
 
       <ContentContainer className="!justify-start pt-[45px] ml-[175px]">
         <div className="relative w-full mb-10">
@@ -64,11 +66,6 @@ export default function Page() {
         </div>
         <p className="w-[1500px] left-0 -mt-5 text-[50px] tracking-tighter leading-[68px] break-keep">
           디지털 사전의 검색창을 이용하여 한자를 손쉽게 검색할 수 있다.
-          <div className="absolute right-[150px] top-16">
-            {step === 2 ? (
-              <SmartButton link="https://hanja.dict.naver.com" />
-            ) : null}
-          </div>
         </p>
         {step === 1 ? (
           <div className="w-full flex justify-center mt-[110px] -ml-14">
@@ -80,16 +77,16 @@ export default function Page() {
               <img src={IMAGE2.src} />
 
               {!values[0] && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 48,
-                  top: 295,
-                  left: 125
-                }}
-              />
-            ) : null}
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 48,
+                    top: 295,
+                    left: 125
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answers[0] : values[0]}
                 onChange={(e) =>
@@ -103,16 +100,16 @@ export default function Page() {
                   }`}
               />
               {!values[1] && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 48,
-                  top: 295,
-                  left: 805
-                }}
-              />
-            ) : null}
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 48,
+                    top: 295,
+                    left: 805
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answers[1] : values[1]}
                 onChange={(e) =>
@@ -126,16 +123,16 @@ export default function Page() {
                   }`}
               />
               {!values[2] && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 48,
-                  top: 295,
-                  left: 1115
-                }}
-              />
-            ) : null}
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 48,
+                    top: 295,
+                    left: 1115
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answers[2] : values[2]}
                 onChange={(e) =>
@@ -149,16 +146,16 @@ export default function Page() {
                   }`}
               />
               {!values[3] && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 48,
-                  top: 295,
-                  left: 1295
-                }}
-              />
-            ) : null}
+                <img
+                  src="/ui/textarea-pen.png"
+                  className="absolute pointer-events-none"
+                  style={{
+                    height: 48,
+                    top: 295,
+                    left: 1295
+                  }}
+                />
+              ) : null}
               <input
                 value={showAnswer ? answers[3] : values[3]}
                 onChange={(e) =>
@@ -185,7 +182,9 @@ export default function Page() {
         />
       ) : null}
 
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+
+      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+
     </>
   );
 }

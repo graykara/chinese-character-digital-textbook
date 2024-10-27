@@ -17,7 +17,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자.</p>}
+        sound=""
+      />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -29,7 +32,7 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ContentContainer>
+      <ContentContainer className="-mt-10">
         <VideoThumbnail_big
           thumbnail={IMAGE.src}
           video="/video/animation/5-13_108.mp4"
@@ -45,28 +48,48 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer = [
-    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
-  ];
+  const answer = "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.";
+  const [value, setValue] = useState("");
 
   return (
     <>
-      <ContentContainer className="!justify-start pt-2">
+      <ContentContainer className="!justify-start -mt-5">
         {/* {showAnswer ? (
           <img src={IMAGE2_AFTER.src}/>
         ) : (
           <img src={IMAGE2_BEFORE.src} />
         )} */}
         <img src={IMAGE2.src} />
-        <div className="absolute top-[310px] left-[290px]">
+        {/* <div className="absolute top-[310px] left-[290px]">
           <InputWithPen
             answer={answer}
             showAnswer={showAnswer}
-            className="text-example w-[960px] h-[80px] text-[45px] tracking-tighter bg-transparent"
+            className="w-[960px] h-[80px] text-[45px] tracking-tighter bg-transparent"
             penClassName="left-0 -translate-x-1/2"
             containerClassName="relative top-16"
+            isExample
           />
-        </div>
+        </div> */}
+
+        {!value && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 54,
+              top: 370,
+              left: 260
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answer : value}
+          onChange={(e) => setValue(e.target.value)}
+          className={`absolute resize-none w-[1000px] left-[260px] top-[370px] text-[45px] leading-[64px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
+            }`}
+          rows={4}
+        ></textarea>
+
       </ContentContainer>
 
       <ExampleAnswerButton

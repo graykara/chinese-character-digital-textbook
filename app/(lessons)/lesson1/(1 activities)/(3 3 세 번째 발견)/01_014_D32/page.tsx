@@ -15,9 +15,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ContentContainer>
         {step === 1 ? <VideoThumbnail_big thumbnail={IMAGE1.src} video="/video/animation/1-1_14-1.mp4" /> : null}

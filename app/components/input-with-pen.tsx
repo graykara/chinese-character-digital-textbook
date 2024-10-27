@@ -36,7 +36,8 @@ export const InputWithPen = ({
   }, [showAnswer]);
 
   return (
-    <div className={`relative w-fit ${containerClassName || ""}`}>
+    <div className={containerClassName || ""}>
+      <div className="relative w-fit">
       <input
         ref={inputRef}
         {...props}
@@ -55,6 +56,7 @@ export const InputWithPen = ({
           }`}
         />
       ) : null}
+    </div>
     </div>
   );
 };

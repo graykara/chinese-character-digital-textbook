@@ -7,48 +7,42 @@ import { CreativityTitleHeader } from "@/app/components/headers/creativity-title
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
-import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕27.png";
 import { ContentContainer } from "@/app/components/content-container";
+import { BuddyButton } from "@/app/components/buttons/buddy-button";
+import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
-  const answers1 = [
-    "낮말은 새가 듣고 밤말은 쥐가 듣는다.",
-    "일아무도 안 듣는데서라도 말조심을 해야한다.",
-  ];
-  const answers2 = [
-    "스토리보드 작성하기.",
-    "필요한 역할 분담하기.",
-    "각 장면을 내용에 맞게 촬영하기.",
-    "영상 완성하여 발표하기.",
+  const answers = [
+    "박기쁨",
+    "주변 사람들에게 긍정적인 에너지를 주어서",
+    "박기쁨",
+    "주변 사람들에게 따뜻한 긍정의\n에너지를 전하고, 진심 어린 말 한마디가\n많은 이들에게 큰 힘이 되어"
   ];
   const [showAnswer, setShowAnswer] = useState(false);
-  // const [step, setStep] = useState(1);
-
-  // useEffect(() => {
-  //   setShowAnswer(false);
-  // }, [step]);
 
   return (
     <>
       <CreativityPageTemplate>
-        <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="우리 반의 ‘선행왕’ 선정하기" />
-        </header>
+        <CreativityTitleHeader
+          title="우리 반의 ‘선행왕’ 선정하기"
+          containerClassName="-mt-5"
+        />
+        <TitleContainer
+          className="-left-24 mt-6"
+          sound="">
+          <div className="flex items-center gap-1 text-[45px] tracking-tight -mr-10">
+            우리 반에서 다른 친구들을 위해 선행을 베푼 친구를 선정하고 상장을 만들어 보자.
+          </div>
+        </TitleContainer>
 
-        <ContentContainer className="!items-start">
+        <ContentContainer className="-left-10 top-1">
           <img src={IMAGE.src} />
         </ContentContainer>
       </CreativityPageTemplate>
 
-      {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
-
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
-          <img src="/ui/flower-icon-2.png" />
-          다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
-        </div>
-      </TitleContainer>
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[200px] top-[175px] w-[100px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[70px] top-[180px] z-1" />
 
       <ExampleAnswerButton
         active={showAnswer}

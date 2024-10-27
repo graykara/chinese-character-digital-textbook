@@ -44,15 +44,13 @@ export default function Page() {
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
 
-      {/* Step 2,3에서만 정답 확인 버튼 보이기 */}
-      {/* <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      /> */}
-
       <StepContainer maxStep={3} step={step} onStepChange={setStep} />
       <img
-        src={BACKGROUND2.src}
+        src={
+          step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+          step === 3 ? BACKGROUND3.src : ""
+        }
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
@@ -62,16 +60,16 @@ export default function Page() {
 const Step1 = () => {
   return (
     <ContentContainer className="!justify-start pt-[75px]">
-      <div className="px-[50px]">
+      <div className="-ml-[10px]">
         <header className="mb-5">
           <img src={HOW_BADGE.src} />
         </header>
 
-        <div className="flex gap-5 text-[55px] leading-tight tracking-tighter break-keep mt-10">
+        <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-12">
           <span className="text-[#408ac9] font-bold">1</span>
           빙고 판에 나온 한자 중 과제에 해당하는 한자에 빗금을 친다.
         </div>
-        <div className="flex gap-5 text-[55px] leading-tight tracking-tighter break-keep mt-5">
+        <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-5 -mr-20">
           <span className="text-[#408ac9] font-bold">2</span>
           모든 과제를 해결하였을 때 빙고 판에 보이는 숫자를 비밀번호 칸에 쓴다.
         </div>

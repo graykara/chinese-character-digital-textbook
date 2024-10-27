@@ -1,7 +1,15 @@
-export const GroupButton = ({ onClick }: { onClick?: () => void }) => {
+export const GroupButton = ({
+  className = "",
+  // onClick,
+}: {
+  className?: string;
+  // onClick?: () => void;
+}) => {
   return (
-    // <button>
-    <img src="/ui/group-button.png" onClick={() => onClick?.()} />
-    // </button>
+    <img
+      src="/ui/group-button.png"
+      className={className}
+    // onClick={() => onClick?.()/
+    />
   );
 };

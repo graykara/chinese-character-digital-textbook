@@ -161,7 +161,7 @@ const Step3 = () => {
       />
 
       <div className="absolute top-[275px] left-[750px] flex items-center gap-5">
-        <WritingButton />
+        <WritingButton className="animate__animated animate__fadeIn animate__delay-1s" />
       </div>
 
       <ContentContainer className="!justify-start left-16 top-4">

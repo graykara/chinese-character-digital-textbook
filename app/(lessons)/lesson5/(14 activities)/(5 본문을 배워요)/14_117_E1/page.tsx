@@ -3,24 +3,23 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
-import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요10.png";
+import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요6.png";
+import BACKGROUND2 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요9.png";
+import BACKGROUND3 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요10.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    // setShowResource(false);
   }, [step]);
 
   const data = [
@@ -68,25 +67,29 @@ export default function Page() {
       ],
       sound: "/sound/5/116/1.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          사람으로서 만물을 보면{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="사람"
-            width={165}
-            height={80}
-          />
-          이 귀하고{" "}
-          <FlippableCard
-            active={showMeaning}
-            className="mx-5 inline-block"
-            text="만물"
-            width={165}
-            height={80}
-          />
-          천하며
-        </div>
+        <>
+          <div className="flex flex-wrap text-[50px] font-bold">
+            사람으로서 만물을 보면
+            <FlippableCard_60
+              active={showMeaning}
+              className="-mt-2 ml-5 mr-6 inline-block"
+              text="사람"
+              width={165}
+              height={80}
+            />
+            이 귀하고
+            <FlippableCard_60
+              active={showMeaning}
+              className="-mt-2 ml-5 mr-6 inline-block"
+              text="만물"
+              width={165}
+              height={80}
+            />
+          </div>
+          <div className="flex flex-wrap  text-[50px] font-bold">
+            천하며
+          </div>
+        </>
       ),
     },
     {
@@ -105,21 +108,21 @@ export default function Page() {
       ],
       sound: "/sound/5/116/2.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          만물로서 사람을 보면{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          만물로서 사람을 보면
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="만물"
-            width={165}
+            width={160}
             height={80}
           />
-          이 귀하고{" "}
-          <FlippableCard
+          이 귀하고
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="사람"
-            width={165}
+            width={160}
             height={80}
           />
           이 천하다.
@@ -171,7 +174,7 @@ export default function Page() {
               >
                 之
               </span>
-              : 그것 
+              : 그것
               <span
                 onClick={() => SOUND("/sound/5/p117_word006.mp3").play()}
                 className="font-haeseo cursor-pointer"
@@ -205,18 +208,18 @@ export default function Page() {
       ],
       sound: "/sound/5/116/3.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          <FlippableCard_60
             active={showMeaning}
-            className="mr-5 inline-block"
+            className="-mt-2 mr-5 inline-block"
             text="하늘"
             width={165}
             height={80}
           />
-          로부터 그것을 보면 사람과 만물은{" "}
-          <FlippableCard
+          로부터 그것을 보면 사람과 만물은
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="균등"
             width={165}
             height={80}
@@ -231,9 +234,7 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={3} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
+
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
           <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
@@ -245,9 +246,14 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-        {/* )} */}
+
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

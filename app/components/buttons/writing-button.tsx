@@ -1,7 +1,15 @@
-export const WritingButton = () => {
+export const WritingButton = ({
+  className = "",
+  // onClick,
+}: {
+  className?: string;
+  // onClick?: () => void;
+}) => {
   return (
-    <button>
-      <img src="/ui/writing-button.png" className="flex-none w-fit h-fit" />
-    </button>
+    <img
+      src="/ui/writing-button.png"
+      className={className}
+    // onClick={() => onClick?.()/
+    />
   );
 };

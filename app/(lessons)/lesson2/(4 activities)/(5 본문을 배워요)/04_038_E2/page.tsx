@@ -2,6 +2,7 @@
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import IMAGE1 from "./image1.png";
+import IMAGE2 from "./image2.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
@@ -9,7 +10,11 @@ import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자15.png"; //14-
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자14.png";
+import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자15.png";
+import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자16.png";
+import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자17.png";
+import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자18.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
@@ -43,7 +48,7 @@ export default function Page() {
         },
         {
           chinese: "問",
-          text: "문",
+          text: "묻다",
           sound: "/sound/2/38/2.mp3",
         },
       ],
@@ -84,7 +89,7 @@ export default function Page() {
         },
         {
           chinese: "每",
-          text: "매양",
+          text: "매",
           sound: "/sound/2/38/7.mp3",
         },
         {
@@ -124,21 +129,29 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
 
-        <MainContentVideoButton
-          video="/video/writing/38p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
+        {step !== 1 ? (
+          <MainContentVideoButton
+            video="/video/writing/38p_1.mp4"
+            className="absolute left-[112px] top-[40px]"
+          />
+        ) : null}
+
+        {step === 4 ? (
+          <div className="absolute right-[105px] translate-y-[60px]">
+            <img src={IMAGE2.src} />
+          </div>
+        ) : null}
 
         {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
+          <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : (
-          <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr]">
-            <div className="!justify-start absolute top-[110px]">
-              <div className="relative left-[390px] w-[750px] text-center text-[210px]">
-                <span className="font-haeseo">{data[step - 2]?.chinese}</span>
-              </div>
-              <div className="flex flex-col gap-16 ml-[150px] -mt-[65px]">
-                <div className="grid grid-cols-[180px__750px] gap-10">
+          <ContentContainer className="!justify-start w-[1760px] px-[130px]">
+            <div className="absolute top-[110px] pl-[40px] text-center text-[210px]">
+              <span className="font-haeseo">{data[step - 2]?.chinese}</span>
+            </div>
+            <div className="relative w-full top-[380px] px-[150px]">
+              <div className="flex flex-col gap-16">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showReading}
                     onClick={() => {
@@ -150,12 +163,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px] -mt-3 ml-10 ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__750px] gap-10">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -164,12 +177,12 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] tracking-[20px] h-[60px] -mt-3 ml-10 ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[140px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] tracking-[20px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__1fr] gap-10 -mt-2">
+                <div className="grid grid-cols-[180px__1fr] -mt-4">
                   <PillButton
                     active={showResource}
                     onClick={() => setShowResource(!showResource)}
@@ -178,7 +191,7 @@ export default function Page() {
                     backgroundColor="#7278a6"
                   />
                   <div key={step}>
-                    <div className="flex items-center gap-5 pl-10 mt-12 ml-5">
+                    <div className="flex items-center gap-6 pl-10 mt-12 ml-16">
                       <span
                         className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center"
                         onClick={() =>
@@ -190,7 +203,7 @@ export default function Page() {
                       <span className="text-[40px] ml-1 mt-2">
                         {data[step - 2].equation[0].text}
                       </span>
-                      <Plus size={50} color="gray" className="-ml-1" />
+                      <Plus size={50} color="gray" className="ml-5" />
                       <span
                         className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
                         onClick={() =>
@@ -202,16 +215,18 @@ export default function Page() {
                       <span className="text-[40px] ml-1 mt-2">
                         {data[step - 2].equation[1].text}
                       </span>
-                      <MoveRight size={50} color="gray" className="-ml-1" />
-                      <span
-                        className="font-haeseo text-[90px] ml-5 -mt-2 cursor-pointer"
+                      <MoveRight size={50} color="gray" className="ml-5" />
+                      <div
+                        className="font-haeseo text-[90px] ml-2 -mt-2 cursor-pointer"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[2].sound).play()
                         }
                       >
                         {data[step - 2]?.equation[2].chinese}
+                      </div>
+                      <span className="text-[40px] ml-0 mt-2">
+                        {data[step - 2].equation[2].text}
                       </span>
-                      <span>{data[step - 2].equation[2].text}</span>
                     </div>
                   </div>
                 </div>
@@ -220,7 +235,13 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={
+        step == 1 ? BACKGROUND1.src :
+          step == 2 ? BACKGROUND2.src :
+            step == 3 ? BACKGROUND3.src :
+              step == 4 ? BACKGROUND4.src :
+                step == 5 ? BACKGROUND5.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

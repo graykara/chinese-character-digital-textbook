@@ -3,10 +3,13 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어27.png";
+import BACKGROUND2 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어210.png";
+import BACKGROUND3 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어214.png";
+import BACKGROUND4 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어216.png";
 import { MainContent } from "../../../main-content";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
@@ -16,12 +19,10 @@ export default function Page() {
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
   const [showMeaning2, setShowMeaning2] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    // setShowResource(false);
   }, [step]);
 
   const data = [
@@ -33,20 +34,20 @@ export default function Page() {
       ],
       sound: "/sound/3/80/1.mp3",
       content1: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          물을{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          물을
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6  inline-block"
             text="등지고"
             width={220}
             height={80}
-          />{" "}
+          />
           지는 진.
         </div>
       ),
       content2: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           어떤 일을 성취하기 위하여 더 이상 물러설 수 없음.
         </div>
       ),
@@ -88,19 +89,19 @@ export default function Page() {
       ],
       sound: "/sound/3/80/2.mp3",
       content1: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          많으면 많을수록 더욱{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          많으면 많을수록 더욱
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6  inline-block"
             text="좋음"
-            width={170}
+            width={180}
             height={80}
           />
         </div>
       ),
       content2: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           많이 보탤수록 더 큰 능력을 발휘할 수 있음.
         </div>
       ),
@@ -114,11 +115,11 @@ export default function Page() {
       ],
       sound: "/sound/3/80/3.mp3",
       content1: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          세 사람이면{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          세 사람이면
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6  inline-block"
             text="호랑이"
             width={220}
             height={80}
@@ -127,7 +128,7 @@ export default function Page() {
         </div>
       ),
       content2: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           근거 없는 말이라도 여러 사람이 말하면 곧이듣게 됨.
         </div>
       ),
@@ -155,27 +156,27 @@ export default function Page() {
       ],
       sound: "/sound/3/80/4.mp3",
       content1: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 mr-6  inline-block"
             text="풀"
-            width={170}
+            width={150}
             height={80}
           />
-          을 엮어{" "}
-          <FlippableCard
+          을 엮어
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6  inline-block"
             text="은혜"
-            width={170}
+            width={180}
             height={80}
           />
           를 갚음.
         </div>
       ),
       content2: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           죽은 뒤에라도 은혜를 잊지 않고 갚음.
         </div>
       ),
@@ -192,24 +193,27 @@ export default function Page() {
           className="absolute left-[112px] top-[40px]"
         />
 
-        <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr] px-[150px]">
-          <div className="absolute top-[228px] left-[150px]">
-            <MainContent
-              data={data[step - 1]}
-              showReading={showReading}
-              setShowReading={setShowReading}
-              showMeaning={showMeaning}
-              setShowMeaning={setShowMeaning}
-              showMeaning2={showMeaning2}
-              setShowMeaning2={setShowMeaning2}
-            />
-          </div>
+        <ContentContainer className="!justify-start w-[1760px] px-[130px]">
+
+          <MainContent
+            data={data[step - 1]}
+            showReading={showReading}
+            setShowReading={setShowReading}
+            showMeaning={showMeaning}
+            setShowMeaning={setShowMeaning}
+            showMeaning2={showMeaning2}
+            setShowMeaning2={setShowMeaning2}
+          />
+
         </ContentContainer>
-        {/* )} */}
+
       </LearnMainContentPageTemplate>
-      <img
-        src={BACKGROUND1.src}
-        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

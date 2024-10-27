@@ -1,6 +1,6 @@
 "use client";
 
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE4 from "./exercise4.png";
 import THUMBNAIL from "./thumbnail.png";
@@ -38,9 +38,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
         text="뉴스 기사에서 틀린 말을 모두 찾아 바르게 고쳐 보자."
@@ -76,7 +74,7 @@ export default function Page() {
                 onChange={(e) =>
                   setValue({ ...value, text1: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
                   }`}
               />
               {!value.text2 && !showAnswer ? (
@@ -95,7 +93,7 @@ export default function Page() {
                 onChange={(e) =>
                   setValue({ ...value, text2: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
                   }`}
               />
             </div>
@@ -123,7 +121,7 @@ export default function Page() {
                 onChange={(e) =>
                   setValue({ ...value, text3: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
                   }`}
               />
               {!value.text4 && !showAnswer ? (
@@ -142,7 +140,7 @@ export default function Page() {
                 onChange={(e) =>
                   setValue({ ...value, text4: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-red-500" : ""
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
                   }`}
               />
             </div>

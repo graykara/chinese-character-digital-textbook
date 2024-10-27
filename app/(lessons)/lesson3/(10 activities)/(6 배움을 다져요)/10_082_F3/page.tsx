@@ -26,12 +26,10 @@ export default function Page() {
       />
       <div><p className="ml-[280px] -mt-9 text-[45px] text-[#1b1b1b] tracking-normal break-keep leading-[55px] "><span className="text-answer text-[55px]">*</span> 부록의 미니 자전을 이용해도 좋습니다.</p></div>
       
-      <div className="absolute top-[300px] right-[160px]">
-        <SmartButton
-          link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
-          className="w-[100px]"
+      <SmartButton
+        link=""
+        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[278px] right-[164px]" 
         />
-      </div>
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

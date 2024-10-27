@@ -1,6 +1,6 @@
 "use client";
 
-import HEADER from "../assets/header.png";
+import { Header } from "../assets/header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE3 from "./exercise3.png";
 import THUMBNAIL1 from "./thumbnail1.png";
@@ -29,9 +29,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="pt-3 pb-2 animate__animated animate__fadeIn">
-        <img src={HEADER.src} />
-      </header>
+      <Header />
 
       <ExerciseHeader
         text="대화 속 밑줄 친 부분의 뜻을 말해 보자."
@@ -54,10 +52,10 @@ export default function Page() {
           />
 
           <div className="relative top-1">
-            
-            <div className="absolute top-6 left-[75px] text-[50px] tracking-tighter">
-            {step === 1 ?
-              "우천 시" : "연패" }
+
+            <div className="absolute top-5 left-[75px] text-[45px] tracking-tighter">
+              {step === 1 ?
+                "우천 시" : "연패"}
             </div>
             {!value && !showAnswer ? (
               <img
@@ -71,11 +69,11 @@ export default function Page() {
               />
             ) : null}
             <textarea
-              value={showAnswer ? 
+              value={showAnswer ?
                 (step === 1 ? answer1 : answer2)
-                 : value}
+                : value}
               onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none left-0 top-[100px] text-[50px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
+              className={`absolute resize-none left-0 top-[100px] text-[45px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
                 }`}
               rows={3}
             ></textarea>

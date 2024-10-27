@@ -8,6 +8,8 @@ import { AdditionalDataButton } from "@/app/components/buttons/additional-data-b
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext } from "react";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아15.png"
+import { QRButton } from "@/app/components/buttons/qr-button";
+import QR from "./qr.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -18,6 +20,10 @@ export default function Page() {
       <HeaderContainer className="mt-10 mb-10">
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
+
+      <QRButton 
+        src={QR.src} 
+        className="absolute right-[1196px] top-[156px] z-1" />
 
       <AdditionalDataButton
         className="absolute top-[150px] right-[150px]"

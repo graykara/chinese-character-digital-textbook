@@ -1,11 +1,15 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { Children, useState } from "react";
-import IMAGE1 from "./bg_1.png";
+import IMAGE1 from "./bg_1-2.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
+import { useEffect, useState } from "react";
+import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
@@ -27,7 +31,33 @@ export default function Page() {
 
 const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answers = ["集","官","庭","如","雲"];
+  useEffect(() => {
+    setShowAnswer(false);
+    setDroppedHanja(["", ""]);
+  }, []);
+
+  const hanjaCards = ["官", "如", "庭", "集", "雲"];
+  const hanjaSounds = [
+    "/sound/2/32_008.mp3",
+    "/sound/2/32_009.mp3",
+    "/sound/2/32_010.mp3",
+    "/sound/2/32_011.mp3",
+    "/sound/2/32_012.mp3",
+    "/sound/2/32_013.mp3",
+  ];
+  const [droppedHanja, setDroppedHanja] = useState(["", ""]);
+
+  useEffect(() => {
+    if (!showAnswer) setDroppedHanja(["", ""]);
+  }, [showAnswer]);
+
+  const moveCard = (fromIndex: number, targetIndex: number) => {
+    const newHanjaCards = [...hanjaCards];
+    const [movedHanja] = newHanjaCards.splice(fromIndex, 1);
+    const newDroppedHanja = [...droppedHanja];
+    newDroppedHanja[targetIndex] = movedHanja;
+    setDroppedHanja(newDroppedHanja);
+  };
 
   return (
     <>
@@ -36,7 +66,77 @@ const Step1 = () => {
         sound="/sound/5/130-i-1.mp3"
       />
 
-      <ContentContainer className="!justify-start -top-[20px] left-4">
+      <ContentContainer className="!justify-start -top-[15px] left-5">
+        <img src={IMAGE1.src} />
+        <DndProvider backend={HTML5Backend}>
+          <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[10px] left-[475px] bg-transparent">
+            {hanjaCards.map((hanja, index) => (
+              <div
+                key={index}
+                className="flex justify-center"
+                onClick={() => {
+                  new Howl({
+                    src: hanjaSounds[index],
+                  }).play();
+                }}
+              >
+                <DraggableHanjaCard
+                  key={index}
+                  hanja={hanja}
+                  index={index}
+                  moveCard={() => { }}
+                >
+                  <div className="w-[150px] h-[145px] pb-[15px] bg-transparent flex justify-center items-center font-haeseo text-[95px]">
+                    {hanja}
+                  </div>
+                </DraggableHanjaCard>
+              </div>
+            ))}
+          </div>
+
+          <div className={showAnswer ? "text-answer" : ""}>
+            <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[0px] left-[475px] top-[230px]">
+              <div>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
+                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
+                    {showAnswer ? hanjaCards[3] : droppedHanja[0]}
+                  </div>
+                </HanjaDropZone>
+              </div>
+              <div>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
+                    {showAnswer ? hanjaCards[0] : droppedHanja[1]}
+                  </div>
+                </HanjaDropZone>
+              </div>
+              <div>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
+                    {showAnswer ? hanjaCards[2] : droppedHanja[1]}
+                  </div>
+                </HanjaDropZone>
+              </div>
+              <div>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
+                    {showAnswer ? hanjaCards[1] : droppedHanja[1]}
+                  </div>
+                </HanjaDropZone>
+              </div>
+              <div>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
+                    {showAnswer ? hanjaCards[4] : droppedHanja[1]}
+                  </div>
+                </HanjaDropZone>
+              </div>
+            </div>
+          </div>
+        </DndProvider>
+      </ContentContainer>
+
+      {/* <ContentContainer className="!justify-start -top-[20px] left-4">
         <img src={IMAGE1.src} />
         <InputWithPen
           answer={answers[0]}
@@ -73,7 +173,7 @@ const Step1 = () => {
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
           containerClassName="absolute top-[230px] left-[1285px]"
         />
-      </ContentContainer>
+      </ContentContainer> */}
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
@@ -88,10 +188,7 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answers = ["배려","공감","관심","도움"];
-  const answer = [
-    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
-  ];
+  const answers = ["배려", "공감", "관심", "도움"];
   return (
     <>
       <StrengthenLearningMainContentHeader

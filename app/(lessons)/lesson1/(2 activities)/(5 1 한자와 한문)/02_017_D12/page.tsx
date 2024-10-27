@@ -53,7 +53,7 @@ export default function Page() {
         </div>
   
         <p className="text-[50px] tracking-tighter leading-[55px] break-keep w-[1400px] -mt-3 -ml-[100px]">
-          한자는 하나하나의 낱글자이다. 낱글자인 한자가 모여 이루어진 문장을 <span className="font-haeseo text-[55px] leading-tight">漢文</span>(한문)이라고 한다.
+          한자는 하나하나의 낱글자이다. 낱글자인 한자가 모여 이루어진 문장을<br/> <span className="font-haeseo text-[55px] leading-tight  tracking-[-10px]">漢文</span>(한문)이라고 한다.
         </p>
 
         <div className="relative flex-none mt-[80px]">

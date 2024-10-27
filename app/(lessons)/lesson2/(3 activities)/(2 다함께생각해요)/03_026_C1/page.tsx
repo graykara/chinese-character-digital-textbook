@@ -31,14 +31,17 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ThinkTogetherHeader title="그림과 기호를 보고 무엇을 의미하는지 말해 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">그림과 기호를 보고 무엇을 의미하는지 말해 보자.</p>}
+        sound=""
+      />
 
-      <ContentContainer className="absolute left-[40px] bottom-[100px]">
+      <ContentContainer className="absolute left-[40px] bottom-[110px]">
         <img src={IMAGE.src} />
       </ContentContainer>
 
-      <ExampleAnswerButton active={false} onClick={() => {}} />
-      {/* <img src={BACKGROUND1.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" /> */}
+      <ExampleAnswerButton active={false} onClick={() => { }} />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -48,15 +51,17 @@ const Step2 = () => {
 
   return (
     <>
-      <ThinkTogetherHeader title={
-        <>글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.
-        <BuddyButton className="absolute left-[625px] top-[70px]" />
-        </>} />
+      <ThinkTogetherHeader
+        title={<p className="-ml-3 text-[52px] leading-[60px] tracking-[-1px]">글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.</p>}
+        sound=""
+      />
 
-      <ContentContainer className="!justify-start mt-20 mb-[100px]">
-        <img src={IMAGE2.src} className="absolute top-[35px] left-[70px]"/>
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
+
+      <ContentContainer className="!justify-start mt-0 mb-[100px]">
+        <img src={IMAGE2.src} className="absolute top-[30px] left-[70px]" />
         {showAnswer ? (
-          <img src={IMAGE3.src} className="absolute top-[230px] left-[400px]" />
+          <img src={IMAGE3.src} className="absolute top-[210px] left-[390px]" />
         ) : null}
       </ContentContainer>
 
@@ -64,7 +69,7 @@ const Step2 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND2.src} className="absolute left-0 top-0 opacity-30 pointer-events-none" /> */}
+      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };

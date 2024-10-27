@@ -15,8 +15,8 @@ export const ExerciseHeader = ({
   smartLink?: string;
 }) => {
   return (
-    <header className="animate__animated animate__flipInX relative w-[1400px] ml-[175px] flex items-center gap-4 mt-5 mb-10">
-      <div className="flex items-start gap-4">
+    <header className="animate__animated animate__flipInX relative w-[1500px] ml-[175px] flex items-center gap-4 mt-5 mb-10">
+      <div className="flex items-start gap-3">
         <img src={image} />
         <p className="text-[47px] tracking-tighter relative top-7">
           {text}

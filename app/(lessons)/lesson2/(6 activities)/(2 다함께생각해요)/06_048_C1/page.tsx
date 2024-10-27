@@ -18,7 +18,10 @@ export default function Page() {
 
   return (
     <>
-      <ThinkTogetherHeader title="다음 글을 읽고 빈칸에 들어갈 말을 써 보자." />
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">다음 글을 읽고 빈칸에 들어갈 말을 써 보자.</p>}
+        sound="" 
+      />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -36,7 +39,7 @@ const Step1 = () => {
           video="/video/animation/2-4_34.mp4"
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
@@ -59,14 +62,14 @@ const Step2 = () => {
             answer={answer[0]}
             showAnswer={showAnswer}
             className="text-center w-[80px] h-[80px] text-[60px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
+            penClassName="left-1/2 -translate-x-1/2 -mt-1"
             containerClassName="relative top-0"
           />
           <InputWithPen
             answer={answer[1]}
             showAnswer={showAnswer}
             className="text-center w-[80px] h-[80px] text-[60px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
+            penClassName="left-1/2 -translate-x-1/2 -mt-1"
             containerClassName="relative top-0"
           />
         </div>

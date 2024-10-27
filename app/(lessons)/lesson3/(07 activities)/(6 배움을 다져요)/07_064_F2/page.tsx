@@ -22,11 +22,21 @@ export default function Page() {
         sound=""
       />
       <div className="absolute top-[180px] left-[1320px] flex items-center gap-5">
-        <SmartButton
-          link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
-          className="w-[100px]"
-        />
       </div>
+      {step !== 2 ? (
+      <SmartButton
+          link="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EC%8B%AD%EC%A4%91%ED%8C%94%EA%B5%AC&oquery=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0&tqi=iXMjDspzLiwssQhkuwossssss9C-345908"
+          className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[176px] z-1"
+        />
+        ) : null }
+
+      {step !== 1 ? (
+      <SmartButton
+          link="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%A7%89%EC%83%81%EB%A7%89%ED%95%98&oquery=%EC%8B%AD%EC%A4%91%ED%8C%94%EA%B5%AC&tqi=iwP8Bdqo1SossD7NtiwssssstL4-456981"
+          className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[176px] z-1"
+        />
+        ) : null }
+
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -101,10 +111,10 @@ const Step2 = () => {
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="-ml-6 mt-16" />
         <div className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]">
-          <span className="font-haeseo">十</span>
-          <span className="font-haeseo">中</span>
-          <span className="font-haeseo">八</span>
-          <span className="font-haeseo">九</span>
+          <span className="font-haeseo">莫</span>
+          <span className="font-haeseo">上</span>
+          <span className="font-haeseo">莫</span>
+          <span className="font-haeseo">下</span>
         </div>
         <InputWithPen
           answer={answer1}

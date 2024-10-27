@@ -4,13 +4,18 @@ import { RightTopStepContainer } from "@/app/components/right-top-step-container
 import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png"; //7-12
+import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자7.png";
+import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자8.png";
+import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자9.png";
+import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자10.png";
+import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png";
+import BACKGROUND6 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자12.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
@@ -34,30 +39,30 @@ export default function Page() {
       sound: "/sound/2/36/2.mp3",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
             height={80}
           />
-          와{" "}
-          <FlippableCard
+          와
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
             height={80}
           />
           가 모여 이루어진 ‘
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-2 -mt-1 inline-block"
+            className="-mt-4 ml-2 mr-2 inline-block"
             text="수풀"
             width={210}
             height={80}
           />
-          {"\xa0\xa0"}’
+          ’
         </div>
       ),
       equation: [
@@ -85,30 +90,30 @@ export default function Page() {
       meaning: "쉬다",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="사람"
             width={210}
             height={80}
-          />{" "}
+          />
           이
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
             height={80}
-          />{" "}
+          />
           에 기대어 ‘
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="쉬다"
             width={210}
             height={80}
           />
-          {"\xa0"}’
+          ’
         </div>
       ),
       equation: [
@@ -136,30 +141,30 @@ export default function Page() {
       meaning: "밝다",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="해"
             width={210}
             height={80}
           />
           와
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="달"
             width={210}
             height={80}
           />
           처럼 ‘
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="밝다"
             width={210}
             height={80}
           />
-          {"\xa0"}’
+          ’
         </div>
       ),
       equation: [
@@ -187,22 +192,22 @@ export default function Page() {
       meaning: "좋다",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="여자"
             width={210}
             height={80}
           />
           가 자녀를 안으니 ‘
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="좋다"
             width={210}
             height={80}
           />
-          {"\xa0"}’
+          ’
         </div>
       ),
       equation: [
@@ -229,24 +234,24 @@ export default function Page() {
       reading: "명",
       meaning: "이름",
       content: (
-        <div className="flex items-center flex-wrap text-[40px] -mr-10">
+        <div className="flex items-center flex-wrap text-[40px] mt-10 ml-5 -mr-10">
           어두운
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 -mt-1 text-[50px] inline-block"
+            className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="저녁"
             width={205}
             height={80}
           />
           에 상대를 알기 위해 입으로 부르는 ‘
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-2 -mt-1 text-[50px] inline-block"
+            className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="이름"
             width={204}
             height={80}
           />
-          {"\xa0\xa0"}’
+          ’
         </div>
       ),
       equation: [
@@ -274,21 +279,23 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={6} step={step} onStepChange={setStep} />
 
-        <MainContentVideoButton
-          video="/video/writing/36p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
+        {step !== 1 ? (
+          <MainContentVideoButton
+            video="/video/writing/36p_1.mp4"
+            className="absolute left-[112px] top-[40px]"
+          />
+        ) : null}
 
         {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
+          <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : (
-          <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr]">
-            <div className="!justify-start absolute top-[110px]">
-              <div className="relative left-[390px] w-[750px] text-center text-[210px]">
-                <span className="font-haeseo">{data[step - 2]?.chinese}</span>
-              </div>
-              <div className="flex flex-col gap-16 ml-[150px] -mt-[65px]">
-                <div className="grid grid-cols-[180px__750px] gap-10">
+          <ContentContainer className="!justify-start w-[1760px] px-[130px]">
+            <div className="absolute top-[110px] pl-[40px] text-center text-[210px]">
+              <span className="font-haeseo">{data[step - 2]?.chinese}</span>
+            </div>
+            <div className="relative w-full top-[380px] px-[150px]">
+              <div className="flex flex-col gap-16">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showReading}
                     onClick={() => {
@@ -300,12 +307,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px] -mt-3 ml-10 ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__750px] gap-10">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -314,12 +321,12 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] tracking-[20px] h-[60px] -mt-3 ml-10  ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[140px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] tracking-[20px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__1fr] gap-10 -mt-2">
+                <div className="grid grid-cols-[180px__1fr] -mt-4">
                   <PillButton
                     active={showResource}
                     onClick={() => setShowResource(!showResource)}
@@ -328,31 +335,32 @@ export default function Page() {
                     backgroundColor="#7278a6"
                   />
                   <div key={step}>
-                    <div className="flex items-center gap-5 -mt-5 -ml-3">
+                    <div
+                      className="flex items-center gap-4 -mt-2 ml-8 text-[50px] leading-[62px] tracking-[0.5px] -mr-[230px]">
                       <div
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[70px] -mt-1 cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center"
+                        className="w-[100px] h-[100px] font-haeseo text-[70px] cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[0].sound).play()
                         }
                       >
                         {data[step - 2]?.equation[0].chinese}
                       </div>
-                      <span className="text-[40px] ml-1 mt-2">
+                      <span className="text-[40px] ml-2 mt-2">
                         {data[step - 2].equation[0].text}
                       </span>
                       <Plus size={45} color="gray" className="-ml-1" />
                       <div
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[70px] -mt-1 cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
+                        className="w-[100px] h-[100px] font-haeseo text-[70px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[1].sound).play()
                         }
                       >
                         {data[step - 2]?.equation[1].chinese}
                       </div>
-                      <span className="text-[40px] ml-1 mt-2">
+                      <span className="text-[40px] ml-3 mt-2">
                         {data[step - 2].equation[1].text}
                       </span>
-                      <MoveRight size={50} color="gray" className="-ml-1" />
+                      <MoveRight size={50} color="gray" className="ml-1" />
                       <div
                         className="font-haeseo text-[90px] ml-5 -mt-2 cursor-pointer"
                         onClick={() =>
@@ -365,7 +373,8 @@ export default function Page() {
                         {data[step - 2].equation[2].text}
                       </span>
                     </div>
-                    <div className="-ml-8 mt-5">
+                    <div className="mt-9 ml-2 text-[50px] -mr-[230px]"
+                    >
                       {data[step - 2]?.content ?? null}
                     </div>
                   </div>
@@ -375,7 +384,14 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={
+        step == 1 ? BACKGROUND1.src :
+          step == 2 ? BACKGROUND2.src :
+            step == 3 ? BACKGROUND3.src :
+              step == 4 ? BACKGROUND4.src :
+                step == 5 ? BACKGROUND5.src :
+                  step == 6 ? BACKGROUND6.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

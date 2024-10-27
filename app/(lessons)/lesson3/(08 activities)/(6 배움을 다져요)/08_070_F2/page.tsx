@@ -9,7 +9,8 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import { SmartButton } from "@/app/components/buttons/smart-button";
-import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어227.png";
+import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어226.png";
+import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어227.png";
 import { StepContainer } from "@/app/components/step-container";
 
 export default function Page() {
@@ -24,12 +25,6 @@ export default function Page() {
         }
         sound=""
       />
-      <div className="absolute top-[400px] right-[60px]">
-        <SmartButton
-          link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0"
-          className="w-[100px]"
-        />
-      </div>
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -37,7 +32,7 @@ export default function Page() {
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
 
       <img
-        src={BACKGROUND1.src}
+        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
@@ -97,6 +92,12 @@ const Step2 = () => {
 
   return (
     <>
+      <div className="absolute top-[400px] right-[60px]">
+        <SmartButton
+          link="https://stdict.korean.go.kr"
+          className="animate__animated animate__bounceIn animate__delay-1s absolute right-[6px] top-[0px] z-1 w-[100px]"
+        />
+      </div>
       <ContentContainer className="!justify-start -top-[45px] left-5">
         <img src={IMAGE2.src} />
         <InputWithPen

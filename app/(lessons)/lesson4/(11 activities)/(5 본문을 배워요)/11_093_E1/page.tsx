@@ -3,13 +3,15 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
-import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png"; //5~9~15~22~24
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리5.png";
+import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리9.png";
+import BACKGROUND3 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png";
+import BACKGROUND4 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리22.png";
+import BACKGROUND5 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리24.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -28,25 +30,25 @@ export default function Page() {
         {
           letter: "去",
           reading: "거",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
         },
         {
           letter: "言",
           reading: "언",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
         },
         {
           letter: "美",
           reading: "미",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
         },
         {
           letter: "라야",
           isKor: true,
           className: "mr-5",
           additional: (
-            <p className="tracking-tighter">
-              문장을 읽을 때는 구절 사이나 문장 끝에 토[우리말로 된 조사나
+            <p className="tracking-tighter leading-tight">
+              문장을 읽을 때는 구절 사이나 문장 끝에 토<br />[우리말로 된 조사나
               어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어
               읽는다.
             </p>
@@ -61,7 +63,7 @@ export default function Page() {
         {
           letter: "來",
           reading: "내",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
           additional: (
             <div>
               <p>음운 법칙에 맞게 읽기 :</p>
@@ -96,22 +98,22 @@ export default function Page() {
         {
           letter: "言",
           reading: "언",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
         },
         {
           letter: "美",
           reading: "미",
-          className: "text-[120px] leading-[155px]",
+          className: "text-[120px] leading-[150px]",
         },
         { letter: "니라.", isKor: true },
       ],
       sound: "/sound/4/92/1.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           가는 말이 고와야{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="오는 말"
             width={220}
             height={80}
@@ -133,7 +135,7 @@ export default function Page() {
               >
                 己
               </span>
-              : ① 몸, ②<span className="underline">자기</span>
+              : ① 몸, ②<span className="underline underline-offset-2">자기</span>
             </>
           ),
         },
@@ -197,7 +199,7 @@ export default function Page() {
               >
                 人
               </span>
-              : ① 사람, ②<span className="underline">남</span>
+              : ① 사람, ②<span className="underline underline-offset-2">남</span>
             </p>
           ),
         },
@@ -205,11 +207,11 @@ export default function Page() {
       ],
       sound: "/sound/4/92/2.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           자기가{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="하고자 하지 않는 (것)"
             width={500}
             height={80}
@@ -231,7 +233,7 @@ export default function Page() {
               >
                 無
               </span>
-              : ① 없다, ②<span className="underline">~하지마라</span>
+              : ① 없다, ②<span className="underline underline-offset-2">~하지마라</span>
             </p>
           ),
         },
@@ -246,7 +248,7 @@ export default function Page() {
               >
                 道
               </span>
-              : ① 길, ②<span className="underline">말하다</span>
+              : ① 길, ②<span className="underline underline-offset-2">말하다</span>
             </p>
           ),
         },
@@ -277,7 +279,7 @@ export default function Page() {
               >
                 短
               </span>
-              : ① 짧다, ②<span className="underline">단점</span>
+              : ① 짧다, ②<span className="underline underline-offset-2">단점</span>
             </p>
           ),
         },
@@ -297,7 +299,7 @@ export default function Page() {
               >
                 長
               </span>
-              : ① 길다, ②<span className="underline">장점</span>
+              : ① 길다, ②<span className="underline underline-offset-2">장점</span>
             </p>
           ),
         },
@@ -305,19 +307,19 @@ export default function Page() {
       ],
       sound: "/sound/4/92/3.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           남의 단점을 말하지{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="말고"
             width={165}
             height={80}
           />
           자기의{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="장점"
             width={165}
             height={80}
@@ -360,11 +362,11 @@ export default function Page() {
       ],
       sound: "/sound/4/92/4.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           남을 사랑하는 사람은{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="남"
             width={140}
             height={80}
@@ -387,19 +389,19 @@ export default function Page() {
       ],
       sound: "/sound/4/92/5.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
+        <div className="flex flex-wrap text-[50px] font-bold">
           남을{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="공경"
             width={165}
             height={80}
           />
           하는 사람은 남도{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="항상"
             width={165}
             height={80}
@@ -426,9 +428,13 @@ export default function Page() {
           </div>
         </ContentContainer>
       </LearnMainContentPageTemplate>
-      <img
-        src={BACKGROUND1.src}
-        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src :
+                step === 5 ? BACKGROUND5.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

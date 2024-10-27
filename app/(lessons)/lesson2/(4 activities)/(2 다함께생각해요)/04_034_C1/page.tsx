@@ -2,6 +2,7 @@
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
+import IMAGE2 from "./bgTextArea.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useState } from "react";
@@ -20,6 +21,10 @@ export default function Page() {
 
   return (
     <>
+      <ThinkTogetherHeader
+        title={<p className="-ml-2">만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자.</p>}
+        sound=""
+      />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -30,29 +35,26 @@ export default function Page() {
 const Step1 = () => {
   return (
     <>
-      <ThinkTogetherHeader title="만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자." />
-
       <ContentContainer>
         <VideoThumbnail_big
           thumbnail={IMAGE.src}
           video="/video/animation/2-4_34.mp4"
         />
       </ContentContainer>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 };
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [answer, setAnswer] = useState("");
-
+  //const [answer, setAnswer] = useState("");
+  const answer = "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면";
+  const [value, setValue] = useState("");
   return (
     <>
-      <ThinkTogetherHeader title="만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자." />
-
-      <ContentContainer>
-        <Textarea
+      <ContentContainer className="-top-9 left-8">
+        {/* <Textarea
           value={
             showAnswer
               ? "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면 "
@@ -60,7 +62,26 @@ const Step2 = () => {
           }
           onChange={(e) => setAnswer(e)}
           className={`${showAnswer ? "text-example" : ""}`}
-        />
+        /> */}
+        <img src={IMAGE2.src} className="absolute -translate-x-5 -translate-y-2" />
+        {!value && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className="absolute pointer-events-none"
+            style={{
+              height: 56,
+              top: 230,
+              left: 200
+            }}
+          />
+        ) : null}
+        <textarea
+          value={showAnswer ? answer : value}
+          onChange={(e) => setValue(e.target.value)}
+          className={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
+            }`}
+          rows={3}
+        ></textarea>
       </ContentContainer>
 
       <ExampleAnswerButton

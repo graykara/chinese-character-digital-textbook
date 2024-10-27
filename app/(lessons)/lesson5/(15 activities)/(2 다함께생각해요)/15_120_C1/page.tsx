@@ -7,6 +7,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
+import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살2.png";
@@ -18,12 +19,12 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
-        title="빈칸에 들어갈 단어를 써 보고, 어떤 일에 집중했던 자신의 경험을 써 보자."
+        title={
+          <p className="-ml-3 -mr-20">빈칸에 들어갈 단어를 써 보고, 어떤 일에 집중했던 자신의 경험을 써 보자.</p>
+        }
+        sound=""
         subTitle={
-          <p className="text-[40px] relative -left-10">
-            <span className="mr-4">*</span>
-            빈칸에 들어갈 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.
-          </p>
+          <p className="-ml-10 mt-4 text-[40px] tracking-tighter"><span className="text-[#FF9001] text-[40px]">*</span> 빈칸에 들어갈 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.</p>
         }
       />
 
@@ -35,11 +36,48 @@ export default function Page() {
 }
 
 const Step1 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const answer = [
+    "정", "신", "집", "중"
+  ];
   return (
     <>
-      <ContentContainer>
+      <ContentContainer className="top-1 left-9">
         <img src={IMAGE1.src} />
+        <InputWithPen
+          answer={answer[0]}
+          showAnswer={showAnswer}
+          className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
+          penClassName="ml-3 -mt-0 h-[35px]"
+          containerClassName="absolute top-[300px] left-[335px] -mt-1"
+        />
+        <InputWithPen
+          answer={answer[1]}
+          showAnswer={showAnswer}
+          className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
+          penClassName="ml-3 -mt-0 h-[35px]"
+          containerClassName="absolute top-[300px] left-[395px] -mt-1"
+        />
+
+        <InputWithPen
+          answer={answer[2]}
+          showAnswer={showAnswer}
+          className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
+          penClassName="ml-3 -mt-0 h-[35px]"
+          containerClassName="absolute top-[315px] left-[852px] -mt-1"
+        />
+        <InputWithPen
+          answer={answer[3]}
+          showAnswer={showAnswer}
+          className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
+          penClassName="ml-3 -mt-0 h-[35px]"
+          containerClassName="absolute top-[315px] left-[912px] -mt-1"
+        />
       </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -51,27 +89,29 @@ const Step1 = () => {
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer = [
-    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
+    "시험 기간 중 짧은 쉬는 시간에 주위가 시끄러웠지만 집중하여 공부했다.", "짧은 시간이지만 집중해서 전보다 좋은 성적을 받을 수 있었다."
   ];
 
   return (
     <>
-      <ContentContainer className="!justify-start pt-2">
-        {/* {showAnswer ? (
-          <img src={IMAGE2_AFTER.src}/>
-        ) : (
-          <img src={IMAGE2_BEFORE.src} />
-        )} */}
+      <ContentContainer className="!justify-start pt-2 left-14">
         <img src={IMAGE2.src} />
-        <div className="absolute top-[310px] left-[290px]">
           <InputWithPen
-            answer={answer}
+            answer={answer[0]}
             showAnswer={showAnswer}
-            className="text-example w-[960px] h-[80px] text-[45px] tracking-tighter bg-transparent"
-            penClassName="left-0 -translate-x-1/2"
-            containerClassName="relative top-16"
+            className="text-[38px] w-[1000px] h-[80px] tracking-tighter bg-transparent"
+            penClassName="left-0 -mt-2 h-[50px]"
+            containerClassName="absolute top-[35px] left-[346px]"
+            isExample
           />
-        </div>
+          <InputWithPen
+            answer={answer[1]}
+            showAnswer={showAnswer}
+            className="text-[38px] w-[1178px] h-[80px] tracking-tighter bg-transparent"
+            penClassName="left-0 -mt-2 h-[50px]"
+            containerClassName="absolute top-[155px] left-[168px]"
+            isExample
+          />
       </ContentContainer>
 
       <ExampleAnswerButton
