@@ -1,14 +1,15 @@
 "use client";
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
-import { PillButton } from "@/app/components/buttons/pill-button";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png"; //7~11~12~15
+import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살7.png";
+import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살11.png";
+import BACKGROUND3 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살12.png";
+import BACKGROUND4 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
 
 export default function Page() {
@@ -16,12 +17,10 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
-  // const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
-    // setShowResource(false);
   }, [step]);
 
   const data = [
@@ -89,19 +88,19 @@ export default function Page() {
       ],
       sound: "/sound/5/122/2.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tight font-bold">
-          풀 속의{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          풀 속의
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-4 mr-5 inline-block"
+            className="-mt-2 ml-4 mr-5 inline-block"
             text="돌"
             width={130}
             height={80}
           />
-          을 보고{" "}
-          <FlippableCard
+          을 보고
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-5 mr-6 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="호랑이"
             width={210}
             height={80}
@@ -126,19 +125,19 @@ export default function Page() {
       ],
       sound: "/sound/5/122/3'.mp3",
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-normal font-bold mr-10">
-          돌에 적중하여{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold mr-10">
+          돌에 적중하여
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-3 mr-6 inline-block"
+            className="-mt-2 ml-3 mr-6 inline-block"
             text="화살"
             width={170}
             height={80}
           />
-          이 박혔는데 그것을 보니{" "}
-          <FlippableCard
+          이 박혔는데 그것을 보니
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="돌"
             width={130}
             height={80}
@@ -186,11 +185,11 @@ export default function Page() {
       ],
       sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-tighter font-bold">
-          인하여{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          인하여
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block"
             text="다시"
             width={170}
             height={80}
@@ -226,15 +225,15 @@ export default function Page() {
       ],
       sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
       content: (
-        <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
-          끝내{" "}
-          <FlippableCard
+        <div className="flex flex-wrap text-[50px] font-bold">
+          끝내
+          <FlippableCard_60
             active={showMeaning}
-            className="ml-4 mr-6 inline-block"
+            className="-mt-2 ml-4 mr-6 inline-block"
             text="다시"
             width={170}
             height={80}
-          />{" "}
+          />
           돌에 박히게 할 수 없었다.
         </div>
       ),
@@ -245,11 +244,9 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-        {/* {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
-        ) : ( */}
+
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
-          <div className="absolute w-[1480px] top-[228px] left-[280px]"> 
+          <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
               data={data[step - 1]}
               showReading={showReading}
@@ -259,9 +256,15 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-        {/* )} */}
+
       </LearnMainContentPageTemplate>
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={
+        step === 1 ? BACKGROUND1.src :
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND3.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

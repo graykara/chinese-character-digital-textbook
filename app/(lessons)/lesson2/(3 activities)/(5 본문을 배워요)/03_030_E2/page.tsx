@@ -10,11 +10,17 @@ import IMAGE6 from "./image6.png";
 import IMAGE7 from "./image7.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
-import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자21.png";
+import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자22.png";
+import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자23.png";
+import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자24.png";
+import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자25.png";
+import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
+import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자27.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
@@ -36,20 +42,20 @@ export default function Page() {
       reading: "일",
       meaning: "하나",
       content: (
-        <div className="flex items-center flex-wrap">
-          선 하나를 그어서{" "}
-          <FlippableCard
+        <div className="flex items-center flex-wrap mb-2">
+          선 하나를 그어서
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-5 mr-10 inline-block"
             text="하나"
             width={210}
             height={80}
           />
-          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
       resource: IMAGE2.src,
+      sound: "/sound/2/30/1.mp3",
     },
     {
       chinese: "上",
@@ -57,27 +63,27 @@ export default function Page() {
       meaning: "위",
       content: (
         <div className="flex items-center flex-wrap">
-          기준선{" "}
-          <FlippableCard
+          기준선
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-5 mr-6 inline-block"
             text="위"
-            width={180}
+            width={165}
             height={80}
           />
-          {"\xa0"}에 점을 찍어{" "}
-          <FlippableCard
+          에 점을 찍어
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-6 mr-8 inline-block"
             text="위"
-            width={180}
+            width={165}
             height={80}
           />
-          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
       resource: IMAGE3.src,
+      sound: "/sound/2/30/4.mp3",
     },
     {
       chinese: "下",
@@ -85,27 +91,27 @@ export default function Page() {
       meaning: "아래",
       content: (
         <div className="flex items-center flex-wrap">
-          기준선{" "}
-          <FlippableCard
+          기준선
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-5 mr-5 inline-block"
             text="아래"
-            width={180}
+            width={190}
             height={80}
           />
-          {"\xa0"}에 점을 찍어{" "}
-          <FlippableCard
+          에 점을 찍어
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-4 mr-8 inline-block"
             text="아래"
-            width={180}
+            width={190}
             height={80}
           />
-          {"\xa0"}
           라는 뜻을 나타냄.
         </div>
       ),
       resource: IMAGE4.src,
+      sound: "/sound/2/30/5.mp3",
     },
     {
       chinese: "本",
@@ -114,27 +120,27 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap">
           나무
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-4 mr-5 inline-block"
             text="화"
-            width={120}
+            width={145}
             height={80}
           />
           {"\xa0"}
           부분에 선을 그어
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-5 mr-10 inline-block"
             text="월식"
-            width={170}
+            width={190}
             height={80}
           />
-          {"\xa0"}
-          이라는 뜻을 나타냄.
+          <span className="mt-2 -mb-10">이라는 뜻을 나타냄.</span>
         </div>
       ),
       resource: IMAGE5.src,
+      sound: "/sound/2/30/6.mp3",
     },
     {
       chinese: "末",
@@ -143,18 +149,18 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap">
           나뭇가지 끝부분에 선을 그어
-          <FlippableCard
+          <FlippableCard_60
             active={showResource}
-            className="mx-5 inline-block"
+            className="-mt-4 ml-5 mr-8 inline-block"
             text="일식"
-            width={180}
+            width={200}
             height={80}
           />
-          {"\xa0"}
-          이라는 뜻을 나타냄.
+          이라는 뜻을 <span className="mt-2 -mb-14">나타냄.</span>
         </div>
       ),
       resource: IMAGE6.src,
+      sound: "/sound/2/30/7.mp3",
     },
   ];
 
@@ -163,18 +169,18 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
 
-        {step !== 1 ? (
-        <MainContentVideoButton
-          video="/video/writing/30p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
-        ) : null }
+        {(step !== 1 && step !== 7) ? (
+          <MainContentVideoButton
+            video="/video/writing/30p_1.mp4"
+            className="absolute left-[112px] top-[40px]"
+          />
+        ) : null}
 
         {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
+          <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : step === 7 ? (
           <div className="relative">
-            <img src={IMAGE7.src} alt="image1" />
+            <img src={IMAGE7.src} alt="image1" className="mt-[65px]" />
             <div className="absolute w-full left-1/2 -translate-x-1/2 bottom-[100px] grid grid-cols-5 gap-x-[50px] gap-y-[50px] px-[100px]">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => (
                 <button
@@ -189,19 +195,19 @@ export default function Page() {
             </div>
           </div>
         ) : (
-          <ContentContainer className="w-[1400px] h-full grid grid-cols-[1fr]">
-            <div className="relative left-[0px] -top-[50px]">
-              <div className="relative top-[80px] w-[1400px] text-center text-[215px]">
-                <span className="font-haeseo">{data[step - 2]?.chinese}</span>
-              </div>
+          <ContentContainer className="!justify-start w-[1760px] px-[130px]">
+            <div className="absolute top-[110px] pl-[40px] text-center text-[210px]">
+              <span className="font-haeseo">{data[step - 2]?.chinese}</span>
+            </div>
+            <div className="relative w-full top-[380px] px-[150px]">
               <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-[280px__750px] gap-10">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showReading}
                     onClick={() => {
                       if (!showReading) {
                         new Howl({
-                          src: `/sound/2/30/${step - 1}.mp3`,
+                          src: data[step - 2].sound,
                         }).play();
                       }
                       setShowReading(!showReading);
@@ -211,12 +217,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px]  ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[280px__750px] gap-10">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -225,12 +231,12 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px]  ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[180px__1fr] gap-10">
+                <div className="grid grid-cols-[180px__1fr] -mt-4">
                   <PillButton
                     active={showResource}
                     onClick={() => setShowResource(!showResource)}
@@ -240,19 +246,16 @@ export default function Page() {
                   />
                   <div
                     key={step}
-                    className="text-[50px] leading-[62px] tracking-[-1.5px]"
+                    className="mt-2 ml-10 text-[50px] leading-[62px] tracking-[0.5px] -mr-[230px]"
                   >
                     {data[step - 2]?.content ?? null}
-                    <div className="mt-10 w-[1000px] h-[115px] flex justify-center">
-                      <div>
-                        <img
-                          src={data[step - 2]?.resource}
-                          alt="resource"
-                          className="inset-y-1/2"
-                        />
-                        {/* 이미지가 위아래 가운데에 위치하게 해주세요 */}
-                      </div>
-                    </div>
+
+                  </div>
+                  <div className="relative mt-10 pt-2 pl-8 w-[1200px] h-[115px] justify-items-center ">
+                    <img
+                      src={data[step - 2]?.resource}
+                      alt="resource"
+                    />
                   </div>
                 </div>
               </div>
@@ -260,7 +263,15 @@ export default function Page() {
           </ContentContainer>
         )}
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={
+        step == 1 ? BACKGROUND1.src :
+          step == 2 ? BACKGROUND2.src :
+            step == 3 ? BACKGROUND3.src :
+              step == 4 ? BACKGROUND4.src :
+                step == 5 ? BACKGROUND5.src :
+                  step == 6 ? BACKGROUND6.src :
+                    step == 7 ? BACKGROUND7.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

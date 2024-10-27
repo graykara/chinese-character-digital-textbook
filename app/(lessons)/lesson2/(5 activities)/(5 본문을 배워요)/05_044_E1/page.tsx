@@ -7,13 +7,15 @@ import IMAGE4 from "./bg_4.png";
 import IMAGE5 from "./bg_5.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
-import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
+import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
-import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
+import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘6.png";
+import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘7.png";
+import BACKGROUND3 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘8.png";
+import BACKGROUND4 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
@@ -40,9 +42,9 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           안부를{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="물음."
             width={220}
             height={80}
@@ -58,9 +60,9 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           어려움이{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning2}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="없음."
             width={220}
             height={80}
@@ -75,7 +77,7 @@ export default function Page() {
       reading: "금 일",
       sound: "/sound/2/44/3.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[70px]">
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter leading-tight font-bold -mb-[48px]">
           지금 지나가고
           <br />
           있는 이날.
@@ -88,11 +90,11 @@ export default function Page() {
       chinese: "休業",
       reading: "휴 업",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[43px]">
           일을{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning2}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="쉼."
             width={220}
             height={80}
@@ -105,13 +107,13 @@ export default function Page() {
       //left part
       chinese: "植樹",
       reading: "식 수",
-      sound: "/sound/2/44/5.mp3",
+      sound: "/sound/2/45/1.mp3",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           나무를{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="심음."
             width={220}
             height={80}
@@ -121,15 +123,15 @@ export default function Page() {
     },
     {
       //right part
-      sound: "/sound/2/44/6.mp3",
+      sound: "/sound/2/45/2.mp3",
       chinese: "食水",
       reading: "식 수",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           먹는{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning2}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="물."
             width={220}
             height={80}
@@ -142,13 +144,13 @@ export default function Page() {
       //left part
       chinese: "義士",
       reading: "의 사",
-      sound: "/sound/2/44/7.mp3",
+      sound: "/sound/2/45/3.mp3",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           의로운{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="사람."
             width={220}
             height={80}
@@ -158,15 +160,15 @@ export default function Page() {
     },
     {
       //right part
-      sound: "/sound/2/44/8.mp3",
+      sound: "/sound/2/45/4.mp3",
       chinese: "意思",
       reading: "의 사",
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           뜻과{" "}
-          <FlippableCard
+          <FlippableCard_60
             active={showMeaning2}
-            className="mx-5 inline-block"
+            className="-mt-2 ml-5 mr-10 inline-block"
             text="생각."
             width={220}
             height={80}
@@ -206,7 +208,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={` text-main-content text-[55px] h-[55px] tracking-widest ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading ? data[step * 2 - 2]?.reading : null}
                 </div>
@@ -241,7 +243,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={` text-main-content text-[55px] h-[55px] tracking-widest ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading2 ? data[step * 2 - 1]?.reading : null}
                 </div>
@@ -274,7 +276,12 @@ export default function Page() {
           </div>
         </ContentContainer>
       </LearnMainContentPageTemplate>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={
+        step == 1 ? BACKGROUND1.src :
+          step == 2 ? BACKGROUND2.src :
+            step == 3 ? BACKGROUND3.src :
+              step == 4 ? BACKGROUND4.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

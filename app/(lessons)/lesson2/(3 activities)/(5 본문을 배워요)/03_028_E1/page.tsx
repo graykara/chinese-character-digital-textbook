@@ -5,12 +5,6 @@ import CONTAINER from "./content.png";
 import MODAL from "./modal.png";
 import MODAL_CLOSE from "./modal-close.png";
 import IMAGE1 from "./image1.png";
-import IMAGE2 from "./image2.png";
-import IMAGE3 from "./image3.png";
-import IMAGE4 from "./image4.png";
-import IMAGE5 from "./image5.png";
-import IMAGE6 from "./image6.png";
-import IMAGE7 from "./image7.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
@@ -19,7 +13,13 @@ import { ResourceButton } from "@/app/components/buttons/resource-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Modal } from "@/app/components/modal";
 import { Howl } from "howler";
-import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자8.png";
+import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자7.png";
+import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자8.png";
+import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자10.png";
+import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자12.png";
+import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자14.png";
+import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자16.png";
+import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자18.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
@@ -41,7 +41,6 @@ export default function Page() {
       reading: "산",
       meaning: "산",
       content: "등산",
-      // resource: IMAGE2.src,
       resource: "/video/animation/2-3_29/017-1-1.webm",
     },
     {
@@ -49,7 +48,6 @@ export default function Page() {
       reading: "천",
       meaning: "내",
       content: "하천",
-      // resource: IMAGE3.src,
       resource: "/video/animation/2-3_29/017-2-1.webm",
     },
     {
@@ -57,7 +55,6 @@ export default function Page() {
       reading: "일",
       meaning: "해",
       content: "일식",
-      // resource: IMAGE4.src,
       resource: "/video/animation/2-3_29/017-3-1.webm",
     },
     {
@@ -65,7 +62,6 @@ export default function Page() {
       reading: "월",
       meaning: "달",
       content: "월식",
-      // resource: IMAGE5.src,
       resource: "/video/animation/2-3_29/017-4-1.webm",
     },
     {
@@ -73,7 +69,6 @@ export default function Page() {
       reading: "화",
       meaning: "불",
       content: "화력",
-      // resource: IMAGE6.src,
       resource: "/video/animation/2-3_29/017-5-1.webm",
     },
     {
@@ -81,7 +76,6 @@ export default function Page() {
       reading: "목",
       meaning: "나무",
       content: "초목",
-      // resource: IMAGE7.src,
       resource: "/video/animation/2-3_29/017-6-1.webm",
     },
   ];
@@ -92,22 +86,22 @@ export default function Page() {
         <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
 
         {step !== 1 ? (
-        <MainContentVideoButton
-          video="/video/writing/28p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
-        ) : null }
+          <MainContentVideoButton
+            video="/video/writing/28p_1.mp4"
+            className="absolute left-[112px] top-[40px]"
+          />
+        ) : null}
 
         {step === 1 ? (
-          <img src={IMAGE1.src} alt="image1" />
+          <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : (
-          <ContentContainer className="w-[1300px] h-full grid grid-cols-[1fr__452px]">
-            <div className="relative left-[100px] top-[50px]">
-              <div className="absolute left-[160px] -top-[270px] w-[770px] text-center text-[215px]">
-                <span className="font-haeseo">{data[step - 2]?.chinese}</span>
-              </div>
+          <ContentContainer className="!justify-start w-[1760px] px-[130px]">
+            <div className="absolute top-[110px] pr-[190px] text-center text-[215px]">
+              <span className="font-haeseo">{data[step - 2]?.chinese}</span>
+            </div>
+            <div className="relative w-full top-[380px] px-[150px]  grid grid-cols-[1fr__452px]">
               <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-[50px__1fr]">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showReading}
                     onClick={() => {
@@ -120,12 +114,12 @@ export default function Page() {
                     backgroundColor="#3a5e7c"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px] mb-[10px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`ml-[70px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showReading ? data[step - 2]?.reading : null}
                   </div>
                 </div>
-                <div className="grid grid-cols-[50px__1fr]">
+                <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
                     active={showMeaning}
                     onClick={() => setShowMeaning(!showMeaning)}
@@ -134,24 +128,21 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`text-center text-main-content text-[60px] h-[60px] mb-[10px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`ml-[70px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
                 </div>
                 <ResourceButton active onClick={() => setShowModal(true)} />
               </div>
-            </div>
-            <div>
-              <div className="relative top-[50px] -left-[10px]">
+              <div className="relative -top-[80px] -right-[90px]">
                 <img src={CONTAINER.src} alt="container" />
-
                 <FlippableCard
                   key={step}
                   text={data[step - 2]?.content}
                   width={330}
-                  height={130}
-                  className="text-[60px] absolute bottom-10 left-1/2 -translate-x-1/2"
+                  height={125}
+                  className="text-[60px] absolute bottom-12 left-1/2 -translate-x-1/2"
                 />
               </div>
             </div>
@@ -184,7 +175,15 @@ export default function Page() {
           </div>
         </div>
       </Modal>
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={
+        step == 1 ? BACKGROUND1.src :
+          step == 2 ? BACKGROUND2.src :
+            step == 3 ? BACKGROUND3.src :
+              step == 4 ? BACKGROUND4.src :
+                step == 5 ? BACKGROUND5.src :
+                  step == 6 ? BACKGROUND6.src :
+                    step == 7 ? BACKGROUND7.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
