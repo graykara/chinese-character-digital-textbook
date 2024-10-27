@@ -41,6 +41,7 @@ export default function Page() {
             reading: "경",
             meaning: "지나다, 경험하다",
             sound: "/sound/4/12words/6.mp3",
+            fontSize: 40,
           },
           {
             chinese: "智",
