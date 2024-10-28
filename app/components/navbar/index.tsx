@@ -24,6 +24,8 @@ export const Navbar = () => {
     currentLesson,
     currentChapter,
     currentSubChapter,
+    setMaxStep,
+    setCurrentStep,
   } = useContext(PageInfoContext);
 
   useEffect(() => {
@@ -46,9 +48,10 @@ export const Navbar = () => {
   const subChapters = useMemo(
     () => [
       ...new Map(
-        NAVIGATION.filter((item) => item.chapter === selectedChapter).map(
-          (item) => [item.subChapter, item],
-        ),
+        NAVIGATION.filter(
+          (item) =>
+            item.lesson === selectedLesson && item.chapter === selectedChapter,
+        ).map((item) => [item.subChapter, item]),
       ).values(),
     ],
     [selectedChapter],
@@ -123,7 +126,12 @@ export const Navbar = () => {
               <li
                 key={index}
                 onClick={() => setSelectedChapter(item.chapter)}
-                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#b4381d] px-10 ${selectedChapter === item.chapter ? "text-white font-bold bg-[#b4381d]" : ""}`}
+                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#b4381d] px-10 ${
+                  selectedLesson === currentLesson &&
+                  selectedChapter === item.chapter
+                    ? "text-white font-bold bg-[#b4381d]"
+                    : ""
+                }`}
               >
                 <span>{getChapterTitleOfChapter(item.chapter)}</span>
               </li>
@@ -134,8 +142,17 @@ export const Navbar = () => {
               <Link
                 key={index}
                 href={getPageByPath("/" + item.path) || ""}
-                onClick={() => setShowMenu(false)}
-                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#9ad290] px-5 ${selectedChapter === currentChapter && selectedSubChapter === item.subChapter ? "text-white font-bold bg-[#9ad290]" : ""}`}
+                onClick={() => {
+                  setCurrentStep(1);
+                  setShowMenu(false);
+                }}
+                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#9ad290] px-5 ${
+                  selectedLesson === currentLesson &&
+                  selectedChapter === currentChapter &&
+                  selectedSubChapter === item.subChapter
+                    ? "text-white font-bold bg-[#9ad290]"
+                    : ""
+                }`}
               >
                 <span>{item.subChapter}</span>
               </Link>

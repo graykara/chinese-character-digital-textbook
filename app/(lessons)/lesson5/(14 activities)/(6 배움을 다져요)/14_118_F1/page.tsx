@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { Children, useState } from "react";
+import { useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
@@ -10,13 +10,11 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요17.png";
 import BACKGROUND2 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요18.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
-  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
     <>
@@ -105,13 +103,15 @@ const Step2 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title={
-          <p className="tracking-tighter -mr-20">가상 인터뷰의 내용에서 홍대용의 마지막 말에 들어갈 내용을 써 보자.</p>
+          <p className="tracking-tighter -mr-20">
+            가상 인터뷰의 내용에서 홍대용의 마지막 말에 들어갈 내용을 써 보자.
+          </p>
         }
         sound=""
         className="w-[1600px]"
       />
       <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[145px] right-[85px] flex items-center gap-5 z-1" />
-      
+
       <ContentContainer className="!justify-start -top-[75px] left-[50px] -mb-20">
         <img src={IMAGE2.src} />
         {!value && !showAnswer ? (
@@ -121,15 +121,16 @@ const Step2 = () => {
             style={{
               height: 40,
               top: 320,
-              left: 360
+              left: 360,
             }}
           />
         ) : null}
         <textarea
           value={showAnswer ? answer : value}
           onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[390px] left-[335px] top-[325px] pt-1 ml-5 text-[35px] tracking-tighter break-keep leading-[45px] bg-transparent ${showAnswer ? "text-example " : ""
-            }`}
+          className={`absolute resize-none w-[390px] left-[335px] top-[325px] pt-1 ml-5 text-[35px] tracking-tighter break-keep leading-[45px] bg-transparent ${
+            showAnswer ? "text-example " : ""
+          }`}
           rows={4}
         ></textarea>
       </ContentContainer>

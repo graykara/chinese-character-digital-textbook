@@ -4,6 +4,7 @@ import { ReactNode, useState } from "react";
 import { PillButton } from "../buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
+import { clickSound } from "@/app/utils/click-sound";
 
 type Data = {
   chinese: {
@@ -69,6 +70,7 @@ export const MainContentChineseAndReading = ({
                     (index === firstAdditonalIndex ? (
                       <button
                         onClick={() => {
+                          clickSound.play();
                           setSelectedAdditional(additional);
                           setShowAdditionalModal(true);
                           setAdditionalTitle(additionalTitle || "보충");
@@ -80,6 +82,7 @@ export const MainContentChineseAndReading = ({
                     ) : (
                       <button
                         onClick={() => {
+                          clickSound.play();
                           setSelectedAdditional(additional);
                           setAdditionalTitle(additionalTitle || "보충");
                           setShowAdditionalModal(true);

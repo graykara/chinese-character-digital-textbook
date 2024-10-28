@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { Children, useState } from "react";
+import { useState } from "react";
 import EXAMPLE from "./example.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";

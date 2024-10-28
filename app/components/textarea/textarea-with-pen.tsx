@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   answer?: string;

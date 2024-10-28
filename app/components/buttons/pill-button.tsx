@@ -22,7 +22,6 @@ export const PillButton = ({
 
   const handleClick = () => {
     clickSound.play();
-
     onClick?.();
   };
 

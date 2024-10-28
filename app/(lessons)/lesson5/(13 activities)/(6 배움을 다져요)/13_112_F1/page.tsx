@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { Children, useState } from "react";
+import { useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
@@ -29,7 +29,8 @@ export default function Page() {
 const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer1 = "누런 소가 더 일을 잘합니다";
-  const answer2 = "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.";
+  const answer2 =
+    "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.";
   const [value, setValue] = useState("");
 
   return (
@@ -42,9 +43,8 @@ const Step1 = () => {
         }
         sound=""
       />
-      <WritingButton
-        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
-        
+      <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
+
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
         <InputWithPen
@@ -61,15 +61,16 @@ const Step1 = () => {
             style={{
               height: 52,
               top: 420,
-              left: 365
+              left: 365,
             }}
           />
         ) : null}
         <textarea
           value={showAnswer ? answer2 : value}
           onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
-            }`}
+          className={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${
+            showAnswer ? "text-example tracking-tighter break-keep" : ""
+          }`}
           rows={2}
         ></textarea>
       </ContentContainer>

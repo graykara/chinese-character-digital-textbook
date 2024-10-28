@@ -76,20 +76,20 @@ export default function RootLayout({
           <div className="flex justify-end items-center">
             {1 < currentStep ? (
               <div className="mt-0">
-              <button
-                onMouseOver={() => setHoverPrev(true)}
-                onMouseLeave={() => setHoverPrev(false)}
-                onClick={() => setCurrentStep((prev) => prev - 1)}
-              >
-                <img
-                  src="/ui/prev-button-off.png"
-                  className={hoverPrev ? "hidden" : ""}
-                />
-                <img
-                  src="/ui/prev-button-on.png"
-                  className={hoverPrev ? "" : "hidden"}
-                />
-              </button>
+                <button
+                  onMouseOver={() => setHoverPrev(true)}
+                  onMouseLeave={() => setHoverPrev(false)}
+                  onClick={() => setCurrentStep((prev) => prev - 1)}
+                >
+                  <img
+                    src="/ui/prev-button-off.png"
+                    className={hoverPrev ? "hidden" : ""}
+                  />
+                  <img
+                    src="/ui/prev-button-on.png"
+                    className={hoverPrev ? "" : "hidden"}
+                  />
+                </button>
               </div>
             ) : (
               <AudioLink href={getPrevPage(pathname) ?? ""}>
@@ -116,20 +116,20 @@ export default function RootLayout({
           <div className="flex justify-start items-center">
             {currentStep < maxStep ? (
               <div className="mt-0">
-              <button
-                onMouseOver={() => setHoverNext(true)}
-                onMouseLeave={() => setHoverNext(false)}
-                onClick={() => setCurrentStep((prev) => prev + 1)}
-              >
-                <img
-                  src="/ui/next-button-off.png"
-                  className={hoverNext ? "hidden" : ""}
-                />
-                <img
-                  src="/ui/next-button-on.png"
-                  className={hoverNext ? "" : "hidden"}
-                />
-              </button>
+                <button
+                  onMouseOver={() => setHoverNext(true)}
+                  onMouseLeave={() => setHoverNext(false)}
+                  onClick={() => setCurrentStep((prev) => prev + 1)}
+                >
+                  <img
+                    src="/ui/next-button-off.png"
+                    className={hoverNext ? "hidden" : ""}
+                  />
+                  <img
+                    src="/ui/next-button-on.png"
+                    className={hoverNext ? "" : "hidden"}
+                  />
+                </button>
               </div>
             ) : (
               <AudioLink href={getNextPage(pathname) ?? ""}>

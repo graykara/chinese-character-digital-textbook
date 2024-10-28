@@ -4,6 +4,7 @@ import { ReactNode, useState } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
+import { clickSound } from "@/app/utils/click-sound";
 
 type Data = {
   chinese: {
@@ -56,12 +57,13 @@ export const MainContent = ({
             {chinese.map(
               ({ letter, reading, additional, isKor, className }, index) => {
                 return (
-                  <div className="justify-items-center mx-auto">
-                    <div key={index} className="relative">
+                  <div key={index} className="justify-items-center mx-auto">
+                    <div className="relative">
                       {additional &&
                         (index === firstAdditonalIndex ? (
                           <button
                             onClick={() => {
+                              clickSound.play();
                               setSelectedAdditional(additional);
                               setShowAdditionalModal(true);
                             }}
@@ -72,6 +74,7 @@ export const MainContent = ({
                         ) : (
                           <button
                             onClick={() => {
+                              clickSound.play();
                               setSelectedAdditional(additional);
                               setShowAdditionalModal(true);
                             }}
@@ -87,7 +90,8 @@ export const MainContent = ({
                       </span>
                       <div
                         className={`absolute -mt-10 left-1/2 -translate-x-1/2 animate__animated
-                  ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}>
+                  ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}
+                      >
                         {showReading ? (
                           <span
                             className={`text-main-content text-[60px] font-chosun`}
@@ -117,7 +121,7 @@ export const MainContent = ({
         </div>
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-14">
           <PillButton
-            active={showMeaning}
+            active={showMeaning || false}
             onClick={() => setShowMeaning(!showMeaning)}
             text="겉뜻"
             checkboxColor="#306875"
@@ -177,8 +181,8 @@ export const MainContent_SM = ({
             {chinese.map(
               ({ letter, reading, additional, isKor, className }, index) => {
                 return (
-                  <div className="justify-items-center mx-auto">
-                    <div key={index} className="relative">
+                  <div key={index} className="justify-items-center mx-auto">
+                    <div className="relative">
                       {additional &&
                         (index === firstAdditonalIndex ? (
                           <button
@@ -227,7 +231,7 @@ export const MainContent_SM = ({
         </div>
         <div className="grid grid-cols-[180px__1fr] gap-10 mt-0">
           <PillButton
-            active={showReading}
+            active={showReading || false}
             onClick={() => {
               if (!showReading) SOUND(sound).play();
               setShowReading(!showReading);
@@ -239,7 +243,7 @@ export const MainContent_SM = ({
         </div>
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-14">
           <PillButton
-            active={showMeaning}
+            active={showMeaning || false}
             onClick={() => setShowMeaning(!showMeaning)}
             text="겉뜻"
             checkboxColor="#306875"

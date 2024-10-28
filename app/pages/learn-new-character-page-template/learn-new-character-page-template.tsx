@@ -8,6 +8,7 @@ import { useContext, useEffect, useMemo, useState } from "react";
 import { Howl } from "howler";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { StepContainerArrow } from "@/app/components/step-container-arrow/step-container-arrow";
+import { clickSound } from "@/app/utils/click-sound";
 
 type Props = {
   characters: {
@@ -63,7 +64,10 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
     >
       <button
         className="absolute right-[110px] top-[60px] animate__animated animate__slideInRight"
-        onClick={() => setShowKorean(!showKorean)}
+        onClick={() => {
+          clickSound.play();
+          setShowKorean(!showKorean);
+        }}
       >
         <img src={showKorean ? ACTIVE_BUTTON.src : BUTTON.src} alt="button" />
       </button>
@@ -80,6 +84,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
                   background: `url('${CHARACTER_CONTAINER.src}') no-repeat center center`,
                 }}
                 onClick={() => {
+                  clickSound.play();
                   if (indexes[index] === 1) {
                     setIndexes(indexes.map((v, i) => (i === index ? 0 : v)));
                   } else {
@@ -143,6 +148,6 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         onStepChange={setStep}
         className="absolute w-full bottom-[5px] mb-0"
       />
-    </div>  
+    </div>
   );
 };

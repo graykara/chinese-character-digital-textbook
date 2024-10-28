@@ -225,21 +225,21 @@ export const NAVIGATION = [
   },
   {
     lesson: 1,
-    chapter: 2,
+    chapter: -2,
     subChapter: "정리하기",
     path: "lesson1/02_022_I1",
     page: 22,
   },
   {
     lesson: 1,
-    chapter: 2,
+    chapter: -2,
     subChapter: "문제풀기",
     path: "lesson1/02_022_K1",
     page: 22,
   },
   {
     lesson: 1,
-    chapter: 2,
+    chapter: -2,
     subChapter: "활동하기",
     path: "lesson1/02_023_J1",
     page: 23,
@@ -834,7 +834,7 @@ export const NAVIGATION = [
   },
   {
     lesson: 3,
-    chapter: -2,
+    chapter: 10,
     subChapter: "활동 창의력을 키워요",
     path: "lesson3/10_083_H1",
     page: 83,
@@ -1318,6 +1318,13 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: -2,
+    subChapter: "정리하기",
+    path: "lesson5/16_132_I1",
+    page: 132,
+  },
+  {
+    lesson: 5,
+    chapter: -2,
     subChapter: "활동하기",
     path: "lesson5/16_133_J1",
     page: 133,
@@ -1328,13 +1335,6 @@ export const NAVIGATION = [
     subChapter: "문제풀기",
     path: "lesson5/16_134_K1",
     page: 134,
-  },
-  {
-    lesson: 5,
-    chapter: -2,
-    subChapter: "정리하기",
-    path: "lesson5/16_132_I1",
-    page: 132,
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { Children, useState } from "react";
+import { useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE1_after from "./bg_1_after.png";
 import IMAGE2 from "./bg_2.png";
@@ -63,7 +63,7 @@ const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answers = [
     "긴급한 상황에서 정신을 집중하여 화살을 쏘았기 때문에",
-    "어떤 일을 할 때 늘 최선을 다하는 마음가짐과 태도를 지녀야 한다."
+    "어떤 일을 할 때 늘 최선을 다하는 마음가짐과 태도를 지녀야 한다.",
   ];
   return (
     <>

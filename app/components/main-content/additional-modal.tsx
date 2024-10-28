@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Modal } from "../modal";
+import { clickSound } from "@/app/utils/click-sound";
 
 interface Props {
   open: boolean;
@@ -25,7 +26,13 @@ export const AdditionalModal = ({
             backgroundColor: bgColor,
           }}
         >
-          <button className="absolute top-5 right-5" onClick={onClose}>
+          <button
+            className="absolute top-5 right-5"
+            onClick={() => {
+              clickSound.play();
+              onClose?.();
+            }}
+          >
             <img src="/ui/close-icon-white.png" />
           </button>
           <p className="text-white text-[40px] font-bold my-5">{title}</p>

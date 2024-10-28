@@ -32,8 +32,6 @@ export const FlippableCard = ({
 }: Props) => {
   const [isFlipped, setIsFlipped] = useState<boolean | null>(active);
 
-  console.log(isFlipped);
-
   const handleFlip = () => {
     clickSound.play();
     setIsFlipped(!isFlipped);
@@ -106,7 +104,7 @@ export const FlippableCard_60 = ({
   contentClassName = "",
   iconColor = "default",
 }: Props) => {
-  const [isFlipped, setIsFlipped] = useState(active || false);
+  const [isFlipped, setIsFlipped] = useState<boolean | null>(active || null);
 
   const handleFlip = () => {
     clickSound.play();
@@ -114,7 +112,7 @@ export const FlippableCard_60 = ({
   };
 
   useEffect(() => {
-    setIsFlipped(active || false);
+    setIsFlipped(active || null);
   }, [active]);
 
   const clickIcon =
@@ -134,8 +132,9 @@ export const FlippableCard_60 = ({
       }}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateX(-180deg)]" : ""
-          }`}
+        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${
+          isFlipped ? "[transform:rotateX(-180deg)]" : ""
+        }`}
       >
         <div
           className={`absolute w-full h-full bg-white border-8 border-[#0090a2] rounded-2xl flex flex-col items-center justify-center [backface-visibility:hidden] ${frontClassName}`}
