@@ -26,7 +26,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">한자를 만난 경험을 떠올려 보자.</p>}
-        sound=""
+        sound="/sound/1/10-i.mp3"
       />
 
       {step === 1 ? (

@@ -12,11 +12,11 @@ export default function Page() {
         goals={[
           {
             text: "단어를 읽고 풀이할 수 있다.",
-            sound: "/sound/2/34_goal/1.mp3",
+            sound: "/sound/2/48_goal/1.mp3",
           },
           {
             text: "단어의 짜임을 구별할 수 있다.",
-            sound: "/sound/2/34_goal/2.mp3",
+            sound: "/sound/2/48_goal/2.mp3",
           },
         ]}
       />

@@ -11,11 +11,11 @@ export default function Page() {
         background={IMAGE.src}
         goals={[
           {
-            text: "성어의 유래를 이해할 수 있다.",
+            text: " 성어의 유래를 이해하고 바르게 풀이할 수 있다.",
             sound: "/sound/3/68_goal/1.mp3",
           },
           {
-            text: "성어를 맥락에 맞게 활용하고 소통하는 태도를 기를 수 있다.",
+            text: "성어를 맥락에 맞게 활용하여 소통할 수 있다.",
             sound: "/sound/3/68_goal/2.mp3",
           },
         ]}

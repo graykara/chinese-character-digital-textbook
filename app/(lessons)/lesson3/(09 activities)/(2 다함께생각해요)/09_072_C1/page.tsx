@@ -67,8 +67,8 @@ const Step1 = () => {
 
 const Step2 = () => {
   const answers = [
-    "예시 답안",
-    "예시 답안"
+    "맹자와 양혜왕",
+    "양혜왕이 맹자에게 자신이 이웃나라 보다 더 마음을 다해 나라를 다스려도 백성들이 늘지 않는다며 그 이유를 묻자 맹자가 전투에 비유하여 말하였다. 전쟁에 패하여 어떤 자는 백 보를, 또 어떤 자는 오십 보를 도망했다면, 백 보를 도망친 사람이나 오십 보를 물러간 사람이나 도망한 것에는 서로 차이가 없다."
   ];
   const [showAnswer, setShowAnswer] = useState(false);
   const [value, setValue] = useState("");

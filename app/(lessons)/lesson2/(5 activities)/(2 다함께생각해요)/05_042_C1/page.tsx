@@ -50,7 +50,7 @@ const Step1 = () => {
       <ContentContainer className="!justify-start py-2 -top-5">
         <VideoThumbnail
           thumbnail={IMAGE.src}
-          video="/video/animation/2-4_34.mp4"
+          video="/video/animation/2-5_42.mp4"
           width={860}
           height={460}
         />
