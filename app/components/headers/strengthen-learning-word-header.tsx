@@ -16,9 +16,23 @@ export const StrengthenLearningWordHeader = ({
   className,
   titleClassName,
 }: Props) => {
+  // before
+  // useEffect(() => {
+  //   sound && SOUND(sound).play();
+  // }, []);
+
+  // after
   useEffect(() => {
-    sound && SOUND(sound).play();
-  }, []);
+    if (sound) {
+      const soundInstance = SOUND(sound);
+      soundInstance.stop();
+      soundInstance.play();
+
+      return () => {
+        soundInstance.stop();
+      };
+    }
+  }, [sound]);
 
   return (
     <header className={`relative ml-[80px] mt-[10px] ${className || ""}`}>
