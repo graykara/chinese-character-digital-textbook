@@ -33,7 +33,9 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10">
+      <TitleContainer
+        className="mt-10"
+        sound="/sound/3/61-i-1.mp3">
         <p className="flex items-start -mr-10 gap-5 tracking-tighter">
           <img src="/ui/flower-icon.png" />
           과제를 풀고 비밀번호의 마지막 숫자를 획득하여 방을 탈출해 보자.
@@ -48,8 +50,8 @@ export default function Page() {
       <img
         src={
           step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-          step === 3 ? BACKGROUND3.src : ""
+            step === 2 ? BACKGROUND2.src :
+              step === 3 ? BACKGROUND3.src : ""
         }
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />

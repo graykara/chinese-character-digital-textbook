@@ -33,7 +33,7 @@ const Step1 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">그림과 기호를 보고 무엇을 의미하는지 말해 보자.</p>}
-        sound=""
+        sound="/sound/2/26-i-1.mp3"
       />
 
       <ContentContainer className="absolute left-[40px] bottom-[110px]">
@@ -53,7 +53,7 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-3 text-[52px] leading-[60px] tracking-[-1px]">글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한 그림이나 기호로 표현해 보자.</p>}
-        sound=""
+        sound="/sound2/26-i-2.mp3"
       />
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />

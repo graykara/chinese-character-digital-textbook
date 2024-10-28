@@ -2,7 +2,6 @@
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
 import { useState } from "react";
-import { useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
