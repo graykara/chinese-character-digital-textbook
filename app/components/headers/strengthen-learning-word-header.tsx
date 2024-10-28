@@ -1,6 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
+import { SOUND } from "@/app/utils/sound-player";
+import { ReactNode, useEffect } from "react";
 
 interface Props {
   title: string | ReactNode;
@@ -15,6 +16,10 @@ export const StrengthenLearningWordHeader = ({
   className,
   titleClassName,
 }: Props) => {
+  useEffect(() => {
+    sound && SOUND(sound).play();
+  }, []);
+
   return (
     <header className={`relative ml-[80px] mt-[10px] ${className || ""}`}>
       <img

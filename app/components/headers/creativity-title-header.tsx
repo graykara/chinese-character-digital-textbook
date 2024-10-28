@@ -1,14 +1,23 @@
-import { ReactNode } from "react";
+"use client";
+
+import { SOUND } from "@/app/utils/sound-player";
+import { ReactNode, useEffect } from "react";
 
 export const CreativityTitleHeader = ({
   title,
+  sound,
   className = "",
   containerClassName = "",
 }: {
   title: string | ReactNode;
+  sound: string;
   className?: string;
   containerClassName?: string;
 }) => {
+  useEffect(() => {
+    sound && SOUND(sound).play();
+  }, []);
+
   return (
     <div className={`mx-auto -translate-x-10 ${containerClassName}`}>
       <div
