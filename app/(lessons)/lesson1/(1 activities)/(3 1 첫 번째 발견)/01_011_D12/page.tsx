@@ -4,7 +4,7 @@ import { Header } from "../assets/header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE1 from "./exercise1.png";
 import THUMBNAIL from "./thumbnail.png";
-import { Textarea } from "@/app/components/textarea";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import TEXTAREA from "./bgTextArea1.png";
 import { useEffect, useState } from "react";
 import { ExerciseHeader } from "@/app/components/exercise-header";
@@ -40,24 +40,13 @@ export default function Page() {
           />
 
           <div className="relative top-1">
-            {!value && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 55,
-                  top: 27,
-                  left: 60
-                }}
-              />
-            ) : null}
-            <textarea
-              value={showAnswer ? answer : value}
-              onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none left-0 top-5 text-[45px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tighter break-keep ${showAnswer ? "text-answer ml-3" : ""
-                }`}
+            <TextareaWithPen
+              answer={answer}
+              showAnswer={showAnswer}
+              containerClassName={`absolute resize-none left-0 top-5 text-[45px] bg-transparent w-[840px] ml-3 px-16 leading-[81px] tracking-tighter break-keep ${showAnswer ? "text-answer ml-3" : ""}`}
+              penClassName="h-[55px] top-[27px] left-[60px]"
               rows={3}
-            ></textarea>
+            />
             <img src={TEXTAREA.src} className="" />
           </div>
 

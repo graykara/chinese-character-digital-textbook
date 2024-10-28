@@ -758,6 +758,13 @@ export const NAVIGATION = [
   {
     lesson: 3,
     chapter: 9,
+    subChapter: "배움을 다져요",
+    path: "lesson3/09_076_F3",
+    page: 72,
+  },
+  {
+    lesson: 3,
+    chapter: 9,
     subChapter: "한자 문화 이야기",
     path: "lesson3/09_077_G1",
     page: 72,

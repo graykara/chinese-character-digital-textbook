@@ -12,7 +12,7 @@ import { SmartButton } from "@/app/components/buttons/smart-button";
 import { WritingButton } from "@/app/components/buttons/writing-button";
 import { TitleContainer } from "@/app/components/title-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { Textarea } from "@/app/components/textarea";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어12.png";
 import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어13.png";
 
@@ -68,6 +68,7 @@ const Step2 = () => {
     "성어는 짧은 말 속에 많은 의미를 담고 있어서 대화의 상황을 압축적이고 효과적으로 전달할 수 있다.";
   const [showAnswer, setShowAnswer] = useState(false);
   const [value, setValue] = useState("");
+
   return (
     <>
       <ContentContainer className="!justify-start top-[95px] -left-12">
@@ -81,24 +82,13 @@ const Step2 = () => {
         </TitleContainer>
 
         <img src={IMAGE2.src} className="absolute translate-x-16 translate-y-20" />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 54,
-              top: 105,
-              left: 215
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1200px] left-[210px] top-[105px] text-[50px] leading-[65px] tracking-tighter break-keep bg-transparent pl-1 py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answer}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1200px] left-[210px] top-[105px] text-[50px] leading-[65px] tracking-tighter break-keep bg-transparent pl-1 py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[54px] top-[105px] left-[215px]"
           rows={3}
-        ></textarea>
+        />
       </ContentContainer>
 
       <ExampleAnswerButton

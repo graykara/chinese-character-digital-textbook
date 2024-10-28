@@ -1,10 +1,10 @@
 "use client";
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
-import { VideoThumbnail, VideoThumbnail_big } from "@/app/components/video-thumbnail";
+import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { useContext, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
-
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import VIDEO_THUMBNAIL from "./video-thumbnail.png";
 import SYMBOL from "./symbol.png";
 import TEXTAREA from "./textarea.png";
@@ -21,7 +21,6 @@ export default function Page() {
 
   const answer = "도로와 유적 표지판에서 한자 표기를 보았다.";
   const [showAnswer, setShowAnswer] = useState(false);
-  const [value, setValue] = useState("");
 
   return (
     <>
@@ -53,24 +52,13 @@ export default function Page() {
               </div>
 
               <div className="relative top-3">
-                {!value && !showAnswer ? (
-                  <img
-                    src="/ui/textarea-pen.png"
-                    className="absolute pointer-events-none"
-                    style={{
-                      height: 62,
-                      top: 48,
-                      left: 70
-                    }}
-                  />
-                ) : null}
-                <textarea
-                  value={showAnswer ? answer : value}
-                  onChange={(e) => setValue(e.target.value)}
-                  className={`absolute resize-none left-0 top-0 text-[55px] bg-transparent w-full h-full ml-3 px-16 py-11 leading-[76px] ${showAnswer ? "text-example ml-3" : ""
-                    }`}
+                <TextareaWithPen
+                  answer={answer}
+                  showAnswer={showAnswer}
+                  containerClassName={`absolute resize-none left-0 top-11 text-[55px] bg-transparent w-full ml-3 px-16 leading-[76px] ${showAnswer ? "text-example ml-3" : ""}`}
+                  penClassName="h-[62px] top-[48px] left-[70px]"
                   rows={3}
-                ></textarea>
+                />
                 <img src={TEXTAREA.src} className="" />
               </div>
             </div>

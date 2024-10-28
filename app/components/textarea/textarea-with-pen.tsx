@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   answer?: string;
   showAnswer?: boolean;
   penClassName?: string;
@@ -33,7 +33,8 @@ export const TextareaWithPen = ({
   }, [showAnswer]);
 
   return (
-    <div className={`relative w-fit ${containerClassName || ""}`}>
+    <>
+    {/* <div className={`relative w-fit ${containerClassName || ""}`}> */}
       <textarea
         ref={inputRef}
         {...props}
@@ -42,16 +43,17 @@ export const TextareaWithPen = ({
           setValue(e.currentTarget.value);
           props.onChange?.(e);
         }}
+        className={containerClassName}
       ></textarea>
 
       {value === "" && !showAnswer ? (
         <img
           src="/ui/textarea-pen.png"
-          className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
-            penClassName || ""
+            className={`absolute pointer-events-none ${penClassName || ""
           }`}
         />
       ) : null}
-    </div>
+    {/* </div> */}
+    </>
   );
 };

@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
-import { Textarea } from "@/app/components/textarea";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자3.png";
 
@@ -48,40 +48,19 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  //const [answer, setAnswer] = useState("");
   const answer = "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면";
   const [value, setValue] = useState("");
   return (
     <>
       <ContentContainer className="-top-9 left-8">
-        {/* <Textarea
-          value={
-            showAnswer
-              ? "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면 "
-              : answer
-          }
-          onChange={(e) => setAnswer(e)}
-          className={`${showAnswer ? "text-example" : ""}`}
-        /> */}
         <img src={IMAGE2.src} className="absolute -translate-x-5 -translate-y-2" />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 56,
-              top: 230,
-              left: 200
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answer}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[56px] top-[230px] left-[200px]"
           rows={3}
-        ></textarea>
+        />
       </ContentContainer>
 
       <ExampleAnswerButton

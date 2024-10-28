@@ -6,6 +6,7 @@ import IMAGE2 from "./bgTextArea.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어13.png";
 import BACKGROUND2 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어14.png";
@@ -96,24 +97,14 @@ const Step2 = () => {
           isExample
         />
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 54,
-              top: 170,
-              left: 400
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[1] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1010px] left-[400px] top-[170px] text-[50px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
-          rows={4}
-        ></textarea>
+        <TextareaWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1010px] left-[400px] top-[170px] text-[50px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[54px] top-[170px] left-[400px]"
+          rows={3}
+        />
+
       </ContentContainer>
 
       <ExampleAnswerButton

@@ -3,9 +3,9 @@
 import { ExerciseHeader, ExerciseHeader2 } from "@/app/components/exercise-header";
 import { Header } from "../assets/header";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
-
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -64,14 +64,6 @@ export default function Page() {
   const [value, setValue] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
 
-  useEffect(() => {
-    setValue("");
-  }, [showAnswer, step]);
-
-  useEffect(() => {
-    setShowAnswer(false);
-  }, [step]);
-
   return (
     <>
       <Header />
@@ -95,13 +87,13 @@ export default function Page() {
                   top: quiz.position.y,
                 }}
               >
-                <textarea
-                  className={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${showAnswer ? "text-example" : ""
-                    }`}
-                  style={{ fontSize: quiz.fontSize + "px" }}
-                  value={showAnswer ? quiz.answer : value}
-                  onChange={(e) => setValue(e.currentTarget.value)}
+                <TextareaWithPen
+                  answer={showAnswer ? quiz.answer : value}
+                  showAnswer={showAnswer}
+                  containerClassName={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${showAnswer ? "text-example" : ""}`}
+                  penClassName="h-[55px] top-[27px] left-[60px]"
                   rows={quiz.rows}
+                  style={{ fontSize: quiz.fontSize + "px" }}
                 />
               </div>
             </div>

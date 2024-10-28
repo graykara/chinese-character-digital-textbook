@@ -19,6 +19,10 @@ export default function Page() {
 
   return (
     <>
+      <StrengthenLearningMainContentHeader
+        title={"성어의 풀이 순서를 빈칸에 숫자로 써 보자."}
+        sound=""
+      />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       <StepContainer step={step} maxStep={2} onStepChange={setStep} />
@@ -32,10 +36,6 @@ const Step1 = () => {
 
   return (
     <>
-      <StrengthenLearningMainContentHeader
-        title={"성어의 풀이 순서를 빈칸에 숫자로 써 보자."}
-        sound=""
-      />
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="-ml-12 mt-20" />
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[50px] top-[285px] ml-[70px] text-[90px]">
@@ -84,10 +84,6 @@ const Step2 = () => {
 
   return (
     <>
-      <StrengthenLearningMainContentHeader
-        title={"성어의 풀이 순서를 빈칸에 숫자로 써 보자."}
-        sound=""
-      />
       <ContentContainer className="!justify-start -top-[90px] left-0">
         <img src={IMAGE2.src} className="ml-[10px] mt-20" />
         <div className="w-[650px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[10px] top-[265px] ml-[30px] text-[90px]">

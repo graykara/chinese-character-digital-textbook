@@ -10,6 +10,7 @@ import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글3.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -43,47 +44,25 @@ const Step1 = () => {
       />
 
       <ContentContainer className="!justify-start">
-        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[200px]"></div>
+        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[220px]"></div>
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 10,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[0] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[10px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[10px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[60px] top-[10px] left-[80px]"
           rows={3}
-        ></textarea>
+        />
 
-        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[200px] mt-[150px]"></div>
+        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[220px] mt-[130px]"></div>
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 360,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[1] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[360px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[360px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[60px] top-[360px] left-[80px]"
           rows={3}
-        ></textarea>
+        />
 
       </ContentContainer>
 
@@ -107,31 +86,21 @@ const Step2 = () => {
       />
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[350px] top-[181px] w-[100px] z-1" />
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[220px] top-[186px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[186px] z-1" />
 
       <ContentContainer className="!justify-start">
         <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[450px]"></div>
-        {!value ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 10,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[10px] text-[55px] leading-[70px] tracking-tighter break-keep bg-transparent py-1"
-            }`}
+
+        <TextareaWithPen
+          // answer={answer}
+          // showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[10px] text-[55px] leading-[70px] tracking-tighter break-keep bg-transparent py-1"}`}
+          penClassName="h-[60px] top-[10px] left-[80px]"
           rows={6}
-        ></textarea>
+        />
       </ContentContainer>
 
-      
+
       <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

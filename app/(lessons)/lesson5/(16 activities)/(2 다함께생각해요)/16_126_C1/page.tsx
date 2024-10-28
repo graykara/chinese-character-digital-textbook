@@ -3,6 +3,7 @@
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE from "./image.png";
 import { ContentContainer } from "@/app/components/content-container";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { useState } from "react";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕2.png";
@@ -31,43 +32,21 @@ export default function Page() {
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
 
-      {!value1 && !showAnswer ? (
-        <img
-          src="/ui/textarea-pen.png"
-          className="absolute pointer-events-none"
-          style={{
-            height: 40,
-            top: 485,
-            left: 870+225
-          }}
-        />
-      ) : null}
-      <textarea
-        value={showAnswer ? answers[0] : value1}
-        onChange={(e) => setValue1(e.target.value)}
-        className={`absolute resize-none w-[720px] left-[870px] top-[485px] text-[37px] leading-[46px] tracking-tighter indent-[225px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-          }`}
+      <TextareaWithPen
+        answer={answers[0]}
+        showAnswer={showAnswer}
+        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[480px] text-[37px] leading-[50px] tracking-tighter indent-[225px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+        penClassName="h-[40px] top-[485px] left-[1095px]"
         rows={2}
-      ></textarea>
+      />
 
-      {!value2 && !showAnswer ? (
-        <img
-          src="/ui/textarea-pen.png"
-          className="absolute pointer-events-none"
-          style={{
-            height: 40,
-            top: 597,
-            left: 870+270
-          }}
-        />
-      ) : null}
-      <textarea
-        value={showAnswer ? answers[1] : value2}
-        onChange={(e) => setValue1(e.target.value)}
-        className={`absolute resize-none w-[720px] left-[870px] top-[597px] text-[37px] leading-[46px] tracking-tighter indent-[270px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-          }`}
+      <TextareaWithPen
+        answer={answers[1]}
+        showAnswer={showAnswer}
+        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[592px] text-[37px] leading-[50px] tracking-tighter indent-[270px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+        penClassName="h-[40px] top-[598px] left-[1140px]"
         rows={2}
-      ></textarea>
+      />
 
       <ExampleAnswerButton
         active={showAnswer}
@@ -76,11 +55,3 @@ export default function Page() {
     </>
   );
 }
-
-const Step1 = () => {
-  return (
-    <>
-
-    </>
-  );
-};

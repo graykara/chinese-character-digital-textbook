@@ -5,9 +5,9 @@ import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import EXERCISE3 from "./exercise3.png";
 import THUMBNAIL1 from "./thumbnail1.png";
 import THUMBNAIL2 from "./thumbnail2.png";
-import { Textarea } from "@/app/components/textarea";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import TEXTAREA from "./bgTextArea1.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ExerciseHeader } from "@/app/components/exercise-header";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -21,11 +21,6 @@ export default function Page() {
   const answer1 = "비가 올 때.";
   const answer2 = "연달아 우승을 함.";
   const [showAnswer, setShowAnswer] = useState(false);
-  const [value, setValue] = useState("");
-
-  useEffect(() => {
-    setValue("");
-  }, [showAnswer, step]);
 
   return (
     <>
@@ -50,33 +45,18 @@ export default function Page() {
             width={620}
             height={330}
           />
-
           <div className="relative top-1">
-
             <div className="absolute top-5 left-[75px] text-[45px] tracking-tighter">
               {step === 1 ?
                 "우천 시" : "연패"}
             </div>
-            {!value && !showAnswer ? (
-              <img
-                src="/ui/textarea-pen.png"
-                className="absolute pointer-events-none"
-                style={{
-                  height: 55,
-                  top: 110,
-                  left: 60
-                }}
-              />
-            ) : null}
-            <textarea
-              value={showAnswer ?
-                (step === 1 ? answer1 : answer2)
-                : value}
-              onChange={(e) => setValue(e.target.value)}
-              className={`absolute resize-none left-0 top-[100px] text-[45px] bg-transparent w-[840px] h-full ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""
-                }`}
-              rows={3}
-            ></textarea>
+            <TextareaWithPen
+              answer={step === 1 ? answer1 : answer2}
+              showAnswer={showAnswer}
+              containerClassName={`absolute resize-none left-0 top-[100px] text-[45px] bg-transparent w-[840px] ml-3 px-16 leading-[81px] tracking-tight break-keep ${showAnswer ? "text-answer ml-3" : ""}`}
+              penClassName="h-[55px] top-[110px] left-[60px]"
+              rows={2}
+            />
             <img src={TEXTAREA.src} className="" />
           </div>
         </div>
