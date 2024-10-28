@@ -177,7 +177,7 @@ export const MainContent_SM = ({
     <>
       <div className="absolute top-[200px] pl-[120px]">
         <div className="relative items-start left-[210px] w-[1100px]">
-          <div className="flex ml-[140px] mr-[440px] bg-blue-400">
+          <div className="flex ml-[140px] mr-[440px] bg-transparent">
             {chinese.map(
               ({ letter, reading, additional, isKor, className }, index) => {
                 return (
@@ -187,6 +187,7 @@ export const MainContent_SM = ({
                         (index === firstAdditonalIndex ? (
                           <button
                             onClick={() => {
+                              clickSound.play();
                               setSelectedAdditional(additional);
                               setShowAdditionalModal(true);
                             }}
@@ -197,6 +198,7 @@ export const MainContent_SM = ({
                         ) : (
                           <button
                             onClick={() => {
+                              clickSound.play();
                               setSelectedAdditional(additional);
                               setShowAdditionalModal(true);
                             }}

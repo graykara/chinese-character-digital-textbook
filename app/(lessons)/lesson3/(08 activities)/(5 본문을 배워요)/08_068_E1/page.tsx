@@ -12,6 +12,7 @@ import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성
 import BACKGROUND4 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어220.png";
 import { MainContent } from "../../../main-content";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
+import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -61,7 +62,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/3/p069_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 易
               </span>
@@ -76,7 +77,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/3/p069_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 地
               </span>
@@ -92,7 +93,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/3/p069_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 之
               </span>
@@ -137,7 +138,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/3/p069_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 盡
               </span>
@@ -203,6 +204,109 @@ export default function Page() {
     },
   ];
 
+  const modal_content = [
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>거창한 계획을 말하더니 결국{" "}
+              <span
+                onClick={() => SOUND("/sound/3/68/1.mp3").play()}
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                龍頭蛇尾
+              </span>
+              로 끝나 버렸네.
+            </p>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>양측이 이 문제를{" "}
+              <span
+                onClick={() => SOUND("/sound/3/68/2.mp3").play()}
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                易地思之
+              </span>
+              {" "}해 본다면 합의점을 찾을 수 있을 거야.
+            </p>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>나는 힘든 일이 닥칠 때마다{" "}
+              <span
+                onClick={() => SOUND("/sound/3/68/3.mp3").play()}
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                苦盡甘來
+              </span>
+              {" "}라는 말을 생각하며 참아 냈어.
+            </p>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>긴 가뭄에{" "}
+              <span
+                onClick={() => SOUND("/sound/3/68/4.mp3").play()}
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                雪上加霜
+              </span>
+              {" "}으로 태풍까지 다가와 농가의 피해가 예상된다.
+            </p>
+          </div>
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
       <LearnMainContentPageTemplate>
@@ -212,6 +316,10 @@ export default function Page() {
           video="/video/writing/68p_1.mp4"
           className="absolute left-[112px] top-[40px]"
         />
+
+        <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+          <MainContentModalButton modal_data={modal_content[step - 1]} />
+        </div>
 
         <ContentContainer className="!justify-start w-[1760px] px-[130px]">
 

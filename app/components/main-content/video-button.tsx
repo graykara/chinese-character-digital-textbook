@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Modal } from "../modal";
 import ReactPlayer from "react-player";
+import { clickSound } from "@/app/utils/click-sound";
 
 interface Props {
   video: string;
@@ -17,7 +18,10 @@ export const MainContentVideoButton = ({ className, buttomImage = "/ui/video-but
     <>
       <button
         className={`z-[3] ${className ?? ""}`}
-        onClick={() => setShowModal(true)}
+        onClick={() => {
+          clickSound.play();
+          setShowModal(true);
+        }}
       >
         <img src={buttomImage} />
       </button>

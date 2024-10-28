@@ -7,7 +7,10 @@ import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card
 import { ContentContainer } from "@/app/components/content-container";
 import { Howl } from "howler";
 import { SOUND } from "@/app/utils/sound-player";
+import IMAGE1 from "./popup_1.png";
+import IMAGE2 from "./popup_2.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
+import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글8.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글10.png";
 import BACKGROUND3 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글12.png";
@@ -42,7 +45,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 也
               </span>
@@ -94,7 +97,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 之
               </span>
@@ -137,7 +140,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 經
               </span>
@@ -156,7 +159,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 長
               </span>
@@ -208,7 +211,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word004.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 之
               </span>
@@ -224,7 +227,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word005.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 己
               </span>
@@ -239,7 +242,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word006.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 百
               </span>
@@ -293,7 +296,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p099_word007.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 千
               </span>
@@ -327,10 +330,60 @@ export default function Page() {
     },
   ];
 
+  const modal_content = [
+    {
+      className: "w-[766px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn8-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/gam.png" width={54} />
+          不의 읽기
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-none text-[50px] tracking-tight break-keep">
+            <p>‘<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不</span>’은 첫소리가 ‘ㄷ’ 또는 ‘ㅈ’인 글자 앞에서는 ‘부’로 읽는다.
+              <img src={IMAGE1.src} className="mr-2"/><span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不知不識</span>(<span className="text-answer">부</span>지<span className="text-answer">불</span>식): 생각하지도 못하고 알지도 못함. 예외적으로 ‘부실(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不實</span>)’은 ‘ㅅ’ 앞에 ‘부’로 읽는다.</p>
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "w-[766px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn7-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/gam.png" width={54} />
+          주술목 구조
+        </>
+      ),
+      content: (
+        <>
+          <div className="py-6 text-[50px] leading-[130%] tracking-tighter break-keep">
+            <img src={IMAGE2.src} className="mx-auto" />
+          </div>
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+
+        {step === 3 ? (
+          <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+            <MainContentModalButton modal_data={modal_content[0]} />
+          </div>
+        ) : step === 4 ? (
+          <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+            <MainContentModalButton modal_data={modal_content[1]} />
+          </div>
+        ) : null}
 
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
           <div className="absolute w-[1480px] top-[228px] left-[280px]">

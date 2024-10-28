@@ -13,6 +13,7 @@ import { ResourceButton } from "@/app/components/buttons/resource-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { Modal } from "@/app/components/modal";
 import { Howl } from "howler";
+import { clickSound } from "@/app/utils/click-sound";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자7.png";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자8.png";
 import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자10.png";
@@ -168,7 +169,10 @@ export default function Page() {
 
             <button
               className="animate__animated animate__delay-1s animate__rotateIn absolute top-6 right-6"
-              onClick={() => setShowModal(false)}
+              onClick={() => {
+                clickSound.play();
+                setShowModal(false);
+              }}
             >
               <img src={MODAL_CLOSE.src} />
             </button>

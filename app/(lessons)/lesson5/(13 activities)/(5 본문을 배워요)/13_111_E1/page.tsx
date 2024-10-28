@@ -32,7 +32,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 雖
               </span>
@@ -52,7 +52,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p111_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 與
               </span>
@@ -98,7 +98,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 勝
               </span>
@@ -113,7 +113,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 則
               </span>
@@ -129,7 +129,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word004.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 劣
               </span>
@@ -145,7 +145,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word005.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 使
               </span>
@@ -194,7 +194,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word006.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[0px] -mr-3 cursor-pointer"
               >
                 寧~乎
               </span>
@@ -210,11 +210,11 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p111_word007.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-5px] -mr-1 cursor-pointer"
               >
-                不平(불평)
+                不平
               </span>
-              : 마음에 들지 아니하여 못마땅하게 여김.
+              (불평): 마음에 들지 아니하여 못마땅하게 여김.
             </>
           ),
         },

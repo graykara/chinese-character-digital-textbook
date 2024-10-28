@@ -6,11 +6,14 @@ import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
+import IMAGE1 from "./popup_1.png";
+import IMAGE2 from "./popup_2.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
-import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리5.png";
-import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리9.png";
-import BACKGROUND3 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png";
-import BACKGROUND4 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리22.png";
+import { MainContentModalButton } from "@/app/components/main-content/modal-button";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리7.png"; //5-8
+import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리9.png"; //9-14
+import BACKGROUND3 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리15.png"; //15-21
+import BACKGROUND4 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리22.png"; //22-23
 import BACKGROUND5 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리24.png";
 
 export default function Page() {
@@ -48,13 +51,12 @@ export default function Page() {
           className: "mr-5",
           additional: (
             <p className="tracking-tighter leading-tight">
-              문장을 읽을 때는 구절 사이나 문장 끝에 토<br />[우리말로 된 조사나
-              어미]를 달아 끊어 읽는다. 끊지 않은 부분도 결합 관계를 살펴 띄어
-              읽는다.
+              문장을 읽을 때는 구절 사이나 문장 끝에 토<br />(우리말로 된 조사나
+              어미)를 달아 끊어 읽는다.<br />끊지 않은 부분도 결합 관계를 살펴 띄어 읽는다.
             </p>
           ),
           additionalTitle: (
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 -ml-3">
               <img src="/ui/gam.png" />
               끊어 읽기
             </p>
@@ -66,12 +68,12 @@ export default function Page() {
           className: "text-[120px] leading-[150px]",
           additional: (
             <div>
-              <p>음운 법칙에 맞게 읽기 :</p>
-              <p className="tracking-tighter">
+              <p className="leading-tight">음운 법칙에 맞게 읽기 :</p>
+              <p>
                 ①{" "}
                 <span
                   onClick={() => SOUND("/sound/4/p093_word000.mp3").play()}
-                  className="font-haeseo cursor-pointer"
+                  className="font-haeseo text-[48px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
                 >
                   來言
                 </span>
@@ -79,14 +81,14 @@ export default function Page() {
                 언), ②
                 <span
                   onClick={() => SOUND("/sound/4/p093_word001.mp3").play()}
-                  className="font-haeseo cursor-pointer"
+                  className="font-haeseo text-[48px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
                 >
                   來日
                 </span>
                 (<span className="text-answer">내</span>일), ③
                 <span
                   onClick={() => SOUND("/sound/4/p093_word002.mp3").play()}
-                  className="font-haeseo cursor-pointer"
+                  className="font-haeseo text-[48px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
                 >
                   去來
                 </span>
@@ -131,7 +133,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p093_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 己
               </span>
@@ -146,7 +148,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word004.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 所
               </span>
@@ -164,7 +166,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word005.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 勿
               </span>
@@ -180,7 +182,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word006.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 於
               </span>
@@ -195,7 +197,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word007.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 人
               </span>
@@ -229,7 +231,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word008.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 無
               </span>
@@ -244,7 +246,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word009.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 道
               </span>
@@ -260,7 +262,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word010.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 之
               </span>
@@ -275,7 +277,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word011.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 短
               </span>
@@ -295,7 +297,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/4/p093_word012.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 長
               </span>
@@ -344,16 +346,16 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/4/p093_word013.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 之
               </span>
-              : 그
+              : 그 →
               <span
                 onClick={() => SOUND("/sound/4/p093_word014.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
-                → 愛人者
+                愛人者
               </span>
             </>
           ),
@@ -412,10 +414,60 @@ export default function Page() {
     },
   ];
 
+  const modal_content = [
+    {
+      className: "w-[766px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn6-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/gam.png" width={54} />
+          주술 구조
+        </>
+      ),
+      content: (
+        <>
+          <div className="py-6 text-[50px] leading-[130%] tracking-tighter break-keep">
+            <img src={IMAGE1.src} className="mx-auto" />
+          </div>
+        </>
+      ),
+    },
+    {
+      className: "w-[766px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn7-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/gam.png" width={54} />
+          주술목 구조
+        </>
+      ),
+      content: (
+        <>
+          <div className="py-6 text-[50px] leading-[130%] tracking-tighter break-keep">
+            <img src={IMAGE2.src} className="mx-auto" />
+          </div>
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+
+        {step === 1 ? (
+          <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+            <MainContentModalButton modal_data={modal_content[0]} />
+          </div>
+        ) : step === 3 ? (
+          <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+            <MainContentModalButton modal_data={modal_content[1]} />
+          </div>
+        ) : null}
+
         <ContentContainer className="w-[1760px] grid grid-cols-[1fr]">
           <div className="absolute w-[1480px] top-[228px] left-[280px]">
             <MainContentChineseAndReading
@@ -427,6 +479,7 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
+
       </LearnMainContentPageTemplate>
       <img src={
         step === 1 ? BACKGROUND1.src :
