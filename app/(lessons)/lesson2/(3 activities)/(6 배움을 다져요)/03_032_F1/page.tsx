@@ -122,7 +122,7 @@ const Step2 = () => {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title="달력의 빈칸에 들어갈 요일을 한자로 써 보자."
+        title="자신의 생일을 숫자로 적고, 옆에 한자로 써 보자."
         sound=""
       />
 
