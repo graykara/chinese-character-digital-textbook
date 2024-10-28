@@ -9,7 +9,7 @@ interface Props {
 
 export const IntroWhatHeader = ({ className }: Props) => {
   useEffect(() => {
-    SOUND("/sound/common/activity_start.mp3").play();
+    SOUND("/sound/1/8_intro/4.mp3").play();
   }, []);
 
   return (

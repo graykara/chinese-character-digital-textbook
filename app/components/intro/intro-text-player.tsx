@@ -1,6 +1,6 @@
 "use client";
 import { SOUND } from "@/app/utils/sound-player";
-import { useEffect, useState, useRef, useMemo, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 interface Props {
   sound: string;
@@ -59,7 +59,10 @@ export const IntroTextPlayer = ({
     return () => {
       if (timeout) clearTimeout(timeout);
       stopTimer();
-      if (soundPlayer) soundPlayer.unload();
+      if (soundPlayer) {
+        soundPlayer.unload();
+        soundPlayer.stop();
+      }
     };
   }, []);
 

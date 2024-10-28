@@ -41,7 +41,7 @@ export default function Page() {
 
       <IntroWhatHeader className="absolute right-[100px] top-[130px]" />
 
-      <div className="bg-white absolute right-[100px] top-[250px] w-[1100px] h-[670px] overflow-y-auto rounded-[20px] py-[27px] px-[40px] pr-[55px]">
+      <div className="bg-white bg-opacity-50 absolute right-[100px] top-[250px] w-[1100px] h-[670px] overflow-y-auto rounded-[20px] py-[27px] px-[40px] pr-[55px]">
         <IntroTextPlayer
           sound="/sound/1/8_intro/5.mp3"
           data={sound}

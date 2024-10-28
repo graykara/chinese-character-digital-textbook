@@ -127,7 +127,7 @@ export const Navbar = () => {
                 key={index}
                 onClick={() => setSelectedChapter(item.chapter)}
                 className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#b4381d] px-10 ${
-                  selectedLesson === currentLesson &&
+                  selectedLesson === item.lesson &&
                   selectedChapter === item.chapter
                     ? "text-white font-bold bg-[#b4381d]"
                     : ""
