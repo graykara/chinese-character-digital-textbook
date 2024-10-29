@@ -13,8 +13,8 @@ import { useContext, useEffect, useState } from "react";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아16.png"
-import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png"
+import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아16.png";
+import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -23,7 +23,7 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/1/19-2.mp3",
     onplay: () => setIsReading(true),
@@ -50,17 +50,21 @@ export default function Page() {
       </HeaderContainer>
 
       {step === 2 ? (
-      <SmartButton
-        link="https://hanja.dict.naver.com"
-        className="animate__animated animate__bounceIn animate__delay-1s absolute right-[234px] top-[230px] z-10" />
-        ) : null }
+        <SmartButton
+          link="https://hanja.dict.naver.com"
+          className="animate__animated animate__bounceIn animate__delay-1s absolute right-[234px] top-[230px] z-10"
+        />
+      ) : null}
 
       <ContentContainer className="!justify-start pt-[45px] ml-[175px]">
         <div className="relative w-full mb-10">
           <img src={TITLE.src} alt="title" className="-ml-5" />
           <SoundButton2
             active={isReading}
-            onClick={() => sound.play()}
+            onClick={() => {
+              soundId && sound.stop(soundId);
+              setSoundId(sound.play());
+            }}
             className="absolute top-1/2 -translate-y-1/2 left-[400px]"
           />
         </div>
@@ -83,7 +87,7 @@ export default function Page() {
                   style={{
                     height: 48,
                     top: 295,
-                    left: 125
+                    left: 125,
                   }}
                 />
               ) : null}
@@ -96,8 +100,9 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[120px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`absolute left-[120px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
               {!values[1] && !showAnswer ? (
                 <img
@@ -106,7 +111,7 @@ export default function Page() {
                   style={{
                     height: 48,
                     top: 295,
-                    left: 805
+                    left: 805,
                   }}
                 />
               ) : null}
@@ -119,8 +124,9 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[800px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`absolute left-[800px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
               {!values[2] && !showAnswer ? (
                 <img
@@ -129,7 +135,7 @@ export default function Page() {
                   style={{
                     height: 48,
                     top: 295,
-                    left: 1115
+                    left: 1115,
                   }}
                 />
               ) : null}
@@ -142,8 +148,9 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1110px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`absolute left-[1110px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
               {!values[3] && !showAnswer ? (
                 <img
@@ -152,7 +159,7 @@ export default function Page() {
                   style={{
                     height: 48,
                     top: 295,
-                    left: 1295
+                    left: 1295,
                   }}
                 />
               ) : null}
@@ -165,8 +172,9 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1290px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`absolute left-[1290px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
             </div>
           </div>
@@ -182,9 +190,10 @@ export default function Page() {
         />
       ) : null}
 
-
-      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
-
+      <img
+        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

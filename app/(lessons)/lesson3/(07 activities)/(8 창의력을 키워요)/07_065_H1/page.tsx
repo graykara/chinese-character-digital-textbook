@@ -18,7 +18,7 @@ export default function Page() {
   }, [step]);
 
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/3/65-i.mp3",
     onplay: () => setIsReading(true),
@@ -51,7 +51,10 @@ export default function Page() {
         <SoundButton2
           className="absolute -top-[13px] left-[1095px] animate__animated animate__bounceIn animate__delay-1s z-10"
           active={isReading}
-          onClick={() => sound.play()}
+          onClick={() => {
+            soundId && sound.stop(soundId);
+            setSoundId(sound.play());
+          }}
         />
 
         <ContentContainer className="-left-16 -top-2">
@@ -74,7 +77,10 @@ export default function Page() {
         </ContentContainer>
       </CreativityPageTemplate>
 
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

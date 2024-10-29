@@ -1,14 +1,14 @@
 "use client";
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
-import { VideoThumbnail, VideoThumbnail_big } from "@/app/components/video-thumbnail";
+import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { useContext, useState } from "react";
 
 import VIDEO_THUMBNAIL from "./video-thumbnail.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { Modal } from "@/app/components/modal";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아2.png"
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아2.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -19,7 +19,9 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
-        title={<p className="-ml-2">밑줄 친 부분의 뜻이 무엇일지 생각해 보자.</p>}
+        title={
+          <p className="-ml-2">밑줄 친 부분의 뜻이 무엇일지 생각해 보자.</p>
+        }
         sound="/sound/1/16-i.mp3"
       />
 
@@ -61,7 +63,10 @@ export default function Page() {
       </Modal>
 
       <CheckAnswerButton active={false} onClick={() => setShowModal(true)} />
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

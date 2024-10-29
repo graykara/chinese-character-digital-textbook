@@ -11,7 +11,7 @@ import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png"
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -19,7 +19,7 @@ export default function Page() {
 
   const [buttonActive, setButtonActive] = useState<number[]>([]);
 
-  const [isReading, setIsReading] = useState(false);
+  const [soundId, setSoundIdconst [isReading, setIsReading] = useState(false); = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/1/18.mp3",
     onplay: () => setIsReading(true),
@@ -52,7 +52,10 @@ export default function Page() {
       <SoundButton2
         className="absolute top-[60px] left-[470px]"
         active={isReading}
-        onClick={() => sound.play()}
+        onClick={() => {
+          soundId && sound.stop(soundId);
+          setSoundId(sound.play())
+        }}
       />
 
       <ContentContainer className="!justify-start !items-start">
@@ -70,7 +73,7 @@ export default function Page() {
 
         <div className="relative mt-14 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
           <p>부수는 때로 위치에 따라 모양이 변하기도 한다. </p>
-          <img src={TEXT2.src} alt="text1" className="mt-4"/>
+          <img src={TEXT2.src} alt="text1" className="mt-4" />
         </div>
 
         <div className="w-full flex justify-center mt-1 ml-6">
@@ -96,13 +99,16 @@ export default function Page() {
                   >
                     <img src="/ui/click-icon.png" />
                   </button>
-                )
+                ),
               )}
             </div>
           </div>
         </div>
       </ContentContainer>
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

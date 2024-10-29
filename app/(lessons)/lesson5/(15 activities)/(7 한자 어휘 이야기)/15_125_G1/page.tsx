@@ -21,12 +21,24 @@ export default function Page() {
     onend: () => setIsReading(false),
   });
   [
-    { text: "선천적인 재능보다 중요한 것은 어떤 일을 이루고자 하는 진심 어린 의지이다.", start: 0, end: 7030 },
-    { text: "그리고 마음을 집중하고 몰두하는 것은 전적으로 나 자신에게 달렸는데 『맹자』에 이와 관련된 이야기가 있다.", start: 7030, end: 16535 },
+    {
+      text: "선천적인 재능보다 중요한 것은 어떤 일을 이루고자 하는 진심 어린 의지이다.",
+      start: 0,
+      end: 7030,
+    },
+    {
+      text: "그리고 마음을 집중하고 몰두하는 것은 전적으로 나 자신에게 달렸는데 『맹자』에 이와 관련된 이야기가 있다.",
+      start: 7030,
+      end: 16535,
+    },
   ];
   [
     { text: "어느 날 맹자가 말했다.", start: 0, end: 3004 },
-    { text: "“최고의 바둑 고수인 혁추가 두 사람에게 바둑을 가르치는데, 한 사람은 혁추의 말에 집중하여 몰두하고, 다른 한 사람은 겉으로만 듣고 마음 한편으로 사냥에 나갈 생각만 한다면 똑같이 바둑을 배운다고 해도 그 결과는 서로 다를 것이다. 이것은 다른 생각을 한 사람이 집중한 사람보다 지혜가 부족해서가 아닐 것이다.”", start: 3004, end: 28316 },
+    {
+      text: "“최고의 바둑 고수인 혁추가 두 사람에게 바둑을 가르치는데, 한 사람은 혁추의 말에 집중하여 몰두하고, 다른 한 사람은 겉으로만 듣고 마음 한편으로 사냥에 나갈 생각만 한다면 똑같이 바둑을 배운다고 해도 그 결과는 서로 다를 것이다. 이것은 다른 생각을 한 사람이 집중한 사람보다 지혜가 부족해서가 아닐 것이다.”",
+      start: 3004,
+      end: 28316,
+    },
   ];
 
   useEffect(() => {
@@ -42,15 +54,19 @@ export default function Page() {
       <SoundButton2
         className="absolute top-[110px] left-[1040px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
-        onClick={() => sound.play()}
+        onClick={() => {
+          sound.stop();
+          sound.play();
+        }}
       />
 
       <ContentContainer>
         {step === 1 && (
           <div className="absolute top-[55px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
-                }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
+                isReading ? "text-reading" : ""
+              }`}
             >
               선천적인 재능보다 중요한 것은 어떤 일을 이루고자 하는 진심 어린
               의지이다. 그리고 마음을 집중하고 몰두하는 것은 전적으로 나
@@ -61,11 +77,16 @@ export default function Page() {
         {step === 2 && (
           <div className="-mt-[330px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-4 pt-8 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
-                }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-4 pt-8 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
+                isReading ? "text-reading" : ""
+              }`}
             >
-              어느 날 맹자가 말했다. “최고의 바둑 고수인 혁추가 두 사람에게 바둑을 가르치는데, 한 사람은 혁추의 말에 집중하여 몰두하고, 다른 한 사람은 겉으로만 듣고 마음 한편으로 사냥에 나갈 생각만 한다면 똑같이 바둑을 배운다고 해도
-              <br />그 결과는 서로 다를 것이다. 이것은 다른 생각을 한 사람이 집중한 사람보다 지혜가 부족해서가 아닐 것이다.” 『맹자』
+              어느 날 맹자가 말했다. “최고의 바둑 고수인 혁추가 두 사람에게
+              바둑을 가르치는데, 한 사람은 혁추의 말에 집중하여 몰두하고, 다른
+              한 사람은 겉으로만 듣고 마음 한편으로 사냥에 나갈 생각만 한다면
+              똑같이 바둑을 배운다고 해도
+              <br />그 결과는 서로 다를 것이다. 이것은 다른 생각을 한 사람이
+              집중한 사람보다 지혜가 부족해서가 아닐 것이다.” 『맹자』
             </div>
           </div>
         )}

@@ -14,7 +14,7 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/2/41_story.mp3",
     onplay: () => setIsReading(true),
@@ -22,8 +22,16 @@ export default function Page() {
   });
   [
     { text: "‘넓고 큰 바다’를 ‘海洋’이라고 일컫는다.", start: 0, end: 4432 },
-    { text: "여기서 ‘海’와 ‘洋’ 모두 바다를 뜻하지만, 그 쓰임에는 차이가 있다.", start: 4432, end: 10320 },
-    { text: "동해, 서해, 지중해 등의 용례에서 확인되듯이 ‘~海’는 육지와 접해 있는 바다를 가리킬 때 사용하고, ‘~洋’은 태평양, 대서양, 인도양 등에서 확인되듯이 육지와 멀리 떨어진 큰 바다를 가리킬 때 사용한다.", start: 10320, end: 27794 },
+    {
+      text: "여기서 ‘海’와 ‘洋’ 모두 바다를 뜻하지만, 그 쓰임에는 차이가 있다.",
+      start: 4432,
+      end: 10320,
+    },
+    {
+      text: "동해, 서해, 지중해 등의 용례에서 확인되듯이 ‘~海’는 육지와 접해 있는 바다를 가리킬 때 사용하고, ‘~洋’은 태평양, 대서양, 인도양 등에서 확인되듯이 육지와 멀리 떨어진 큰 바다를 가리킬 때 사용한다.",
+      start: 10320,
+      end: 27794,
+    },
   ];
 
   useEffect(() => {
@@ -48,7 +56,10 @@ export default function Page() {
           <SoundButton2
             className="absolute top-[110px] left-[1460px] animate__animated animate__bounceIn animate__delay-2s z-10"
             active={isReading}
-            onClick={() => sound.play()}
+            onClick={() => {
+              soundId && sound.stop(soundId);
+              setSoundId(sound.play());
+            }}
           />
 
           <ContentContainer>

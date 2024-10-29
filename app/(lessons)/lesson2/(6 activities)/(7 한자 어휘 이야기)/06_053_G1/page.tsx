@@ -15,8 +15,16 @@ import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운
 export default function Page() {
   const [step, setStep] = useState(1);
   const sound = [
-    { text: "둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다.", start: 0, end: 8374 },
-    { text: "단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.", start: 8374, end: 16744 },
+    {
+      text: "둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다.",
+      start: 0,
+      end: 8374,
+    },
+    {
+      text: "단어의 짜임에는 병렬 관계, 수식 관계, 주술 관계, 술목 관계, 술보 관계 등이 있다.",
+      start: 8374,
+      end: 16744,
+    },
   ];
 
   return (
@@ -49,7 +57,7 @@ export default function Page() {
 
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/2/53_story.mp3",
     onplay: () => setIsReading(true),
@@ -67,7 +75,10 @@ const Step1 = () => {
       <SoundButton2
         className="absolute top-[110px] left-[710px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
-        onClick={() => sound.play()}
+        onClick={() => {
+          soundId && sound.stop(soundId);
+          setSoundId(sound.play());
+        }}
       />
 
       <ContentContainer>

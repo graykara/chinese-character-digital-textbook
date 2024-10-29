@@ -23,7 +23,7 @@ export default function Page() {
   const [isButton3Clicked, setIsButton3Clicked] = useState(false);
 
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/1/17-1.mp3",
     onplay: () => setIsReading(true),
@@ -50,7 +50,10 @@ export default function Page() {
           <img src={TITLE.src} alt="title" />
           <SoundButton2
             active={isReading}
-            onClick={() => sound.play()}
+            onClick={() => {
+              soundId && sound.stop(soundId);
+              setSoundId(sound.play());
+            }}
             className="absolute top-1/2 -translate-y-1/2 left-[420px]"
           />
         </div>

@@ -20,6 +20,7 @@ export default function Page() {
   }, []);
 
   const [isReading, setIsReading] = useState(false);
+  const [soundId, setSoundId] = useState<number | null>(null);
 
   const sound = new Howl({
     src: "/sound/3/83-i.mp3",
@@ -52,7 +53,10 @@ export default function Page() {
         <SoundButton2
           className="absolute -top-[13px] left-[1125px] animate__animated animate__bounceIn animate__delay-1s z-10"
           active={isReading}
-          onClick={() => sound.play()}
+          onClick={() => {
+            soundId && sound.stop(soundId);
+            setSoundId(sound.play());
+          }}
         />
         <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[320px] -top-[10px] w-[100px] z-1" />
         <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[183px] -top-[5px] z-1" />
@@ -65,7 +69,9 @@ export default function Page() {
                   <div className="bg-red-500 text-white w-10 h-10 mt-1 rounded-full flex-none items-start text-[28px] text-center tracking-tightest">
                     {index + 1}
                   </div>
-                  <p className="text-[36px] leading-[52px] tracking-tighter break-keep -mb-5">{item}</p>
+                  <p className="text-[36px] leading-[52px] tracking-tighter break-keep -mb-5">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>

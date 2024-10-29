@@ -14,16 +14,28 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [isReading, setIsReading] = useState(false);
-
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/2/47_story.mp3",
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
   [
-    { text: "“심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.", start: 0, end: 10760 },
-    { text: "‘매우’라는 뜻의 ‘甚(심)’과 ‘깊다’라는 뜻의 ‘深(심)’이 결합된 단어로, ‘매우 깊다’는 의미이다.", start: 10760, end: 17972 },
-    { text: "따라서 眞心(진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와 같이 쓸 수 있다.", start: 17972, end: 26383 },
+    {
+      text: "“심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.",
+      start: 0,
+      end: 10760,
+    },
+    {
+      text: "‘매우’라는 뜻의 ‘甚(심)’과 ‘깊다’라는 뜻의 ‘深(심)’이 결합된 단어로, ‘매우 깊다’는 의미이다.",
+      start: 10760,
+      end: 17972,
+    },
+    {
+      text: "따라서 眞心(진심) 어린 감사나 위로를 전하고 싶을 때 ‘심심한 감사’, ‘심심한 위로’ 와 같이 쓸 수 있다.",
+      start: 17972,
+      end: 26383,
+    },
   ];
 
   useEffect(() => {
@@ -40,7 +52,10 @@ export default function Page() {
           <SoundButton2
             className="absolute top-[110px] left-[1300px] animate__animated animate__bounceIn animate__delay-1s z-10"
             active={isReading}
-            onClick={() => sound.play()}
+            onClick={() => {
+              soundId && sound.stop(soundId);
+              setSoundId(sound.play());
+            }}
           />
 
           <ContentContainer>

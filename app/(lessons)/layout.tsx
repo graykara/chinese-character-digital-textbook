@@ -17,6 +17,7 @@ import { FloatingButtonContainer } from "../components/floating-button-container
 import { AudioProvider } from "../utils/audio/audio-player";
 import { AudioLink } from "../utils/audio/audio-link";
 import { PageInfoContext } from "../utils/page-info";
+import { activityStartSound } from "../utils/activity-start-sound";
 
 export default function RootLayout({
   children,
@@ -79,7 +80,10 @@ export default function RootLayout({
                 <button
                   onMouseOver={() => setHoverPrev(true)}
                   onMouseLeave={() => setHoverPrev(false)}
-                  onClick={() => setCurrentStep((prev) => prev - 1)}
+                  onClick={() => {
+                    activityStartSound.play();
+                    setCurrentStep((prev) => prev - 1);
+                  }}
                 >
                   <img
                     src="/ui/prev-button-off.png"
@@ -119,7 +123,10 @@ export default function RootLayout({
                 <button
                   onMouseOver={() => setHoverNext(true)}
                   onMouseLeave={() => setHoverNext(false)}
-                  onClick={() => setCurrentStep((prev) => prev + 1)}
+                  onClick={() => {
+                    activityStartSound.play();
+                    setCurrentStep((prev) => prev + 1);
+                  }}
                 >
                   <img
                     src="/ui/next-button-off.png"
