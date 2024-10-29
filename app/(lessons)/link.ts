@@ -225,6 +225,13 @@ export const NAVIGATION = [
   },
   {
     lesson: 1,
+    chapter: 2,
+    subChapter: "미리 알아보는 본문 한자",
+    path: "lesson1/02_021_D54",
+    page: 21,
+  },
+  {
+    lesson: 1,
     chapter: -2,
     subChapter: "정리하기",
     path: "lesson1/02_022_I1",

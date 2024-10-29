@@ -8,6 +8,7 @@ import { TitleContainer2 } from "@/app/components/title-container";
 import { useContext, useState } from "react";
 import IMAGE from "./image.png";
 import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아28-1.png"
+import { MainContentVideoButton2 } from "@/app/components/main-content/video-button2";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -25,6 +26,11 @@ export default function Page() {
           새로 익힐 한자를 순서에 맞게 써 보자.
         </p>
       </TitleContainer2>
+
+      <MainContentVideoButton2
+          video=""
+          className="absolute left-[990px] top-[170px]"
+        />
 
       <ContentContainer className="!justify-start top-20">
         <img src={IMAGE.src} alt="" />

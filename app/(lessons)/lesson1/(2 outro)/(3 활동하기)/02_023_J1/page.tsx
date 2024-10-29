@@ -84,7 +84,7 @@ const Content3 = () => {
             />
           ) : (
             <input
-              value="김대성"
+              value="김대성(金大成)"
               className="text-example absolute w-[410px] bg-transparent left-[150px] top-[215px] text-center"
               readOnly
             />
@@ -117,12 +117,19 @@ const Content3 = () => {
           )}
 
           {!showAnswer ? (
+            
             <textarea
-              className="absolute w-[960px] bg-transparent left-[170px] top-[1180px] resize-none"
+              key={4}
+              defaultValue={""}
+              className="absolute w-[900px] bg-transparent left-[170px] top-[1180px] resize-none"
               rows={3}
             />
           ) : (
-            <></>
+            <textarea
+              value="‘김(金)’에는 내가 좋아하는 것을, ‘대성(大成)에는 미용사가 되어 사람들에게 기쁨을 주고 싶은 나의 꿈을 표현했어."
+              className="text-example absolute w-[900px] bg-transparent left-[170px] top-[1180px] resize-none"
+              rows={3}
+            />
           )}
 
           {showAnswer ? (
