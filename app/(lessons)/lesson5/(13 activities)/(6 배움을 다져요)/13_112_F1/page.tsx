@@ -42,7 +42,7 @@ const Step1 = () => {
             본문 내용을 참고하여 황희와 농부의 이야기를 대본으로 완성해 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/112-i-1.mp3"
       />
       <WritingButton
         className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
@@ -90,7 +90,7 @@ const Step2 = () => {
             ‘나의 언어생활 점검표’를 작성하여 자신의 언어생활을 돌아보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/112-i-2.mp3"
       />
       <ContentContainer className="!justify-start -top-[50px] left-9">
         <img src={IMAGE2.src} />

@@ -33,7 +33,7 @@ const Step1 = () => (
   <>
     <TitleContainer
       className="left-5 mt-14"
-      sound="">
+      sound="/sound/5/125/1.mp3">
       <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
         <img src="/ui/flower-icon-2.png" width={38} height={38} />
         질문에 답하며 자신의 공부 집중도를 확인해 보자.

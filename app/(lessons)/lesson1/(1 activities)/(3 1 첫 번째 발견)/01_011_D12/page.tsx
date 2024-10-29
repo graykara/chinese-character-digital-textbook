@@ -27,6 +27,7 @@ export default function Page() {
 
       <ExerciseHeader
         text="대화에서 한자 어휘라고 생각하는 것에 모두 ○표 해 보자."
+        sound="/sound/1/11-i2-1.mp3"
         image={EXERCISE1.src}
       />
 

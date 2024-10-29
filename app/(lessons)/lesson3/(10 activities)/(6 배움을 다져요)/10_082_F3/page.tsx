@@ -22,7 +22,7 @@ export default function Page() {
         title={
           <p className="tracking-wide">디지털 도구를 이용하여 밑줄 친 한자의 여러 가지 뜻을 찾아 써 보자.</p>
         }
-        sound=""
+        sound="/sound/3/82-i-3.mp3"
       />
       <div><p className="ml-[280px] -mt-9 text-[45px] text-[#1b1b1b] tracking-normal break-keep leading-[55px] "><span className="text-answer text-[55px]">*</span> 부록의 미니 자전을 이용해도 좋습니다.</p></div>
       

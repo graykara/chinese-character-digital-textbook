@@ -24,7 +24,7 @@ export default function Page() {
       <CreativityPageTemplate>
         <TitleContainer 
           className="left-5 mt-14"
-          sound="">
+          sound="/sound/5/119-i.mp3">
           <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
             <img src="/ui/flower-icon-2.png" width={38} height={38} />
             생태계가 파괴되고 있는 사례를 찾아 써 보고 이 문제를 해결할 수 있는

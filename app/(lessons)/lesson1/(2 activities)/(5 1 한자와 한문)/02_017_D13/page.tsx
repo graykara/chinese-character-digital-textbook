@@ -20,7 +20,7 @@ export default function Page() {
 
   return (
     <>
-      <HeaderContainer className="mt-10">
+      <HeaderContainer className="mt-10" sound="/sound/1/17-i2.mp3">
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 

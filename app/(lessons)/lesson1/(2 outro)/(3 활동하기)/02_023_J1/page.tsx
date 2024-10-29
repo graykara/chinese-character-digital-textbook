@@ -47,7 +47,7 @@ const Content1 = () => {
       <header className="mb-10 -ml-3">
         <img src={IMAGE1.src} />
       </header>
-      <p className="ml-3 -mt-2 text-[55px] tracking-tighter">
+      <p className="ml-3 -mt-2 text-[55px] tracking-tighter" sound="/sound/1/23-i.mp3">
         문자도는 문자의 뜻과 관계있는 옛이야기의 소재를 문자의 획 안이나
         <br />그 주변에 그려 넣어 글자를 구성한 그림이다. 내 이름의 뜻이나 나와
         <br />

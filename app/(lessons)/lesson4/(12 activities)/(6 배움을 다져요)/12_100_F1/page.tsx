@@ -21,7 +21,7 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title={<p className="tracking-[-6px]">문장의 의미를 생각해 보고 어떨 때, 누구에게 하면 좋을지 적어 보자.</p>}
-        sound=""
+        sound="/sound/4/100-i-1.mp3"
       />
 
       <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[210px] left-[1550px] flex items-center gap-5" />

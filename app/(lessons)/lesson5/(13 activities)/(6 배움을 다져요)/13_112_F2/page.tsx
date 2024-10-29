@@ -21,7 +21,7 @@ export default function Page() {
             한자 카드를 결합하여 아래의 설명에 해당하는 단어를 만들어 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/112-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start -top-[50px] left-16">

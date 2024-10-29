@@ -23,7 +23,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">만화의 내용을 보고 ㉠에 들어갈 말을 추측하여 써 보자.</p>}
-        sound=""
+        sound="/sound/2/34-i.mp3"
       />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

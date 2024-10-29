@@ -25,7 +25,7 @@ export default function Page() {
         title={
           <p className="-ml-2 text-[55px] leading-[66px] tracking-[-3px]">아래 성어의 의미를 디지털 도구 등을 활용하여 찾고, 성어를 사용하면 어떤 효과가 있을지 써 보자.</p>
         }
-        sound=""
+        sound="/sound/3/60-i-1.mp3"
         subTitle={
           <div className="absolute top-5 -right-16 flex items-center gap-5">
           </div>
@@ -74,7 +74,7 @@ const Step2 = () => {
       <ContentContainer className="!justify-start top-[95px] -left-12">
         <TitleContainer
           className=""
-          sound="">
+          sound="/sound/3/60-i-2.mp3">
           <p className="text-[50px] tracking-tighter flex items-start gap-2">
             <img src="/ui/flower-icon-2.png" width="40px" />
             성어를 사용하면 어떤 효과가 있을까?

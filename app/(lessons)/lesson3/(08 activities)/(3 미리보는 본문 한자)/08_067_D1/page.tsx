@@ -38,7 +38,7 @@ export default function Page() {
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[1055px] top-[230px] w-[100px] z-1" />
       <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[920px] top-[232px] z-1" />
 
-      <TitleContainer className="mt-10">
+      <TitleContainer className="mt-10" sound="/sound/3/67-i.mp3">
         <p className="tracking-tighter flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />
           제시된 한자 카드를 보고, 질문에 답하며 개인별 또는 모둠별로 왕관을

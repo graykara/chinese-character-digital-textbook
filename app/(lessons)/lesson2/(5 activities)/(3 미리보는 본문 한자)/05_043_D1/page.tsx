@@ -18,7 +18,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer2 className="mt-10 flex items-start gap-4">
+      <TitleContainer2 className="mt-10 flex items-start gap-4" sound="/sound/2/43-i.mp3">
         <img src="/ui/flower-icon.png" />
         <p>
           제시된 한자 카드를 보고, 한자 조각을 짝 지어 한자를 완성하고, 그

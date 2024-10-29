@@ -18,7 +18,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title="다음 설명을 보고 문장의 구조를 살펴보자."
-        sound=""
+        sound="/sound/4/94-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start !items-start left-[160px] -top-12">

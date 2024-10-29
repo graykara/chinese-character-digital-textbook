@@ -21,7 +21,7 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title={"성어의 풀이 순서를 빈칸에 숫자로 써 보자."}
-        sound=""
+        sound="/sound/3/82-i-1.mp3"
       />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

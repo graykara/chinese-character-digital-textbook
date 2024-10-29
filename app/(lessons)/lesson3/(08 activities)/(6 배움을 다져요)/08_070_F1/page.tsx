@@ -23,12 +23,12 @@ export default function Page() {
     {step === 3 ? (
       <StrengthenLearningMainContentHeader
         title={" 풀이 순서가 같은 두 개의 성어를 찾아 ○표 해 보자."}
-        sound=""
+        sound="/sound/3/70-i-2.mp3"
       />
     ) : (
       <StrengthenLearningMainContentHeader
         title={"성어와 의미가 통하는 우리말 속담을 디지털 도구로 찾아 써보자. "}
-        sound=""
+        sound="/sound/3/70-i-1.mp3"
       />
     )}
       {step === 1 && <Step1 />}
@@ -48,7 +48,7 @@ const Step1 = () => {
     <>
       <SmartButton
         link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
-        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1" />
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />

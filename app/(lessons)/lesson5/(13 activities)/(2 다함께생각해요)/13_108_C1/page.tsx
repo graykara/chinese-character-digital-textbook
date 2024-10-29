@@ -19,7 +19,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자.</p>}
-        sound=""
+        sound="/sound/5/108-i.mp3"
       />
 
       {step === 1 && <Step1 />}

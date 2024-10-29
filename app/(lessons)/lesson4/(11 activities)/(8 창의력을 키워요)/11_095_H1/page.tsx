@@ -22,7 +22,7 @@ export default function Page() {
         />
         <TitleContainer
           className="ml-[85px] mt-6"
-          sound="">
+          sound="/sound/4/95-i.mp3">
           <div className="flex items-center gap-1 text-[48px] tracking-[-3.5px] ml-[40px]">
             학교 폭력을 예방하는 방법을 생각해 보고 학교 폭력 예방 포스터를 만들어 보자.
           </div>

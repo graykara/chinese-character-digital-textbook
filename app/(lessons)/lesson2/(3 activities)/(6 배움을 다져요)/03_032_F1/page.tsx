@@ -52,7 +52,7 @@ const Step1 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title="달력의 빈칸에 들어갈 요일을 한자로 써 보자."
-        sound=""
+        sound="/sound/2/32-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start">
@@ -123,7 +123,7 @@ const Step2 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title="자신의 생일을 숫자로 적고, 옆에 한자로 써 보자."
-        sound=""
+        sound="/sound/2/32-i-2.mp3"
       />
 
       <ContentContainer className="!justify-start">
@@ -190,7 +190,7 @@ const Step3 = () => {
             사용된 단어를 모두 골라 보자.
           </>
         }
-        sound=""
+        sound="/sound/2/32-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start">

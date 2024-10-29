@@ -22,7 +22,7 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title={"성어의 유래를 떠올려 보고 질문에 답해 보자."}
-        sound=""
+        sound="/sound/3/82-i-2.mp3"
       />
 
       <div className="absolute top-[210px] left-[1200px] flex items-center gap-5">

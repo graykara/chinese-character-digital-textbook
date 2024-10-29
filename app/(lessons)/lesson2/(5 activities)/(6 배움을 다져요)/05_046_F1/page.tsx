@@ -59,7 +59,7 @@ export default function Page() {
             에서 찾아 써 보자.
           </>
         }
-        sound=""
+        sound="/sound/2/46-i-1.mp3"
       />
 
       <ContentContainer className="flex-none !h-[120px] -mt-20 mb-10">

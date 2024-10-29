@@ -24,7 +24,7 @@ export default function Page() {
         title={
           "디지털 사전에서 검색한 결과를 보고 물음에 답해 보자."
         }
-        sound=""
+        sound="/sound/3/70-i-3.mp3"
       />
 
       {step === 1 && <Step1 />}

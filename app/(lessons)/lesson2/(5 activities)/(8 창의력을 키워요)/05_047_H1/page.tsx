@@ -45,7 +45,7 @@ const Step1 = () => {
     <>
       <TitleContainer
         className="-left-24 mt-4"
-        sound="">
+        sound="/sound/2/47-i-1.mp3">
         <div className="flex items-center gap-5 text-[55px] tracking-tight">
           <img src="/ui/flower-icon-2.png" />
           다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
@@ -99,7 +99,7 @@ const Step2 = () => {
     <>
       <TitleContainer
         className="-left-24 mt-4"
-        sound="">
+        sound="/sound/2/47-i-2.mp3">
         <div className="flex items-center gap-7 text-[55px] tracking-tight">
           <img src="/ui/flower-icon-2.png" />
           글의 내용에 알맞은 단어를 골라 보자.

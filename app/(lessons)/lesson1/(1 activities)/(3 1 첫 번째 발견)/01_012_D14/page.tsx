@@ -28,6 +28,7 @@ export default function Page() {
 
       <ExerciseHeader
         text="대화 속 밑줄 친 부분의 뜻을 말해 보자."
+        sound="/sound/1/12-i2-3.mp3"
         image={EXERCISE3.src}
       />
 

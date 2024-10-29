@@ -34,7 +34,7 @@ const Step1 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title="본문의 내용을 바탕으로 다음 빈칸을 완성해 보자."
-        sound=""
+        sound="/sound/5/118-i-1.mp3"
       />
       <ContentContainer className="!justify-start -top-[65px] left-[90px]">
         <img src={IMAGE1.src} />
@@ -106,7 +106,7 @@ const Step2 = () => {
             가상 인터뷰의 내용에서 홍대용의 마지막 말에 들어갈 내용을 써 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/118-i-2.mp3"
         className="w-[1600px]"
       />
       <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[145px] right-[85px] flex items-center gap-5 z-1" />

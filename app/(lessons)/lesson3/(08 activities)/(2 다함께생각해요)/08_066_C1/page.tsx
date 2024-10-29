@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2 text-[50px]">대화를 읽고 ㉠~㉢에 들어갈 말을 찾아 써 보자.</p>}
-        sound=""
+        sound="/sound/3/66-i.mp3"
         subTitle={
           <p className="-ml-[42px] -mt-1 text-[48px] text-[#1b1b1b] tracking-tight break-keep leading-[55px] "><span className="text-[#df865a] text-[45px] -mr-1">*</span> ㉡, ㉢에 들어갈 성어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.</p>
         }
