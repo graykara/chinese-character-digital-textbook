@@ -12,7 +12,7 @@ import { useContext, useEffect, useState } from "react";
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아8.png"
+import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아8.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -57,8 +57,20 @@ export default function Page() {
 
         <div className="flex mt-3 -ml-[100px]">
           <p className="text-[50px] tracking-tighter leading-[68px] break-keep w-[800px]">
-            <span className="font-haeseo text-[55px] leading-tight tracking-[-10px]">漢字</span>(한자)는 하나의 글자가 모양·음·뜻을 모두 갖추고 있는 문자이다.
-            <br />예를 들어, ‘<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">大</span>’ 자의 모양은 사람이 양팔을 벌린 형태[<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">大</span>]이며, 음은 ‘대’이고, 뜻은 ‘크다’이다.
+            <span className="font-haeseo text-[55px] leading-tight tracking-[-10px]">
+              漢字
+            </span>
+            (한자)는 하나의 글자가 모양·음·뜻을 모두 갖추고 있는 문자이다.
+            <br />
+            예를 들어, ‘
+            <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+              大
+            </span>
+            ’ 자의 모양은 사람이 양팔을 벌린 형태[
+            <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+              大
+            </span>
+            ]이며, 음은 ‘대’이고, 뜻은 ‘크다’이다.
           </p>
 
           <div className="relative flex-none -mt-[90px] -ml-[20px]">
@@ -100,7 +112,10 @@ export default function Page() {
           </div>
         </div>
       </ContentContainer>
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { StepContainer } from "@/app/components/step-container";
 import { Header } from "../assets/header";
 import { useEffect, useState } from "react";
@@ -14,10 +13,10 @@ import ANSWER2 from "./answer2.png";
 import ANSWER3 from "./answer3.png";
 import ANSWER4 from "./answer4.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어12.png"
-import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어13.png"
-import BACKGROUND3 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어14.png"
-import BACKGROUND4 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어15.png"
+import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어12.png";
+import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어13.png";
+import BACKGROUND3 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어14.png";
+import BACKGROUND4 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어15.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -26,6 +25,7 @@ export default function Page() {
 
   useEffect(() => {
     setShowAnswer(false);
+    setValue("");
   }, [step]);
 
   const data = [
@@ -52,18 +52,20 @@ export default function Page() {
       answerContainerImage: ANSWER4.src,
       answer: "동쪽 지역은 높고 서쪽 지역은 낮은 상태.",
       showAnswer: showAnswer,
-    }
-  ]
+    },
+  ];
 
   return (
     <>
       <Header />
 
       <ContentContainer className="flex flex-col items-center -mt-[150px]">
-        <img src={data[step - 1]?.image} className="h-[480px] ml-[10px] mb-[170px]" />
+        <img
+          src={data[step - 1]?.image}
+          className="h-[480px] ml-[10px] mb-[170px]"
+        />
 
         <div className="absolute left-[115px] top-[680px]">
-
           <img src={`${data[step - 1].answerContainerImage}`} />
 
           {!value ? (
@@ -73,25 +75,28 @@ export default function Page() {
               style={{
                 height: 54,
                 top: 50,
-                left: 265
+                left: 265,
               }}
             />
           ) : null}
           <input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            className="absolute left-[250px] -mt-[70px] text-center w-[480px] focus:outline-none bg-transparent" />
+            className="absolute left-[250px] -mt-[70px] text-center w-[480px] focus:outline-none bg-transparent"
+          />
 
           {showAnswer ? (
             <p
-              className={`absolute left-[780px] text-center text-answer ${data[step - 1]?.answer.length > 20 ? "text-[34px] tracking-tighter -ml-1 top-14" : "top-12 w-[460px]"
-                }`}
+              className={`absolute left-[780px] text-center text-answer ${
+                data[step - 1]?.answer.length > 20
+                  ? "text-[34px] tracking-tighter -ml-1 top-14"
+                  : "top-12 w-[460px]"
+              }`}
             >
               {data[step - 1]?.answer}
             </p>
           ) : null}
         </div>
-
       </ContentContainer>
 
       <StepContainer step={step} maxStep={4} onStepChange={setStep} />
@@ -100,12 +105,20 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }
