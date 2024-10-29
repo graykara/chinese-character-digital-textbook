@@ -5,6 +5,7 @@ import IMAGE2 from "./bg_2.png";
 import IMAGE3 from "./bg_3.png";
 import IMAGE4 from "./bg_4.png";
 import IMAGE5 from "./bg_5.png";
+import VIDEO_PLAY_THUMBNAIL from "@/app/components/video-thumbnail/assets/video-play.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
@@ -17,6 +18,9 @@ import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문
 import BACKGROUND3 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘8.png";
 import BACKGROUND4 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
+import { Modal } from "@/app/components/modal";
+import ReactPlayer from "react-player";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -26,6 +30,7 @@ export default function Page() {
   const [showReading2, setShowReading2] = useState(false);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
+  const video = "string";
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
@@ -70,6 +75,7 @@ export default function Page() {
         </div>
       ),
       resource: IMAGE2.src,
+      video: "/video/animation/2-5_44-1.mp4",
     },
     {
       //left part
@@ -77,7 +83,7 @@ export default function Page() {
       reading: "금 일",
       sound: "/sound/2/44/3.mp3",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter leading-tight font-bold -mb-[48px]">
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter leading-tight font-bold -mb-[50px]">
           지금 지나가고
           <br />
           있는 이날.
@@ -90,7 +96,7 @@ export default function Page() {
       chinese: "休業",
       reading: "휴 업",
       content: (
-        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[43px]">
+        <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold ">
           일을{" "}
           <FlippableCard_60
             active={showMeaning2}
@@ -102,6 +108,7 @@ export default function Page() {
         </div>
       ),
       resource: IMAGE3.src,
+      video: "/video/animation/2-5_44-2.mp4",
     },
     {
       //left part
@@ -139,6 +146,7 @@ export default function Page() {
         </div>
       ),
       resource: IMAGE4.src,
+      video: "/video/animation/2-5_45-1.mp4",
     },
     {
       //left part
@@ -177,8 +185,11 @@ export default function Page() {
         </div>
       ),
       resource: IMAGE5.src,
+      video: "/video/animation/2-5_45-2.mp4",
     },
   ];
+
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -263,15 +274,46 @@ export default function Page() {
 
           <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
-              <img
-                src={data[step * 2 - 1]?.resource}
-                alt="resource"
-                className={
-                  step === 4
-                    ? "absolute bottom-[60px] items-center"
-                    : "absolute bottom-[60px] right-16"
-                }
-              />
+              <img src={VIDEO_PLAY_THUMBNAIL.src} className={
+                    step === 1 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[160px] right-[180px] z-10" :
+                    step === 2 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] right-[160px] z-10" :
+                    step === 3 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[180px] right-[210px] z-10" :
+                    step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
+                    : "" 
+                  } />
+              <button
+                className={`z-[3]`}
+                onClick={() => {
+                  clickSound.play();
+                  setShowModal(true);
+                }}
+              >
+                <img
+                  src={data[step * 2 - 1]?.resource}
+                  alt="resource"
+                  className={
+                    step === 1 ? "absolute bottom-[60px] right-14" :
+                    step === 2 ? "absolute bottom-[70px] right-10" :
+                    step === 3 ? "absolute bottom-[70px] right-5" :
+                    step === 4 ? "absolute bottom-[70px] translate-x-5"
+                    : "" 
+                  }
+                />
+              </button>
+
+              <Modal open={showModal} onClose={() => setShowModal(false)}>
+                <div className="w-full h-full bg-white bg-opacity-70 ">
+                  {video ? (
+                     <ReactPlayer
+                      url={data[step * 2 - 1]?.video}
+                      playing
+                      width={1760}
+                      height={990}
+                    /> 
+                  ) : null} 
+                </div>
+              </Modal>
+
             </div>
           </div>
         </ContentContainer>

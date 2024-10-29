@@ -7,6 +7,7 @@ import { CreativityTitleHeader } from "@/app/components/headers/creativity-title
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
+import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글31.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글32.png";
@@ -53,6 +54,38 @@ const Step2 = () => {
     <>
       <div className="relative left-[120px] top-[105px]">
         <img src={IMAGE2.src} />
+        <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className="w-[1080px] pl-7 text-[40px] tracking-tighter bg-transparent"
+          penClassName="h-[60px] left-0 -mt-2"
+          containerClassName="absolute resize-none left-[130px] top-[35px]"
+          isExample
+        />
+        <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className="w-[1080px] pl-14 pt-3 text-[40px] tracking-tighter bg-transparent"
+          penClassName="h-[60px] left-7 -mt-2"
+          containerClassName="absolute resize-none left-[130px] top-[107px]"
+          isExample
+        />
+        <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className="w-[1080px] pl-14 pt-3 text-[40px] tracking-tighter bg-transparent"
+          penClassName="h-[60px] left-7 -mt-2"
+          containerClassName="absolute resize-none left-[130px] top-[179px]"
+          isExample
+        />
+        <InputWithPen
+          answer={answers[3]}
+          showAnswer={showAnswer}
+          className="w-[1080px] pl-14 pt-3 text-[40px] tracking-tighter bg-transparent"
+          penClassName="h-[60px] left-7 -mt-2"
+          containerClassName="absolute resize-none left-[130px] top-[251px]"
+          isExample
+        />
       </div>
 
       <ExampleAnswerButton

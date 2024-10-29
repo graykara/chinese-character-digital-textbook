@@ -10,7 +10,7 @@ export const CreativityTitleHeader = ({
   containerClassName = "",
 }: {
   title: string | ReactNode;
-  sound: string;
+  sound?: string;
   className?: string;
   containerClassName?: string;
 }) => {

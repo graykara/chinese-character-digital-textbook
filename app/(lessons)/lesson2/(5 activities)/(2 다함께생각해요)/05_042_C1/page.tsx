@@ -21,7 +21,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={
-          <p className="-ml-2 text-[52px] leading-[60px] tracking-[-2.5px]">대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여 그 뜻을 찾아보자.</p>
+          <p className="-ml-2 text-[52px] leading-[60px] tracking-[-2.5px]">대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여<br/>그 뜻을 찾아보자.</p>
         }
         sound="/sound/2/42-i.mp3"
         subTitle={
@@ -65,7 +65,7 @@ const Step2 = () => {
   const answers = [
     "금새",
     "금세",
-    "지금 바로. '금시에'가 줄어든 말.",
+    "지금 바로. ‘금시에’가 줄어든 말.",
     "심여",
     "심혈",
     "마음과 힘을 아울러 이르는 말.",
@@ -78,69 +78,69 @@ const Step2 = () => {
   return (
     <>
       <ContentContainer>
-        <img src={IMAGE2.src} className="absolute top-1 left-[85px]" />
+        <img src={IMAGE2.src} className="absolute top-3 left-[85px]" />
         <InputWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[200px] mt-4 bg-transparent"
           penClassName="left-0 -translate-x-1/2"
-          containerClassName="absolute top-[95px] left-[200px]"
+          containerClassName="absolute top-[105px] left-[200px]"
         />
         <InputWithPen
           answer={answers[1]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[220px] mt-4 bg-transparent"
           penClassName="left-4 -translate-x-1/2"
-          containerClassName="absolute top-[95px] left-[525px]"
+          containerClassName="absolute top-[105px] left-[525px]"
         />
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
-          className="text-[48px] tracking-[-2.5px] w-[560px] mt-4 bg-transparent"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
           penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[97px] left-[820px]"
+          containerClassName="absolute top-[107px] left-[820px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[200px] mt-4 bg-transparent"
           penClassName="left-0 -translate-x-1/2"
-          containerClassName="absolute top-[171px] left-[200px]"
+          containerClassName="absolute top-[183px] left-[200px]"
         />
         <InputWithPen
           answer={answers[4]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[220px] mt-4 bg-transparent"
           penClassName="left-4 -translate-x-1/2"
-          containerClassName="absolute top-[171px] left-[525px]"
+          containerClassName="absolute top-[183px] left-[525px]"
         />
         <InputWithPen
           answer={answers[5]}
           showAnswer={showAnswer}
-          className="text-[48px] tracking-[-2.5px] w-[560px] mt-4 bg-transparent"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
           penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[173px] left-[820px]"
+          containerClassName="absolute top-[183px] left-[820px]"
         />
         <InputWithPen
           answer={answers[6]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[200px] mt-4 bg-transparent"
           penClassName="left-0 -translate-x-1/2"
-          containerClassName="absolute top-[245px] left-[200px]"
+          containerClassName="absolute top-[255px] left-[200px]"
         />
         <InputWithPen
           answer={answers[7]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[220px] mt-4 bg-transparent"
           penClassName="left-4 -translate-x-1/2"
-          containerClassName="absolute top-[245px] left-[525px]"
+          containerClassName="absolute top-[255px] left-[525px]"
         />
         <InputWithPen
           answer={answers[8]}
           showAnswer={showAnswer}
-          className="text-[48px] tracking-[-2.5px] w-[560px] mt-4 bg-transparent"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
           penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[247px] left-[820px]"
+          containerClassName="absolute top-[257px] left-[820px]"
         />
       </ContentContainer>
 
