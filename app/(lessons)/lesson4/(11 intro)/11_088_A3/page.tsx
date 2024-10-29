@@ -1,7 +1,7 @@
 "use client";
 
 import ReactPlayer from "react-player";
-import BACKGROUND1 from "@/app/bgpng_temp/intro/2단원_왜 배워요_.png";
+import BACKGROUND1 from "@/app/bgpng_temp/intro/4단원_무엇을 배워요_.png";
 import { IntroWhatHeader } from "@/app/components/intro/intro-what-header";
 import { IntroTextPlayer } from "@/app/components/intro/intro-text-player";
 
@@ -34,13 +34,13 @@ export default function Page() {
         playing
       />
 
-      <IntroWhatHeader className="absolute left-[100px] top-[130px]" />
+      <IntroWhatHeader className="absolute right-[100px] top-[130px]" />
 
-      <div className="bg-white bg-opacity-50 absolute left-[100px] top-[250px] w-[1100px] overflow-y-auto rounded-[20px] p-[25px]">
+      <div className="bg-white bg-opacity-50 absolute right-[100px] top-[245px] w-[1100px] rounded-[20px] pt-[25px] pb-[15px] pl-[40px] pr-[55px] animate__animated animate__fadeIn animate__delay-1s">
         <IntroTextPlayer
           sound="/sound/3/58_intro/5.mp3"
           data={sound}
-          textClassName="text-left"
+          textClassName="text-right leading-[80px]"
         />
       </div>
 

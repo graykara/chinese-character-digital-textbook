@@ -54,9 +54,6 @@ const Step2 = () => {
     "무분별한 실험으로 인한 동물의 생명 경시",
     "불법 포획으로 인한 멸종 위기"
   ];
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
 
   return (
     <>

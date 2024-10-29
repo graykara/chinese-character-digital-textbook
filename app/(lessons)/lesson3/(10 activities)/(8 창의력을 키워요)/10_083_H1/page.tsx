@@ -57,19 +57,19 @@ export default function Page() {
         <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[320px] -top-[10px] w-[100px] z-1" />
         <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[183px] -top-[5px] z-1" />
 
-        <ContentContainer className="-left-10 -top-8">
-          <div className="grid grid-cols-[800px__1fr] gap-3 mt-[10px]">
-            <div className="flex flex-col gap-10 pt-8 ml-2">
+        <ContentContainer className="mx-0 -top-8 w-[1600px] pr-[30px]">
+          <div className="w-[1540px] grid grid-cols-[800px__1fr] gap-3 mt-[10px]">
+            <div className="flex flex-col gap-10 pt-8 ml-1">
               {items.map((item, index) => (
-                <div key={index} className="flex items-center gap-5 pr-4">
-                  <div className="bg-red-500 text-white w-10 h-10 rounded-full flex justify-center items-center text-[28px] tracking-tightest">
+                <div key={index} className="flex items-start gap-5 pr-4">
+                  <div className="bg-red-500 text-white w-10 h-10 mt-1 rounded-full flex-none items-start text-[28px] text-center tracking-tightest">
                     {index + 1}
                   </div>
                   <p className="text-[36px] leading-[52px] tracking-tighter break-keep -mb-5">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="relaitve h-full flex justify-end items-end">
+            <div className="relaitve h-full flex justify-end items-end right-0">
               <img src={IMAGE.src} className="mb-20" />
             </div>
           </div>

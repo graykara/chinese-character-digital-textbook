@@ -8,7 +8,7 @@ import { IntroTextPlayer } from "@/app/components/intro/intro-text-player";
 export default function Page() {
   const sound = [
     {
-      text: "이 단원에서 우리는 한자 성어을 구성하고 있는 한자의 모양·음·뜻을 익힙니다.",
+      text: "이 단원에서 우리는 한자 성어를 구성하고 있는 한자의 모양·음·뜻을 익힙니다.",
       start: 0,
       end: 8840,
     },
@@ -34,13 +34,13 @@ export default function Page() {
         playing
       />
 
-      <IntroWhatHeader className="absolute left-[70px] top-[80px]" />
+      <IntroWhatHeader className="absolute left-[70px] top-[85px]" />
 
-      <div className="absolute left-[70px] top-[180px] w-[1300px] h-[720px] overflow-y-auto rounded-[20px] p-[25px]">
+      <div className="absolute left-[70px] top-[180px] w-[1250px] h-[720px] overflow-y-auto rounded-[20px] pt-[20px] pl-[28px] pb-0">
         <IntroTextPlayer
           sound="/sound/3/58_intro/5.mp3"
           data={sound}
-          textClassName="text-left"
+          textClassName="text-left leading-[88px] tracking-[-1px]"
         />
       </div>
 
