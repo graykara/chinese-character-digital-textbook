@@ -9,7 +9,8 @@ import VIDEO from "./video.png";
 import VIDEO2 from "./video2.png";
 import IMAGE1 from "./text1.png";
 import IMAGE2 from "./text2.png";
-import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어226.png"; //225, 226
+import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어225.png";
+import BACKGROUND2 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어226.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 
@@ -17,19 +18,22 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/3/83_story.mp3", ""];
-
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  // const sounds = ["/sound/3/83_story.mp3", ""];
   [
     { text: "우리 선조들의 이야기에서 유래한 대표적인 성어로는 ‘함흥차사(咸興差使)’와 ‘계란유골(鷄卵有骨)’이 있는데 그 유래를 소개하면 다음과 같다.", start: 0, end: 10700 },
     { text: "태종 이방원이 즉위한 후, 이성계가 함흥에 있을 때 자신을 한양으로 데려가기 위해 온 차사들을 죽이거나 가두어 돌려보내지 않은 것에서 유래하였다.", start: 10700, end: 22604 },
     { text: "세종 대왕이 황희(黃喜)의 검소함을 안타깝게 여겨 하루 동안 숭례문으로 들어오는 물건을 모두 가져다주라고 하였다.", start: 22604, end: 31586 },
     { text: "그러나 이날은 큰비가 와서 들어온 물건이 달걀 한 꾸러미뿐이었는데 이것 마저 모두 곯아서 먹을 수가 없었던 것에서 유래하였다.", start: 31586, end: 42553 },
   ];
+
+  const sounds = ["/sound/3/83_story_1.mp3", "/sound/3/83_story_2.mp3"];
+
+  const sound = new Howl({
+    src: sounds[step - 1],
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+  
 
   useEffect(() => {
     return () => {
@@ -97,7 +101,7 @@ export default function Page() {
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
       <img
-        src={BACKGROUND1.src}
+        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>

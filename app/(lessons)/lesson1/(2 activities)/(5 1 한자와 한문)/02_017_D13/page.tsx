@@ -24,7 +24,9 @@ export default function Page() {
         <img src={HEADER.src} alt="header" />
       </HeaderContainer>
 
-      <ExerciseHeader text="내 이름을 한자로 쓰고 그 뜻을 사용하여 이름의 의미를 써보자." />
+      <ExerciseHeader
+        text="내 이름을 한자로 쓰고 그 뜻을 사용하여 이름의 의미를 써보자." 
+        sound=""/>
 
       <div className="w-[1400px] h-full mx-auto flex justify-center items-center ">
 

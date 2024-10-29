@@ -68,7 +68,7 @@ export default function Page() {
         { letter: "族", reading: "족" },
         { letter: "하고", isKor: true },
       ],
-      sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/2-1.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           만덕이
@@ -121,7 +121,7 @@ export default function Page() {
         { letter: "官", reading: "관" },
         { letter: "이라.", isKor: true },
       ],
-      sound: "/sound/5/128/2.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/128/2-2.mp3",
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           나머지는 모두 관아로 실어 보냈다.

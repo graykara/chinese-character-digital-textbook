@@ -13,13 +13,7 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/3/77_story.mp3", ""];
-
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  // const sounds = ["/sound/3/77_story.mp3", ""];
   [
     { text: "이 그림은 조선 시대 화가 김홍도의 「해탐노화도(蟹貪蘆花圖)」로 ‘게가 갈대꽃을 탐한다.’ 라는 뜻이다.", start: 0, end: 8326 },
     { text: "김홍도가 과거를 보러 가는 선비에게 그려 주었다고 전한다.", start: 8326, end: 13424 },
@@ -27,6 +21,14 @@ export default function Page() {
     { text: "‘해룡왕처야횡행(海龍王處也橫行)’은 ‘바다 용왕님 계신 곳에서도, 옆으로 걷는다네.’라는 뜻이야.", start: 28396, end: 36690 },
     { text: "과거에 합격해서 신하가 되면 指鹿爲馬와 같은 상황에 부닥쳐도, 옆으로 걷는 게의 천성처럼 소신껏 행동하라는 의미야.", start: 36690, end: 47072 },
   ];
+
+  const sounds = ["/sound/3/77_story_1.mp3", "/sound/3/77_story_2.mp3"];
+
+  const sound = new Howl({
+    src: sounds[step - 1],
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
 
   useEffect(() => {
     return () => {
@@ -38,13 +40,13 @@ export default function Page() {
     <>
       <CultureHeader title={"어떤 권력에도 굴하지 않는 신하의 걸음"} />
 
-      {step === 1 && (
+      {/* {step === 1 && ( */}
         <SoundButton2
           className="absolute top-[110px] left-[1220px] animate__animated animate__bounceIn animate__delay-2s z-10"
           active={isReading}
           onClick={() => sound.play()}
         />
-      )}
+      {/* )} */}
 
       <ContentContainer>
         {step === 1 && (

@@ -184,7 +184,7 @@ export default function Page() {
         { letter: "之", reading: "지" },
         { letter: "나", isKor: true },
       ],
-      sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/4-1.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] font-bold">
           인하여
@@ -224,7 +224,7 @@ export default function Page() {
         },
         { letter: "러라.", isKor: true },
       ],
-      sound: "/sound/5/122/4.mp3", // 실제 경로로 수정 필요
+      sound: "/sound/5/122/4-2.mp3", // 실제 경로로 수정 필요
       content: (
         <div className="flex flex-wrap text-[50px] font-bold">
           끝내
