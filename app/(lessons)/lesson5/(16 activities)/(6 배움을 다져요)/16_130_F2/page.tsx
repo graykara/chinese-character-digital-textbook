@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={
-          " 주어진 풀이를 참고하여 ①~④에 알맞은 한자를 써 넣어 단어를 완성해 보자."
+          "주어진 풀이를 참고하여 ①~④에 알맞은 한자를 써 넣어 단어를 완성해 보자."
         }
         sound="/sound/5/130-i.mp3"
       />

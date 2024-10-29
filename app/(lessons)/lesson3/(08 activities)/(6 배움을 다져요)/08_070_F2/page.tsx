@@ -4,6 +4,7 @@ import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthe
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useState } from "react";
@@ -23,7 +24,7 @@ export default function Page() {
         title={
           "디지털 사전에서 검색한 결과를 보고 물음에 답해 보자."
         }
-        sound=""
+        sound="/sound/3/70-i-3.mp3"
       />
 
       {step === 1 && <Step1 />}
@@ -137,24 +138,13 @@ const Step2 = () => {
           containerClassName="absolute top-[400px] left-[410px] mt-1"
         />
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 53,
-              top: 410,
-              left: 665
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer2[2] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[730px] left-[665px] top-[350px] pt-0 ml-3 text-[40px] leading-[62px]  bg-transparent ${showAnswer ? "text-answer" : ""
-            }`}
+        <TextareaWithPen
+          answer={answer2[2]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[730px] left-[665px] top-[350px] pt-0 ml-3 text-[40px] leading-[62px]  bg-transparent ${showAnswer ? "text-answer" : ""}`}
+          penClassName="h-[53px] top-[410px] left-[665px]"
           rows={2}
-        ></textarea>
+        />
       </ContentContainer>
       <CheckAnswerButton
         active={showAnswer}

@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">다음 글을 읽고 빈칸에 들어갈 말을 써 보자.</p>}
-        sound="" 
+        sound="/sound/2/48-i.mp3" 
       />
 
       {step === 1 && <Step1 />}
@@ -36,7 +36,7 @@ const Step1 = () => {
       <ContentContainer>
         <VideoThumbnail_big
           thumbnail={IMAGE.src}
-          video="/video/animation/2-4_34.mp4"
+          video="/video/animation/2-6_48.mp4"
         />
       </ContentContainer>
       <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />

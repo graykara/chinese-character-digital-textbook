@@ -57,7 +57,7 @@ export default function Page() {
         title={
           "한자 카드를 결합하여 아래의 설명에 해당하는 단어를 만들어 보자."
         }
-        sound=""
+        sound="/sound/4/100-i-2.mp3"
       />
 
       <ContentContainer className="!justify-start !items-start">

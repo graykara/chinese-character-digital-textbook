@@ -104,7 +104,7 @@ export default function Page() {
             설명에 해당하는 어휘가 되도록 가로 또는 세로로 묶어 보자.
           </p>
         }
-        sound=""
+        sound="/sound/2/52-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start">

@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={"한자 카드를 참고하여 문장의 의미에 맞는 한자의 음을 써 보자."}
-        sound=""
+        sound="/sound/5/124-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start -top-[75px] left-[100px]">

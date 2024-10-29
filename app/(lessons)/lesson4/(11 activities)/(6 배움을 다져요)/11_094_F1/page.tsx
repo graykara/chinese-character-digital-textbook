@@ -4,12 +4,14 @@ import { StrengthenLearningMainContentHeader } from "@/app/components/headers/st
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useEffect, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리27.png";
+import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리26.png";
+import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리27.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -29,7 +31,7 @@ export default function Page() {
             <p className="tracking-tighter -mr-10">문장의 풀이 순서를 빈칸에 숫자로 써 보고, 문장을 보고 느낀 점이나 스스로 다짐하는 말에 #기호를 붙여 정리해 보자.</p>
           </>
         }
-        sound=""
+        sound="/sound/4/94-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start -top-4">
@@ -146,33 +148,15 @@ export default function Page() {
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
               containerClassName="absolute left-[1044px] top-[50px] mt-1 pl-5"
             />
-            {/* <div className="relative"> */}
-              {!value && !showAnswer ? (
-                <img
-                  src="/ui/textarea-pen.png"
-                  className="absolute pointer-events-none"
-                  style={{
-                    height: 40,
-                    top: 330,
-                    left: 720
-                  }}
-                />
-              ) : null}
-              <textarea
-                value={showAnswer ? answers2[8] : value}
-                onChange={(e) => setValue(e.target.value)}
-                className={`absolute resize-none w-[465px] left-[720px] top-[275px] pt-1 ml-3 text-[40px] leading-[50px]  bg-transparent ${showAnswer ? "text-answer" : ""
-                  }`}
-                rows={2}
-              ></textarea>
-            {/* </div> */}
-            {/* <InputWithPen
+
+            <TextareaWithPen
               answer={answers2[8]}
               showAnswer={showAnswer}
-              className="text-answer text-[45px] w-[468px] bg-transparent"
-              penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-5"
-              containerClassName="absolute left-[630px] top-[315px] mt-1 pl-5"
-            /> */}
+              containerClassName={`absolute resize-none w-[465px] left-[720px] top-[275px] pt-1 ml-3 text-[40px] leading-[50px]  bg-transparent ${showAnswer ? "text-answer" : ""}`}
+              penClassName="h-[40px] top-[330px] left-[720px]"
+              rows={2}
+            />
+
           </div>
         )}
       </ContentContainer>
@@ -183,7 +167,7 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

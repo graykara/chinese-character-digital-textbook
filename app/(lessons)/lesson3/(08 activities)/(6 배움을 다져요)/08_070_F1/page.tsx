@@ -7,6 +7,7 @@ import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어223.png"; //223, 224, 225
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어224.png"; //223, 224, 225
@@ -22,12 +23,12 @@ export default function Page() {
     {step === 3 ? (
       <StrengthenLearningMainContentHeader
         title={" 풀이 순서가 같은 두 개의 성어를 찾아 ○표 해 보자."}
-        sound=""
+        sound="/sound/3/70-i-2.mp3"
       />
     ) : (
       <StrengthenLearningMainContentHeader
         title={"성어와 의미가 통하는 우리말 속담을 디지털 도구로 찾아 써보자. "}
-        sound=""
+        sound="/sound/3/70-i-1.mp3"
       />
     )}
       {step === 1 && <Step1 />}
@@ -47,28 +48,17 @@ const Step1 = () => {
     <>
       <SmartButton
         link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
-        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1" />
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 55,
-              top: 155,
-              left: 365
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[0] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[820px] text-center left-[330px] top-[150px] pt-3 ml-3 text-[50px] tracking-tight leading-[70px] bg-transparent ${showAnswer ? "text-answer" : ""
-            }`}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[820px] text-center left-[330px] top-[150px] pt-3 ml-3 text-[50px] tracking-tight leading-[70px] bg-transparent ${showAnswer ? "text-answer" : ""}`}
+          penClassName="h-[55px] top-[155px] left-[365px]"
           rows={2}
-        ></textarea>
+        />
       </ContentContainer>
 
       <CheckAnswerButton
@@ -96,24 +86,13 @@ const Step2 = () => {
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE2.src} />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 55,
-              top: 155,
-              left: 365
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[0] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[820px] text-center left-[330px] top-[150px] pt-3 ml-3 text-[50px] tracking-tight leading-[70px] bg-transparent ${showAnswer ? "text-answer" : ""
-            }`}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[820px] text-center left-[330px] top-[150px] pt-3 ml-3 text-[50px] tracking-tight leading-[70px] bg-transparent ${showAnswer ? "text-answer" : ""}`}
+          penClassName="h-[55px] top-[155px] left-[365px]"
           rows={2}
-        ></textarea>
+        />
       </ContentContainer>
 
       <CheckAnswerButton

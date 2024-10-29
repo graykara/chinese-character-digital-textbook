@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">성어 성격 유형 검사를 풀어 보자.</p>}
-        sound=""
+        sound="/sound/3/78-i.mp3"
       />
 
       <ContentContainer>

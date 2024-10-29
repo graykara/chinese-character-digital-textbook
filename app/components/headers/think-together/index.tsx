@@ -15,9 +15,23 @@ export const ThinkTogetherHeader = ({
   subTitle?: string | ReactNode;
   className?: string | ReactNode;
 }) => {
+  // before
+  // useEffect(() => {
+  //   sound && SOUND(sound).play();
+  // }, []);
+
+  // after
   useEffect(() => {
-    sound && SOUND(sound).play();
-  }, []);
+    if (sound) {
+      const soundInstance = SOUND(sound);
+      soundInstance.stop();
+      soundInstance.play();
+
+      return () => {
+        soundInstance.stop();
+      };
+    }
+  }, [sound]);
 
   return (
     <>

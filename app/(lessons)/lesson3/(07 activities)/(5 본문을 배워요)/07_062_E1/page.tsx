@@ -6,12 +6,17 @@ import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png"
-import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어111.png"
-import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어114.png"
-import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어116.png"
+import IMAGE1 from "./img1.png";
+import IMAGE2 from "./img2.png";
+import IMAGE3 from "./img3.png";
+import IMAGE4 from "./img4.png";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png" //18-19,110
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어111.png" //111-113
+import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어114.png" //114-115
+import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어116.png" //116-117
 import { MainContent } from "../../../main-content";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
+import { MainContentVideoButton } from "@/app/components/main-content/video-button"
+import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -63,7 +68,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/3/p063_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] cursor-pointer"
               >
                 東風
               </span>
@@ -155,6 +160,131 @@ export default function Page() {
     },
   ];
 
+  const modal_content = [
+    {
+      className: "w-[766px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn1-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/gam.png" width={54} />
+          성어의 겉뜻과 속뜻
+        </>
+      ),
+      content: (
+        <div className="px-4 pt-2 pb-4 text-[50px] leading-[130%] tracking-tighter break-keep">
+          <span className="font-bold">성어(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">成語</span>)의 겉뜻과 속뜻</span>
+          <br />
+          <span>성어를 글자대로 풀이한 것을<br />‘겉뜻’이라고 하고, 그 속에 담긴<br />뜻을 ‘속뜻’이라고 한다.</span>
+        </div>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>① 그 사람의 말은{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/1.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">十中八九</span>{" "}거짓말이야.</p>
+            <p>② 은행업무{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/1.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">十中八九</span>{" "}는 비대면 활용</p>
+          </div>
+          <img src={IMAGE1.src} className="mx-auto" />
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>① 그 친구에게 나의 충고는{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/2.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">馬耳東風</span>{" "}이었다.</p>
+            <p>② 기후 위기 경고에도{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/2.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">馬耳東風</span></p>
+          </div>
+          <img src={IMAGE2.src} className="mx-auto" />
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>① 그 팀과 우리 팀은 실력이{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/3.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">莫上莫下</span>이다.</p>
+            <p>②{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/3.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">莫上莫下</span>{" "}대결 펼친 배구 경기</p>
+          </div>
+          <img src={IMAGE3.src} className="mx-auto" />
+        </>
+      ),
+    },
+    {
+      className: "w-[1315px]",
+      bgColor: "#4f9aab",
+      image: "/ui/popupbtn2-1.png",
+      meaningsTitle: (
+        <>
+          <img src="/ui/resource-button-icon.png" width={46} />
+          성어 활용
+        </>
+      ),
+      content: (
+        <>
+          <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
+            <p>① 그렇게 한쪽으로 치우친 시각은{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/4.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">坐井觀天</span>과 다를 바 없어. </p>
+            <p>②{" "}
+              <span
+                onClick={() => SOUND("/sound/3/62/4.mp3").play()}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">坐井觀天</span>의 자세 버릴때</p>
+          </div>
+          <img src={IMAGE4.src} className="mx-auto" />
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
       <LearnMainContentPageTemplate>
@@ -164,6 +294,17 @@ export default function Page() {
           video="/video/writing/62p_1.mp4"
           className="absolute left-[112px] top-[40px]"
         />
+
+        <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
+          {step === 1 ? (
+            <>
+              <MainContentModalButton modal_data={modal_content[step - 1]} />
+              <MainContentModalButton modal_data={modal_content[step]} />
+            </>
+          ) :
+            <MainContentModalButton modal_data={modal_content[step]} />
+          }
+        </div>
 
         <ContentContainer className="!justify-start w-[1760px] px-[130px]">
 

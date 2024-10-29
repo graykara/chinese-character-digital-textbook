@@ -19,7 +19,7 @@ export default function Page() {
         title={
           "내가 관심 있는 분야에서 사용하는 한자어를 골라 사전에서 뜻풀이를 찾아보고 단어장으로 정리해 보자."
         }
-        sound=""
+        sound="/sound/2/52-i-3.mp3"
       />
 
       <Step1 />

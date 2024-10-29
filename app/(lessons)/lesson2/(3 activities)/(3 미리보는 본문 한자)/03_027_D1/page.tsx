@@ -30,7 +30,7 @@ export default function Page() {
 
   return (
     <>
-      <HeaderContainer>
+      <HeaderContainer sound="/sound/2/27-i.mp3">
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 

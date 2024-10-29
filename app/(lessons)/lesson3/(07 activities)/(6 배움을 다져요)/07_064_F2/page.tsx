@@ -10,6 +10,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { StepContainer } from "@/app/components/step-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어123.png";
 
 export default function Page() {
@@ -19,23 +20,23 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title={"성어가 사용된 사례를 디지털 도구로 찾아 써 보자."}
-        sound=""
+        sound="/sound/3/64-i-2.mp3"
       />
       <div className="absolute top-[180px] left-[1320px] flex items-center gap-5">
       </div>
       {step !== 2 ? (
-      <SmartButton
+        <SmartButton
           link="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EC%8B%AD%EC%A4%91%ED%8C%94%EA%B5%AC&oquery=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0&tqi=iXMjDspzLiwssQhkuwossssss9C-345908"
           className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[176px] z-1"
         />
-        ) : null }
+      ) : null}
 
       {step !== 1 ? (
-      <SmartButton
+        <SmartButton
           link="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%A7%89%EC%83%81%EB%A7%89%ED%95%98&oquery=%EC%8B%AD%EC%A4%91%ED%8C%94%EA%B5%AC&tqi=iwP8Bdqo1SossD7NtiwssssstL4-456981"
           className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[176px] z-1"
         />
-        ) : null }
+      ) : null}
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
@@ -63,28 +64,17 @@ const Step1 = () => {
         <InputWithPen
           answer={answer1}
           showAnswer={showAnswer}
-          className={`w-[480px] bg-transparent text-[40px]  tracking-tighter ${showAnswer ? "text-example" : ""}`}
+          className={`w-[420px] bg-transparent text-[40px]  tracking-tighter ${showAnswer ? "text-example" : ""}`}
           penClassName="-left-1 -mt-2 w-[52px]"
           containerClassName="absolute top-[180px] left-[585px] mt-1 ml-1"
         />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 50,
-              top: 260,
-              left: 550
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer2 : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
-            }`}
+        <TextareaWithPen
+          answer={showAnswer ? answer2 : value}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[50px] top-[260px] left-[550px]"
           rows={4}
-        ></textarea>
+        />
       </ContentContainer>
 
       <ExampleAnswerButton
@@ -109,7 +99,7 @@ const Step2 = () => {
     <>
 
       <ContentContainer className="!justify-start -top-[90px] left-7">
-        <img src={IMAGE1.src} className="-ml-6 mt-16" />
+        <img src={IMAGE2.src} className="-ml-6 mt-16" />
         <div className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]">
           <span className="font-haeseo">莫</span>
           <span className="font-haeseo">上</span>
@@ -123,24 +113,13 @@ const Step2 = () => {
           penClassName="-left-1 -mt-2 w-[52px]"
           containerClassName="absolute top-[180px] left-[585px] mt-1 ml-1"
         />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 50,
-              top: 260,
-              left: 550
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer2 : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""
-            }`}
+        <TextareaWithPen
+          answer={showAnswer ? answer2 : value}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[50px] top-[260px] left-[550px]"
           rows={4}
-        ></textarea>
+        />
       </ContentContainer>
 
       <ExampleAnswerButton

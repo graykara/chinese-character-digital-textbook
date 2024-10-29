@@ -28,7 +28,7 @@ export default function Page() {
 
       <TitleContainer 
         className="mt-10"
-        sound=""
+        sound="/sound/5/121-i-1.mp3"
       >
         <p className="tracking-tighter flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />

@@ -41,11 +41,11 @@ export default function Page() {
 
       <IntroWhyHeader className="absolute left-[70px] top-[50px]" />
 
-      <div className="absolute left-[70px] top-[180px] w-[1100px] h-[720px] overflow-y-auto rounded-[20px] p-[25px]">
+      <div className="absolute left-[70px] top-[180px] w-[1150px] h-[720px] overflow-y-auto rounded-[20px] pt-[20px] pl-[28px] pb-0">
         <IntroTextPlayer
           sound="/sound/3/58_intro/3.mp3"
           data={sound}
-          textClassName="text-left"
+          textClassName="text-left leading-[88px] tracking-[-1px]"
         />
       </div>
 

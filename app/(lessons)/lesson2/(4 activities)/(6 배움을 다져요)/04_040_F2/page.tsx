@@ -45,7 +45,7 @@ const Step1 = () => {
             <br />그 뜻도 써 보자.
           </div>
         }
-        sound="2/40-i-2.mp3"
+        sound="/sound/2/40-i-2.mp3"
       />
 
       <ContentContainer className="!justify-start left-14 -top-7">
@@ -116,7 +116,7 @@ const Step2 = () => {
             보자.
           </div>
         }
-        sound="2/40-i-3.mp3"
+        sound="/sound/2/40-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start left-12 top-6">

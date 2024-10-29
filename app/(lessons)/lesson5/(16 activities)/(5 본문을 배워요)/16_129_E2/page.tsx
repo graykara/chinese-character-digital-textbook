@@ -15,7 +15,7 @@ export default function Page() {
             내어 쌀을 마련해서 굶주린 백성들에게 나누어 주었다. 만덕의 이야기를
             통해 나눔과 더불어 사는 삶의 의미를 되새겨 보자.
             `,
-            sound: "/sound/5/111.mp3",
+            sound: "/sound/5/129.mp3",
           },
         ]}
       />

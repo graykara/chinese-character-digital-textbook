@@ -1,154 +1,57 @@
 "use client";
 
-import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
-import { GroupButton } from "@/app/components/buttons/group-button";
-import { WritingButton } from "@/app/components/buttons/writing-button";
-import { BuddyButton } from "@/app/components/buttons/buddy-button";
-import { SmartButton } from "@/app/components/buttons/smart-button";
-import { QRButton } from "@/app/components/buttons/qr-button";
-import QR from "./qr.png";
-import IMAGE1 from "./bg_1.png";
-import IMAGE2 from "./bg_2.png";
-import IMAGE3 from "./bg_3.png";
-import IMAGE4 from "./bg_4.png";
-import { InputWithPen } from "@/app/components/input-with-pen";
-import { ContentContainer } from "@/app/components/content-container";
-import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
+import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
 import { useState } from "react";
+import IMAGE3 from "./bg_3.png";
+import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
-import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어124.png";
-import BACKGROUND2 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어125.png";
-import BACKGROUND3 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어126.png";
-import BACKGROUND4 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어127.png";
-import { StepContainer } from "@/app/components/step-container";
+import BACKGROUND3 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어123.png";
+import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
+import { WritingButton } from "@/app/components/buttons/writing-button";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const answers = ["조고에게 이것은 사슴이라고 말했을 것 같다. 그 이유는 자신의 편을 가르기위해 남을 속이는 행동이 잘못되었기 때문이다."];
   const [showAnswer, setShowAnswer] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <>
-      <StrengthenLearningWordHeader
+      <StrengthenLearningMainContentHeader
         title={
-          <p className="-mr-20">디지털 도구로 모르는 한자를 찾고 가로 열쇠와 세로 열쇠를 참고하여 빈칸에 들어갈 한자를 써 보자.</p>
+          <p>성어 ‘<span className="font-haeseo text-[60px] leading-[50px] tracking-[-8px]">指鹿爲馬</span>’의 유래에 등장하는 인물들을 떠올려 보고<br />아래 질문에 답해 보자.</p>
         }
-        sound=""
+        sound="/sound/3/76-i-2.mp3"
       />
-      <div><p className="ml-[250px] -mt-5 text-[55px] text-[#1b1b1b] tracking-tighter break-keep leading-[60px] "><span className="text-[#AD6C35] text-[55px]">*</span> 부록의 미니 자전을 이용해도 좋습니다.</p></div>
 
-      <SmartButton
-        link="https://hanja.dict.naver.com/#/main"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute right-[150px] top-[275px] z-1" />
+      <div className="absolute top-[275px] left-[750px] flex items-center gap-5">
+        <WritingButton className="animate__animated animate__fadeIn animate__delay-1s" />
+      </div>
 
-      {step === 1 && <Step1 />}
-      {step === 2 && <Step2 />}
-      {step === 3 && <Step3 />}
-      {step === 4 && <Step4 />}
+      <ContentContainer className="!justify-start left-16 top-4">
+        <img src={IMAGE3.src} className="" />
+        <div className="w-[1180px] absolute gap-[3px] -top-[5px] ml-[75px]">
+          <p className="text-[55px] tracking-tighter leading-tight">만약 자신이 당시의 현장에 있다면 조고의 질문에 뭐라고 대답할 것인가? 또한 그 이유는 무엇인가?</p>
+        </div>
 
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1200px] left-[100px] top-[170px] pt-0 pb-0 ml-24 text-[45px] tracking-tighter leading-[70px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[48px] top-[177px] left-[130px]"
+          rows={2}
+        />
+
+      </ContentContainer>
+
+      <ExampleAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+      <img
+        src={BACKGROUND3.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );
-}
-
-const Step1 = () => {
-  const answer = "朝";
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  return (
-    <>
-      <ContentContainer className="!justify-start top-[75px] -left-[110px]">
-        <img src={IMAGE1.src} />
-        <InputWithPen
-          answer={answer}
-          showAnswer={showAnswer}
-          className={`w-[200px] text-center bg-transparent font-haeseo text-[90px] tracking-tighter`}
-          penClassName="left-[70px] -mt-2 h-[60px]"
-          containerClassName="absolute top-[0px] left-[340px] -mt-1 ml-1"
-        />
-      </ContentContainer>
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-    </>
-  )
-}
-
-const Step2 = () => {
-  const answer = "指";
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  return (
-    <>
-      <ContentContainer className="!justify-start top-[75px] left-[95px]">
-        <img src={IMAGE2.src} />
-        <InputWithPen
-          answer={answer}
-          showAnswer={showAnswer}
-          className={`w-[200px] text-center bg-transparent font-haeseo text-[90px] tracking-tighter`}
-          penClassName="left-[70px] -mt-2 h-[60px]"
-          containerClassName="absolute top-[0px] left-[135px] -mt-1 ml-1"
-        />
-      </ContentContainer>
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-    </>
-  )
-}
-
-const Step3 = () => {
-  const answer = "足";
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  return (
-    <>
-      <ContentContainer className="!justify-start top-[75px] left-[55px]">
-        <img src={IMAGE3.src} />
-        <InputWithPen
-          answer={answer}
-          showAnswer={showAnswer}
-          className={`w-[200px] text-center bg-transparent font-haeseo text-[90px] tracking-tighter`}
-          penClassName="left-[70px] -mt-2 h-[60px]"
-          containerClassName="absolute top-[140px] left-[390px] -mt-1 ml-1"
-        />
-      </ContentContainer>
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-    </>
-  )
-}
-
-const Step4 = () => {
-  const answer = "利";
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  return (
-    <>
-      <ContentContainer className="!justify-start top-[75px] left-[100px]">
-        <img src={IMAGE4.src} />
-        <InputWithPen
-          answer={answer}
-          showAnswer={showAnswer}
-          className={`w-[200px] text-center bg-transparent font-haeseo text-[90px] tracking-tighter`}
-          penClassName="left-[70px] -mt-2 h-[60px]"
-          containerClassName="absolute top-[140px] left-[127px] -mt-1 ml-1"
-        />
-      </ContentContainer>
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-    </>
-  )
 }

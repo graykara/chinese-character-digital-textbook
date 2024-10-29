@@ -8,6 +8,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭19.png";
@@ -41,9 +42,10 @@ const Step1 = () => {
             본문 내용을 참고하여 황희와 농부의 이야기를 대본으로 완성해 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/112-i-1.mp3"
       />
-      <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
+      <WritingButton
+        className="animate__animated animate__fadeIn animate__delay-1s absolute top-[135px] left-[1565px] flex items-center gap-5" />
 
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} />
@@ -54,25 +56,13 @@ const Step1 = () => {
           penClassName="-left-3 -mt-2 w-[52px]"
           containerClassName="absolute top-[210px] left-[730px] mt-1 ml-1"
         />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 52,
-              top: 420,
-              left: 365,
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer2 : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${
-            showAnswer ? "text-example tracking-tighter break-keep" : ""
-          }`}
+        <TextareaWithPen
+          answer={answer2}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[52px] top-[420px] left-[365px]"
           rows={2}
-        ></textarea>
+        />
       </ContentContainer>
 
       <ExampleAnswerButton
@@ -100,7 +90,7 @@ const Step2 = () => {
             ‘나의 언어생활 점검표’를 작성하여 자신의 언어생활을 돌아보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/112-i-2.mp3"
       />
       <ContentContainer className="!justify-start -top-[50px] left-9">
         <img src={IMAGE2.src} />

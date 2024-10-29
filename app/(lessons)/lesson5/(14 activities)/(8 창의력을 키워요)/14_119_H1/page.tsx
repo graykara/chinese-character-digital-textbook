@@ -1,42 +1,30 @@
 "use client";
 
 import IMAGE from "./image.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
-import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { TitleContainer } from "@/app/components/title-container";
-import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요22.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { GroupButton } from "@/app/components/buttons/group-button";
 
 export default function Page() {
-  const answers1 = [
-    "낮말은 새가 듣고 밤말은 쥐가 듣는다.",
-    "일아무도 안 듣는데서라도 말조심을 해야한다.",
-  ];
-  const answers2 = [
-    "스토리보드 작성하기.",
-    "필요한 역할 분담하기.",
-    "각 장면을 내용에 맞게 촬영하기.",
-    "영상 완성하여 발표하기.",
+  const answers = [
+    "무분별한 개발로 인한 동물의 서식지 파괴",
+    "야생 동물의 멸종 위기 발생",
+    "무분별한 개발을 막기 위한 법을 제정하고, 사람들의 인식 제고를 위한 캠페인 활동을 한다.",
   ];
   const [showAnswer, setShowAnswer] = useState(false);
-  // const [step, setStep] = useState(1);
-
-  // useEffect(() => {
-  //   setShowAnswer(false);
-  // }, [step]);
 
   return (
     <>
       <CreativityPageTemplate>
         <TitleContainer 
           className="left-5 mt-14"
-          sound="">
+          sound="/sound/5/119-i.mp3">
           <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
             <img src="/ui/flower-icon-2.png" width={38} height={38} />
             생태계가 파괴되고 있는 사례를 찾아 써 보고 이 문제를 해결할 수 있는
@@ -46,6 +34,27 @@ export default function Page() {
 
         <ContentContainer className="-top-7 -left-14">
           <img src={IMAGE.src} />
+          <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[320px] left-[185px] top-[280px] text-[40px] leading-[63px] tracking-tighter break-keep bg-transparent pl-6 mb-1 ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[50px] top-[280px] left-[200px]"
+          rows={6}
+        />
+        <TextareaWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[320px] left-[570px] top-[280px] text-[40px] leading-[63px] tracking-tighter break-keep bg-transparent pl-6 mb-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[50px] top-[280px] left-[585px]"
+          rows={6}
+        />
+        <TextareaWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[320px] left-[960px] top-[280px] text-[40px] leading-[63px] tracking-tighter break-keep bg-transparent pl-6 mb-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[50px] top-[280px] left-[975px]"
+          rows={6}
+        />
         </ContentContainer>
       </CreativityPageTemplate>
 

@@ -1,8 +1,11 @@
 "use client";
 
+import { PageInfoContext } from "@/app/utils/page-info";
+import { useContext } from "react";
+import ReactPlayer from "react-player";
+import BACKGROUND1 from "@/app/bgpng_temp/intro/5단원_무엇을 배워요_.png";
 import { IntroTextPlayer } from "@/app/components/intro/intro-text-player";
 import { IntroWhatHeader } from "@/app/components/intro/intro-what-header";
-import ReactPlayer from "react-player";
 
 export default function Page() {
   const sound = [
@@ -33,15 +36,20 @@ export default function Page() {
         playing
       />
 
-      <IntroWhatHeader className="absolute left-[100px] top-[100px]" />
+      <IntroWhatHeader className="absolute right-[100px] top-[130px]" />
 
-      <div className="bg-white bg-opacity-50 absolute left-[100px] top-[250px] w-[1100px] h-[670px] overflow-y-auto rounded-[20px] p-[25px]">
+      <div className="bg-white bg-opacity-50 absolute right-[100px] top-[245px] w-[1160px] h-[675px] overflow-y-auto rounded-[20px] pt-[25px] pb-[10px] pl-[50px] pr-[40px] animate__animated animate__fadeIn animate__delay-1s">
         <IntroTextPlayer
           sound="/sound/5/106_intro/5.mp3"
           data={sound}
-          textClassName="text-left"
+          textClassName="text-right leading-[80px]"
         />
       </div>
+
+      <img
+        src={BACKGROUND1.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

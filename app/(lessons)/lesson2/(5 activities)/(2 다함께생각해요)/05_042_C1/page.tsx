@@ -23,7 +23,7 @@ export default function Page() {
         title={
           <p className="-ml-2 text-[52px] leading-[60px] tracking-[-2.5px]">대화에서 틀린 말을 모두 찾아 바르게 고치고 디지털 도구를 활용하여 그 뜻을 찾아보자.</p>
         }
-        sound=""
+        sound="/sound/2/42-i.mp3"
         subTitle={
           <div className="animate__animated animate__fadeIn flex items-center -mt-10">
             <p className="-ml-[42px] mt-1 text-[40px] text-[#1b1b1b] tracking-tighter break-keep leading-[55px] "><span className="text-[#df865a] text-[45px] -mr-1">*</span> 바르게 고친 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.</p>
@@ -50,7 +50,7 @@ const Step1 = () => {
       <ContentContainer className="!justify-start py-2 -top-5">
         <VideoThumbnail
           thumbnail={IMAGE.src}
-          video="/video/animation/2-4_34.mp4"
+          video="/video/animation/2-5_42.mp4"
           width={860}
           height={460}
         />

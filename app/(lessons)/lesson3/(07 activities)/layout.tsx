@@ -6,7 +6,7 @@ import { PropsWithChildren, useContext } from "react";
 
 export default function ActivityLayout({ children }: PropsWithChildren) {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("7. 언어생활 속의 성어");
+  setSubtitle("7. 언어생활 속의 성어 ①");
 
   return (
     <>

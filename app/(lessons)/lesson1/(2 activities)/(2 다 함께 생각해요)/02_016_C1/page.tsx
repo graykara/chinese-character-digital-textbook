@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">밑줄 친 부분의 뜻이 무엇일지 생각해 보자.</p>}
-        sound=""
+        sound="/sound/1/16-i.mp3"
       />
 
       <div className="h-full flex justify-center items-center -mt-3">

@@ -3,9 +3,9 @@
 import { ExerciseHeader, ExerciseHeader2 } from "@/app/components/exercise-header";
 import { Header } from "../assets/header";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
-
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -64,20 +64,13 @@ export default function Page() {
   const [value, setValue] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
 
-  useEffect(() => {
-    setValue("");
-  }, [showAnswer, step]);
-
-  useEffect(() => {
-    setShowAnswer(false);
-  }, [step]);
-
   return (
     <>
       <Header />
 
       <ExerciseHeader2
         text="한자 문화권 나라의 길거리를 담은 사진이다. 각 사진 속의 한자가 무엇을 뜻하는지 알아 보자."
+        sound="/sound/1/15-i2.mp3"
       />
 
       <ContentContainer className="-top-6 left-20">
@@ -95,13 +88,13 @@ export default function Page() {
                   top: quiz.position.y,
                 }}
               >
-                <textarea
-                  className={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${showAnswer ? "text-example" : ""
-                    }`}
-                  style={{ fontSize: quiz.fontSize + "px" }}
-                  value={showAnswer ? quiz.answer : value}
-                  onChange={(e) => setValue(e.currentTarget.value)}
+                <TextareaWithPen
+                  answer={showAnswer ? quiz.answer : value}
+                  showAnswer={showAnswer}
+                  containerClassName={`w-[450px] mt-5 bg-transparent resize-none text-center leading-tight tracking-tight break-keep ${showAnswer ? "text-example" : ""}`}
+                  penClassName="h-[55px] top-[27px] left-[60px]"
                   rows={quiz.rows}
+                  style={{ fontSize: quiz.fontSize + "px" }}
                 />
               </div>
             </div>

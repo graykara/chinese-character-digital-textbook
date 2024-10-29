@@ -1,15 +1,11 @@
 "use client";
 
 import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
-import IMAGE from "./image.png";
-import IMAGE2_BEFORE from "./image2-before.png";
-import IMAGE2_AFTER from "./image2-after.png";
+import { TitleContainer } from "@/app/components/title-container";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
-import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
-import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글3.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -39,51 +35,45 @@ const Step1 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">나에게 힘이 되었던 말을 써 보자.</p>}
-        sound=""
+        sound="/sound/4/96/1.mp3"
       />
 
       <ContentContainer className="!justify-start">
-        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[200px]"></div>
+        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[220px]"></div>
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 10,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[0] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[10px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[10px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[60px] top-[10px] left-[80px]"
           rows={3}
-        ></textarea>
+        />
+      </ContentContainer>
 
-        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[200px] mt-[150px]"></div>
+      <TitleContainer
+        className="left-20"
+        sound="/sound/4/96/2.mp3">
+          <div className="animate__animated animate__fadeIn relative w-[1000px] -top-[100px]">
+          <ul className="list-disc marker:text-[#567c56] pl-0">
+            <li
+              className={`absolute leading-tight max-w-[1400px] break-keep `}
+            >
+              <p className="-ml-2">들었을 때 힘이 쭉 빠졌던 말을 써 보자.</p>
+            </li>
+          </ul>
+          </div>
+      </TitleContainer>
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 360,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answers[1] : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[360px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+      <ContentContainer className="!justify-start">
+        <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[220px] mt-0"></div>
+
+        <TextareaWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[10px] text-[55px] leading-[65px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[60px] top-[10px] left-[80px]"
           rows={3}
-        ></textarea>
+        />
 
       </ContentContainer>
 
@@ -103,35 +93,25 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">학급 친구들과 함께 ‘힘이 되는 말’ 세 가지를 뽑아 보자.</p>}
-        sound=""
+        sound="/sound/4/96/3.mp3"
       />
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[350px] top-[181px] w-[100px] z-1" />
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[220px] top-[186px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[220px] top-[186px] z-1" />
 
       <ContentContainer className="!justify-start">
         <div className="bg-[#f2efec] p-5 rounded-3xl w-[1400px] h-[450px]"></div>
-        {!value ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 60,
-              top: 10,
-              left: 80
-            }}
-          />
-        ) : null}
-        <textarea
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1350px] left-[80px] top-[10px] text-[55px] leading-[70px] tracking-tighter break-keep bg-transparent py-1"
-            }`}
+
+        <TextareaWithPen
+          // answer={answer}
+          // showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1265px] left-[165px] top-[10px] text-[55px] leading-[70px] tracking-tighter break-keep bg-transparent py-1"}`}
+          penClassName="h-[60px] top-[10px] left-[80px]"
           rows={6}
-        ></textarea>
+        />
       </ContentContainer>
 
-      
+
       <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

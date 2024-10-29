@@ -38,7 +38,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-5px] -mr-1 cursor-pointer"
               >
                 十之一
               </span>
@@ -56,7 +56,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 活
               </span>
@@ -93,7 +93,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 餘
               </span>
@@ -108,7 +108,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 盡
               </span>
@@ -137,7 +137,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word004.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-5px] -mr-2 cursor-pointer"
               >浮黃</span> : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
             </>
           ),
@@ -153,7 +153,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word005.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 之
               </span>
@@ -172,7 +172,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word006.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 如
               </span>
@@ -208,7 +208,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word007.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 若
               </span>
@@ -226,7 +226,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word008.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 而
               </span>
@@ -241,7 +241,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p129_word009.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-2 cursor-pointer"
               >
                 頌
               </span>

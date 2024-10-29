@@ -24,7 +24,7 @@ export default function Page() {
         />
         <TitleContainer
           className="ml-[85px] mt-6"
-          sound="">
+          sound="/sound/4/101-i.mp3">
           <div className="flex items-center gap-1 text-[45px] tracking-[-2px] -ml-[70px] -mr-20">
             내가 시간과 노력을 들여서 이루고 싶은 것을 생각해 보고 구체적인 계획을 쓰고 발표해 보자.
           </div>

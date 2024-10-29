@@ -32,7 +32,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p117_word000.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 以
               </span>
@@ -53,7 +53,7 @@ export default function Page() {
             <p>
               <span
                 onClick={() => SOUND("/sound/5/p117_word001.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
               >
                 而
               </span>
@@ -138,7 +138,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p117_word002.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 自
               </span>
@@ -153,7 +153,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p117_word003.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 自天
               </span>
@@ -170,16 +170,16 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p117_word005.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 之
               </span>
-              : 그것
+              : 그것 → 
               <span
                 onClick={() => SOUND("/sound/5/p117_word006.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-5px] pr-0 cursor-pointer"
               >
-                → 人與物
+                人與物
               </span>
             </>
           ),
@@ -193,7 +193,7 @@ export default function Page() {
             <>
               <span
                 onClick={() => SOUND("/sound/5/p117_word004.mp3").play()}
-                className="font-haeseo cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
               >
                 與
               </span>

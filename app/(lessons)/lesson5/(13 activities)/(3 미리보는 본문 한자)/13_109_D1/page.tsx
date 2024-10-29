@@ -23,7 +23,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10">
+      <TitleContainer className="mt-10" sound="/sound/5/109-i-1.mp3">
         <p className="tracking-tighter flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />
           제시된 한자 카드를 보고, 한자의 뜻을 찾아 적은 뒤 뜻이 서로 상대되는

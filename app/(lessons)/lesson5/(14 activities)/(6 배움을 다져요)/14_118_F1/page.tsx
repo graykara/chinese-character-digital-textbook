@@ -7,6 +7,7 @@ import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -33,7 +34,7 @@ const Step1 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title="본문의 내용을 바탕으로 다음 빈칸을 완성해 보자."
-        sound=""
+        sound="/sound/5/118-i-1.mp3"
       />
       <ContentContainer className="!justify-start -top-[65px] left-[90px]">
         <img src={IMAGE1.src} />
@@ -95,9 +96,7 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer = [
-    "네, 각각의 입장에서 보면 각자가 소중할 수 있지만 함께 살아가는 입장에서 보면 모두가 소중하기 때문입니다.",
-  ];
+  const answer = "네, 각각의 입장에서 보면 각자가 소중할 수 있지만 함께 살아가는 입장에서 보면 모두가 소중하기 때문입니다.";
   const [value, setValue] = useState("");
   return (
     <>
@@ -107,32 +106,21 @@ const Step2 = () => {
             가상 인터뷰의 내용에서 홍대용의 마지막 말에 들어갈 내용을 써 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/118-i-2.mp3"
         className="w-[1600px]"
       />
       <WritingButton className="animate__animated animate__fadeIn animate__delay-1s absolute top-[145px] right-[85px] flex items-center gap-5 z-1" />
 
+
       <ContentContainer className="!justify-start -top-[75px] left-[50px] -mb-20">
         <img src={IMAGE2.src} />
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 40,
-              top: 320,
-              left: 360,
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[390px] left-[335px] top-[325px] pt-1 ml-5 text-[35px] tracking-tighter break-keep leading-[45px] bg-transparent ${
-            showAnswer ? "text-example " : ""
-          }`}
+        <TextareaWithPen
+          answer={answer}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[390px] left-[335px] top-[325px] pt-1 ml-5 text-[35px] tracking-tighter break-keep leading-[45px] bg-transparent ${showAnswer ? "text-example " : ""}`}
+          penClassName="h-[40px] top-[320px] left-[360px]"
           rows={4}
-        ></textarea>
+        />
       </ContentContainer>
       <ExampleAnswerButton
         active={showAnswer}

@@ -8,7 +8,7 @@ import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { InputWithPen } from "@/app/components/input-with-pen";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭3.png";
 
@@ -19,7 +19,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">이야기를 읽고 농부가 황희에게 귓속말한 까닭을 써 보자.</p>}
-        sound=""
+        sound="/sound/5/108-i.mp3"
       />
 
       {step === 1 && <Step1 />}
@@ -54,41 +54,15 @@ const Step2 = () => {
   return (
     <>
       <ContentContainer className="!justify-start -mt-5">
-        {/* {showAnswer ? (
-          <img src={IMAGE2_AFTER.src}/>
-        ) : (
-          <img src={IMAGE2_BEFORE.src} />
-        )} */}
         <img src={IMAGE2.src} />
-        {/* <div className="absolute top-[310px] left-[290px]">
-          <InputWithPen
-            answer={answer}
-            showAnswer={showAnswer}
-            className="w-[960px] h-[80px] text-[45px] tracking-tighter bg-transparent"
-            penClassName="left-0 -translate-x-1/2"
-            containerClassName="relative top-16"
-            isExample
-          />
-        </div> */}
 
-        {!value && !showAnswer ? (
-          <img
-            src="/ui/textarea-pen.png"
-            className="absolute pointer-events-none"
-            style={{
-              height: 54,
-              top: 370,
-              left: 260
-            }}
-          />
-        ) : null}
-        <textarea
-          value={showAnswer ? answer : value}
-          onChange={(e) => setValue(e.target.value)}
-          className={`absolute resize-none w-[1000px] left-[260px] top-[370px] text-[45px] leading-[64px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""
-            }`}
+        <TextareaWithPen
+          answer={answer}
+          showAnswer={showAnswer}
+          containerClassName={`absolute resize-none w-[1000px] left-[260px] top-[370px] px-8 text-[45px] leading-[64px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[54px] top-[370px] left-[260px]"
           rows={4}
-        ></textarea>
+        />
 
       </ContentContainer>
 

@@ -18,7 +18,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title="단어의 뜻을 생각하며 풀이 순서를 적고, 각각의 한자가 들어간 다른 단어를 찾아 한글로 써 보자."
-        sound=""
+        sound="/sound/2/46-i-2.mp3"
       />
 
       <Step1 />

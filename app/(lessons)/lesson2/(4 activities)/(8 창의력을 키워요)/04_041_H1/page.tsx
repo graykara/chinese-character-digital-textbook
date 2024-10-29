@@ -25,7 +25,7 @@ export default function Page() {
         />
         <TitleContainer 
           className="ml-[85px] mt-2"
-          sound="">
+          sound="/sound/2/41-i.mp3">
           <div className="flex items-center gap-1 text-[50px] tracking-[-0.5px]">
           회의 또는 형성의 원리를 활용하여 나만의 한자를 만들고 발표해 보자.
           </div>
