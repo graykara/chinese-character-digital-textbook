@@ -1,49 +1,44 @@
 "use client";
 
 import IMAGE from "./image.png";
-import { StepContainer } from "@/app/components/step-container";
 import { useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘35.png";
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘36.png";
-import { ContentContainer } from "@/app/components/content-container";
+import { HeaderContainer } from "@/app/components/headers/header-container";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
     <>
       <ActivityPageTemplate lesson={5}>
-        <Content1 />
-      </ActivityPageTemplate>
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
-    </>
-  );
-}
-
-const Content1 = () => {
-  return (
-    <ContentContainer className="!justify-start">
-      <img src={IMAGE.src} />
-    </ContentContainer>
-  );
-};
-
-const Content2 = () => {
-  const answers = [" "];
-  const [showAnswer, setShowAnswer] = useState(false);
-  return (
-    <>
-      <div className="h-full flex justify-center overflow-y-auto pt-20 pb-[120px]">
-        <div className="relative h-fit -mt-14 -ml-6">
-          <img src={IMAGE2.src} />
+        <div className="w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
+          <header className="mb-10">
+            <h1 className="text-[60px] text-[#da722c] font-bold text-center">
+              나의 기업 운영 계획서 및 명함 만들기
+            </h1>
+            <HeaderContainer
+              sound="/sound/4/103_001.mp3"
+              className="text-center text-[35px] animate__animated animate__flipInX"
+            >
+              거상 김만덕은 자신이 가진 부를 어려운 사람에게 나눠 주는 나눔의
+              정신을 보여 주었다. 만약 한 기업
+              <br />
+              의 경영자가 되어 사회 공헌 사업을 펼친다면 어떻게 나눔을 베풀 수
+              있을지 나의 기업 운영 계획서와 <br />
+              기업의 가치를 담은 명함을 만들어 보자.
+            </HeaderContainer>
+          </header>
+          <img src={IMAGE.src} className="w-full" />
         </div>
-      </div>
+      </ActivityPageTemplate>
+
       <ExampleAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
+
+      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
-};
+}

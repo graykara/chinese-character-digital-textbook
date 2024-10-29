@@ -1,14 +1,22 @@
 "use client";
 
 import { SolveProblemPageTemplate } from "@/app/pages/solve-problem-page-template";
-import IMAGE1 from "./image1.png";
-import IMAGE2 from "./image2.png";
-import { StepContainer } from "@/app/components/step-container";
+import IMAGE1 from "./1.png";
+import IMAGE3 from "./3.png";
+import IMAGE3_1 from "./3-1.png";
+import IMAGE5 from "./5.png";
+import IMAGE5_1 from "./5-1.png";
+import IMAGE7 from "./7.png";
+import IMAGE9_1 from "./9-1.png";
 import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘33.png";
+import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글38.png";
+import { ContentContainer } from "@/app/components/content-container";
+import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number-icon";
+import { InputWithPen } from "@/app/components/input-with-pen";
+import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -18,19 +26,16 @@ export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const questions = [
-    "한자의 음과 뜻이 옳은 것은?",
-    "대화 속 밑줄 친 부분을 한자로 바꿔 쓰시오.",
-    <>
-      <span className="border border-black rounded-lg">보기</span>와 같은 원리로
-      만들어진 한자는?
-    </>,
-    "빈칸에 알맞은 한자를 쓰시오.",
-    "단어장의 내용을 보고 ㉠에 들어갈 단어를 한자로 쓰시오.",
-    "단어의 짜임이 옳은 것은?",
-    <>
-      한자 어휘의 활용이 옳지 <span className="underline">않은</span> 것은?
-    </>,
-    "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
+    "[1-2] 다음 글을 읽고, 물음에 답하시오.",
+    "[1-2] 다음 글을 읽고, 물음에 답하시오.",
+    "[3-4] 다음 글을 읽고, 물음에 답하시오.",
+    "[3-4] 다음 글을 읽고, 물음에 답하시오.",
+    "[5-6] 다음 글을 읽고, 물음에 답하시오.",
+    "[5-6] 다음 글을 읽고, 물음에 답하시오.",
+    "[6-7] 다음 글을 읽고, 물음에 답하시오.",
+    "[6-7] 다음 글을 읽고, 물음에 답하시오.",
+    "< 서답형, 논술형 문제 >",
+    "< 서답형, 논술형 문제 >",
   ];
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export default function Page() {
   return (
     <>
       <RightTopStepContainer
-        maxStep={9}
+        maxStep={10}
         step={step}
         onStepChange={setStep}
         className="bg-transparent !top-[120px] !right-[200px]"
@@ -49,18 +54,20 @@ export default function Page() {
         lesson={2}
         number={step}
         question={questions[step - 1]}
+        hideIconNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
       >
-        <div className="h-full flex flex-col justify-between items-center">
-          {step === 1 ? <Question1 showAnswer={showAnswer} /> : null}
-          {step === 2 ? <Question2 showAnswer={showAnswer} /> : null}
-          {step === 3 ? <Question3 showAnswer={showAnswer} /> : null}
-        </div>
+        {step === 1 && <Question1 />}
+        {step === 2 && <Question2 />}
+        {step === 3 && <Question3 />}
+        {step === 4 && <Question4 />}
+        {step === 5 && <Question5 />}
+        {step === 6 && <Question6 />}
+        {step === 7 && <Question7 />}
+        {step === 8 && <Question8 />}
+        {step === 9 && <Question9 />}
+        {step === 10 && <Question10 />}
       </SolveProblemPageTemplate>
 
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -69,195 +76,365 @@ export default function Page() {
   );
 }
 
-const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
-  const [answer1, setAnswer1] = useState("");
-  const [answer2, setAnswer2] = useState("");
-
-  useEffect(() => {
-    if (showAnswer) {
-      setAnswer1("文");
-      setAnswer2("대");
-    } else {
-      setAnswer1("");
-      setAnswer2("");
-    }
-  }, [showAnswer]);
+const Question1 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <div className="relative">
+    <>
+      <ContentContainer className="!justify-start">
         <img src={IMAGE1.src} />
-        <input
-          value={answer1}
-          onChange={(e) => setAnswer1(e.target.value)}
-          className={`absolute left-[243px] top-[50px] w-[100px] text-center bg-transparent font-haeseo text-[100px] ${
-            showAnswer ? "text-answer" : ""
-          }`}
-          readOnly={showAnswer}
-        />
-        <input
-          value={answer2}
-          onChange={(e) => setAnswer2(e.target.value)}
-          className={`absolute left-[723px] top-[275px] w-[100px] text-center bg-transparent text-[80px] ${
-            showAnswer ? "text-answer" : ""
-          }`}
-          readOnly={showAnswer}
-        />
-      </div>
-    </div>
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={1} />
+            <p>윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.</p>
+          </header>
+
+          <div className="ml-[100px] w-[120px] h-[120px] rounded-[15px] border-[3px] border-[#939292] flex justify-center items-center">
+            <InputWithPen
+              answer="劣​"
+              showAnswer={showAnswer}
+              className="w-[120px] text-[100px] text-center bg-transparent font-haeseo"
+              penClassName="left-1/2 -translate-x-1/2"
+            />
+          </div>
+        </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
   );
 };
 
-const Question2 = ({ showAnswer }: { showAnswer: boolean }) => {
-  const [answer1, setAnswer1] = useState("");
-  const [answer2, setAnswer2] = useState("");
-  const [answer3, setAnswer3] = useState("");
-
-  useEffect(() => {
-    if (showAnswer) {
-      setAnswer1("日");
-      setAnswer2("出");
-      setAnswer3("口");
-    } else {
-      setAnswer1("");
-      setAnswer2("");
-      setAnswer3("");
-    }
-  }, [showAnswer]);
+const Question2 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <div className="relative">
-        <img src={IMAGE2.src} />
-        <input
-          value={answer1}
-          onChange={(e) => setAnswer1(e.target.value)}
-          className={`absolute left-[840px] top-[40px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
-            showAnswer ? "text-answer" : ""
-          }`}
-          readOnly={showAnswer}
-        />
-        <input
-          value={answer2}
-          onChange={(e) => setAnswer2(e.target.value)}
-          className={`absolute left-[1062px] top-[40px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
-            showAnswer ? "text-answer" : ""
-          }`}
-          readOnly={showAnswer}
-        />
-        <input
-          value={answer3}
-          onChange={(e) => setAnswer3(e.target.value)}
-          className={`absolute left-[1062px] top-[250px] w-[200px] text-center bg-transparent font-haeseo text-[130px] ${
-            showAnswer ? "text-answer" : ""
-          }`}
-          readOnly={showAnswer}
-        />
-      </div>
-    </div>
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE1.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={2} />
+            <p>윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?</p>
+          </header>
+
+          <div className="ml-[100px] mt-5">
+            <SelectionQuiz
+              answers={[3]}
+              showAnswer={showAnswer}
+              options={[
+                "불평의 원인을 찾아야 해.",
+                "단점이 없는 사람은 없어.",
+                "불평하는 마음을 가질 수 있어.",
+                "긍정적으로 생각하는 태도가 필요해.",
+                "단점을 고칠 수 있도록 알려 주어야 해.",
+              ]}
+              className="grid grid-cols-2 w-[1500px] gap-y-5 text-[40px]"
+            />
+          </div>
+        </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
   );
 };
 
-const Question3 = ({ showAnswer }: { showAnswer: boolean }) => {
-  const [answer1, setAnswer1] = useState("");
-  const [answer2, setAnswer2] = useState("");
-  const [answer3, setAnswer3] = useState("");
-  const [answer4, setAnswer4] = useState("");
-  const [answer5, setAnswer5] = useState("");
-
-  useEffect(() => {
-    if (showAnswer) {
-      setAnswer1("X");
-      setAnswer2("O");
-      setAnswer3("O");
-      setAnswer4("X");
-      setAnswer5("O");
-    } else {
-      setAnswer1("");
-      setAnswer2("");
-      setAnswer3("");
-      setAnswer4("");
-      setAnswer5("");
-    }
-  }, [showAnswer]);
+const Question3 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className="w-[1400px] h-full flex flex-col justify-center">
-      <div className="flex justify-between">
-        <p>(1) 받침은 맨 처음에 쓴다.</p>
-        <div>
-          (
-          <input
-            value={answer1}
-            onChange={(e) => setAnswer1(e.currentTarget.value)}
-            className={`w-[100px] text-center ${
-              showAnswer ? "text-answer" : ""
-            }`}
-            readOnly={showAnswer}
-          />
-          )
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE3.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={3} />
+            <p>
+              보기 의 한자를 바르게 배열하여 가 에 들어갈 내용을 완성하시오.
+            </p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <img src={IMAGE3_1.src} />
+
+            <InputWithPen
+              answer="物貴而人賤​"
+              showAnswer={showAnswer}
+              className="w-[500px] text-[72px] font-haeseo text-center bg-transparent"
+              containerClassName="absolute left-[850px] top-[10px]"
+              penClassName="left-1/2 -translate-x-1/2"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <p>(2) 꿰뚫는 획은 나중에 쓴다.</p>
-        <div>
-          (
-          <input
-            value={answer2}
-            onChange={(e) => setAnswer2(e.currentTarget.value)}
-            className={`w-[100px] text-center ${
-              showAnswer ? "text-answer" : ""
-            }`}
-            readOnly={showAnswer}
-          />
-          )
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question4 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE3.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={4} />
+            <p>윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.</p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <InputWithPen
+              answer="人與物​"
+              showAnswer={showAnswer}
+              className="w-[1200px] text-[72px] font-haeseo bg-transparent"
+              containerClassName="w-[1200px] border-b-2 border-black"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <p>(3) 왼쪽에서 오른쪽으로 쓴다.</p>
-        <div>
-          (
-          <input
-            value={answer3}
-            onChange={(e) => setAnswer3(e.currentTarget.value)}
-            className={`w-[100px] text-center ${
-              showAnswer ? "text-answer" : ""
-            }`}
-            readOnly={showAnswer}
-          />
-          )
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question5 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE5.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={5} />
+            <p>
+              윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
+            </p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <img src={IMAGE5_1.src} />
+            <InputWithPen
+              answer="草中石​"
+              showAnswer={showAnswer}
+              className="w-[850px] text-center text-[65px] font-haeseo bg-transparent"
+              penClassName="left-1/2 -translate-x-1/2"
+              containerClassName="absolute left-[450px] top-[-45px]"
+            />
+            <InputWithPen
+              answer="풀 속의 돌​"
+              showAnswer={showAnswer}
+              className="w-[1000px] text-center text-[60px] bg-transparent"
+              penClassName="left-1/2 -translate-x-1/2"
+              containerClassName="absolute left-[300px] top-[95px]"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <p>(4) 안쪽과 바깥쪽이 있을 때는 안쪽을 먼저 쓴다.</p>
-        <div>
-          (
-          <input
-            value={answer4}
-            onChange={(e) => setAnswer4(e.currentTarget.value)}
-            className={`w-[100px] text-center ${
-              showAnswer ? "text-answer" : ""
-            }`}
-            readOnly={showAnswer}
-          />
-          )
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question6 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE5.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={6} />
+            <p>
+              윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
+            </p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <SelectionQuiz
+              answers={[1]}
+              showAnswer={showAnswer}
+              options={[
+                "㉮는 ‘적중하다’로 풀이한다.",
+                "㉯의 음은 ‘몰’이다.",
+                "㉰는 ‘다시’로 풀이한다.",
+                "㉱의 음은 ‘불’이다.",
+                "㉲의 음은 ‘부’이다.",
+              ]}
+              className="grid grid-cols-2 gap-y-5"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <p>(5) 가로획과 세로획이 교차하면 가로획을 먼저 쓴다.</p>
-        <div>
-          (
-          <input
-            value={answer5}
-            onChange={(e) => setAnswer5(e.currentTarget.value)}
-            className={`w-[100px] text-center ${
-              showAnswer ? "text-answer" : ""
-            }`}
-            readOnly={showAnswer}
-          />
-          )
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question7 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE7.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={7} />
+            <p>㉠을 숫자로 바르게 표기한 것은?</p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <SelectionQuiz
+              answers={[4]}
+              showAnswer={showAnswer}
+              options={["1", "10", "11", "1/10", "1/100"]}
+              className="grid grid-cols-3 gap-y-5"
+            />
+          </div>
         </div>
-      </div>
-    </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question8 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <img src={IMAGE7.src} />
+
+        <div className="w-full mt-10">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={8} />
+            <p>㉮~㉲의 설명으로 옳지 않은 것은?</p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <SelectionQuiz
+              answers={[2]}
+              showAnswer={showAnswer}
+              options={[
+                "㉮는 ‘굶주려 병든 사람’을 뜻한다.",
+                "㉯는 ‘만덕’을 뜻한다.",
+                "㉰는 ‘~와/과 같이’로 풀이한다.",
+                "㉱는 ‘~와/과’로 풀이한다.",
+                "㉲는 ‘칭송하다’라는 뜻이다.",
+              ]}
+              className="grid grid-cols-2 gap-y-5"
+            />
+          </div>
+        </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question9 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <div className="w-full mt-10">
+          <header className="flex items-start gap-5">
+            <ProblemNumberIcon number={9} />
+            <p>
+              <span className="font-haeseo">‘自天而視之, 人與物均也.’</span>를
+              우리말로 풀이하고 문장에서 얻을 수 있는 교훈을 쓰시오.
+            </p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <img src={IMAGE9_1.src} />
+
+            <InputWithPen
+              answer="하늘로부터 그것을 보면, 사람과 사물이 모두 동등하다.​"
+              showAnswer={showAnswer}
+              className="w-[1200px] bg-transparent"
+              containerClassName="absolute left-[150px] top-[-5px]"
+            />
+            <InputWithPen
+              answer="사람과 만물은 모두 함께 어울려 상생하는 관계여야 한다.​"
+              showAnswer={showAnswer}
+              className="w-[1200px] bg-transparent"
+              containerClassName="absolute left-[150px] top-[145px]"
+            />
+          </div>
+        </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
+  );
+};
+
+const Question10 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  return (
+    <>
+      <ContentContainer className="!justify-start">
+        <div className="w-full mt-10">
+          <header className="flex items-start gap-5">
+            <ProblemNumberIcon number={10} />
+            <p>사람들이 만덕을 칭송한 이유를 쓰시오.</p>
+          </header>
+
+          <div className="ml-[100px] mt-10 relative">
+            <InputWithPen
+              answer="자신이 가진 것을 많은 사람에게 나누어 주어 도움을 주었기 때문이다.​"
+              showAnswer={showAnswer}
+              className="w-[1300px] bg-transparent"
+              containerClassName="w-[1300px] border-b-2 border-black"
+            />
+          </div>
+        </div>
+      </ContentContainer>
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
+    </>
   );
 };
