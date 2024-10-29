@@ -44,7 +44,7 @@ export default function Page() {
         <>
           <div className="h-full flex justify-center items-center -mt-[130px]">
             <div>
-              <div className="animate__animated animate__flipInX flex items-center gap-4">
+              <div className="animate__animated animate__flipInX flex items-center gap-4" sound="/sound/1/10-i2.mp3">
                 <img src={SYMBOL.src} className="mb-3" />
                 <p className="text-[55px]">
                   한자를 어디에서 보았는지 자기 경험을 써 보자.

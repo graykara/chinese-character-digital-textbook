@@ -21,7 +21,7 @@ export default function Page() {
         title={
           <p>성어 ‘<span className="font-haeseo text-[60px] leading-[50px] tracking-[-8px]">指鹿爲馬</span>’의 유래에 등장하는 인물들을 떠올려 보고<br />아래 질문에 답해 보자.</p>
         }
-        sound=""
+        sound="/sound/3/76-i-2.mp3"
       />
 
       <div className="absolute top-[275px] left-[750px] flex items-center gap-5">

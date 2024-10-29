@@ -27,7 +27,7 @@ export default function Page() {
         title={
           <p className="-mr-20">디지털 도구로 모르는 한자를 찾고 가로 열쇠와 세로 열쇠를 참고하여 빈칸에 들어갈 한자를 써 보자.</p>
         }
-        sound=""
+        sound="/sound/3/76-i-3.mp3"
       />
       <div><p className="ml-[250px] -mt-5 text-[55px] text-[#1b1b1b] tracking-tighter break-keep leading-[60px] "><span className="text-[#AD6C35] text-[55px]">*</span> 부록의 미니 자전을 이용해도 좋습니다.</p></div>
 

@@ -40,7 +40,7 @@ const Step1 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title={"풀이에서 틀린 부분을 찾아 바르게 고쳐 보자."}
-        sound=""
+        sound="/sound/5/124-i-1.mp3"
       />
       <ContentContainer className="!justify-start -top-[40px] left-[95px]">
         <img src={!showAnswer ? IMAGE1.src : IMAGE1_after.src} />
@@ -69,7 +69,7 @@ const Step2 = () => {
     <>
       <StrengthenLearningMainContentHeader
         title={"본문의 내용을 바탕으로 질문의 답을 쓰고 발표해 보자."}
-        sound=""
+        sound="/sound/5/124-i-2.mp3"
       />
 
       <WritingButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[210px] left-[1400px] flex items-center gap-5" />

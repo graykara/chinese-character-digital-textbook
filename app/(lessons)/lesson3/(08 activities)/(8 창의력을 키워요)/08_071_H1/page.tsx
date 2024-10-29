@@ -22,7 +22,7 @@ export default function Page() {
         />
         <TitleContainer
           className="ml-[85px] mt-2"
-          sound="">
+          sound="/sound/3/71-i.mp3">
           <div className="flex items-center gap-1 text-[40px] tracking-[-0.5px] ml-[165px]">
             학습한 성어 두 개 이상을 담아낸 내용으로 4단 만화를 그려 보자.
           </div>

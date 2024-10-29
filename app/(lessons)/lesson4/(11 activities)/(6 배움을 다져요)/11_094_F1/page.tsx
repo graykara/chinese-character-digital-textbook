@@ -31,7 +31,7 @@ export default function Page() {
             <p className="tracking-tighter -mr-10">문장의 풀이 순서를 빈칸에 숫자로 써 보고, 문장을 보고 느낀 점이나 스스로 다짐하는 말에 #기호를 붙여 정리해 보자.</p>
           </>
         }
-        sound=""
+        sound="/sound/4/94-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start -top-4">

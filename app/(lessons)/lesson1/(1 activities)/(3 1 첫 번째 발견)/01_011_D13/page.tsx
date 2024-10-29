@@ -39,6 +39,7 @@ export default function Page() {
             <p className="ml-[0px] mt-0 text-[35px] text-[#1b1b1b] tracking-tighter break-keep leading-[55px] "><span className="text-[#884F36] text-[45px] -mr-1">*</span> 국어사전으로 한자어인지 확인해 보자.</p>
           </>
         }
+        sound="/sound/1/11-i2-2.mp3"
         image={EXERCISE2.src}
       />
 

@@ -22,7 +22,7 @@ export default function Page() {
         />
         <TitleContainer
           className="ml-[85px] mt-2"
-          sound="">
+          sound="/sound/3/77-i.mp3">
           <div className="flex items-center gap-1 text-[50px] tracking-[-1px] ml-[65px] leading-[70px] -mr-20">
             이 단원에서 배운 성어를 활용하여 아래의 예시처럼 나만의 성어를 만들고 발표해 보자.
           </div>

@@ -31,6 +31,7 @@ export default function Page() {
             <p className="text-[45px] tracking-[-2.5px]">아래 한문 기록이 담고 있는 내용을 조사하여 빈칸에 써 보자.</p>
           </>
         }
+        sound="/sound/1/14-i2.mp3"
       />
 
       <WritingButton

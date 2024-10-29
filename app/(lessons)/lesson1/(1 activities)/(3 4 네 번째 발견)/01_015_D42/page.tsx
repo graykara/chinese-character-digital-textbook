@@ -70,6 +70,7 @@ export default function Page() {
 
       <ExerciseHeader2
         text="한자 문화권 나라의 길거리를 담은 사진이다. 각 사진 속의 한자가 무엇을 뜻하는지 알아 보자."
+        sound="/sound/1/15-i2.mp3"
       />
 
       <ContentContainer className="-top-6 left-20">

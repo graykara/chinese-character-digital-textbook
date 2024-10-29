@@ -26,7 +26,7 @@ export default function Page() {
         />
         <TitleContainer 
           className="-left-12 mt-2"
-          sound="">
+          sound="/sound/2/33-i.mp3">
           <div className="flex items-center gap-1 text-[50px] tracking-[-0.5px]">
             상형 또는 지사의 원리를 활용하여 나만의 한자를 만들고 발표해 보자.
           </div>

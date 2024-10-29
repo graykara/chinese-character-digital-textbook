@@ -40,7 +40,7 @@ const Step1 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">나에게 힘이 되었던 말을 써 보자.</p>}
-        sound=""
+        sound="/sound/4/96/1.mp3"
       />
 
       <ContentContainer className="!justify-start">
@@ -82,7 +82,7 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">학급 친구들과 함께 ‘힘이 되는 말’ 세 가지를 뽑아 보자.</p>}
-        sound=""
+        sound="/sound/4/96/3.mp3"
       />
 
       <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[350px] top-[181px] w-[100px] z-1" />

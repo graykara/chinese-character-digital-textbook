@@ -30,7 +30,7 @@ export default function Page() {
         />
         <TitleContainer
           className="-left-24 mt-6"
-          sound="">
+          sound="/sound/5/131-i.mp3">
           <div className="flex items-center gap-1 text-[45px] tracking-tight -mr-10">
             우리 반에서 다른 친구들을 위해 선행을 베푼 친구를 선정하고 상장을 만들어 보자.
           </div>

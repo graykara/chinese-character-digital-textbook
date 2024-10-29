@@ -19,7 +19,7 @@ export default function Page() {
     <>
       <StrengthenLearningMainContentHeader
         title="문장의 의미를 생각해 보고, 질문에 답해 보자."
-        sound=""
+        sound="/sound/4/94-i-2.mp3"
       />
       
       <WritingButton

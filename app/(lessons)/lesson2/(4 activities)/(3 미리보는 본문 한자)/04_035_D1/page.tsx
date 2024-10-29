@@ -28,7 +28,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer className="mt-10">
+      <TitleContainer className="mt-10" sound="/sound/2/35-i.mp3">
         <p className="text-[45px] tracking-tighter ml-16">
           아래 의미를 지닌 그림을 서로 합치면 어떤 의미가 될지 자유롭게 말해
           보자.

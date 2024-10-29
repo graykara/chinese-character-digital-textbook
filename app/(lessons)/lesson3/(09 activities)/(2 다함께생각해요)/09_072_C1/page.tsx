@@ -25,7 +25,7 @@ export default function Page() {
         title={
           <p className="-ml-2 text-[55px] leading-[66px] tracking-[-2.5px]">다음 대화를 통해 ‘고사’의 뜻을 알아보고, 디지털 도구로 ‘오십보백보<span className="font-haeseo text-[60px] tracking-[-10px]">(五十步百步)</span>’의 유래를 찾아 그 내용을 정리해 보자.</p>
         }
-        sound=""
+        sound="/sound/3/72-i.mp3"
         subTitle={
           <div className="absolute top-5 -right-16 flex items-center gap-5">
           </div>
@@ -81,7 +81,7 @@ const Step2 = () => {
           sound="">
           <p className="text-[50px] tracking-tight flex items-start gap-2">
             <img src="/ui/flower-icon-2.png" width="40px" />
-            내가 찾은 오십보백보(五十步百步)’의 유래
+            내가 찾은 ‘오십보백보(五十步百步)’의 유래
           </p>
         </TitleContainer>
 

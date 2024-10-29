@@ -42,6 +42,7 @@ export default function Page() {
 
       <ExerciseHeader
         text="뉴스 기사에서 틀린 말을 모두 찾아 바르게 고쳐 보자."
+        sound="/sound/1/12-i2-4.mp3"
         image={EXERCISE4.src}
       />
 

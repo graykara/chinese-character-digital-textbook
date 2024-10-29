@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="-ml-2">다음 글을 읽고 빈칸에 들어갈 말을 써 보자.</p>}
-        sound="" 
+        sound="/sound/2/48-i.mp3" 
       />
 
       {step === 1 && <Step1 />}

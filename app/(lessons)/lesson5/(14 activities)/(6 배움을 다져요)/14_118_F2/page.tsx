@@ -56,7 +56,7 @@ export default function Page() {
             한자 카드를 결합하여 각각의 풀이에 알맞은 단어를 한자로 써 보자.
           </p>
         }
-        sound=""
+        sound="/sound/5/118-i-3.mp3"
       />
 
       <ContentContainer className="!justify-start -top-[50px] left-[100px]">

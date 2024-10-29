@@ -22,7 +22,7 @@ export default function Page() {
         title={
           <p className="-ml-3 -mr-20">빈칸에 들어갈 단어를 써 보고, 어떤 일에 집중했던 자신의 경험을 써 보자.</p>
         }
-        sound=""
+        sound="/sound/5/120-i.mp3"
         subTitle={
           <p className="-ml-10 mt-4 text-[40px] tracking-tighter"><span className="text-[#FF9001] text-[40px]">*</span> 빈칸에 들어갈 단어의 뜻은 부록의 어휘 풀이에서 찾을 수 있습니다.</p>
         }

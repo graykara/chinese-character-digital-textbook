@@ -13,7 +13,7 @@ export default function Page() {
     <>
       <ThinkTogetherHeader
         title={<p className="text-[55px] leading-[72px] tracking-tighter -mt-2 -ml-2 -mr-1">말풍선 속의 말을 긍정적이거나 칭찬하는 표현으로 바꾸어 빈칸에<br/>써 보자.</p>}
-        sound=""
+        sound="/sound/4/90-i.mp3"
       />
       <Step1 />
     </>
