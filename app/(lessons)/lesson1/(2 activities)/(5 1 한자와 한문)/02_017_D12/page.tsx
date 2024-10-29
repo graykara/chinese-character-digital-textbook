@@ -10,6 +10,7 @@ import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아9.png";
+import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -26,9 +27,6 @@ export default function Page() {
     onplay: () => setIsReading(true),
     onend: () => setIsReading(false),
   });
-  useEffect(() => {
-    sound.stop();
-  }, []);
 
   useEffect(() => {
     return () => {
@@ -71,6 +69,7 @@ export default function Page() {
             <button
               onClick={() => {
                 clickSound.play();
+                SOUND("/sound/1/17/2.mp3").play();
                 setShow1(true);
               }}
               className="absolute left-[-20px] top-[40px] flex justify-center items-center bg-white w-[150px] h-[150px]"
@@ -82,6 +81,7 @@ export default function Page() {
             <button
               onClick={() => {
                 clickSound.play();
+                SOUND("/sound/1/17/3.mp3").play();
                 setShow2(true);
               }}
               className="absolute left-[240px] top-[40px] flex justify-center items-center bg-white w-[150px] h-[150px]"
@@ -93,6 +93,7 @@ export default function Page() {
             <button
               onClick={() => {
                 clickSound.play();
+                SOUND("/sound/1/17/4.mp3").play();
                 setShow3(true);
               }}
               className="absolute left-[550px] top-[40px] flex justify-center items-center bg-white w-[220px] h-[150px]"

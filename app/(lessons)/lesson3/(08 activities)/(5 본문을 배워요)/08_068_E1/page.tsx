@@ -24,6 +24,7 @@ export default function Page() {
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
+    setShowMeaning2(false);
   }, [step]);
 
   const data = [
@@ -218,10 +219,12 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>거창한 계획을 말하더니 결국{" "}
+            <p>
+              거창한 계획을 말하더니 결국{" "}
               <span
                 onClick={() => SOUND("/sound/3/68/1.mp3").play()}
-                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer"
+              >
                 龍頭蛇尾
               </span>
               로 끝나 버렸네.
@@ -243,13 +246,15 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>양측이 이 문제를{" "}
+            <p>
+              양측이 이 문제를{" "}
               <span
                 onClick={() => SOUND("/sound/3/68/2.mp3").play()}
-                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer"
+              >
                 易地思之
-              </span>
-              {" "}해 본다면 합의점을 찾을 수 있을 거야.
+              </span>{" "}
+              해 본다면 합의점을 찾을 수 있을 거야.
             </p>
           </div>
         </>
@@ -268,13 +273,15 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>나는 힘든 일이 닥칠 때마다{" "}
+            <p>
+              나는 힘든 일이 닥칠 때마다{" "}
               <span
                 onClick={() => SOUND("/sound/3/68/3.mp3").play()}
-                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer"
+              >
                 苦盡甘來
-              </span>
-              {" "}라는 말을 생각하며 참아 냈어.
+              </span>{" "}
+              라는 말을 생각하며 참아 냈어.
             </p>
           </div>
         </>
@@ -293,13 +300,15 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>긴 가뭄에{" "}
+            <p>
+              긴 가뭄에{" "}
               <span
                 onClick={() => SOUND("/sound/3/68/4.mp3").play()}
-                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer">
+                className="font-haeseo text-[55px] leading-tight tracking-[-5px] cursor-pointer"
+              >
                 雪上加霜
-              </span>
-              {" "}으로 태풍까지 다가와 농가의 피해가 예상된다.
+              </span>{" "}
+              으로 태풍까지 다가와 농가의 피해가 예상된다.
             </p>
           </div>
         </>
@@ -322,7 +331,6 @@ export default function Page() {
         </div>
 
         <ContentContainer className="!justify-start w-[1760px] px-[130px]">
-
           <MainContent
             data={data[step - 1]}
             showReading={showReading}
@@ -332,16 +340,21 @@ export default function Page() {
             showMeaning2={showMeaning2}
             setShowMeaning2={setShowMeaning2}
           />
-
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

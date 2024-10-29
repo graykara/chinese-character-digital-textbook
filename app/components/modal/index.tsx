@@ -19,7 +19,7 @@ export const Modal = ({
   return (
     <div className="z-30 fixed left-[40px] top-[90px] w-[1760px] h-[990px] overflow-hidden">
       <div
-        className={showAnimation ? "animate__animated animate__flipInX" : ""}
+        className={`w-full h-full ${showAnimation ? "animate__animated animate__flipInX" : ""}`}
       >
         {!hideCloseButtom ? (
           <button

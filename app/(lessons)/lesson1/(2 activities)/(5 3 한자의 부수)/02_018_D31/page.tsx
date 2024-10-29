@@ -12,6 +12,7 @@ import { Howl } from "howler";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png";
+import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -19,7 +20,8 @@ export default function Page() {
 
   const [buttonActive, setButtonActive] = useState<number[]>([]);
 
-  const [soundId, setSoundIdconst [isReading, setIsReading] = useState(false); = useState<number | null>(null);
+  const [isReading, setIsReading] = useState(false);
+  const [soundId, setSoundId] = useState<number | null>(null);
   const sound = new Howl({
     src: "/sound/1/18.mp3",
     onplay: () => setIsReading(true),
@@ -54,7 +56,7 @@ export default function Page() {
         active={isReading}
         onClick={() => {
           soundId && sound.stop(soundId);
-          setSoundId(sound.play())
+          setSoundId(sound.play());
         }}
       />
 
@@ -73,19 +75,26 @@ export default function Page() {
 
         <div className="relative mt-14 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
           <p>부수는 때로 위치에 따라 모양이 변하기도 한다. </p>
-          <img src={TEXT2.src} alt="text1" className="mt-4" />
+          <div className="relative">
+            <img src={TEXT2.src} alt="text1" className="mt-4" />
+            <div className="absolute left-[50px] top-0 grid grid-cols-3 gap-[10px] w-[700px]">
+              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
+              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
+              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
+            </div>
+          </div>
         </div>
 
         <div className="w-full flex justify-center mt-1 ml-6">
           <div className="relative">
             <img src={IMAGE.src} />
-
             <div className="absolute bottom-[55px] left-[40px] grid grid-cols-5 gap-[90px]">
               {Array.from(Array(5).keys()).map((_, index) =>
                 buttonActive.includes(index) ? (
-                  <div className="w-[80px] h-[80px]" />
+                  <div key={index} className="w-[80px] h-[80px]" />
                 ) : (
                   <button
+                    key={index}
                     className="bg-white w-[80px] h-[80px] flex justify-center items-center"
                     onClick={() => {
                       clickSound.play();

@@ -12,6 +12,18 @@ import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
 
+  const characters = [
+    "日",
+    "女",
+    "木",
+    "夕",
+    "口",
+    "門",
+    "木",
+    "子",
+    "口",
+    "月",
+  ];
   const sounds = [
     "000",
     "001",
@@ -28,7 +40,12 @@ export default function Page() {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={<p className="text-[45px] tracking-[-0.5px] -mr-20">사다리 타기를 하고 서로 만나는 한자를 결합하였을 때 완성되는 한자를 써 보자.</p>}
+        title={
+          <p className="text-[45px] tracking-[-0.5px] -mr-20">
+            사다리 타기를 하고 서로 만나는 한자를 결합하였을 때 완성되는 한자를
+            써 보자.
+          </p>
+        }
         sound="/sound/2/40-i-1.mp3"
         className="w-[1600px] mr-0"
       />
@@ -41,13 +58,17 @@ export default function Page() {
             <img src={IMAGE1_BEFORE.src} />
           )}
 
-          <div className="absolute left-[25px] top-0 grid grid-cols-5 gap-x-[80px] gap-y-[330px]">
-            {sounds.map((sound) => (
+          <div className="absolute left-[25px] -top-[10px] grid grid-cols-5 gap-x-[95px] gap-y-[305px]">
+            {sounds.map((sound, index) => (
               <button
                 key={sound}
-                className="w-[150px] h-[50px]"
+                className="w-[150px] h-[70px] bg-white flex justify-center items-center"
                 onClick={() => SOUND(sound).play()}
-              />
+              >
+                <span className="font-haeseo text-[55px]">
+                  {characters[index]}
+                </span>
+              </button>
             ))}
           </div>
         </div>

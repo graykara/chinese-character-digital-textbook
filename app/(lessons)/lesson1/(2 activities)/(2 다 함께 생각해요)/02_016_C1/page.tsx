@@ -36,28 +36,42 @@ export default function Page() {
 
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="bg-white w-[1760px] h-[990px] bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white">
-            <li>
-              탕수육 대짜 : 탕수육 큰 것. →<br />
-              <span className="font-haeseo">大</span>의 ‘크다’라는 뜻을 반영한
-              말
-            </li>
-            <li>
-              팔보채(<span className="font-haeseo">八寶菜</span>) : 여덟 가지
-              보배로운 채소. →<br />
-              <span className="font-haeseo">八</span>의 ‘여덟’이라는 뜻을 반영한
-              말
-            </li>
-            <li>
-              대자로 누웠다 :<span className="font-haeseo">大</span>의 모양처럼
-              팔다리를 크게 벌리고 누움. →<br />
-              <span className="font-haeseo">大</span>의 모양을 반영한 말
-            </li>
-            <li>
-              팔자걸음 : <span className="font-haeseo">八</span>
-              의 모양처럼 발끝을 바깥쪽으로 향하여 걷는 걸음. →<br />
-              <span className="font-haeseo">八</span>의 모양을 반영한 말
-            </li>
+          <div className="relative bg-[#7278a6] rounded-[24px] p-[24px]">
+            <div className="bg-white rounded-[20px] px-[24px] p-[24px]">
+              <li>
+                탕수육 대짜 : 탕수육 큰 것.
+                <br />
+                <span className="ml-14">
+                  →<span className="font-haeseo">大</span>의 ‘크다’라는 뜻을
+                  반영한 말
+                </span>
+              </li>
+              <li>
+                팔보채(<span className="font-haeseo">八寶菜</span>) : 여덟 가지
+                보배로운 채소.
+                <br />
+                <span className="ml-14">
+                  →<span className="font-haeseo">八</span>의 ‘여덟’이라는 뜻을
+                  반영한 말
+                </span>
+              </li>
+              <li>
+                대자로 누웠다 :<span className="font-haeseo">大</span>의
+                모양처럼 팔다리를 크게 벌리고 누움.
+                <br />
+                <span className="ml-14">
+                  →<span className="font-haeseo">大</span>의 모양을 반영한 말
+                </span>
+              </li>
+              <li>
+                팔자걸음 : <span className="font-haeseo">八</span>
+                의 모양처럼 발끝을 바깥쪽으로 향하여 걷는 걸음.
+                <br />
+                <span className="ml-14">
+                  →<span className="font-haeseo">八</span>의 모양을 반영한 말
+                </span>
+              </li>
+            </div>
           </div>
         </div>
       </Modal>

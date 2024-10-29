@@ -140,7 +140,11 @@ export const MainContent = ({
             backgroundColor="#7e83ac"
           />
           <div>
-            <div className="-mt-1">{content2 ?? null}</div>
+            <div
+              className={`-mt-1 ${showMeaning2 ? "animate__animated animate__fadeIn animate__flipInX" : "hidden"}`}
+            >
+              {content2 ?? null}
+            </div>
           </div>
         </div>
       </div>
@@ -264,7 +268,11 @@ export const MainContent_SM = ({
             backgroundColor="#7e83ac"
           />
           <div>
-            <div className="mt-1 leading-tight">{content2 ?? null}</div>
+            <div
+              className={`mt-1 leading-tight ${showMeaning2 ? "animate__animated animate__fadeIn animate__flipInX" : "hidden"}`}
+            >
+              {content2 ?? null}
+            </div>
           </div>
         </div>
       </div>

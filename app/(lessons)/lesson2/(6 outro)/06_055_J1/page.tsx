@@ -10,7 +10,10 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘25.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘26.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
-import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
+import {
+  OLD_TextareaWithPen,
+  TextareaWithPen,
+} from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -36,7 +39,6 @@ const Content1 = () => {
 };
 
 const Content2 = () => {
-  const answers = [" "];
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
@@ -64,10 +66,10 @@ const Content2 = () => {
                 className="bg-transparent text-[35px] w-[180px]"
                 penClassName="w-[35px]"
               />
-              <TextareaWithPen
-                containerClassName="absolute left-[1020px] top-[350px]"
+              <OLD_TextareaWithPen
+                containerClassName="!absolute left-[1020px] top-[350px]"
                 className="bg-transparent text-[35px] w-[300px]"
-                penClassName="left-1/2 -translate-x-1/2 h-[35px]"
+                penClassName="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[35px]"
                 rows={3}
               />
             </div>

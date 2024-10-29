@@ -39,7 +39,7 @@ textarea:focus {
 }
 
 .debug {
-    /* display: none; */
+    display: none;
     /* opacity: 1 !important; */
 }
 
@@ -84,7 +84,7 @@ textarea:focus {
 }
 
 .bg-white {
-    background: linear-gradient(
+    /* background: linear-gradient(
             -90deg,
             rgba(0, 0, 0, 0.01) 5px,
             transparent 5px
@@ -109,5 +109,5 @@ textarea:focus {
         500px 500px,
         500px 500px,
         500px 500px,
-        500px 500px;
+        500px 500px; */
 }

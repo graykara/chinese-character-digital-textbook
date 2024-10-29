@@ -22,8 +22,7 @@ export default function Page() {
         title={"성어가 사용된 사례를 디지털 도구로 찾아 써 보자."}
         sound="/sound/3/64-i-2.mp3"
       />
-      <div className="absolute top-[180px] left-[1320px] flex items-center gap-5">
-      </div>
+      <div className="absolute top-[180px] left-[1320px] flex items-center gap-5"></div>
       {step !== 2 ? (
         <SmartButton
           link="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EC%8B%AD%EC%A4%91%ED%8C%94%EA%B5%AC&oquery=%EC%9D%BC%EC%84%9D%EC%9D%B4%EC%A1%B0&tqi=iXMjDspzLiwssQhkuwossssss9C-345908"
@@ -48,14 +47,18 @@ export default function Page() {
 const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer1 = "치과 의사의 블로그";
-  const answer2 = "치과 의사의 블로그에 씹을 때 시큰거린다면 십중팔구 치아균열이라는 내용이 있었음.";
+  const answer2 =
+    "치과 의사의 블로그에 씹을 때 시큰거린다면 십중팔구 치아균열이라는 내용이 있었음.";
   const [value, setValue] = useState("");
 
   return (
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="-ml-6 mt-16" />
-        <div className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]">
+        <div
+          className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
+          onClick={() => SOUND("/sound/3/64_003.mp3").play()}
+        >
           <span className="font-haeseo">十</span>
           <span className="font-haeseo">中</span>
           <span className="font-haeseo">八</span>
@@ -92,15 +95,18 @@ const Step1 = () => {
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer1 = "자동차 시승 리뷰 기사";
-  const answer2 = "자동차 시승 리뷰 기사에서 두 가지의 차종을 서로 비교하며 막상막하의 승차감이라는 내용이 있었음.";
+  const answer2 =
+    "자동차 시승 리뷰 기사에서 두 가지의 차종을 서로 비교하며 막상막하의 승차감이라는 내용이 있었음.";
   const [value, setValue] = useState("");
 
   return (
     <>
-
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE2.src} className="-ml-6 mt-16" />
-        <div className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]">
+        <div
+          className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
+          onClick={() => SOUND("/sound/3/64_004.mp3").play()}
+        >
           <span className="font-haeseo">莫</span>
           <span className="font-haeseo">上</span>
           <span className="font-haeseo">莫</span>

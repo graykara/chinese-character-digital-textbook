@@ -34,7 +34,7 @@ export const TextareaWithPen = ({
 
   return (
     <>
-    {/* <div className={`relative w-fit ${containerClassName || ""}`}> */}
+      {/* <div className={`relative w-fit ${containerClassName || ""}`}> */}
       <textarea
         ref={inputRef}
         {...props}
@@ -49,11 +49,61 @@ export const TextareaWithPen = ({
       {value === "" && !showAnswer ? (
         <img
           src="/ui/textarea-pen.png"
-            className={`absolute pointer-events-none ${penClassName || ""
-          }`}
+          className={`absolute pointer-events-none ${penClassName || ""}`}
         />
       ) : null}
-    {/* </div> */}
+      {/* </div> */}
+    </>
+  );
+};
+
+export const OLD_TextareaWithPen = ({
+  answer,
+  showAnswer,
+  className,
+  penClassName,
+  containerClassName,
+  ...props
+}: Props & { className?: string }) => {
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const [value, setValue] = useState(props.value || "");
+
+  useEffect(() => {
+    if (showAnswer && inputRef.current) {
+      setValue(answer || "");
+      inputRef.current.className += " text-answer";
+      inputRef.current.readOnly = true;
+    } else if (!showAnswer && inputRef.current) {
+      setValue("");
+      inputRef.current.className = inputRef.current.className.replace(
+        "text-answer",
+        "",
+      );
+      inputRef.current.readOnly = false;
+    }
+  }, [showAnswer]);
+
+  return (
+    <>
+      <div className={`relative w-fit ${containerClassName || ""}`}>
+        <textarea
+          ref={inputRef}
+          {...props}
+          value={value}
+          onChange={(e) => {
+            setValue(e.currentTarget.value);
+            props.onChange?.(e);
+          }}
+          className={className}
+        ></textarea>
+
+        {value === "" && !showAnswer ? (
+          <img
+            src="/ui/textarea-pen.png"
+            className={`absolute pointer-events-none ${penClassName || ""}`}
+          />
+        ) : null}
+      </div>
     </>
   );
 };

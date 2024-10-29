@@ -23,6 +23,12 @@ export const SolveProblemPageTemplate = ({
         background: `url('/background/solve-problem-background.png')`,
       }}
     >
+      <div className="absolute left-[140px] top-[60px]">
+        <img
+          src="/background/solve-problem-header.png"
+          className="animate__animated animate__flipInX"
+        />
+      </div>
       <div className="absolute left-[8px] top-[114px] w-[100px] h-[96px] flex justify-center items-center">
         <LessonIcon lesson={lesson} />
       </div>

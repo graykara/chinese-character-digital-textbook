@@ -10,12 +10,12 @@ import IMAGE1 from "./img1.png";
 import IMAGE2 from "./img2.png";
 import IMAGE3 from "./img3.png";
 import IMAGE4 from "./img4.png";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png" //18-19,110
-import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어111.png" //111-113
-import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어114.png" //114-115
-import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어116.png" //116-117
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어18.png"; //18-19,110
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어111.png"; //111-113
+import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어114.png"; //114-115
+import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어116.png"; //116-117
 import { MainContent } from "../../../main-content";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button"
+import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 
 export default function Page() {
@@ -23,11 +23,12 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState<boolean | null>(null);
   const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
-  const [showMeaning2, setShowMeaning2] = useState(false);
+  const [showMeaning2, setShowMeaning2] = useState<boolean | null>(null);
 
   useEffect(() => {
     setShowReading(null);
     setShowMeaning(null);
+    setShowMeaning2(null);
   }, [step]);
 
   const data = [
@@ -173,9 +174,21 @@ export default function Page() {
       ),
       content: (
         <div className="px-4 pt-2 pb-4 text-[50px] leading-[130%] tracking-tighter break-keep">
-          <span className="font-bold">성어(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">成語</span>)의 겉뜻과 속뜻</span>
+          <span className="font-bold">
+            성어(
+            <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+              成語
+            </span>
+            )의 겉뜻과 속뜻
+          </span>
           <br />
-          <span>성어를 글자대로 풀이한 것을<br />‘겉뜻’이라고 하고, 그 속에 담긴<br />뜻을 ‘속뜻’이라고 한다.</span>
+          <span>
+            성어를 글자대로 풀이한 것을
+            <br />
+            ‘겉뜻’이라고 하고, 그 속에 담긴
+            <br />
+            뜻을 ‘속뜻’이라고 한다.
+          </span>
         </div>
       ),
     },
@@ -192,14 +205,26 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>① 그 사람의 말은{" "}
+            <p>
+              ① 그 사람의 말은{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/1.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">十中八九</span>{" "}거짓말이야.</p>
-            <p>② 은행업무{" "}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                十中八九
+              </span>{" "}
+              거짓말이야.
+            </p>
+            <p>
+              ② 은행업무{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/1.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">十中八九</span>{" "}는 비대면 활용</p>
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                十中八九
+              </span>{" "}
+              는 비대면 활용
+            </p>
           </div>
           <img src={IMAGE1.src} className="mx-auto" />
         </>
@@ -218,14 +243,25 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>① 그 친구에게 나의 충고는{" "}
+            <p>
+              ① 그 친구에게 나의 충고는{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/2.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">馬耳東風</span>{" "}이었다.</p>
-            <p>② 기후 위기 경고에도{" "}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                馬耳東風
+              </span>{" "}
+              이었다.
+            </p>
+            <p>
+              ② 기후 위기 경고에도{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/2.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">馬耳東風</span></p>
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                馬耳東風
+              </span>
+            </p>
           </div>
           <img src={IMAGE2.src} className="mx-auto" />
         </>
@@ -244,14 +280,26 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>① 그 팀과 우리 팀은 실력이{" "}
+            <p>
+              ① 그 팀과 우리 팀은 실력이{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/3.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">莫上莫下</span>이다.</p>
-            <p>②{" "}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                莫上莫下
+              </span>
+              이다.
+            </p>
+            <p>
+              ②{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/3.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">莫上莫下</span>{" "}대결 펼친 배구 경기</p>
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                莫上莫下
+              </span>{" "}
+              대결 펼친 배구 경기
+            </p>
           </div>
           <img src={IMAGE3.src} className="mx-auto" />
         </>
@@ -270,14 +318,26 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-wrap text-[50px] tracking-tight break-keep">
-            <p>① 그렇게 한쪽으로 치우친 시각은{" "}
+            <p>
+              ① 그렇게 한쪽으로 치우친 시각은{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/4.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">坐井觀天</span>과 다를 바 없어. </p>
-            <p>②{" "}
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                坐井觀天
+              </span>
+              과 다를 바 없어.{" "}
+            </p>
+            <p>
+              ②{" "}
               <span
                 onClick={() => SOUND("/sound/3/62/4.mp3").play()}
-                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer">坐井觀天</span>의 자세 버릴때</p>
+                className="font-haeseo text-[55px] tracking-[-5px] cursor-pointer"
+              >
+                坐井觀天
+              </span>
+              의 자세 버릴때
+            </p>
           </div>
           <img src={IMAGE4.src} className="mx-auto" />
         </>
@@ -301,13 +361,12 @@ export default function Page() {
               <MainContentModalButton modal_data={modal_content[step - 1]} />
               <MainContentModalButton modal_data={modal_content[step]} />
             </>
-          ) :
+          ) : (
             <MainContentModalButton modal_data={modal_content[step]} />
-          }
+          )}
         </div>
 
         <ContentContainer className="!justify-start w-[1760px] px-[130px]">
-
           <MainContent
             data={data[step - 1]}
             showReading={showReading}
@@ -319,12 +378,19 @@ export default function Page() {
           />
         </ContentContainer>
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

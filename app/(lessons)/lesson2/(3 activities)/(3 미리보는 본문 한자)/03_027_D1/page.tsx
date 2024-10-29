@@ -10,6 +10,7 @@ import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자4.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -49,26 +50,13 @@ export default function Page() {
           {step === 2 && <img src={IMAGE2.src} alt="" />}
 
           <div className="absolute left-[130px] top-[230px] grid grid-cols-5 gap-[24px]">
-            <input
-              key={(step - 1) * 5 + 1}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-            />
-            <input
-              key={(step - 1) * 5 + 2}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-            />
-            <input
-              key={(step - 1) * 5 + 3}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-            />
-            <input
-              key={(step - 1) * 5 + 4}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-            />
-            <input
-              key={(step - 1) * 5 + 5}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-            />
+            {Array.from(Array(5)).map((_, index) => (
+              <InputWithPen
+                key={(step - 1) * 5 + index}
+                className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
+                penClassName="left-1/2 -translate-x-1/2"
+              />
+            ))}
           </div>
 
           <div className="absolute left-[130px] top-[420px] grid grid-cols-5 gap-[24px]">
