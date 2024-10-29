@@ -52,7 +52,7 @@ const Step2 = () => {
     <>
       <TitleContainer
         className="left-5 mt-14"
-        sound="">
+        sound="/sound/5/125/2.mp3">
         <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
           <img src="/ui/flower-icon-2.png" width={38} height={38} />
           위의 항목 중 자신의 가장 좋지 않은 습관을 하나 고르고 극복할 방법을 써 보자.

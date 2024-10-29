@@ -52,7 +52,7 @@ const Step1 = () => {
 
       <TitleContainer
         className="left-20"
-        sound="">
+        sound="/sound/4/96/2.mp3">
           <div className="animate__animated animate__fadeIn relative w-[1000px] -top-[100px]">
           <ul className="list-disc marker:text-[#567c56] pl-0">
             <li

@@ -10,6 +10,7 @@ import MODAL from "./modal.png";
 import CLOSE from "./close.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어27.png"
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [showModal, setShowModal] = useState(false);
@@ -54,7 +55,10 @@ export default function Page() {
 
         <button
           className="absolute right-[45px] bottom-[260px] z-10"
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            clickSound.play();
+            setShowModal(true);
+          }}
         >
           <img src={PLUS.src} />
         </button>
@@ -66,7 +70,10 @@ export default function Page() {
 
               <button
                 className="absolute top-5 right-5"
-                onClick={() => setShowModal(false)}
+                onClick={() => {
+                  clickSound.play();
+                  setShowModal(false);
+                }}
               >
                 <img src={CLOSE.src} />
               </button>
