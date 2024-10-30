@@ -14,11 +14,11 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  // const sound = new Howl({
+  //   src: sounds[step - 1],
+  //   onplay: () => setIsReading(true),
+  //   onend: () => setIsReading(false),
+  // });
   [
     {
       text: "이 그림은 조선 시대 화가 김홍도의 「해탐노화도(蟹貪蘆花圖)」로 ‘게가 갈대꽃을 탐한다.’ 라는 뜻이다.",

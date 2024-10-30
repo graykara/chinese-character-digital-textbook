@@ -48,7 +48,7 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answer = "합쳐서 표현하고 싶은 한자들을 새롭게 만들어 내면";
+  const answer = "합쳐서 표현하고 싶은 뜻을 가진 한자들을 새롭게 만들어 내면";
   const [value, setValue] = useState("");
   return (
     <>

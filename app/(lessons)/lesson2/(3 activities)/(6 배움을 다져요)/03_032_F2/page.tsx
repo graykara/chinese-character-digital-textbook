@@ -25,12 +25,12 @@ export default function Page() {
 
   const hanjaCards = ["山", "下", "上", "川", "末", "本"];
   const hanjaSounds = [
-    "/sound/2/32_008.mp3",
-    "/sound/2/32_009.mp3",
-    "/sound/2/32_010.mp3",
-    "/sound/2/32_011.mp3",
-    "/sound/2/32_012.mp3",
-    "/sound/2/32_013.mp3",
+    "/sound/2/p032_word007.mp3",
+    "/sound/2/p032_word008.mp3",
+    "/sound/2/p032_word009.mp3",
+    "/sound/2/p032_word010.mp3",
+    "/sound/2/p032_word011.mp3",
+    "/sound/2/p032_word012.mp3",
   ];
   const [droppedHanja, setDroppedHanja] = useState(["", ""]);
 

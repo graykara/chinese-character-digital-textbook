@@ -49,7 +49,9 @@ export default function Page() {
                 text={
                   <>
                     <p className="text-[30px] leading-[35px] tracking-[-2.5px] break-keep mt-1">
-                      해와 달은 하늘 높이 떠있는 것이므로, 둘을 합치면 ‘아주
+                      해와 달은 하늘 높이 
+                      <br />
+                      떠있는 것이므로, 둘을 합치면 ‘아주
                       높은 지위’를 의미하지 않을까?
                     </p>
                   </>

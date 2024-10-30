@@ -18,7 +18,7 @@ export default function Page() {
               나의 기업 운영 계획서 및 명함 만들기
             </h1>
             <HeaderContainer
-              sound="/sound/4/103_001.mp3"
+              sound="/sound/5/133-1.mp3"
               className="text-center text-[35px] animate__animated animate__flipInX"
             >
               거상 김만덕은 자신이 가진 부를 어려운 사람에게 나눠 주는 나눔의

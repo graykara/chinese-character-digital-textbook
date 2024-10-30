@@ -78,9 +78,9 @@ export default function Page() {
           <div className="relative">
             <img src={TEXT2.src} alt="text1" className="mt-4" />
             <div className="absolute left-[50px] top-0 grid grid-cols-3 gap-[10px] w-[700px]">
-              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
-              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
-              <button onClick={() => SOUND("/sound")}>사운드 파일 누락</button>
+              <button onClick={() => SOUND("/sound/1/p018_word000.mp3")}></button>
+              <button onClick={() => SOUND("/sound/1/p018_word001.mp3")}></button>
+              <button onClick={() => SOUND("/sound/1/p018_word002.mp3")}></button>
             </div>
           </div>
         </div>

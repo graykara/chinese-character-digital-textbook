@@ -123,8 +123,8 @@ export default function Page() {
           <FlippableCard_60
             active={showResource}
             className="-mt-4 ml-4 mr-5 inline-block"
-            text="화"
-            width={145}
+            text="뿌리"
+            width={190}
             height={80}
           />
           {"\xa0"}
@@ -132,7 +132,7 @@ export default function Page() {
           <FlippableCard_60
             active={showResource}
             className="-mt-4 ml-5 mr-10 inline-block"
-            text="월식"
+            text="근본"
             width={190}
             height={80}
           />
@@ -152,7 +152,7 @@ export default function Page() {
           <FlippableCard_60
             active={showResource}
             className="-mt-4 ml-5 mr-8 inline-block"
-            text="일식"
+            text="끝"
             width={200}
             height={80}
           />
