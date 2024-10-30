@@ -462,7 +462,7 @@ export default function Page() {
           <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
             <MainContentModalButton modal_data={modal_content[0]} />
           </div>
-        ) : step === 3 ? (
+        ) : step === 4 ? (
           <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
             <MainContentModalButton modal_data={modal_content[1]} />
           </div>

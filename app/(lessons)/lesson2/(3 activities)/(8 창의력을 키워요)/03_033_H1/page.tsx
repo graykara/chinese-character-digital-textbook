@@ -59,8 +59,6 @@ export default function Page() {
         </button>
       </CreativityPageTemplate>
 
-      {/* 체크표시 기능 넣어주세요. */}
-
       <InputWithPen
         answer={answers[0]}
         showAnswer={showAnswer}
@@ -80,10 +78,10 @@ export default function Page() {
 
       <OLD_TextareaWithPen
         showAnswer={showAnswer}
-        className="text-[40px] w-[550px] bg-transparent"
-        penClassName="left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[50px]"
-        containerClassName="!absolute bottom-[120px] left-[900px]"
-        rows={3}
+        className="text-[40px] w-[550px] py-8 leading-tight text-center"
+        penClassName="left-0 top-8 w-[50px]"
+        containerClassName="!absolute bottom-[120px] left-[900px] "
+        rows={2}
       />
 
       <ExampleAnswerButton

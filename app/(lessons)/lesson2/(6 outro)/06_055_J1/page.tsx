@@ -25,7 +25,7 @@ export default function Page() {
         {step === 2 ? <Content2 /> : null}
       </ActivityPageTemplate>
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
@@ -43,12 +43,25 @@ const Content2 = () => {
   return (
     <>
       <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-auto pt-20 pb-[120px]">
-        <div className="relative h-fit -mt-14 -ml-6">
+        <div className="relative h-fit -mt-3 -ml-12">
           {showAnswer ? (
             <img src={IMAGE2_AFTER.src} />
           ) : (
             <div className="relative">
               <img src={IMAGE2.src} />
+
+
+              <InputWithPen
+                containerClassName="absolute top-[345px] left-[371px] font-haeseo text-[83px]"
+                className="text-center w-[130px] mt-4"
+                penClassName="left-10 top-20 h-[55px]"
+              />
+              <InputWithPen
+                containerClassName="absolute top-[345px] left-[501px] font-haeseo text-[83px]"
+                className="text-center w-[130px] mt-4"
+                penClassName="left-10 top-20 h-[55px]"
+              />
+
 
               <InputWithPen
                 containerClassName="absolute left-[500px] top-[115px]"

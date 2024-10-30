@@ -11,7 +11,8 @@ import { StepContainer } from "@/app/components/step-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
-import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어123.png";
+import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어122.png";
+import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어123.png";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -55,6 +56,8 @@ const Step1 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="-ml-6 mt-16" />
+        <button className="absolute top-[50px] left-[590px] w-[300px] h-[100px] bg_black border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/p064_word002.mp3").play()}>
+          </button>
         <div
           className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
           onClick={() => SOUND("/sound/3/64_003.mp3").play()}
@@ -103,6 +106,8 @@ const Step2 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE2.src} className="-ml-6 mt-16" />
+        <button className="absolute top-[50px] left-[590px] w-[300px] h-[100px] bg_black border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/p064_word003.mp3").play()}>
+          </button>
         <div
           className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
           onClick={() => SOUND("/sound/3/64_004.mp3").play()}
@@ -133,7 +138,7 @@ const Step2 = () => {
         onClick={() => setShowAnswer(!showAnswer)}
       />
       <img
-        src={BACKGROUND1.src}
+        src={BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>

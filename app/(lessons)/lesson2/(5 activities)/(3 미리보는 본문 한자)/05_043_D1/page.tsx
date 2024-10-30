@@ -11,7 +11,13 @@ import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-
+  const sounds = [
+    "/sound/2/p043_word000.mp3",
+    "/sound/2/p043_word001.mp3",
+    "/sound/2/p043_word002.mp3",
+    "/sound/2/p043_word003.mp3",
+    "/sound/2/p043_word004.mp3",
+  ]
   return (
     <>
       <HeaderContainer>
@@ -34,7 +40,7 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

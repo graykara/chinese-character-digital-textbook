@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import LEFT from "./left.png";
 import RIGHT from "./right.png";
@@ -48,6 +49,24 @@ export default function Page() {
 
       <ContentContainer className="!justify-start mt-5 pl-12">
         <img src={EXAMPLE.src} className="mt-6 -ml-14 mb-10" />
+        <div className="absolute left-[0px] top-[40px] grid grid-cols-9 gap-[50px] w-full h-[90px] px-[35px]">
+          <button onClick={() => SOUND("/sound/3/p067_word000.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word001.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p067_word002.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p067_word003.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word004.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word005.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word006.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word007.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word008.mp3").play()}>
+          </button>
+        </div>
         <div className="flex items-center gap-10">
           <button>
             <img src={LEFT.src} />
@@ -73,10 +92,10 @@ export default function Page() {
 
       <img src={
         step === 1 ? BACKGROUND1.src :
-        step === 2 ? BACKGROUND2.src :
-        step === 3 ? BACKGROUND3.src :
-        step === 4 ? BACKGROUND4.src : ""
-        } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+          step === 2 ? BACKGROUND2.src :
+            step === 3 ? BACKGROUND3.src :
+              step === 4 ? BACKGROUND4.src : ""
+      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

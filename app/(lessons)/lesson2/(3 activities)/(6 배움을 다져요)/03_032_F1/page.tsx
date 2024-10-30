@@ -38,13 +38,13 @@ export default function Page() {
 const Step1 = () => {
   const answers = ["日", "月", "火", "木"];
   const sounds = [
-    "/sound/2/32_001.mp3",
-    "/sound/2/32_002.mp3",
-    "/sound/2/32_003.mp3",
-    "/sound/2/32_004.mp3",
-    "/sound/2/32_005.mp3",
-    "/sound/2/32_006.mp3",
-    "/sound/2/32_007.mp3",
+    "/sound/2/p032_word000.mp3",
+    "/sound/2/p032_word001.mp3",
+    "/sound/2/p032_word002.mp3",
+    "/sound/2/p032_word003.mp3",
+    "/sound/2/p032_word004.mp3",
+    "/sound/2/p032_word005.mp3",
+    "/sound/2/p032_word006.mp3",
   ];
   const [showAnswer, setShowAnswer] = useState(false);
 

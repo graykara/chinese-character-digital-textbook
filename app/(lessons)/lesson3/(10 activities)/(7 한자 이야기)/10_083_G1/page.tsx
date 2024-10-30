@@ -19,11 +19,11 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  // const sound = new Howl({
+  //   src: sounds[step - 1],
+  //   onplay: () => setIsReading(true),
+  //   onend: () => setIsReading(false),
+  // });
   [
     {
       text: "우리 선조들의 이야기에서 유래한 대표적인 성어로는 ‘함흥차사(咸興差使)’와 ‘계란유골(鷄卵有骨)’이 있는데 그 유래를 소개하면 다음과 같다.",

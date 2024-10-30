@@ -60,6 +60,14 @@ const Step1 = () => {
     <>
       <ContentContainer className="!justify-start top-[75px] -left-[110px]">
         <img src={IMAGE1.src} />
+        {showAnswer ? (<button className="absolute top-[20px] left-[395px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word000.mp3").play()}>
+        </button>) : null}
+        <button className="absolute top-[20px] left-[610px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word001.mp3").play()}>
+        </button>
+        <button className="absolute top-[155px] left-[395px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word002.mp3").play()}>
+        </button>
+        {/* {showAnswer ? (<button className="absolute top-[155px] left-[610px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word000.mp3").play()}>
+        </button>) : null} */}
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
@@ -84,6 +92,14 @@ const Step2 = () => {
     <>
       <ContentContainer className="!justify-start top-[75px] left-[95px]">
         <img src={IMAGE2.src} />
+        {showAnswer ? (<button className="absolute top-[20px] left-[190px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word003.mp3").play()}>
+        </button>) : null}
+        <button className="absolute top-[20px] left-[405px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word004.mp3").play()}>
+        </button>
+        <button className="absolute top-[155px] left-[190px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word005.mp3").play()}>
+        </button>
+        {/* {showAnswer ? (<button className="absolute top-[155px] left-[405px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word000.mp3").play()}>
+        </button>) : null} */}
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
@@ -108,6 +124,14 @@ const Step3 = () => {
     <>
       <ContentContainer className="!justify-start top-[75px] left-[55px]">
         <img src={IMAGE3.src} />
+        {/* {showAnswer ? (<button className="absolute top-[20px] left-[230px] w-[100px] h-[100px] bg-black z-10" onClick={() => SOUND("/sound/3/p076_word000.mp3").play()}>
+        </button>) : null} */}
+        <button className="absolute top-[20px] left-[445px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word008.mp3").play()}>
+        </button>
+        <button className="absolute top-[155px] left-[230px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word006.mp3").play()}>
+        </button>
+        {showAnswer ? (<button className="absolute top-[155px] left-[445px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word007.mp3").play()}>
+        </button>) : null}
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
@@ -132,6 +156,14 @@ const Step4 = () => {
     <>
       <ContentContainer className="!justify-start top-[75px] left-[100px]">
         <img src={IMAGE4.src} />
+        <button className="absolute top-[20px] left-[190px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word009.mp3").play()}>
+        </button>
+        {/* <button className="absolute top-[20px] left-[405px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word004.mp3").play()}>
+        </button> */}
+        {showAnswer ? (<button className="absolute top-[155px] left-[190px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word010.mp3").play()}>
+        </button>) : null}
+        <button className="absolute top-[155px] left-[405px] w-[100px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p076_word011.mp3").play()}>
+        </button>
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
