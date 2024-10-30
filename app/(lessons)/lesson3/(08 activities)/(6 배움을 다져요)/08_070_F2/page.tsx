@@ -101,6 +101,10 @@ const Step2 = () => {
       </div>
       <ContentContainer className="!justify-start -top-[45px] left-5">
         <img src={IMAGE2.src} />
+        <button className="absolute top-[215px] left-[90px] w-[200px] h-[100px] bg-tranparent z-10" onClick={() => SOUND("/sound/3/p070_word004.mp3").play()}>
+        </button>
+        <button className="absolute top-[395px] left-[90px] w-[200px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word005.mp3").play()}>
+        </button>
         <InputWithPen
           answer={answer1[0]}
           showAnswer={showAnswer}

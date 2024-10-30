@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer2 } from "@/app/components/title-container";
 import { useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import IMAGE_BEFORE from "./image-before.png";
 import IMAGE_AFTER from "./image-after.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
@@ -29,6 +30,14 @@ export default function Page() {
         ) : (
           <img src={IMAGE_BEFORE.src} alt="" />
         )}
+        <div className="absolute left-[250px] top-[75px] grid grid-cols-4 gap-[120px] w-[860px] h-[90px]">
+          <button onClick={() => SOUND("/sound/4/p091_word000.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/4/p091_word001.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/4/p091_word002.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/4/p091_word003.mp3").play()}>
+          </button>
+        </div>
       </ContentContainer>
 
       <CheckAnswerButton

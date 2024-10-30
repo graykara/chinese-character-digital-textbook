@@ -52,6 +52,8 @@ const Step1 = () => {
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />
+        <button className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}>
+          </button>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -86,6 +88,8 @@ const Step2 = () => {
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE2.src} />
+        <button className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}>
+          </button>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -114,6 +118,14 @@ const Step3 = () => {
     <>
       <ContentContainer className="!justify-start top-[10px] left-0">
         <img src={IMAGE3.src} />
+        <button className="absolute top-[20px] left-[310px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word002.mp3").play()}>
+          </button>
+          <button className="absolute top-[20px] left-[960px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}>
+          </button>
+          <button className="absolute top-[230px] left-[310px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word003.mp3").play()}>
+          </button>
+          <button className="absolute top-[230px] left-[960px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}>
+          </button>
         <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px]"></div>
       </ContentContainer>
 

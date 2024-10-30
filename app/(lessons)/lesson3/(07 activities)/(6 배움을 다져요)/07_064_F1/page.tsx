@@ -35,6 +35,7 @@ const Step1 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="mx-20 mt-20" />
+        <button className="absolute top-[260px] h-[100px] w-[560px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p064_word000.mp3").play()}></button>
         <div
           className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]"
           onClick={() => SOUND("/sound/3/64_001.mp3").play()}
@@ -94,6 +95,7 @@ const Step2 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE2.src} className="ml-[10px] mt-20" />
+        <button className="absolute top-[260px] h-[100px] w-[560px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p064_word001.mp3").play()}></button>
         <div
           className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]"
           onClick={() => SOUND("/sound/3/64_002.mp3").play()}

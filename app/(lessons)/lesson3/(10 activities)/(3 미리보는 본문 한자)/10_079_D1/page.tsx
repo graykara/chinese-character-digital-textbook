@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -35,6 +36,17 @@ export default function Page() {
 
       <ContentContainer className="!justify-start mt-5 pl-12">
         <img src={EXAMPLE.src} className="mb-10" />
+        <div className="absolute left-[50px] top-[50px] grid grid-cols-8 gap-[30px] w-full h-[90px] bg-transparent pr-[50px]">
+          <button onClick={() => SOUND("/sound/3/p079_word000.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/3/p079_word001.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word002.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word003.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word004.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word005.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word006.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/3/p079_word007.mp3").play()}></button>
+        </div>
         <div className="flex items-center gap-10">
           <div className="w-[800px] h-[300px] flex justify-center items-center">
             {step === 1 && <img src={IMAGE1.src} />}

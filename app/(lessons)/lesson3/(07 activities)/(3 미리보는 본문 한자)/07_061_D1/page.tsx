@@ -67,6 +67,8 @@ const Step1 = () => {
       <div className="-ml-[10px]">
         <header className="mb-5">
           <img src={HOW_BADGE.src} />
+          <button className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10" onClick={() => SOUND("/sound/3/61-i-2.mp3").play()}>
+          </button>
         </header>
 
         <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-12">
@@ -102,6 +104,7 @@ const Step2 = () => {
         <div className="">
           <header className="" onClick={() => SOUND("/sound").play()}>
             <img src={TASK_BADGE.src} />
+            <button className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10" onClick={() => SOUND("/sound/3/61-i-3.mp3").play()}></button>
           </header>
           <div className="relative pl-2 mt-1 w-[1526px] ">
             {showAnswer ? (
