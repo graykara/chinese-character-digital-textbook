@@ -35,7 +35,7 @@ export const CreativityTitleHeader = ({
   return (
     <div className={`mx-auto -translate-x-10 ${containerClassName}`}>
       <div
-        className={`relative bg-[#963600] px-[60px] rounded-full flex justify-center items-center ${className}`}
+        className={`relative bg-[#963600] px-[60px] rounded-[30px] flex justify-center items-center ${className}`}
       >
         <div className="absolute left-5 w-4 h-4 rounded-full bg-black" />
         <div className="absolute right-5 w-4 h-4 rounded-full bg-black" />
