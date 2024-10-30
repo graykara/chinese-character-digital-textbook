@@ -7,6 +7,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘17.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -127,11 +128,17 @@ export default function Page() {
                           {chinese}
                         </button>
                         <div className="text-center text-[35px] py-1">
-                          <p
+                          <InputWithPen
+                            answer={meaning}
+                            showAnswer={showAnswer}
+                            className="w-[200px] text-[35px] text-center"
+                            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+                          />
+                          {/* <p
                             className={`text-answer ${showAnswer ? "opacity-100" : "opacity-0"}`}
                           >
                             {meaning}
-                          </p>
+                          </p> */}
                         </div>
                       </td>
                     );

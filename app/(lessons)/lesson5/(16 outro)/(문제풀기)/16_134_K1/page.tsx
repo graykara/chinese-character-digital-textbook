@@ -64,6 +64,7 @@ export default function Page() {
         number={step}
         question={questions[step - 1]}
         hideIconNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+        essayTypeNumbers={[9, 10]}
       >
         {step === 1 && <Question1 />}
         {step === 2 && <Question2 />}
@@ -98,8 +99,8 @@ export default function Page() {
                           : step === 9
                             ? BACKGROUND9.src
                             : step === 10
-                            ? BACKGROUND10.src
-                            : ""
+                              ? BACKGROUND10.src
+                              : ""
         }
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
@@ -113,12 +114,14 @@ const Question1 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-        <img src={IMAGE1.src}/>
+        <img src={IMAGE1.src} />
 
         <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={1} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.
+            </p>
           </header>
 
           <div className="ml-[90px] mt-[25px] w-[130px] h-[130px] rounded-[15px] border-[3px] border-[#939292] flex justify-center items-center">
@@ -150,7 +153,9 @@ const Question2 = () => {
         <div className="w-full mt-12 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={2} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?
+            </p>
           </header>
 
           <div className="ml-[100px] mt-10">
@@ -183,9 +188,9 @@ const Question3 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE3.src} />
+        <img src={IMAGE3.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={3} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
@@ -220,12 +225,14 @@ const Question4 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE3.src} />
+        <img src={IMAGE3.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={4} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.
+            </p>
           </header>
 
           <div className="ml-[105px] mt-2 relative">
@@ -252,9 +259,9 @@ const Question5 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE5.src} />
+        <img src={IMAGE5.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={5} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
@@ -295,9 +302,9 @@ const Question6 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE5.src} />
+        <img src={IMAGE5.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={6} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
@@ -335,12 +342,14 @@ const Question7 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE7.src} />
+        <img src={IMAGE7.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={7} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">㉠을 숫자로 바르게 표기한 것은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              ㉠을 숫자로 바르게 표기한 것은?
+            </p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">
@@ -367,12 +376,15 @@ const Question8 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <img src={IMAGE7.src} />
+        <img src={IMAGE7.src} />
 
-      <div className="w-full mt-14 -ml-1">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={8} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">㉮~㉲의 설명으로 옳지 <span className="underline underline-offset-2">않은</span> 것은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              ㉮~㉲의 설명으로 옳지{" "}
+              <span className="underline underline-offset-2">않은</span> 것은?
+            </p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">
@@ -405,11 +417,15 @@ const Question9 = () => {
   return (
     <>
       <ContentContainer className="!justify-start top-5 w-[1560px]">
-      <div className="w-full mt-2 -ml-1">
-          <header className="flex items-start -mt-2 gap-5">
-            <ProblemNumberIcon number={9} type="2"/>
+        <div className="w-full mt-2 -ml-1">
+          <header className="flex items-start -mt-2 gap-10">
+            <ProblemNumberIcon number={9} type="2" />
             <p className="text-[55px] -mt-2 -ml-6 tracking-tight break-keep ">
-              <span className="font-haeseo text-[60px] tracking-[-5px]">‘自天而視之, 人與物均也.’</span>를 우리말로 풀이하고 문장에서 얻을 수 있는 교훈을 쓰시오.
+              ‘
+              <span className="font-haeseo text-[60px] tracking-[-5px]">
+                自天而視之, 人與物均也.
+              </span>
+              ’를 우리말로 풀이하고 문장에서 얻을 수 있는 교훈을 쓰시오.
             </p>
           </header>
 
@@ -444,14 +460,16 @@ const Question9 = () => {
 
 const Question10 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-//#293071
+  //#293071
   return (
     <>
       <ContentContainer className="!justify-start -left-6 top-0">
-      <div className="w-full -ml-1">
+        <div className="w-full -ml-1">
           <header className="flex items-center gap-5">
-            <ProblemNumberIcon number={10} type="2"/>
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">사람들이 만덕을 칭송한 이유를 쓰시오.</p>
+            <ProblemNumberIcon number={10} type="2" />
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
+              사람들이 만덕을 칭송한 이유를 쓰시오.
+            </p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">

@@ -19,6 +19,8 @@ export const PageInfoContext = createContext<{
   setCurrentChapter: Dispatch<SetStateAction<number>>;
   currentSubChapter: string;
   setCurrentSubChapter: Dispatch<SetStateAction<string>>;
+
+  scale: number;
 }>({
   title: "",
   subtitle: "",
@@ -37,4 +39,6 @@ export const PageInfoContext = createContext<{
   setCurrentChapter: () => {},
   currentSubChapter: "",
   setCurrentSubChapter: () => {},
+
+  scale: 1,
 });

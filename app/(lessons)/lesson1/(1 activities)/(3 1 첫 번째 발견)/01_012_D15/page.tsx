@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { MoveRight } from "lucide-react";
 import { ExerciseHeader } from "@/app/components/exercise-header";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어10.png"
+import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어10.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -41,7 +41,13 @@ export default function Page() {
       <Header />
 
       <ExerciseHeader
-        text="뉴스 기사에서 틀린 말을 모두 찾아 바르게 고쳐 보자."
+        text={
+          <p>
+            뉴스 기사에서{" "}
+            <span className="underline underline-offset-[10px]">틀린</span> 말을
+            모두 찾아 바르게 고쳐 보자.
+          </p>
+        }
         sound="/sound/1/12-i2-4.mp3"
         image={EXERCISE4.src}
       />
@@ -66,7 +72,7 @@ export default function Page() {
                   style={{
                     height: 55,
                     top: 110,
-                    left: 120
+                    left: 120,
                   }}
                 />
               ) : null}
@@ -75,27 +81,18 @@ export default function Page() {
                 onChange={(e) =>
                   setValue({ ...value, text1: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
-              {!value.text2 && !showAnswer ? (
-                <img
-                  src="/ui/textarea-pen.png"
-                  className="absolute pointer-events-none"
-                  style={{
-                    height: 55,
-                    top: 220,
-                    left: 120
-                  }}
-                />
-              ) : null}
               <input
                 value={showAnswer ? answer.answer2 : value.text2}
                 onChange={(e) =>
                   setValue({ ...value, text2: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
             </div>
             <div className="mx-5 relative w-[30px] h-full">
@@ -106,43 +103,23 @@ export default function Page() {
               <div className="rounded-full bg-[#c2e6ec] tracking-normal text-[35px] w-[180px] text-center py-1">
                 바른 말
               </div>
-              {!value.text3 && !showAnswer ? (
-                <img
-                  src="/ui/textarea-pen.png"
-                  className="absolute pointer-events-none"
-                  style={{
-                    height: 55,
-                    top: 110,
-                    left: 510
-                  }}
-                />
-              ) : null}
               <input
                 value={showAnswer ? answer.answer3 : value.text3}
                 onChange={(e) =>
                   setValue({ ...value, text3: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
-              {!value.text4 && !showAnswer ? (
-                <img
-                  src="/ui/textarea-pen.png"
-                  className="absolute pointer-events-none"
-                  style={{
-                    height: 55,
-                    top: 220,
-                    left: 510
-                  }}
-                />
-              ) : null}
               <input
                 value={showAnswer ? answer.answer4 : value.text4}
                 onChange={(e) =>
                   setValue({ ...value, text4: e.currentTarget.value })
                 }
-                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${showAnswer ? "text-answer" : ""
-                  }`}
+                className={`w-[320px] border-b-2 border-black text-center text-[50px] leading-tight pt-4 pb-2 focus:outline-none ${
+                  showAnswer ? "text-answer" : ""
+                }`}
               />
             </div>
           </div>
@@ -153,7 +130,10 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

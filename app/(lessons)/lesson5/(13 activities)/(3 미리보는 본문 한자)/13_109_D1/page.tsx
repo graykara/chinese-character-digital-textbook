@@ -12,6 +12,7 @@ import {
   LineDrawingStartPoint,
 } from "@/app/components/line-drawing/line-drawing-start-point";
 import { LineDrawingEndPoint } from "@/app/components/line-drawing/line-drawing-end-point";
+import DotConnectionQuiz from "./dot-connection-quiz";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -22,53 +23,25 @@ export default function Page() {
     setShowAnswer(false);
   }, [step]);
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [lines, setLines] = useState<Line[]>([]);
-  const [currentLine, setCurrentLine] = useState<Partial<Line> | null>(null);
-
-  const getRelativeCoordinates = (x: number, y: number) => {
-    const container = containerRef.current;
-    if (container) {
-      const rect = container.getBoundingClientRect();
-      return {
-        x: x - rect.left,
-        y: y - rect.top,
-      };
-    }
-    return { x, y };
-  };
-
-  const handleDragStart = (x: number, y: number, value: string | ReactNode) => {
-    const coords = getRelativeCoordinates(x, y);
-    setCurrentLine({
-      start: coords,
-      value,
-    });
-  };
-
-  const handleDrag = (x: number, y: number) => {
-    if (currentLine?.start) {
-      const coords = getRelativeCoordinates(x, y);
-      setCurrentLine({
-        ...currentLine,
-        end: coords,
-      });
-    }
-  };
-
-  const handleDrop = (value: string | ReactNode, x: number, y: number) => {
-    if (currentLine?.start) {
-      const coords = getRelativeCoordinates(x, y);
-      setLines([
-        ...lines,
-        {
-          start: currentLine.start,
-          end: coords,
-          value,
-        } as Line,
-      ]);
-      setCurrentLine(null);
-    }
+  const quizData = {
+    startDots: [
+      { id: 1, x: 80, y: 62 },
+      { id: 2, x: 279, y: 62 },
+      { id: 3, x: 480, y: 62 },
+      { id: 4, x: 678, y: 62 },
+    ],
+    endDots: [
+      { id: 5, x: 80, y: 157 },
+      { id: 6, x: 279, y: 157 },
+      { id: 7, x: 480, y: 157 },
+      { id: 8, x: 678, y: 157 },
+    ],
+    answers: [
+      { startId: 1, endId: 6 },
+      { startId: 2, endId: 5 },
+      { startId: 3, endId: 7 },
+      { startId: 4, endId: 8 },
+    ],
   };
 
   return (
@@ -89,50 +62,13 @@ export default function Page() {
         <div className="relative w-full flex">
           <img src={IMAGE.src} />
 
-          <div
-            className="absolute left-0 top-0 w-[1500px] h-[500px]"
-            ref={containerRef}
-          >
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              {lines.map((line, i) => (
-                <line
-                  key={i}
-                  x1={line.start.x}
-                  y1={line.start.y}
-                  x2={line.end.x}
-                  y2={line.end.y}
-                  stroke="blue"
-                  strokeWidth="2"
-                />
-              ))}
-              {currentLine?.start && currentLine?.end && (
-                <line
-                  x1={currentLine.start.x}
-                  y1={currentLine.start.y}
-                  x2={currentLine.end.x}
-                  y2={currentLine.end.y}
-                  stroke="blue"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                />
-              )}
-            </svg>
-
-            <div className="flex justify-between p-4">
-              <LineDrawingStartPoint
-                value="시작점"
-                onDragStart={handleDragStart}
-                onDrag={handleDrag}
-                className="p-4 bg-blue-100 rounded"
-              >
-                드래그 시작점
-              </LineDrawingStartPoint>
-
-              <LineDrawingEndPoint
-                onDrop={handleDrop}
-                className="p-4 bg-green-100 rounded w-32 h-32"
-              />
-            </div>
+          <div className="absolute right-0 top-[150px] w-[750px] h-[230px] overflow-hidden">
+            <DotConnectionQuiz
+              startDots={quizData.startDots}
+              endDots={quizData.endDots}
+              answers={quizData.answers}
+              showAnswer={showAnswer}
+            />
           </div>
         </div>
       </ContentContainer>

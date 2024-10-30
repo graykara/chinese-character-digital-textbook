@@ -9,6 +9,7 @@ import { useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { clickSound } from "@/app/utils/click-sound";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   return (
@@ -42,14 +43,106 @@ const Step1 = () => {
       <ContentContainer className="!justify-start left-10">
         <div className="relative">
           <div className="grid grid-cols-3 gap-16">
-            <img src={IMAGE1.src} />
-            <img src={IMAGE2.src} />
-            <img src={IMAGE3.src} />
+            <div className="relative">
+              <img src={IMAGE1.src} />
+              <InputWithPen
+                answer="2"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[150px]"
+              />
+              <InputWithPen
+                answer="1"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[222px]"
+              />
+              <InputWithPen
+                answer="질문"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[110px] left-[165px]"
+              />
+              <InputWithPen
+                answer="안부"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[30px] left-[165px]"
+              />
+            </div>
+            <div className="relative">
+              <img src={IMAGE2.src} />
+
+              <InputWithPen
+                answer="2"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[150px]"
+              />
+              <InputWithPen
+                answer="1"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[222px]"
+              />
+              <InputWithPen
+                answer="식물"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[110px] left-[165px]"
+              />
+              <InputWithPen
+                answer="수목원"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[30px] left-[165px]"
+              />
+            </div>
+            <div className="relative">
+              <img src={IMAGE3.src} />
+
+              <InputWithPen
+                answer="1"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[150px]"
+              />
+              <InputWithPen
+                answer="2"
+                showAnswer={showAnswer}
+                className="w-[50px] text-[40px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute top-[62px] left-[222px]"
+              />
+              <InputWithPen
+                answer="정의"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[110px] left-[165px]"
+              />
+              <InputWithPen
+                answer="병사"
+                showAnswer={showAnswer}
+                className="w-[150px] text-[50px] text-center bg-transparent"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                containerClassName="absolute bottom-[30px] left-[165px]"
+              />
+            </div>
           </div>
 
           {/* 02_018_D31에서 코드만 복사해둠... */}
 
-          <div className="absolute bottom-[55px] left-[40px] grid grid-cols-5 gap-[90px]">
+          {/* <div className="absolute bottom-[55px] left-[40px] grid grid-cols-5 gap-[90px]">
             {Array.from(Array(5).keys()).map((_, index) =>
               buttonActive.includes(index) ? (
                 <div key={index} className="w-[80px] h-[80px]" />
@@ -71,7 +164,7 @@ const Step1 = () => {
                 </button>
               ),
             )}
-          </div>
+          </div> */}
         </div>
       </ContentContainer>
 

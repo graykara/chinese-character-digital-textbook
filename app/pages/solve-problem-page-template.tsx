@@ -8,6 +8,7 @@ interface Props extends PropsWithChildren {
   number: number;
   question: string | ReactNode;
   hideIconNumbers?: number[];
+  essayTypeNumbers?: number[];
 }
 
 export const SolveProblemPageTemplate = ({
@@ -16,6 +17,7 @@ export const SolveProblemPageTemplate = ({
   question,
   children,
   hideIconNumbers = [],
+  essayTypeNumbers = [],
 }: Props) => {
   const { currentStep } = useContext(PageInfoContext);
 
@@ -43,7 +45,11 @@ export const SolveProblemPageTemplate = ({
             <ProblemNumberIcon number={number} />
           ) : null}
 
-          <div className="pt-1 text-[55px] tracking-tighter">{question}</div>
+          <div
+            className={`pt-1 text-[55px] tracking-tighter ${essayTypeNumbers.includes(number) ? "text-[#2a306d]" : ""}`}
+          >
+            {question}
+          </div>
         </header>
 
         <div className="h-full">{children}</div>

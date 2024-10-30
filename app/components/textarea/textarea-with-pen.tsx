@@ -5,6 +5,7 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   showAnswer?: boolean;
   penClassName?: string;
   containerClassName?: string;
+  isExample?: boolean;
 }
 
 export const TextareaWithPen = ({
@@ -63,6 +64,7 @@ export const OLD_TextareaWithPen = ({
   className,
   penClassName,
   containerClassName,
+  isExample = false,
   ...props
 }: Props & { className?: string }) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -71,14 +73,15 @@ export const OLD_TextareaWithPen = ({
   useEffect(() => {
     if (showAnswer && inputRef.current) {
       setValue(answer || "");
-      inputRef.current.className += " text-answer";
+      inputRef.current.className += isExample
+        ? " text-example"
+        : " text-answer";
       inputRef.current.readOnly = true;
     } else if (!showAnswer && inputRef.current) {
       setValue("");
-      inputRef.current.className = inputRef.current.className.replace(
-        "text-answer",
-        "",
-      );
+      inputRef.current.className = inputRef.current.className
+        .replace("text-answer", "")
+        .replace("text-example", "");
       inputRef.current.readOnly = false;
     }
   }, [showAnswer]);

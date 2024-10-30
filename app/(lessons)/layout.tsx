@@ -50,6 +50,25 @@ export default function RootLayout({
     setCurrentSubChapter(getSubChatperOfPath(pathname) || "");
   }, [pathname]);
 
+  const [scale, setScale] = useState(1);
+
+  const handleWindowResize = () => {
+    let ratio = 1;
+    if (window.innerWidth / window.innerHeight > 1.78) {
+      // 세로가 더 길어져서 짤릴 때
+      ratio = (window.innerHeight * 1920) / 1080 / 1920;
+    } else {
+      ratio = window.innerWidth < 1920 ? window.innerWidth / 1920 : 1;
+    }
+    setScale(ratio);
+  };
+
+  useEffect(() => {
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
     <PageInfoContext.Provider
       value={{
@@ -70,6 +89,7 @@ export default function RootLayout({
         setCurrentChapter,
         currentSubChapter,
         setCurrentSubChapter,
+        scale,
       }}
     >
       <DndProvider backend={HTML5Backend}>
