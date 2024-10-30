@@ -4,21 +4,21 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "도입",
     path: "lesson1/01_008_A1",
-    page: 8,
+    page: "8~9",
   }, // 1차시
   {
     lesson: 1,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson1/01_008_A2",
-    page: 8,
+    page: "8~9",
   },
   {
     lesson: 1,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson1/01_008_A3",
-    page: 8,
+    page: "8~9",
   },
   {
     lesson: 1,

@@ -18,7 +18,7 @@ export const AdditionalModal = ({
   bgColor = "#7278a6",
 }: Props) => {
   return (
-    <Modal open={open} onClose={onClose} hideCloseButtom showAnimation={false}>
+    <Modal open={open} onClose={onClose} hideCloseButtom>
       <div className="fixed w-[1760px] h-[990px] left-[40px] bg-white bg-opacity-50 flex justify-center items-center">
         <div
           className="relative rounded-[24px] min-w-[850px] px-[24px] pb-[24px] -translate-y-[10%]"

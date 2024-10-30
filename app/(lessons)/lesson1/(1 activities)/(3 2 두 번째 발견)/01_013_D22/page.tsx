@@ -28,6 +28,10 @@ export default function Page() {
     setValue("");
   }, [step]);
 
+  useEffect(() => {
+    if (!showAnswer) setValue("");
+  }, [showAnswer]);
+
   const data = [
     {
       image: IMAGE1.src,

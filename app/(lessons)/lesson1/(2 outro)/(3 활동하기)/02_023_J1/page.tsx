@@ -7,12 +7,11 @@ import IMAGE4 from "./image4.png";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
-import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
-import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아34.png"
-import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아35.png"
-import BACKGROUND3 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아36.png"
+import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아34.png";
+import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아35.png";
+import BACKGROUND3 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아36.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -32,11 +31,18 @@ export default function Page() {
           </div>
         </div>
       </ActivityPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }
@@ -47,8 +53,8 @@ const Content1 = () => {
       <header className="mb-10 -ml-3">
         <img src={IMAGE1.src} />
       </header>
-      <p className="ml-3 -mt-2 text-[55px] tracking-tighter" >
-      {/* sound="/sound/1/23-i.mp3" */}
+      <p className="ml-3 -mt-2 text-[55px] tracking-tighter">
+        {/* sound="/sound/1/23-i.mp3" */}
         문자도는 문자의 뜻과 관계있는 옛이야기의 소재를 문자의 획 안이나
         <br />그 주변에 그려 넣어 글자를 구성한 그림이다. 내 이름의 뜻이나 나와
         <br />
@@ -70,7 +76,11 @@ const Content2 = () => {
 
 const Content3 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const answers = ["김대성", "'크게 이루다'는 뜻으로\n큰 인물이 되라는 이름.", "노래방, 떡볶이, 미용사"];
+  const answers = [
+    "김대성",
+    "'크게 이루다'는 뜻으로\n큰 인물이 되라는 이름.",
+    "노래방, 떡볶이, 미용사",
+  ];
   return (
     <>
       <div className="w-full h-full overflow-y-scroll flex justify-center -ml-14 pb-[100px]">
@@ -118,7 +128,6 @@ const Content3 = () => {
           )}
 
           {!showAnswer ? (
-            
             <textarea
               key={4}
               defaultValue={""}
@@ -145,7 +154,6 @@ const Content3 = () => {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-
     </>
   );
 };

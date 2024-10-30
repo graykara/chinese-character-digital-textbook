@@ -1,6 +1,7 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { PropsWithChildren, ReactNode, useContext } from "react";
 import { LessonIcon } from "../components/lesson-icon";
 import { ProblemNumberIcon } from "../components/solve-problem/problem-number-icon";
+import { PageInfoContext } from "../utils/page-info";
 
 interface Props extends PropsWithChildren {
   lesson: number;
@@ -16,6 +17,8 @@ export const SolveProblemPageTemplate = ({
   children,
   hideIconNumbers = [],
 }: Props) => {
+  const { currentStep } = useContext(PageInfoContext);
+
   return (
     <div
       className="relative w-[1760px] h-[990px]"
@@ -25,6 +28,7 @@ export const SolveProblemPageTemplate = ({
     >
       <div className="absolute left-[140px] top-[60px]">
         <img
+          key={currentStep}
           src="/background/solve-problem-header.png"
           className="animate__animated animate__flipInX"
         />

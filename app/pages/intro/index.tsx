@@ -1,11 +1,11 @@
 "use client";
 
-import ReactPlayer from "react-player";
+import { VideoPlayer } from "@/app/components/video-player";
 
 export const IntroPageTemplate = ({ video }: { video: string }) => {
   return (
     <div>
-      <ReactPlayer src={video} />
+      <VideoPlayer src={video} />
     </div>
   );
 };

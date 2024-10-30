@@ -92,15 +92,25 @@ export default function Page() {
       )}
       <img
         src={
-          step === 1 ? BACKGROUND1.src :
-            step === 2 ? BACKGROUND2.src :
-              step === 3 ? BACKGROUND3.src :
-                step === 4 ? BACKGROUND4.src :
-                  step === 5 ? BACKGROUND5.src :
-                    step === 6 ? BACKGROUND6.src :
-                      step === 7 ? BACKGROUND7.src :
-                        step === 8 ? BACKGROUND8.src :
-                          step === 9 ? BACKGROUND9.src : ""
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : step === 5
+                    ? BACKGROUND5.src
+                    : step === 6
+                      ? BACKGROUND6.src
+                      : step === 7
+                        ? BACKGROUND7.src
+                        : step === 8
+                          ? BACKGROUND8.src
+                          : step === 9
+                            ? BACKGROUND9.src
+                            : ""
         }
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
@@ -115,19 +125,24 @@ const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
         showAnswer={showAnswer}
         options={[
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">休</span> <span className="text-[50px]">(목) 나무</span>
+            <span className="font-haeseo text-[55px]">休</span>{" "}
+            <span className="text-[50px]">(목) 나무</span>
           </p>,
           <p key={2} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">聞</span> <span className="text-[50px]">(문) 묻다</span>
+            <span className="font-haeseo text-[55px]">聞</span>{" "}
+            <span className="text-[50px]">(문) 묻다</span>
           </p>,
           <p key={3} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">好</span> <span className="text-[50px]">(호) 좋다</span>
+            <span className="font-haeseo text-[55px]">好</span>{" "}
+            <span className="text-[50px]">(호) 좋다</span>
           </p>,
           <p key={4} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">九</span> <span className="text-[50px]">(칠) 일곱</span>
+            <span className="font-haeseo text-[55px]">九</span>{" "}
+            <span className="text-[50px]">(칠) 일곱</span>
           </p>,
           <p key={5} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">末</span> <span className="text-[50px]">(본) 근본, 뿌리</span>
+            <span className="font-haeseo text-[55px]">末</span>{" "}
+            <span className="text-[50px]">(본) 근본, 뿌리</span>
           </p>,
         ]}
         answers={[3]}
@@ -240,19 +255,24 @@ const Question6 = ({ showAnswer }: { showAnswer: boolean }) => {
         showAnswer={showAnswer}
         options={[
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">有無</span> <span className="text-[50px]">- 술보 관계</span>
+            <span className="font-haeseo text-[55px]">有無</span>{" "}
+            <span className="text-[50px]">- 술보 관계</span>
           </p>,
           <p key={2} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">讀書</span> <span className="text-[50px]">- 병렬 관계</span>
+            <span className="font-haeseo text-[55px]">讀書</span>{" "}
+            <span className="text-[50px]">- 병렬 관계</span>
           </p>,
           <p key={3} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">年少</span> <span className="text-[50px]">- 술목 관계</span>
+            <span className="font-haeseo text-[55px]">年少</span>{" "}
+            <span className="text-[50px]">- 술목 관계</span>
           </p>,
           <p key={4} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">休日</span> <span className="text-[50px]">- 수식 관계</span>
+            <span className="font-haeseo text-[55px]">休日</span>{" "}
+            <span className="text-[50px]">- 수식 관계</span>
           </p>,
           <p key={5} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">難讀</span> <span className="text-[50px]">- 주술 관계</span>
+            <span className="font-haeseo text-[55px]">難讀</span>{" "}
+            <span className="text-[50px]">- 주술 관계</span>
           </p>,
         ]}
         answers={[4]}
@@ -269,21 +289,31 @@ const Question7 = ({ showAnswer }: { showAnswer: boolean }) => {
         showAnswer={showAnswer}
         options={[
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">매주 월요일은</span> <span className="font-haeseo text-[55px]">休業</span> <span className="text-[50px]">합니다.</span>
+            <span className="text-[50px]">매주 월요일은</span>{" "}
+            <span className="font-haeseo text-[55px]">休業</span>{" "}
+            <span className="text-[50px]">합니다.</span>
           </p>,
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">그는 예심을</span> <span className="font-haeseo text-[55px]">無難</span> <span className="text-[50px]">하게 통과했다.</span>
+            <span className="text-[50px]">그는 예심을</span>{" "}
+            <span className="font-haeseo text-[55px]">無難</span>{" "}
+            <span className="text-[50px]">하게 통과했다.</span>
           </p>,
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">이야기할 때는</span> <span className="font-haeseo text-[55px]">聽者</span> <span className="text-[50px]">의 상황을 고려해야 한다.</span>
+            <span className="text-[50px]">이야기할 때는</span>{" "}
+            <span className="font-haeseo text-[55px]">聽者</span>{" "}
+            <span className="text-[50px]">의 상황을 고려해야 한다.</span>
           </p>,
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">그 책은 특히 학생들에게 많은{" "}</span>
-            <span className="font-haeseo text-[55px]">共感</span> <span className="text-[50px]">을 불러일으켰다.</span>
+            <span className="text-[50px]">그 책은 특히 학생들에게 많은 </span>
+            <span className="font-haeseo text-[55px]">共感</span>{" "}
+            <span className="text-[50px]">을 불러일으켰다.</span>
           </p>,
           <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">이번 일은 나의</span> <span className="font-haeseo text-[55px]">義士</span> <span className="text-[50px]">와는
-              상관없이 그가 독단적으로 결정한 것이다.</span>
+            <span className="text-[50px]">이번 일은 나의</span>{" "}
+            <span className="font-haeseo text-[55px]">義士</span>{" "}
+            <span className="text-[50px]">
+              와는 상관없이 그가 독단적으로 결정한 것이다.
+            </span>
           </p>,
         ]}
         answers={[5]}
@@ -377,7 +407,12 @@ const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
 
         <InputWithPen
           isExample
-          answer={`아름답게 핀 진달래꽃이 <span class="font-haeseo text-[45px]">山川</span>에 가득하다.`}
+          answer={
+            <p>
+              아름답게 핀 진달래꽃이{" "}
+              <span className="font-haeseo text-[45px]">山川</span>에 가득하다.
+            </p>
+          }
           showAnswer={showAnswer}
           containerClassName="!absolute left-[420px] top-[78px]"
           className="bg-transparent w-[720px] text-center text-[40px]"

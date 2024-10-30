@@ -1,7 +1,7 @@
 "use client";
 
+import { VideoPlayer } from "@/app/components/video-player";
 import { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 
 export default function Page() {
   const [muted, setMuted] = useState(true);
@@ -13,14 +13,7 @@ export default function Page() {
   }, []);
   return (
     <>
-      <ReactPlayer
-        url="/video/intro/5_intro.mp4"
-        width={1760}
-        height={990}
-        muted={muted}
-        playing
-        controls
-      />
+      <VideoPlayer src="/video/intro/5_intro.mp4" />
     </>
   );
 }

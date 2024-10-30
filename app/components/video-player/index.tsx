@@ -155,6 +155,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={() => setDuration(videoRef.current.duration)}
           onClick={togglePlay}
+          autoPlay
         >
           <source src={src} type="video/mp4" />
           Your browser does not support the video tag.
@@ -174,6 +175,17 @@ export const VideoPlayer = ({ src }: { src: string }) => {
         className={`mt-4 p-3 absolute bottom-0 left-0 right-0 bg-black bg-opacity-75`}
       >
         <div className="flex items-center space-x-2">
+          <select
+            value={playbackRate}
+            onChange={handlePlaybackRateChange}
+            className="p-1 w-[100px] h-[36px] text-[24px] border rounded bg-white text-black"
+          >
+            {[0.5, 0.75, 1, 1.25, 1.5, 2].map((rate) => (
+              <option key={rate} value={rate}>
+                {rate}x
+              </option>
+            ))}
+          </select>
           <button
             onClick={togglePlay}
             className="p-2 rounded"
@@ -206,7 +218,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
               size={24}
             />
           </button>
-          <span className="flex-none text-white">
+          <span className="text-[24px] flex-none text-white">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
           <input
@@ -251,17 +263,6 @@ export const VideoPlayer = ({ src }: { src: string }) => {
               className="w-24"
             />
           </div>
-          <select
-            value={playbackRate}
-            onChange={handlePlaybackRateChange}
-            className="p-1 border rounded bg-white text-black"
-          >
-            {[0.5, 0.75, 1, 1.25, 1.5, 2].map((rate) => (
-              <option key={rate} value={rate}>
-                {rate}x
-              </option>
-            ))}
-          </select>
           <button
             onClick={toggleFullscreen}
             className="p-2 rounded"

@@ -1,8 +1,8 @@
 "use client";
 
+import { VideoPlayer } from "@/app/components/video-player";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext, useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -17,14 +17,7 @@ export default function Page() {
   }, []);
   return (
     <>
-      <ReactPlayer
-        url="/video/intro/1_intro.mp4"
-        width={1760}
-        height={990}
-        muted={muted}
-        playing
-        controls
-      />
+      <VideoPlayer src="/video/intro/1_intro.mp4" />
     </>
   );
 }
