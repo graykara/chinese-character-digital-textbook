@@ -83,7 +83,7 @@ textarea:focus {
     }
 }
 
-.bg-white {
+/* .bg-white {
     background: linear-gradient(
             -90deg,
             rgba(0, 0, 0, 0.01) 5px,
@@ -110,4 +110,4 @@ textarea:focus {
         500px 500px,
         500px 500px,
         500px 500px;
-}
+} */

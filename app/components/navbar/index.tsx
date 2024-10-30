@@ -8,9 +8,12 @@ import {
 import { PageInfoContext } from "@/app/utils/page-info";
 import { Ellipsis, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useContext, useEffect, useMemo, useState } from "react";
 
 export const Navbar = () => {
+  const pathname = usePathname();
+  const hasHTML = pathname.includes(".html");
   const [showMenu, setShowMenu] = useState(false);
 
   const [selectedLesson, setSelectedLesson] = useState(1);
@@ -54,8 +57,10 @@ export const Navbar = () => {
         ).map((item) => [item.subChapter, item]),
       ).values(),
     ],
-    [selectedChapter],
+    [selectedLesson, selectedChapter],
   );
+
+  console.log(subChapters);
 
   return (
     <>
@@ -141,7 +146,10 @@ export const Navbar = () => {
             {subChapters.map((item, index) => (
               <Link
                 key={index}
-                href={getPageByPath("/" + item.path) || ""}
+                href={
+                  getPageByPath("/" + item.path + (hasHTML ? ".html" : "")) ||
+                  ""
+                }
                 onClick={() => {
                   setCurrentStep(1);
                   setShowMenu(false);
