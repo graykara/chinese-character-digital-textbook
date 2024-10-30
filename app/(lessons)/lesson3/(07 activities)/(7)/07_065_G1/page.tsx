@@ -11,6 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성
 import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어128.png";
 import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어129.png";
 import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어130.png";
+import { AdditionalButton } from "@/app/components/buttons/additional-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -111,6 +112,27 @@ const Step1 = () => {
             )』]” 라는 말이 남아 있을 정도다.이와 같은 백락의 안목은 지금도 여러
             사람 중에 재주가 뛰어난 사람을 가려내는 능력으로 비유되기도 한다.
           </div>
+
+          <AdditionalButton
+            className="absolute left-[1100px] -top-[10px] w-10 h-10"
+            additional={
+              <p>
+                •<span className="font-haeseo">千里馬</span>
+                <span className="font-bold">(천리마)</span>: 하루에 천 리를 달릴
+                수 있는 좋은 말.
+              </p>
+            }
+          />
+          <AdditionalButton
+            className="absolute left-[930px] top-[73px] w-10 h-10"
+            additional={
+              <p>
+                •<span className="font-haeseo">天馬</span>
+                <span className="font-bold">(천마)</span>: 옥황상제가 타고
+                다닌다는 말.
+              </p>
+            }
+          />
         </div>
       </ContentContainer>
     </>

@@ -42,7 +42,8 @@ export default function Page() {
     "단어장의 내용을 보고 ㉠에 들어갈 단어를 한자로 쓰시오.",
     "단어의 짜임이 옳은 것은?",
     <>
-      한자 어휘의 활용이 옳지 <span className="underline">않은</span> 것은?
+      한자 어휘의 활용이 옳지{" "}
+      <span className="underline underline-offset-[10px]">않은</span> 것은?
     </>,
     "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
     "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",

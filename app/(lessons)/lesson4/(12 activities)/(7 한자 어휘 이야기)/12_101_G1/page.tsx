@@ -8,7 +8,6 @@ import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { QRButton } from "@/app/components/buttons/qr-button";
 import QR from "./qr.png";
-import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글30.png";
@@ -77,7 +76,7 @@ const Step1 = () => {
   return (
     <>
       <SoundButton2
-        className="absolute left-[1050px] top-[110px]"
+        className="absolute left-[1050px] top-[110px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
           sound.stop();

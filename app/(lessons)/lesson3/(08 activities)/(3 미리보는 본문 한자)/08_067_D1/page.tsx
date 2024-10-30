@@ -20,6 +20,8 @@ import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어26.png";
 import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어27.png";
 import BACKGROUND4 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어28.png";
+import { DraggableCard } from "@/app/components/new-drag-and-drop/draggable-card";
+import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -50,32 +52,118 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-5 pl-12">
         <img src={EXAMPLE.src} className="mt-6 -ml-14 mb-10" />
         <div className="absolute left-[0px] top-[40px] grid grid-cols-9 gap-[50px] w-full h-[90px] px-[35px]">
-          <button onClick={() => SOUND("/sound/3/p067_word000.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word001.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p067_word002.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p067_word003.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word004.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word005.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word006.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word007.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p067_word008.mp3").play()}>
-          </button>
+          <button onClick={() => SOUND("/sound/3/p067_word000.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word001.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word002.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word003.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word004.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word005.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word006.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word007.mp3").play()} />
+          <button onClick={() => SOUND("/sound/3/p067_word008.mp3").play()} />
         </div>
+
+        <div className="absolute left-[15px] top-[30px] grid grid-cols-9 gap-[15px]">
+          <DraggableCard value="頭" className="w-[150px] h-[220px]" />
+          <DraggableCard value="霜" className="w-[150px] h-[220px]" />
+          <DraggableCard value="尾" className="w-[150px] h-[220px]" />
+          <DraggableCard value="甘" className="w-[150px] h-[220px]" />
+          <DraggableCard value="地" className="w-[150px] h-[220px]" />
+          <DraggableCard value="雪" className="w-[150px] h-[220px]" />
+          <DraggableCard value="龍" className="w-[150px] h-[220px]" />
+          <DraggableCard value="苦" className="w-[150px] h-[220px]" />
+          <DraggableCard value="蛇" className="w-[150px] h-[220px]" />
+        </div>
+
         <div className="flex items-center gap-10">
           <button>
             <img src={LEFT.src} />
           </button>
           <div className="-mt-5 -ml-14 w-[800px] h-[300px] flex justify-center items-center">
-            {step === 1 && <img src={BLANK1.src} />}
-            {step === 2 && <img src={BLANK2.src} />}
-            {step === 3 && <img src={BLANK3.src} />}
-            {step === 4 && <img src={BLANK4.src} />}
+            {step === 1 && (
+              <div className="relative">
+                <img src={BLANK1.src} />
+
+                {!showAnswer ? (
+                  <>
+                    <DropZone className="absolute left-[300px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center" />
+                    <DropZone className="absolute left-[530px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center" />
+                  </>
+                ) : (
+                  <>
+                    <div className="text-answer absolute left-[300px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center">
+                      龍
+                    </div>
+                    <div className="text-answer absolute left-[530px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center">
+                      蛇
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+            {step === 2 && (
+              <div className="relative">
+                <img src={BLANK2.src} />
+
+                {!showAnswer ? (
+                  <DropZone className="absolute left-[350px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center" />
+                ) : (
+                  <div className="text-answer absolute left-[350px] top-0 w-[200px] h-[190px] font-haeseo text-[100px] flex justify-center items-center">
+                    地
+                  </div>
+                )}
+              </div>
+            )}
+            {step === 3 && (
+              <div className="relative">
+                <img src={BLANK3.src} />
+
+                {!showAnswer ? (
+                  <>
+                    <DropZone className="absolute left-[235px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                    <DropZone className="absolute left-[370px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                    <DropZone className="absolute left-[520px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                    <DropZone className="absolute left-[660px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                  </>
+                ) : (
+                  <>
+                    <div className="text-answer absolute left-[235px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      龍
+                    </div>
+                    <div className="text-answer absolute left-[370px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      蛇
+                    </div>
+                    <div className="text-answer absolute left-[520px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      龍
+                    </div>
+                    <div className="text-answer absolute left-[660px] top-[35px] w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      蛇
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+            {step === 4 && (
+              <div className="relative">
+                <img src={BLANK4.src} />
+
+                {!showAnswer ? (
+                  <>
+                    <DropZone className="absolute left-[250px] top-0 w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                    <DropZone className="absolute left-[380px] top-0 w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center" />
+                  </>
+                ) : (
+                  <>
+                    <div className="text-answer absolute left-[250px] top-0 w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      龍
+                    </div>
+                    <div className="text-answer absolute left-[380px] top-0 w-[100px] h-[100px] font-haeseo text-[80px] flex justify-center items-center">
+                      蛇
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
           </div>
           <button>
             <img src={RIGHT.src} />
@@ -90,12 +178,20 @@ export default function Page() {
 
       <StepContainer maxStep={4} step={step} onStepChange={setStep} />
 
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

@@ -39,7 +39,7 @@ textarea:focus {
 }
 
 .debug {
-    /* display: none; */
+    display: none;
     /* opacity: 1 !important; */
 }
 

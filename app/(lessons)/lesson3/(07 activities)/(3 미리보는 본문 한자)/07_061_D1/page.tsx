@@ -67,8 +67,10 @@ const Step1 = () => {
       <div className="-ml-[10px]">
         <header className="mb-5">
           <img src={HOW_BADGE.src} />
-          <button className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10" onClick={() => SOUND("/sound/3/61-i-2.mp3").play()}>
-          </button>
+          <button
+            className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10"
+            onClick={() => SOUND("/sound/3/61-i-2.mp3").play()}
+          ></button>
         </header>
 
         <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-12">
@@ -104,7 +106,10 @@ const Step2 = () => {
         <div className="">
           <header className="" onClick={() => SOUND("/sound").play()}>
             <img src={TASK_BADGE.src} />
-            <button className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10" onClick={() => SOUND("/sound/3/61-i-3.mp3").play()}></button>
+            <button
+              className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10"
+              onClick={() => SOUND("/sound/3/61-i-3.mp3").play()}
+            ></button>
           </header>
           <div className="relative pl-2 mt-1 w-[1526px] ">
             {showAnswer ? (
@@ -190,13 +195,30 @@ const Step2 = () => {
 };
 
 const Step3 = () => {
-  const answers = ["7"];
   const [showAnswer, setShowAnswer] = useState(false);
+  const [hideAnswer, setHideAnswer] = useState(true);
+
+  useEffect(() => {
+    setHideAnswer(!showAnswer);
+  }, [showAnswer]);
+
   return (
     <>
       <ContentContainer className="!justify-start pt-[75px]">
-        <div className="overflow-hidden -mt-[45px] -ml-5">
+        <div className="relative overflow-hidden -mt-[45px] -ml-5">
           <img src={IMAGE3.src} />
+
+          {hideAnswer && (
+            <button
+              onClick={() => {
+                clickSound.play();
+                setHideAnswer(false);
+              }}
+              className="absolute right-[35px] top-[315px] w-[120px] h-[120px] bg-white flex justify-center items-center"
+            >
+              <img src="/ui/click-icon.png" className="w-[70px]" />
+            </button>
+          )}
         </div>
       </ContentContainer>
       <CheckAnswerButton

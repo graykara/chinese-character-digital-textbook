@@ -56,7 +56,8 @@ export default function Page() {
               >
                 與
               </span>
-              : ① 더불어, ② 주다, ③<span className="underline underline-offset-2">~와/과</span>
+              : ① 더불어, ② 주다, ③
+              <span className="underline underline-offset-[10px]">~와/과</span>
             </p>
           ),
         },
@@ -102,7 +103,8 @@ export default function Page() {
               >
                 勝
               </span>
-              : ① 이기다, ②<span className="underline underline-offset-2">낫다</span>
+              : ① 이기다, ②
+              <span className="underline underline-offset-[10px]">낫다</span>
             </>
           ),
         },
@@ -204,8 +206,8 @@ export default function Page() {
         },
         { letter: "無", reading: "무" },
         {
-          letter: "不",
-          reading: "불",
+          letter: "不平",
+          reading: "불평",
           additional: (
             <>
               <span
@@ -218,7 +220,6 @@ export default function Page() {
             </>
           ),
         },
-        { letter: "平", reading: "평" },
         { letter: "之", reading: "지" },
         { letter: "心", reading: "심" },
         { letter: "乎", reading: "호" },
@@ -257,13 +258,19 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

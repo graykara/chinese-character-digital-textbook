@@ -144,7 +144,10 @@ export default function Page() {
               >
                 經
               </span>
-              : ① 지나다, ②<span className="underline underline-offset-2">경험하다</span>
+              : ① 지나다, ②
+              <span className="underline underline-offset-[10px]">
+                경험하다
+              </span>
             </>
           ),
         },
@@ -344,8 +347,28 @@ export default function Page() {
       content: (
         <>
           <div className="flex flex-none text-[50px] tracking-tight break-keep">
-            <p>‘<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不</span>’은 첫소리가 ‘ㄷ’ 또는 ‘ㅈ’인 글자 앞에서는 ‘부’로 읽는다.
-              <img src={IMAGE1.src} className="mr-2"/><span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不知不識</span>(<span className="text-answer">부</span>지<span className="text-answer">불</span>식): 생각하지도 못하고 알지도 못함. 예외적으로 ‘부실(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">不實</span>)’은 ‘ㅅ’ 앞에 ‘부’로 읽는다.</p>
+            <p>
+              ‘
+              <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+                不
+              </span>
+              ’은 첫소리가 ‘ㄷ’ 또는 ‘ㅈ’인 글자 앞에서는 ‘부’로 읽는다.
+              <br />
+              <img
+                src={IMAGE1.src}
+                className="inline-block mr-2 relative -top-2"
+              />
+              <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+                不知不識
+              </span>
+              (<span className="text-answer">부</span>지
+              <span className="text-answer">불</span>식): 생각하지도 못하고
+              알지도 못함. 예외적으로 ‘부실(
+              <span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">
+                不實
+              </span>
+              )’은 ‘ㅅ’ 앞에 ‘부’로 읽는다.
+            </p>
           </div>
         </>
       ),
@@ -396,15 +419,22 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src :
-                step === 5 ? BACKGROUND5.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : step === 5
+                    ? BACKGROUND5.src
+                    : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

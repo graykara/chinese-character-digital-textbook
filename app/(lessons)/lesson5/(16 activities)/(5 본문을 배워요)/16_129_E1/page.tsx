@@ -131,18 +131,20 @@ export default function Page() {
     {
       chinese: [
         {
-          letter: "浮",
-          reading: "부",
+          letter: "浮黃",
+          reading: "부황",
           additional: (
             <>
               <span
                 onClick={() => SOUND("/sound/5/p129_word004.mp3").play()}
                 className="font-haeseo text-[50px] leading-tight tracking-[-5px] -mr-2 cursor-pointer"
-              >浮黃</span> : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
+              >
+                浮黃
+              </span>{" "}
+              : 오래 굶주려서 살이 붓고 누렇게 되는 병. 부황병.
             </>
           ),
         },
-        { letter: "黃", reading: "황" },
         { letter: "者", reading: "자" },
         { letter: "가", isKor: true },
         { letter: "聞", reading: "문" },
@@ -212,7 +214,8 @@ export default function Page() {
               >
                 若
               </span>
-              : ① 같다, ②<span className="underline">~와/과</span>
+              : ① 같다, ②
+              <span className="underline underline-offset-[10px]">~와/과</span>
             </>
           ),
         },
@@ -288,14 +291,21 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

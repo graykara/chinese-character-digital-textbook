@@ -8,14 +8,14 @@ import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
 import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
 import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕22.png";
 import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕23.png";
+import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
+import { DraggableCard } from "@/app/components/new-drag-and-drop/draggable-card";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -61,118 +61,68 @@ const Step1 = () => {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={<p className="tracking-tighter">풀이에 맞도록 한자 카드를 배열하여 써 보자.</p>}
+        title={
+          <p className="tracking-tighter">
+            풀이에 맞도록 한자 카드를 배열하여 써 보자.
+          </p>
+        }
         sound="/sound/5/130-i-1.mp3"
       />
 
       <ContentContainer className="!justify-start -top-[15px] left-5">
         <img src={IMAGE1.src} />
-        <DndProvider backend={HTML5Backend}>
-          <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[10px] left-[475px] bg-transparent">
-            {hanjaCards.map((hanja, index) => (
-              <div
-                key={index}
-                className="flex justify-center"
-                onClick={() => {
-                  new Howl({
-                    src: hanjaSounds[index],
-                  }).play();
-                }}
-              >
-                <DraggableHanjaCard
-                  key={index}
-                  hanja={hanja}
-                  index={index}
-                  moveCard={() => { }}
-                >
-                  <div className="w-[150px] h-[145px] pb-[15px] bg-transparent flex justify-center items-center font-haeseo text-[95px]">
-                    {hanja}
-                  </div>
-                </DraggableHanjaCard>
-              </div>
-            ))}
-          </div>
-
-          <div className={showAnswer ? "text-answer" : ""}>
-            <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[0px] left-[475px] top-[230px]">
-              <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
-                    {showAnswer ? hanjaCards[3] : droppedHanja[0]}
-                  </div>
-                </HanjaDropZone>
-              </div>
-              <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
-                    {showAnswer ? hanjaCards[0] : droppedHanja[1]}
-                  </div>
-                </HanjaDropZone>
-              </div>
-              <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 2)}>
-                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
-                    {showAnswer ? hanjaCards[2] : droppedHanja[1]}
-                  </div>
-                </HanjaDropZone>
-              </div>
-              <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 3)}>
-                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
-                    {showAnswer ? hanjaCards[1] : droppedHanja[1]}
-                  </div>
-                </HanjaDropZone>
-              </div>
-              <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 4)}>
-                  <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
-                    {showAnswer ? hanjaCards[4] : droppedHanja[1]}
-                  </div>
-                </HanjaDropZone>
-              </div>
+        <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[10px] left-[475px] bg-transparent">
+          {hanjaCards.map((hanja, index) => (
+            <div
+              key={index}
+              className="flex justify-center"
+              onClick={() => {
+                new Howl({
+                  src: hanjaSounds[index],
+                }).play();
+              }}
+            >
+              <DraggableCard key={index} value={hanja}>
+                <div className="w-[150px] h-[145px] pb-[15px] bg-transparent flex justify-center items-center font-haeseo text-[95px]">
+                  {hanja}
+                </div>
+              </DraggableCard>
             </div>
-          </div>
-        </DndProvider>
-      </ContentContainer>
+          ))}
+        </div>
 
-      {/* <ContentContainer className="!justify-start -top-[20px] left-4">
-        <img src={IMAGE1.src} />
-        <InputWithPen
-          answer={answers[0]}
-          showAnswer={showAnswer}
-          className="font-haeseo text-[105px] text-center w-[140px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[230px] left-[485px]"
-        />
-        <InputWithPen
-          answer={answers[1]}
-          showAnswer={showAnswer}
-          className="font-haeseo text-[105px] text-center w-[140px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[230px] left-[685px]"
-        />
-        <InputWithPen
-          answer={answers[2]}
-          showAnswer={showAnswer}
-          className="font-haeseo text-[105px] text-center w-[140px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[230px] left-[885px]"
-        />
-        <InputWithPen
-          answer={answers[3]}
-          showAnswer={showAnswer}
-          className="font-haeseo text-[105px] text-center w-[140px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[230px] left-[1085px]"
-        />
-        <InputWithPen
-          answer={answers[4]}
-          showAnswer={showAnswer}
-          className="font-haeseo text-[105px] text-center w-[140px] bg-transparent"
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[230px] left-[1285px]"
-        />
-      </ContentContainer> */}
+        <div className={showAnswer ? "text-answer" : ""}>
+          <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[0px] left-[475px] top-[230px]">
+            {!showAnswer ? (
+              <>
+                <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
+                <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
+                <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
+                <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
+                <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
+              </>
+            ) : (
+              <>
+                <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px] text-answer">
+                  集
+                </div>
+                <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px] text-answer">
+                  官
+                </div>
+                <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px] text-answer">
+                  庭
+                </div>
+                <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px] text-answer">
+                  如
+                </div>
+                <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px] text-answer">
+                  雲
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </ContentContainer>
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
@@ -191,7 +141,11 @@ const Step2 = () => {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={<p className="tracking-tighter">‘나눔’하면 연상되는 단어를 써서 의미망을 완성해 보자.</p>}
+        title={
+          <p className="tracking-tighter">
+            ‘나눔’하면 연상되는 단어를 써서 의미망을 완성해 보자.
+          </p>
+        }
         sound="/sound/5/130-i-3.mp3"
       />
       <ContentContainer className="!justify-start -top-[90px] left-1">

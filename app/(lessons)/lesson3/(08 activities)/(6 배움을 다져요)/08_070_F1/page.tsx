@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -14,23 +14,26 @@ import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성
 import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어225.png"; //223, 224, 225
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SmartButton } from "@/app/components/buttons/smart-button";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   return (
     <>
-    {step === 3 ? (
-      <StrengthenLearningMainContentHeader
-        title={" 풀이 순서가 같은 두 개의 성어를 찾아 ○표 해 보자."}
-        sound="/sound/3/70-i-2.mp3"
-      />
-    ) : (
-      <StrengthenLearningMainContentHeader
-        title={"성어와 의미가 통하는 우리말 속담을 디지털 도구로 찾아 써보자. "}
-        sound="/sound/3/70-i-1.mp3"
-      />
-    )}
+      {step === 3 ? (
+        <StrengthenLearningMainContentHeader
+          title={" 풀이 순서가 같은 두 개의 성어를 찾아 ○표 해 보자."}
+          sound="/sound/3/70-i-2.mp3"
+        />
+      ) : (
+        <StrengthenLearningMainContentHeader
+          title={
+            "성어와 의미가 통하는 우리말 속담을 디지털 도구로 찾아 써보자. "
+          }
+          sound="/sound/3/70-i-1.mp3"
+        />
+      )}
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
@@ -48,12 +51,15 @@ const Step1 = () => {
     <>
       <SmartButton
         link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%84%A4%EC%83%81%EA%B0%80%EC%83%81"
-        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-2s absolute top-[280px] left-[1455px] z-1"
+      />
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />
-        <button className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}>
-          </button>
+        <button
+          className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
+          onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}
+        ></button>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -84,12 +90,15 @@ const Step2 = () => {
     <>
       <SmartButton
         link="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B3%A0%EC%A7%84%EA%B0%90%EB%9E%98"
-        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1" />
+        className="animate__animated animate__bounceIn animate__delay-1s absolute top-[280px] left-[1455px] z-1"
+      />
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE2.src} />
-        <button className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}>
-          </button>
+        <button
+          className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
+          onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}
+        ></button>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -114,18 +123,65 @@ const Step2 = () => {
 const Step3 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
 
+  const [selectedAnswer, setSelectedAnswer] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (showAnswer) setSelectedAnswer([2, 3]);
+    else setSelectedAnswer([]);
+  }, [showAnswer]);
+
   return (
     <>
       <ContentContainer className="!justify-start top-[10px] left-0">
         <img src={IMAGE3.src} />
-        <button className="absolute top-[20px] left-[310px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word002.mp3").play()}>
-          </button>
-          <button className="absolute top-[20px] left-[960px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}>
-          </button>
-          <button className="absolute top-[230px] left-[310px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word003.mp3").play()}>
-          </button>
-          <button className="absolute top-[230px] left-[960px] w-[330px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}>
-          </button>
+        <button
+          className={`absolute top-[20px] left-[220px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(1) ? "border-4 rounded-[50%] border-answer" : ""}`}
+          onClick={() => {
+            clickSound.play();
+            if (selectedAnswer.includes(1))
+              setSelectedAnswer(selectedAnswer.filter((v) => v !== 1));
+            else {
+              setSelectedAnswer(selectedAnswer.concat([1]));
+              SOUND("/sound/3/p070_word002.mp3").play();
+            }
+          }}
+        ></button>
+        <button
+          className={`absolute top-[20px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(2) ? "border-4 rounded-[50%] border-answer" : ""}`}
+          onClick={() => {
+            clickSound.play();
+            if (selectedAnswer.includes(2))
+              setSelectedAnswer(selectedAnswer.filter((v) => v !== 2));
+            else {
+              setSelectedAnswer(selectedAnswer.concat([2]));
+              SOUND("/sound/3/p070_word001.mp3").play();
+            }
+          }}
+        ></button>
+        <button
+          className={`absolute top-[230px] left-[220px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(3) ? "border-4 rounded-[50%] border-answer" : ""}`}
+          onClick={() => {
+            clickSound.play();
+            if (selectedAnswer.includes(3))
+              setSelectedAnswer(selectedAnswer.filter((v) => v !== 3));
+            else {
+              setSelectedAnswer(selectedAnswer.concat([3]));
+              SOUND("/sound/3/p070_word003.mp3").play();
+            }
+          }}
+        ></button>
+        <button
+          className={`absolute top-[230px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(4) ? "border-4 rounded-[50%] border-answer" : ""}`}
+          onClick={() => {
+            clickSound.play();
+            if (selectedAnswer.includes(4))
+              setSelectedAnswer(selectedAnswer.filter((v) => v !== 4));
+            else {
+              setSelectedAnswer(selectedAnswer.concat([4]));
+              SOUND("/sound/3/p070_word000.mp3").play();
+            }
+          }}
+        ></button>
         <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px]"></div>
       </ContentContainer>
 

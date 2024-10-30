@@ -51,8 +51,10 @@ export default function Page() {
           className: "mr-5",
           additional: (
             <p className="tracking-tighter leading-tight">
-              문장을 읽을 때는 구절 사이나 문장 끝에 토<br />(우리말로 된 조사나
-              어미)를 달아 끊어 읽는다.<br />끊지 않은 부분도 결합 관계를 살펴 띄어 읽는다.
+              문장을 읽을 때는 구절 사이나 문장 끝에 토<br />
+              (우리말로 된 조사나 어미)를 달아 끊어 읽는다.
+              <br />
+              끊지 않은 부분도 결합 관계를 살펴 띄어 읽는다.
             </p>
           ),
           additionalTitle: (
@@ -137,7 +139,8 @@ export default function Page() {
               >
                 己
               </span>
-              : ① 몸, ②<span className="underline underline-offset-2">자기</span>
+              : ① 몸, ②
+              <span className="underline underline-offset-[10px]">자기</span>
             </>
           ),
         },
@@ -201,7 +204,8 @@ export default function Page() {
               >
                 人
               </span>
-              : ① 사람, ②<span className="underline underline-offset-2">남</span>
+              : ① 사람, ②
+              <span className="underline underline-offset-[10px]">남</span>
             </p>
           ),
         },
@@ -235,7 +239,10 @@ export default function Page() {
               >
                 無
               </span>
-              : ① 없다, ②<span className="underline underline-offset-2">~하지마라</span>
+              : ① 없다, ②
+              <span className="underline underline-offset-[10px]">
+                ~하지마라
+              </span>
             </p>
           ),
         },
@@ -250,7 +257,8 @@ export default function Page() {
               >
                 道
               </span>
-              : ① 길, ②<span className="underline underline-offset-2">말하다</span>
+              : ① 길, ②
+              <span className="underline underline-offset-[10px]">말하다</span>
             </p>
           ),
         },
@@ -281,7 +289,8 @@ export default function Page() {
               >
                 短
               </span>
-              : ① 짧다, ②<span className="underline underline-offset-2">단점</span>
+              : ① 짧다, ②
+              <span className="underline underline-offset-[10px]">단점</span>
             </p>
           ),
         },
@@ -301,7 +310,8 @@ export default function Page() {
               >
                 長
               </span>
-              : ① 길다, ②<span className="underline underline-offset-2">장점</span>
+              : ① 길다, ②
+              <span className="underline underline-offset-[10px]">장점</span>
             </p>
           ),
         },
@@ -479,15 +489,22 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND4.src :
-                step === 5 ? BACKGROUND5.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : step === 5
+                    ? BACKGROUND5.src
+                    : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

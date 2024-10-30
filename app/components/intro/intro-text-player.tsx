@@ -1,6 +1,8 @@
 "use client";
+
 import { SOUND } from "@/app/utils/sound-player";
 import { useEffect, useState, useRef, useCallback } from "react";
+import { SoundText } from "../sound-text";
 
 interface Props {
   sound: string;
@@ -25,17 +27,15 @@ export const IntroTextPlayer = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [soundPlayer, setSoundPlayer] = useState<Howl | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const startTimer = useCallback(() => {
     if (!soundPlayer) return;
-
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
-
     timerRef.current = setInterval(() => {
       if (soundPlayer?.playing()) {
-        // Howler.js는 초 단위로 반환하므로 밀리초로 변환
         const position = soundPlayer.seek() * 1000;
         setCurrentTime(position);
       }
@@ -49,13 +49,33 @@ export const IntroTextPlayer = ({
     }
   };
 
+  // Find current active text element and scroll to it
+  useEffect(() => {
+    const activeElement = document.querySelector(`.text-blue-500`);
+    if (activeElement && containerRef.current) {
+      const container = containerRef.current;
+      const elementRect = activeElement.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      const scrollTo =
+        elementRect.top -
+        containerRect.top -
+        container.clientHeight / 2 +
+        elementRect.height / 2;
+
+      container.scrollTo({
+        top: container.scrollTop + scrollTo,
+        behavior: "smooth",
+      });
+    }
+  }, [currentTime]);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       const soundPlayer = SOUND(sound);
       soundPlayer.play();
       setSoundPlayer(soundPlayer);
     }, 2000);
-
     return () => {
       if (timeout) clearTimeout(timeout);
       stopTimer();
@@ -90,51 +110,36 @@ export const IntroTextPlayer = ({
 
   const getTextColor = (start: number, end: number) => {
     if (currentTime >= start && currentTime <= end) {
-      return "text-blue-500"; // 현재 재생 중인 텍스트 색상
+      return "text-blue-500";
     }
-    return "text-gray-900"; // 기본 텍스트 색상
+    return "text-gray-900";
   };
 
-  // 디버깅을 위한 시간 포매팅 함수
-  const formatTime = (ms: number) => {
-    const seconds = Math.floor(ms / 1000);
-    const milliseconds = Math.floor(ms % 1000);
-    return `${seconds}.${milliseconds.toString().padStart(3, "0")}`;
+  const isPlayingSound = (start: number, end: number) => {
+    if (currentTime >= start && currentTime <= end) {
+      return true;
+    }
+    return false;
   };
 
   return (
     <div
-      className={`animate__animated animate__fadeIn animate__delay-2s overflow-y-auto ${className || ""}`}
+      ref={containerRef}
+      className={`animate__animated animate__fadeIn animate__delay-2s overflow-y-auto max-h-screen ${className || ""}`}
       style={style}
     >
       <p
         className={`text-[55px] font-semibold break-keep leading-[78px] ${textClassName}`}
       >
         {data.map((item, index) => (
-          <span
+          <SoundText
             key={index}
-            className={`transition-colors duration-1000 ${getTextColor(
-              item.start,
-              item.end,
-            )}`}
+            isPlaying={isPlayingSound(item.start, item.end)}
           >
             {item.text}{" "}
-          </span>
+          </SoundText>
         ))}
       </p>
-
-      {/* 디버깅용 컨트롤 (필요시 주석 해제) */}
-      {/* <div className="mt-4">
-        <p>Current Time: {formatTime(currentTime)}ms</p>
-        <button
-          onClick={() =>
-            isPlaying ? soundPlayer?.pause() : soundPlayer?.play()
-          }
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          {isPlaying ? "Pause" : "Play"}
-        </button>
-      </div> */}
     </div>
   );
 };

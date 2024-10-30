@@ -12,7 +12,7 @@ export default function Page() {
 
   return (
     <>
-      <ActivityPageTemplate lesson={2}>
+      <ActivityPageTemplate lesson={4}>
         <div className="w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
           <header className="mb-10">
             <h1 className="text-[60px] text-[#5e4141] font-bold text-center">

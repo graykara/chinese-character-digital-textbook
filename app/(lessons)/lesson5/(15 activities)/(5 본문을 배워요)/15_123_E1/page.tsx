@@ -39,15 +39,22 @@ export default function Page() {
               >
                 中
               </span>
-              : ①<span className="underline">가운데, 속</span>, ②<span className="underline">적중하다</span>
+              : ①
+              <span className="underline underline-offset-[10px]">
+                가운데, 속
+              </span>
+              , ②
+              <span className="underline underline-offset-[10px]">
+                적중하다
+              </span>
             </>
           ),
         },
         { letter: "石", reading: "석" },
         { letter: "하고", isKor: true, className: "mr-5" },
         {
-          letter: "以",
-          reading: "이",
+          letter: "以爲",
+          reading: "이위",
           additional: (
             <>
               <span
@@ -60,7 +67,6 @@ export default function Page() {
             </>
           ),
         },
-        { letter: "爲", reading: "위" },
         { letter: "虎", reading: "호" },
         { letter: "而", reading: "이" },
         { letter: "射", reading: "사" },
@@ -75,7 +81,7 @@ export default function Page() {
               >
                 之
               </span>
-              → 
+              →
               <span
                 onClick={() => SOUND("/sound/5/p123_word003.mp3").play()}
                 className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
@@ -161,7 +167,9 @@ export default function Page() {
               >
                 復
               </span>
-              : ① (부)<span className="underline">다시</span>, ② (복) 돌아오다
+              : ① (부)
+              <span className="underline underline-offset-[10px]">다시</span>, ②
+              (복) 돌아오다
             </>
           ),
         },
@@ -176,7 +184,9 @@ export default function Page() {
               >
                 更
               </span>
-              : ① (갱)<span className="underline">다시</span>, ② (경) 고치다
+              : ① (갱)
+              <span className="underline underline-offset-[10px]">다시</span>, ②
+              (경) 고치다
             </>
           ),
         },
@@ -257,14 +267,20 @@ export default function Page() {
             />
           </div>
         </ContentContainer>
-
       </LearnMainContentPageTemplate>
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src :
-              step === 4 ? BACKGROUND3.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      <img
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND3.src
+                  : ""
+        }
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
   );

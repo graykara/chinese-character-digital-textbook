@@ -37,20 +37,74 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-5 pl-12">
         <img src={EXAMPLE.src} className="mb-10" />
         <div className="absolute left-[50px] top-[50px] grid grid-cols-8 gap-[30px] w-full h-[90px] bg-transparent pr-[50px]">
-          <button onClick={() => SOUND("/sound/3/p079_word000.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/3/p079_word001.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word002.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word003.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word004.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word005.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word006.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/3/p079_word007.mp3").play()}></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word000.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word001.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word002.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word003.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word004.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word005.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word006.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/3/p079_word007.mp3").play()}
+          ></button>
         </div>
         <div className="flex items-center gap-10">
-          <div className="w-[800px] h-[300px] flex justify-center items-center">
-            {step === 1 && <img src={IMAGE1.src} />}
-            {step === 2 && <img src={IMAGE2.src} />}
+          <div className="flex justify-center items-center">
+            {step === 1 && (
+              <div className="relative">
+                <img src={IMAGE1.src} />
+
+                {showAnswer && (
+                  <>
+                    <div className="text-answer absolute left-[13px] bottom-0 flex text-[40px]">
+                      <p className="w-[90px]">은</p>은혜
+                    </div>
+                    <div className="text-answer absolute left-[345px] bottom-0 flex text-[40px]">
+                      <p className="w-[90px]">선</p>좋다
+                    </div>
+                    <div className="text-answer absolute left-[675px] bottom-0 flex text-[40px]">
+                      <p className="w-[90px]">결</p>맺다
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+            {step === 2 && (
+              <div className="relative">
+                <img src={IMAGE2.src} />
+
+                {showAnswer && (
+                  <>
+                    <div className="text-answer absolute left-[13px] bottom-0 flex text-[40px]">
+                      <p className="w-[100px]">보</p>갚다
+                    </div>
+                    <div className="text-answer absolute left-[355px] bottom-0 flex text-[40px]">
+                      <p className="w-[100px]">익</p>더욱
+                    </div>
+                    <div className="text-answer absolute left-[700px] bottom-0 flex text-[40px]">
+                      <p className="w-[85px]">호</p>호랑이
+                    </div>
+                    <div className="text-answer absolute left-[1045px] bottom-0 flex text-[40px]">
+                      <p className="w-[85px]">성</p>이루다
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </ContentContainer>

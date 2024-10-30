@@ -54,7 +54,7 @@ export default function Page() {
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate
-        lesson={2}
+        lesson={4}
         number={step}
         question={questions[step - 1]}
         hideIconNumbers={[1, 2, 6, 7]}

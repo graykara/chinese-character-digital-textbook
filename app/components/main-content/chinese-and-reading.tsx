@@ -98,14 +98,16 @@ export const MainContentChineseAndReading = ({
                     {letter}
                   </span>
                   <div
-                    className={`absolute -bottom-24 left-1/2 -translate-x-1/2 animate__animated
+                    className={`w-full absolute -bottom-24 left-1/2 -translate-x-1/2 animate__animated
                   ${showReading ? "animate__fadeInDown2" : "animate__fadeOutUp2"}`}
                   >
                     {showReading ? (
                       <span
-                        className={`text-main-content text-[60px] font-chosun font-bold`}
+                        className={`flex justify-around w-full text-main-content text-[60px] font-chosun font-bold`}
                       >
-                        {reading}
+                        {reading
+                          ?.split("")
+                          .map((char) => <span key={char}>{char}</span>)}
                       </span>
                     ) : null}
                   </div>
