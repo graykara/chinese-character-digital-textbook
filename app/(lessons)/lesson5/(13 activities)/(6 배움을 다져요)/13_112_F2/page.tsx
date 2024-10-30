@@ -11,7 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/13/중등한무�
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const asnwers = ["家畜", "同行", "劣惡"];
+  const answers = ["家畜", "同行", "劣惡"];
 
   return (
     <>
@@ -35,6 +35,29 @@ export default function Page() {
           <button onClick={() => SOUND("/sound/5/p112_word004.mp3").play()}></button>
           <button onClick={() => SOUND("/sound/5/p112_word005.mp3").play()}></button>
         </div>
+
+        <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
+          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
+          containerClassName="absolute top-[398px] left-[190px] -mt-1 ml-1"
+          />
+          <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
+          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
+          containerClassName="absolute top-[398px] left-[640px] -mt-1 ml-1"
+          />
+          <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
+          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
+          containerClassName="absolute top-[398px] left-[1110px] -mt-1 ml-1"
+          />
+
       </ContentContainer>
 
       <CheckAnswerButton

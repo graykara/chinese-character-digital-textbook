@@ -8,6 +8,7 @@ import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글36.png";
 import { HeaderContainer } from "@/app/components/headers/header-container";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -30,8 +31,9 @@ export default function Page() {
             <img src={IMAGE_ROBOT.src} className="float-right -mt-[150px] translate-x-[190px]" />
           </header>
 
-            <img src={
-              showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src} className="w-[1311px] mt-16 ml-6"/>
+          <img src={
+            showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src} className="w-[1311px] mt-16 ml-6" />
+
 
         </div>
       </ActivityPageTemplate>

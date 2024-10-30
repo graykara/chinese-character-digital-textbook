@@ -27,9 +27,10 @@ export default function Page() {
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
-          className="text-answer text-[45px] tracking-tighter w-[1210px] bg-transparent"
+          className="text-[45px] tracking-tighter w-[1210px] bg-transparent"
           penClassName="w-[46px] -mt-0 -ml-2"
           containerClassName="absolute left-[190px] top-[180px]"
+          isExample
         />
       </ContentContainer>
 
