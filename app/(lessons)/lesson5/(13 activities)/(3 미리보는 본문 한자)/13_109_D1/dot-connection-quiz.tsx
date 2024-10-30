@@ -6,6 +6,7 @@ interface Props {
   endDots: { id: number; x: number; y: number; label: string }[];
   answers: { startId: number; endId: number }[];
   showAnswer: boolean;
+  isDebugMode?: boolean;
 }
 
 const DotConnectionQuiz = ({
@@ -13,6 +14,7 @@ const DotConnectionQuiz = ({
   endDots = [],
   answers = [],
   showAnswer = false,
+  isDebugMode = false,
 }: Props) => {
   const { scale } = useContext(PageInfoContext);
   const [lines, setLines] = useState([]);
@@ -118,7 +120,7 @@ const DotConnectionQuiz = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-96 rounded-lg"
+      className="relative w-full h-full rounded-lg"
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={() => setCurrentLine(null)}
@@ -161,8 +163,8 @@ const DotConnectionQuiz = ({
           key={dot.id}
           className={`absolute w-8 h-8 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
             ${
-              showAnswer
-                ? ""
+              isDebugMode
+                ? "border border-black"
                 : isStartDotConnected(dot.id)
                   ? "cursor-not-allowed"
                   : "bcursor-pointer"
@@ -183,8 +185,8 @@ const DotConnectionQuiz = ({
           key={dot.id}
           className={`absolute w-8 h-8 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
             ${
-              showAnswer
-                ? ""
+              isDebugMode
+                ? "border border-black"
                 : lines.some((line) => line.end.id === dot.id)
                   ? ""
                   : ""

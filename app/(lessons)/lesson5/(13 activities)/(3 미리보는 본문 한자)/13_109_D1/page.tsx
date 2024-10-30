@@ -3,15 +3,10 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import IMAGE from "./bg_1.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭4.png";
-import {
-  Line,
-  LineDrawingStartPoint,
-} from "@/app/components/line-drawing/line-drawing-start-point";
-import { LineDrawingEndPoint } from "@/app/components/line-drawing/line-drawing-end-point";
 import DotConnectionQuiz from "./dot-connection-quiz";
 
 export default function Page() {
