@@ -1,8 +1,6 @@
 "use client";
 
-import IMAGE from "./bg_6.png";
-import IMAGE1 from "./bg_5.png";
-import IMAGE2 from "./bg_2.png";
+import IMAGE from "./image.png";
 import IMAGE_BUTTON from "./button.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
@@ -13,18 +11,13 @@ import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
 import { GroupButton } from "@/app/components/buttons/group-button";
+import { clickSound } from "@/app/utils/click-sound";
+import {
+  OLD_TextareaWithPen,
+  TextareaWithPen,
+} from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
-  const answers1 = [
-    "낮말은 새가 듣고 밤말은 쥐가 듣는다.",
-    "일아무도 안 듣는데서라도 말조심을 해야한다.",
-  ];
-  const answers2 = [
-    "스토리보드 작성하기.",
-    "필요한 역할 분담하기.",
-    "각 장면을 내용에 맞게 촬영하기.",
-    "영상 완성하여 발표하기.",
-  ];
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
@@ -51,29 +44,61 @@ export default function Page() {
 
       <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[80px] top-[664px] z-1" />
 
-      <InputWithPen
-        answer={answers1[0]}
-        showAnswer={showAnswer}
-        className="text-[45px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[172px] left-[280px]"
+      <OLD_TextareaWithPen
         isExample
+        answer={"낮말은 새가 듣고 밤말은 쥐가 듣는다."}
+        showAnswer={showAnswer}
+        className="text-[40px] w-[480px] leading-[68px] bg-transparent"
+        containerClassName="!absolute top-[440px] left-[360px]"
+        penClassName="w-[40px] left-0 top-[20px]"
+        rows={3}
       />
-      <InputWithPen
-        answer={answers1[1]}
-        showAnswer={showAnswer}
-        className="text-[45px] text-center w-[720px] bg-transparent"
-        penClassName="left-0 w-[60px] top-[35px]"
-        containerClassName="absolute top-[317px] left-[280px]"
+      <OLD_TextareaWithPen
         isExample
+        answer={"아무도 안 듣는데서라도 말조심을 해야한다."}
+        showAnswer={showAnswer}
+        className="text-[40px] w-[480px] leading-[68px] bg-transparent"
+        containerClassName="!absolute top-[440px] left-[930px]"
+        penClassName="w-[40px] left-0 top-[20px]"
+        rows={3}
       />
 
-      <div className="absolute w-[930px] grid grid-cols-4 gap-[60px] left-[580px] bottom-[93px]">
+      <button
+        onClick={(e) => {
+          clickSound.play();
+          e.currentTarget.remove();
+        }}
+        className="absolute left-[580px] bottom-[93px]"
+      >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+      </button>
+      <button
+        onClick={(e) => {
+          clickSound.play();
+          e.currentTarget.remove();
+        }}
+        className="absolute left-[827px] bottom-[93px]"
+      >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+      </button>
+      <button
+        onClick={(e) => {
+          clickSound.play();
+          e.currentTarget.remove();
+        }}
+        className="absolute left-[1074px] bottom-[93px]"
+      >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
+      </button>
+      <button
+        onClick={(e) => {
+          clickSound.play();
+          e.currentTarget.remove();
+        }}
+        className="absolute left-[1322px] bottom-[93px]"
+      >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
-      </div>
+      </button>
 
       <ExampleAnswerButton
         active={showAnswer}

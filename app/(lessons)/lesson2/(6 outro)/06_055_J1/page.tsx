@@ -4,7 +4,7 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE2_AFTER from "./image2-after.png";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘25.png";
@@ -14,6 +14,7 @@ import {
   OLD_TextareaWithPen,
   TextareaWithPen,
 } from "@/app/components/textarea/textarea-with-pen";
+import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -25,15 +26,27 @@ export default function Page() {
         {step === 2 ? <Content2 /> : null}
       </ActivityPageTemplate>
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img
+        src={BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }
 
 const Content1 = () => {
+  useEffect(() => {
+    SOUND("/sound/2/55-i-1.mp3").play();
+  }, []);
+
   return (
     <div className="animate__animated animate__fadeIn w-full h-full flex flex-col justify-center items-start -mt-20 -ml-5">
       <img src={IMAGE1.src} />
+
+      <button
+        className="absolute top-[300px] left-[40px] w-[280px] h-[100px]"
+        onClick={() => SOUND("/sound/2/55-i-2.mp3").play()}
+      />
     </div>
   );
 };
@@ -50,7 +63,6 @@ const Content2 = () => {
             <div className="relative">
               <img src={IMAGE2.src} />
 
-
               <InputWithPen
                 containerClassName="absolute top-[345px] left-[371px] font-haeseo text-[83px]"
                 className="text-center w-[130px] mt-4"
@@ -61,7 +73,6 @@ const Content2 = () => {
                 className="text-center w-[130px] mt-4"
                 penClassName="left-10 top-20 h-[55px]"
               />
-
 
               <InputWithPen
                 containerClassName="absolute left-[500px] top-[115px]"

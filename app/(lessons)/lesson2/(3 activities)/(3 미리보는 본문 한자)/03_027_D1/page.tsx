@@ -60,31 +60,15 @@ export default function Page() {
           </div>
 
           <div className="absolute left-[130px] top-[420px] grid grid-cols-5 gap-[24px]">
-            <input
-              value={showAnswer ? selectedAnswer[0] : ""}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-              readOnly
-            />
-            <input
-              value={showAnswer ? selectedAnswer[1] : ""}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-              readOnly
-            />
-            <input
-              value={showAnswer ? selectedAnswer[2] : ""}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-              readOnly
-            />
-            <input
-              value={showAnswer ? selectedAnswer[3] : ""}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-              readOnly
-            />
-            <input
-              value={showAnswer ? selectedAnswer[4] : ""}
-              className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-              readOnly
-            />
+            {Array.from(Array(5)).map((_, index) => (
+              <InputWithPen
+                key={(step - 1) * 5 + index}
+                answer={selectedAnswer[index]}
+                showAnswer={showAnswer}
+                className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
+                penClassName="left-1/2 -translate-x-1/2"
+              />
+            ))}
           </div>
         </div>
       </ContentContainer>

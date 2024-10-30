@@ -2,16 +2,13 @@
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
 import IMAGE1 from "./bg_1-2.png";
-import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useEffect, useState } from "react";
-import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요19.png";
+import { DraggableCard } from "@/app/components/new-drag-and-drop/draggable-card";
+import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
 
 export default function Page() {
   const answers = ["共存", "平等", "共生", "易地思之"];
@@ -62,118 +59,135 @@ export default function Page() {
       <ContentContainer className="!justify-start -top-[50px] left-[100px]">
         <img src={IMAGE1.src} />
 
-        <DndProvider backend={HTML5Backend}>
-          <div className="absolute w-[520px] height-[400px] grid grid-cols-3 gap-[30px] left-[60px] ">
-            {hanjaCards.map((hanja, index) => (
-              <div
-                key={index}
-                className="flex justify-center"
-                onClick={() => {
-                  new Howl({
-                    src: hanjaSounds[index],
-                  }).play();
-                }}
-              >
-                <DraggableHanjaCard
-                  key={index}
-                  hanja={hanja}
-                  index={index}
-                  moveCard={() => { }}
-                >
-                  <div className="w-[165px] h-[135px] pb-[15px] bg-transparent flex justify-center items-center font-haeseo text-[80px]">
-                    {hanja}
-                  </div>
-                </DraggableHanjaCard>
-              </div>
-            ))}
-          </div>
-          <div className={showAnswer ? "text-answer" : ""}>
+        <div className="absolute w-[520px] height-[400px] grid grid-cols-3 gap-[30px] left-[60px] ">
+          {hanjaCards.map((hanja, index) => (
+            <div
+              key={index}
+              className="flex justify-center"
+              onClick={() => {
+                new Howl({
+                  src: hanjaSounds[index],
+                }).play();
+              }}
+            >
+              <DraggableCard key={index} value={hanja}>
+                <div className="w-[165px] h-[135px] pb-[15px] flex justify-center items-center font-haeseo text-[80px]">
+                  {hanja}
+                </div>
+              </DraggableCard>
+            </div>
+          ))}
+        </div>
+        {!showAnswer ? (
+          <div>
             <div className="absolute right-[450px] top-[20px]">
               <div className="absolute left-0 ">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[0] : droppedHanja[0]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[105px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[2] : droppedHanja[1]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
             </div>
 
             <div className="absolute right-[450px] top-[139px]">
               <div className="absolute left-0 ">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[7] : droppedHanja[2]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[105px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[1] : droppedHanja[3]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
             </div>
 
             <div className="absolute right-[450px] top-[258px]">
               <div className="absolute left-0 ">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[0] : droppedHanja[4]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[105px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[4] : droppedHanja[5]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
             </div>
 
             <div className="absolute right-[450px] top-[377px]">
               <div className="absolute left-0 ">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[3] : droppedHanja[6]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[105px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[8] : droppedHanja[7]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[210px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[5] : droppedHanja[8]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
               </div>
               <div className="absolute left-[315px]">
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
-                  <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px] bg-transparent">
-                    {showAnswer ? hanjaCards[6] : droppedHanja[9]}
-                  </div>
-                </HanjaDropZone>
+                <DropZone className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="text-answer">
+            <div className="absolute right-[450px] top-[20px]">
+              <div className="absolute left-0 ">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  共
+                </div>
+              </div>
+              <div className="absolute left-[105px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  存
+                </div>
               </div>
             </div>
 
-          </div>
-        </DndProvider>
-      </ContentContainer>
+            <div className="absolute right-[450px] top-[139px]">
+              <div className="absolute left-0 ">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  平
+                </div>
+              </div>
+              <div className="absolute left-[105px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  等
+                </div>
+              </div>
+            </div>
 
+            <div className="absolute right-[450px] top-[258px]">
+              <div className="absolute left-0 ">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  共
+                </div>
+              </div>
+              <div className="absolute left-[105px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  生
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute right-[450px] top-[377px]">
+              <div className="absolute left-0 ">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  易
+                </div>
+              </div>
+              <div className="absolute left-[105px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  地
+                </div>
+              </div>
+              <div className="absolute left-[210px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  思
+                </div>
+              </div>
+              <div className="absolute left-[315px]">
+                <div className="w-[80px] h-[80px] flex justify-center items-center font-haeseo text-[70px]">
+                  之
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}

@@ -9,6 +9,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글36.png";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -28,13 +29,45 @@ export default function Page() {
               Ⅳ단원에서 배운 문장을 하나 골라, 문장에 담긴 교훈을 <br />
               일주일간 내 삶에 적용해 보고 성찰 일기를 작성해 보자.
             </HeaderContainer>
-            <img src={IMAGE_ROBOT.src} className="float-right -mt-[150px] translate-x-[190px]" />
+            <img
+              src={IMAGE_ROBOT.src}
+              className="float-right -mt-[150px] translate-x-[190px]"
+            />
           </header>
 
-          <img src={
-            showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src} className="w-[1311px] mt-16 ml-6" />
+          <div className="relative">
+            <img
+              src={showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src}
+              className="w-[1311px] mt-16 ml-6"
+            />
 
+            <div className="rotate-[6deg] absolute right-[195px] top-[900px] w-[450px]">
+              <InputWithPen
+                className="text-[35px] text-center bg-transparent"
+                containerClassName="relative -top-[10px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+              />
 
+              <OLD_TextareaWithPen
+                className="w-[400px] text-[30px] text-center bg-transparent"
+                containerClassName="relative top-[10px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                rows={3}
+              />
+
+              <InputWithPen
+                className="text-[35px] text-center bg-transparent"
+                containerClassName="relative top-[40px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+              />
+
+              <InputWithPen
+                className="text-[35px] text-center bg-transparent"
+                containerClassName="relative top-[100px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+              />
+            </div>
+          </div>
         </div>
       </ActivityPageTemplate>
 

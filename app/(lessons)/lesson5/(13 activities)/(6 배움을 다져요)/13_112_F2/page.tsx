@@ -27,37 +27,47 @@ export default function Page() {
       <ContentContainer className="!justify-start -top-[50px] left-16">
         <img src={IMAGE1.src} />
         <div className="absolute left-[230px] top-[50px] grid grid-cols-6 gap-[55px] w-[1040px] h-[90px] bg-transparent ">
-          <button onClick={() => SOUND("/sound/5/p112_word000.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/5/p112_word001.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/5/p112_word002.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/5/p112_word003.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/5/p112_word004.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/5/p112_word005.mp3").play()}></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word000.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word001.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word002.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word003.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word004.mp3").play()}
+          ></button>
+          <button
+            onClick={() => SOUND("/sound/5/p112_word005.mp3").play()}
+          ></button>
         </div>
 
         <InputWithPen
-          answer={answers[0]}
+          answer="家畜"
           showAnswer={showAnswer}
-          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
-          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
-          containerClassName="absolute top-[398px] left-[190px] -mt-1 ml-1"
-          />
-          <InputWithPen
-          answer={answers[1]}
+          containerClassName="absolute left-[140px] top-[400px]"
+          className="w-[300px] text-[40px] font-haeseo text-center bg-transparent"
+          penClassName="w-[35px] left-1/2 -translate-x-1/2"
+        />
+        <InputWithPen
+          answer="同行"
           showAnswer={showAnswer}
-          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
-          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
-          containerClassName="absolute top-[398px] left-[640px] -mt-1 ml-1"
-          />
-          <InputWithPen
-          answer={answers[2]}
+          containerClassName="absolute left-[600px] top-[400px]"
+          className="w-[300px] text-[40px] font-haeseo text-center bg-transparent"
+          penClassName="w-[35px] left-1/2 -translate-x-1/2"
+        />
+        <InputWithPen
+          answer="劣惡"
           showAnswer={showAnswer}
-          className={`w-[200px] text-center font-haeseo bg-transparent text-[55px] tracking-tighter`}
-          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
-          containerClassName="absolute top-[398px] left-[1110px] -mt-1 ml-1"
-          />
-
+          containerClassName="absolute left-[1060px] top-[400px]"
+          className="w-[300px] text-[40px] font-haeseo text-center bg-transparent"
+          penClassName="w-[35px] left-1/2 -translate-x-1/2"
+        />
       </ContentContainer>
 
       <CheckAnswerButton

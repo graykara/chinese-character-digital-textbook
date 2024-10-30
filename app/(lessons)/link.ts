@@ -249,7 +249,7 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "도입",
     path: "lesson2/03_024_A1",
-    page: 24,
+    page: "24~25",
   }, // 3차시
   {
     lesson: 2,
