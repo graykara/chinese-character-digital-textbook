@@ -137,7 +137,7 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <ul className="w-[300px] absolute left-[992px] top-5 border-4 rounded-2xl border-[#9ad290] bg-[#e8effe] py-5 text-[24px] flex flex-col gap-2">
+          <ul className="w-[300px] absolute left-[992px] top-5 border-4 rounded-lg border-[#9ad290] bg-[#e8effe] py-5 text-[24px] flex flex-col gap-2">
             {subChapters.map((item, index) => (
               <Link
                 key={index}

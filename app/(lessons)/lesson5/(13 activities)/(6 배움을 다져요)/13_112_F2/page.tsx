@@ -11,7 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/13/중등한무�
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const asnwers = ["家畜", "同行", "劣惡"];
+  const answers = ["家畜", "同行", "劣惡"];
 
   return (
     <>
