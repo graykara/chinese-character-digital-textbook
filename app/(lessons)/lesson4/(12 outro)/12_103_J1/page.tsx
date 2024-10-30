@@ -19,7 +19,7 @@ export default function Page() {
               성찰 일기 작성하기
             </h1>
             <HeaderContainer
-              sound="/sound/4/103_001.mp3"
+              sound="/sound/4/p103_intro.mp3"
               className="text-center text-[35px] animate__animated animate__flipInX"
             >
               Ⅳ단원에서 배운 문장을 하나 골라, 문장에 담긴 교훈을 <br />
