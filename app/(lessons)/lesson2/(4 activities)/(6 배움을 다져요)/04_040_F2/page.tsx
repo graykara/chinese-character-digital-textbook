@@ -1,8 +1,7 @@
 "use client";
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
-import IMAGE1_BEFORE from "./image1-before.png";
-import IMAGE1_AFTER from "./image1-after.png";
+import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
@@ -29,6 +28,7 @@ export default function Page() {
 
 const Step1 = () => {
   const answers = ["쉬는 날.", "산과 숲.", "넓고 큰 바다."];
+  const answers2 = ["休", "日", "山", "林", "海", "洋"];
   const [showAnswer, setShowAnswer] = useState(false);
 
   const sounds = ["010", "011", "012", "013", "000", "014"].map(
@@ -50,11 +50,9 @@ const Step1 = () => {
 
       <ContentContainer className="!justify-start left-14 -top-7">
         <div className="relative">
-          {showAnswer ? (
-            <img src={IMAGE1_AFTER.src} />
-          ) : (
-            <img src={IMAGE1_BEFORE.src} />
-          )}
+
+            <img src={IMAGE1.src} />
+
 
           <div className="absolute left-[350px] top-[210px] grid grid-cols-6 gap-[55px]">
             {sounds.map((sound) => (
@@ -65,6 +63,52 @@ const Step1 = () => {
               />
             ))}
           </div>
+
+          <InputWithPen
+            answer={answers2[0]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[101px] font-haeseo text-[83px]"
+          />
+          <InputWithPen
+            answer={answers2[1]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[216px] font-haeseo text-[83px]"
+          />
+
+          <InputWithPen
+            answer={answers2[2]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[601px] font-haeseo text-[83px]"
+          />
+          <InputWithPen
+            answer={answers2[3]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[716px] font-haeseo text-[83px]"
+          />
+
+          <InputWithPen
+            answer={answers2[4]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[1101px] font-haeseo text-[83px]"
+          />
+          <InputWithPen
+            answer={answers2[5]}
+            showAnswer={showAnswer}
+            className="text-center w-[90px] mt-4 bg-transparent"
+            penClassName="left-6 top-20 h-[55px]"
+            containerClassName="absolute top-[310px] left-[1216px] font-haeseo text-[83px]"
+          />
+
 
           <InputWithPen
             answer={answers[0]}

@@ -77,10 +77,11 @@ export default function Page() {
           <p>부수는 때로 위치에 따라 모양이 변하기도 한다. </p>
           <div className="relative">
             <img src={TEXT2.src} alt="text1" className="mt-4" />
-            <div className="absolute left-[50px] top-0 grid grid-cols-3 gap-[10px] w-[700px]">
-              <button onClick={() => SOUND("/sound/1/p018_word000.mp3")}></button>
-              <button onClick={() => SOUND("/sound/1/p018_word001.mp3")}></button>
-              <button onClick={() => SOUND("/sound/1/p018_word002.mp3")}></button>
+            <div className="absolute left-[50px] top-0 grid grid-cols-3 gap-[10px] w-[700px] h-[60px] bg-transparent">
+              <button onClick={() => SOUND("/sound/1/p018_word000.mp3").play()}>
+              </button>
+              <button onClick={() => SOUND("/sound/1/p018_word001.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/1/p018_word002.mp3").play()}></button>
             </div>
           </div>
         </div>

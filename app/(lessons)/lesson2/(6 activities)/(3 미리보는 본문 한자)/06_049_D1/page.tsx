@@ -16,6 +16,14 @@ export default function Page() {
   const [step, setStep] = useState(1);
 
   const [showAnswer, setShowAnswer] = useState(false);
+  const sounds = [
+    "/sound/2/p049_word000.mp3",
+    "/sound/2/p049_word001.mp3",
+    "/sound/2/p049_word002.mp3",
+    "/sound/2/p049_word003.mp3",
+    "/sound/2/p049_word004.mp3",
+    "/sound/2/p049_word005.mp3",
+  ]
 
   useEffect(() => {
     setShowAnswer(false);

@@ -78,10 +78,10 @@ export default function Page() {
 
       {!showAnswer && (
         <OLD_TextareaWithPen
-          className="text-[35px] w-[550px] bg-transparent"
-          penClassName="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50px]"
-          containerClassName="!absolute top-[680px] left-[900px]"
-          rows={3}
+          className="text-[30px] w-[550px] pt-7 leading-[36px] bg-transparent"
+          penClassName="left-0 top-8 w-[50px]"
+          containerClassName="!absolute top-[670px] left-[900px]"
+          rows={4}
         />
       )}
       <ExampleAnswerButton

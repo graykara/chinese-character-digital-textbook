@@ -35,7 +35,11 @@ const Step1 = () => {
   return (
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
-        <img src={IMAGE1.src} className="ml-[11px] mt-[80px]" />
+        <div className="relative inline-block">
+          <img src={IMAGE1.src} className="ml-[11px] mt-[80px]" />
+          <button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/4.mp3").play()}>
+          </button>
+        </div>
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]">
           <span className="font-haeseo">朝</span>
           <span className="font-haeseo">三</span>
@@ -91,7 +95,12 @@ const Step2 = () => {
   return (
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
-        <img src={IMAGE2.src} className="ml-[10px] mt-[80px]" />
+        <div className="relative inline-block">
+          <img src={IMAGE2.src} className="ml-[10px] mt-[80px]" />
+          <button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/3.mp3").play()}>
+          </button>
+        </div>
+
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]">
           <span className="font-haeseo">漁</span>
           <span className="font-haeseo">父</span>

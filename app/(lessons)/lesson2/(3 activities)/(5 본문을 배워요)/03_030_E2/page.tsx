@@ -153,10 +153,10 @@ export default function Page() {
             active={showResource}
             className="-mt-4 ml-5 mr-8 inline-block"
             text="끝"
-            width={200}
+            width={165}
             height={80}
           />
-          이라는 뜻을 <span className="mt-2 -mb-14">나타냄.</span>
+          이라는 뜻을 <span className="mt-[70px] -mb-[70px] -ml-[1030px]">나타냄.</span>
         </div>
       ),
       resource: IMAGE6.src,
