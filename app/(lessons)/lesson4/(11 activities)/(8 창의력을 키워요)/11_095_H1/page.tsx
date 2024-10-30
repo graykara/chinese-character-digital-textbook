@@ -6,6 +6,7 @@ import { useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { TitleContainer } from "@/app/components/title-container";
+import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리33.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -34,6 +35,13 @@ export default function Page() {
         </div>
         <div className="w-[1310px] ml-[180px]">
           <img src={IMAGE.src} className="" />
+          <TextareaWithPen
+            answer={answer}
+            showAnswer={showAnswer}
+            containerClassName={`absolute resize-none left-[140px] top-[230px] text-[42px] tracking-tighter bg-transparent w-full ml-3 px-16 leading-[60px] ${showAnswer ? "text-example ml-3" : ""}`}
+            penClassName="h-[55px] top-[230px] left-[200px]"
+            rows={3}
+          />
         </div>
 
         <div className="flex items-center gap-1 text-[40px] tracking-tight ml-32 mt-3">

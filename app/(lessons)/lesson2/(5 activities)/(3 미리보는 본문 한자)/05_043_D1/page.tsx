@@ -5,6 +5,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer2 } from "@/app/components/title-container";
 import { useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import IMAGE from "./image.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘4.png";
@@ -34,6 +35,18 @@ export default function Page() {
 
       <ContentContainer className="!justify-start -left-9">
         <img src={IMAGE.src} alt="" />
+        <button className="absolute top-[30px] left-[160px] w-[220px] h-[70px] z-10" onClick={() => SOUND(sounds[0]).play()}>
+        </button>
+        <button className="absolute top-[160px] left-[160px] w-[220px] h-[70px] z-10" onClick={() => SOUND(sounds[1]).play()}>
+        </button>
+        <button className="absolute top-[295px] left-[160px] w-[220px] h-[70px] z-10" onClick={() => SOUND(sounds[2]).play()}>
+        </button>
+        <button className="absolute top-[430px] left-[160px] w-[220px] h-[70px] z-10" onClick={() => SOUND(sounds[3]).play()}>
+        </button>
+        <button className="absolute top-[565px] left-[160px] w-[220px] h-[70px] z-10" onClick={() => SOUND(sounds[4]).play()}>
+        </button>
+              
+
       </ContentContainer>
 
       <CheckAnswerButton

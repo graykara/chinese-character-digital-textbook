@@ -12,7 +12,16 @@ import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글38.png";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕35.png";
+import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕36.png";
+import BACKGROUND3 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕37.png";
+import BACKGROUND4 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕38.png";
+import BACKGROUND5 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕39.png";
+import BACKGROUND6 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕40.png";
+import BACKGROUND7 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕41.png";
+import BACKGROUND8 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕42.png";
+import BACKGROUND9 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕43.png";
+import BACKGROUND10 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕44.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number-icon";
 import { InputWithPen } from "@/app/components/input-with-pen";
@@ -51,7 +60,7 @@ export default function Page() {
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate
-        lesson={2}
+        lesson={5}
         number={step}
         question={questions[step - 1]}
         hideIconNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
@@ -69,7 +78,29 @@ export default function Page() {
       </SolveProblemPageTemplate>
 
       <img
-        src={BACKGROUND1.src}
+        src={
+          step === 1
+            ? BACKGROUND1.src
+            : step === 2
+              ? BACKGROUND2.src
+              : step === 3
+                ? BACKGROUND3.src
+                : step === 4
+                  ? BACKGROUND4.src
+                  : step === 5
+                    ? BACKGROUND5.src
+                    : step === 6
+                      ? BACKGROUND6.src
+                      : step === 7
+                        ? BACKGROUND7.src
+                        : step === 8
+                          ? BACKGROUND8.src
+                          : step === 9
+                            ? BACKGROUND9.src
+                            : step === 10
+                            ? BACKGROUND10.src
+                            : ""
+        }
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>
@@ -81,16 +112,16 @@ const Question1 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE1.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+        <img src={IMAGE1.src}/>
 
-        <div className="w-full mt-10">
+        <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={1} />
-            <p>윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.</p>
           </header>
 
-          <div className="ml-[100px] w-[120px] h-[120px] rounded-[15px] border-[3px] border-[#939292] flex justify-center items-center">
+          <div className="ml-[90px] mt-[25px] w-[130px] h-[130px] rounded-[15px] border-[3px] border-[#939292] flex justify-center items-center">
             <InputWithPen
               answer="劣​"
               showAnswer={showAnswer}
@@ -113,16 +144,16 @@ const Question2 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
+      <ContentContainer className="!justify-start top-6 w-[1560px]">
         <img src={IMAGE1.src} />
 
-        <div className="w-full mt-10">
+        <div className="w-full mt-12 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={2} />
-            <p>윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?</p>
           </header>
 
-          <div className="ml-[100px] mt-5">
+          <div className="ml-[100px] mt-10">
             <SelectionQuiz
               answers={[3]}
               showAnswer={showAnswer}
@@ -133,7 +164,7 @@ const Question2 = () => {
                 "긍정적으로 생각하는 태도가 필요해.",
                 "단점을 고칠 수 있도록 알려 주어야 해.",
               ]}
-              className="grid grid-cols-2 w-[1500px] gap-y-5 text-[40px]"
+              className="grid grid-cols-2 gap-y-6 text-[45px] tracking-tight"
             />
           </div>
         </div>
@@ -151,25 +182,25 @@ const Question3 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE3.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE3.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={3} />
-            <p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
               보기 의 한자를 바르게 배열하여 가 에 들어갈 내용을 완성하시오.
             </p>
           </header>
 
-          <div className="ml-[100px] mt-10 relative">
+          <div className="ml-[10px] mt-12 relative">
             <img src={IMAGE3_1.src} />
 
             <InputWithPen
               answer="物貴而人賤​"
               showAnswer={showAnswer}
               className="w-[500px] text-[72px] font-haeseo text-center bg-transparent"
-              containerClassName="absolute left-[850px] top-[10px]"
+              containerClassName="absolute left-[970px] top-[30px]"
               penClassName="left-1/2 -translate-x-1/2"
             />
           </div>
@@ -188,16 +219,16 @@ const Question4 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE3.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE3.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={4} />
-            <p>윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.</p>
           </header>
 
-          <div className="ml-[100px] mt-10 relative">
+          <div className="ml-[105px] mt-2 relative">
             <InputWithPen
               answer="人與物​"
               showAnswer={showAnswer}
@@ -220,18 +251,18 @@ const Question5 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE5.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE5.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={5} />
-            <p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
               윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
             </p>
           </header>
 
-          <div className="ml-[100px] mt-10 relative">
+          <div className="ml-[100px] mt-16 relative">
             <img src={IMAGE5_1.src} />
             <InputWithPen
               answer="草中石​"
@@ -263,13 +294,13 @@ const Question6 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE5.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE5.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={6} />
-            <p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
               윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
             </p>
           </header>
@@ -285,7 +316,7 @@ const Question6 = () => {
                 "㉱의 음은 ‘불’이다.",
                 "㉲의 음은 ‘부’이다.",
               ]}
-              className="grid grid-cols-2 gap-y-5"
+              className="grid grid-cols-2 gap-y-6 text-[45px] tracking-tight"
             />
           </div>
         </div>
@@ -303,13 +334,13 @@ const Question7 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE7.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE7.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={7} />
-            <p>㉠을 숫자로 바르게 표기한 것은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">㉠을 숫자로 바르게 표기한 것은?</p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">
@@ -317,7 +348,7 @@ const Question7 = () => {
               answers={[4]}
               showAnswer={showAnswer}
               options={["1", "10", "11", "1/10", "1/100"]}
-              className="grid grid-cols-3 gap-y-5"
+              className="grid grid-cols-3 gap-y-6 text-[45px] tracking-tight"
             />
           </div>
         </div>
@@ -335,13 +366,13 @@ const Question8 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <img src={IMAGE7.src} />
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <img src={IMAGE7.src} />
 
-        <div className="w-full mt-10">
+      <div className="w-full mt-14 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={8} />
-            <p>㉮~㉲의 설명으로 옳지 않은 것은?</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">㉮~㉲의 설명으로 옳지 <span className="underline underline-offset-2">않은</span> 것은?</p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">
@@ -355,7 +386,7 @@ const Question8 = () => {
                 "㉱는 ‘~와/과’로 풀이한다.",
                 "㉲는 ‘칭송하다’라는 뜻이다.",
               ]}
-              className="grid grid-cols-2 gap-y-5"
+              className="grid grid-cols-2 gap-y-6 text-[45px] tracking-tight"
             />
           </div>
         </div>
@@ -373,30 +404,32 @@ const Question9 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <div className="w-full mt-10">
-          <header className="flex items-start gap-5">
-            <ProblemNumberIcon number={9} />
-            <p>
-              <span className="font-haeseo">‘自天而視之, 人與物均也.’</span>를
-              우리말로 풀이하고 문장에서 얻을 수 있는 교훈을 쓰시오.
+      <ContentContainer className="!justify-start top-5 w-[1560px]">
+      <div className="w-full mt-2 -ml-1">
+          <header className="flex items-start -mt-2 gap-5">
+            <ProblemNumberIcon number={9} type="2"/>
+            <p className="text-[55px] -mt-2 -ml-6 tracking-tight break-keep ">
+              <span className="font-haeseo text-[60px] tracking-[-5px]">‘自天而視之, 人與物均也.’</span>를 우리말로 풀이하고 문장에서 얻을 수 있는 교훈을 쓰시오.
             </p>
           </header>
 
-          <div className="ml-[100px] mt-10 relative">
+          <div className="ml-[100px] mt-16 relative">
             <img src={IMAGE9_1.src} />
 
             <InputWithPen
               answer="하늘로부터 그것을 보면, 사람과 사물이 모두 동등하다.​"
               showAnswer={showAnswer}
-              className="w-[1200px] bg-transparent"
-              containerClassName="absolute left-[150px] top-[-5px]"
+              className="w-[1200px] bg-transparent
+              text-[55px] tracking-tighter"
+              penClassName="-mt-3"
+              containerClassName="absolute left-[150px] top-[-15px]"
             />
             <InputWithPen
               answer="사람과 만물은 모두 함께 어울려 상생하는 관계여야 한다.​"
               showAnswer={showAnswer}
-              className="w-[1200px] bg-transparent"
-              containerClassName="absolute left-[150px] top-[145px]"
+              className="w-[1200px] bg-transparent text-[55px] tracking-tighter"
+              penClassName="-mt-3"
+              containerClassName="absolute left-[150px] top-[135px]"
             />
           </div>
         </div>
@@ -411,22 +444,22 @@ const Question9 = () => {
 
 const Question10 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
-
+//#293071
   return (
     <>
-      <ContentContainer className="!justify-start">
-        <div className="w-full mt-10">
-          <header className="flex items-start gap-5">
-            <ProblemNumberIcon number={10} />
-            <p>사람들이 만덕을 칭송한 이유를 쓰시오.</p>
+      <ContentContainer className="!justify-start -left-6 top-0">
+      <div className="w-full -ml-1">
+          <header className="flex items-center gap-5">
+            <ProblemNumberIcon number={10} type="2"/>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">사람들이 만덕을 칭송한 이유를 쓰시오.</p>
           </header>
 
           <div className="ml-[100px] mt-10 relative">
             <InputWithPen
               answer="자신이 가진 것을 많은 사람에게 나누어 주어 도움을 주었기 때문이다.​"
               showAnswer={showAnswer}
-              className="w-[1300px] bg-transparent"
-              containerClassName="w-[1300px] border-b-2 border-black"
+              className="w-[1300px] bg-transparent text-[50px] tracking-tighter"
+              containerClassName="w-[1300px] mt-[60px] -ml-2 border-b-2 border-black"
             />
           </div>
         </div>
