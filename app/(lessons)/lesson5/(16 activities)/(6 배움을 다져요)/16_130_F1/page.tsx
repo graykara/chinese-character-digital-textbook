@@ -38,12 +38,11 @@ const Step1 = () => {
 
   const hanjaCards = ["官", "如", "庭", "集", "雲"];
   const hanjaSounds = [
-    "/sound/2/32_008.mp3",
-    "/sound/2/32_009.mp3",
-    "/sound/2/32_010.mp3",
-    "/sound/2/32_011.mp3",
-    "/sound/2/32_012.mp3",
-    "/sound/2/32_013.mp3",
+    "/sound/5/p130_word000.mp3",
+    "/sound/5/p130_word001.mp3",
+    "/sound/5/p130_word002.mp3",
+    "/sound/5/p130_word003.mp3",
+    "/sound/5/p130_word004.mp3",
   ];
   const [droppedHanja, setDroppedHanja] = useState(["", ""]);
 
@@ -111,21 +110,21 @@ const Step1 = () => {
                 </HanjaDropZone>
               </div>
               <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 2)}>
                   <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
                     {showAnswer ? hanjaCards[2] : droppedHanja[1]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 3)}>
                   <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
                     {showAnswer ? hanjaCards[1] : droppedHanja[1]}
                   </div>
                 </HanjaDropZone>
               </div>
               <div>
-                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
+                <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 4)}>
                   <div className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]">
                     {showAnswer ? hanjaCards[4] : droppedHanja[1]}
                   </div>

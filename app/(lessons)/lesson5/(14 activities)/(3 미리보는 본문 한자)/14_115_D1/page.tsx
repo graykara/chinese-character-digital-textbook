@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import IMAGE from "./image.png";
 import LETTER1 from "./1.png";
 import LETTER2 from "./2.png";
@@ -32,6 +33,18 @@ export default function Page() {
       <ContentContainer className="!justify-start pl-12">
         <div className="relative w-full">
           <img src={IMAGE.src} />
+          <div className="absolute left-[30px] top-[180px] grid grid-cols-3 gap-[55px] w-[580px] h-[90px] px-[20px] bg-black ">
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word000.mp3").play()}>
+            </button>
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word001.mp3").play()}></button>
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word002.mp3").play()}></button>
+          </div>
+          <div className="absolute left-[30px] top-[475px] grid grid-cols-3 gap-[55px] w-[580px] h-[90px] px-[20px] bg-black ">
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word003.mp3").play()}>
+            </button>
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word004.mp3").play()}></button>
+            <button className="bg-blue-500" onClick={() => SOUND("/sound/5/p115_word005.mp3").play()}></button>
+          </div>
 
           <button
             onClick={() => setShowLetter(showLetter.concat(1))}

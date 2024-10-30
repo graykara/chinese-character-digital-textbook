@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
@@ -26,7 +27,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer 
+      <TitleContainer
         className="mt-10"
         sound="/sound/5/121-i-1.mp3"
       >
@@ -40,6 +41,15 @@ export default function Page() {
         {step === 1 && (
           <div className="w-full flex mt-10">
             <img src={IMAGE1.src} />
+            <div className="absolute left-[50px] top-[100px] grid grid-cols-6 gap-[70px] w-full h-[90px] pr-[80px]">
+              <button onClick={() => SOUND("/sound/5/p121_word000.mp3").play()}>
+              </button>
+              <button onClick={() => SOUND("/sound/5/p121_word001.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p121_word002.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p121_word003.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p121_word004.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p121_word005.mp3").play()}></button>
+            </div>
           </div>
         )}
         {step === 2 && (
@@ -49,10 +59,12 @@ export default function Page() {
         )}
       </ContentContainer>
 
-      <CheckAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
+      {step === 2 && (
+        <CheckAnswerButton
+          active={showAnswer}
+          onClick={() => setShowAnswer(!showAnswer)}
+        />
+      )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
 

@@ -72,8 +72,8 @@ const Step2 = () => {
         sound="/sound/5/124-i-2.mp3"
       />
 
-      <WritingButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[210px] left-[1400px] flex items-center gap-5" />
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-3s absolute top-[210px] left-[1520px] flex items-center gap-5" />
+      <WritingButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[205px] left-[1400px] flex items-center gap-5" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[205px] left-[1520px] flex items-center gap-5" />
 
       <ContentContainer className="!justify-start -top-[40px] left-[75px]">
         <img src={IMAGE2.src} />

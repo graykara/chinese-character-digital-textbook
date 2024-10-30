@@ -26,6 +26,15 @@ export default function Page() {
 
       <ContentContainer className="!justify-start -top-[50px] left-16">
         <img src={IMAGE1.src} />
+        <div className="absolute left-[230px] top-[50px] grid grid-cols-6 gap-[55px] w-[1040px] h-[90px] bg-transparent ">
+          <button onClick={() => SOUND("/sound/5/p112_word000.mp3").play()}>
+          </button>
+          <button onClick={() => SOUND("/sound/5/p112_word001.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/5/p112_word002.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/5/p112_word003.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/5/p112_word004.mp3").play()}></button>
+          <button onClick={() => SOUND("/sound/5/p112_word005.mp3").play()}></button>
+        </div>
       </ContentContainer>
 
       <CheckAnswerButton

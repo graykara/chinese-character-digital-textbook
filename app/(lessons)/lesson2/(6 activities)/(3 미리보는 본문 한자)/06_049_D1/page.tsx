@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -45,6 +46,20 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-1 pl-10">
         <div className="w-full flex">
           <img src={EXAMPLE.src} />
+          <div className="absolute left-[50px] top-[65px] grid grid-cols-6 gap-[60px] w-[1400px] h-[90px] z-10">
+              <button onClick={() => SOUND(sounds[0]).play()}>
+              </button>
+              <button onClick={() => SOUND(sounds[1]).play()}>
+              </button>
+              <button onClick={() => SOUND(sounds[2]).play()}>
+              </button>
+              <button onClick={() => SOUND(sounds[3]).play()}>
+              </button>
+              <button onClick={() => SOUND(sounds[4]).play()}>
+              </button>
+              <button onClick={() => SOUND(sounds[5]).play()}>
+              </button>
+              </div>
         </div>
 
         <div className="relative w-full pb-20">

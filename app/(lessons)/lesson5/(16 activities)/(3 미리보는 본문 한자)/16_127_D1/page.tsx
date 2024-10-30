@@ -4,6 +4,7 @@ import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import IMAGE1 from "./image1.png";
 import IMAGE2_BEFORE from "./image2-before.png";
 import IMAGE2_AFTER from "./image2-after.png";
@@ -27,7 +28,7 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer 
+      <TitleContainer
         className="mt-10"
         sound="/sound/5/127-i.mp3">
         <p className="tracking-[-5px] text-[54px] flex items-start gap-3 break-keep">
@@ -40,6 +41,14 @@ export default function Page() {
         {step === 1 && (
           <div className="w-full flex mt-[130px] -ml-3">
             <img src={IMAGE1.src} />
+            <div className="absolute left-[50px] top-[165px] grid grid-cols-5 gap-[60px] w-[1400px] h-[90px]">
+              <button onClick={() => SOUND("/sound/5/p124_word004.mp3").play()}>
+              </button>
+              <button onClick={() => SOUND("/sound/5/p124_word005.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p124_word006.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p124_word007.mp3").play()}></button>
+              <button onClick={() => SOUND("/sound/5/p124_word008.mp3").play()}></button>
+            </div>
           </div>
         )}
         {step === 2 && (
