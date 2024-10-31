@@ -49,16 +49,10 @@ export default function Page() {
               />
 
               <OLD_TextareaWithPen
-                className="w-[400px] text-[30px] text-center bg-transparent"
+                className="w-[400px] text-[35px] text-center bg-transparent"
                 containerClassName="relative top-[10px]"
-                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2 top-0"
                 rows={3}
-              />
-
-              <InputWithPen
-                className="text-[35px] text-center bg-transparent"
-                containerClassName="relative top-[40px]"
-                penClassName="w-[40px] left-1/2 -translate-x-1/2"
               />
 
               <InputWithPen

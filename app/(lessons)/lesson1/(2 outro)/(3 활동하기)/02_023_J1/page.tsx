@@ -5,7 +5,8 @@ import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import IMAGE4 from "./image4.png";
 import { StepContainer } from "@/app/components/step-container";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SOUND } from "@/app/utils/sound-player";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
@@ -48,18 +49,31 @@ export default function Page() {
 }
 
 const Content1 = () => {
+  const sound = "/sound/1/23-1.mp3"
+  useEffect(() => {
+    if (sound) {
+      const soundInstance = SOUND(sound);
+      soundInstance.stop();
+      soundInstance.play();
+
+      return () => {
+        soundInstance.stop();
+      };
+    }
+  }, [sound]);
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-start -mt-[220px]">
       <header className="mb-10 -ml-3">
         <img src={IMAGE1.src} />
       </header>
+
       <p className="ml-3 -mt-2 text-[55px] tracking-tighter">
-        {/* sound="/sound/1/23-i.mp3" */}
         문자도는 문자의 뜻과 관계있는 옛이야기의 소재를 문자의 획 안이나
         <br />그 주변에 그려 넣어 글자를 구성한 그림이다. 내 이름의 뜻이나 나와
-        <br />
-        관련된 소재 등이 드러나도록 내 이름으로 문자도를 그려 보자.
+        <br />관련된 소재 등이 드러나도록 내 이름으로 문자도를 그려 보자.
       </p>
+
     </div>
   );
 };
@@ -69,6 +83,7 @@ const Content2 = () => {
     <div className="h-full flex flex-col justify-center items-center -mt-[120px]">
       <div className="relative">
         <img src={IMAGE2.src} />
+        <button className="absolute top-[15px] left-[20px] w-[100px] h-[100px] z-10" onClick={() => SOUND("/sound/1/23-2.mp3").play()}></button>
       </div>
     </div>
   );

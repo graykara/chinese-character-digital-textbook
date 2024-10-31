@@ -69,7 +69,7 @@ export default function Page() {
 에너지를 전하고, 진심 어린 말 한마디가
 많은 이들에게 큰 힘이 되어`}
             className={`w-[630px] text-[32px] bg-transparent ${showAnswer ? "text-example" : ""}`}
-            penClassName=""
+            penClassName="left-1/2 -translate-x-1/2 hidden"
             containerClassName="!absolute left-[430px] bottom-[130px]"
             rows={3}
           />

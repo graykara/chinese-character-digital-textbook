@@ -42,7 +42,7 @@ export default function Page() {
         </div>
       </CreativityPageTemplate>
 
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[80px] top-[664px] z-1" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[82px] top-[664px] z-1" />
 
       <OLD_TextareaWithPen
         isExample
