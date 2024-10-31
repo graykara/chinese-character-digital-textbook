@@ -416,9 +416,9 @@ const Question9 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start top-5 w-[1560px]">
-        <div className="w-full mt-2 -ml-1">
-          <header className="flex items-start -mt-2 gap-10">
+      <ContentContainer className="!justify-start top-5 -mt-[9px] w-[1560px]">
+        <div className="w-full -mt-0 ml-0">
+          <header className="flex items-start -mt-0 gap-10">
             <ProblemNumberIcon number={9} type="2" />
             <p className="text-[55px] -mt-2 -ml-6 tracking-tight break-keep ">
               ‘

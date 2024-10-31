@@ -77,8 +77,11 @@ export default function Page() {
       />
 
       <OLD_TextareaWithPen
+        answer={
+          "雨(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다."
+        }
         showAnswer={showAnswer}
-        className="text-[40px] w-[550px] py-8 leading-tight text-center"
+        className="text-[40px] w-[550px] py-8 leading-tight text-center text-example"
         penClassName="left-0 top-8 w-[50px]"
         containerClassName="!absolute bottom-[120px] left-[900px] "
         rows={2}

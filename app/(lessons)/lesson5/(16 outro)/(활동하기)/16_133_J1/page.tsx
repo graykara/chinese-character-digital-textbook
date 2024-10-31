@@ -1,10 +1,14 @@
 "use client";
 
-import IMAGE from "./image.png";
+import IMAGE_BEFORE from "./bg_2_before.png";
+import IMAGE_AFTER from "./bg_2_after.png";
+import IMAGE_1 from "./way.png";
+import IMAGE_2 from "./wayText.png";
 import { useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { HeaderContainer } from "@/app/components/headers/header-container";
+import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕33.png";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -29,7 +33,13 @@ export default function Page() {
               기업의 가치를 담은 명함을 만들어 보자.
             </HeaderContainer>
           </header>
-          <img src={IMAGE.src} className="w-full" />
+          <div className="left-0">
+          <img src={IMAGE_1.src} className="-ml-5" />
+          <img src={IMAGE_2.src} className="-ml-5 mt-10 mb-10" />
+          </div>
+          <img src={
+            showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src 
+            } className="w-full" />
         </div>
       </ActivityPageTemplate>
 
@@ -38,7 +48,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

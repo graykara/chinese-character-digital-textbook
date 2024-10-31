@@ -47,10 +47,8 @@ export default function Page() {
 
       <div className="w-[1500px] mx-auto pl-10">
         <img src={EXAMPLE.src} />
-      </div>
-      <ContentContainer className="!justify-start mt-1 pl-10">
-        <div className="w-full flex">
-          <div className="absolute left-[7px] top-[65px] grid grid-cols-6 gap-[60px] w-[1400px] h-[90px] z-10">
+        <div className="absolute w-full flex z-10">
+          <div className="absolute left-[7px] -top-[270px] grid grid-cols-6 gap-[60px] w-[1400px] h-[100px] z-10">
             <button onClick={() => SOUND(sounds[0]).play()}></button>
             <button onClick={() => SOUND(sounds[1]).play()}></button>
             <button onClick={() => SOUND(sounds[2]).play()}></button>
@@ -59,10 +57,13 @@ export default function Page() {
             <button onClick={() => SOUND(sounds[5]).play()}></button>
           </div>
         </div>
+      </div>
+      <ContentContainer className="!justify-start mt-10 pl-10">
 
         <div className="relative w-full pb-20">
+        {/* <div className=" w-full pb-20"> */}
           {step === 1 && (
-            <div className="relative mt-[70px] ml-[7px] mb-20">
+            <div className="relative mt-[10px] ml-[7px] mb-20">
               <img src={IMAGE1.src} alt="" />
               {!showAnswer && (
                 <div>
@@ -107,7 +108,7 @@ export default function Page() {
             </div>
           )}
           {step === 2 && (
-            <div className="relative mt-[70px] ml-[7px] ">
+            <div className="relative mt-[10px] ml-[7px] ">
               <img src={IMAGE2.src} alt="" />
 
               {!showAnswer && (

@@ -21,15 +21,15 @@ export default function Page() {
 
   const hanjaCards = ["共", "等", "存", "易", "生", "思", "之", "平", "地"];
   const hanjaSounds = [
-    "/sound/2/32_008.mp3",
-    "/sound/2/32_009.mp3",
-    "/sound/2/32_010.mp3",
-    "/sound/2/32_011.mp3",
-    "/sound/2/32_012.mp3",
-    "/sound/2/32_013.mp3",
-    "/sound/2/32_011.mp3",
-    "/sound/2/32_012.mp3",
-    "/sound/2/32_013.mp3",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
   const [droppedHanja, setDroppedHanja] = useState(["", ""]);
 
@@ -64,11 +64,11 @@ export default function Page() {
             <div
               key={index}
               className="flex justify-center"
-              onClick={() => {
-                new Howl({
-                  src: hanjaSounds[index],
-                }).play();
-              }}
+              // onClick={() => {
+              //   new Howl({
+              //     src: hanjaSounds[index],
+              //   }).play();
+              // }}
             >
               <DraggableCard key={index} value={hanja}>
                 <div className="w-[165px] h-[135px] pb-[15px] flex justify-center items-center font-haeseo text-[80px]">
