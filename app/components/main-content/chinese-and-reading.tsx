@@ -103,7 +103,7 @@ export const MainContentChineseAndReading = ({
                   >
                     {showReading ? (
                       <span
-                        className={`flex justify-around w-full text-main-content text-[60px] font-chosun font-bold`}
+                        className={`flex justify-around w-full text-main-content text-[60px] font-chosun`}
                       >
                         {reading
                           ?.split("")
