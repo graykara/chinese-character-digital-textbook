@@ -186,11 +186,6 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={9} step={step} onStepChange={setStep} />
 
-        <MainContentVideoButton
-          video="/video/writing/50p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
-
         <div className="absolute top-[140px] left-[150px]">
           {step === 1 || step === 2 ? (
             <img src={IMAGE2.src} alt="society" />
@@ -228,7 +223,7 @@ export default function Page() {
                 <PillButton
                   active={showMeaning}
                   onClick={() => setShowMeaning(!showMeaning)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />

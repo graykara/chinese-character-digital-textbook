@@ -196,11 +196,6 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
 
-        <MainContentVideoButton
-          video="/video/writing/44p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
-
         <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
           <div className="relative mb-[260px]">
             <div className="relative top-7 left-[135px] w-[550px] text-center text-[180px] tracking-widest">
@@ -228,7 +223,7 @@ export default function Page() {
                 <PillButton
                   active={showMeaning}
                   onClick={() => setShowMeaning(!showMeaning)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
@@ -263,7 +258,7 @@ export default function Page() {
                 <PillButton
                   active={showMeaning2}
                   onClick={() => setShowMeaning2(!showMeaning2)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />

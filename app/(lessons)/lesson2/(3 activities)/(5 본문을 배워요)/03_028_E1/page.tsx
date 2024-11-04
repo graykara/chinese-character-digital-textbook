@@ -86,13 +86,6 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
 
-        {step !== 1 ? (
-          <MainContentVideoButton
-            video="/video/writing/28p_1.mp4"
-            className="absolute left-[112px] top-[40px]"
-          />
-        ) : null}
-
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : (
@@ -129,7 +122,7 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`ml-[70px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`ml-[70px] -mt-0 -mb-4 h-[85px] text-center font-bold text-[50px] tracking-tighter ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
@@ -139,6 +132,7 @@ export default function Page() {
               <div className="relative -top-[80px] -right-[90px]">
                 <img src={CONTAINER.src} alt="container" />
                 <FlippableCard
+                  active={showMeaning}
                   key={step}
                   text={data[step - 2]?.content}
                   width={330}

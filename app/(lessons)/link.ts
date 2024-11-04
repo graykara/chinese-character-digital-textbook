@@ -291,7 +291,7 @@ export const NAVIGATION = [
     chapter: 3,
     subChapter: "새로 익힐 한자",
     path: "lesson2/03_028_L1",
-    page: 28,
+    page: 29,
   },
   {
     lesson: 2,
@@ -361,7 +361,7 @@ export const NAVIGATION = [
     chapter: 4,
     subChapter: "새로 익힐 한자",
     path: "lesson2/04_036_L1",
-    page: 36,
+    page: 37,
   },
   {
     lesson: 2,
@@ -494,7 +494,7 @@ export const NAVIGATION = [
     chapter: 6,
     subChapter: "새로 익힐 한자",
     path: "lesson2/06_050_L1",
-    page: 50,
+    page: 48,
   },
   {
     lesson: 2,
@@ -543,7 +543,7 @@ export const NAVIGATION = [
     chapter: -2,
     subChapter: "문제풀기",
     path: "lesson2/06_056_K1",
-    page: 56,
+    page: "56~57",
   }, // 문제풀기
   {
     lesson: 3,

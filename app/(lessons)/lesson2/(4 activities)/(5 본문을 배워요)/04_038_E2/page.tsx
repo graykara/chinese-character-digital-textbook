@@ -129,13 +129,6 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
 
-        {step !== 1 ? (
-          <MainContentVideoButton
-            video="/video/writing/38p_1.mp4"
-            className="absolute left-[112px] top-[40px]"
-          />
-        ) : null}
-
         {step === 4 ? (
           <div className="absolute right-[105px] translate-y-[60px]">
             <img src={IMAGE2.src} />
@@ -177,7 +170,7 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`mr-[140px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] tracking-[20px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-0 -mb-4 h-[85px] text-center font-bold text-[50px] tracking-tighter ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>
