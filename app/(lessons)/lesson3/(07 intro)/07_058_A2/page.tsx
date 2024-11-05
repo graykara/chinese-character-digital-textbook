@@ -39,13 +39,13 @@ export default function Page() {
         playing
       />
 
-      <IntroWhyHeader className="absolute left-[70px] top-[50px]" />
+      <IntroWhyHeader className="absolute left-[100px] top-[100px]" />
 
-      <div className="absolute left-[70px] top-[180px] w-[1150px] h-[720px] overflow-y-auto rounded-[20px] pt-[20px] pl-[28px] pb-0">
+      <div className="bg-white bg-opacity-50 absolute left-[100px] top-[245px] w-[1100px] h-[675px] overflow-y-auto rounded-[20px] pt-[25px] pb-[10px] pl-[30px] pr-[47px] animate__animated animate__fadeIn animate__delay-1s">
         <IntroTextPlayer
           sound="/sound/3/58_intro/3.mp3"
           data={sound}
-          textClassName="text-left leading-[88px] tracking-[-1px]"
+          textClassName="text-left leading-[80px]"
         />
       </div>
 

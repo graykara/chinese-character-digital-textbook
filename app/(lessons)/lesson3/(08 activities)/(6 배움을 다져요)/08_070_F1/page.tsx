@@ -2,9 +2,9 @@
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
 import { useEffect, useState } from "react";
-import IMAGE1 from "./image1.png";
-import IMAGE2 from "./image2.png";
-import IMAGE3 from "./image3.png";
+import IMAGE1 from "./bg_1.png";
+import IMAGE2 from "./bg_2.png";
+import IMAGE3 from "./bg_3.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
@@ -60,6 +60,14 @@ const Step1 = () => {
           className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
           onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[150px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">雪</span>
+          <span className="font-haeseo">上</span>
+          <span className="font-haeseo">加</span>
+          <span className="font-haeseo">霜</span>
+        </div>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -99,6 +107,14 @@ const Step2 = () => {
           className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
           onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[150px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">苦</span>
+          <span className="font-haeseo">盡</span>
+          <span className="font-haeseo">甘</span>
+          <span className="font-haeseo">來</span>
+        </div>
         <TextareaWithPen
           answer={answers[0]}
           showAnswer={showAnswer}
@@ -146,6 +162,14 @@ const Step3 = () => {
             }
           }}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[425px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">易</span>
+          <span className="font-haeseo">地</span>
+          <span className="font-haeseo">思</span>
+          <span className="font-haeseo">之</span>
+        </div>
         <button
           className={`absolute top-[20px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(2) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
@@ -158,6 +182,14 @@ const Step3 = () => {
             }
           }}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 translate-x-[225px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">苦</span>
+          <span className="font-haeseo">盡</span>
+          <span className="font-haeseo">甘</span>
+          <span className="font-haeseo">來</span>
+        </div>
         <button
           className={`absolute top-[230px] left-[220px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(3) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
@@ -170,6 +202,14 @@ const Step3 = () => {
             }
           }}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[425px] top-[220px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">龍</span>
+          <span className="font-haeseo">頭</span>
+          <span className="font-haeseo">蛇</span>
+          <span className="font-haeseo">尾</span>
+        </div>
         <button
           className={`absolute top-[230px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(4) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
@@ -182,6 +222,14 @@ const Step3 = () => {
             }
           }}
         ></button>
+        <div
+          className="w-[320px] absolute grid grid-cols-4 left-1/2 translate-x-[225px] top-[220px] -ml-4 text-[87px]"
+        >
+          <span className="font-haeseo">雪</span>
+          <span className="font-haeseo">上</span>
+          <span className="font-haeseo">加</span>
+          <span className="font-haeseo">霜</span>
+        </div>
         <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px]"></div>
       </ContentContainer>
 

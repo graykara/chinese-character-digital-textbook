@@ -46,7 +46,7 @@ export default function Page() {
               >
                 足
               </span>
-              : ① 발, ② 만족하다
+              : ① <span className="underline underline-offset-[10px]">발</span>, ② 만족하다
             </p>
           ),
         },
@@ -58,7 +58,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="발"
+            text="발."
             width={150}
             height={80}
           />
@@ -92,7 +92,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="함"
+            text="함."
             width={150}
             height={80}
           />
@@ -142,7 +142,7 @@ export default function Page() {
       content2: (
         <div className="flex flex-wrap text-[50px] font-bold">
           두 사람이 이해관계로 서로 싸우는 사이에 엉뚱한 사람이 애쓰지 않고
-          가로챈 이익
+          가로챈 이익.
         </div>
       ),
     },

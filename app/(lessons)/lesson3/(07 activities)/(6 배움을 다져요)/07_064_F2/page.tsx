@@ -60,7 +60,7 @@ const Step1 = () => {
           </button>
         <div
           className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
-          onClick={() => SOUND("/sound/3/64_003.mp3").play()}
+          // onClick={() => SOUND("/sound/3/64_003.mp3").play()}
         >
           <span className="font-haeseo">十</span>
           <span className="font-haeseo">中</span>
@@ -110,7 +110,7 @@ const Step2 = () => {
           </button>
         <div
           className="w-[290px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 top-[65px] -ml-4 text-[72px]"
-          onClick={() => SOUND("/sound/3/64_004.mp3").play()}
+          // onClick={() => SOUND("/sound/3/64_004.mp3").play()}
         >
           <span className="font-haeseo">莫</span>
           <span className="font-haeseo">上</span>

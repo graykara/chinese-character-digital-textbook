@@ -32,8 +32,7 @@ export default function Page() {
       <TitleContainer className="mt-10" sound="/sound/3/73-i.mp3">
         <p className="tracking-tighter flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />
-          제시된 한자 카드를 보고, 질문에 답하며 개인별 또는 모둠별로 왕관을
-          획득해 보자.
+          제시된 한자 카드를 보고, 설명에 해당하는 답을 써 보자.
         </p>
       </TitleContainer>
 

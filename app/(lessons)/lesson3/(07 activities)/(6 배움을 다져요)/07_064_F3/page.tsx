@@ -50,7 +50,7 @@ export default function Page() {
     <>
       <StrengthenLearningWordHeader
         title={
-          <>한자 카드를 결합하여 문장의 빈칸에 해당하는 단어를 만들어 보자.</>
+          <>한자 카드를 결합하여 아래의 설명에 해당하는 단어를 만들어 보자.</>
         }
         sound="/sound/3/64-i-3.mp3"
       />

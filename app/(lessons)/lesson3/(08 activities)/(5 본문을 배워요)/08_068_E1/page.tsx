@@ -42,7 +42,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="꼬리"
+            text="꼬리."
             width={180}
             height={80}
           />
@@ -67,7 +67,7 @@ export default function Page() {
               >
                 易
               </span>
-              : ① (역) 바꾸다, ② (이) 쉽다
+              : ① <span className="underline underline-offset-[10px]">(역) 바꾸다</span>, ② (이) 쉽다
             </>
           ),
         },
@@ -82,7 +82,7 @@ export default function Page() {
               >
                 地
               </span>
-              : ① 땅, ② 처지
+              : ① 땅, ② <span className="underline underline-offset-[10px]">처지</span>
             </>
           ),
         },
@@ -117,7 +117,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
-            text="생각함"
+            text="생각함."
             width={220}
             height={80}
           />
@@ -125,7 +125,7 @@ export default function Page() {
       ),
       content2: (
         <div className="flex flex-wrap text-[50px] font-bold">
-          상대방의 처지나 형편에서 생각해 보고 이해함
+          상대방의 처지나 형편에서 생각해 보고 이해함.
         </div>
       ),
     },
@@ -143,7 +143,7 @@ export default function Page() {
               >
                 盡
               </span>
-              : ① 다하다, ② 모두
+              : ① <span className="underline underline-offset-[10px]">다하다</span>, ② 모두
             </>
           ),
         },
@@ -191,7 +191,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="내림"
+            text="내림."
             width={180}
             height={80}
           />
@@ -320,11 +320,6 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-
-        <MainContentVideoButton
-          video="/video/writing/68p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           <MainContentModalButton modal_data={modal_content[step - 1]} />

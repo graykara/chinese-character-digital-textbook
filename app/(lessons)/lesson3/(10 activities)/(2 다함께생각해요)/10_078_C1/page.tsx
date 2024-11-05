@@ -14,7 +14,7 @@ import { StepContainer } from "@/app/components/step-container";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [step, setStep] = useState(1);
+  // const [step, setStep] = useState(1);
 
   return (
     <>
@@ -24,12 +24,13 @@ export default function Page() {
       />
 
       <ContentContainer>
-        <img src={step === 1 ? IMAGE1.src : IMAGE2.src} className="ml-5 -mt-24"/>
+        {/* <img src={step === 1 ? IMAGE1.src : IMAGE2.src} className="ml-5 -mt-24"/> */}
+        <img src={IMAGE2.src} className="ml-5 -mt-24"/>
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      {/* <StepContainer maxStep={2} step={step} onStepChange={setStep} /> */}
       <img
-        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
+        src={BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
       />
     </>

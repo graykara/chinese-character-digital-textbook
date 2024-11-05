@@ -68,7 +68,7 @@ export default function Page() {
               >
                 益
               </span>
-              : ① 더하다, ② 더욱
+              : ① 더하다, ② <span className="underline underline-offset-[10px]">더욱</span>
             </>
           ),
         },
@@ -83,7 +83,7 @@ export default function Page() {
               >
                 善
               </span>
-              : ① 착하다, ② 좋다
+              : ① 착하다, ② <span className="underline underline-offset-[10px]">좋다</span>
             </>
           ),
         },
@@ -95,7 +95,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 mr-6  inline-block"
-            text="좋음"
+            text="좋음."
             width={180}
             height={80}
           />
@@ -149,7 +149,7 @@ export default function Page() {
               >
                 報
               </span>
-              : ① 알리다, ② 갚다
+              : ① 알리다, ② <span className="underline underline-offset-[10px]">갚다</span>
             </>
           ),
         },
@@ -285,6 +285,7 @@ export default function Page() {
         <MainContentVideoButton
           video="/video/writing/80p_1.mp4"
           className="absolute left-[112px] top-[40px]"
+          buttomImage="/ui/video-button2.png"
         />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
