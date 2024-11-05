@@ -46,6 +46,7 @@ export default function Page() {
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
     "㉠~㉤의 설명 중 옳지 않은 것은?",
+    // "㉠~㉤의 설명 중 옳지 <span class="underline underline-offset-[10px]">않은</span> 것은?",
     "㉠~㉤ 중 마지막으로 풀이되는 것은?",
   ];
 
@@ -397,7 +398,7 @@ const Question9 = () => {
   return (
     <>
       <ContentContainer className="!justify-start">
-        <img src={IMAGE8.src} className="mt-8 ml-5" />
+        <img src={IMAGE9.src} className="mt-8 ml-5" />
 
         <div className="ml-[130px] mt-16 relative">
           <SelectionQuiz

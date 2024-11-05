@@ -38,7 +38,7 @@ export default function Page() {
 
       <div className="bg-white bg-opacity-50 absolute right-[100px] top-[245px] w-[1100px] rounded-[20px] pt-[25px] pb-[15px] pl-[40px] pr-[55px] animate__animated animate__fadeIn animate__delay-1s">
         <IntroTextPlayer
-          sound="/sound/3/58_intro/5.mp3"
+          sound="/sound/4/88_intro/5.mp3"
           data={sound}
           textClassName="text-right leading-[80px]"
         />

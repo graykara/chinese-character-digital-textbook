@@ -80,14 +80,14 @@ export default function Page() {
                   來言
                 </span>
                 (<span className="text-answer">내</span>
-                언), ②
+                언), ②{" "}
                 <span
                   onClick={() => SOUND("/sound/4/p093_word001.mp3").play()}
                   className="font-haeseo text-[48px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
                 >
                   來日
                 </span>
-                (<span className="text-answer">내</span>일), ③
+                (<span className="text-answer">내</span>일), ③{" "}
                 <span
                   onClick={() => SOUND("/sound/4/p093_word002.mp3").play()}
                   className="font-haeseo text-[48px] leading-tight tracking-[-10px] pr-1 cursor-pointer"
@@ -139,7 +139,7 @@ export default function Page() {
               >
                 己
               </span>
-              : ① 몸, ②
+              : ① 몸, ②{" "}
               <span className="underline underline-offset-[10px]">자기</span>
             </>
           ),
@@ -155,7 +155,7 @@ export default function Page() {
               >
                 所
               </span>
-              : ~하는바(것)
+              : ~하는 바(것)
             </p>
           ),
         },
@@ -204,7 +204,7 @@ export default function Page() {
               >
                 人
               </span>
-              : ① 사람, ②
+              : ① 사람, ②{" "}
               <span className="underline underline-offset-[10px]">남</span>
             </p>
           ),
@@ -218,7 +218,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
-            text="하고자 하지 않는 (것)"
+            text="하고자 하지 않는 바(것)"
             width={500}
             height={80}
           />
@@ -239,7 +239,7 @@ export default function Page() {
               >
                 無
               </span>
-              : ① 없다, ②
+              : ① 없다, ②{" "}
               <span className="underline underline-offset-[10px]">
                 ~하지마라
               </span>
@@ -257,7 +257,7 @@ export default function Page() {
               >
                 道
               </span>
-              : ① 길, ②
+              : ① 길, ②{" "}
               <span className="underline underline-offset-[10px]">말하다</span>
             </p>
           ),
@@ -289,7 +289,7 @@ export default function Page() {
               >
                 短
               </span>
-              : ① 짧다, ②
+              : ① 짧다, ②{" "}
               <span className="underline underline-offset-[10px]">단점</span>
             </p>
           ),
@@ -310,7 +310,7 @@ export default function Page() {
               >
                 長
               </span>
-              : ① 길다, ②
+              : ① 길다, ②{" "}
               <span className="underline underline-offset-[10px]">장점</span>
             </p>
           ),

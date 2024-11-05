@@ -851,21 +851,21 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "도입",
     path: "lesson4/11_088_A1",
-    page: 88,
+    page: "88~89",
   }, // 4단원
   {
     lesson: 4,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson4/11_088_A2",
-    page: 88,
+    page: "88~89",
   },
   {
     lesson: 4,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson4/11_088_A3",
-    page: 88,
+    page: "88~89",
   },
   {
     lesson: 4,
@@ -900,7 +900,7 @@ export const NAVIGATION = [
     chapter: 11,
     subChapter: "본문을 배워요",
     path: "lesson4/11_093_E1",
-    page: 93,
+    page: "92~93",
   },
   {
     lesson: 4,
@@ -970,7 +970,7 @@ export const NAVIGATION = [
     chapter: 12,
     subChapter: "본문을 배워요",
     path: "lesson4/12_099_E1",
-    page: 99,
+    page: "98~99",
   },
   {
     lesson: 4,
@@ -1005,21 +1005,21 @@ export const NAVIGATION = [
     chapter: -2,
     subChapter: "정리하기",
     path: "lesson4/12_102_I1",
-    page: 101,
+    page: 102,
   }, // 4단원 정리하기
   {
     lesson: 4,
     chapter: -2,
     subChapter: "활동하기",
     path: "lesson4/12_103_J1",
-    page: 101,
+    page: 103,
   },
   {
     lesson: 4,
     chapter: -2,
     subChapter: "문제풀기",
     path: "lesson4/12_104_K1",
-    page: 101,
+    page: "104~105",
   }, // 4단원 마무리
   {
     lesson: 5,
