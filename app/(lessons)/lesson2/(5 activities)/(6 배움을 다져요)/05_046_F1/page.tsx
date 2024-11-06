@@ -15,18 +15,21 @@ import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘11.png";
 
 export default function Page() {
+  const sounds = ["44/4", "45/1", "44/3", "44/2", "45/3"].map(
+    (sound) => `/sound/2/${sound}.mp3`,
+  );
   const data = [
     {
       resource: IMAGE1.src,
       answer: ["無", "難"],
-      x: 570,
-      y: 0,
+      x: 571,
+      y: 2,
     },
     {
       resource: IMAGE2.src,
       answer: ["食", "水"],
-      x: 520,
-      y: 30,
+      x: 517,
+      y: 35,
     },
     {
       resource: IMAGE3.src,
@@ -37,14 +40,14 @@ export default function Page() {
     {
       resource: IMAGE4.src,
       answer: ["意", "思"],
-      x: 510,
-      y: 5,
+      x: 512,
+      y: 3,
     },
     {
       resource: IMAGE5.src,
       answer: ["休", "業"],
-      x: 690,
-      y: 35,
+      x: 692,
+      y: 37,
     },
   ];
   const [showAnswers, setShowAnswers] = useState<boolean[]>([
@@ -69,6 +72,15 @@ export default function Page() {
 
       <ContentContainer className="flex-none !h-[120px] -mt-20 mb-10">
         <img src={EXAMPLE.src} />
+        <div className="absolute w-[990px] left-[290px] grid grid-cols-5 gap-[50px]">
+          {sounds.map((sound) => (
+            <button
+              key={sound}
+              className="w-100 h-20"
+              onClick={() => SOUND(sound).play()}
+            />
+          ))}
+        </div>
       </ContentContainer>
 
       <ContentContainer className="!justify-start pt-5 pb-20 pr-10 gap-[100px] mb-[50px]">

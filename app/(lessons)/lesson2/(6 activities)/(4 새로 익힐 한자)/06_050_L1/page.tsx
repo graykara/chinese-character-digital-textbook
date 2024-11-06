@@ -7,6 +7,18 @@ export default function Page() {
       <LearnNewCharacterPageTemplate
         characters={[
           {
+            chinese: "帝",
+            reading: "제",
+            meaning: "임금",
+            sound: "/sound/2/06words/22.mp3",
+          },
+          {
+            chinese: "祭",
+            reading: "제",
+            meaning: "제사",
+            sound: "/sound/2/06words/23.mp3",
+          },
+          {
             chinese: "民",
             reading: "민",
             meaning: "백성",
@@ -131,18 +143,6 @@ export default function Page() {
             reading: "서",
             meaning: "책",
             sound: "/sound/2/06words/21.mp3",
-          },
-          {
-            chinese: "帝",
-            reading: "제",
-            meaning: "임금",
-            sound: "/sound/2/06words/22.mp3",
-          },
-          {
-            chinese: "祭",
-            reading: "제",
-            meaning: "제사",
-            sound: "/sound/2/06words/23.mp3",
           },
         ]}
       />

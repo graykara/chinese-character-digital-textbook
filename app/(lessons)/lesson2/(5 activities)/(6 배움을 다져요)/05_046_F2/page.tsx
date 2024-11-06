@@ -7,9 +7,9 @@ import IMAGE3 from "./image3.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { clickSound } from "@/app/utils/click-sound";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   return (
@@ -29,19 +29,25 @@ const Step1 = () => {
 
   const [buttonActive, setButtonActive] = useState<number[]>([]);
 
-  const sounds = [
-    "/sound/2/40_011.mp3",
-    "/sound/2/40_012.mp3",
-    "/sound/2/40_013.mp3",
-    "/sound/2/40_014.mp3",
-    "/sound/2/40_001.mp3",
-    "/sound/2/40_015.mp3",
-  ];
+  const sounds = ["44/1", "45/2", "45/4"].map(
+    (sound) => `/sound/2/${sound}.mp3`,
+  );
 
   return (
     <>
       <ContentContainer className="!justify-start left-10">
         <div className="relative">
+
+          <div className="absolute w-[1070px] top-[125px] left-[120px] grid grid-cols-3 gap-[250px] z-10">
+            {sounds.map((sound) => (
+              <button
+                key={sound}
+                className="h-20"
+                onClick={() => SOUND(sound).play()}
+              />
+            ))}
+          </div>
+
           <div className="grid grid-cols-3 gap-16">
             <div className="relative">
               <img src={IMAGE1.src} />
@@ -139,32 +145,6 @@ const Step1 = () => {
               />
             </div>
           </div>
-
-          {/* 02_018_D31에서 코드만 복사해둠... */}
-
-          {/* <div className="absolute bottom-[55px] left-[40px] grid grid-cols-5 gap-[90px]">
-            {Array.from(Array(5).keys()).map((_, index) =>
-              buttonActive.includes(index) ? (
-                <div key={index} className="w-[80px] h-[80px]" />
-              ) : (
-                <button
-                  key={index}
-                  className="bg-white w-[80px] h-[80px] flex justify-center items-center"
-                  onClick={() => {
-                    clickSound.play();
-                    if (!buttonActive.includes(index)) {
-                      new Howl({
-                        src: sounds[index],
-                      }).play();
-                      setButtonActive(buttonActive.concat(index));
-                    }
-                  }}
-                >
-                  <img src="/ui/click-icon.png" />
-                </button>
-              ),
-            )}
-          </div> */}
         </div>
       </ContentContainer>
 

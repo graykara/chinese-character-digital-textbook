@@ -438,7 +438,7 @@ export const NAVIGATION = [
     chapter: 5,
     subChapter: "본문을 배워요",
     path: "lesson2/05_044_E1",
-    page: 44,
+    page: "44~45",
   },
   {
     lesson: 2,
@@ -501,7 +501,7 @@ export const NAVIGATION = [
     chapter: 6,
     subChapter: "본문을 배워요",
     path: "lesson2/06_050_E1",
-    page: 50,
+    page: "50~51",
   },
   {
     lesson: 2,

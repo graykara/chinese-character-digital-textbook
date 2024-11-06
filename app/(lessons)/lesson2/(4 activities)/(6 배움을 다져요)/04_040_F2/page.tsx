@@ -54,7 +54,7 @@ const Step1 = () => {
             <img src={IMAGE1.src} />
 
 
-          <div className="absolute left-[350px] top-[210px] grid grid-cols-6 gap-[55px]">
+          <div className="absolute w-[800px] left-[350px] top-[220px] grid grid-cols-6 gap-[55px]">
             {sounds.map((sound) => (
               <button
                 key={sound}

@@ -221,7 +221,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[100px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] pl-12 tracking-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading ? data[step * 2 - 2]?.reading : null}
                 </div>
@@ -268,7 +268,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[100px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] pl-12 tracking-[60px] ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading2 ? data[step * 2 - 1]?.reading : null}
                 </div>
