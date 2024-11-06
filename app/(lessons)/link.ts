@@ -11,14 +11,14 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson1/01_008_A2",
-    page: "8~9",
+    page: 8,
   },
   {
     lesson: 1,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson1/01_008_A3",
-    page: "8~9",
+    page: 8,
   },
   {
     lesson: 1,
@@ -209,13 +209,13 @@ export const NAVIGATION = [
     path: "lesson1/02_020_D51",
     page: 20,
   },
-  {
-    lesson: 1,
-    chapter: 2,
-    subChapter: "한자는 어떻게 쓸까?",
-    path: "lesson1/02_021_D52",
-    page: 21,
-  },
+  // {
+  //   lesson: 1,
+  //   chapter: 2,
+  //   subChapter: "한자는 어떻게 쓸까?",
+  //   path: "lesson1/02_021_D52",
+  //   page: 21,
+  // },
   {
     lesson: 1,
     chapter: 2,

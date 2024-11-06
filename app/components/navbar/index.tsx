@@ -89,7 +89,7 @@ export const Navbar = () => {
 
       {showMenu ? (
         <div className="fixed top-[90px] left-0 w-[1920px] h-[990px] bg-white bg-opacity-60 z-40">
-          <ul className="w-[450px] min-h-[400px] absolute left-[150px] top-0 border-x-4 border-b-4 rounded-b-3xl border-[#9ad290] bg-[#e8effe] px-10 py-5 text-[30px] flex flex-col gap-4">
+          <ul className="w-[450px] min-h-[350px] absolute left-[150px] top-0 border-x-4 border-b-4 rounded-b-3xl border-[#9ad290] bg-[#e8effe] px-10 py-5 text-[30px] flex flex-col gap-4">
             <li
               onClick={() => setSelectedLesson(1)}
               className={`flex cursor-pointer transition hover:text-[#b4381d] hover:font-bold ${selectedLesson === 1 ? "text-[#b4381d] font-bold" : ""}`}
@@ -126,7 +126,7 @@ export const Navbar = () => {
               <span>. 선인들의 향기</span>
             </li>
           </ul>
-          <ul className="w-[400px] min-h-[300px] absolute left-[596px] top-0 border-x-4 border-b-4 rounded-b-3xl border-[#9ad290] bg-white py-5 text-[30px] flex flex-col gap-4">
+          <ul className="w-[400px] min-h-[290px] absolute left-[596px] top-0 border-x-4 border-b-4 rounded-b-3xl border-[#9ad290] bg-white py-5 text-[30px] flex flex-col gap-4">
             {chapters.map((item, index) => (
               <li
                 key={index}
@@ -142,7 +142,7 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <ul className="w-[300px] absolute left-[992px] top-5 border-4 rounded-lg border-[#9ad290] bg-[#e8effe] py-5 text-[24px] flex flex-col gap-2">
+          <ul className="w-fit absolute left-[992px] top-5 border-4 rounded-lg border-[#9ad290] bg-[#e8effe] py-5 text-[24px] flex flex-col gap-2">
             {subChapters.map((item, index) => (
               <Link
                 key={index}

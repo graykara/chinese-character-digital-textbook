@@ -27,10 +27,10 @@ export default function Page() {
       image: IMAGE1.src,
       fontSize: 40,
       answer:
-        "여기는 일본이야. 저기 표지판을 봐!\n출구 전용은 '나가는 길로만 씀.'이라는 뜻이야.",
+        "여기는 일본이야.\n저기 표지판을 봐!\n출구 전용은 '나가는 길로만 씀.'이라는 뜻이야.",
       position: { x: 640, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/1.mp3", ///sound/1/15/2.mp3 와 병합 필요
+      sound: "/sound/1/15/1.mp3", // /sound/1/15/2.mp3 스크롤 기능처리 필요
 
     },
     {
@@ -48,7 +48,7 @@ export default function Page() {
         "나는 지금 일본의\n어느 신호등 앞에 서 있어.\n‘보행자 전용’은 ‘걸어 다니는 사람만 다니는 길’이고,",
       position: { x: 820, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/4.mp3", ///sound/1/15/5.mp3 병합 필요
+      sound: "/sound/1/15/4.mp3", // /sound/1/15/5.mp3 스크롤 기능처리 필요
     },
     {
       image: IMAGE3.src,
@@ -65,7 +65,7 @@ export default function Page() {
         "여기는 중국의 거리야.\n저기 보이는 한자는 '열구'라고 읽는데 '핫도그'라는 뜻이야.",
       position: { x: 820, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/7.mp3", ///sound/1/15/8.mp3 병합 필요
+      sound: "/sound/1/15/7.mp3", // /sound/1/15/8.mp3 스크롤 기능처리 필요
     },
     {
       image: IMAGE5.src,
@@ -74,7 +74,7 @@ export default function Page() {
         "지금 여기 중국에는 방금 비가 내렸다가 그쳤어.\n그래서 '소심지활' 즉 '바닥이 미끄러우니 조심하세요'라는 뜻의 표지판이 보이네.",
       position: { x: 640, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/9.mp3", ///sound/1/15/10.mp3 병합 필요
+      sound: "/sound/1/15/9.mp3", // /sound/1/15/10.mp3 스크롤 기능처리 필요
     },
   ];
 
