@@ -92,6 +92,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -129,6 +130,7 @@ export default function Page() {
           이 천하다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -228,6 +230,7 @@ export default function Page() {
           하다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

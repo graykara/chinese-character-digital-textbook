@@ -97,7 +97,7 @@ export default function Page() {
                 (거<span className="text-answer">래</span>)
               </p>
             </div>
-          ), //음운 법칙게 맞게 읽기: 다음 줄바꿈 필요
+          ),
         },
         {
           letter: "言",
@@ -125,6 +125,7 @@ export default function Page() {
           이 곱다.{" "}
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -217,14 +218,15 @@ export default function Page() {
           자기가{" "}
           <FlippableCard_60
             active={showMeaning}
-            className="-mt-2 ml-5 mr-6 inline-block"
+            className="-mt-2 ml-5 mr-6 inline-block tracking-tighter"
             text="하고자 하지 않는 바(것)"
-            width={500}
+            width={510}
             height={80}
           />
           을/를 남에게 베풀지 마라.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -339,6 +341,7 @@ export default function Page() {
           을 말하지 마라.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -386,6 +389,7 @@ export default function Page() {
           도 항상 그를 사랑하고,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -421,6 +425,7 @@ export default function Page() {
           그를 공경한다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

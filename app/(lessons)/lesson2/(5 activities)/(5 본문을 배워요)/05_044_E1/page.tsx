@@ -56,6 +56,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -74,6 +75,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE2.src,
       video: "/video/animation/2-5_44-1.mp4",
     },
@@ -107,6 +109,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE3.src,
       video: "/video/animation/2-5_44-2.mp4",
     },
@@ -127,6 +130,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -145,6 +149,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE4.src,
       video: "/video/animation/2-5_45-1.mp4",
     },
@@ -165,6 +170,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -184,6 +190,7 @@ export default function Page() {
           무엇을 하고자 하는 생각.
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE5.src,
       video: "/video/animation/2-5_45-2.mp4",
     },
@@ -227,7 +234,19 @@ export default function Page() {
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
+                {data[step * 2 - 2]?.flippableCardData ? (
+                  <div>
+                    <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
+                  </div>
+                ) : (
+                  <div className="h-[75px]">
+                    <div key={step}
+                      className={`mt-2 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                    >
+                      {data[step * 2 - 2]?.content ?? null}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -270,12 +289,12 @@ export default function Page() {
           <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
               <img src={VIDEO_PLAY_THUMBNAIL.src} className={
-                    step === 1 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[160px] right-[180px] z-10" :
-                    step === 2 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] right-[160px] z-10" :
+                step === 1 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[160px] right-[180px] z-10" :
+                  step === 2 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] right-[160px] z-10" :
                     step === 3 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[180px] right-[210px] z-10" :
-                    step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
-                    : "" 
-                  } />
+                      step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
+                        : ""
+              } />
               <button
                 className={`z-[3]`}
                 onClick={() => {
@@ -288,10 +307,10 @@ export default function Page() {
                   alt="resource"
                   className={
                     step === 1 ? "absolute bottom-[60px] right-14" :
-                    step === 2 ? "absolute bottom-[70px] right-10" :
-                    step === 3 ? "absolute bottom-[70px] right-5" :
-                    step === 4 ? "absolute bottom-[70px] translate-x-5"
-                    : "" 
+                      step === 2 ? "absolute bottom-[70px] right-10" :
+                        step === 3 ? "absolute bottom-[70px] right-5" :
+                          step === 4 ? "absolute bottom-[70px] translate-x-5"
+                            : ""
                   }
                 />
               </button>
@@ -299,13 +318,13 @@ export default function Page() {
               <Modal open={showModal} onClose={() => setShowModal(false)}>
                 <div className="w-full h-full bg-white bg-opacity-70 ">
                   {video ? (
-                     <ReactPlayer
+                    <ReactPlayer
                       url={data[step * 2 - 1]?.video}
                       playing
                       width={1760}
                       height={990}
-                    /> 
-                  ) : null} 
+                    />
+                  ) : null}
                 </div>
               </Modal>
 

@@ -128,7 +128,6 @@ export default function Page() {
           나머지는 모두 관아로 실어 보냈다.
         </div>
       ),
-      flippableCardData: false,
     },
     {
       chinese: [

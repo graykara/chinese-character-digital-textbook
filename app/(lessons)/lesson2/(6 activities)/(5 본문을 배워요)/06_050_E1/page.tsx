@@ -55,6 +55,7 @@ export default function Page() {
           주인임.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "投票",
@@ -73,6 +74,7 @@ export default function Page() {
           [냄].
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "話者",
@@ -90,6 +92,7 @@ export default function Page() {
           사람
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "共感",
@@ -107,6 +110,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "聽者",
@@ -124,6 +128,7 @@ export default function Page() {
           사람.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "寒冷",
@@ -161,6 +166,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "密林",
@@ -178,6 +184,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 
@@ -227,12 +234,21 @@ export default function Page() {
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div
-                  key={step}
-                  className="-mt-0 ml-10 tracking-[0.5px]"
-                >
-                  <div>{data[step - 1]?.content ?? null}</div>
-                </div>
+                {data[step - 1]?.flippableCardData ? (
+                  <div
+                    key={step}
+                    className="-mt-0 ml-10 tracking-[0.5px]"
+                  >
+                    <div>{data[step - 1]?.content ?? null}</div>
+                  </div>
+                ) : (
+                  <div
+                    key={step}
+                    className={`-mt-0 ml-10 tracking-[0.5px] ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                  >
+                    <div>{data[step - 1]?.content ?? null}</div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -81,6 +81,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -129,6 +130,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -201,6 +203,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -283,6 +286,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -330,6 +334,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

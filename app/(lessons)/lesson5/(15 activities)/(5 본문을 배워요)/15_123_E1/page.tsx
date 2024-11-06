@@ -114,6 +114,7 @@ export default function Page() {
           라고 여겨 그것을 쏘니,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -151,6 +152,7 @@ export default function Page() {
           이었다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -207,6 +209,7 @@ export default function Page() {
           그것을 쏘았으나,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -247,6 +250,7 @@ export default function Page() {
           돌에 박히게 할 수 없었다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 
