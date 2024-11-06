@@ -96,24 +96,24 @@ export default function Page() {
             meaning: "어조사",
             sound: "/sound/5/13words/15.mp3",
           },
-          // {
-          //   chinese: "行",
-          //   reading: "행",
-          //   meaning: "다니다",
-          //   sound: "/sound/5/13words/16.mp3",
-          // },
-          // {
-          //   chinese: "惡",
-          //   reading: "악",
-          //   meaning: "나쁘다",
-          //   sound: "/sound/5/13words/17.mp3",
-          // },
-          // {
-          //   chinese: "家",
-          //   reading: "가",
-          //   meaning: "집",
-          //   sound: "/sound/5/13words/18.mp3",
-          // },
+          {
+            chinese: "行",
+            reading: "행",
+            meaning: "다니다",
+            sound: "/sound/5/13words/16.mp3",
+          },
+          {
+            chinese: "惡",
+            reading: "악",
+            meaning: "나쁘다",
+            sound: "/sound/5/13words/17.mp3",
+          },
+          {
+            chinese: "家",
+            reading: "가",
+            meaning: "집",
+            sound: "/sound/5/13words/18.mp3",
+          },
         ]}
       />
       {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}

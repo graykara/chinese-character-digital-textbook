@@ -17,6 +17,7 @@ type Data = {
   }[];
   sound: string;
   content: ReactNode;
+  flippableCardData?: boolean;
 };
 
 interface Props {
@@ -34,7 +35,7 @@ export const MainContentChineseAndReading = ({
   setShowMeaning,
   setShowReading,
 }: Props) => {
-  const { chinese, content, sound } = data;
+  const { chinese, content, sound, flippableCardData } = data;
 
   const [showAdditionalModal, setShowAdditionalModal] = useState(false);
   const [selectedAdditional, setSelectedAdditional] = useState<
@@ -138,7 +139,16 @@ export const MainContentChineseAndReading = ({
           backgroundColor="#4f9aab"
         />
         <div>
-          <div>{content ?? null}</div>
+          {flippableCardData ? (
+            <div>{content ?? null}</div>
+          ) : (
+            <div
+              className={`-mt-1 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+            >
+              {content ?? null}
+            </div>
+          )}
+
         </div>
       </div>
 

@@ -1026,21 +1026,21 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "도입",
     path: "lesson5/13_106_A1",
-    page: 106,
+    page: "106~107",
   }, // 5단원 시작
   {
     lesson: 5,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson5/13_106_A2",
-    page: 106,
+    page: "106~107",
   },
   {
     lesson: 5,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson5/13_106_A3",
-    page: 106,
+    page: "106~107",
   },
   {
     lesson: 5,
@@ -1075,14 +1075,14 @@ export const NAVIGATION = [
     chapter: 13,
     subChapter: "본문을 배워요",
     path: "lesson5/13_111_E1",
-    page: 111,
+    page: "110~111",
   },
   {
     lesson: 5,
     chapter: 13,
     subChapter: "본문을 배워요",
     path: "lesson5/13_111_E2",
-    page: 111,
+    page: "110~111",
   },
   {
     lesson: 5,
@@ -1145,14 +1145,14 @@ export const NAVIGATION = [
     chapter: 14,
     subChapter: "본문을 배워요",
     path: "lesson5/14_117_E1",
-    page: 117,
+    page: "116~117",
   },
   {
     lesson: 5,
     chapter: 14,
     subChapter: "본문을 배워요",
     path: "lesson5/14_117_E2",
-    page: 117,
+    page: "116~117",
   },
   {
     lesson: 5,
@@ -1215,14 +1215,14 @@ export const NAVIGATION = [
     chapter: 15,
     subChapter: "본문을 배워요",
     path: "lesson5/15_123_E1",
-    page: 123,
+    page: "122~123",
   },
   {
     lesson: 5,
     chapter: 15,
     subChapter: "본문을 배워요",
     path: "lesson5/15_123_E2",
-    page: 123,
+    page: "122~123",
   },
   {
     lesson: 5,
@@ -1285,14 +1285,14 @@ export const NAVIGATION = [
     chapter: 16,
     subChapter: "본문을 배워요",
     path: "lesson5/16_129_E1",
-    page: 129,
+    page: "128~129",
   },
   {
     lesson: 5,
     chapter: 16,
     subChapter: "본문을 배워요",
     path: "lesson5/16_129_E2",
-    page: 129,
+    page: "128~129",
   },
   {
     lesson: 5,
@@ -1341,7 +1341,7 @@ export const NAVIGATION = [
     chapter: -2,
     subChapter: "문제풀기",
     path: "lesson5/16_134_K1",
-    page: 134,
+    page: "134~135",
   },
 ];
 

@@ -82,6 +82,7 @@ export default function Page() {
           을 취하여 친족을 살리고,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -127,6 +128,7 @@ export default function Page() {
           나머지는 모두 관아로 실어 보냈다.
         </div>
       ),
+      flippableCardData: false,
     },
     {
       chinese: [
@@ -199,6 +201,7 @@ export default function Page() {
           모여들었다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -272,6 +275,7 @@ export default function Page() {
           를 칭송하였다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

@@ -8,11 +8,23 @@ import IMAGE from "./bg_1.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭4.png";
 import DotConnectionQuiz from "./dot-connection-quiz";
+import { InputWithPen } from "@/app/components/input-with-pen";
+import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   const [step, setStep] = useState(1);
 
   const [showAnswer, setShowAnswer] = useState(false);
+  const sounds = [
+    "/sound/2/p043_word000.mp3",
+    "/sound/2/p043_word001.mp3",
+    "/sound/2/p043_word002.mp3",
+    "/sound/2/p043_word003.mp3",
+    "/sound/2/p043_word000.mp3",
+    "/sound/2/p043_word001.mp3",
+    "/sound/2/p043_word002.mp3",
+    "/sound/2/p043_word003.mp3",
+  ];
 
   useEffect(() => {
     setShowAnswer(false);
@@ -20,16 +32,16 @@ export default function Page() {
 
   const quizData = {
     startDots: [
-      { id: 1, x: 80, y: 62 },
-      { id: 2, x: 279, y: 62 },
-      { id: 3, x: 480, y: 62 },
-      { id: 4, x: 678, y: 62 },
+      { id: 1, x: 76, y: 65 },
+      { id: 2, x: 276, y: 65 },
+      { id: 3, x: 479, y: 65 },
+      { id: 4, x: 678, y: 65 },
     ],
     endDots: [
-      { id: 5, x: 80, y: 157 },
-      { id: 6, x: 279, y: 157 },
-      { id: 7, x: 480, y: 157 },
-      { id: 8, x: 678, y: 157 },
+      { id: 5, x: 76, y: 159 },
+      { id: 6, x: 276, y: 159 },
+      { id: 7, x: 479, y: 159 },
+      { id: 8, x: 678, y: 159 },
     ],
     answers: [
       { startId: 1, endId: 6 },
@@ -53,9 +65,43 @@ export default function Page() {
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start mt-5 pl-12">
+      <ContentContainer className="!justify-start mt-6 left-0 pl-20 w-[1540px]">
         <div className="relative w-full flex">
           <img src={IMAGE.src} />
+
+            <button
+              className="absolute top-[45px] left-[55px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[0]).play()}
+            ></button>
+            <button
+              className="absolute top-[45px] left-[215px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[1]).play()}
+            ></button>
+            <button
+              className="absolute top-[45px] left-[375px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[2]).play()}
+            ></button>
+            <button
+              className="absolute top-[45px] left-[535px] w-[80px] h-[80px]  z-10 bg-transparent"
+              onClick={() => SOUND(sounds[3]).play()}
+            ></button>
+
+            <button
+              className="absolute top-[310px] left-[55px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[4]).play()}
+            ></button>
+            <button
+              className="absolute top-[310px] left-[215px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[5]).play()}
+            ></button>
+            <button
+              className="absolute top-[310px] left-[375px] w-[80px] h-[80px] z-10 bg-transparent"
+              onClick={() => SOUND(sounds[6]).play()}
+            ></button>
+            <button
+              className="absolute top-[310px] left-[535px] w-[80px] h-[80px]  z-10 bg-transparent"
+              onClick={() => SOUND(sounds[7]).play()}
+            ></button>
 
           <div className="absolute right-0 top-[150px] w-[750px] h-[230px] overflow-hidden">
             <DotConnectionQuiz
@@ -65,6 +111,64 @@ export default function Page() {
               showAnswer={showAnswer}
             />
           </div>
+
+          <InputWithPen
+            answer="저"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[725px] -top-[2px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="같다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[924px] -top-[2px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="낫다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[1128px] -top-[2px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="있다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[1328px] -top-[2px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+
+          <InputWithPen
+            answer="다르다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[725px] top-[455px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="이"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[924px] top-[455px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="못하다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[1128px] top-[455px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
+          <InputWithPen
+            answer="없다"
+            showAnswer={showAnswer}
+            containerClassName="absolute left-[1328px] top-[455px] "
+            className=" w-[122px] text-[33px] text-center bg-transparent"
+            penClassName="w-[35px] left-1/2 -translate-x-1/2"
+          />
         </div>
       </ContentContainer>
 
@@ -73,10 +177,10 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <img
+      {/* <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      />
+      /> */}
     </>
   );
 }

@@ -83,8 +83,7 @@ export default function Page() {
               </span>
               →
               <span
-                onClick={() => SOUND("/sound/5/p123_word003.mp3").play()}
-                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0"
               >
                 草中石
               </span>

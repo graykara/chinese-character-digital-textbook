@@ -126,7 +126,7 @@ export default function Page() {
         { letter: "彼", reading: "피" },
         {
           letter: "劣",
-          reading: "렬",
+          reading: "열",
           additional: (
             <>
               <span

@@ -85,6 +85,7 @@ export default function Page() {
               width={165}
               height={80}
             />
+            이
           </div>
           <div className="flex flex-wrap  text-[50px] font-bold">
             천하며

@@ -13,8 +13,10 @@ import LETTER4 from "./4.png";
 import LETTER5 from "./5.png";
 import LETTER6 from "./6.png";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요4.png";
+import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 
 export default function Page() {
+  const [showAnswer, setShowAnswer] = useState(false);
   const [showLetter, setShowLetter] = useState<number[]>([]);
 
   return (
@@ -103,6 +105,10 @@ export default function Page() {
         </div>
       </ContentContainer>
 
+      <CheckAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
