@@ -102,7 +102,7 @@ const Content2 = () => {
             <InputWithPen
               answer="行"
               showAnswer={showAnswer}
-              containerClassName="absolute top-[335px] left-[501px] font-haweseo text-[90px]"
+              containerClassName="absolute top-[335px] left-[501px] font-haeseo text-[90px]"
               className="text-center w-[130px] mt-4 bg-transparent"
               penClassName="left-10 top-[85px] h-[55px]"
               isExample
