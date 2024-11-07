@@ -24,7 +24,8 @@ export default function Page() {
         <>
           <QRButton
             src={QR.src}
-            className="absolute right-[150px] top-[124px] z-1"
+            link="http://ybmqr.com/acj017"
+            className="absolute right-[150px] top-[124px] z-10"
           />
           <ContentContainer className="-top-10 -left-1">
             <img src={IMAGE2.src} />

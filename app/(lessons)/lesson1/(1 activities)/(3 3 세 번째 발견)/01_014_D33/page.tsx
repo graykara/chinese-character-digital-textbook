@@ -41,7 +41,8 @@ export default function Page() {
         className="animate__animated animate__bounceIn animate__delay-2s absolute right-[177px] top-[155px] z-1" />
       <QRButton
         src={QR.src}
-        className="absolute right-[227px] top-[368px] z-1" />
+        link="http://YBMqr.com/acj002"
+        className="absolute right-[227px] top-[368px] z-10" />
 
       <div className="relative">
         <img src={IMAGE.src} className="mx-auto mt-6" />

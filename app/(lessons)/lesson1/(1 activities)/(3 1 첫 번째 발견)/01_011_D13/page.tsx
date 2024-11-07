@@ -30,6 +30,7 @@ export default function Page() {
         className="animate__animated animate__bounceIn animate__delay-2s absolute right-[185px] top-[40px] z-1" />
       <QRButton
         src={QR.src}
+        link="https://stdict.korean.go.kr/"
         className="absolute right-[105px] top-[350px] z-1" />
 
       <ExerciseHeader
