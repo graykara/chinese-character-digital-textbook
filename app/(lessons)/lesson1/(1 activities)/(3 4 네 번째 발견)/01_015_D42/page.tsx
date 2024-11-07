@@ -12,6 +12,7 @@ import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import IMAGE4 from "./image4.png";
 import IMAGE5 from "./image5.png";
+import IMAGE6 from "./image6.png";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어22.png";
 import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어23.png";
@@ -30,7 +31,7 @@ export default function Page() {
         "여기는 일본이야.\n저기 표지판을 봐!\n출구 전용은 '나가는 길로만 씀.'이라는 뜻이야.",
       position: { x: 640, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/1.mp3", // /sound/1/15/2.mp3 스크롤 기능처리 필요
+      sound: "/sound/1/15/1.mp3", // +/sound/1/15/2.mp3 스크롤 기능처리 필요
 
     },
     {
@@ -48,10 +49,10 @@ export default function Page() {
         "나는 지금 일본의\n어느 신호등 앞에 서 있어.\n‘보행자 전용’은 ‘걸어 다니는 사람만 다니는 길’이고,",
       position: { x: 820, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/4.mp3", // /sound/1/15/5.mp3 스크롤 기능처리 필요
+      sound: "/sound/1/15/4.mp3", // +/sound/1/15/5.mp3 스크롤 기능처리 필요
     },
     {
-      image: IMAGE3.src,
+      image: IMAGE4.src,
       fontSize: 50,
       answer: "'자전거 전용'은 ‘자전거만 다니는 길’이야.",
       position: { x: 820, y: 40 },
@@ -59,22 +60,22 @@ export default function Page() {
       sound: "/sound/1/15/6.mp3",
     },
     {
-      image: IMAGE4.src,
+      image: IMAGE5.src,
       fontSize: 40,
       answer:
         "여기는 중국의 거리야.\n저기 보이는 한자는 '열구'라고 읽는데 '핫도그'라는 뜻이야.",
       position: { x: 820, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/7.mp3", // /sound/1/15/8.mp3 스크롤 기능처리 필요
+      sound: "/sound/1/15/7.mp3", // +/sound/1/15/8.mp3 스크롤 기능처리 필요
     },
     {
-      image: IMAGE5.src,
+      image: IMAGE6.src,
       fontSize: 40,
       answer:
         "지금 여기 중국에는 방금 비가 내렸다가 그쳤어.\n그래서 '소심지활' 즉 '바닥이 미끄러우니 조심하세요'라는 뜻의 표지판이 보이네.",
       position: { x: 640, y: 30 },
       rows: 4,
-      sound: "/sound/1/15/9.mp3", // /sound/1/15/10.mp3 스크롤 기능처리 필요
+      sound: "/sound/1/15/9.mp3", // +/sound/1/15/10.mp3 스크롤 기능처리 필요
     },
   ];
 

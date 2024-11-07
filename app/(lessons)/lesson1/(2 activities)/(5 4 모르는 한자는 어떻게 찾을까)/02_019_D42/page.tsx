@@ -24,12 +24,7 @@ export default function Page() {
       <QRButton 
         src={QR.src}
         link="http://ybmqr.com/acj003"
-        className="absolute right-[1196px] top-[156px] z-10" />
-
-      {/* <AdditionalDataButton
-        className="absolute top-[150px] right-[150px]"
-        onClick={() => {}}
-      /> */}
+        className="absolute right-[230px] top-[156px] z-10" />
 
       <ContentContainer className="!justify-start !items-start pt-10">
         <div className="absolute w-full top-[205px] left-[150px]">

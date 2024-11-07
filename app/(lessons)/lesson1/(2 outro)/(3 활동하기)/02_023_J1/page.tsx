@@ -1,5 +1,6 @@
 "use client";
 
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -79,12 +80,39 @@ const Content1 = () => {
 };
 
 const Content2 = () => {
+  const [isReading, setIsReading] = useState(false);
+  const [soundId, setSoundId] = useState<number | null>(null);
+  const sound = new Howl({
+    src: "/sound/1/23-2.mp3",
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+
+  useEffect(() => {
+    return () => {
+      sound.stop();
+    };
+  }, []);
+
+
   return (
     <div className="h-full flex flex-col justify-center items-center -mt-[120px]">
       <div className="relative">
         <img src={IMAGE2.src} />
-        <button className="absolute top-[15px] left-[20px] w-[100px] h-[100px] z-10" onClick={() => SOUND("/sound/1/23-2.mp3").play()}></button>
       </div>
+
+      <SoundButton2
+        className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-2s"
+        active={isReading}
+        onClick={() => {
+          if (soundId) {
+            console.log("stop");
+            sound.stop(soundId);
+          }
+          setTimeout(() => setSoundId(sound.play()), 100);
+        }}
+      />
+
     </div>
   );
 };

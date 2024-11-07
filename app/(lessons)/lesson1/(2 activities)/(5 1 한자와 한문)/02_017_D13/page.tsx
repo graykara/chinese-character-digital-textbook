@@ -3,8 +3,7 @@
 import { ExerciseHeader } from "@/app/components/exercise-header";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import HEADER from "./header.png";
-import IMAGE_BEFORE from "./image.png";
-import IMAGE_AFTER from "./image_after.png";
+import IMAGE from "./image.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useState } from "react";
 import { useContext } from "react";
@@ -25,88 +24,100 @@ export default function Page() {
       </HeaderContainer>
 
       <ExerciseHeader
-        text="내 이름을 한자로 쓰고 그 뜻을 사용하여 이름의 의미를 써보자." 
-        sound=""/>
+        text="내 이름을 한자로 쓰고 그 뜻을 사용하여 이름의 의미를 써보자."
+        sound="/sound/1/17-i2.mp3" 
+        className="mt-4"
+      />
 
       <div className="w-[1400px] h-full mx-auto flex justify-center items-center ">
 
         <img
-          src={showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src}
-          className="absolute translate-x-2 -translate-y-5" />
+          src={IMAGE.src}
+          className="absolute translate-x-[117px] -translate-y-[30px]" />
 
-        <div className="relative w-[850px] mb-[450px]">
+        <div className="relative w-[850px] mb-[467px]">
           <div className="relative top-2">
 
             <InputWithPen
+              answer="김대성"
               showAnswer={showAnswer}
               className="text-center w-[195px] text-[30px] tracking-tighter bg-transparent"
               penClassName="h-[48px] -left-1 -mt-2"
-              containerClassName="absolute resize-none left-[55px] top-5"
+              containerClassName="absolute resize-none left-[752px] top-5"
               isExample
             />
             <TextareaWithPen
+              answer="‘크게 이루다’라는 뜻으로, 큰 인물이 되라고 지은 이름이래"
               showAnswer={showAnswer}
-              containerClassName={`absolute resize-none w-[380px] -left-[50px] top-[155px] text-center text-[30px] leading-[65px] tracking-tighter break-keep bg-transparent }`}
-              penClassName="h-[48px] top-[155px] -left-[45px]"
+              containerClassName={`absolute resize-none w-[400px] left-[640px] top-[155px] text-center text-[30px] leading-[65px] tracking-tighter break-keep bg-transparent text-example}`}
+              penClassName="h-[48px] top-[155px] left-[650px]"
               rows={2}
             />
 
             <InputWithPen
+              answer="金"
               showAnswer={showAnswer}
               className="text-center w-[110px] text-[70px] font-haeseo tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[478px] -top-1"
+              containerClassName="absolute resize-none -left-[135px] -top-1"
               isExample
             />
             <InputWithPen
+              answer="大"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[70px] font-haeseo tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[652px] -top-1"
+              containerClassName="absolute resize-none left-[39px] -top-1"
               isExample
             />
             <InputWithPen
+              answer="成"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[70px] font-haeseo tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[925px] -top-1"
+              containerClassName="absolute resize-none left-[312px] -top-1"
               isExample
             />
 
             <InputWithPen
+              answer="김"
               showAnswer={showAnswer}
               className="text-center w-[110px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[478px] top-[113px]"
+              containerClassName="absolute resize-none -left-[135px] top-[113px]"
               isExample
             />
             <InputWithPen
+              answer="대"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[652px] top-[113px]"
+              containerClassName="absolute resize-none left-[39px] top-[113px]"
               isExample
             />
             <InputWithPen
+              answer="성"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[925px] top-[113px]"
+              containerClassName="absolute resize-none left-[312px] top-[113px]"
               isExample
             />
 
             <InputWithPen
+              answer="크다"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[652px] top-[222px]"
+              containerClassName="absolute resize-none left-[39px] top-[222px]"
               isExample
             />
             <InputWithPen
+              answer="이루다"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[925px] top-[222px]"
+              containerClassName="absolute resize-none left-[312px] top-[222px]"
               isExample
             />
 

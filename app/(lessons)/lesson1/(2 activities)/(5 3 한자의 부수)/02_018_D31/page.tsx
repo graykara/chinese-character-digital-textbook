@@ -61,9 +61,9 @@ export default function Page() {
       />
 
       <ContentContainer className="!justify-start !items-start">
-        <div className="relative -mt-1 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
+        <div className="relative mt-1 ml-[55px] text-[50px] leading-[60px] tracking-tighter break-keep">
           <p>
-            부수(部首)는 자전에서 한자를 찾을 때 기준이 되는 글자의 한 부분으로
+            부수(<span className="font-haeseo text-[55px] leading-[30px] tracking-[-5px]">部首</span>)는 자전에서 한자를 찾을 때 기준이 되는 글자의 한 부분으로
             대개 한자의 의미와 관련이 깊다.
           </p>
           <img
@@ -89,6 +89,10 @@ export default function Page() {
         <div className="w-full flex justify-center mt-1 ml-6">
           <div className="relative">
             <img src={IMAGE.src} />
+            <div className="absolute top-5 left-[577px] font-haeseo text-[35px] text-[#1b1b1b]">
+              <span>水</span>
+              <span className="ml-9">日</span>
+            </div>
             <div className="absolute bottom-[55px] left-[40px] grid grid-cols-5 gap-[90px]">
               {Array.from(Array(5).keys()).map((_, index) =>
                 buttonActive.includes(index) ? (

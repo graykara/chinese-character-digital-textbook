@@ -10,6 +10,7 @@ export const ExerciseHeader = ({
   showWritingButton = false,
   image = "/ui/exercise.png",
   smartLink = "",
+  className,
 }: {
   text: string | React.ReactNode;
   sound: string;
@@ -17,6 +18,7 @@ export const ExerciseHeader = ({
   showWritingButton?: boolean;
   image?: string;
   smartLink?: string;
+  className?: string;
 }) => {
   useEffect(() => {
     if (sound) {
@@ -31,15 +33,15 @@ export const ExerciseHeader = ({
   }, [sound]);
 
   return (
-    <header className="animate__animated animate__flipInX relative w-[1500px] ml-[175px] flex items-center gap-4 mt-5 mb-10">
-      <div className="flex items-start gap-3">
+    <header className={`animate__animated animate__flipInX relative w-[1500px] ml-[175px] flex items-center gap-4 mt-5 mb-10`}>
+      <div className={`flex items-start gap-3 ${className}`}>
         <img src={image} />
         <p className="text-[47px] tracking-tighter relative top-7">
           {text}
         </p>
       </div>
 
-      <div className="relative top-2 flex items-center gap-5">
+      <div className={`relative top-2 flex items-center gap-5 ${className}`}>
         {showWritingButton ? <WritingButton /> : null}
         {showSmartButton && smartLink ? <SmartButton link={smartLink} /> : null}
       </div>
