@@ -21,7 +21,6 @@ import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자14.png";
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자16.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자18.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);

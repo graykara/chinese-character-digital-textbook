@@ -3,11 +3,14 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
+import IMAGE2_1 from "./img2-1.png";
+import IMAGE2_2 from "./img2-2.png";
+import IMAGE2_3 from "./img2-3.png";
+import IMAGE2_4 from "./img2-4.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
 import { useEffect, useState } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자14.png";
@@ -15,7 +18,6 @@ import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문
 import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자16.png";
 import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자17.png";
 import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자18.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -27,6 +29,7 @@ export default function Page() {
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
+    setShowResource(false);
   }, [step]);
 
   const data = [
@@ -52,6 +55,7 @@ export default function Page() {
           sound: "/sound/2/38/2.mp3",
         },
       ],
+      image: IMAGE2_1.src,
     },
     {
       sound: "/sound/2/38/5.mp3",
@@ -75,6 +79,7 @@ export default function Page() {
           sound: "/sound/2/38/5.mp3",
         },
       ],
+      image: IMAGE2_2.src,
     },
     {
       sound: "/sound/2/38/8.mp3",
@@ -98,6 +103,7 @@ export default function Page() {
           sound: "/sound/2/38/8.mp3",
         },
       ],
+      image: IMAGE2_3.src,
     },
     {
       sound: "/sound/2/38/10.mp3",
@@ -121,6 +127,7 @@ export default function Page() {
           sound: "/sound/2/38/10.mp3",
         },
       ],
+      image: IMAGE2_4.src,
     },
   ];
 
@@ -184,9 +191,9 @@ export default function Page() {
                     backgroundColor="#7278a6"
                   />
                   <div key={step}>
-                    <div className="flex items-center gap-6 pl-10 mt-12 ml-16">
+                    <div className="flex items-center gap-6 pl-10 mt-12 ml-16 ">
                       <span
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center"
+                        className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#f9edce] rounded-xl flex justify-center items-center z-10"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[0].sound).play()
                         }
@@ -198,7 +205,7 @@ export default function Page() {
                       </span>
                       <Plus size={50} color="gray" className="ml-5" />
                       <span
-                        className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center"
+                        className="flex-none w-[100px] h-[100px] font-haeseo text-[75px] cursor-pointer bg-[#e3f2f9] rounded-xl flex justify-center items-center z-10"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[1].sound).play()
                         }
@@ -210,18 +217,25 @@ export default function Page() {
                       </span>
                       <MoveRight size={50} color="gray" className="ml-5" />
                       <div
-                        className="font-haeseo text-[90px] ml-2 -mt-2 cursor-pointer"
+                        className="font-haeseo text-[90px] ml-4 -mt-2 cursor-pointer z-10"
                         onClick={() =>
                           SOUND(data[step - 2]?.equation[2].sound).play()
                         }
                       >
                         {data[step - 2]?.equation[2].chinese}
                       </div>
-                      <span className="text-[40px] ml-0 mt-2">
+                      <span className="text-[40px] ml-2 mt-2">
                         {data[step - 2].equation[2].text}
                       </span>
                     </div>
                   </div>
+                </div>
+                <div key={step}
+                  className="absolute top-[235px] left-[460px] -z-0">
+                  <img
+                    src={showResource && (step === 2 || step === 3 || step === 4 || step === 5) ? data[step - 2]?.image : ''}
+                    className={showResource && (step === 2 || step === 3 || step === 4 || step === 5) ? 'animate__animated animate__fadeIn' : ''}
+                  />
                 </div>
               </div>
             </div>

@@ -56,7 +56,7 @@ export default function Page() {
             보자.
           </>
         }
-        sound=""
+        sound="/sound/2/32-i-4.mp3"
       />
 
       <ContentContainer className="!justify-start !items-start">

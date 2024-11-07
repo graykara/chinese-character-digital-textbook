@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
 import { MoveRight, Plus } from "lucide-react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자7.png";
@@ -16,7 +15,6 @@ import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문
 import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자10.png";
 import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png";
 import BACKGROUND6 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자12.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
