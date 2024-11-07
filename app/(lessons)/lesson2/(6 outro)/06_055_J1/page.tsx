@@ -102,7 +102,7 @@ const Content2 = () => {
             <InputWithPen
               answer="行"
               showAnswer={showAnswer}
-              containerClassName="absolute top-[335px] left-[501px] font-haeseo text-[90px]"
+              containerClassName="absolute top-[335px] left-[501px] font-haweseo text-[90px]"
               className="text-center w-[130px] mt-4 bg-transparent"
               penClassName="left-10 top-[85px] h-[55px]"
               isExample
@@ -118,7 +118,8 @@ const Content2 = () => {
             />
 
             <InputWithPen
-            answer="다이어트를 위해 운동과 식단 조절을 <span className='font-heaser'>竝行하는 중이다.</span>"
+            answer="(두 가지 일을 한꺼번에)
+아울러 행함.​"
             showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[352px]"
               className="bg-transparent text-[35px] w-[180px]"
