@@ -13,7 +13,6 @@ import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문
 import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
-  const answers = ["우", "폭우"];
   const [showAnswer, setShowAnswer] = useState(false);
   const [checked, setChecked] = useState(0);
 
@@ -60,7 +59,7 @@ export default function Page() {
       </CreativityPageTemplate>
 
       <InputWithPen
-        answer={answers[0]}
+        answer="우"
         showAnswer={showAnswer}
         className="text-[50px] text-center w-[100px] bg-transparent"
         penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[30px]"
@@ -68,7 +67,7 @@ export default function Page() {
         isExample
       />
       <InputWithPen
-        answer={answers[1]}
+        answer="폭우"
         showAnswer={showAnswer}
         className="text-[50px] text-center w-[100px] bg-transparent"
         penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[30px]"
@@ -77,9 +76,7 @@ export default function Page() {
       />
 
       <OLD_TextareaWithPen
-        answer={
-          "雨(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다."
-        }
+        answer="<span className='font-haeseo'>雨</span>(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다."
         showAnswer={showAnswer}
         className="text-[40px] w-[550px] py-8 leading-tight text-center"
         penClassName="left-0 top-8 w-[50px]"

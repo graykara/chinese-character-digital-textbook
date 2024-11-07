@@ -12,6 +12,7 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자3.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -29,6 +30,8 @@ export default function Page() {
 }
 
 const Step1 = () => {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const answers = ["좌회전", "전화", "카페", "유턴"];
   return (
     <>
       <ThinkTogetherHeader
@@ -40,11 +43,48 @@ const Step1 = () => {
         sound="/sound/2/26-i-1.mp3"
       />
 
-      <ContentContainer className="absolute left-[40px] bottom-[110px]">
+      <ContentContainer className="absolute left-[35px] bottom-[85px]">
         <img src={IMAGE.src} />
+
+        <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
+          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[275px] bottom-[165px]"
+          isExample
+        />
+
+        <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
+          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[525px] bottom-[165px]"
+          isExample
+        />
+
+        <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
+          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[775px] bottom-[165px]"
+          isExample
+        />
+
+        <InputWithPen
+          answer={answers[3]}
+          showAnswer={showAnswer}
+          className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
+          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[1025px] bottom-[165px]"
+          isExample
+        />
+
       </ContentContainer>
 
-      <ExampleAnswerButton active={false} onClick={() => {}} />
+      <ExampleAnswerButton active={false} onClick={() => setShowAnswer(!showAnswer)} />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -60,7 +100,7 @@ const Step2 = () => {
     <>
       <ThinkTogetherHeader
         title={
-          <p className="-ml-3 text-[52px] leading-[60px] tracking-[-1px]">
+          <p className="-ml-3 text-[52px] leading-[60px] tracking-[-0.5px]">
             글자가 없는 세상에 살고 있다고 가정하고 아래의 문장을 간단한
             그림이나 기호로 표현해 보자.
           </p>
@@ -68,7 +108,7 @@ const Step2 = () => {
         sound="/sound/2/26-i-2.mp3"
       />
 
-      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[240px] z-1" />
+      <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute left-[800px] top-[245px] z-1" />
 
       <ContentContainer className="!justify-start mt-0 mb-[100px]">
         <img src={IMAGE2.src} className="absolute top-[30px] left-[70px]" />

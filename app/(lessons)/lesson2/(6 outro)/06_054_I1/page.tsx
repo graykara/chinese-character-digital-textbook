@@ -20,7 +20,7 @@ export default function Page() {
         </div>
       </SummaryPageTemplate>
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={step===1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
@@ -63,6 +63,18 @@ const Step2 = () => {
           src={IMAGE2.src}
           className="animate__animated animate__fadeIn relative"
         />
+      </div>
+      <div className="absolute top-[120px] left-[1080px]  text-[35px] tracking-tighter">
+        <p className=""><span className="font-haeseo text-[40px] tracking-[-7px]">寒冷</span> : 춥고 차가움.</p>
+        <p className="-mt-4"><span className="font-haeseo text-[40px] tracking-[-7px]">有無</span> : 있음과 없음.</p>
+        <p className="mt-12"><span className="font-haeseo text-[40px] tracking-[-7px]">話者</span> : 말하는 사람.</p>
+        <p className="-mt-4"><span className="font-haeseo text-[40px] tracking-[-7px]">休日</span> : 쉬는 날.</p>
+        <p className="mt-8"><span className="font-haeseo text-[40px] tracking-[-7px]">民主</span> : 국민이 주인임.</p>
+        <p className="-mt-4"><span className="font-haeseo text-[40px] tracking-[-7px]">年少</span> : 나이가 적음.</p>
+        <p className="mt-7"><span className="font-haeseo text-[40px] tracking-[-7px]">投票</span> : 표를 던짐[냄].</p>
+        <p className="-mt-4"><span className="font-haeseo text-[40px] tracking-[-7px]">讀書</span> : 책을 읽음.</p>
+        <p className="mt-5"><span className="font-haeseo text-[40px] tracking-[-7px]">多濕</span> : 습기가 많음.</p>
+        <p className="-mt-4"><span className="font-haeseo text-[40px] tracking-[-7px]">難讀</span> : 읽기가 어려움.</p>
       </div>
     </div>
   );

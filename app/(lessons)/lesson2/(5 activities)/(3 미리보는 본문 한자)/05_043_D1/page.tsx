@@ -36,7 +36,7 @@ export default function Page() {
       { id: 10, x: 350, y: 572 },
     ],
     answers: [
-      { startId: 1, endId: 10 },
+      //{ startId: 1, endId: 10 },
       { startId: 2, endId: 8 },
       { startId: 3, endId: 7 },
       { startId: 4, endId: 6 },
@@ -64,7 +64,7 @@ export default function Page() {
       { startId: 2, endId: 6 },
       { startId: 3, endId: 8 },
       { startId: 4, endId: 10 },
-      { startId: 5, endId: 9 },
+      //{ startId: 5, endId: 9 },
     ],
   };
 
@@ -81,12 +81,20 @@ export default function Page() {
         <img src="/ui/flower-icon.png" />
         <p>
           제시된 한자 카드를 보고, 한자 조각을 짝 지어 한자를 완성하고, 그
-          음·뜻을 찾아 선으로 이어 보자.
+          음·뜻을 찾아 <br/>선으로 이어 보자.
         </p>
       </TitleContainer2>
 
       <ContentContainer className="!justify-start -left-9">
         <img src={IMAGE.src} alt="" />
+        <div className="absolute top-[45px] left-[1270px] grid grid-row-5 gap-[75px] h-[600px] bg-white text-[25px] tracking-tighter">
+          <p><span className="text-red-600">식</span> 심다</p>
+          <p><span className="text-red-600">사</span> 생각</p>
+          <p><span className="text-red-600">휴</span> 쉬다</p>
+          <p><span className="text-red-600">문</span> 묻다</p>
+          <p><span className="text-red-600">안</span> 편안하다</p>
+        </div>
+
         <button
           className="absolute top-[30px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[0]).play()}
@@ -133,10 +141,10 @@ export default function Page() {
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      <img
+      {/* <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      />
+      /> */}
     </>
   );
 }
