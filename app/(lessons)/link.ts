@@ -233,7 +233,7 @@ export const NAVIGATION = [
   {
     lesson: 1,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson1/02_022_K1",
     page: 22,
   },
@@ -541,10 +541,10 @@ export const NAVIGATION = [
   {
     lesson: 2,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson2/06_056_K1",
     page: "56~57",
-  }, // 문제풀기
+  }, // 문제 풀기
   {
     lesson: 3,
     chapter: -1,
@@ -1017,7 +1017,7 @@ export const NAVIGATION = [
   {
     lesson: 4,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson4/12_104_K1",
     page: "104~105",
   }, // 4단원 마무리
@@ -1339,7 +1339,7 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson5/16_134_K1",
     page: "134~135",
   },

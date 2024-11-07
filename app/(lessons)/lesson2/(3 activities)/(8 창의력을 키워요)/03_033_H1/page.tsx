@@ -18,7 +18,7 @@ export default function Page() {
   const [checked, setChecked] = useState(0);
 
   useEffect(() => {
-    if (showAnswer) setChecked(2);
+    if (showAnswer) setChecked(1);
     else setChecked(0);
   }, [showAnswer]);
 
@@ -81,10 +81,11 @@ export default function Page() {
           "雨(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다."
         }
         showAnswer={showAnswer}
-        className="text-[40px] w-[550px] py-8 leading-tight text-center text-example"
+        className="text-[40px] w-[550px] py-8 leading-tight text-center"
         penClassName="left-0 top-8 w-[50px]"
         containerClassName="!absolute bottom-[120px] left-[900px] "
         rows={2}
+        isExample
       />
 
       <ExampleAnswerButton
