@@ -102,7 +102,7 @@ const Content2 = () => {
       </div>
 
       <SoundButton2
-        className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-2s"
+        className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
           if (soundId) {
