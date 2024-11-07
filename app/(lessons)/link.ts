@@ -604,9 +604,9 @@ export const NAVIGATION = [
   {
     lesson: 3,
     chapter: 7,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson3/07_063_E2",
-    page: "62~63",
+    page: 63,
   },
   {
     lesson: 3,
@@ -1080,9 +1080,9 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: 13,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/13_111_E2",
-    page: "110~111",
+    page: 111,
   },
   {
     lesson: 5,
@@ -1150,9 +1150,9 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: 14,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/14_117_E2",
-    page: "116~117",
+    page: 117,
   },
   {
     lesson: 5,
@@ -1220,9 +1220,9 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: 15,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/15_123_E2",
-    page: "122~123",
+    page: 123,
   },
   {
     lesson: 5,
@@ -1290,9 +1290,9 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: 16,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/16_129_E2",
-    page: "128~129",
+    page: 129,
   },
   {
     lesson: 5,
@@ -1435,8 +1435,8 @@ export const getChapterTitleOfChapter = (chapter: number) => {
   if (chapter === 2) return "2. 한자, 얼마나 알아?";
   if (chapter === 3) return "3. 그려서 만든 한자";
   if (chapter === 4) return "4. 합쳐서 만든 한자";
-  if (chapter === 5) return "5. 한자를 알면 틀리지 않는 일상 어휘";
-  if (chapter === 6) return "6. 한자를 알면 쉬운 교과서 속 어휘";
+  if (chapter === 5) return "5. 한자를 알면 틀리지<br />않는 일상 어휘";
+  if (chapter === 6) return "6. 한자를 알면 쉬운<br />교과서 속 어휘";
   if (chapter === 7) return "7. 언어생활 속의 성어 ①";
   if (chapter === 8) return "8. 언어생활 속의 성어 ②";
   if (chapter === 9) return "9. 이야기가 담긴 성어 ①";

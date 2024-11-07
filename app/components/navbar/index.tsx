@@ -48,17 +48,45 @@ export const Navbar = () => {
     [selectedLesson],
   );
 
-  const subChapters = useMemo(
-    () => [
-      ...new Map(
-        NAVIGATION.filter(
-          (item) =>
-            item.lesson === selectedLesson && item.chapter === selectedChapter,
-        ).map((item) => [item.subChapter, item]),
-      ).values(),
-    ],
-    [selectedLesson, selectedChapter],
-  );
+  // const subChapters = useMemo(
+  //   () => [
+  //     ...new Map(
+  //       NAVIGATION.filter(
+  //         (item) =>
+  //           item.lesson === selectedLesson && item.chapter === selectedChapter,
+  //       ).map((item) => [item.subChapter, item]),
+  //     ).values(),
+  //   ],
+  //   [selectedLesson, selectedChapter],
+  // );
+
+  const subChapters = useMemo(() => {
+    // 필터링된 항목 중에서 subChapter만 추출하고, 중복 제거
+    const filteredSubChapters = NAVIGATION.filter(
+      (item) => item.lesson === selectedLesson && item.chapter === selectedChapter
+    );
+
+    // subChapter 중복을 제거하면서, 가장 첫 번째 subChapter를 우선으로 유지
+    const uniqueSubChapters = filteredSubChapters.reduce((acc, curr) => {
+      if (!acc.some(item => item.subChapter === curr.subChapter)) {
+        acc.push(curr);
+      }
+      return acc;
+    }, []);
+
+    // subChapter 값에 따라 정렬 (F1, F2, F3 순으로)
+    return uniqueSubChapters.sort((a, b) => {
+      const subChapterA = a.subChapter;
+      const subChapterB = b.subChapter;
+
+      // 숫자와 알파벳이 섞인 경우를 처리하는 방법 (예: F1, F2, F10 등)
+      const numA = parseInt(subChapterA.replace(/[^\d]/g, ''), 10);
+      const numB = parseInt(subChapterB.replace(/[^\d]/g, ''), 10);
+
+      return numA - numB;
+    });
+  }, [selectedLesson, selectedChapter]);
+
 
   console.log(subChapters);
 
@@ -131,14 +159,19 @@ export const Navbar = () => {
               <li
                 key={index}
                 onClick={() => setSelectedChapter(item.chapter)}
-                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#b4381d] px-10 ${
-                  selectedLesson === item.lesson &&
+                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#b4381d] px-10 ${selectedLesson === item.lesson &&
                   selectedChapter === item.chapter
-                    ? "text-white font-bold bg-[#b4381d]"
-                    : ""
-                }`}
+                  ? "text-white font-bold bg-[#b4381d]"
+                  : ""
+                  }`}
               >
-                <span>{getChapterTitleOfChapter(item.chapter)}</span>
+                {/* <span className="chapter-title">{getChapterTitleOfChapter(item.chapter)}</span> */}
+                <span
+                  className="chapter-title"
+                  dangerouslySetInnerHTML={{
+                    __html: getChapterTitleOfChapter(item.chapter),
+                  }}
+                />
               </li>
             ))}
           </ul>
@@ -154,13 +187,12 @@ export const Navbar = () => {
                   setCurrentStep(1);
                   setShowMenu(false);
                 }}
-                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#9ad290] px-5 ${
-                  selectedLesson === currentLesson &&
+                className={`flex cursor-pointer transition hover:text-white hover:font-bold hover:bg-[#9ad290] px-5 ${selectedLesson === currentLesson &&
                   selectedChapter === currentChapter &&
                   selectedSubChapter === item.subChapter
-                    ? "text-white font-bold bg-[#9ad290]"
-                    : ""
-                }`}
+                  ? "text-white font-bold bg-[#9ad290]"
+                  : ""
+                  }`}
               >
                 <span>{item.subChapter}</span>
               </Link>
