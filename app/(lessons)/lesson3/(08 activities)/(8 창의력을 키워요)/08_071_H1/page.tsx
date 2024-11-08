@@ -2,6 +2,7 @@
 
 import IMAGE_BEFORE from "./image_before.png";
 import IMAGE_AFTER from "./image_after.png";
+import IMAGE_AFTER_Z from "./image_after_zoom.png";
 import MODAL1 from "./modal1.png";
 import MODAL2 from "./modal2.png";
 import MODAL3 from "./modal3.png";
@@ -40,9 +41,12 @@ export default function Page() {
 
         <div className="ml-5 mt-6">
           <img src={!showAnswer ? IMAGE_BEFORE.src : IMAGE_AFTER.src} />
+          {/* <img src={!showAnswer ? IMAGE_BEFORE.src : IMAGE_AFTER_Z.src} /> */}
         </div>
 
-        {showAnswer ? (
+        {/* 11/8 zoom 기능 추가하였는데 삭제한다고 해서 일단 기능 저장 */}
+
+        {/* {showAnswer ? (
           <>
             <button
               className="absolute top-[150px] left-1/2 -translate-x-[265px] w-[100px] h-[100px] bg-black bg-opacity-50"
@@ -146,9 +150,7 @@ export default function Page() {
             ) : null}
 
           </>
-        ) : null}
-
-
+        ) : null} */}
 
       </CreativityPageTemplate>
 
