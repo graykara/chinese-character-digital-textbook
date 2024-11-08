@@ -16,14 +16,14 @@ export default function Page() {
 
   const [showAnswer, setShowAnswer] = useState(false);
   const sounds = [
-    "/sound/2/p043_word000.mp3",
-    "/sound/2/p043_word001.mp3",
-    "/sound/2/p043_word002.mp3",
-    "/sound/2/p043_word003.mp3",
-    "/sound/2/p043_word000.mp3",
-    "/sound/2/p043_word001.mp3",
-    "/sound/2/p043_word002.mp3",
-    "/sound/2/p043_word003.mp3",
+    "/sound/5/109_word000.mp3",
+    "/sound/5/109_word001.mp3",
+    "/sound/5/109_word002.mp3",
+    "/sound/5/109_word003.mp3",
+    "/sound/5/109_word004.mp3",
+    "/sound/5/109_word005.mp3",
+    "/sound/5/109_word006.mp3",
+    "/sound/5/109_word007.mp3",
   ];
 
   useEffect(() => {
