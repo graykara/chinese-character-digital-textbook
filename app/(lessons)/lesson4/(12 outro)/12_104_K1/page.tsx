@@ -41,13 +41,19 @@ export default function Page() {
     "[1-2] 다음 글을 읽고, 물음에 답하시오.",
     "[1-2] 다음 글을 읽고, 물음에 답하시오.",
     "글의 교훈과 관련된 속담은?",
-    "글을 읽고 ㉠, ㉡이 가리키는 것을 찾아 한자로 쓰시오.",
+    <>
+    글을 읽고 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2 mr-1 tracking-tighter align-text-top">ㄱ</span>, <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄴ</span>이 가리키는 것을 찾아 한자로 쓰시오.
+    </>,
     "문장의 독음과 풀이를 쓰시오.",
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
-    "㉠~㉤의 설명 중 옳지 않은 것은?",
+    <>
+    <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㅁ</span>의 설명 중 옳지 않은 것은?
+    </>,
     // "㉠~㉤의 설명 중 옳지 <span class="underline underline-offset-[10px]">않은</span> 것은?",
-    "㉠~㉤ 중 마지막으로 풀이되는 것은?",
+    <>
+    <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㅁ</span> 중 마지막으로 풀이되는 것은?
+    </>,
   ];
 
   useEffect(() => {
@@ -118,7 +124,7 @@ const Question1 = () => {
         <div className="w-full mt-10 -ml-1">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={1} />
-            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">의미상 ㉠과 바꾸어 쓸 수 있는 한자를 (나)에서 찾아 쓰시오.</p>
+            <p className="text-[55px] mt-3 -ml-1 tracking-tighter">의미상 <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 mr-1 tracking-tighter align-text-top">ㄱ</span>과 바꾸어 쓸 수 있는 한자를 (나)에서 찾아 쓰시오.</p>
           </header>
 
           <div className="ml-[90px] mt-[25px] w-[130px] h-[130px] rounded-[15px] border-[3px] border-[#939292] flex justify-center items-center">
@@ -151,8 +157,8 @@ const Question2 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={2} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              <span className="border border-black rounded-lg">보기</span> 의
-              한자 카드를 바르게 배열하여 ㉡에 들어갈 내용을 완성하시오.
+            <span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>의
+              한자 카드를 바르게 배열하여 <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄴ</span>에 들어갈 내용을 완성하시오.
             </p>
           </header>
 
@@ -292,7 +298,7 @@ const Question6 = () => {
         <div className="w-full mt-10">
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={6} />
-            <p className="text-[55px] mt-0 -ml-1 tracking-tighter">㉠, ㉡의 독음을 쓰시오.</p>
+            <p className="text-[55px] mt-0 -ml-1 tracking-tighter"><span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 mr-1 tracking-tighter align-text-top">ㄱ</span>, <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄴ</span>의 독음을 쓰시오.</p>
           </header>
 
           <div className="ml-[90px] mt-24 relative">

@@ -100,9 +100,7 @@ export default function Page() {
       <StrengthenLearningMainContentHeader
         title={
           <p>
-            빈칸에 한자의 뜻과 음을 적고,{" "}
-            <span className="bg-[#4e9737] text-white rounded-xl">보기</span> 의
-            설명에 해당하는 어휘가 되도록 가로 또는 세로로 묶어 보자.
+            빈칸에 한자의 뜻과 음을 적고,<span className="text-[45px] bg-[#5F9055] text-white rounded-full ml-3 mr-1 px-5 pt-2  align-text-top">보기</span>의 설명에 해당하는 어휘가 되도록 가로 또는 세로로 묶어 보자.
           </p>
         }
         sound="/sound/2/52-i-1.mp3"

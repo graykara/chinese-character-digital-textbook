@@ -62,9 +62,7 @@ export default function Page() {
       <StrengthenLearningMainContentHeader
         title={
           <>
-            빈칸에 어울리는 단어를{" "}
-            <span className="border rounded-lg border-black inline">보기</span>
-            에서 찾아 써 보자.
+            빈칸에 어울리는 단어를 <span className="text-[45px] border-[3px] border-black rounded-full ml-3 px-5 pt-2 leading-[45px] align-text-top">보기</span>에서 찾아 써 보자.
           </>
         }
         sound="/sound/2/46-i-1.mp3"

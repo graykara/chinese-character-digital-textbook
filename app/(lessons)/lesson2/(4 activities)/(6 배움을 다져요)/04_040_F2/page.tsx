@@ -40,7 +40,7 @@ const Step1 = () => {
       <StrengthenLearningWordHeader
         title={
           <div>
-            <span className="border border-black rounded-lg inline">보기</span>{" "}
+            <span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>
             의 한자를 활용하여 다음 글의 밑줄 친 부분을 한자로 쓰고,
             <br />그 뜻도 써 보자.
           </div>

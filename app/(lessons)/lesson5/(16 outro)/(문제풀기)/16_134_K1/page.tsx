@@ -120,7 +120,7 @@ const Question1 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={1} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.
+              윗글에서 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>과 상대되는 뜻을 가진 한자를 찾아 쓰시오.
             </p>
           </header>
 
@@ -154,7 +154,7 @@ const Question2 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={2} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?
+              윗글의 내용으로 보아 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄴ</span>을 바르게 이해한 사람은?
             </p>
           </header>
 
@@ -194,7 +194,7 @@ const Question3 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={3} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              <span className="text-[42px] border-[3px] border-black rounded-full pt-1 pb-0 px-4 align-text-top">보기</span>의 한자를 바르게 배열하여 ㉮ 에 들어갈 내용을 완성하시오.
+              <span className="text-[42px] border-[3px] border-black rounded-full pt-1 pb-0 px-4 align-text-top">보기</span>의 한자를 바르게 배열하여 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">가</span>에 들어갈 내용을 완성하시오.
             </p>
           </header>
 
@@ -231,7 +231,7 @@ const Question4 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={4} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.
+              윗글의 내용으로 보아 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>이 가리키는 것을 찾아 쓰시오.
             </p>
           </header>
 
@@ -265,7 +265,7 @@ const Question5 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={5} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
+              윗글에서 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
             </p>
           </header>
 
@@ -308,7 +308,7 @@ const Question6 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={6} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              ㉮~㉲의 설명으로 옳지 <span className="underline underline-offset-[10px]">않은</span> 것은?
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 tracking-tighter align-text-top">가</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">마</span>의 설명으로 옳지 <span className="underline underline-offset-[10px]">않은</span> 것은?
             </p>
           </header>
 
@@ -348,7 +348,7 @@ const Question7 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={7} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              ㉠을 숫자로 바르게 표기한 것은?
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>을 숫자로 바르게 표기한 것은?
             </p>
           </header>
 
@@ -382,7 +382,7 @@ const Question8 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={8} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              ㉮~㉲의 설명으로 옳지{" "}
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 tracking-tighter align-text-top">가</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">마</span>의 설명으로 옳지{" "}
               <span className="underline underline-offset-2">않은</span> 것은?
             </p>
           </header>
