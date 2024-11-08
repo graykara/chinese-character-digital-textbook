@@ -36,12 +36,24 @@ export default function Page() {
           </header>
 
           <div className="relative">
-            <img
-              src={showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src}
-              className="w-[1311px] mt-16 ml-6"
-            />
+            {showAnswer ? (
+              <>
+                <img
+                  src={IMAGE_AFTER.src}
+                  className="w-[1311px] mt-16 ml-6"
+                />
+                <p className="absolute bottom-[685px] left-[165px] font-haeseo text-[55px] tracking-[-2px] rotate-[-6.5deg] text-example">無道人之短</p>
+              </>
+            ) : (
+              <img
+                src={IMAGE_BEFORE.src}
+                className="w-[1311px] mt-16 ml-6"
+              />
+            )}
+            <p className="absolute top-[400px] left-[160px] font-haeseo text-[45px] tracking-[-5px] text-[#231815]">己所不欲</p>
+            <p className="absolute top-[400px] left-[357px] font-haeseo text-[45px] tracking-[-5px] text-[#231815]">勿施於人</p>
 
-            <div className="rotate-[6deg] absolute right-[195px] top-[900px] w-[450px]">
+            <div className="rotate-[5.5deg] absolute right-[195px] top-[900px] w-[450px]">
               <InputWithPen
                 className="text-[35px] text-center bg-transparent"
                 containerClassName="relative -top-[10px]"
@@ -49,17 +61,26 @@ export default function Page() {
               />
 
               <OLD_TextareaWithPen
-                className="w-[400px] text-[35px] text-center bg-transparent"
+                className="w-[400px] text-[35px] text-center leading-tight bg-transparent"
                 containerClassName="relative top-[10px]"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2 top-0"
                 rows={3}
               />
 
-              <InputWithPen
-                className="text-[35px] text-center bg-transparent"
-                containerClassName="relative top-[100px]"
-                penClassName="w-[40px] left-1/2 -translate-x-1/2"
+              <OLD_TextareaWithPen
+                className="w-[400px] text-[35px] text-center leading-tight bg-transparent"
+                containerClassName="relative top-[15px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2 top-0"
+                rows={2}
               />
+
+              <OLD_TextareaWithPen
+                className="w-[400px] text-[35px] text-center leading-tight bg-transparent"
+                containerClassName="relative top-[30px]"
+                penClassName="w-[40px] left-1/2 -translate-x-1/2 top-0"
+                rows={2}
+              />
+
             </div>
           </div>
         </div>

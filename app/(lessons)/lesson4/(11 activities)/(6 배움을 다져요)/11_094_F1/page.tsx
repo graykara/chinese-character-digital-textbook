@@ -6,7 +6,6 @@ import IMAGE2 from "./image2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
-import { SOUND } from "@/app/utils/sound-player";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useEffect, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
@@ -18,7 +17,7 @@ export default function Page() {
   const answers1 = ["1", "2", "3", "4", "5", "6", "#내가 먼저 존중하기"];
   const answers2 = ["1", "4", "3", "2", "8", "7", "6", "5", "#입장 바꿔 생각하기\n#존중과 이해"];
   const [showAnswer, setShowAnswer] = useState(false);
-  const [value, setValue] = useState("");
+
   useEffect(() => {
     setShowAnswer(false);
   }, [step]);
@@ -38,6 +37,7 @@ export default function Page() {
         {step === 1 && (
           <div>
             <img src={IMAGE1.src} />
+            <p className="absolute top-[132px] left-[520px] font-haeseo text-[65px] tracking-[15px]">去言美, 來言美</p>
             <InputWithPen
               answer={answers1[0]}
               showAnswer={showAnswer}
@@ -92,6 +92,7 @@ export default function Page() {
         {step === 2 && (
           <div>
             <img src={IMAGE2.src} />
+            <p className="absolute top-[132px] left-[435px] font-haeseo text-[65px] tracking-[20px]">己所不欲 勿施於人</p>
             <InputWithPen
               answer={answers2[0]}
               showAnswer={showAnswer}

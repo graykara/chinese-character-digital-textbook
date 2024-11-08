@@ -42,11 +42,30 @@ export default function Page() {
         {step === 1 && (
           <div>
             <img src={IMAGE1.src} />
+            <p className="absolute top-[87px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
+              <span className="tracking-[-5px]">(</span>
+              <span className="font-haeseo text-[55px] tracking-[-5px]">去</span>
+              )
+              <span className="font-haeseo text-[55px] tracking-[-2px]">言</span>
+              [(가는) 말이] + 
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 美</span>
+              [곱다]
+            </p>
             <button className="absolute top-[80px] left-[140px] w-[150px] h-[80px] z-10" onClick={() => SOUND(sounds[0]).play()}>
             </button>
             <button className="absolute top-[80px] left-[600px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[1]).play()}>
             </button>
 
+            <p className="absolute top-[380px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
+              <span className="font-haeseo text-[55px] tracking-[0px]">人</span>
+              [남이] + (
+              <span className="font-haeseo text-[55px] tracking-[-5px]">恒</span>
+              ) 
+              <span className="font-haeseo text-[55px] tracking-[0px]">愛</span>
+              [(항상)사랑하다] + 
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 之</span>
+              [그를]
+            </p>
             <button className="absolute top-[375px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[2]).play()}>
             </button>
             <button className="absolute top-[375px] left-[380px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[3]).play()}>
@@ -61,6 +80,14 @@ export default function Page() {
         {step === 2 && (
           <div>
             <img src={IMAGE2.src} />
+            <p className="absolute top-[87px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
+              <span className="font-haeseo text-[55px] tracking-[-2px]">學</span>
+              [배움은] + 
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 難</span>
+              [어렵다] + 
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 成</span>
+              [이루기가]
+            </p>
             <button className="absolute top-[80px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[6]).play()}>
             </button>
             <button className="absolute top-[80px] left-[405px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[7]).play()}>
@@ -68,6 +95,16 @@ export default function Page() {
             <button className="absolute top-[80px] left-[690px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[8]).play()}>
             </button>
 
+            <p className="absolute top-[380px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
+              <span className="font-haeseo text-[55px] tracking-[2px]">孔子</span>
+              [공자가] +
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 問</span>
+              [묻다] + 
+              <span className="font-haeseo text-[55px] tracking-[-1px]"> 禮</span>
+              [예를] + 
+              <span className="font-haeseo text-[55px] tracking-[-5px]"> 於老子</span>
+              [노자에게]
+            </p>
             <button className="absolute top-[375px] left-[130px] w-[135px] h-[80px] z-10" onClick={() => SOUND(sounds[9]).play()}>
             </button>
             <button className="absolute top-[375px] left-[465px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[10]).play()}>

@@ -24,6 +24,7 @@ export default function Page() {
 
       <ContentContainer className="!justify-start left-10 -top-12">
         <img src={IMAGE.src} />
+        <p className="absolute top-[15px] left-[180px] w-[1250px] leading-tight tracking-tighter">‘<span className="font-haeseo text-[50px] tracking-[-6px]">無道人之短, 無說己之長.</span>’에서 남의 단점을 말하지 말아야 하는 이유는 무엇이라고 생각하는가?</p>
         <InputWithPen
           answer={answer}
           showAnswer={showAnswer}
