@@ -9,12 +9,15 @@ import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어3.png";
+import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어24.png";
+import BACKGROUND2 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어25.png";
 import { StepContainer } from "@/app/components/step-container";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [step, setStep] = useState(1);
-
+  const answers1 = ["은", "은혜", "선", "좋다", "결", "맺다"];
+  const answers2 = ["보", "갚다", "익", "더욱", "호", "호랑이", "성", "이루다"];
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
@@ -34,7 +37,7 @@ export default function Page() {
         </p>
       </TitleContainer>
 
-      <ContentContainer className="!justify-start mt-5 pl-12">
+      <ContentContainer className="!justify-start mt-10 pl-1">
         <img src={EXAMPLE.src} className="mb-10" />
         <div className="absolute left-[50px] top-[50px] grid grid-cols-8 gap-[30px] w-full h-[90px] bg-transparent pr-[50px]">
           <button
@@ -67,42 +70,115 @@ export default function Page() {
             {step === 1 && (
               <div className="relative">
                 <img src={IMAGE1.src} />
+                <InputWithPen
+                  answer={answers1[0]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[375px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers1[1]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[440px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
 
-                {showAnswer && (
-                  <>
-                    <div className="text-answer absolute left-[13px] bottom-0 flex text-[40px]">
-                      <p className="w-[90px]">은</p>은혜
-                    </div>
-                    <div className="text-answer absolute left-[345px] bottom-0 flex text-[40px]">
-                      <p className="w-[90px]">선</p>좋다
-                    </div>
-                    <div className="text-answer absolute left-[675px] bottom-0 flex text-[40px]">
-                      <p className="w-[90px]">결</p>맺다
-                    </div>
-                  </>
-                )}
+                <InputWithPen
+                  answer={answers1[2]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[705px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers1[3]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[770px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
+
+                <InputWithPen
+                  answer={answers1[4]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[1035px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers1[5]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[1100px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 h-[45px]"
+                />
               </div>
             )}
             {step === 2 && (
               <div className="relative">
                 <img src={IMAGE2.src} />
+                <InputWithPen
+                  answer={answers2[0]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[0px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers2[1]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[65px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
 
-                {showAnswer && (
-                  <>
-                    <div className="text-answer absolute left-[13px] bottom-0 flex text-[40px]">
-                      <p className="w-[100px]">보</p>갚다
-                    </div>
-                    <div className="text-answer absolute left-[355px] bottom-0 flex text-[40px]">
-                      <p className="w-[100px]">익</p>더욱
-                    </div>
-                    <div className="text-answer absolute left-[700px] bottom-0 flex text-[40px]">
-                      <p className="w-[85px]">호</p>호랑이
-                    </div>
-                    <div className="text-answer absolute left-[1045px] bottom-0 flex text-[40px]">
-                      <p className="w-[85px]">성</p>이루다
-                    </div>
-                  </>
-                )}
+                <InputWithPen
+                  answer={answers2[2]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[345px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers2[3]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[405px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+
+                <InputWithPen
+                  answer={answers2[4]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[685px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers2[5]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[750px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+
+                <InputWithPen
+                  answer={answers2[6]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[1030px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[65px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+                <InputWithPen
+                  answer={answers2[7]}
+                  showAnswer={showAnswer}
+                  containerClassName="absolute absolute left-[1095px] -bottom-[2px]"
+                  className="text-[40px] text-center w-[170px] bg-transparent"
+                  penClassName="left-1/2 -translate-x-1/2 -mt-[3px] h-[45px]"
+                />
+
               </div>
             )}
           </div>
@@ -115,6 +191,11 @@ export default function Page() {
       />
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+
+      <img
+        src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
+        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
+      />
     </>
   );
 }

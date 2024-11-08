@@ -282,11 +282,34 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
 
+        {step === 1 ? (
         <MainContentVideoButton
-          video="/video/writing/80p_1.mp4"
+          video="/video/animation/3/BaeSujin.mp4"
           className="absolute left-[112px] top-[40px]"
           buttomImage="/ui/video-button2.png"
         />
+        ) : null }
+        {step === 2 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/Dadadikseon.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 3 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/SamInseongHo.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 4 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/GyeolchoboEun.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           {step === 1 ? (

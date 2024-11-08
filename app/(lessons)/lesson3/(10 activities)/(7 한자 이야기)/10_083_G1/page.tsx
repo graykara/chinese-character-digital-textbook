@@ -92,7 +92,7 @@ export default function Page() {
             <div className="grid grid-cols-[500px__1fr] gap-5 mt-[85px] ml-[35px]">
               <VideoThumbnail
                 thumbnail={VIDEO.src}
-                video=""
+                video="/video/animation/3/HamHeungChasa.mp4"
                 width={490}
                 height={265}
               />
@@ -141,7 +141,7 @@ export default function Page() {
               </div>
               <VideoThumbnail
                 thumbnail={VIDEO2.src}
-                video=""
+                video="/video/animation/3/GyeranYugol.mp4"
                 width={490}
                 height={265}
               />

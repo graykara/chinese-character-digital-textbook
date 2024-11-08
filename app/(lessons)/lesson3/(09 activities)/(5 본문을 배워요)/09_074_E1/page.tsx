@@ -324,11 +324,34 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
 
+        {step === 1 ? (
         <MainContentVideoButton
-          video="/video/writing/74p_1.mp4"
+          video="/video/animation/3/HwasaCheomJok.mp4"
           className="absolute left-[112px] top-[40px]"
           buttomImage="/ui/video-button2.png"
         />
+        ) : null }
+        {step === 2 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/JirokWima.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 3 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/EobuJiri.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 4 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/JosamMosa.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           {step === 1 ? (
