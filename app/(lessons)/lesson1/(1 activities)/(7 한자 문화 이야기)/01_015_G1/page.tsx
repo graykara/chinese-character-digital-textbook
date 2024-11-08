@@ -105,7 +105,7 @@ export default function Page() {
               <img src={MODAL.src} />
 
               <button
-                className="absolute top-5 right-5"
+                className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                 onClick={() => {
                   clickSound.play();
                   setShowModal(false);
