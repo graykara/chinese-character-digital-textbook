@@ -1,10 +1,11 @@
 "use client";
 
+import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import IMAGE_BEFORE from "./bg_2_before.png";
 import IMAGE_AFTER from "./bg_2_after.png";
 import IMAGE_1 from "./way.png";
 import IMAGE_2 from "./wayText.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { HeaderContainer } from "@/app/components/headers/header-container";
@@ -12,6 +13,19 @@ import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만�
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [isReading, setIsReading] = useState(false);
+  const [soundId, setSoundId] = useState<number | null>(null);
+  const sound = new Howl({
+    src: "/sound/5/133-2.mp3",
+    onplay: () => setIsReading(true),
+    onend: () => setIsReading(false),
+  });
+
+  useEffect(() => {
+    return () => {
+      sound.stop();
+    };
+  }, []);
 
   return (
     <>
@@ -33,13 +47,27 @@ export default function Page() {
               기업의 가치를 담은 명함을 만들어 보자.
             </HeaderContainer>
           </header>
-          <div className="left-0">
-          <img src={IMAGE_1.src} className="-ml-5" />
-          <img src={IMAGE_2.src} className="-ml-5 mt-10 mb-10" />
+
+          <div className="ml-20 -mt-2">
+            <img src={IMAGE_1.src} className="" />
+            <img src={IMAGE_2.src} className="mt-6 mb-10" />
           </div>
           <img src={
-            showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src 
-            } className="w-full" />
+            showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src
+          } className="w-[1210px] -ml-5 mt-10" />
+
+          <SoundButton2
+            className="absolute top-[285px] left-[435px] animate__animated animate__bounceIn animate__delay-1s"
+            active={isReading}
+            onClick={() => {
+              if (soundId) {
+                console.log("stop");
+                sound.stop(soundId);
+              }
+              setTimeout(() => setSoundId(sound.play()), 100);
+            }}
+          />
+
         </div>
       </ActivityPageTemplate>
 

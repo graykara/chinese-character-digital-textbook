@@ -2,6 +2,7 @@
 
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
+import CHECK from "./check.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -12,6 +13,7 @@ import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살24.png";
 import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살25.png";
 import { ContentContainer } from "@/app/components/content-container";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -29,21 +31,78 @@ export default function Page() {
   );
 }
 
-const Step1 = () => (
-  <>
-    <TitleContainer
-      className="left-5 mt-14"
-      sound="/sound/5/125/1.mp3">
-      <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
-        <img src="/ui/flower-icon-2.png" width={38} height={38} />
-        질문에 답하며 자신의 공부 집중도를 확인해 보자.
+const Step1 = () => {
+  const [checked, setChecked] = useState(
+    Array(10).fill({ left: false, right: false })
+  );
+
+  // 클릭 시 체크 상태를 업데이트하고 사운드를 재생
+  const handleButtonClick = (row, side) => {
+    const updatedChecked = [...checked];
+
+    // 각 행에서 왼쪽(그렇다) 버튼만 체크하거나 오른쪽(아니다) 버튼만 체크 가능
+    if (side === 'left') {
+      updatedChecked[row] = { left: true, right: false };
+    } else if (side === 'right') {
+      updatedChecked[row] = { left: false, right: true };
+    }
+
+    setChecked(updatedChecked);
+    clickSound.play();  // 클릭 시 사운드 재생
+  };
+
+  return (
+    <>
+      <TitleContainer
+        className="left-5 mt-14"
+        sound="/sound/5/125/1.mp3">
+        <div className="flex items-center gap-1 text-[40px] tracking-tight -mr-10">
+          <img src="/ui/flower-icon-2.png" width={38} height={38} />
+          질문에 답하며 자신의 공부 집중도를 확인해 보자.
+        </div>
+      </TitleContainer>
+      <div className="relative left-[170px] top-[10px]">
+        <img src={IMAGE1.src} />
+
+        <div className="absolute top-[40px] left-[645px]">
+          <table>
+            <tbody>
+              {checked.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  <td className="w-[90px] h-[54.5px] justify-items-center pl-4">
+                    <button
+                      onClick={() => handleButtonClick(rowIndex, 'left')}
+                      className="w-[50px] h-[50px] flex justify-center items-center"
+                    >
+                      {row.left ? (
+                        <img src={CHECK.src} alt="checked" />
+                      ) : (
+                        null
+                      )}
+                    </button>
+                  </td>
+                  <td className="w-[90px] h-[54.5px] justify-items-center">
+                    <button
+                      onClick={() => handleButtonClick(rowIndex, 'right')}
+                      className="w-[50px] h-[50px] flex justify-center items-center"
+                    >
+                      {row.right ? (
+                        <img src={CHECK.src} alt="checked" />
+                      ) : (
+                        null
+                      )}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        
       </div>
-    </TitleContainer>
-    <div className="relative left-[170px] top-[10px]">
-      <img src={IMAGE1.src} />
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
