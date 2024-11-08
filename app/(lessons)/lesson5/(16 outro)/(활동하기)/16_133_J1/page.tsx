@@ -32,12 +32,12 @@ export default function Page() {
       <ActivityPageTemplate lesson={5}>
         <div className="w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
           <header className="mb-10">
-            <h1 className="text-[60px] text-[#da722c] font-bold text-center">
+            <h1 className="text-[60px] text-[#da722c] font-bold text-center tracking-tight">
               나의 기업 운영 계획서 및 명함 만들기
             </h1>
             <HeaderContainer
               sound="/sound/5/133-1.mp3"
-              className="text-center text-[35px] animate__animated animate__flipInX"
+              className="text-center text-[35px] animate__animated animate__flipInX tracking-tighter"
             >
               거상 김만덕은 자신이 가진 부를 어려운 사람에게 나눠 주는 나눔의
               정신을 보여 주었다. 만약 한 기업
