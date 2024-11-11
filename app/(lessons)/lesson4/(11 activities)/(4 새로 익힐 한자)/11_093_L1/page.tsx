@@ -33,7 +33,7 @@ export default function Page() {
           {
             chinese: "欲",
             reading: "욕",
-            meaning: "하고자하다",
+            meaning: "하고자 하다",
             sound: "/sound/4/11words/5.mp3",
           },
           {
@@ -97,30 +97,6 @@ export default function Page() {
             sound: "/sound/4/11words/15.mp3",
           },
           {
-            chinese: "暴",
-            reading: "폭",
-            meaning: "사납다",
-            sound: "/sound/4/11words/16.mp3",
-          },
-          {
-            chinese: "政",
-            reading: "정",
-            meaning: "정사",
-            sound: "/sound/4/11words/17.mp3",
-          },
-          {
-            chinese: "異",
-            reading: "이",
-            meaning: "다르다",
-            sound: "/sound/4/11words/18.mp3",
-          },
-          {
-            chinese: "常",
-            reading: "상",
-            meaning: "항상",
-            sound: "/sound/4/11words/19.mp3",
-          },
-          {
             chinese: "學",
             reading: "학",
             meaning: "배우다",
@@ -143,6 +119,30 @@ export default function Page() {
             reading: "로",
             meaning: "늙다",
             sound: "/sound/4/11words/23.mp3",
+          },
+          {
+            chinese: "暴",
+            reading: "폭",
+            meaning: "사납다",
+            sound: "/sound/4/11words/16.mp3",
+          },
+          {
+            chinese: "政",
+            reading: "정",
+            meaning: "정사",
+            sound: "/sound/4/11words/17.mp3",
+          },
+          {
+            chinese: "異",
+            reading: "이",
+            meaning: "다르다",
+            sound: "/sound/4/11words/18.mp3",
+          },
+          {
+            chinese: "常",
+            reading: "상",
+            meaning: "항상",
+            sound: "/sound/4/11words/19.mp3",
           },
         ]}
       />

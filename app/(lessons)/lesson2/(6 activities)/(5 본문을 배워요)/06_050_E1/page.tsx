@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘7.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘8.png";
@@ -24,7 +23,6 @@ import BACKGROUND6 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운
 import BACKGROUND7 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘13.png";
 import BACKGROUND8 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘14.png";
 import BACKGROUND9 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘15.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -55,6 +53,7 @@ export default function Page() {
           주인임.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "投票",
@@ -73,6 +72,7 @@ export default function Page() {
           [냄].
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "話者",
@@ -90,6 +90,7 @@ export default function Page() {
           사람
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "共感",
@@ -107,6 +108,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "聽者",
@@ -124,6 +126,7 @@ export default function Page() {
           사람.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "寒冷",
@@ -161,6 +164,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: "密林",
@@ -178,6 +182,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 
@@ -185,11 +190,6 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={9} step={step} onStepChange={setStep} />
-
-        <MainContentVideoButton
-          video="/video/writing/50p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
 
         <div className="absolute top-[140px] left-[150px]">
           {step === 1 || step === 2 ? (
@@ -228,16 +228,25 @@ export default function Page() {
                 <PillButton
                   active={showMeaning}
                   onClick={() => setShowMeaning(!showMeaning)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div
-                  key={step}
-                  className="-mt-0 ml-10 tracking-[0.5px]"
-                >
-                  <div>{data[step - 1]?.content ?? null}</div>
-                </div>
+                {data[step - 1]?.flippableCardData ? (
+                  <div
+                    key={step}
+                    className="-mt-0 ml-10 tracking-[0.5px]"
+                  >
+                    <div>{data[step - 1]?.content ?? null}</div>
+                  </div>
+                ) : (
+                  <div
+                    key={step}
+                    className={`-mt-0 ml-10 tracking-[0.5px] ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                  >
+                    <div>{data[step - 1]?.content ?? null}</div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

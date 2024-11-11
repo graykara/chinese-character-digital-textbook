@@ -7,18 +7,24 @@
     font-style: normal;
 }
 
-@font-face {
+/* @font-face {
     font-family: "ChosunSm";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff")
         format("woff");
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+    font-family: "ChosunKm";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "CookieRun";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
-        format("woff");
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -83,31 +89,13 @@ textarea:focus {
     }
 }
 
-/* .bg-white {
-    background: linear-gradient(
-            -90deg,
-            rgba(0, 0, 0, 0.01) 5px,
-            transparent 5px
-        ),
-        linear-gradient(rgba(0, 0, 0, 0.01) 5px, transparent 5px),
-        linear-gradient(-90deg, rgba(0, 0, 0, 0.03) 5px, transparent 5px),
-        linear-gradient(rgba(0, 0, 0, 0.03) 5px, transparent 5px),
-        linear-gradient(-90deg, rgba(0, 0, 0, 0.03) 5px, transparent 5px),
-        linear-gradient(rgba(0, 0, 0, 0.03) 5px, transparent 5px),
-        linear-gradient(-90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        linear-gradient(-90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        rgb(255 255 255 / var(--tw-bg-opacity));
-    background-size:
-        50px 50px,
-        50px 50px,
-        100px 100px,
-        100px 100px,
-        200px 200px,
-        200px 200px,
-        500px 500px,
-        500px 500px,
-        500px 500px,
-        500px 500px;
-} */
+.chapter-title {
+    overflow-wrap: break-word;
+    /* 단어가 잘릴 경우 자동으로 줄 바꿈 */
+    white-space: normal;
+    /* 텍스트가 여러 줄로 넘어갈 수 있도록 설정 */
+    text-indent: -30px;
+    /* 첫 번째 줄만 들여쓰기, 두 번째 줄부터는 적용되지 않음 */
+    padding-left: 30px;
+    /* 두 번째 줄 들여쓰기를 위한 왼쪽 패딩 */
+}

@@ -2,12 +2,15 @@
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
 import IMAGE1 from "./bg_1.png";
+import BUTTON_FRONT from "./button1.png";
+import BUTTON_BACK from "./button2.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -76,44 +79,37 @@ export default function Page() {
           <button onClick={() => SOUND(sounds[10]).play()}></button>
         </div>
 
-        <InputWithPen
-          answer={answers[0]}
-          showAnswer={showAnswer}
-          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
-          penClassName="ml-5 -mt-1 h-[50px]"
-          containerClassName="absolute top-[15px] left-[75px] -mt-1 ml-1"
-        />
-        <InputWithPen
-          answer={answers[1]}
-          showAnswer={showAnswer}
-          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
-          penClassName="ml-5 -mt-1 h-[50px]"
-          containerClassName="absolute top-[120px] left-[505px] -mt-1 ml-1"
-        />
-        <InputWithPen
-          answer={answers[2]}
-          showAnswer={showAnswer}
-          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
-          penClassName="ml-5 -mt-1 h-[50px]"
-          containerClassName="absolute top-[445px] left-[180px] -mt-1 ml-1"
-        />
-        <InputWithPen
-          answer={answers[3]}
-          showAnswer={showAnswer}
-          className={`w-[80px] text-center bg-transparent font-haeseo text-[65px] tracking-tighter`}
-          penClassName="ml-5 -mt-1 h-[50px]"
-          containerClassName="absolute top-[445px] left-[505px] -mt-1 ml-1"
-        />
+        <button
+          className="absolute -top-[2.5px] left-[59px]"
+          onClick={() => clickSound.play()}>
+          <img src={BUTTON_FRONT.src} />
+        </button>
+        <button
+          className="absolute top-[104px] left-[489px]"
+          onClick={() => clickSound.play()}>
+          <img src={BUTTON_FRONT.src} />
+        </button>
+        <button
+          className="absolute top-[427px] left-[166px]"
+          onClick={() => clickSound.play()}>
+          <img src={BUTTON_FRONT.src} />
+        </button>
+        <button
+          className="absolute top-[427px] left-[489px]"
+          onClick={() => clickSound.play()}>
+          <img src={BUTTON_FRONT.src} />
+        </button>
+
       </ContentContainer>
 
       <CheckAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-      {/* <img
+      <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      /> */}
+      />
     </>
   );
 }

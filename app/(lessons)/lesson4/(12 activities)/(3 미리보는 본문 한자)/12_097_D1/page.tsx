@@ -16,17 +16,18 @@ import BACKGROUND3 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되�
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+
 
   const [showAnswer, setShowAnswer] = useState(false);
   const answer = [
+    "글짓기 대회에서 대상 트로피와 메달을 받아 꿈을 이룬 모습을 그렸다.",
     "반려묘가 털 뭉치 장난감을 능숙하게 가지고 노는 모습을 그렸다.",
     "공책에 목표를 기록하는 모습을 그렸다."
   ];
 
   useEffect(() => {
     setShowAnswer(false);
-  }, [step]);
+  }, []);
 
   return (
     <>
@@ -34,60 +35,36 @@ export default function Page() {
         <img src="/header/preview_chinese_characters.png" alt="" />
       </HeaderContainer>
 
-      <TitleContainer2 className="mt-10" sound="/sound/4/97-i.mp3">
-        <p className="text-[45px] tracking-tight -mt-1 flex items-start gap-5 break-keep">
+      <TitleContainer2 className="w-[1640px] mt-11" sound="/sound/4/97-i.mp3">
+        <p className="text-[45px] tracking-tighter -mt-1 flex items-start gap-5 break-keep">
           <img src="/ui/flower-icon.png" />
-          보기 와 같이 한자의 뜻이 잘 드러나도록 한자를 바탕으로 그림을 그리고 표현한 의도를 써 보자.
+          <span className="text-[35px] bg-[#F79D54] rounded-full -ml-2 mt-0.5 px-4 pt-1 pb-1 -mr-5 leading-[40px] align-text-top">보기</span>와 같이 한자의 뜻이 잘 드러나도록 한자를 바탕으로 그림을 그리고 표현한 의도를 써 보자.
         </p>
       </TitleContainer2>
 
-      <ContentContainer className="!justify-start -mt-12 pl-10">
+      <ContentContainer className="!justify-start mt-4 pl-10">
         <div className="relative w-full pb-20">
-          {step === 1 && (
-            <div className="relative mt-20 ml-14">
-              <img src={IMAGE1.src} alt="" />
-            </div>
-          )}
-          {step === 2 && (
-            <div className="relative mt-20 ml-14">
-              <img src={IMAGE2.src} alt="" />
-              <TextareaWithPen
+
+          <div className="relative mt-20 ml-14">
+            <img src={IMAGE1.src} alt="" />
+            {/* <TextareaWithPen
                 answer={answer[0]}
                 showAnswer={showAnswer}
-                containerClassName={`absolute resize-none left-[800px] top-[130px] text-[42px] tracking-tighter w-[500px] ml-3 leading-[60px] break-keep ${showAnswer ? "text-example ml-3" : ""}`}
-                penClassName="h-[60px] top-[130px] left-[800px]"
+                containerClassName={`absolute resize-none left-[800px] top-[150px] text-[42px] tracking-tighter w-[500px] ml-3 leading-[60px] break-keep ${showAnswer ? "text-example ml-3" : ""}`}
+                penClassName="h-[60px] top-[150px] left-[800px]"
                 rows={3}
-              />
-            </div>
-          )}
-          {step === 3 && (
-            <div className="relative mt-20 ml-14">
-              <img src={IMAGE3.src} alt="" />
-              <TextareaWithPen
-                answer={answer[0]}
-                showAnswer={showAnswer}
-                containerClassName={`absolute resize-none left-[800px] top-[130px] text-[42px] tracking-tighter w-[500px] ml-3 leading-[60px] break-keep ${showAnswer ? "text-example ml-3" : ""}`}
-                penClassName="h-[60px] top-[130px] left-[800px]"
-                rows={3}
-              />
-            </div>
-          )}
+              /> */}
+          </div>
+
         </div>
       </ContentContainer>
 
-      {step === 2 || step === 3 ? (
-        <ExampleAnswerButton
-          active={showAnswer}
-          onClick={() => setShowAnswer(!showAnswer)}
-        />
-      ) : null}
+      {/* <ExampleAnswerButton
+        active={showAnswer}
+        onClick={() => setShowAnswer(!showAnswer)}
+      /> */}
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
-      <img src={
-        step === 1 ? BACKGROUND1.src :
-          step === 2 ? BACKGROUND2.src :
-            step === 3 ? BACKGROUND3.src : ""
-      } className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }

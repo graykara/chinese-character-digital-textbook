@@ -88,6 +88,7 @@ export default function Page() {
           같습니다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -126,7 +127,7 @@ export default function Page() {
         { letter: "彼", reading: "피" },
         {
           letter: "劣",
-          reading: "렬",
+          reading: "열",
           additional: (
             <>
               <span
@@ -186,6 +187,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -239,6 +241,7 @@ export default function Page() {
           하는 마음이 없겠습니까?
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

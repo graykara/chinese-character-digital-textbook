@@ -44,7 +44,7 @@ export const TextareaWithPen = ({
           setValue(e.currentTarget.value);
           props.onChange?.(e);
         }}
-        className={containerClassName}
+        className={`resize-none ${containerClassName}`}
       ></textarea>
 
       {value === "" && !showAnswer ? (
@@ -97,7 +97,7 @@ export const OLD_TextareaWithPen = ({
             setValue(e.currentTarget.value);
             props.onChange?.(e);
           }}
-          className={className}
+          className={`resize-none ${className}`}
         ></textarea>
 
         {value === "" && !showAnswer ? (

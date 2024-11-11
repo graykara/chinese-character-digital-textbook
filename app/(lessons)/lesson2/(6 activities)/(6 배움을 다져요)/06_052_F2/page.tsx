@@ -35,7 +35,10 @@ const Step1 = () => {
       <ContentContainer className="!justify-start">
         <div className="relative left-5 top-5">
           {showAnswer ? (
+            <>
             <img src={IMAGE_AFTER.src} />
+            <p className="absolute left-[1085px] top-[115px] font-haeseo text-[55px] text-example z-10">過濕</p>
+            </>
           ) : (
             <img src={IMAGE_BEFORE.src} />
           )}

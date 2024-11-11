@@ -41,8 +41,8 @@ export default function Page() {
     "[3-4] 다음 글을 읽고, 물음에 답하시오.",
     "[5-6] 다음 글을 읽고, 물음에 답하시오.",
     "[5-6] 다음 글을 읽고, 물음에 답하시오.",
-    "[6-7] 다음 글을 읽고, 물음에 답하시오.",
-    "[6-7] 다음 글을 읽고, 물음에 답하시오.",
+    "[7-8] 다음 글을 읽고, 물음에 답하시오.",
+    "[7-8] 다음 글을 읽고, 물음에 답하시오.",
     "< 서답형, 논술형 문제 >",
     "< 서답형, 논술형 문제 >",
   ];
@@ -120,7 +120,7 @@ const Question1 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={1} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글에서 ㉠과 상대되는 뜻을 가진 한자를 찾아 쓰시오.
+              윗글에서 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>과 상대되는 뜻을 가진 한자를 찾아 쓰시오.
             </p>
           </header>
 
@@ -154,7 +154,7 @@ const Question2 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={2} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글의 내용으로 보아 ㉡을 바르게 이해한 사람은?
+              윗글의 내용으로 보아 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄴ</span>을 바르게 이해한 사람은?
             </p>
           </header>
 
@@ -194,7 +194,7 @@ const Question3 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={3} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              보기 의 한자를 바르게 배열하여 가 에 들어갈 내용을 완성하시오.
+              <span className="text-[42px] border-[3px] border-black rounded-full pt-1 pb-0 px-4 align-text-top">보기</span>의 한자를 바르게 배열하여 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">가</span>에 들어갈 내용을 완성하시오.
             </p>
           </header>
 
@@ -231,7 +231,7 @@ const Question4 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={4} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글의 내용으로 보아 ㉠이 가리키는 것을 찾아 쓰시오.
+              윗글의 내용으로 보아 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>이 가리키는 것을 찾아 쓰시오.
             </p>
           </header>
 
@@ -265,7 +265,7 @@ const Question5 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={5} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
+              윗글에서 <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
             </p>
           </header>
 
@@ -308,7 +308,7 @@ const Question6 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={6} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              윗글에서 ㉠이 가리키는 것을 찾아 한자로 쓰고 우리말로 풀이하시오.
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 tracking-tighter align-text-top">가</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">마</span>의 설명으로 옳지 <span className="underline underline-offset-[10px]">않은</span> 것은?
             </p>
           </header>
 
@@ -348,7 +348,7 @@ const Question7 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={7} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              ㉠을 숫자로 바르게 표기한 것은?
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 pl-1.5 pr-2.5 mr-1 tracking-tighter align-text-top">ㄱ</span>을 숫자로 바르게 표기한 것은?
             </p>
           </header>
 
@@ -356,7 +356,7 @@ const Question7 = () => {
             <SelectionQuiz
               answers={[4]}
               showAnswer={showAnswer}
-              options={["1", "10", "11", "1/10", "1/100"]}
+              options={["1", "10", "11", "1/10", "1/100"]} // 분수 표시 필요
               className="grid grid-cols-3 gap-y-6 text-[45px] tracking-tight"
             />
           </div>
@@ -382,7 +382,7 @@ const Question8 = () => {
           <header className="flex items-center gap-5">
             <ProblemNumberIcon number={8} />
             <p className="text-[55px] mt-3 -ml-1 tracking-tighter">
-              ㉮~㉲의 설명으로 옳지{" "}
+            <span className="text-[40px] bg-[#848586] text-white rounded-full ml-2 pt-1 pb-0 px-2 tracking-tighter align-text-top">가</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">마</span>의 설명으로 옳지{" "}
               <span className="underline underline-offset-2">않은</span> 것은?
             </p>
           </header>
@@ -416,9 +416,9 @@ const Question9 = () => {
 
   return (
     <>
-      <ContentContainer className="!justify-start top-5 w-[1560px]">
-        <div className="w-full mt-2 -ml-1">
-          <header className="flex items-start -mt-2 gap-10">
+      <ContentContainer className="!justify-start top-5 -mt-[9px] w-[1560px]">
+        <div className="w-full -mt-0 ml-0">
+          <header className="flex items-start -mt-0 gap-10">
             <ProblemNumberIcon number={9} type="2" />
             <p className="text-[55px] -mt-2 -ml-6 tracking-tight break-keep ">
               ‘
@@ -474,7 +474,7 @@ const Question10 = () => {
 
           <div className="ml-[100px] mt-10 relative">
             <InputWithPen
-              answer="자신이 가진 것을 많은 사람에게 나누어 주어 도움을 주었기 때문이다.​"
+              answer="흉년이 들어 굶주려 병든 사람들에게 쌀을 나누어 주었기 때문이다.​"
               showAnswer={showAnswer}
               className="w-[1300px] bg-transparent text-[50px] tracking-tighter"
               containerClassName="w-[1300px] mt-[60px] -ml-2 border-b-2 border-black"

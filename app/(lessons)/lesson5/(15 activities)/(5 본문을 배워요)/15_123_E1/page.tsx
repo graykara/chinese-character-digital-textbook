@@ -83,8 +83,7 @@ export default function Page() {
               </span>
               →
               <span
-                onClick={() => SOUND("/sound/5/p123_word003.mp3").play()}
-                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0 cursor-pointer"
+                className="font-haeseo text-[50px] leading-tight tracking-[-10px] pr-0"
               >
                 草中石
               </span>
@@ -115,6 +114,7 @@ export default function Page() {
           라고 여겨 그것을 쏘니,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -152,6 +152,7 @@ export default function Page() {
           이었다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -208,6 +209,7 @@ export default function Page() {
           그것을 쏘았으나,
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -248,6 +250,7 @@ export default function Page() {
           돌에 박히게 할 수 없었다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

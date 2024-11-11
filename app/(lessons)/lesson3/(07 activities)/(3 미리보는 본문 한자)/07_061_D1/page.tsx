@@ -118,77 +118,80 @@ const Step2 = () => {
               <img src={IMAGE2_BEFORE.src} />
             )}
 
-            {showButtons[0] && (
-              <button
-                onClick={() => {
-                  clickSound.play();
-                  setShowButtons(
-                    showButtons.map((v, i) => (i === 0 ? false : v)),
-                  );
-                }}
-                className="absolute left-[730px] top-[20px]"
-              >
-                <img src={BUTTON_IMAGE.src} />
-              </button>
-            )}
-            {showButtons[1] && (
-              <button
-                onClick={() => {
-                  clickSound.play();
-                  setShowButtons(
-                    showButtons.map((v, i) => (i === 1 ? false : v)),
-                  );
-                }}
-                className="absolute left-[730px] top-[110px]"
-              >
-                <img src={BUTTON_IMAGE.src} />
-              </button>
-            )}
-            {showButtons[2] && (
-              <button
-                onClick={() => {
-                  clickSound.play();
-                  setShowButtons(
-                    showButtons.map((v, i) => (i === 2 ? false : v)),
-                  );
-                }}
-                className="absolute left-[730px] top-[200px]"
-              >
-                <img src={BUTTON_IMAGE.src} />
-              </button>
-            )}
-            {showButtons[3] && (
-              <button
-                onClick={() => {
-                  clickSound.play();
-                  setShowButtons(
-                    showButtons.map((v, i) => (i === 3 ? false : v)),
-                  );
-                }}
-                className="absolute left-[730px] top-[290px]"
-              >
-                <img src={BUTTON_IMAGE.src} />
-              </button>
-            )}
-            {showButtons[4] && (
-              <button
-                onClick={() => {
-                  clickSound.play();
-                  setShowButtons(
-                    showButtons.map((v, i) => (i === 4 ? false : v)),
-                  );
-                }}
-                className="absolute left-[730px] top-[460px]"
-              >
-                <img src={BUTTON_IMAGE.src} />
-              </button>
-            )}
+            <button
+              onClick={() => {
+                clickSound.play();
+                setShowButtons(showButtons.map((v, i) => (i === 0 ? !v : v))); // Toggle the state
+              }}
+              className="absolute left-[730px] top-[20px]"
+            >
+              <img
+                src={BUTTON_IMAGE.src}
+                style={{ opacity: showButtons[0] ? 1 : 0 }}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                clickSound.play();
+                setShowButtons(showButtons.map((v, i) => (i === 1 ? !v : v))); // Toggle the state
+              }}
+              className="absolute left-[730px] top-[110px]"
+            >
+              <img
+                src={BUTTON_IMAGE.src}
+                style={{ opacity: showButtons[1] ? 1 : 0 }}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                clickSound.play();
+                setShowButtons(showButtons.map((v, i) => (i === 2 ? !v : v))); // Toggle the state
+              }}
+              className="absolute left-[730px] top-[200px]"
+            >
+              <img
+                src={BUTTON_IMAGE.src}
+                style={{ opacity: showButtons[2] ? 1 : 0 }}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                clickSound.play();
+                setShowButtons(showButtons.map((v, i) => (i === 3 ? !v : v))); // Toggle the state
+              }}
+              className="absolute left-[730px] top-[290px]"
+            >
+              <img
+                src={BUTTON_IMAGE.src}
+                style={{ opacity: showButtons[3] ? 1 : 0 }}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                clickSound.play();
+                setShowButtons(showButtons.map((v, i) => (i === 4 ? !v : v))); // Toggle the state
+              }}
+              className="absolute left-[730px] top-[460px]"
+            >
+              <img
+                src={BUTTON_IMAGE.src}
+                style={{ opacity: showButtons[4] ? 1 : 0 }}
+              />
+            </button>
+    
           </div>
         </div>
       </ContentContainer>
       <CheckAnswerButton
         active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
+        onClick={() => {
+          setShowAnswer(!showAnswer);
+          setShowButtons([true, true, true, true, true]);
+        }}
       />
     </>
   );

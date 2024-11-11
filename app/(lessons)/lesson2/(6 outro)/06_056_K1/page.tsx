@@ -35,11 +35,13 @@ export default function Page() {
     "한자의 음과 뜻이 옳은 것은?",
     "대화 속 밑줄 친 부분을 한자로 바꿔 쓰시오.",
     <>
-      <span className="border border-black rounded-lg">보기</span>와 같은 원리로
+      <span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>와 같은 원리로
       만들어진 한자는?
     </>,
     "빈칸에 알맞은 한자를 쓰시오.",
-    "단어장의 내용을 보고 ㉠에 들어갈 단어를 한자로 쓰시오.",
+    <>
+      단어장의 내용을 보고 <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 mr-1 tracking-tighter align-text-top">ㄱ</span>에 들어갈 단어를 한자로 쓰시오.
+    </>,
     "단어의 짜임이 옳은 것은?",
     <>
       한자 어휘의 활용이 옳지{" "}
@@ -332,7 +334,7 @@ const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {
       </div>
       <div className="flex items-center gap-4 mb-5">
         <ProblemNumberIcon number={8} />
-        ㉠~㉣에 들어갈 내용을 한글로 쓰시오.
+        <p className="text-[50px] mt-0 -ml-1 tracking-tighter"><span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄹ</span>에 들어갈 내용을 한글로 쓰시오.</p>
       </div>
 
       <div className="grid grid-cols-2 w-[1300px] gap-y-[32px] px-[32px] pl-10">
@@ -389,9 +391,9 @@ const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
       </div>
       <div className="flex items-start gap-4 mb-5">
         <ProblemNumberIcon number={9} />
-        칠판에 쓰인 세 개의 단어 중 하나를 선택하고, 그 단어를 활용하여
+        <p className="text-[45px] mt-1 -ml-1 leading-snug tracking-tighter">칠판에 쓰인 세 개의 단어 중 하나를 선택하고, 그 단어를 활용하여
         <br />
-        짧은 글을 쓰시오. ※ 선택한 단어는 한자로 쓰기.
+        짧은 글을 쓰시오. ※ 선택한 단어는 한자로 쓰기.</p>
       </div>
 
       <div className="relative ml-20 -mt-5">

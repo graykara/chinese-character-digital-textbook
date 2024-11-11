@@ -88,9 +88,7 @@ export default function Page() {
               <span className="font-haeseo leading-tight tracking-[-8px]">
                 蟹貪蘆花圖
               </span>
-              )」로 ‘게가 갈대꽃을 탐한다.’라는 뜻이다. 김홍도가 과거를 보러
-              가는 선비에게 그려주었다고 전한다. 「해탐노화도」에서 갈대를
-              뜻하는 ‘노(
+              )」로 ‘게가 갈대꽃을 탐한다.’라는 뜻이다. 김홍도가 과거를 보러 가는 선비에게 그려 주었다고 전한다. 「해탐노화도」에서 갈대를 뜻하는 ‘노(
               <span className="font-haeseo leading-tight tracking-[-8px]">
                 蘆
               </span>
@@ -98,8 +96,7 @@ export default function Page() {
               <span className="font-haeseo leading-tight tracking-[-8px]">
                 臚
               </span>
-              )’ 자와 중국 발음이 같아 ‘갈대를 꼭 붙들고 늘어진 게처럼 과거에
-              합격하라.’라는 뜻을 담고 있다.
+              )’ 자와 중국 발음이 같아 ‘갈대를 꼭 붙들고 늘어진 게처럼 과거에 합격하라.’라는 뜻을 담고 있다.
             </div>
           </div>
         )}

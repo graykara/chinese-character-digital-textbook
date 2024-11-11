@@ -43,24 +43,24 @@ export default function Page() {
             isExample
             answer="박기쁨"
             showAnswer={showAnswer}
-            containerClassName="absolute left-[430px] top-[0px]"
-            className="w-[200px] text-[35px] text-center absolute bg-transparent"
+            containerClassName="absolute left-[440px] top-[0px]"
+            className="w-[200px] text-[40px] text-left tracking-tighter absolute bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
           />
           <InputWithPen
             isExample
             answer="주변 사람들에게 긍정적인 에너지를 주어서"
             showAnswer={showAnswer}
-            containerClassName="absolute left-[470px] top-[53px]"
-            className="w-[600px] text-[35px] text-left absolute bg-transparent"
+            containerClassName="absolute left-[470px] top-[55px]"
+            className="w-[650px] text-[40px] text-left tracking-tighter absolute bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
           />
           <InputWithPen
             isExample
             answer="박기쁨"
             showAnswer={showAnswer}
-            containerClassName="absolute right-[660px] top-[270px]"
-            className="w-[200px] text-[35px] text-center absolute bg-transparent"
+            containerClassName="absolute right-[665px] top-[272px]"
+            className="w-[200px] text-[40px] text-center absolute bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
           />
           <OLD_TextareaWithPen
@@ -68,8 +68,8 @@ export default function Page() {
             answer={`주변 사람들에게 따뜻한 긍정의
 에너지를 전하고, 진심 어린 말 한마디가
 많은 이들에게 큰 힘이 되어`}
-            className={`w-[630px] text-[32px] bg-transparent ${showAnswer ? "text-example" : ""}`}
-            penClassName=""
+            className={`w-[630px] text-[40px] text-center leading-[50px] tracking-tighter bg-transparent ${showAnswer ? "text-example" : ""}`}
+            penClassName="left-1/2 -translate-x-1/2 hidden"
             containerClassName="!absolute left-[430px] bottom-[130px]"
             rows={3}
           />

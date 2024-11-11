@@ -23,7 +23,7 @@ interface Props {
   data: Data;
   showReading: boolean | null;
   showMeaning: boolean | null;
-  showMeaning2: boolean;
+  showMeaning2: boolean | null;
   setShowReading: (value: boolean) => void;
   setShowMeaning: (value: boolean) => void;
   setShowMeaning2: (value: boolean) => void;

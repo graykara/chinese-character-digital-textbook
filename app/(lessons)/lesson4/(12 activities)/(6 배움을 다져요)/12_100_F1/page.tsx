@@ -5,8 +5,6 @@ import { useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { SOUND } from "@/app/utils/sound-player";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글24.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글25.png";
@@ -20,11 +18,11 @@ export default function Page() {
   return (
     <>
       <StrengthenLearningMainContentHeader
-        title={<p className="tracking-[-6px]">문장의 의미를 생각해 보고 어떨 때, 누구에게 하면 좋을지 적어 보자.</p>}
+        title={<p className="tracking-[-2px]">문장의 의미를 생각해 보고 어떨 때, 누구에게 하면 좋을지<br/>적어 보자.</p>}
         sound="/sound/4/100-i-1.mp3"
       />
 
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[210px] left-[1550px] flex items-center gap-5" />
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute top-[206px] right-[167px] h-[49px] flex items-center gap-5" />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
 
@@ -40,6 +38,7 @@ const Step1 = () => {
       <ContentContainer className="!justify-start left-8 -mt-20">
         <div className="relative mt-20">
           <img src={IMAGE1.src} />
+          <p className="absolute top-[155px] left-[40px] font-haeseo text-[62px] tracking-[-5px]">天下無無一能之人.</p>
         </div>
       </ContentContainer>
     </>
@@ -53,13 +52,14 @@ const Step2 = () => {
     "실수를 자책하는 친구",
     "이번 실수로 인해 새롭게 알게 된 게 있잖아.\n이렇게 성장하는 거야!"];
   const [showAnswer, setShowAnswer] = useState(false);
-  const [value, setValue] = useState("");
 
   return (
     <>
       <ContentContainer className="!justify-start left-8 -mt-20">
         <div className="relative ml-1">
           <img src={IMAGE2.src} />
+          <p className="absolute top-[75px] left-[40px] font-haeseo text-[62px] tracking-[-3px]">有志者, 事竟成也.</p>
+          <p className="absolute top-[350px] left-[40px] font-haeseo text-[62px] tracking-[-3px]">不經一事, 不長一智.</p>
         </div>
 
         <TextareaWithPen

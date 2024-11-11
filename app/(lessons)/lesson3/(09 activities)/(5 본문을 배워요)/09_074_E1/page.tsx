@@ -46,7 +46,7 @@ export default function Page() {
               >
                 足
               </span>
-              : ① 발, ② 만족하다
+              : ① <span className="underline underline-offset-[10px]">발</span>, ② 만족하다
             </p>
           ),
         },
@@ -58,7 +58,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="발"
+            text="발."
             width={150}
             height={80}
           />
@@ -92,7 +92,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
-            text="함"
+            text="함."
             width={150}
             height={80}
           />
@@ -142,7 +142,7 @@ export default function Page() {
       content2: (
         <div className="flex flex-wrap text-[50px] font-bold">
           두 사람이 이해관계로 서로 싸우는 사이에 엉뚱한 사람이 애쓰지 않고
-          가로챈 이익
+          가로챈 이익.
         </div>
       ),
     },
@@ -324,11 +324,34 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
 
+        {step === 1 ? (
         <MainContentVideoButton
-          video="/video/writing/74p_1.mp4"
+          video="/video/animation/3/HwasaCheomJok.mp4"
           className="absolute left-[112px] top-[40px]"
           buttomImage="/ui/video-button2.png"
         />
+        ) : null }
+        {step === 2 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/JirokWima.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 3 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/EobuJiri.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
+        {step === 4 ? (
+          <MainContentVideoButton
+            video="/video/animation/3/JosamMosa.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           {step === 1 ? (

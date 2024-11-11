@@ -2,6 +2,7 @@
 
 import { StepContainer } from "@/app/components/step-container";
 import { Header } from "../assets/header";
+import { ExerciseHeader } from "@/app/components/exercise-header";
 import { useEffect, useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
 import IMAGE1 from "./image1.png";
@@ -63,10 +64,20 @@ export default function Page() {
     <>
       <Header />
 
-      <ContentContainer className="flex flex-col items-center -mt-[150px]">
+      <ExerciseHeader
+        text={
+          <>
+            <p className="text-[40px] tracking-[-1px]">밑줄 친 부분의 뜻을 추측하여 쓰고, 사전에서 실제 뜻을 찾아 써 보자.</p>
+          </>
+        }
+        sound="/sound/1/13-i2.mp3"
+        className="-mt-14 -mb-20"
+      />
+
+      <ContentContainer className="flex flex-col items-center -mt-[200px]">
         <img
           src={data[step - 1]?.image}
-          className="h-[480px] ml-[10px] mb-[170px]"
+          className="h-[434px] ml-[25px] mb-[110px]"
         />
 
         <div className="absolute left-[115px] top-[680px]">

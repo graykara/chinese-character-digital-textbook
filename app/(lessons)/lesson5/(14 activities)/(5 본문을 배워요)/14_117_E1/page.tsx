@@ -85,12 +85,14 @@ export default function Page() {
               width={165}
               height={80}
             />
+            이
           </div>
           <div className="flex flex-wrap  text-[50px] font-bold">
             천하며
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -128,6 +130,7 @@ export default function Page() {
           이 천하다.
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -227,6 +230,7 @@ export default function Page() {
           하다.
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

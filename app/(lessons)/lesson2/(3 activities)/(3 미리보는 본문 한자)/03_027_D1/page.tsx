@@ -54,7 +54,7 @@ export default function Page() {
               <InputWithPen
                 key={(step - 1) * 5 + index}
                 className="bg-transparent text-center w-[145px] h-[140px] text-[55px]"
-                penClassName="left-1/2 -translate-x-1/2"
+                penClassName={index === 0 ? "left-1/2 -translate-x-1/2" : "hidden"}
               />
             ))}
           </div>
@@ -66,7 +66,7 @@ export default function Page() {
                 answer={selectedAnswer[index]}
                 showAnswer={showAnswer}
                 className="bg-transparent text-center w-[145px] h-[140px] text-[55px] text-answer"
-                penClassName="left-1/2 -translate-x-1/2"
+                penClassName={index === 0 ? "left-1/2 -translate-x-1/2" : "hidden"}
               />
             ))}
           </div>

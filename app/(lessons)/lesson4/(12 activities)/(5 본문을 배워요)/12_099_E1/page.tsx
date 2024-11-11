@@ -81,6 +81,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -129,6 +130,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -144,7 +146,7 @@ export default function Page() {
               >
                 經
               </span>
-              : ① 지나다, ②
+              : ① 지나다, ②{" "}
               <span className="underline underline-offset-[10px]">
                 경험하다
               </span>
@@ -201,6 +203,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -283,6 +286,7 @@ export default function Page() {
           </div>
         </>
       ),
+      flippableCardData: true,
     },
     {
       chinese: [
@@ -330,6 +334,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
   ];
 

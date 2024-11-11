@@ -11,14 +11,14 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson1/01_008_A2",
-    page: "8~9",
+    page: 8,
   },
   {
     lesson: 1,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson1/01_008_A3",
-    page: "8~9",
+    page: 8,
   },
   {
     lesson: 1,
@@ -209,13 +209,13 @@ export const NAVIGATION = [
     path: "lesson1/02_020_D51",
     page: 20,
   },
-  {
-    lesson: 1,
-    chapter: 2,
-    subChapter: "한자는 어떻게 쓸까?",
-    path: "lesson1/02_021_D52",
-    page: 21,
-  },
+  // {
+  //   lesson: 1,
+  //   chapter: 2,
+  //   subChapter: "한자는 어떻게 쓸까?",
+  //   path: "lesson1/02_021_D52",
+  //   page: 21,
+  // },
   {
     lesson: 1,
     chapter: 2,
@@ -233,7 +233,7 @@ export const NAVIGATION = [
   {
     lesson: 1,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson1/02_022_K1",
     page: 22,
   },
@@ -291,7 +291,7 @@ export const NAVIGATION = [
     chapter: 3,
     subChapter: "새로 익힐 한자",
     path: "lesson2/03_028_L1",
-    page: 28,
+    page: 29,
   },
   {
     lesson: 2,
@@ -361,7 +361,7 @@ export const NAVIGATION = [
     chapter: 4,
     subChapter: "새로 익힐 한자",
     path: "lesson2/04_036_L1",
-    page: 36,
+    page: 37,
   },
   {
     lesson: 2,
@@ -438,7 +438,7 @@ export const NAVIGATION = [
     chapter: 5,
     subChapter: "본문을 배워요",
     path: "lesson2/05_044_E1",
-    page: 44,
+    page: "44~45",
   },
   {
     lesson: 2,
@@ -494,14 +494,14 @@ export const NAVIGATION = [
     chapter: 6,
     subChapter: "새로 익힐 한자",
     path: "lesson2/06_050_L1",
-    page: 50,
+    page: 48,
   },
   {
     lesson: 2,
     chapter: 6,
     subChapter: "본문을 배워요",
     path: "lesson2/06_050_E1",
-    page: 50,
+    page: "50~51",
   },
   {
     lesson: 2,
@@ -541,30 +541,30 @@ export const NAVIGATION = [
   {
     lesson: 2,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson2/06_056_K1",
-    page: 56,
-  }, // 문제풀기
+    page: "56~57",
+  }, // 문제 풀기
   {
     lesson: 3,
     chapter: -1,
     subChapter: "도입",
     path: "lesson3/07_058_A1",
-    page: 58,
+    page: "58~59",
   }, // 3단원
   {
     lesson: 3,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson3/07_058_A2",
-    page: 58,
+    page: "58~59",
   },
   {
     lesson: 3,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson3/07_058_A3",
-    page: 58,
+    page: "58~59",
   },
   {
     lesson: 3,
@@ -592,19 +592,19 @@ export const NAVIGATION = [
     chapter: 7,
     subChapter: "새로 익힐 한자",
     path: "lesson3/07_062_L1",
-    page: 62,
+    page: 63,
   },
   {
     lesson: 3,
     chapter: 7,
     subChapter: "본문을 배워요",
     path: "lesson3/07_062_E1",
-    page: 62,
+    page: "62~63",
   },
   {
     lesson: 3,
     chapter: 7,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson3/07_063_E2",
     page: 63,
   },
@@ -669,14 +669,14 @@ export const NAVIGATION = [
     chapter: 8,
     subChapter: "새로 익힐 한자",
     path: "lesson3/08_068_L1",
-    page: 68,
+    page: 69,
   },
   {
     lesson: 3,
     chapter: 8,
     subChapter: "본문을 배워요",
     path: "lesson3/08_068_E1",
-    page: 68,
+    page: "68~69",
   },
   {
     lesson: 3,
@@ -725,56 +725,56 @@ export const NAVIGATION = [
     chapter: 9,
     subChapter: "미리 알아보는 본문 한자",
     path: "lesson3/09_073_D1",
-    page: 72,
+    page: 73,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "새로 익힐 한자",
     path: "lesson3/09_074_L1",
-    page: 72,
+    page: 75,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "본문을 배워요",
     path: "lesson3/09_074_E1",
-    page: 72,
+    page: "74~75",
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "배움을 다져요",
     path: "lesson3/09_076_F1",
-    page: 72,
+    page: 76,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "배움을 다져요",
     path: "lesson3/09_076_F2",
-    page: 72,
+    page: 76,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "배움을 다져요",
     path: "lesson3/09_076_F3",
-    page: 72,
+    page: 76,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "한자 문화 이야기",
     path: "lesson3/09_077_G1",
-    page: 72,
+    page: 77,
   },
   {
     lesson: 3,
     chapter: 9,
     subChapter: "활동 창의력을 키워요",
     path: "lesson3/09_077_H1",
-    page: 72,
+    page: 77,
   },
   {
     lesson: 3,
@@ -809,7 +809,7 @@ export const NAVIGATION = [
     chapter: 10,
     subChapter: "본문을 배워요",
     path: "lesson3/10_081_E1",
-    page: 81,
+    page: "80~81",
   },
   {
     lesson: 3,
@@ -851,21 +851,21 @@ export const NAVIGATION = [
     chapter: -1,
     subChapter: "도입",
     path: "lesson4/11_088_A1",
-    page: 88,
+    page: "88~89",
   }, // 4단원
   {
     lesson: 4,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson4/11_088_A2",
-    page: 88,
+    page: "88~89",
   },
   {
     lesson: 4,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson4/11_088_A3",
-    page: 88,
+    page: "88~89",
   },
   {
     lesson: 4,
@@ -900,7 +900,7 @@ export const NAVIGATION = [
     chapter: 11,
     subChapter: "본문을 배워요",
     path: "lesson4/11_093_E1",
-    page: 93,
+    page: "92~93",
   },
   {
     lesson: 4,
@@ -970,7 +970,7 @@ export const NAVIGATION = [
     chapter: 12,
     subChapter: "본문을 배워요",
     path: "lesson4/12_099_E1",
-    page: 99,
+    page: "98~99",
   },
   {
     lesson: 4,
@@ -1005,42 +1005,42 @@ export const NAVIGATION = [
     chapter: -2,
     subChapter: "정리하기",
     path: "lesson4/12_102_I1",
-    page: 101,
+    page: 102,
   }, // 4단원 정리하기
   {
     lesson: 4,
     chapter: -2,
     subChapter: "활동하기",
     path: "lesson4/12_103_J1",
-    page: 101,
+    page: 103,
   },
   {
     lesson: 4,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson4/12_104_K1",
-    page: 101,
+    page: "104~105",
   }, // 4단원 마무리
   {
     lesson: 5,
     chapter: -1,
     subChapter: "도입",
     path: "lesson5/13_106_A1",
-    page: 106,
+    page: "106~107",
   }, // 5단원 시작
   {
     lesson: 5,
     chapter: -1,
     subChapter: "왜 배워요?",
     path: "lesson5/13_106_A2",
-    page: 106,
+    page: "106~107",
   },
   {
     lesson: 5,
     chapter: -1,
     subChapter: "무엇을 배워요?",
     path: "lesson5/13_106_A3",
-    page: 106,
+    page: "106~107",
   },
   {
     lesson: 5,
@@ -1075,12 +1075,12 @@ export const NAVIGATION = [
     chapter: 13,
     subChapter: "본문을 배워요",
     path: "lesson5/13_111_E1",
-    page: 111,
+    page: "110~111",
   },
   {
     lesson: 5,
     chapter: 13,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/13_111_E2",
     page: 111,
   },
@@ -1145,12 +1145,12 @@ export const NAVIGATION = [
     chapter: 14,
     subChapter: "본문을 배워요",
     path: "lesson5/14_117_E1",
-    page: 117,
+    page: "116~117",
   },
   {
     lesson: 5,
     chapter: 14,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/14_117_E2",
     page: 117,
   },
@@ -1215,12 +1215,12 @@ export const NAVIGATION = [
     chapter: 15,
     subChapter: "본문을 배워요",
     path: "lesson5/15_123_E1",
-    page: 123,
+    page: "122~123",
   },
   {
     lesson: 5,
     chapter: 15,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/15_123_E2",
     page: 123,
   },
@@ -1285,12 +1285,12 @@ export const NAVIGATION = [
     chapter: 16,
     subChapter: "본문을 배워요",
     path: "lesson5/16_129_E1",
-    page: 129,
+    page: "128~129",
   },
   {
     lesson: 5,
     chapter: 16,
-    subChapter: "본문을 배워요",
+    subChapter: "이해와 감상",
     path: "lesson5/16_129_E2",
     page: 129,
   },
@@ -1339,9 +1339,9 @@ export const NAVIGATION = [
   {
     lesson: 5,
     chapter: -2,
-    subChapter: "문제풀기",
+    subChapter: "문제 풀기",
     path: "lesson5/16_134_K1",
-    page: 134,
+    page: "134~135",
   },
 ];
 
@@ -1435,8 +1435,8 @@ export const getChapterTitleOfChapter = (chapter: number) => {
   if (chapter === 2) return "2. 한자, 얼마나 알아?";
   if (chapter === 3) return "3. 그려서 만든 한자";
   if (chapter === 4) return "4. 합쳐서 만든 한자";
-  if (chapter === 5) return "5. 한자를 알면 틀리지 않는 일상 어휘";
-  if (chapter === 6) return "6. 한자를 알면 쉬운 교과서 속 어휘";
+  if (chapter === 5) return "5. 한자를 알면 틀리지<br />않는 일상 어휘";
+  if (chapter === 6) return "6. 한자를 알면 쉬운<br />교과서 속 어휘";
   if (chapter === 7) return "7. 언어생활 속의 성어 ①";
   if (chapter === 8) return "8. 언어생활 속의 성어 ②";
   if (chapter === 9) return "9. 이야기가 담긴 성어 ①";

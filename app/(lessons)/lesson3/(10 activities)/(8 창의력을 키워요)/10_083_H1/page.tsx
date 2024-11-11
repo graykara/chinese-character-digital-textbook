@@ -82,31 +82,6 @@ export default function Page() {
         </ContentContainer>
       </CreativityPageTemplate>
 
-      {/* <CreativityPageTemplate>
-        <header className="relative width-[1000px] left-[450px] -top-5 text-[50px]">
-          <CreativityTitleHeader title="성어 프레젠테이션 발표 대회" />
-        </header>
-
-        <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[200px] top-[5px] z-1" />
-        <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[70px] top-[5px] z-1" />
-
-        <ContentContainer className="!items-start">
-          <img src={IMAGE.src} />
-        </ContentContainer>
-      </CreativityPageTemplate>
-
-      <TitleContainer className="ml-4 mt-4">
-        <div className="flex items-center gap-4">
-          <img src="/ui/flower-icon-2.png" />
-          다음 단어의 뜻을 조사하고 차이점을 발표해 보자.
-        </div>
-      </TitleContainer> */}
-
-      <ExampleAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

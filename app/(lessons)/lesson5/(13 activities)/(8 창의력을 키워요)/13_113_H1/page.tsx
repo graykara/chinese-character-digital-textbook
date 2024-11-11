@@ -27,22 +27,18 @@ export default function Page() {
           title="말과 관련된 속담으로 짧은 영상 만들기"
           containerClassName="-mt-5"
         />
-        {/* <TitleContainer
-          className="ml-[85px] mt-6"
-          sound="">
-          <div className="flex items-center gap-1 text-[45px] tracking-[-2px] -ml-[70px] -mr-20">
-            내가 시간과 노력을 들여서 이루고 싶은 것을 생각해 보고 구체적인 계획을 쓰고 발표해 보자.
-          </div>
-        </TitleContainer> */}
-        {/* <div className="relative left-[120px] top-[105px]">
-          <img src={IMAGE1.src} />
-        </div> */}
         <div className="relative left-[150px] top-[40px]">
           <img src={IMAGE.src} />
         </div>
       </CreativityPageTemplate>
 
-      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[80px] top-[664px] z-1" />
+{/* 
+for sounds
+1: /sound/5/113-i-1.mp3 - autoplay
+2: /sound/5/113-i-2.mp3 - play after 1
+*/}
+
+      <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[78px] top-[662px] h-[50px] z-1" />
 
       <OLD_TextareaWithPen
         isExample

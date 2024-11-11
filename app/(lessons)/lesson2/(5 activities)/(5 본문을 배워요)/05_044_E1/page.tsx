@@ -11,13 +11,11 @@ import { useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
-import { Howl } from "howler";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘6.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘7.png";
 import BACKGROUND3 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘8.png";
 import BACKGROUND4 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘9.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 import { Modal } from "@/app/components/modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
@@ -56,6 +54,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -74,6 +73,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE2.src,
       video: "/video/animation/2-5_44-1.mp4",
     },
@@ -107,6 +107,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE3.src,
       video: "/video/animation/2-5_44-2.mp4",
     },
@@ -127,6 +128,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -145,6 +147,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE4.src,
       video: "/video/animation/2-5_45-1.mp4",
     },
@@ -165,6 +168,7 @@ export default function Page() {
           />
         </div>
       ),
+      flippableCardData: true,
     },
     {
       //right part
@@ -184,6 +188,7 @@ export default function Page() {
           무엇을 하고자 하는 생각.
         </div>
       ),
+      flippableCardData: true,
       resource: IMAGE5.src,
       video: "/video/animation/2-5_45-2.mp4",
     },
@@ -195,11 +200,6 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-
-        <MainContentVideoButton
-          video="/video/writing/44p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
 
         <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
           <div className="relative mb-[260px]">
@@ -219,7 +219,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[100px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] pl-12 tracking-[60px] ${showReading ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading ? data[step * 2 - 2]?.reading : null}
                 </div>
@@ -228,11 +228,23 @@ export default function Page() {
                 <PillButton
                   active={showMeaning}
                   onClick={() => setShowMeaning(!showMeaning)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
+                {data[step * 2 - 2]?.flippableCardData ? (
+                  <div>
+                    <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
+                  </div>
+                ) : (
+                  <div className="h-[75px]">
+                    <div key={step}
+                      className={`mt-2 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                    >
+                      {data[step * 2 - 2]?.content ?? null}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -254,7 +266,7 @@ export default function Page() {
                   backgroundColor="#3a5e7c"
                 />
                 <div
-                  className={`mr-[160px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
+                  className={`mr-[100px] -mt-4 h-[85px] text-main-content font-chosun text-[60px] pl-12 tracking-[60px] ${showReading2 ? "animate__animated animate__slideInDown" : ""}`}
                 >
                   {showReading2 ? data[step * 2 - 1]?.reading : null}
                 </div>
@@ -263,7 +275,7 @@ export default function Page() {
                 <PillButton
                   active={showMeaning2}
                   onClick={() => setShowMeaning2(!showMeaning2)}
-                  text="뜻"
+                  text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
@@ -275,12 +287,12 @@ export default function Page() {
           <div className="absolute bottom-0 right-0 w-[1000px] h-[115px]">
             <div>
               <img src={VIDEO_PLAY_THUMBNAIL.src} className={
-                    step === 1 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[160px] right-[180px] z-10" :
-                    step === 2 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] right-[160px] z-10" :
+                step === 1 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[160px] right-[180px] z-10" :
+                  step === 2 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] right-[160px] z-10" :
                     step === 3 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[180px] right-[210px] z-10" :
-                    step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
-                    : "" 
-                  } />
+                      step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
+                        : ""
+              } />
               <button
                 className={`z-[3]`}
                 onClick={() => {
@@ -293,10 +305,10 @@ export default function Page() {
                   alt="resource"
                   className={
                     step === 1 ? "absolute bottom-[60px] right-14" :
-                    step === 2 ? "absolute bottom-[70px] right-10" :
-                    step === 3 ? "absolute bottom-[70px] right-5" :
-                    step === 4 ? "absolute bottom-[70px] translate-x-5"
-                    : "" 
+                      step === 2 ? "absolute bottom-[70px] right-10" :
+                        step === 3 ? "absolute bottom-[70px] right-5" :
+                          step === 4 ? "absolute bottom-[70px] translate-x-5"
+                            : ""
                   }
                 />
               </button>
@@ -304,13 +316,13 @@ export default function Page() {
               <Modal open={showModal} onClose={() => setShowModal(false)}>
                 <div className="w-full h-full bg-white bg-opacity-70 ">
                   {video ? (
-                     <ReactPlayer
+                    <ReactPlayer
                       url={data[step * 2 - 1]?.video}
                       playing
                       width={1760}
                       height={990}
-                    /> 
-                  ) : null} 
+                    />
+                  ) : null}
                 </div>
               </Modal>
 

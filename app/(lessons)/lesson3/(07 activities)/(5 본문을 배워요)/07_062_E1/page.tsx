@@ -54,7 +54,7 @@ export default function Page() {
       ),
       content2: (
         <div className="flex flex-wrap text-[50px] font-bold">
-          거의 대부분 이거나 거의 틀림없음.
+          거의 대부분이거나 거의 틀림없음.
         </div>
       ),
     },
@@ -86,7 +86,7 @@ export default function Page() {
           <FlippableCard_60
             active={showMeaning}
             className="-mt-2 ml-8 inline-block"
-            text="동쪽 바람"
+            text="동쪽 바람."
             width={280}
             height={80}
           />
@@ -349,11 +349,6 @@ export default function Page() {
     <>
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
-
-        <MainContentVideoButton
-          video="/video/writing/62p_1.mp4"
-          className="absolute left-[112px] top-[40px]"
-        />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           {step === 1 ? (

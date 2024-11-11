@@ -15,7 +15,7 @@ const config: Config = {
       fontFamily: {
         nanum: "NanumBarunGothic",
         haeseo: "Haeseo",
-        chosun: "ChosunSm",
+        chosun: "ChosunKm",
         cookierun: "CookieRun",
       },
       colors: {

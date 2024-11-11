@@ -113,10 +113,10 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
                       {Array.from(Array(character.reading.length)).map(
                         (_, index) => (
                           <span key={index} className="mr-4">
-                            <span className="font-chosun font-bold text-main-content mr-4">
+                            <span className="font-chosun text-main-content mr-4">
                               {character.reading[index]}
                             </span>
-                            <span className="font-chosun font-bold">
+                            <span className="font-chosun">
                               {character.meaning[index]}
                               {character.reading.length - 1 !== index ? (
                                 <span>,</span>
@@ -128,10 +128,10 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
                     </>
                   ) : (
                     <>
-                      <span className="font-chosun font-bold text-main-content mr-4">
+                      <span className="font-chosun text-main-content mr-4">
                         {character.reading}
                       </span>
-                      <span className="font-chosun font-bold">
+                      <span className="font-chosun">
                         {character.meaning}
                       </span>
                     </>

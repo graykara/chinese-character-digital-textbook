@@ -38,7 +38,7 @@ const Step1 = () => {
         <button className="absolute top-[260px] h-[100px] w-[560px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p064_word000.mp3").play()}></button>
         <div
           className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]"
-          onClick={() => SOUND("/sound/3/64_001.mp3").play()}
+          // onClick={() => SOUND("/sound/3/64_001.mp3").play()}
         >
           <span className="font-haeseo">馬</span>
           <span className="font-haeseo">耳</span>
@@ -98,7 +98,7 @@ const Step2 = () => {
         <button className="absolute top-[260px] h-[100px] w-[560px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p064_word001.mp3").play()}></button>
         <div
           className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]"
-          onClick={() => SOUND("/sound/3/64_002.mp3").play()}
+          // onClick={() => SOUND("/sound/3/64_002.mp3").play()}
         >
           <span className="font-haeseo">坐</span>
           <span className="font-haeseo">井</span>

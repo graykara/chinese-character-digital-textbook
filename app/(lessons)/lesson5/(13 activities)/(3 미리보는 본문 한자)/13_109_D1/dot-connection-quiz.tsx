@@ -161,10 +161,10 @@ const DotConnectionQuiz = ({
       {startDots.map((dot) => (
         <div
           key={dot.id}
-          className={`absolute w-8 h-8 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
+          className={`absolute w-2 h-2 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
             ${
               isDebugMode
-                ? "border border-black"
+                ? "border border-black bg-black"
                 : isStartDotConnected(dot.id)
                   ? "cursor-not-allowed"
                   : "bcursor-pointer"
@@ -183,10 +183,10 @@ const DotConnectionQuiz = ({
       {endDots.map((dot) => (
         <div
           key={dot.id}
-          className={`absolute w-8 h-8 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
+          className={`absolute w-2 h-2 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2
             ${
               isDebugMode
-                ? "border border-black"
+                ? "border border-black bg-black"
                 : lines.some((line) => line.end.id === dot.id)
                   ? ""
                   : ""

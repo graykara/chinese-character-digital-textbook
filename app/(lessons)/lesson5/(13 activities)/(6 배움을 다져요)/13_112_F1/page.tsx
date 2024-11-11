@@ -4,6 +4,7 @@ import { StrengthenLearningMainContentHeader } from "@/app/components/headers/st
 import { useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
+import CHECK from "./check.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -13,10 +14,10 @@ import { WritingButton } from "@/app/components/buttons/writing-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭19.png";
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭20.png";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [step, setStep] = useState(1);
-  const [showAnswer, setShowAnswer] = useState(false);
 
   return (
     <>
@@ -32,7 +33,6 @@ const Step1 = () => {
   const answer1 = "누런 소가 더 일을 잘합니다";
   const answer2 =
     "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.";
-  const [value, setValue] = useState("");
 
   return (
     <>
@@ -54,12 +54,12 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className={`w-[600px] bg-transparent text-[40px]  tracking-tight ${showAnswer ? "text-example" : ""}`}
           penClassName="-left-3 -mt-2 w-[52px]"
-          containerClassName="absolute top-[210px] left-[730px] mt-1 ml-1"
+          containerClassName="absolute top-[215px] left-[730px] mt-1 ml-1"
         />
         <TextareaWithPen
           answer={answer2}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[920px] left-[365px] top-[425px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          containerClassName={`absolute resize-none w-[920px] left-[365px] top-[430px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
           penClassName="h-[52px] top-[420px] left-[365px]"
           rows={2}
         />
@@ -78,10 +78,16 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const [showAnswer, setShowAnswer] = useState(false);
-  const answer = [
-    "누런 소가 일을 더 잘한다는 말을 들으면 검은 소가 섭섭할까봐 귓속말로 말했습니다.",
-  ];
+  const [isImageVisible1, setIsImageVisible1] = useState(false);
+  const [isImageVisible2, setIsImageVisible2] = useState(false);
+  const [isImageVisible3, setIsImageVisible3] = useState(false);
+  const [isImageVisible4, setIsImageVisible4] = useState(false);
+  const [isImageVisible5, setIsImageVisible5] = useState(false);
+  const [isImageVisible6, setIsImageVisible6] = useState(false);
+  const [isImageVisible7, setIsImageVisible7] = useState(false);
+  const [isImageVisible8, setIsImageVisible8] = useState(false);
+  const [isImageVisible9, setIsImageVisible9] = useState(false);
+
   return (
     <>
       <StrengthenLearningMainContentHeader
@@ -94,8 +100,95 @@ const Step2 = () => {
       />
       <ContentContainer className="!justify-start -top-[50px] left-9">
         <img src={IMAGE2.src} />
-        <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px]"></div>
-      </ContentContainer>
+        <div className="absolute top-[57px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible1(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible1 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible2(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible2 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible3(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible3 ? CHECK.src : ""} />
+          </button>
+
+        </div>
+        <div className="absolute top-[140px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible4(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible4 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible5(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible5 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible6(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible6 ? CHECK.src : ""} />
+          </button>
+        </div>
+        <div className="absolute top-[223px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
+        <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible7(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible7 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible8(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible8 ? CHECK.src : ""} />
+          </button>
+          <button
+            className="w-[270px] justify-items-center"
+            onClick={() => {
+              clickSound.play();
+              setIsImageVisible9(prevState => !prevState);
+            }}
+          >
+            <img src={isImageVisible9 ? CHECK.src : ""} />
+          </button>
+        </div>
+      </ContentContainer >
       <img
         src={BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

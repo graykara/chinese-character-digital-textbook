@@ -4,7 +4,7 @@ import { HeaderContainer } from "@/app/components/headers/header-container";
 import HEADER from "./header.png";
 import IMAGE from "./image.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
+//import { AdditionalDataButton } from "@/app/components/buttons/additional-data-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext } from "react";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아15.png"
@@ -22,13 +22,9 @@ export default function Page() {
       </HeaderContainer>
 
       <QRButton 
-        src={QR.src} 
-        className="absolute right-[1196px] top-[156px] z-1" />
-
-      <AdditionalDataButton
-        className="absolute top-[150px] right-[150px]"
-        onClick={() => {}}
-      />
+        src={QR.src}
+        link="http://ybmqr.com/acj003"
+        className="absolute right-[230px] top-[156px] z-10" />
 
       <ContentContainer className="!justify-start !items-start pt-10">
         <div className="absolute w-full top-[205px] left-[150px]">

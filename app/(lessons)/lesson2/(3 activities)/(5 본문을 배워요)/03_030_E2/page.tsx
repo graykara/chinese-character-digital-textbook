@@ -21,7 +21,6 @@ import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자25.png";
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자27.png";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -169,13 +168,6 @@ export default function Page() {
       <LearnMainContentPageTemplate>
         <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
 
-        {(step !== 1 && step !== 7) ? (
-          <MainContentVideoButton
-            video="/video/writing/30p_1.mp4"
-            className="absolute left-[112px] top-[40px]"
-          />
-        ) : null}
-
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />
         ) : step === 7 ? (
@@ -231,7 +223,7 @@ export default function Page() {
                     backgroundColor="#4f9aab"
                   />
                   <div
-                    className={`mr-[160px] -mt-4 h-[85px] text-center text-main-content font-chosun text-[60px] ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
+                    className={`mr-[160px] -mt-0 -mb-4 h-[85px] text-center font-bold text-[50px] tracking-tighter ${showMeaning ? "animate__animated animate__slideInDown" : ""}`}
                   >
                     {showMeaning ? data[step - 2]?.meaning : null}
                   </div>

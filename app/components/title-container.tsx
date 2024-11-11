@@ -42,7 +42,7 @@ export const TitleContainer2 = ({ className = "", sound, children }: Props) => {
   // flower + sentence 2 lines
   return (
     <div
-      className={`animate__animated animate__flipInX relative mt-1 ml-[110px] text-[45px] leading-[58px] tracking-[-2.2px] max-w-[1500px] mx-auto break-keep ${className}`}
+      className={`animate__animated animate__flipInX relative mt-1 ml-[110px] text-[45px] leading-[58px] tracking-[-2.2px] w-[1500px] mx-auto break-keep ${className}`}
     >
       {children}
     </div>
