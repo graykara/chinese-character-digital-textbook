@@ -10,6 +10,7 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘16.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -95,6 +96,35 @@ const Step1 = () => {
 
 const Step2 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
+
+  const [selectedSet1, setSelectedSet1] = useState(null);
+  const [selectedSet2, setSelectedSet2] = useState(null);
+
+  const handleSet1ButtonClick = (buttonId) => {
+    clickSound.play();
+    if (selectedSet1 === buttonId) {
+      setSelectedSet1(null);
+    } else {
+      setSelectedSet1(buttonId);
+    }
+  };
+
+  const handleSet2ButtonClick = (buttonId) => {
+    clickSound.play();
+    if (selectedSet2 === buttonId) {
+      setSelectedSet2(null);
+    } else {
+      setSelectedSet2(buttonId);
+    }
+  };
+
+  useEffect(() => {
+    if(showAnswer) {
+      setSelectedSet1(null)
+      setSelectedSet2(null)
+    }
+  }, [showAnswer])
+
   return (
     <>
       <TitleContainer className="-left-24 mt-4" sound="/sound/2/47-i-2.mp3">
@@ -106,6 +136,27 @@ const Step2 = () => {
 
       <div className="relaitve h-full flex justify-end items-end pr-3">
         <img src={IMAGE2.src} />
+
+        {!showAnswer && <button
+          className={`absolute top-[280px] left-[80px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet1 === 1 ? "border-8 rounded-[50%] border-answer" : ""}`}
+          onClick={() => handleSet1ButtonClick(1)}
+        ></button>}
+
+        {!showAnswer && <button
+          className={`absolute top-[280px] left-[225px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet1 === 2 ? "border-8 rounded-[50%] border-answer" : ""}`}
+          onClick={() => handleSet1ButtonClick(2)}
+        ></button>}
+
+        {!showAnswer && <button
+          className={`absolute top-[360px] left-[455px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet2 === 1 ? "border-8 rounded-[50%] border-answer" : ""}`}
+          onClick={() => handleSet2ButtonClick(1)}
+        ></button>}
+
+        {!showAnswer && <button
+          className={`absolute top-[360px] left-[600px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet2 === 2 ? "border-8 rounded-[50%] border-answer" : ""}`}
+          onClick={() => handleSet2ButtonClick(2)}
+        ></button>}
+
 
         {showAnswer && (
           <div className="absolute left-[80px] top-[280px] w-[100px] h-[100px] border-8 rounded-full border-answer" />
