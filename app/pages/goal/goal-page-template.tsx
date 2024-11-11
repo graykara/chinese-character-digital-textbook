@@ -1,11 +1,11 @@
 "use client";
 
 import GOAL_TITLE from "./assets/goal-title.png";
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { Howl } from "howler";
 import { ReadingButton } from "@/app/components/buttons/reading-button";
 
-export const GoalPageTemplate = ({
+export const GoalPageTemplate = memo(({
   background,
   goals,
 }: {
@@ -51,6 +51,7 @@ export const GoalPageTemplate = ({
   }, [isReading, isPlaying]);
 
   useEffect(() => {
+    
     if (isPlaying && currentIndex >= 0 && currentIndex < sounds.length) {
       sounds[currentIndex].play();
     } else {
@@ -75,19 +76,28 @@ export const GoalPageTemplate = ({
 
         <ReadingButton
           active={isReading}
-          onClick={() => setIsReading(true)}
+          onClick={() => {
+            if (isReading) {
+              setIsReading(false);
+              setIsPlaying(false);
+              sounds[currentIndex]?.stop();
+              setCurrentSoundSrc("");
+              setCurrentIndex(-1);
+            } else {
+              setIsReading(true);
+            }
+          }}
           className="pb-3 -mr-4 animate__animated animate__bounceIn animate__delay-2s"
         />
       </header>
 
       <div className="relative left-2">
-        <img src={background} alt="background"/>
+        <img src={background} alt="background" />
         <ul className="absolute left-[120px] top-[70px] list-disc marker:text-[#d5454f] text-[55px] animate__animated animate__fadeIn animate__delay-1s">
           {goals.map(({ text, sound }) => (
             <li
-              className={`tracking-tighter leading-[70px] break-keep mb-6 animate__animated ${
-                sound === currentSoundSrc ? "animate__bounce" : ""
-              }`}
+              className={`tracking-tighter leading-[70px] break-keep mb-6 animate__animated ${sound === currentSoundSrc ? "animate__bounce" : ""
+                }`}
             >
               {text.split("\n").map((line, index) => (
                 <span key={index}>
@@ -101,4 +111,4 @@ export const GoalPageTemplate = ({
       </div>
     </div>
   );
-};
+});

@@ -4,7 +4,6 @@ import { ExerciseHeader2 } from "@/app/components/exercise-header";
 import { Header } from "../assets/header";
 import { StepContainer } from "@/app/components/step-container";
 import { useEffect, useState } from "react";
-import { SOUND } from "@/app/utils/sound-player";
 import { ContentContainer } from "@/app/components/content-container";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import IMAGE1 from "./image1.png";

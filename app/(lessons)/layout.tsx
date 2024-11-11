@@ -5,6 +5,7 @@ import { Navbar } from "../components/navbar";
 import { usePathname } from "next/navigation";
 import {
   getChapterNumberOfPath,
+  getIsLastPageOfPath,
   getLessonNumberOfPath,
   getNextPage,
   getPageNumberOfPath,
@@ -19,7 +20,8 @@ import { FloatingButtonContainer } from "../components/floating-button-container
 import { AudioProvider } from "../utils/audio/audio-player";
 import { AudioLink } from "../utils/audio/audio-link";
 import { PageInfoContext } from "../utils/page-info";
-import { activityStartSound } from "../utils/activity-start-sound";
+import { SoundStopper } from "./sound-stopper";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -28,9 +30,6 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const pageNumber = getPageNumberOfPath(pathname) || 1;
-
-  const [hoverPrev, setHoverPrev] = useState(false);
-  const [hoverNext, setHoverNext] = useState(false);
 
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -43,11 +42,14 @@ export default function RootLayout({
   const [currentLesson, setCurrentLesson] = useState(1);
   const [currentChapter, setCurrentChapter] = useState(1);
   const [currentSubChapter, setCurrentSubChapter] = useState("");
+  const [isLastPage, setIsLastPage] = useState(false);
 
   useEffect(() => {
+    Howler.stop();
     setCurrentLesson(getLessonNumberOfPath(pathname) || 1);
     setCurrentChapter(getChapterNumberOfPath(pathname) || 1);
     setCurrentSubChapter(getSubChatperOfPath(pathname) || "");
+    setIsLastPage(getIsLastPageOfPath(pathname) || false);
   }, [pathname]);
 
   const [scale, setScale] = useState(1);
@@ -92,8 +94,9 @@ export default function RootLayout({
         scale,
       }}
     >
+      <SoundStopper />
       <DndProvider backend={HTML5Backend}>
-        <AudioProvider>
+        {/* <AudioProvider> */}
           <Navbar />
 
           <div className="grid grid-cols-[40px__1760px__1fr]">
@@ -101,89 +104,83 @@ export default function RootLayout({
               {1 < currentStep ? (
                 <div className="mt-0">
                   <button
-                    onMouseOver={() => setHoverPrev(true)}
-                    onMouseLeave={() => setHoverPrev(false)}
                     onClick={() => {
-                      activityStartSound.play();
                       setCurrentStep((prev) => prev - 1);
                     }}
+                    className="group"
                   >
                     <img
                       src="/ui/prev-button-off.png"
-                      className={hoverPrev ? "hidden" : ""}
+                      className={"block group-hover:hidden"}
                     />
                     <img
                       src="/ui/prev-button-on.png"
-                      className={hoverPrev ? "" : "hidden"}
+                      className={"hidden group-hover:block"}
                     />
                   </button>
                 </div>
               ) : (
-                <AudioLink href={getPrevPage(pathname) ?? ""}>
+                <Link href={getPrevPage(pathname) ?? ""}>
                   <button
-                    onMouseOver={() => setHoverPrev(true)}
-                    onMouseLeave={() => setHoverPrev(false)}
+                    className="group"
                     onClick={() => setNavigationDirection("prev")}
                   >
                     <img
                       src="/ui/prev-button-off.png"
-                      className={hoverPrev ? "hidden" : ""}
+                      className={"block group-hover:hidden"}
                     />
                     <img
                       src="/ui/prev-button-on.png"
-                      className={hoverPrev ? "" : "hidden"}
+                      className={"hidden group-hover:block"}
                     />
                   </button>
-                </AudioLink>
+                </Link>
               )}
             </div>
             <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden">
               {children}
             </div>
-            <div className="flex justify-start items-center">
+            <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
               {currentStep < maxStep ? (
                 <div className="mt-0">
                   <button
-                    onMouseOver={() => setHoverNext(true)}
-                    onMouseLeave={() => setHoverNext(false)}
+                    className="group"
                     onClick={() => {
-                      activityStartSound.play();
                       setCurrentStep((prev) => prev + 1);
                     }}
                   >
                     <img
                       src="/ui/next-button-off.png"
-                      className={hoverNext ? "hidden" : ""}
+                      className={"block group-hover:hidden"}
                     />
                     <img
                       src="/ui/next-button-on.png"
-                      className={hoverNext ? "" : "hidden"}
+                      className={"hidden group-hover:block"}
                     />
                   </button>
                 </div>
               ) : (
-                <AudioLink href={getNextPage(pathname) ?? ""}>
+                <Link href={getNextPage(pathname) ?? ""}>
                   <button
-                    onMouseOver={() => setHoverNext(true)}
-                    onMouseLeave={() => setHoverNext(false)}
+                    className="group"
                     onClick={() => setNavigationDirection("next")}
                   >
                     <img
                       src="/ui/next-button-off.png"
-                      className={hoverNext ? "hidden" : ""}
+                      className={"block group-hover:hidden"}
                     />
                     <img
                       src="/ui/next-button-on.png"
-                      className={hoverNext ? "" : "hidden"}
+                      className={"hidden group-hover:block"}
                     />
                   </button>
-                </AudioLink>
+                </Link>
               )}
             </div>
           </div>
 
           <FloatingButtonContainer />
-        </AudioProvider>
+        {/* </AudioProvider> */}
       </DndProvider>
     </PageInfoContext.Provider>
   );
