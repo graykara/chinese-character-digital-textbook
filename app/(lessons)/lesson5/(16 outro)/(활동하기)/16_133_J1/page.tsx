@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <>
       <ActivityPageTemplate lesson={5}>
-        <div className="w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
+        <div className="relative w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
           <header className="mb-10">
             <h1 className="text-[60px] text-[#da722c] font-bold text-center tracking-tight">
               나의 기업 운영 계획서 및 명함 만들기
