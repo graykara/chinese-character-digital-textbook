@@ -27,11 +27,13 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
+  const [showContent, setShowContent] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(false);
+    setShowContent(false);
     setShowModal(false);
   }, [step]);
 
@@ -131,7 +133,7 @@ export default function Page() {
               <div className="relative -top-[80px] -right-[90px]">
                 <img src={CONTAINER.src} alt="container" />
                 <FlippableCard
-                  active={showMeaning}
+                  active={showContent}
                   key={step}
                   text={data[step - 2]?.content}
                   width={330}
