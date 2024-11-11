@@ -37,26 +37,26 @@ export default function Page() {
 
         <ContentContainer className="-left-16 top-0">
           <img src={showAnswer ? IMAGE_AFTER.src : IMAGE_BEFORE.src} />
-          </ContentContainer>
+        </ContentContainer>
 
-          <button
-            onClick={() => !showAnswer && setChecked(1)}
-            className="absolute top-[695px] left-[1165px]"
-          >
-            <img
-              src="/ui/blue-check-icon.png"
-              className={checked !== 1 ? "opacity-0" : ""}
-            />
-          </button>
-          <button
-            onClick={() => !showAnswer && setChecked(2)}
-            className="absolute top-[695px] left-[1290px]"
-          >
-            <img
-              src="/ui/blue-check-icon.png"
-              className={checked !== 2 ? "opacity-0" : ""}
-            />
-          </button>
+        <button
+          onClick={() => !showAnswer && setChecked(1)}
+          className="absolute top-[695px] left-[1165px]"
+        >
+          <img
+            src="/ui/blue-check-icon.png"
+            className={checked !== 1 ? "opacity-0" : ""}
+          />
+        </button>
+        <button
+          onClick={() => !showAnswer && setChecked(2)}
+          className="absolute top-[695px] left-[1290px]"
+        >
+          <img
+            src="/ui/blue-check-icon.png"
+            className={checked !== 2 ? "opacity-0" : ""}
+          />
+        </button>
       </CreativityPageTemplate>
 
       <InputWithPen
@@ -76,15 +76,15 @@ export default function Page() {
         containerClassName="absolute bottom-[73px] left-[650px]"
       />
 
-        <OLD_TextareaWithPen
-          answer="<span className='font-haeseo'>王</span>(임금 왕)에서는 ‘임금’이라는 뜻을, <span className='font-haeseo'>高</span>(높을 고)에서는 ‘고’라는 음을 빌려와‘수험생’이라는 뜻의 한자를 만들었다. 고3 수험생인 언니가 우리 집에서 왕이기 때문이다."
-          showAnswer={showAnswer}
-          className="text-[30px] w-[550px] pt-7 leading-[36px] bg-transparent"
-          penClassName="left-0 top-8 w-[50px]"
-          containerClassName="!absolute top-[670px] left-[900px]"
-          rows={4}
+      <OLD_TextareaWithPen
+        answer={<><span className='font-haeseo'>王</span>(임금 왕)에서는 ‘임금’이라는 뜻을, <span className='font-haeseo'>高</span>(높을 고)에서는 ‘고’라는 음을 빌려와‘수험생’이라는 뜻의 한자를 만들었다. 고3 수험생인 언니가 우리 집에서 왕이기 때문이다.</>}
+        showAnswer={showAnswer}
+        className="text-[30px] w-[550px] pt-7 leading-[36px] bg-transparent"
+        penClassName="left-0 top-8 w-[50px]"
+        containerClassName="!absolute top-[670px] left-[900px]"
+        rows={4}
         isExample
-        />
+      />
       <ExampleAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}

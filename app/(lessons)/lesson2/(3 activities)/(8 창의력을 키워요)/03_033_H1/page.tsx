@@ -76,7 +76,7 @@ export default function Page() {
       />
 
       <OLD_TextareaWithPen
-        answer="<span className='font-haeseo'>雨</span>(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다."
+        answer={<><span className='font-haeseo'>雨</span>(비 우) 자에 빗방울을 더 많이 그려서 ‘폭우 우’자를 만들었다.</>}
         showAnswer={showAnswer}
         className="text-[40px] w-[550px] py-8 leading-tight text-center"
         penClassName="left-0 top-8 w-[50px]"
