@@ -3,15 +3,16 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요21.png"; //20, 21
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const sounds = ["/sound/5/119_story-1.mp3", "/sound/5/119_story-2.mp3"];

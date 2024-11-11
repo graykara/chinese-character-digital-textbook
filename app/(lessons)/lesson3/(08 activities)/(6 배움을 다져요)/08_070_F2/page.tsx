@@ -7,15 +7,16 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어226.png";
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어227.png";
 import { StepContainer } from "@/app/components/step-container";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (

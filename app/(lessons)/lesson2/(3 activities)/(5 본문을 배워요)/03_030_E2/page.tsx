@@ -9,7 +9,7 @@ import IMAGE5 from "./image5.png";
 import IMAGE6 from "./image6.png";
 import IMAGE7 from "./image7.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -21,9 +21,10 @@ import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자25.png";
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자27.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);

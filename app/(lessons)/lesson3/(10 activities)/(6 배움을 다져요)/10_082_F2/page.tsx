@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import IMAGE3 from "./bg_3.png";
@@ -12,9 +12,10 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const answers = ["배수진을 치고 한나라 군사들이 도망칠 수 없는 상황을 만들어서 전력을 다해 싸우게 한 것이 비결이다."];
   const [showAnswer, setShowAnswer] = useState(false);
   const [value, setValue] = useState("");

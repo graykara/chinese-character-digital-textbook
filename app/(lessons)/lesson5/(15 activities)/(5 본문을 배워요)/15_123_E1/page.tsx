@@ -2,7 +2,7 @@
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
@@ -11,9 +11,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살11
 import BACKGROUND3 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살12.png";
 import BACKGROUND4 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살15.png";
 import { MainContentChineseAndReading } from "@/app/components/main-content/chinese-and-reading";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);

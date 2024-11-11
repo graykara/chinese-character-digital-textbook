@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import IMAGE3 from "./bg_3.png";
@@ -15,9 +15,10 @@ import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

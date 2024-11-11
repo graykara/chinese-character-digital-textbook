@@ -3,15 +3,16 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자23.png";
 import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자24.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);

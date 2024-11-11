@@ -7,13 +7,14 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리26.png";
 import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리27.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const answers1 = ["1", "2", "3", "4", "5", "6", "#내가 먼저 존중하기"];
   const answers2 = ["1", "4", "3", "2", "8", "7", "6", "5", "#입장 바꿔 생각하기\n#존중과 이해"];
   const [showAnswer, setShowAnswer] = useState(false);

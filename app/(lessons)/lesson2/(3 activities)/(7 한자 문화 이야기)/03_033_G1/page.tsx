@@ -4,14 +4,15 @@ import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자35.png";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자36.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);

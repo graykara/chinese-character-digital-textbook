@@ -10,7 +10,7 @@ import IMAGE3 from "./image3-before.png";
 import IMAGE3_AFTER from "./image3-after.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -18,9 +18,10 @@ import { HanjaDropZone } from "@/app/components/drag-and-drop/hanja-drop-zone";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글26.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {

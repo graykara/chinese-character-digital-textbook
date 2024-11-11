@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
@@ -13,9 +13,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/10/중등한무�
 import BACKGROUND2 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어25.png";
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const answers1 = ["은", "은혜", "선", "좋다", "결", "맺다"];
   const answers2 = ["보", "갚다", "익", "더욱", "호", "호랑이", "성", "이루다"];
   const [showAnswer, setShowAnswer] = useState(false);

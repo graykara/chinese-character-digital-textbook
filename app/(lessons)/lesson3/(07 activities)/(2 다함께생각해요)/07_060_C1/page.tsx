@@ -5,7 +5,7 @@ import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SmartButton } from "@/app/components/buttons/smart-button";
@@ -15,9 +15,10 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어12.png";
 import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어13.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

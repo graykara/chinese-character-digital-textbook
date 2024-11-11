@@ -4,16 +4,17 @@ import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { StepContainer } from "@/app/components/step-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자4.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showAnswer, setShowAnswer] = useState(false);
   const answer1 = ["불", "물", "사람", "문", "비"];

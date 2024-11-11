@@ -5,7 +5,7 @@ import IMAGE1 from "./bg_1-2.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
 import { DndProvider } from "react-dnd";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -16,9 +16,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만�
 import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕23.png";
 import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
 import { DraggableCard } from "@/app/components/new-drag-and-drop/draggable-card";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

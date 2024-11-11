@@ -4,7 +4,7 @@ import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./bgTextArea.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -14,9 +14,10 @@ import { StepContainer } from "@/app/components/step-container";
 import { TitleContainer } from "@/app/components/title-container";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { SmartButton } from "@/app/components/buttons/smart-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (

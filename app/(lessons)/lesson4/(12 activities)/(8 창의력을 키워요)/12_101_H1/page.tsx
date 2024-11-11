@@ -6,14 +6,15 @@ import IMAGE2 from "./image2.png";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { TitleContainer } from "@/app/components/title-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글31.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글32.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

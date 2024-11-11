@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
@@ -15,9 +15,10 @@ import { Howl } from "howler";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자30.png";
 import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자31.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {

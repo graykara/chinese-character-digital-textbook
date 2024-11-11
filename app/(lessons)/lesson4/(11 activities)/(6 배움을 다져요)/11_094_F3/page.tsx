@@ -5,15 +5,16 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리30.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const sounds = [
     "/sound/4/p094_word000.mp3", //거언0

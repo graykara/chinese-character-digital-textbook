@@ -3,7 +3,7 @@
 import { ExerciseHeader2 } from "@/app/components/exercise-header";
 import { Header } from "../assets/header";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import IMAGE1 from "./image1.png";
@@ -18,9 +18,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어2
 import BACKGROUND3 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어24.png";
 import BACKGROUND4 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어25.png";
 import BACKGROUND5 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어26.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const quizes = [
     {

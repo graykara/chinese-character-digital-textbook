@@ -5,16 +5,17 @@ import IMAGE1 from "./bg_2.png";
 import IMAGE2 from "./bg_3.png";
 import IMAGE3 from "./bg_4.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어22.png";
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어23.png";
 import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어24.png";
 import { StepContainer } from "@/app/components/step-container";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

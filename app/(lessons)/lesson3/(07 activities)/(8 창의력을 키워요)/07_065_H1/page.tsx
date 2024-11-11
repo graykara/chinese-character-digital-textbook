@@ -2,16 +2,17 @@
 
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import IMAGE from "./image.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { TitleContainer } from "@/app/components/title-container";
 import { ContentContainer } from "@/app/components/content-container";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   useEffect(() => {
     setShowAnswer(false);

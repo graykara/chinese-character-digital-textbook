@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -12,9 +12,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살4.
 import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살5.png";
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

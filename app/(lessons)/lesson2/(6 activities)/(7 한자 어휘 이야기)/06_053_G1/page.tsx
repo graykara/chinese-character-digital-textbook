@@ -3,7 +3,7 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -11,9 +11,10 @@ import IMAGE3 from "./image3.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘19.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘20.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const sound = [
     {
       text: "둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를 단어의 짜임이라고 한다.",

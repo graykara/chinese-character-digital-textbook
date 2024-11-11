@@ -5,7 +5,7 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE2_AFTER from "./image2-after.png";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘25.png";
@@ -16,9 +16,10 @@ import {
   TextareaWithPen,
 } from "@/app/components/textarea/textarea-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

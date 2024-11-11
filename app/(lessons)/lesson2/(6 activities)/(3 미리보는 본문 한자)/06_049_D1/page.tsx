@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import IMAGE1 from "./image1.png";
@@ -14,9 +14,10 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘4.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘5.png";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showAnswer, setShowAnswer] = useState(false);
   const sounds = [

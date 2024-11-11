@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
@@ -11,9 +11,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어122.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

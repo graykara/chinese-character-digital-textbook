@@ -2,7 +2,7 @@
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
@@ -10,9 +10,10 @@ import { MainContentChineseAndReading } from "@/app/components/main-content/chin
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭6.png";
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭9.png";
 import BACKGROUND3 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭14.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);

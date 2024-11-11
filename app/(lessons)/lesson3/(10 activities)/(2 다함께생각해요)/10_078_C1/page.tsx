@@ -18,13 +18,14 @@ import RESULT3 from "./results3.png";
 import RESULT4 from "./results4.png";
 import RESULT5 from "./results5.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어22.png";
 import { StepContainer } from "@/app/components/step-container";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

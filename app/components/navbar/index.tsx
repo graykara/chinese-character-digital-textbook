@@ -76,7 +76,7 @@ export const Navbar = () => {
   }, [selectedLesson, selectedChapter]);
 
 
-  console.log(subChapters);
+  // console.log(subChapters);
 
   return (
     <>

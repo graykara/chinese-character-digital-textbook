@@ -19,7 +19,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("활동하기");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>

@@ -20,7 +20,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("모르는 한자는 어떻게 찾을까?");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);

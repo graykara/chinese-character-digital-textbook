@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE1_after from "./bg_1_after.png";
 import IMAGE2 from "./bg_2.png";
@@ -15,9 +15,10 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살19.png";
 import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살20.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (

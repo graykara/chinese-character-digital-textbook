@@ -7,16 +7,17 @@ import THUMBNAIL1 from "./thumbnail1.png";
 import THUMBNAIL2 from "./thumbnail2.png";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import TEXTAREA from "./bgTextArea1.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ExerciseHeader } from "@/app/components/exercise-header";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ContentContainer } from "@/app/components/content-container";
 import ROBOT from "./robot.png";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어8.png"
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const answer1 = "비가 올 때.";
   const answer2 = "연달아 우승을 함.";

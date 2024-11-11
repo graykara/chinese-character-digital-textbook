@@ -2,33 +2,39 @@
 
 import { useContext, useEffect } from "react";
 import { PageInfoContext } from "../utils/page-info";
+import { usePathname } from "next/navigation";
 
 export const RightTopStepContainer = ({
   maxStep,
-  step,
-  onStepChange,
+  // step,
+  // onStepChange,
   className = "",
 }: {
   maxStep: number;
-  step: number;
-  onStepChange: (step: number) => void;
+  // step: number;
+  // onStepChange: (step: number) => void;
   className?: string;
 }) => {
-  const { currentStep, setCurrentStep, setMaxStep } =
+  const { currentStep, setCurrentStep, setMaxStep, navigationDirection } =
     useContext(PageInfoContext);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setCurrentStep(1);
+    if (navigationDirection === "prev") {
+      setCurrentStep(maxStep);
+    } else {
+      setCurrentStep(1);
+    }
     setMaxStep(maxStep);
-  }, [maxStep]);
+  }, [maxStep, navigationDirection, pathname]);
 
-  useEffect(() => {
-    onStepChange(currentStep);
-  }, [currentStep]);
+  // useEffect(() => {
+  //   onStepChange(currentStep);
+  // }, [currentStep]);
 
-  useEffect(() => {
-    setCurrentStep(step);
-  }, [step]);
+  // useEffect(() => {
+  //   setCurrentStep(step);
+  // }, [step]);
 
   return (
     <nav
@@ -37,10 +43,9 @@ export const RightTopStepContainer = ({
       {Array.from({ length: maxStep }).map((_, index) => (
         <button
           key={index}
-          onClick={() => onStepChange(index + 1)}
-          className={`w-[55px] h-[55px] rounded-full text-white text-[40px] font-bold ${
-            step === index + 1 ? "bg-[#edc34f]" : "bg-[#a6a6a6]"
-          }`}
+          onClick={() => setCurrentStep(index + 1)}
+          className={`w-[55px] h-[55px] rounded-full text-white text-[40px] font-bold ${currentStep === index + 1 ? "bg-[#edc34f]" : "bg-[#a6a6a6]"
+            }`}
         >
           {index + 1}
         </button>

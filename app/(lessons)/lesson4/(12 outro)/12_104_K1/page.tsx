@@ -34,7 +34,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("문제 풀기");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   const questions = [

@@ -6,53 +6,58 @@ import CAN_PRESS_LEFT from "./left-button-can-press.png";
 import CAN_PRESS_RIGHT from "./right-button-can-press.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const StepContainerArrow = ({
-  step,
+  // step,
   maxStep,
-  onStepChange,
+  // onStepChange,
   className = "",
 }: {
-  step: number;
+  // step: number;
   maxStep: number;
-  onStepChange: (step: number) => void;
+  // onStepChange: (step: number) => void;
   className?: string;
 }) => {
-  const { currentStep, setCurrentStep, setMaxStep } =
+  const { currentStep, setCurrentStep, setMaxStep, navigationDirection } =
     useContext(PageInfoContext);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setCurrentStep(1);
+    if (navigationDirection === "prev") {
+      setCurrentStep(maxStep);
+    } else {
+      setCurrentStep(1);
+    }
     setMaxStep(maxStep);
-  }, [maxStep]);
+  }, [maxStep, navigationDirection, pathname]);
 
-  useEffect(() => {
-    onStepChange(currentStep);
-  }, [currentStep]);
+  // useEffect(() => {
+  //   onStepChange(currentStep);
+  // }, [currentStep]);
 
-  useEffect(() => {
-    setCurrentStep(step);
-  }, [step]);
+  // useEffect(() => {
+  //   setCurrentStep(step);
+  // }, [step]);
 
   return (
     <nav className={`flex justify-center gap-6 ${className}`}>
-      <button onClick={() => onStepChange(step - 1)} disabled={step <= 1}>
-        <img src={step <= 1 ? LEFT.src : CAN_PRESS_LEFT.src} alt="left" />
+      <button onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep <= 1}>
+        <img src={currentStep <= 1 ? LEFT.src : CAN_PRESS_LEFT.src} alt="left" />
       </button>
       <div className="flex items-center gap-5">
         {Array.from({ length: maxStep }).map((_, index) => (
           <button
             key={index}
-            onClick={() => onStepChange(index + 1)}
-            className={`w-6 h-6 m-1 rounded-full ${
-              step === index + 1 ? "bg-[#2d6879]" : "bg-[#bcbac4]"
-            }`}
+            onClick={() => setCurrentStep(index + 1)}
+            className={`w-6 h-6 m-1 rounded-full ${currentStep === index + 1 ? "bg-[#2d6879]" : "bg-[#bcbac4]"
+              }`}
           />
         ))}
       </div>
-      <button onClick={() => onStepChange(step + 1)} disabled={step >= maxStep}>
+      <button onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep >= maxStep}>
         <img
-          src={step >= maxStep ? RIGHT.src : CAN_PRESS_RIGHT.src}
+          src={currentStep >= maxStep ? RIGHT.src : CAN_PRESS_RIGHT.src}
           alt="right"
         />
       </button>
