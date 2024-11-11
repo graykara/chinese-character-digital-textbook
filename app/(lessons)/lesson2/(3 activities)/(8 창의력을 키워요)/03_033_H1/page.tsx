@@ -62,7 +62,7 @@ export default function Page() {
         answer="우"
         showAnswer={showAnswer}
         className="text-[50px] text-center w-[100px] bg-transparent"
-        penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[30px]"
+        penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[25px]"
         containerClassName="absolute bottom-[70px] left-[500px]"
         isExample
       />
@@ -70,7 +70,7 @@ export default function Page() {
         answer="폭우"
         showAnswer={showAnswer}
         className="text-[50px] text-center w-[100px] bg-transparent"
-        penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[30px]"
+        penClassName="left-1/2 -translate-x-1/2 w-[60px] top-[25px]"
         containerClassName="absolute bottom-[70px] left-[675px]"
         isExample
       />

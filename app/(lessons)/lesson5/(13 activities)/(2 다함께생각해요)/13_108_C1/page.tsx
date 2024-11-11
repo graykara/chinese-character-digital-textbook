@@ -60,7 +60,7 @@ const Step2 = () => {
           answer={answer}
           showAnswer={showAnswer}
           containerClassName={`absolute resize-none w-[1000px] left-[260px] top-[370px] px-8 text-[45px] leading-[64px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
-          penClassName="h-[54px] top-[370px] left-[260px]"
+          penClassName="h-[50px] top-[375px] left-[260px]"
           rows={4}
         />
 

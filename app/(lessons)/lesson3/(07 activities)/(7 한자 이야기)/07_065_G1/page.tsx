@@ -30,7 +30,7 @@ export default function Page() {
       )}
 
       <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
+      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );
 }
@@ -114,7 +114,7 @@ const Step1 = () => {
           </div>
 
           <AdditionalButton
-            className="absolute left-[1100px] -top-[10px] w-10 h-10"
+            className="absolute left-[1105px] -top-[5px] w-10 h-10 opacity-65"
             additional={
               <p>
                 •<span className="font-haeseo">千里馬</span>
@@ -124,7 +124,7 @@ const Step1 = () => {
             }
           />
           <AdditionalButton
-            className="absolute left-[930px] top-[73px] w-10 h-10"
+            className="absolute left-[935px] top-[73px] w-10 h-10 opacity-65"
             additional={
               <p>
                 •<span className="font-haeseo">天馬</span>

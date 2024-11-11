@@ -67,7 +67,7 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const answer = "풍전등화(風前燈火)";
+  const answer = '풍전등화(<span className="font-haeseo">風前燈火</span>)';
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
@@ -90,7 +90,7 @@ const Step2 = () => {
 };
 
 const Step3 = () => {
-  const answer = "우이독경(牛耳讀經)";
+  const answer = '우이독경(<span className="font-haeseo">牛耳讀經</span>)';
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>

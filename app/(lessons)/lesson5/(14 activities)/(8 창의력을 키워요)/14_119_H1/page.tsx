@@ -44,8 +44,8 @@ export default function Page() {
         <TextareaWithPen
           answer={answers[1]}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[320px] left-[570px] top-[280px] text-[40px] leading-[63px] tracking-tighter break-keep bg-transparent pl-6 mb-1  ${showAnswer ? "text-example" : ""}`}
-          penClassName="h-[50px] top-[280px] left-[585px]"
+          containerClassName={`absolute resize-none w-[320px] left-[572px] top-[280px] text-[40px] leading-[63px] tracking-tighter break-keep bg-transparent pl-6 mb-1  ${showAnswer ? "text-example" : ""}`}
+          penClassName="h-[50px] top-[280px] left-[587px]"
           rows={6}
         />
         <TextareaWithPen

@@ -48,30 +48,30 @@ const Step1 = () => {
           answer={answer[0]}
           showAnswer={showAnswer}
           className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
-          penClassName="ml-3 -mt-0 h-[35px]"
-          containerClassName="absolute top-[300px] left-[335px] -mt-1"
+          penClassName="ml-[9px] -mt-0 h-[35px]"
+          containerClassName="absolute top-[300px] left-[337px] -mt-1"
         />
         <InputWithPen
           answer={answer[1]}
           showAnswer={showAnswer}
           className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
-          penClassName="ml-3 -mt-0 h-[35px]"
-          containerClassName="absolute top-[300px] left-[395px] -mt-1"
+          penClassName="ml-[9px] -mt-0 h-[35px]"
+          containerClassName="absolute top-[300px] left-[396px] -mt-1"
         />
 
         <InputWithPen
           answer={answer[2]}
           showAnswer={showAnswer}
           className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
-          penClassName="ml-3 -mt-0 h-[35px]"
-          containerClassName="absolute top-[315px] left-[852px] -mt-1"
+          penClassName="ml-[9px] -mt-0 h-[35px]"
+          containerClassName="absolute top-[315px] left-[855px] -mt-[5px]"
         />
         <InputWithPen
           answer={answer[3]}
           showAnswer={showAnswer}
           className={`text-[40px] text-center tracking-tighter w-[50px] mt-1 bg-transparent`}
-          penClassName="ml-3 -mt-0 h-[35px]"
-          containerClassName="absolute top-[315px] left-[912px] -mt-1"
+          penClassName="ml-[9px] -mt-0 h-[35px]"
+          containerClassName="absolute top-[315px] left-[912px] -mt-[5px]"
         />
       </ContentContainer>
       <CheckAnswerButton
@@ -100,7 +100,7 @@ const Step2 = () => {
             answer={answer[0]}
             showAnswer={showAnswer}
             className="text-[38px] w-[1000px] h-[80px] tracking-tighter bg-transparent"
-            penClassName="left-0 -mt-2 h-[50px]"
+            penClassName="h-[50px]"
             containerClassName="absolute top-[35px] left-[346px]"
             isExample
           />
@@ -108,7 +108,7 @@ const Step2 = () => {
             answer={answer[1]}
             showAnswer={showAnswer}
             className="text-[38px] w-[1178px] h-[80px] tracking-tighter bg-transparent"
-            penClassName="left-0 -mt-2 h-[50px]"
+            penClassName="h-[50px]"
             containerClassName="absolute top-[155px] left-[168px]"
             isExample
           />

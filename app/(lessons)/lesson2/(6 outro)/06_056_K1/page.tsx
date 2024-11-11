@@ -212,7 +212,7 @@ const Question4 = ({ showAnswer }: { showAnswer: boolean }) => {
         <InputWithPen
           showAnswer={showAnswer}
           answer="林"
-          className="font-haeseo bg-transparent text-center w-[80px] h-[80px] relative -top-1"
+          className="font-haeseo bg-transparent text-center w-[75px] h-[75px] relative"
           containerClassName="relative border-[3px] border-[#c4c4c5] rounded-lg w-[80px] h-[80px]"
           penClassName="left-1/2 -translate-x-1/2 w-[50px] -mt-2"
         />{" "}
@@ -223,7 +223,7 @@ const Question4 = ({ showAnswer }: { showAnswer: boolean }) => {
         <InputWithPen
           showAnswer={showAnswer}
           answer="民"
-          className="font-haeseo bg-transparent text-center w-[80px] h-[80px] relative -top-1"
+          className="font-haeseo bg-transparent text-center w-[75px] h-[75px] relative"
           containerClassName="relative border-[3px] border-[#c4c4c5] rounded-lg w-[80px] h-[80px]"
           penClassName="left-1/2 -translate-x-1/2 w-[50px] -mt-2"
         />

@@ -2,15 +2,16 @@
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
 import { useState } from "react";
-import IMAGE1_BEFORE from "./image1-before.png";
-import IMAGE1_AFTER from "./image1-after.png";
+import IMAGE from "./image.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자20.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
+  const answers = ["問", "林", "好", "名", "明"];
 
   const characters = [
     "日",
@@ -52,11 +53,7 @@ export default function Page() {
 
       <ContentContainer className="!justify-start -top-16 -left-5">
         <div className="relative">
-          {showAnswer ? (
-            <img src={IMAGE1_AFTER.src} />
-          ) : (
-            <img src={IMAGE1_BEFORE.src} />
-          )}
+          <img src={IMAGE.src} />
 
           <div className="absolute left-[25px] -top-[10px] grid grid-cols-5 gap-x-[95px] gap-y-[305px]">
             {sounds.map((sound, index) => (
@@ -71,6 +68,44 @@ export default function Page() {
               </button>
             ))}
           </div>
+
+          <InputWithPen
+            answer={answers[0]}
+            showAnswer={showAnswer}
+            className="text-center w-[80px] h-[80px] mt-0 bg-transparent"
+            penClassName="left-4 h-[45px]"
+            containerClassName="absolute top-[420px] left-[60px] font-haeseo text-[80px]"
+          />
+          <InputWithPen
+            answer={answers[1]}
+            showAnswer={showAnswer}
+            className="text-center w-[80px] h-[80px] mt-0 bg-transparent"
+            penClassName="left-4 h-[45px]"
+            containerClassName="absolute top-[420px] left-[280px] font-haeseo text-[80px]"
+          />
+          <InputWithPen
+            answer={answers[2]}
+            showAnswer={showAnswer}
+            className="text-center w-[80px] h-[80px] mt-0 bg-transparent"
+            penClassName="left-4 h-[45px]"
+            containerClassName="absolute top-[420px] left-[503px] font-haeseo text-[80px]"
+          />
+          <InputWithPen
+            answer={answers[3]}
+            showAnswer={showAnswer}
+            className="text-center w-[80px] h-[80px] mt-0 bg-transparent"
+            penClassName="left-4 h-[45px]"
+            containerClassName="absolute top-[420px] left-[722px] font-haeseo text-[80px]"
+          />
+          <InputWithPen
+            answer={answers[4]}
+            showAnswer={showAnswer}
+            className="text-center w-[80px] h-[80px] mt-0 bg-transparent"
+            penClassName="left-4 h-[45px]"
+            containerClassName="absolute top-[420px] left-[942px] font-haeseo text-[80px]"
+          />
+
+
         </div>
       </ContentContainer>
 

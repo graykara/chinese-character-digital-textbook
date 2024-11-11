@@ -50,8 +50,8 @@ const Step1 = () => {
           answer={answers[0]}
           showAnswer={showAnswer}
           className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
-          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
-          containerClassName="absolute resize-none left-[275px] bottom-[165px]"
+          penClassName="h-[50px] top-[33px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[274px] bottom-[168px]"
           isExample
         />
 
@@ -59,8 +59,8 @@ const Step1 = () => {
           answer={answers[1]}
           showAnswer={showAnswer}
           className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
-          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
-          containerClassName="absolute resize-none left-[525px] bottom-[165px]"
+          penClassName="h-[50px] top-[33px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[526px] bottom-[168px]"
           isExample
         />
 
@@ -68,8 +68,8 @@ const Step1 = () => {
           answer={answers[2]}
           showAnswer={showAnswer}
           className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
-          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
-          containerClassName="absolute resize-none left-[775px] bottom-[165px]"
+          penClassName="h-[50px] top-[33px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[780px] bottom-[168px]"
           isExample
         />
 
@@ -77,8 +77,8 @@ const Step1 = () => {
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-center w-[195px] text-[50px] tracking-tighter bg-transparent "
-          penClassName="h-[50px] top-[30px] left-1/2 -translate-x-1/2"
-          containerClassName="absolute resize-none left-[1025px] bottom-[165px]"
+          penClassName="h-[50px] top-[33px] left-1/2 -translate-x-1/2"
+          containerClassName="absolute resize-none left-[1030px] bottom-[168px]"
           isExample
         />
 

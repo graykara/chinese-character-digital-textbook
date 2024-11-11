@@ -73,11 +73,11 @@ const Step1 = () => {
           ></button>
         </header>
 
-        <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-12">
+        <div className="flex gap-5 text-[50px] leading-tight tracking-tight break-keep mt-12">
           <span className="text-[#408ac9] font-bold">1</span>
           빙고 판에 나온 한자 중 과제에 해당하는 한자에 빗금을 친다.
         </div>
-        <div className="flex gap-5 text-[50px] leading-tight tracking-normal break-keep mt-5 -mr-20">
+        <div className="flex gap-5 text-[50px] leading-tight tracking-tight break-keep mt-5 -mr-20">
           <span className="text-[#408ac9] font-bold">2</span>
           모든 과제를 해결하였을 때 빙고 판에 보이는 숫자를 비밀번호 칸에 쓴다.
         </div>

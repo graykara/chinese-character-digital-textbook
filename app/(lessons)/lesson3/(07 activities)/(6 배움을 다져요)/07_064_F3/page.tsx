@@ -107,14 +107,14 @@ export default function Page() {
               <div className="relative left-[105px] top-[40px]">
                 <img src={IMAGE2.src} />
 
-                <div className="absolute left-[180px] top-[150px]">
+                <div className="absolute left-[175px] top-[150px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[3] : droppedHanja[0]}
                     </div>
                   </HanjaDropZone>
                 </div>
-                <div className="absolute left-[350px] top-[150px]">
+                <div className="absolute left-[345px] top-[150px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[1] : droppedHanja[1]}
@@ -127,28 +127,28 @@ export default function Page() {
               <div className="relative left-[105px] top-[40px]">
                 <img src={IMAGE3.src} />
 
-                <div className="absolute left-[180px] top-[150px]">
+                <div className="absolute left-[180px] top-[155px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 0)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[0] : droppedHanja[0]}
                     </div>
                   </HanjaDropZone>
                 </div>
-                <div className="absolute left-[350px] top-[150px]">
+                <div className="absolute left-[345px] top-[155px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 1)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[1] : droppedHanja[1]}
                     </div>
                   </HanjaDropZone>
                 </div>
-                <div className="absolute left-[520px] top-[150px]">
+                <div className="absolute left-[515px] top-[155px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 2)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[0] : droppedHanja[2]}
                     </div>
                   </HanjaDropZone>
                 </div>
-                <div className="absolute left-[690px] top-[150px]">
+                <div className="absolute left-[685px] top-[155px]">
                   <HanjaDropZone onDrop={(fromIndex) => moveCard(fromIndex, 3)}>
                     <div className="w-[110px] h-[110px] flex justify-center items-center font-haeseo text-[80px]">
                       {showAnswer ? hanjaCards[2] : droppedHanja[3]}

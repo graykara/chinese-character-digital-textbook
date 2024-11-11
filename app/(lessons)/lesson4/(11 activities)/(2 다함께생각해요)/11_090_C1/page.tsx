@@ -33,41 +33,41 @@ const Step1 = () => {
           <InputWithPen
             answer={answers[0]}
             showAnswer={showAnswer}
-            className="text-[50px] text-center w-[500px] bg-transparent"
-            penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
-            containerClassName="absolute left-[845px] top-[30px] mt-1 pl-5"
+            className="text-[50px] text-center mt-0.5 w-[500px] bg-transparent"
+            penClassName="left-1/2 -translate-x-1/2 w-[55px] -mt-0.5"
+            containerClassName="absolute left-[825px] top-[27px] mt-1 pl-5"
             isExample
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
-            className="text-[50px] text-center w-[500px] bg-transparent"
-            penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
-            containerClassName="absolute left-[845px] top-[133px] mt-1 pl-5"
+            className="text-[50px] text-center mt-0.5 w-[500px] bg-transparent"
+            penClassName="left-1/2 -translate-x-1/2 w-[55px] -mt-0.5"
+            containerClassName="absolute left-[825px] top-[129px] mt-1 pl-5"
             isExample
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
-            className="text-[50px] text-center w-[500px] bg-transparent"
-            penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
-            containerClassName="absolute left-[845px] top-[234px] mt-1 pl-5"
+            className="text-[50px] text-center mt-0.5 w-[500px] bg-transparent"
+            penClassName="left-1/2 -translate-x-1/2 w-[55px] -mt-0.5"
+            containerClassName="absolute left-[825px] top-[230px] mt-1 pl-5"
             isExample
           />
           <InputWithPen
             answer={answers[3]}
             showAnswer={showAnswer}
-            className="text-[50px] text-center w-[500px] bg-transparent"
-            penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
-            containerClassName="absolute left-[845px] top-[335px] mt-1 pl-5"
+            className="text-[50px] text-center mt-0.5 w-[500px] bg-transparent"
+            penClassName="left-1/2 -translate-x-1/2 w-[55px] -mt-0.5"
+            containerClassName="absolute left-[825px] top-[332px] mt-1 pl-5"
             isExample
           />
           <InputWithPen
             answer={answers[4]}
             showAnswer={showAnswer}
-            className="text-[50px] text-center w-[500px] bg-transparent"
-            penClassName="left-12 -translate-x-1/2 w-[55px] -mt-1 -ml-5"
-            containerClassName="absolute left-[845px] top-[436px] mt-1 pl-5"
+            className="text-[50px] text-center mt-0.5 w-[500px] bg-transparent"
+            penClassName="left-1/2 -translate-x-1/2 w-[55px] -mt-0.5"
+            containerClassName="absolute left-[825px] top-[435px] mt-1 pl-5"
             isExample
           />
         </div>

@@ -51,7 +51,7 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[480px]"
+          containerClassName="absolute top-[150px] left-[478px]"
         />
         <InputWithPen
           answer={answers[1]}
@@ -65,14 +65,14 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[780px]"
+          containerClassName="absolute top-[150px] left-[782px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[930px]"
+          containerClassName="absolute top-[150px] left-[934px]"
         />
       </ContentContainer>
 
@@ -112,7 +112,7 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[480px]"
+          containerClassName="absolute top-[150px] left-[478px]"
         />
         <InputWithPen
           answer={answers[1]}
@@ -126,14 +126,14 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[780px]"
+          containerClassName="absolute top-[150px] left-[782px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[930px]"
+          containerClassName="absolute top-[150px] left-[934px]"
         />
       </ContentContainer>
 

@@ -46,7 +46,7 @@ export default function Page() {
               soundId && sound.stop(soundId);
               setSoundId(sound.play());
             }}
-            className="absolute top-1/2 -translate-y-1/2 left-[280px]"
+            className="absolute top-1/2 -translate-y-1/2 left-[285px]"
           />
         </div>
 

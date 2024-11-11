@@ -5,13 +5,14 @@ import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer2 } from "@/app/components/title-container";
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
-import IMAGE_BEFORE from "./image-before.png";
-import IMAGE_AFTER from "./image-after.png";
+import IMAGE from "./image.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리3.png";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
+  const answers = ["長", "短", "去", "來"];
 
   return (
     <>
@@ -25,11 +26,7 @@ export default function Page() {
       </TitleContainer2>
 
       <ContentContainer className="!justify-start pt-5 left-16">
-        {showAnswer ? (
-          <img src={IMAGE_AFTER.src} alt="" />
-        ) : (
-          <img src={IMAGE_BEFORE.src} alt="" />
-        )}
+        <img src={IMAGE.src} alt="" />
         <div className="absolute left-[250px] top-[75px] grid grid-cols-4 gap-[120px] w-[860px] h-[90px]">
           <button onClick={() => SOUND("/sound/4/p091_word000.mp3").play()}>
           </button>
@@ -38,6 +35,36 @@ export default function Page() {
           <button onClick={() => SOUND("/sound/4/p091_word003.mp3").play()}>
           </button>
         </div>
+
+        <InputWithPen
+          answer={answers[0]}
+          showAnswer={showAnswer}
+          className="text-center w-[120px] h-[120px] mt-4 bg-transparent"
+          penClassName="left-[33px] top-[75px] h-[55px]"
+          containerClassName="absolute top-[435px] left-[340px] font-haeseo text-[75px]"
+        />
+        <InputWithPen
+          answer={answers[1]}
+          showAnswer={showAnswer}
+          className="text-center w-[120px] h-[120px] mt-4 bg-transparent"
+          penClassName="left-[33px] top-[75px] h-[55px]"
+          containerClassName="absolute top-[435px] left-[444px] font-haeseo text-[75px]"
+        />
+
+        <InputWithPen
+          answer={answers[2]}
+          showAnswer={showAnswer}
+          className="text-center w-[120px] h-[120px] mt-4 bg-transparent"
+          penClassName="left-[33px] top-[75px] h-[55px]"
+          containerClassName="absolute top-[435px] left-[1062px] font-haeseo text-[75px]"
+        />
+        <InputWithPen
+          answer={answers[3]}
+          showAnswer={showAnswer}
+          className="text-center w-[120px] h-[120px] mt-4 bg-transparent"
+          penClassName="left-[33px] top-[75px] h-[55px]"
+          containerClassName="absolute top-[435px] left-[1166px] font-haeseo text-[75px]"
+        />
       </ContentContainer>
 
       <CheckAnswerButton

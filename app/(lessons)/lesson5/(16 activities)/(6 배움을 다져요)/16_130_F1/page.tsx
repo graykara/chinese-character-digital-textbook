@@ -92,7 +92,7 @@ const Step1 = () => {
         </div>
 
         <div className={showAnswer ? "text-answer" : ""}>
-          <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[0px] left-[475px] top-[230px]">
+          <div className="absolute w-[950px] grid grid-cols-5 gap-[48px] pt-[0px] left-[480px] top-[235px]">
             {!showAnswer ? (
               <>
                 <DropZone className="w-[150px] h-[145px] flex justify-center items-center font-haeseo text-[110px]" />
@@ -161,22 +161,22 @@ const Step2 = () => {
           answer={answers[1]}
           showAnswer={showAnswer}
           className={`text-[55px] text-center w-[200px] bg-transparent ${showAnswer ? "text-example" : ""}`}
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[455px] left-[320px]"
+          penClassName="left-1/2 -translate-x-1/2 -mt-1"
+          containerClassName="absolute top-[450px] left-[325px]"
         />
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
           className={`text-[55px] text-center w-[200px] bg-transparent ${showAnswer ? "text-example" : ""}`}
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[455px] left-[660px]"
+          penClassName="left-1/2 -translate-x-1/2 -mt-1"
+          containerClassName="absolute top-[450px] left-[660px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className={`text-[55px] text-center w-[200px] bg-transparent ${showAnswer ? "text-example" : ""}`}
-          penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[455px] left-[990px]"
+          penClassName="left-1/2 -translate-x-1/2 -mt-1"
+          containerClassName="absolute top-[450px] left-[990px]"
         />
       </ContentContainer>
       <ExampleAnswerButton

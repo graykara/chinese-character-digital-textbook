@@ -36,7 +36,7 @@ export const SelectionQuiz = ({
           onClick={() => handleSelection(index + 1)}
         >
           <div
-            className={`flex-none w-14 h-14 rounded-full text-white flex justify-center items-center ${showAnswer && answers.includes(index + 1) ? "bg-answer" : !showAnswer && selectedOptions.includes(index + 1) ? "bg-example" : "bg-[#5c94ae]"}`}
+            className={`flex-none w-14 h-14 rounded-full text-white flex justify-center items-center text-[40px] ${showAnswer && answers.includes(index + 1) ? "bg-answer" : !showAnswer && selectedOptions.includes(index + 1) ? "bg-example" : "bg-[#5c94ae]"}`}
           >
             {index + 1}
           </div>

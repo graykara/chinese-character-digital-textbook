@@ -438,14 +438,14 @@ const Question9 = () => {
               className="w-[1200px] bg-transparent
               text-[55px] tracking-tighter"
               penClassName="-mt-3"
-              containerClassName="absolute left-[150px] top-[-15px]"
+              containerClassName="absolute left-[150px] top-[-17px]"
             />
             <InputWithPen
               answer="사람과 만물은 모두 함께 어울려 상생하는 관계여야 한다.​"
               showAnswer={showAnswer}
               className="w-[1200px] bg-transparent text-[55px] tracking-tighter"
               penClassName="-mt-3"
-              containerClassName="absolute left-[150px] top-[135px]"
+              containerClassName="absolute left-[150px] top-[132px]"
             />
           </div>
         </div>
