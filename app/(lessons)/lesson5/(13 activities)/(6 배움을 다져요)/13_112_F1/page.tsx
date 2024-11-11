@@ -32,7 +32,7 @@ const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer1 = "누런 소가 더 일을 잘합니다";
   const answer2 =
-    "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다.";
+    "누런 소가 나으면 저 소가 못한 것이 되는데 아무리 가축이라도 이 말을 듣게 되면 불평하는 마음이 생길 것 같아 그랬습니다";
 
   return (
     <>
@@ -59,8 +59,8 @@ const Step1 = () => {
         <TextareaWithPen
           answer={answer2}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[920px] left-[365px] top-[430px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[50px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
-          penClassName="h-[52px] top-[420px] left-[365px]"
+          containerClassName={`absolute resize-none w-[920px] left-[365px] top-[428px] pt-1 ml-5 text-[40px] tracking-tighter break-keep leading-[53px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[52px] top-[422px] left-[367px]"
           rows={2}
         />
       </ContentContainer>
@@ -78,15 +78,14 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const [isImageVisible1, setIsImageVisible1] = useState(false);
-  const [isImageVisible2, setIsImageVisible2] = useState(false);
-  const [isImageVisible3, setIsImageVisible3] = useState(false);
-  const [isImageVisible4, setIsImageVisible4] = useState(false);
-  const [isImageVisible5, setIsImageVisible5] = useState(false);
-  const [isImageVisible6, setIsImageVisible6] = useState(false);
-  const [isImageVisible7, setIsImageVisible7] = useState(false);
-  const [isImageVisible8, setIsImageVisible8] = useState(false);
-  const [isImageVisible9, setIsImageVisible9] = useState(false);
+  const [group1, setGroup1] = useState([false, false, false]);
+  const [group2, setGroup2] = useState([false, false, false]);
+  const [group3, setGroup3] = useState([false, false, false]);
+
+  const handleClick = (group, setGroup, index) => {
+    clickSound.play();
+    setGroup(group.map((_, i) => i === index));
+  }
 
   return (
     <>
@@ -103,89 +102,62 @@ const Step2 = () => {
         <div className="absolute top-[57px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible1(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group1, setGroup1, 0)}
           >
-            <img src={isImageVisible1 ? CHECK.src : ""} />
+            <img src={group1[0] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible2(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group1, setGroup1, 1)}
           >
-            <img src={isImageVisible2 ? CHECK.src : ""} />
+            <img src={group1[1] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible3(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group1, setGroup1, 2)}
           >
-            <img src={isImageVisible3 ? CHECK.src : ""} />
+            <img src={group1[2] ? CHECK.src : ""} />
           </button>
 
         </div>
         <div className="absolute top-[140px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible4(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group2, setGroup2, 0)}
           >
-            <img src={isImageVisible4 ? CHECK.src : ""} />
+            <img src={group2[0] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible5(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group2, setGroup2, 1)}
           >
-            <img src={isImageVisible5 ? CHECK.src : ""} />
+            <img src={group2[1] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible6(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group2, setGroup2, 2)}
           >
-            <img src={isImageVisible6 ? CHECK.src : ""} />
+            <img src={group2[2] ? CHECK.src : ""} />
           </button>
         </div>
         <div className="absolute top-[223px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
         <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible7(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group3, setGroup3, 0)}
           >
-            <img src={isImageVisible7 ? CHECK.src : ""} />
+            <img src={group3[0] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible8(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group3, setGroup3, 1)}
           >
-            <img src={isImageVisible8 ? CHECK.src : ""} />
+            <img src={group3[1] ? CHECK.src : ""} />
           </button>
           <button
             className="w-[270px] justify-items-center"
-            onClick={() => {
-              clickSound.play();
-              setIsImageVisible9(prevState => !prevState);
-            }}
+            onClick={() => handleClick(group3, setGroup3, 2)}
           >
-            <img src={isImageVisible9 ? CHECK.src : ""} />
+            <img src={group3[2] ? CHECK.src : ""} />
           </button>
         </div>
       </ContentContainer >
