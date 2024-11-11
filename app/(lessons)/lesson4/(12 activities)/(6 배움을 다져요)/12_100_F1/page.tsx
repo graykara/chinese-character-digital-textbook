@@ -27,7 +27,7 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

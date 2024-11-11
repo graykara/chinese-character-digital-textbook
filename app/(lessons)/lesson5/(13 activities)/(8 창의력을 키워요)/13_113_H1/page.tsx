@@ -2,13 +2,10 @@
 
 import IMAGE from "./image.png";
 import IMAGE_BUTTON from "./button.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { InputWithPen } from "@/app/components/input-with-pen";
-import { TitleContainer } from "@/app/components/title-container";
-import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
 import { GroupButton } from "@/app/components/buttons/group-button";
 import { clickSound } from "@/app/utils/click-sound";
@@ -32,7 +29,7 @@ export default function Page() {
         </div>
       </CreativityPageTemplate>
 
-{/* 
+      {/* 
 for sounds
 1: /sound/5/113-i-1.mp3 - autoplay
 2: /sound/5/113-i-2.mp3 - play after 1

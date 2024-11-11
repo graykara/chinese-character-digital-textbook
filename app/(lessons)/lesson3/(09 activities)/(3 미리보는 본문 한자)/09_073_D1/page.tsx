@@ -18,10 +18,10 @@ import { PageInfoContext } from "@/app/utils/page-info";
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [showAnswer, setShowAnswer] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setShowAnswer(false);
+    setShowAnswer(null);
   }, [step]);
 
   return (
@@ -142,7 +142,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
     </>
   );
 }

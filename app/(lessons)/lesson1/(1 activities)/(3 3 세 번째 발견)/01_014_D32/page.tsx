@@ -23,7 +23,7 @@ export default function Page() {
         {step === 2 ? <VideoThumbnail_big thumbnail={IMAGE2.src} video="/video/animation/1-1_14-2.mp4" /> : null}
       </ContentContainer>
 
-      <StepContainer step={step} maxStep={2} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

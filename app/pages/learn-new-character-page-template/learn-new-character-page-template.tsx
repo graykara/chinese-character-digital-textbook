@@ -152,7 +152,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
       <StepContainerArrow
         maxStep={pages}
         step={step}
-        onStepChange={setStep}
+       
         className="absolute w-full bottom-[5px] mb-0"
       />
     </div>

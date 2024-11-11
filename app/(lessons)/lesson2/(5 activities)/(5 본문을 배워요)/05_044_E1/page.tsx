@@ -25,14 +25,14 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showReading2, setShowReading2] = useState(false);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
   const video = "string";
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowReading2(false);
     setShowMeaning2(false);
   }, [step]);
@@ -200,7 +200,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} />
 
         <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
           <div className="relative mb-[260px]">

@@ -21,12 +21,12 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowResource(false);
   }, [step]);
 
@@ -276,7 +276,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={6} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={6} />
 
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />

@@ -6,30 +6,14 @@ import { usePathname } from "next/navigation";
 
 export const RightTopStepContainer = ({
   maxStep,
-  // step,
-  // onStepChange,
   className = "",
 }: {
   maxStep: number;
-  // step: number;
-  // onStepChange: (step: number) => void;
   className?: string;
 }) => {
   const { currentStep, setCurrentStep, setMaxStep, navigationDirection } =
     useContext(PageInfoContext);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setMaxStep(maxStep);
-  }, [maxStep, pathname]);
-
-  // useEffect(() => {
-  //   onStepChange(currentStep);
-  // }, [currentStep]);
-
-  // useEffect(() => {
-  //   setCurrentStep(step);
-  // }, [step]);
+  setMaxStep(maxStep)
 
   return (
     <nav

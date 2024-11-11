@@ -22,7 +22,7 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

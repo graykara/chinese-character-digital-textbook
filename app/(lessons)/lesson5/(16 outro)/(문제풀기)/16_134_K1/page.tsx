@@ -56,7 +56,7 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={10}
         step={step}
-        onStepChange={setStep}
+       
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate

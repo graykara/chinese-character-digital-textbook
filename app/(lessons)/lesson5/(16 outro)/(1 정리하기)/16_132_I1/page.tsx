@@ -26,7 +26,7 @@ export default function Page() {
           {step === 4 && <Step4 />}
         </div>
       </SummaryPageTemplate>
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
       <img src={
         step === 1 ? BACKGROUND1.src :
         step === 2 ? BACKGROUND2.src :

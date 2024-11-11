@@ -37,7 +37,7 @@ export default function Page() {
           {step === 1 ? <Question1 showAnswer={showAnswer} /> : null}
           {step === 2 ? <Question2 showAnswer={showAnswer} /> : null}
           {step === 3 ? <Question3 showAnswer={showAnswer} /> : null}
-          <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+          <StepContainer maxStep={3} />
         </div>
       </SolveProblemPageTemplate>
 

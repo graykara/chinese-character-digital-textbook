@@ -29,7 +29,7 @@ export default function Page() {
           {step === 2 ? <Content2 /> : null}
           {step === 3 ? <Content3 /> : null}
           <div className="fixed bottom-0">
-            <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+            <StepContainer maxStep={3} />
           </div>
         </div>
       </ActivityPageTemplate>

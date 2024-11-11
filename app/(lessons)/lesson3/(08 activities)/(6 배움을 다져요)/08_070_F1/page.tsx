@@ -38,7 +38,7 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
-      <StepContainer step={step} maxStep={3} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
     </>
   );
 }

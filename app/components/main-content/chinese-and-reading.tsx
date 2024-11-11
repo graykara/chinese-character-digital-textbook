@@ -23,7 +23,7 @@ type Data = {
 interface Props {
   data: Data;
   showReading: boolean;
-  showMeaning: boolean;
+  showMeaning: boolean | null;
   setShowReading: (value: boolean) => void;
   setShowMeaning: (value: boolean) => void;
 }
@@ -132,14 +132,14 @@ export const MainContentChineseAndReading = ({
       </div>
       <div className="grid grid-cols-[180px__1300px] gap-10 mt-12">
         <PillButton
-          active={showMeaning}
+          active={showMeaning || false}
           onClick={() => setShowMeaning(!showMeaning)}
           text="풀이"
           checkboxColor="#306875"
           backgroundColor="#4f9aab"
         />
         <div>
-          {flippableCardData ? (
+          {flippableCardData || showMeaning === null ? (
             <div>{content ?? null}</div>
           ) : (
             <div

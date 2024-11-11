@@ -115,7 +115,7 @@ export default function Page() {
         </div>
       </ContentContainer>
 
-      <StepContainer step={step} maxStep={4} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
 
       <CheckAnswerButton
         active={showAnswer}

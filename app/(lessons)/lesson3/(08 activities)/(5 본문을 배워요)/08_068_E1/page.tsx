@@ -19,12 +19,12 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowMeaning2(false);
   }, [step]);
 
@@ -320,7 +320,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           <MainContentModalButton modal_data={modal_content[step - 1]} />

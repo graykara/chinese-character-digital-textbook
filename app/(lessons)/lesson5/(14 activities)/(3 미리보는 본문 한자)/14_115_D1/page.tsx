@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import IMAGE from "./image.png";
 import LETTER1 from "./1.png";
@@ -18,6 +18,12 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [showLetter, setShowLetter] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (showAnswer)
+      setShowLetter([1, 2, 3, 4, 5, 6])
+    else setShowLetter([])
+  }, [showAnswer])
 
   return (
     <>

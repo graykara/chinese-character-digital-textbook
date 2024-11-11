@@ -181,7 +181,7 @@ export default function Page() {
         )}
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
 
       {step === 2 ? (
         <CheckAnswerButton

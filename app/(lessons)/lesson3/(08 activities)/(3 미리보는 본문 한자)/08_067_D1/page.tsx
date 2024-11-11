@@ -233,7 +233,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
 
       <img
         src={

@@ -143,7 +143,7 @@ export default function Page() {
         })}
       </ContentContainer>
 
-      <StepContainer step={step} maxStep={6} onStepChange={setStep} />
+      <StepContainer maxStep={6} />
 
       <ExampleAnswerButton
         active={showAnswer}

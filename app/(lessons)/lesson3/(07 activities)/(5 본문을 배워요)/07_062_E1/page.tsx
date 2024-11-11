@@ -349,7 +349,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           {step === 1 ? (

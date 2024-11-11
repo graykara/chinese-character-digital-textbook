@@ -25,7 +25,10 @@ export const InputWithPen = ({
   useEffect(() => {
     if (showAnswer && inputRef.current && divRef.current) {
       if (typeof answer === "string") setValue(answer || "");
-      else setShowAnswerReactNode(true);
+      else {
+        setShowAnswerReactNode(true);
+        setValue("")
+      }
       inputRef.current.className += isExample
         ? " text-example"
         : " text-answer";

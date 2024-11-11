@@ -5,28 +5,19 @@ import { usePathname } from "next/navigation";
 import { useContext, useEffect } from "react";
 
 export const StepContainer = ({
-  // step,
   maxStep,
-  // onStepChange,
 }: {
-  // step: number;
   maxStep: number;
-  // onStepChange: (step: number) => void;
 }) => {
-  const { currentStep, setCurrentStep, setMaxStep, navigationDirection } =
+  const { currentStep, setCurrentStep, setMaxStep } =
     useContext(PageInfoContext);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setMaxStep(maxStep);
-  }, [maxStep, pathname]);
+  setMaxStep(maxStep);
 
   return (
     <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-7 flex justify-center gap-[40px]">
       {Array.from({ length: maxStep }).map((_, index) => (
         <button
           key={index}
-          // onClick={() => onStepChange(index + 1)}
           onClick={() => setCurrentStep(index + 1)}
           className={`w-[44px] h-[44px] rounded-full border-[6px] ${currentStep === index + 1
             ? "bg-[#a26032] border-[#d7ac8c]"

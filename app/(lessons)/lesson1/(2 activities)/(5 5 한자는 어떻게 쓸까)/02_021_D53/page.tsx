@@ -85,7 +85,7 @@ export default function Page() {
           </div>
       </ContentContainer>
 
-      <StepContainerArrow maxStep={9} step={step} onStepChange={setStep} className="absolute w-full bottom-[5px] mb-7"/>
+      <StepContainerArrow maxStep={9} className="absolute w-full bottom-[5px] mb-7"/>
       <img src={BACKGROUND.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

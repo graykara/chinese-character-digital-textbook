@@ -22,11 +22,11 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
   }, [step]);
 
   const data = [
@@ -402,7 +402,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={5} />
 
         {step === 3 ? (
           <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">

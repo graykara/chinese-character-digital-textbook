@@ -118,7 +118,7 @@ export default function Page() {
         )}
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img src={
         step === 1 ? BACKGROUND1.src :
           step === 2 ? BACKGROUND2.src : ""

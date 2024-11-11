@@ -27,7 +27,6 @@ export const Navbar = () => {
     currentLesson,
     currentChapter,
     currentSubChapter,
-    setMaxStep,
     setCurrentStep,
     setNavigationDirection
   } = useContext(PageInfoContext);

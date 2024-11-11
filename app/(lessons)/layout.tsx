@@ -42,8 +42,11 @@ export default function RootLayout({
   const [currentSubChapter, setCurrentSubChapter] = useState("");
   const [isLastPage, setIsLastPage] = useState(false);
 
+  const [isPageReady, setIsPageReady] = useState(false);
+
   useEffect(() => {
     Howler.stop();
+    setIsPageReady(false);
     setMaxStep(1);
     setCurrentStep(1);
     setCurrentLesson(getLessonNumberOfPath(pathname) || 1);
@@ -53,12 +56,19 @@ export default function RootLayout({
   }, [pathname]);
 
   useEffect(() => {
-    if (navigationDirection === "prev") {
-      setCurrentStep(maxStep)
-    } else {
-      setCurrentStep(1)
-    }
-  }, [pathname, navigationDirection, maxStep])
+    const initializePage = () => {
+      if (navigationDirection === "prev") {
+        setCurrentStep(maxStep);
+      } else {
+        setCurrentStep(1);
+      }
+      setTimeout(() => {
+        setIsPageReady(true);
+      }, 0);
+    };
+
+    initializePage();
+  }, [pathname, navigationDirection, maxStep]);
 
   const [scale, setScale] = useState(1);
 
@@ -78,6 +88,8 @@ export default function RootLayout({
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
+
+  if (!isPageReady) return null;
 
   return (
     <PageInfoContext.Provider

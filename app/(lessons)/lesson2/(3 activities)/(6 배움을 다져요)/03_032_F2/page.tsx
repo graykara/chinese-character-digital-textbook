@@ -157,7 +157,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
       {/* <img src={BACKGROUND3.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );

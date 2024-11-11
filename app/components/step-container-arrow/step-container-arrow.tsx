@@ -9,31 +9,15 @@ import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export const StepContainerArrow = ({
-  // step,
   maxStep,
-  // onStepChange,
   className = "",
 }: {
-  // step: number;
   maxStep: number;
-  // onStepChange: (step: number) => void;
   className?: string;
 }) => {
   const { currentStep, setCurrentStep, setMaxStep, navigationDirection } =
     useContext(PageInfoContext);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setMaxStep(maxStep);
-  }, [maxStep, pathname]);
-
-  // useEffect(() => {
-  //   onStepChange(currentStep);
-  // }, [currentStep]);
-
-  // useEffect(() => {
-  //   setCurrentStep(step);
-  // }, [step]);
+  setMaxStep(maxStep);
 
   return (
     <nav className={`flex justify-center gap-6 ${className}`}>

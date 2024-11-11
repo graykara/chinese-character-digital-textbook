@@ -65,7 +65,7 @@ export default function Page() {
         </button>
       </ContentContainer>
 
-      {/* <StepContainer maxStep={10} step={step} onStepChange={setStep} /> */}
+      {/* <StepContainer maxStep={10} /> */}
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

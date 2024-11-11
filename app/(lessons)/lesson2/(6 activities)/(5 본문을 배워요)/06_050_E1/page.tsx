@@ -29,11 +29,11 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
   }, [step]);
 
   const data = [
@@ -190,7 +190,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={9} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={9} />
 
         <div className="absolute top-[140px] left-[150px]">
           {step === 1 || step === 2 ? (
