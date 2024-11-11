@@ -54,10 +54,8 @@ export default function RootLayout({
 
   useEffect(() => {
     if (navigationDirection === "prev") {
-      console.log("set current step to maxStep from layout", maxStep);
       setCurrentStep(maxStep)
     } else {
-      console.log("set current step to 1 from layout");
       setCurrentStep(1)
     }
   }, [pathname, navigationDirection, maxStep])

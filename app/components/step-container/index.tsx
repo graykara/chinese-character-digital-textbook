@@ -18,24 +18,8 @@ export const StepContainer = ({
   const pathname = usePathname();
 
   useEffect(() => {
-    console.log("navigationDirection", navigationDirection, currentStep, maxStep, pathname);
-    if (navigationDirection === "prev") {
-      console.log("set current step to maxStep", maxStep);
-      setCurrentStep(maxStep);
-    } else {
-      console.log("set current step to 1");
-      setCurrentStep(1);
-    }
     setMaxStep(maxStep);
-  }, [maxStep, navigationDirection, pathname]);
-
-  // useEffect(() => {
-  //   onStepChange(currentStep);
-  // }, [currentStep]);
-
-  // useEffect(() => {
-  //   setCurrentStep(step);
-  // }, [step]);
+  }, [maxStep, pathname]);
 
   return (
     <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-7 flex justify-center gap-[40px]">

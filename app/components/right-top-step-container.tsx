@@ -20,13 +20,8 @@ export const RightTopStepContainer = ({
   const pathname = usePathname();
 
   useEffect(() => {
-    if (navigationDirection === "prev") {
-      setCurrentStep(maxStep);
-    } else {
-      setCurrentStep(1);
-    }
     setMaxStep(maxStep);
-  }, [maxStep, navigationDirection, pathname]);
+  }, [maxStep, pathname]);
 
   // useEffect(() => {
   //   onStepChange(currentStep);
