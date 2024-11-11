@@ -2,7 +2,7 @@
 
 import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { TitleContainer } from "@/app/components/title-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
@@ -11,10 +11,11 @@ import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘16.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   useEffect(() => {
     setShowAnswer(false);
@@ -27,7 +28,7 @@ export default function Page() {
         {step === 2 && <Step2 />}
       </CreativityPageTemplate>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

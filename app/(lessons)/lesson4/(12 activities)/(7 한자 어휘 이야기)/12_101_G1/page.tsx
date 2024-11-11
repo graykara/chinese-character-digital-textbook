@@ -3,7 +3,7 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { QRButton } from "@/app/components/buttons/qr-button";
@@ -11,9 +11,10 @@ import QR from "./qr.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글30.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -33,7 +34,7 @@ export default function Page() {
         </>
       )}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -42,14 +43,19 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/4/101_story.mp3",
+});
+
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
 
-  const sound = new Howl({
-    src: "/sound/4/101_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문 연구소이다.",
@@ -68,28 +74,21 @@ const Step1 = () => {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <SoundButton2
         className="absolute left-[1050px] top-[110px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
-          sound.stop();
-          sound.play();
+          if (isReading) sound.stop();
+          else sound.play();
         }}
       />
       <ContentContainer>
         <div className="relative -top-[70px] w-[1460px]">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] pl-9 pr-2 py-6 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] pl-9 pr-2 py-6 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+              }`}
           >
             규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문
             연구소이다.

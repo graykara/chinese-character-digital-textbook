@@ -3,7 +3,7 @@
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import CHECK from "./check.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
@@ -14,9 +14,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살24
 import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살25.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -25,7 +26,7 @@ export default function Page() {
         {step === 2 && <Step2 />}
       </CreativityPageTemplate>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

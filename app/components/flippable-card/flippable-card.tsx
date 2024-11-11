@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import CLICK_ICON from "./click-icon.png";
 import CLICK_ICON_WHITE from "./click-icon-white.png";
 import CLICK_ICON_BLACK from "./click-icon-black.png";
@@ -13,9 +13,11 @@ interface Props {
   width: number;
   height: number;
   className?: string;
+  iconClassName?: string;
   backClassName?: string;
   frontClassName?: string;
   contentClassName?: string;
+  flipIconClassName?: string;
   iconColor?: "default" | "white" | "black";
 }
 
@@ -25,11 +27,14 @@ export const FlippableCard = ({
   width,
   height,
   className = "",
+  iconClassName = "",
   backClassName = "",
   frontClassName = "",
   contentClassName = "",
+  flipIconClassName = "",
   iconColor = "default",
 }: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
   const [isFlipped, setIsFlipped] = useState<boolean | null>(active);
 
   const handleFlip = () => {
@@ -41,6 +46,35 @@ export const FlippableCard = ({
     setIsFlipped(active);
   }, [active]);
 
+  useEffect(() => {
+    if (isFlipped) {
+      ref.current?.setAttribute('data-active', 'true');
+    } else {
+      ref.current?.setAttribute('data-active', 'false');
+    }
+  }, [isFlipped]);
+
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-active') {
+          const active = ref.current?.getAttribute('data-active');
+          if (active === 'true') {
+            setIsFlipped(true);
+          } else {
+            setIsFlipped(false);
+          }
+        }
+      });
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current, { attributes: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const clickIcon =
     iconColor === "white"
       ? CLICK_ICON_WHITE
@@ -50,6 +84,7 @@ export const FlippableCard = ({
 
   return (
     <div
+      ref={ref}
       className={`[perspective:1000px] cursor-pointer ${className}`}
       onClick={handleFlip}
       style={{
@@ -58,15 +93,15 @@ export const FlippableCard = ({
       }}
     >
       <div
-        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${
-          isFlipped ? "[transform:rotateX(-180deg)]" : ""
-        }`}
+        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateX(-180deg)]" : ""
+          }`}
       >
         <div
           className={`absolute w-full h-full bg-white border-8 border-[#0090a2] rounded-2xl flex flex-col items-center justify-center [backface-visibility:hidden] ${frontClassName}`}
         >
           <img
             src={clickIcon.src}
+            className={iconClassName ?? ""}
             style={{
               height: height * 0.6,
             }}
@@ -76,15 +111,15 @@ export const FlippableCard = ({
           className={`absolute w-full h-full bg-white border-8 border-[#0090a2] rounded-2xl text-[#0090a2] flex items-center justify-center [backface-visibility:hidden] [transform:rotateX(180deg)] ${backClassName}`}
         >
           <div
-            className={`w-full h-full flex items-center justify-center ${contentClassName}`}
+            className={`w-full h-full flex items-center justify-center font-bold ${contentClassName}`}
           >
-            <p className="text-center px-4 font-bold [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+            <p className="text-center px-4 [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
               {text}
             </p>
           </div>
           <img
             src={FLIP_ICON.src}
-            className="absolute -top-8 -right-8 w-[70px]"
+            className={`absolute -top-8 -right-8 w-[70px] ${flipIconClassName}`}
             alt="Flip icon"
           />
         </div>
@@ -104,6 +139,7 @@ export const FlippableCard_60 = ({
   contentClassName = "",
   iconColor = "default",
 }: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
   const [isFlipped, setIsFlipped] = useState<boolean | null>(active || null);
 
   const handleFlip = () => {
@@ -115,6 +151,35 @@ export const FlippableCard_60 = ({
     setIsFlipped(active || null);
   }, [active]);
 
+  useEffect(() => {
+    if (isFlipped) {
+      ref.current?.setAttribute('data-active', 'true');
+    } else {
+      ref.current?.setAttribute('data-active', 'false');
+    }
+  }, [isFlipped]);
+
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-active') {
+          const active = ref.current?.getAttribute('data-active');
+          if (active === 'true') {
+            setIsFlipped(true);
+          } else {
+            setIsFlipped(false);
+          }
+        }
+      });
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current, { attributes: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const clickIcon =
     iconColor === "white"
       ? CLICK_ICON_WHITE
@@ -124,7 +189,9 @@ export const FlippableCard_60 = ({
 
   return (
     <div
-      className={`[perspective:1000px] cursor-pointer ${className}`}
+      ref={ref}
+      className={`flippable-card [perspective:1000px] cursor-pointer ${className}`}
+      data-active={isFlipped || "false"}
       onClick={handleFlip}
       style={{
         width,
@@ -132,9 +199,8 @@ export const FlippableCard_60 = ({
       }}
     >
       <div
-        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${
-          isFlipped ? "[transform:rotateX(-180deg)]" : ""
-        }`}
+        className={`relative w-full h-full ${isFlipped !== null ? "transition-transform duration-500" : ""} [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateX(-180deg)]" : ""
+          }`}
       >
         <div
           className={`absolute w-full h-full bg-white border-8 border-[#0090a2] rounded-2xl flex flex-col items-center justify-center [backface-visibility:hidden] ${frontClassName}`}

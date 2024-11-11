@@ -6,7 +6,7 @@ import MODAL from "./modal.png";
 import MODAL_CLOSE from "./modal-close.png";
 import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ResourceButton } from "@/app/components/buttons/resource-button";
@@ -21,19 +21,18 @@ import BACKGROUND4 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자14.png";
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자16.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자18.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
-    setShowContent(false);
+    setShowMeaning(null);
     setShowModal(false);
   }, [step]);
 
@@ -85,7 +84,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={7} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={7} />
 
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />

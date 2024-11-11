@@ -27,8 +27,8 @@ export const Navbar = () => {
     currentLesson,
     currentChapter,
     currentSubChapter,
-    setMaxStep,
     setCurrentStep,
+    setNavigationDirection
   } = useContext(PageInfoContext);
 
   useEffect(() => {
@@ -47,18 +47,6 @@ export const Navbar = () => {
     ],
     [selectedLesson],
   );
-
-  // const subChapters = useMemo(
-  //   () => [
-  //     ...new Map(
-  //       NAVIGATION.filter(
-  //         (item) =>
-  //           item.lesson === selectedLesson && item.chapter === selectedChapter,
-  //       ).map((item) => [item.subChapter, item]),
-  //     ).values(),
-  //   ],
-  //   [selectedLesson, selectedChapter],
-  // );
 
   const subChapters = useMemo(() => {
     // 필터링된 항목 중에서 subChapter만 추출하고, 중복 제거
@@ -88,7 +76,7 @@ export const Navbar = () => {
   }, [selectedLesson, selectedChapter]);
 
 
-  console.log(subChapters);
+  // console.log(subChapters);
 
   return (
     <>
@@ -184,6 +172,7 @@ export const Navbar = () => {
                   ""
                 }
                 onClick={() => {
+                  setNavigationDirection(null)
                   setCurrentStep(1);
                   setShowMenu(false);
                 }}

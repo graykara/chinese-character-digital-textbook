@@ -3,7 +3,7 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
@@ -12,9 +12,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성
 import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어129.png";
 import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어130.png";
 import { AdditionalButton } from "@/app/components/buttons/additional-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -29,20 +30,26 @@ export default function Page() {
         </ContentContainer>
       )}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
-      <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
+      <StepContainer maxStep={2} />
+      {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );
 }
 
+const sound = new Howl({
+  src: "/sound/3/65_story.mp3",
+});
+
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/3/65_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "중국 춘추 시대에 손양(孫陽)이라는 사람은 千里馬 (천리마)를 알아보는 재주를 가졌기에, 옥황상제의 天馬 (천마)를 관장하는 자리의 이름인 ‘백락(伯樂)’으로 불렸다.",
@@ -71,28 +78,21 @@ const Step1 = () => {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <SoundButton2
         className="absolute top-[115px] left-[980px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
-          soundId && sound.stop(soundId);
-          setSoundId(sound.play());
+          if (isReading) sound.stop();
+          else setSoundId(sound.play());
         }}
       />
       <ContentContainer>
         <div className="relative w-[1460px] -top-8">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[50px] leading-[78px] tracking-tighter break-keep ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[50px] leading-[78px] tracking-tighter break-keep ${isReading ? "text-reading" : ""
+              }`}
           >
             중국 춘추 시대에 손양(
             <span className="font-haeseo text-[54px] leading-tight">孫陽</span>

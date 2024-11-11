@@ -11,26 +11,24 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕33.png";
 
+const sound = new Howl({
+  src: "/sound/5/133-2.mp3",
+});
+
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/5/133-2.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   return (
     <>
       <ActivityPageTemplate lesson={5}>
-        <div className="w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
+        <div className="relative w-full h-full flex flex-col justify-start items-center overflow-y-scroll">
           <header className="mb-10">
             <h1 className="text-[60px] text-[#da722c] font-bold text-center tracking-tight">
               나의 기업 운영 계획서 및 명함 만들기
@@ -55,11 +53,8 @@ export default function Page() {
             className="absolute top-[285px] left-[435px] animate__animated animate__bounceIn animate__delay-1s"
             active={isReading}
             onClick={() => {
-              if (soundId) {
-                console.log("stop");
-                sound.stop(soundId);
-              }
-              setTimeout(() => setSoundId(sound.play()), 100);
+              if (isReading) sound.stop();
+              else sound.play();
             }}
           />
 

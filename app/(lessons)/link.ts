@@ -1,4 +1,11 @@
-export const NAVIGATION = [
+export const NAVIGATION: {
+  lesson: number;
+  chapter: number;
+  subChapter: string;
+  path: string;
+  page: number | string;
+  isLastPage?: boolean;
+}[] = [
   {
     lesson: 1,
     chapter: -1,
@@ -243,6 +250,7 @@ export const NAVIGATION = [
     subChapter: "활동하기",
     path: "lesson1/02_023_J1",
     page: 23,
+    isLastPage: true,
   },
   {
     lesson: 2,
@@ -544,6 +552,7 @@ export const NAVIGATION = [
     subChapter: "문제 풀기",
     path: "lesson2/06_056_K1",
     page: "56~57",
+    isLastPage: true,
   }, // 문제 풀기
   {
     lesson: 3,
@@ -1020,6 +1029,7 @@ export const NAVIGATION = [
     subChapter: "문제 풀기",
     path: "lesson4/12_104_K1",
     page: "104~105",
+    isLastPage: true,
   }, // 4단원 마무리
   {
     lesson: 5,
@@ -1342,12 +1352,13 @@ export const NAVIGATION = [
     subChapter: "문제 풀기",
     path: "lesson5/16_134_K1",
     page: "134~135",
+    isLastPage: true,
   },
 ];
 
 const extractPathInfo = (pathname: string) => {
   const match = pathname.match(
-    /(?:.*\/)?(lesson[12345]\/(?:\d+(?:_\d+)?(?:_[A-Z]\d+)?|\d+(?:-\d+)?))(?:\.html)?$/,
+    /(?:.*\/)?(lesson[12345]\/(?:\d+(?:_\d+)?(?:_[A-Z]\d+)?|\d+(?:-\d+)?))(?:\.html)?$/
   );
   if (!match) return null;
   const lessonPath = match[1];
@@ -1361,6 +1372,7 @@ const extractPathInfo = (pathname: string) => {
   const lessonNumber = findItemByPath(lessonPath)?.lesson;
   const chapterNumber = findItemByPath(lessonPath)?.chapter;
   const subChapter = findItemByPath(lessonPath)?.subChapter;
+  const isLastPage = findItemByPath(lessonPath)?.isLastPage;
 
   return {
     lessonPath,
@@ -1370,6 +1382,7 @@ const extractPathInfo = (pathname: string) => {
     lessonNumber,
     chapterNumber,
     subChapter,
+    isLastPage,
   };
 };
 
@@ -1426,6 +1439,10 @@ export const getChapterNumberOfPath = (path: string) => {
 
 export const getSubChatperOfPath = (path: string) => {
   return extractPathInfo(path)?.subChapter;
+};
+
+export const getIsLastPageOfPath = (path: string) => {
+  return extractPathInfo(path)?.isLastPage || false;
 };
 
 export const getChapterTitleOfChapter = (chapter: number) => {

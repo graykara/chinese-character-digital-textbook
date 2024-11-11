@@ -3,24 +3,36 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕26.png"; //25, 26
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import { PageInfoContext } from "@/app/utils/page-info";
+
+const sound1 = new Howl({
+  src: "/sound/5/131_story-1.mp3",
+});
+const sound2 = new Howl({
+  src: "/sound/5/131_story-2.mp3",
+});
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/5/131_story-1.mp3", "/sound/5/131_story-2.mp3"];
 
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "조선 중기 영의정을 지낸 홍서봉의 집안은 거친 밥과 나물국도 자주 거를 정도로 매우 가난하였다.",
@@ -56,12 +68,6 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <CultureHeader title={"상한 고기를 모두 사 온 까닭"} />
@@ -70,8 +76,13 @@ export default function Page() {
         className="absolute top-[110px] left-[990px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          sound.stop();
-          sound.play();
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
+          }
         }}
       />
 
@@ -79,9 +90,8 @@ export default function Page() {
         {step === 1 && (
           <div className="absolute top-[105px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-10 pr-2 pt-5 -mt-4 pb-8 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-10 pr-2 pt-5 -mt-4 pb-8 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               조선 중기 영의정을 지낸 홍서봉의 집안은 거친 밥과 나물국도 자주
               거를 정도로 매우 가난하였다. 하루는 그의 어머니가 아랫사람을 보내
@@ -95,9 +105,8 @@ export default function Page() {
         {step === 2 && (
           <div className="absolute top-[105px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-10 pr-2 pt-5 -mt-4 pb-8 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-10 pr-2 pt-5 -mt-4 pb-8 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               홍서봉의 어머니는 다른 사람들이 상한 고기를 먹고 병이 날까
               염려하였던 것이다. 훗날 홍서봉은 이러한 어머니의 선행으로 자손들이
@@ -110,7 +119,7 @@ export default function Page() {
         </div>
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

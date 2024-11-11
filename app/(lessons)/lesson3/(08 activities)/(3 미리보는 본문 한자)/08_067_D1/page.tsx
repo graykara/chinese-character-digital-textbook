@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import EXAMPLE from "./example.png";
 import BLANK1 from "./blank1.png";
@@ -22,9 +22,10 @@ import { DraggableCard } from "@/app/components/new-drag-and-drop/draggable-card
 import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -232,7 +233,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
 
       <img
         src={

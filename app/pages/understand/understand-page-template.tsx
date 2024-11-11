@@ -74,7 +74,17 @@ export const UnderstandPageTemplate = ({
         />
         <SoundButton1
           active={isReading}
-          onClick={() => setIsReading(true)}
+          onClick={() => {
+            if (isReading) {
+              setIsReading(false);
+              setIsPlaying(false);
+              sounds[currentIndex]?.stop();
+              setCurrentSoundSrc("");
+              setCurrentIndex(-1);
+            } else {
+              setIsReading(true);
+            }
+          }}
           className="absolute right-[127px] animate__animated animate__bounceIn animate__delay-2s z-10"
         />
       </header>

@@ -11,7 +11,7 @@ export default function ActivityLayout({ children }: PropsWithChildren) {
   return (
     <>
       {children}
-      <AutoplaySound />
+      {/* <AutoplaySound /> */}
     </>
   );
 }

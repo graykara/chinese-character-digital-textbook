@@ -2,7 +2,7 @@
 
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
@@ -13,17 +13,18 @@ import BACKGROUND4 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성
 import { MainContent } from "../../../main-content";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 import { MainContentModalButton } from "@/app/components/main-content/modal-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowMeaning2(false);
   }, [step]);
 
@@ -319,7 +320,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} />
 
         <div className="absolute bottom-[135px] left-[280px] flex flex-wrap">
           <MainContentModalButton modal_data={modal_content[step - 1]} />

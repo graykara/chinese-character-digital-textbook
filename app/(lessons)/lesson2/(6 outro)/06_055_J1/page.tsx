@@ -5,7 +5,7 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE2_AFTER from "./image2-after.png";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘25.png";
@@ -16,9 +16,10 @@ import {
   TextareaWithPen,
 } from "@/app/components/textarea/textarea-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function Page() {
         {step === 1 ? <Content1 /> : null}
         {step === 2 ? <Content2 /> : null}
       </ActivityPageTemplate>
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -35,19 +36,18 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/2/55-i-2.mp3",
+});
+
 const Content1 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/2/55-i-2.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   useEffect(() => {
@@ -62,11 +62,11 @@ const Content1 = () => {
         className="absolute top-[300px] left-[300px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
-          if (soundId) {
+          if (isReading) {
             console.log("stop");
-            sound.stop(soundId);
+            sound.stop();
           }
-          setTimeout(() => setSoundId(sound.play()), 100);
+          else sound.play();
         }}
       />
 
@@ -118,17 +118,25 @@ const Content2 = () => {
             />
 
             <InputWithPen
-            answer="(두 가지 일을 한꺼번에)
-아울러 행함.​"
-            showAnswer={showAnswer}
+              answer="저출산 가장 큰 요인은, ‘일·육아 병행 어려움’"
+              showAnswer={showAnswer}
+              containerClassName="absolute left-[500px] top-[115px]"
+              className="text-center bg-transparent text-[35px] tracking-tighter w-[570px]"
+              penClassName="left-1/2 -translate-x-1/2 w-[35px]"
+              isExample
+            />
+
+            <InputWithPen
+              answer="(두 가지 일을 한꺼번에)아울러 행함."
+              showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[352px]"
               className="bg-transparent text-[35px] w-[180px]"
               penClassName="w-[35px]"
               isExample
             />
             <InputWithPen
-            answer="수식 관계​"
-            showAnswer={showAnswer}
+              answer="수식 관계"
+              showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[419px]"
               className="bg-transparent text-[35px] w-[180px]"
               penClassName="w-[35px]"

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface Props {
   options: (string | ReactNode)[];
@@ -27,6 +27,10 @@ export const SelectionQuiz = ({
     else setSelectedOptions([index]);
   };
 
+  useEffect(() => {
+    if (showAnswer) setSelectedOptions([])
+  }, [showAnswer])
+
   return (
     <div className={`${className}`}>
       {options.map((option, index) => (
@@ -34,6 +38,9 @@ export const SelectionQuiz = ({
           key={index}
           className={`flex items-center gap-3 cursor-pointer ${showAnswer && answers.includes(index + 1) ? "text-answer" : !showAnswer && selectedOptions.includes(index + 1) ? "text-example" : ""}`}
           onClick={() => handleSelection(index + 1)}
+          style={{
+            opacity: showAnswer && !answers.includes(index + 1) ? 0.5 : 1
+          }}
         >
           <div
             className={`flex-none w-14 h-14 rounded-full text-white flex justify-center items-center text-[40px] ${showAnswer && answers.includes(index + 1) ? "bg-answer" : !showAnswer && selectedOptions.includes(index + 1) ? "bg-example" : "bg-[#5c94ae]"}`}

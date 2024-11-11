@@ -5,16 +5,17 @@ import IMAGE1 from "./bg_2.png";
 import IMAGE2 from "./bg_3.png";
 import IMAGE3 from "./bg_4.png";
 import { ContentContainer } from "@/app/components/content-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어22.png";
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어23.png";
 import BACKGROUND3 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어24.png";
 import { StepContainer } from "@/app/components/step-container";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function Page() {
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
       <img
         src={step === 1 ? BACKGROUND1.src
           : step === 2 ? BACKGROUND2.src
@@ -67,14 +68,13 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const answer = '풍전등화(<span className="font-haeseo">風前燈火</span>)';
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
       <ContentContainer className="-mt-10">
         <img src={IMAGE2.src} className="ml-[25px] -mt-[113px]" />
         <InputWithPen
-          answer={answer}
+          answer={<>"풍전등화(<span className="font-haeseo">風前燈火</span>)"</>}
           showAnswer={showAnswer}
           className="text-center w-[1090px] h-[80px] ml-[90px] pt-3 pb-0 text-[50px] bg-transparent"
           penClassName="left-24 mt-1 h-[55px]"
@@ -90,14 +90,13 @@ const Step2 = () => {
 };
 
 const Step3 = () => {
-  const answer = '우이독경(<span className="font-haeseo">牛耳讀經</span>)';
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
       <ContentContainer className="-mt-10">
         <img src={IMAGE3.src} className="ml-[25px] -mt-[113px]" />
         <InputWithPen
-          answer={answer}
+          answer={<>우이독경(<span className="font-haeseo">牛耳讀經</span>)</>}
           showAnswer={showAnswer}
           className="text-center w-[1090px] h-[80px] ml-[90px] pt-3 pb-0 text-[50px] bg-transparent"
           penClassName="left-24 mt-1 h-[55px]"

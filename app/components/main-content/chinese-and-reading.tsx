@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { PillButton } from "../buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
@@ -23,18 +23,16 @@ type Data = {
 interface Props {
   data: Data;
   showReading: boolean;
-  showMeaning: boolean;
   setShowReading: (value: boolean) => void;
-  setShowMeaning: (value: boolean) => void;
 }
 
 export const MainContentChineseAndReading = ({
   data,
-  showMeaning,
   showReading,
-  setShowMeaning,
   setShowReading,
 }: Props) => {
+  const meaningRef = useRef<HTMLDivElement>(null);
+
   const { chinese, content, sound, flippableCardData } = data;
 
   const [showAdditionalModal, setShowAdditionalModal] = useState(false);
@@ -45,9 +43,62 @@ export const MainContentChineseAndReading = ({
     string | ReactNode | null
   >("보충");
 
+  const [showMeaning, setShowMeaning] = useState(false);
+
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
 
   if (!data) return null;
+
+  // content 내의 모든 FlippableCard가 active인지 확인하는 함수
+  const checkAllFlippableCardsActive = async () => {
+    let show = false;
+    if (!meaningRef.current) show = false;
+    show = await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        // meaningRef 내부의 모든 flippable-card를 찾음
+        const cards = meaningRef.current?.querySelectorAll('.flippable-card');
+
+        // flippable card가 없는 경우 true 반환
+        if (!cards || cards.length === 0) {
+          resolve(true);
+          return;
+        }
+
+        // 모든 카드가 data-active를 가지고 있고, 모든 값이 true인지 확인
+        const result = Array.from(cards).every(card =>
+          card.getAttribute('data-active') === 'true'
+        );
+        resolve(result);
+      }, 100);
+    });
+    setShowMeaning(show);
+    return show;
+  };
+
+  useEffect(() => {
+    checkAllFlippableCardsActive();
+  }, []);
+
+  // PillButton 클릭 핸들러 수정
+  const handleMeaningClick = () => {
+    if(!showMeaning) {
+      const cards = meaningRef.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'true');
+        });
+      }
+    } else {
+      const cards = meaningRef.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'false');
+        });
+      }
+    }
+    const newShowMeaning = !showMeaning;
+    setShowMeaning(newShowMeaning);
+  };
 
   return (
     <>
@@ -133,13 +184,13 @@ export const MainContentChineseAndReading = ({
       <div className="grid grid-cols-[180px__1300px] gap-10 mt-12">
         <PillButton
           active={showMeaning}
-          onClick={() => setShowMeaning(!showMeaning)}
+          onClick={handleMeaningClick}
           text="풀이"
           checkboxColor="#306875"
           backgroundColor="#4f9aab"
         />
-        <div>
-          {flippableCardData ? (
+        <div ref={meaningRef} onClick={() => checkAllFlippableCardsActive()}>
+          {flippableCardData || showMeaning === null ? (
             <div>{content ?? null}</div>
           ) : (
             <div
@@ -148,7 +199,6 @@ export const MainContentChineseAndReading = ({
               {content ?? null}
             </div>
           )}
-
         </div>
       </div>
 

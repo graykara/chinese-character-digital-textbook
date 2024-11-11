@@ -10,25 +10,21 @@ import { useContext, useEffect, useState } from "react";
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아14.png";
 
+const sound = new Howl({
+  src: "/sound/1/19-1.mp3",
+});
+
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("모르는 한자는 어떻게 찾을까?");
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/19-1.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
-  useEffect(() => {
-    sound.stop();
-  }, []);
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   return (
@@ -43,8 +39,8 @@ export default function Page() {
           <SoundButton2
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if(isReading) sound.stop();
+              else setSoundId(sound.play());
             }}
             className="absolute top-1/2 -translate-y-1/2 left-[285px]"
           />

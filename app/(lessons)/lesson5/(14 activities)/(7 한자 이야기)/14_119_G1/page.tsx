@@ -3,24 +3,37 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE1 from "./image.png";
 import { WordStoryHeader } from "@/app/components/headers/word-story-header";
 import BACKGROUND1 from "@/app/bgpng_temp/14/중등한문_사람만 귀한가요21.png"; //20, 21
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import { PageInfoContext } from "@/app/utils/page-info";
+
+const sound1 = new Howl({
+  src: "/sound/5/119_story-1.mp3",
+});
+const sound2 = new Howl({
+  src: "/sound/5/119_story-2.mp3",
+});
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/5/119_story-1.mp3", "/sound/5/119_story-2.mp3"];
 
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "우리나라를 비롯한 세계 여러 나라들은 동물의 복지·보호·학대 방지를 위한 관련 법을 만들어 시행하고 있다.",
@@ -46,12 +59,6 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <CultureHeader title={"생명 존중의 첫걸음, 동물 보호와 복지에 관한 법"} />
@@ -60,8 +67,8 @@ export default function Page() {
         className="absolute top-[110px] left-[1370px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          sound.stop();
-          sound.play();
+          if (isReading) sound.stop();
+          else sound.play();
         }}
       />
 
@@ -69,9 +76,8 @@ export default function Page() {
         {step === 1 && (
           <div className="absolute top-[55px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] w-[1065px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] w-[1065px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               우리나라를 비롯한 세계 여러 나라들은 동물의 복지·보호
               <br />
@@ -85,9 +91,8 @@ export default function Page() {
         {step === 2 && (
           <div className="absolute top-[55px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] w-[1065px] pl-14 pr-4 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] w-[1065px] pl-14 pr-4 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               이는 수십 년에 걸쳐 반려동물을 키우는 가정이 크게 늘었으나 성숙한
               동물 관리 문화가 정착되지 못하여 동물을 학대하거나 유기하는 등의
@@ -103,7 +108,7 @@ export default function Page() {
         </div>
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

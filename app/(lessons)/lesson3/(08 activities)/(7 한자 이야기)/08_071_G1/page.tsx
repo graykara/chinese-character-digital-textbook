@@ -3,14 +3,15 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import IMAGE2 from "./image2.png";
 import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어229.png"; //228, 229
 import { CultureHeader } from "@/app/components/headers/culture-header";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const sounds = ["/sound/3/71_story.mp3", ""];
@@ -54,8 +55,8 @@ export default function Page() {
           className="absolute top-[110px] left-[1210px] animate__animated animate__bounceIn animate__delay-2s z-10"
           active={isReading}
           onClick={() => {
-            soundId && sound.stop(soundId);
-            setSoundId(sound.play());
+            if(isReading) sound.stop();
+            else setSoundId(sound.play());
           }}
         />
       )}
@@ -81,7 +82,7 @@ export default function Page() {
         )}
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={BACKGROUND1.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

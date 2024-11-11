@@ -19,7 +19,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("활동하기");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function Page() {
           {step === 2 ? <Content2 /> : null}
           {step === 3 ? <Content3 /> : null}
           <div className="fixed bottom-0">
-            <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+            <StepContainer maxStep={3} />
           </div>
         </div>
       </ActivityPageTemplate>
@@ -105,11 +105,11 @@ const Content2 = () => {
         className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
-          if (soundId) {
+          if(isReading) {
             console.log("stop");
-            sound.stop(soundId);
+            sound.stop();
           }
-          setTimeout(() => setSoundId(sound.play()), 100);
+          else sound.play();
         }}
       />
 

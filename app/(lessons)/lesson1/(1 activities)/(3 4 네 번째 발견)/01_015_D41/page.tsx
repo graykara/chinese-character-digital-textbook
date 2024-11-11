@@ -6,17 +6,23 @@ import { Howl } from "howler";
 import { Header } from "../assets/header";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어21.png";
 
+const sound = new Howl({
+  src: "/sound/1/15.mp3",
+});
+
 export default function Page() {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/15.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
+    sound.on('play', () => setIsReading(true));
+    sound.on('stop', () => setIsReading(false));
+    sound.on('end', () => setIsReading(false));
+
     return () => {
+      sound.off('play');
+      sound.off('stop');
+      sound.off('end');
       sound.stop();
     };
   }, []);
@@ -30,15 +36,19 @@ export default function Page() {
           <SoundButton1
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if (isReading) {
+                sound.stop();
+                setIsReading(false);
+                setSoundId(null);
+              } else {
+                setSoundId(sound.play());
+              }
             }}
             className="relative top-[60px] left-[1510px] animate__animated animate__bounceIn animate__delay-2s z-10"
           />
           <div
-            className={`border-8 rounded-[40px] border-[#804f3d] w-[1560px] text-[52px] px-9 py-12 leading-[72px] tracking-[-2px] break-keep animate__animated animate__fadeIn animate__delay-1s transition-colors duration-[2000ms] ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`border-8 rounded-[40px] border-[#804f3d] w-[1560px] text-[52px] px-9 py-12 leading-[72px] tracking-[-2px] break-keep animate__animated animate__fadeIn animate__delay-1s transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+              }`}
           >
             한자 문화권이란 한자를 사용했거나, 지금도 사용하고 있는 나라와
             지역을 말한다. 우리나라·중국·일본·베트남 등이 대표적이며, 한자

@@ -3,7 +3,7 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -15,17 +15,18 @@ import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문
 import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자10.png";
 import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자11.png";
 import BACKGROUND6 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자12.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowResource(false);
   }, [step]);
 
@@ -275,7 +276,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={6} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={6} />
 
         {step === 1 ? (
           <img src={IMAGE1.src} alt="image1" className="mt-[40px]" />

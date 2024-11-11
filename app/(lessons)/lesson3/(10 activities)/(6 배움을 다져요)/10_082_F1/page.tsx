@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import IMAGE1 from "./bg_1.png";
 import IMAGE2 from "./bg_2.png";
 import IMAGE3 from "./bg_3.png";
@@ -13,9 +13,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/10/중등한무�
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -25,7 +26,7 @@ export default function Page() {
       />
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
-      <StepContainer step={step} maxStep={2} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

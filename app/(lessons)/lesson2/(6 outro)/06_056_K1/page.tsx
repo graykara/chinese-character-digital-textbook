@@ -28,7 +28,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("문제 풀기");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   const questions = [
@@ -60,7 +60,7 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={9}
         step={step}
-        onStepChange={setStep}
+       
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate

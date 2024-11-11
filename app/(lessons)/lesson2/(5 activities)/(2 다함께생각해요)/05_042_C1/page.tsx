@@ -5,16 +5,17 @@ import IMAGE from "./image.png";
 import IMAGE2 from "./bgTextArea.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘3.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -38,7 +39,7 @@ export default function Page() {
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
-      <StepContainer step={step} maxStep={2} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

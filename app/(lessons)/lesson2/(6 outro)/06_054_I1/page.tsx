@@ -3,13 +3,14 @@
 import { SummaryPageTemplate } from "@/app/pages/summary-page-template";
 import IMAGE from "./image.png";
 import IMAGE2 from "./image2.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘23.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘24.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function Page() {
           {step === 2 && <Step2 />}
         </div>
       </SummaryPageTemplate>
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img src={step===1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

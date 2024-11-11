@@ -68,27 +68,35 @@ export const OLD_TextareaWithPen = ({
   ...props
 }: Props & { className?: string }) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
   const [value, setValue] = useState(props.value || "");
+  const [showAnswerReactNode, setShowAnswerReactNode] = useState<boolean>(false);
 
   useEffect(() => {
-    if (showAnswer && inputRef.current) {
-      setValue(answer || "");
+    if (showAnswer && inputRef.current && divRef.current) {
+      if (typeof answer === "string") {
+        setValue(answer || "");
+      } else {
+        setShowAnswerReactNode(true);
+        setValue("");
+      }
       inputRef.current.className += isExample
         ? " text-example"
         : " text-answer";
       inputRef.current.readOnly = true;
-    } else if (!showAnswer && inputRef.current) {
+    } else if (!showAnswer && inputRef.current && divRef.current) {
       setValue("");
+      setShowAnswerReactNode(false);
       inputRef.current.className = inputRef.current.className
         .replace("text-answer", "")
         .replace("text-example", "");
       inputRef.current.readOnly = false;
     }
-  }, [showAnswer]);
+  }, [showAnswer, inputRef, divRef]);
 
   return (
     <>
-      <div className={`relative w-fit ${containerClassName || ""}`}>
+      <div className={`relative w-fit ${containerClassName || ""} ${showAnswerReactNode ? "overflow-x-auto overflow-y-hidden" : ""}`}>
         <textarea
           ref={inputRef}
           {...props}
@@ -99,6 +107,13 @@ export const OLD_TextareaWithPen = ({
           }}
           className={`resize-none ${className}`}
         ></textarea>
+
+        <div
+          ref={divRef}
+          className={`absolute left-0 top-0 whitespace-pre-wrap ${isExample ? "text-example" : "text-answer"} ${showAnswerReactNode ? "block" : "hidden"} ${className}`}
+        >
+          {answer}
+        </div>
 
         {value === "" && !showAnswer ? (
           <img

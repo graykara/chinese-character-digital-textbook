@@ -3,7 +3,7 @@
 import { StepContainer } from "@/app/components/step-container";
 import { Header } from "../assets/header";
 import { ExerciseHeader } from "@/app/components/exercise-header";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContentContainer } from "@/app/components/content-container";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -18,9 +18,10 @@ import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어1
 import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어13.png";
 import BACKGROUND3 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어14.png";
 import BACKGROUND4 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어15.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [value, setValue] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -114,7 +115,7 @@ export default function Page() {
         </div>
       </ContentContainer>
 
-      <StepContainer step={step} maxStep={4} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
 
       <CheckAnswerButton
         active={showAnswer}

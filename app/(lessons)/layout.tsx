@@ -5,6 +5,7 @@ import { Navbar } from "../components/navbar";
 import { usePathname } from "next/navigation";
 import {
   getChapterNumberOfPath,
+  getIsLastPageOfPath,
   getLessonNumberOfPath,
   getNextPage,
   getPageNumberOfPath,
@@ -16,10 +17,9 @@ import { DndProvider } from "react-dnd";
 
 import "animate.css";
 import { FloatingButtonContainer } from "../components/floating-button-container";
-import { AudioProvider } from "../utils/audio/audio-player";
-import { AudioLink } from "../utils/audio/audio-link";
 import { PageInfoContext } from "../utils/page-info";
-import { activityStartSound } from "../utils/activity-start-sound";
+import { SoundStopper } from "./sound-stopper";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -28,9 +28,6 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const pageNumber = getPageNumberOfPath(pathname) || 1;
-
-  const [hoverPrev, setHoverPrev] = useState(false);
-  const [hoverNext, setHoverNext] = useState(false);
 
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -43,12 +40,35 @@ export default function RootLayout({
   const [currentLesson, setCurrentLesson] = useState(1);
   const [currentChapter, setCurrentChapter] = useState(1);
   const [currentSubChapter, setCurrentSubChapter] = useState("");
+  const [isLastPage, setIsLastPage] = useState(false);
+
+  const [isPageReady, setIsPageReady] = useState(false);
 
   useEffect(() => {
+    Howler.stop();
+    setIsPageReady(false);
+    setMaxStep(1);
+    setCurrentStep(1);
     setCurrentLesson(getLessonNumberOfPath(pathname) || 1);
     setCurrentChapter(getChapterNumberOfPath(pathname) || 1);
     setCurrentSubChapter(getSubChatperOfPath(pathname) || "");
+    setIsLastPage(getIsLastPageOfPath(pathname) || false);
   }, [pathname]);
+
+  useEffect(() => {
+    const initializePage = () => {
+      if (navigationDirection === "prev") {
+        setCurrentStep(maxStep);
+      } else {
+        setCurrentStep(1);
+      }
+      setTimeout(() => {
+        setIsPageReady(true);
+      }, 0);
+    };
+
+    initializePage();
+  }, [pathname, navigationDirection, maxStep]);
 
   const [scale, setScale] = useState(1);
 
@@ -69,6 +89,8 @@ export default function RootLayout({
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
+  if (!isPageReady) return null;
+
   return (
     <PageInfoContext.Provider
       value={{
@@ -82,7 +104,7 @@ export default function RootLayout({
         setMaxStep,
         navigationDirection,
         setNavigationDirection,
-        pageNumber,
+        pageNumber: Number(pageNumber) || 1,
         currentLesson,
         currentChapter,
         setCurrentLesson,
@@ -92,98 +114,93 @@ export default function RootLayout({
         scale,
       }}
     >
+      <SoundStopper />
       <DndProvider backend={HTML5Backend}>
-        <AudioProvider>
-          <Navbar />
+        {/* <AudioProvider> */}
+        <Navbar />
 
-          <div className="grid grid-cols-[40px__1760px__1fr]">
-            <div className="flex justify-end items-center">
-              {1 < currentStep ? (
-                <div className="mt-0">
-                  <button
-                    onMouseOver={() => setHoverPrev(true)}
-                    onMouseLeave={() => setHoverPrev(false)}
-                    onClick={() => {
-                      activityStartSound.play();
-                      setCurrentStep((prev) => prev - 1);
-                    }}
-                  >
-                    <img
-                      src="/ui/prev-button-off.png"
-                      className={hoverPrev ? "hidden" : ""}
-                    />
-                    <img
-                      src="/ui/prev-button-on.png"
-                      className={hoverPrev ? "" : "hidden"}
-                    />
-                  </button>
-                </div>
-              ) : (
-                <AudioLink href={getPrevPage(pathname) ?? ""}>
-                  <button
-                    onMouseOver={() => setHoverPrev(true)}
-                    onMouseLeave={() => setHoverPrev(false)}
-                    onClick={() => setNavigationDirection("prev")}
-                  >
-                    <img
-                      src="/ui/prev-button-off.png"
-                      className={hoverPrev ? "hidden" : ""}
-                    />
-                    <img
-                      src="/ui/prev-button-on.png"
-                      className={hoverPrev ? "" : "hidden"}
-                    />
-                  </button>
-                </AudioLink>
-              )}
-            </div>
-            <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden">
-              {children}
-            </div>
-            <div className="flex justify-start items-center">
-              {currentStep < maxStep ? (
-                <div className="mt-0">
-                  <button
-                    onMouseOver={() => setHoverNext(true)}
-                    onMouseLeave={() => setHoverNext(false)}
-                    onClick={() => {
-                      activityStartSound.play();
-                      setCurrentStep((prev) => prev + 1);
-                    }}
-                  >
-                    <img
-                      src="/ui/next-button-off.png"
-                      className={hoverNext ? "hidden" : ""}
-                    />
-                    <img
-                      src="/ui/next-button-on.png"
-                      className={hoverNext ? "" : "hidden"}
-                    />
-                  </button>
-                </div>
-              ) : (
-                <AudioLink href={getNextPage(pathname) ?? ""}>
-                  <button
-                    onMouseOver={() => setHoverNext(true)}
-                    onMouseLeave={() => setHoverNext(false)}
-                    onClick={() => setNavigationDirection("next")}
-                  >
-                    <img
-                      src="/ui/next-button-off.png"
-                      className={hoverNext ? "hidden" : ""}
-                    />
-                    <img
-                      src="/ui/next-button-on.png"
-                      className={hoverNext ? "" : "hidden"}
-                    />
-                  </button>
-                </AudioLink>
-              )}
-            </div>
+        <div className="grid grid-cols-[40px__1760px__1fr]">
+          <div className="flex justify-end items-center">
+            {1 < currentStep ? (
+              <div className="mt-0">
+                <button
+                  onClick={() => {
+                    setCurrentStep((prev) => prev - 1);
+                  }}
+                  className="group"
+                >
+                  <img
+                    src="/ui/prev-button-off.png"
+                    className={"block group-hover:hidden"}
+                  />
+                  <img
+                    src="/ui/prev-button-on.png"
+                    className={"hidden group-hover:block"}
+                  />
+                </button>
+              </div>
+            ) : (
+              <Link href={getPrevPage(pathname) ?? ""}>
+                <button
+                  className="group"
+                  onClick={() => setNavigationDirection("prev")}
+                >
+                  <img
+                    src="/ui/prev-button-off.png"
+                    className={"block group-hover:hidden"}
+                  />
+                  <img
+                    src="/ui/prev-button-on.png"
+                    className={"hidden group-hover:block"}
+                  />
+                </button>
+              </Link>
+            )}
           </div>
+          <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden">
+            {children}
+          </div>
+          <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
+            {currentStep < maxStep ? (
+              <div className="mt-0">
+                <button
+                  className="group"
+                  onClick={() => {
+                    setCurrentStep((prev) => prev + 1);
+                  }}
+                >
+                  <img
+                    src="/ui/next-button-off.png"
+                    className={"block group-hover:hidden"}
+                  />
+                  <img
+                    src="/ui/next-button-on.png"
+                    className={"hidden group-hover:block"}
+                  />
+                </button>
+              </div>
+            ) : (
+              <Link href={getNextPage(pathname) ?? ""}>
+                <button
+                  className="group"
+                  onClick={() => setNavigationDirection("next")}
+                >
+                  <img
+                    src="/ui/next-button-off.png"
+                    className={"block group-hover:hidden"}
+                  />
+                  <img
+                    src="/ui/next-button-on.png"
+                    className={"hidden group-hover:block"}
+                  />
+                </button>
+              </Link>
+            )}
+          </div>
+        </div>
 
-          <FloatingButtonContainer />
-        </AudioProvider>
+        <FloatingButtonContainer />
+        {/* </AudioProvider> */}
       </DndProvider>
     </PageInfoContext.Provider>
   );

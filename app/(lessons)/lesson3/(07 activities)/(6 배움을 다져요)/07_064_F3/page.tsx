@@ -6,7 +6,7 @@ import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -15,9 +15,10 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어124.png";
 import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어125.png";
 import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어126.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
@@ -166,7 +167,7 @@ export default function Page() {
         onClick={() => setShowAnswer(!showAnswer)}
       />
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
       {/* <img src={BACKGROUND1.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" /> */}
     </>
   );

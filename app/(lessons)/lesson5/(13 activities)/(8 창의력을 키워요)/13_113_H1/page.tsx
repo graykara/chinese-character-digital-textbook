@@ -2,23 +2,38 @@
 
 import IMAGE from "./image.png";
 import IMAGE_BUTTON from "./button.png";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { InputWithPen } from "@/app/components/input-with-pen";
-import { TitleContainer } from "@/app/components/title-container";
-import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭24.png";
 import { GroupButton } from "@/app/components/buttons/group-button";
 import { clickSound } from "@/app/utils/click-sound";
 import {
   OLD_TextareaWithPen,
-  TextareaWithPen,
 } from "@/app/components/textarea/textarea-with-pen";
+import { Howl } from "howler";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
+
+  useEffect(() => {
+    const sound1 = new Howl({
+      src: ["/sound/5/113-i-1.mp3"],
+      autoplay: true,
+      onend: () => {
+        // 첫 번째 사운드가 끝나면 두 번째 사운드 재생
+        const sound2 = new Howl({
+          src: ["/sound/5/113-i-2.mp3"],
+          autoplay: true,
+        });
+      }
+    });
+
+    return () => {
+      sound1.unload();
+    };
+  }, []);
 
   return (
     <>
@@ -31,12 +46,6 @@ export default function Page() {
           <img src={IMAGE.src} />
         </div>
       </CreativityPageTemplate>
-
-{/* 
-for sounds
-1: /sound/5/113-i-1.mp3 - autoplay
-2: /sound/5/113-i-2.mp3 - play after 1
-*/}
 
       <GroupButton className="animate__animated animate__fadeIn animate__delay-2s absolute right-[78px] top-[662px] h-[50px] z-1" />
 

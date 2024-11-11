@@ -5,16 +5,17 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { VideoThumbnail_big } from "@/app/components/video-thumbnail";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살3.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function Page() {
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
-      <StepContainer step={step} maxStep={2} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

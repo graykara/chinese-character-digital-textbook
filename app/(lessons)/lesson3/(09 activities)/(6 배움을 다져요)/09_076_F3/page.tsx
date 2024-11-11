@@ -9,16 +9,17 @@ import IMAGE4 from "./bg_4.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어124.png";
 import BACKGROUND2 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어125.png";
 import BACKGROUND3 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어126.png";
 import BACKGROUND4 from "@/app/bgpng_temp/9/중등한문_이야기가 담긴 성어127.png";
 import { StepContainer } from "@/app/components/step-container";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
@@ -40,7 +41,7 @@ export default function Page() {
       {step === 3 && <Step3 />}
       {step === 4 && <Step4 />}
 
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
       <img src={
         step === 1 ? BACKGROUND1.src :
           step === 2 ? BACKGROUND2.src :

@@ -1,7 +1,7 @@
 "use client";
 
 import { StrengthenLearningMainContentHeader } from "@/app/components/headers/strengthen-learning-main-content-header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import { ContentContainer } from "@/app/components/content-container";
@@ -11,9 +11,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되�
 import { StepContainer } from "@/app/components/step-container";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { GroupButton } from "@/app/components/buttons/group-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function Page() {
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src} className="debug absolute left-0 top-0 opacity-25 pointer-events-none" />
     </>
   );

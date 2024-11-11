@@ -4,7 +4,7 @@ import { ThinkTogetherHeader } from "@/app/components/headers/think-together";
 import { TitleContainer } from "@/app/components/title-container";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import BACKGROUND1 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되는 글2.png";
@@ -12,15 +12,16 @@ import BACKGROUND2 from "@/app/bgpng_temp/12/중등한문_나에게 힘이 되�
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { GroupButton } from "@/app/components/buttons/group-button";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
-      <StepContainer step={step} maxStep={2} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
     </>
   );
 }

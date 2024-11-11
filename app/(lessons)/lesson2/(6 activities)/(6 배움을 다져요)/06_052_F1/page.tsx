@@ -108,43 +108,64 @@ export default function Page() {
 
       <ContentContainer className="!justify-start">
         <div className="w-[1300px] relative grid grid-cols-[1fr__350px] gap-[100px] pb-[100px]">
-          <table className="table border-8 border-[#d2c5ac] border-collapse">
-            {[0, 4, 8, 12].map((index) => {
-              return (
-                <tr key={index}>
-                  {data.slice(index, index + 4).map((item, i) => {
-                    const { chinese, meaning, sound } = item;
-                    return (
-                      <td
-                        key={chinese}
-                        className="w-[200px] border-b-4 border-x-4 border-[#d2c5ac]"
-                      >
-                        <button
-                          onClick={() => SOUND(sound).play()}
-                          className="w-full flex items-center justify-center font-haeseo text-[80px] border-b-4 border-[#d2c5ac]"
+          <div className="relative">
+            <table className="table border-8 border-[#d2c5ac] border-collapse">
+              {[0, 4, 8, 12].map((index) => {
+                return (
+                  <tr key={index}>
+                    {data.slice(index, index + 4).map((item, i) => {
+                      const { chinese, meaning, sound } = item;
+                      return (
+                        <td
+                          key={chinese}
+                          className="w-[200px] border-b-4 border-x-4 border-[#d2c5ac]"
                         >
-                          {chinese}
-                        </button>
-                        <div className="text-center text-[35px] py-1">
-                          <InputWithPen
-                            answer={meaning}
-                            showAnswer={showAnswer}
-                            className="w-[200px] text-[35px] text-center"
-                            penClassName="w-[35px] left-1/2 -translate-x-1/2"
-                          />
-                          {/* <p
+                          <button
+                            onClick={() => SOUND(sound).play()}
+                            className="w-full flex items-center justify-center font-haeseo text-[80px] border-b-4 border-[#d2c5ac]"
+                          >
+                            {chinese}
+                          </button>
+                          <div className="text-center text-[35px] py-1">
+                            <InputWithPen
+                              answer={meaning}
+                              showAnswer={showAnswer}
+                              className="w-[200px] text-[35px] text-center"
+                              penClassName="w-[35px] left-1/2 -translate-x-1/2"
+                            />
+                            {/* <p
                             className={`text-answer ${showAnswer ? "opacity-100" : "opacity-0"}`}
                           >
                             {meaning}
                           </p> */}
-                        </div>
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </table>
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </table>
+            <table className={`${showAnswer ? "opacity-100" : "opacity-0"} absolute left-0 top-0 table border-8 border-transparent border-collapse pointer-events-none`}>
+              <tr>
+                <td className="w-[207px] h-[192px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full" /></td>
+                <td rowSpan={2} className="w-[207px] h-[382px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#f19394]" /></td>
+                <td colSpan={2} className="w-[207px] h-[192px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#3c49ac]" /></td>
+              </tr>
+              <tr>
+                <td rowSpan={2} className="w-[207px] h-[382px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#323763]" /></td>
+                <td rowSpan={2} className="w-[207px] h-[382px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#ff762e]" /></td>
+                <td rowSpan={2} className="w-[207px] h-[382px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#ffc64c]" /></td>
+              </tr>
+              <tr>
+                <td className="w-[207px] h-[192px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full" /></td>
+              </tr>
+              <tr>
+                <td colSpan={2} className="w-[207px] h-[192px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#156729]" /></td>
+                <td colSpan={2} className="w-[207px] h-[192px] border-b-4 border-x-4 border-transparent p-1"><div className="w-full h-full border-8 border-[#a91ac1]" /></td>
+              </tr>
+            </table>
+          </div>
           <img src={EXAMPLE.src} className="flex-none" />
         </div>
       </ContentContainer>

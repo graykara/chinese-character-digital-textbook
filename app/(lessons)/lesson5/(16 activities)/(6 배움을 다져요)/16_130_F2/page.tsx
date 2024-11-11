@@ -3,18 +3,35 @@
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
 import IMAGE1 from "./bg_1.png";
 import BUTTON_FRONT from "./button1.png";
-import BUTTON_BACK from "./button2.png";
-import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
 import { clickSound } from "@/app/utils/click-sound";
+import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
   const answers = ["浮", "聞", "集", "活"];
+  const [showAnswer1, setShowAnswer1] = useState(false);
+  const [showAnswer2, setShowAnswer2] = useState(false);
+  const [showAnswer3, setShowAnswer3] = useState(false);
+  const [showAnswer4, setShowAnswer4] = useState(false);
+
+  useEffect(() => {
+    if (showAnswer) {
+      setShowAnswer1(true);
+      setShowAnswer2(true);
+      setShowAnswer3(true);
+      setShowAnswer4(true);
+    } else {
+      setShowAnswer1(false);
+      setShowAnswer2(false);
+      setShowAnswer3(false);
+      setShowAnswer4(false);
+    }
+  }, [showAnswer]);
 
   const sounds = [
     "/sound/5/p130_word005.mp3", //(부)0
@@ -79,26 +96,38 @@ export default function Page() {
           <button onClick={() => SOUND(sounds[10]).play()}></button>
         </div>
 
-        <button
-          className="absolute -top-[2.5px] left-[59px]"
-          onClick={() => clickSound.play()}>
+        {/* <FlippableCard
+          width={100}
+          height={100}
+          className="absolute top-[5px] left-[69px]"
+          text={answers[0]}
+          backClassName="border-[3px] border-[#927e64] bg-[#ecdac4]"
+          frontClassName="border-[3px] border-[#927e64] bg-[#ecdac4]"
+          contentClassName="font-haeseo text-[55px] text-black !font-normal"
+          flipIconClassName="top-[-10px] right-[-10px] !w-[30px] grayscale-[100%]"
+          iconClassName="grayscale-[100%]"
+        /> */}
+
+        {!showAnswer1 ? <button
+          className="z-10 absolute -top-[2.5px] left-[59px]"
+          onClick={() => { clickSound.play(); setShowAnswer1(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button>
-        <button
-          className="absolute top-[104px] left-[489px]"
-          onClick={() => clickSound.play()}>
+        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center -top-[2.5px] left-[59px]">{answers[0]}</div>}
+        {!showAnswer2 ? <button
+          className="z-10 absolute top-[104px] left-[489px]"
+          onClick={() => { clickSound.play(); setShowAnswer2(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button>
-        <button
-          className="absolute top-[427px] left-[166px]"
-          onClick={() => clickSound.play()}>
+        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[104px] left-[489px]">{answers[1]}</div>}
+        {!showAnswer3 ? <button
+          className="z-10 absolute top-[427px] left-[166px]"
+          onClick={() => { clickSound.play(); setShowAnswer3(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button>
-        <button
-          className="absolute top-[427px] left-[489px]"
-          onClick={() => clickSound.play()}>
+        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[166px]">{answers[2]}</div>}
+        {!showAnswer4 ? <button
+          className="z-10 absolute top-[427px] left-[489px]"
+          onClick={() => { clickSound.play(); setShowAnswer4(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button>
+        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[489px]">{answers[3]}</div>}
 
       </ContentContainer>
 

@@ -8,7 +8,7 @@ import IMAGE2_2 from "./img2-2.png";
 import IMAGE2_3 from "./img2-3.png";
 import IMAGE2_4 from "./img2-4.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
 import { MoveRight, Plus } from "lucide-react";
@@ -18,17 +18,18 @@ import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문
 import BACKGROUND3 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자16.png";
 import BACKGROUND4 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자17.png";
 import BACKGROUND5 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자18.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showResource, setShowResource] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowResource(false);
   }, [step]);
 
@@ -134,7 +135,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={5} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={5} />
 
         {step === 4 ? (
           <div className="absolute right-[105px] translate-y-[60px]">

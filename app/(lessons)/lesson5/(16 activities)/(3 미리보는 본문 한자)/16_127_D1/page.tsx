@@ -3,7 +3,7 @@
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
@@ -11,10 +11,10 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕3.png";
 import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕4.png";
 import { StepContainer } from "@/app/components/step-container";
-import { InputWithPen } from "@/app/components/input-with-pen";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showAnswer, setShowAnswer] = useState(false);
   const answers = ["餘", "取", "活", "男", "如"];
@@ -102,7 +102,7 @@ export default function Page() {
         />
       )}
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
 
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}

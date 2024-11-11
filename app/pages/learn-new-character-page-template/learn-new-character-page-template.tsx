@@ -24,13 +24,15 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("새로 익힐 한자");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const pages = useMemo(() => Math.ceil(characters.length / 8), [characters]);
 
   const [showKorean, setShowKorean] = useState<boolean>(false);
   const [isFirstShown, setIsFirstShown] = useState<boolean>(true);
 
   const [indexes, setIndexes] = useState<number[]>([]);
+
+  const [playingSound, setPlayingSound] = useState<number | null>(null);
 
   const resetState = () => {
     setIndexes(Array.from(Array(characters.length).keys()).map(() => -1));
@@ -53,6 +55,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
     setIsFirstShown(true);
     setShowKorean(false);
     resetState();
+    Howler.stop();
   }, [step]);
 
   return (
@@ -84,26 +87,30 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
                   background: `url('${CHARACTER_CONTAINER.src}') no-repeat center center`,
                 }}
                 onClick={() => {
+                  if (playingSound) {
+                    Howler.stop();
+                  }
                   clickSound.play();
                   if (indexes[index] === 1) {
                     setIndexes(indexes.map((v, i) => (i === index ? 0 : v)));
                   } else {
-                    new Howl({
-                      src: character.sound,
-                    }).play();
+                    setPlayingSound(
+                      new Howl({
+                        src: character.sound,
+                      }).play(),
+                    );
                     setIndexes(indexes.map((v, i) => (i === index ? 1 : v)));
                   }
                 }}
               >
                 <p className="font-haeseo text-[170px]">{character.chinese}</p>
                 <div
-                  className={`relative -top-9 animate__animated opacity-0 ${
-                    indexes[index] === -1
-                      ? ""
-                      : indexes[index] === 1
-                        ? "animate__flipInX opacity-100"
-                        : "animate__flipOutX opacity-100"
-                  }`}
+                  className={`relative -top-9 animate__animated opacity-0 ${indexes[index] === -1
+                    ? ""
+                    : indexes[index] === 1
+                      ? "animate__flipInX opacity-100"
+                      : "animate__flipOutX opacity-100"
+                    }`}
                   style={{
                     fontSize: `${character.fontSize ?? 55}px`,
                   }}
@@ -146,7 +153,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
       <StepContainerArrow
         maxStep={pages}
         step={step}
-        onStepChange={setStep}
+       
         className="absolute w-full bottom-[5px] mb-0"
       />
       ) : null }

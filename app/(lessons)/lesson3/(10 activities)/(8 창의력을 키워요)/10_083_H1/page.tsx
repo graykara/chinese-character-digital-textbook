@@ -5,12 +5,14 @@ import IMAGE from "./image.png";
 import { useEffect, useState } from "react";
 import { CreativityPageTemplate } from "@/app/pages/creativity-page-template";
 import { CreativityTitleHeader } from "@/app/components/headers/creativity-title-header";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
-import { TitleContainer } from "@/app/components/title-container";
 import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어227.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { BuddyButton } from "@/app/components/buttons/buddy-button";
 import { GroupButton } from "@/app/components/buttons/group-button";
+
+const sound = new Howl({
+  src: "/sound/3/83-i.mp3",
+});
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -22,16 +24,10 @@ export default function Page() {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
 
-  const sound = new Howl({
-    src: "/sound/3/83-i.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
-
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   const items = [
@@ -54,8 +50,8 @@ export default function Page() {
           className="absolute -top-[13px] left-[1125px] animate__animated animate__bounceIn animate__delay-1s z-10"
           active={isReading}
           onClick={() => {
-            soundId && sound.stop(soundId);
-            setSoundId(sound.play());
+            if (isReading) sound.stop();
+            else setSoundId(sound.play());
           }}
         />
         <BuddyButton className="animate__animated animate__fadeIn animate__delay-1s absolute right-[320px] -top-[10px] w-[100px] z-1" />

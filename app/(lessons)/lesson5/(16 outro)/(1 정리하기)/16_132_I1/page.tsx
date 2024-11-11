@@ -5,15 +5,16 @@ import IMAGE1 from "./image1.png";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
 import IMAGE4 from "./image4.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StepContainer } from "@/app/components/step-container";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕30.png";
 import BACKGROUND3 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕31.png";
 import BACKGROUND4 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕32.png";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
@@ -25,7 +26,7 @@ export default function Page() {
           {step === 4 && <Step4 />}
         </div>
       </SummaryPageTemplate>
-      <StepContainer maxStep={4} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={4} />
       <img src={
         step === 1 ? BACKGROUND1.src :
         step === 2 ? BACKGROUND2.src :

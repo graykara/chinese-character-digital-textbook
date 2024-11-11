@@ -12,19 +12,23 @@ import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어27.png";
 import { clickSound } from "@/app/utils/click-sound";
 
+const sound = new Howl({
+  src: "/sound/1/15_story.mp3",
+});
+
 export default function Page() {
   const [showModal, setShowModal] = useState(false);
   const [isReading, setIsReading] = useState(false);
 
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/15_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-    onstop: () => setIsReading(false),
-  });
 
-  [
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
+  const contents = [
     {
       text: "한·중·일 3국에서 숫자 ‘4’는 불길한 숫자로 통한다.",
       start: 0,
@@ -61,11 +65,11 @@ export default function Page() {
         className="absolute top-[115px] left-[1040px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
-          if (soundId) {
+          if(isReading) {
             console.log("stop");
-            sound.stop(soundId);
+            sound.stop();
           }
-          setTimeout(() => setSoundId(sound.play()), 100);
+          else sound.play();
         }}
       />
 

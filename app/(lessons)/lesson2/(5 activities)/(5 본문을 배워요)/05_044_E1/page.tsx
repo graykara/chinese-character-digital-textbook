@@ -7,7 +7,7 @@ import IMAGE4 from "./bg_4.png";
 import IMAGE5 from "./bg_5.png";
 import VIDEO_PLAY_THUMBNAIL from "@/app/components/video-thumbnail/assets/video-play.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -19,19 +19,20 @@ import BACKGROUND4 from "@/app/bgpng_temp/5/중등한문
 import { Modal } from "@/app/components/modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showReading, setShowReading] = useState(false);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   const [showReading2, setShowReading2] = useState(false);
   const [showMeaning2, setShowMeaning2] = useState(false);
 
   const video = "string";
   useEffect(() => {
     setShowReading(false);
-    setShowMeaning(false);
+    setShowMeaning(null);
     setShowReading2(false);
     setShowMeaning2(false);
   }, [step]);
@@ -199,7 +200,7 @@ export default function Page() {
   return (
     <>
       <LearnMainContentPageTemplate>
-        <RightTopStepContainer maxStep={4} step={step} onStepChange={setStep} />
+        <RightTopStepContainer maxStep={4} />
 
         <ContentContainer className="w-[1300px] h-full grid grid-cols-2 pl-20 pr-10">
           <div className="relative mb-[260px]">

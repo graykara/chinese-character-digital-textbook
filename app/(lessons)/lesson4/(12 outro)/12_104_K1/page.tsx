@@ -34,7 +34,7 @@ export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("문제 풀기");
 
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
 
   const questions = [
@@ -48,7 +48,7 @@ export default function Page() {
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
     "[6-7] 다음 글을 읽고, 물음에 답하시오.",
     <>
-    <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㅁ</span>의 설명 중 옳지 않은 것은?
+    <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㅁ</span>의 설명 중 옳지 <span className="underline underline-offset-[10px]">않은</span> 것은?
     </>,
     // "㉠~㉤의 설명 중 옳지 <span class="underline underline-offset-[10px]">않은</span> 것은?",
     <>
@@ -65,7 +65,7 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={9}
         step={step}
-        onStepChange={setStep}
+       
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate

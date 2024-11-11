@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
@@ -22,20 +22,59 @@ type Data = {
 interface Props {
   data: Data;
   showReading: boolean | null;
-  showMeaning: boolean | null;
   showMeaning2: boolean | null;
   setShowReading: (value: boolean) => void;
-  setShowMeaning: (value: boolean) => void;
   setShowMeaning2: (value: boolean) => void;
 }
+
+const checkAllFlippableCardsActive = async (
+  ref: React.RefObject<HTMLDivElement>,
+  setShow: (value: boolean) => void
+): Promise<boolean> => {
+  try {
+    if (!ref.current) {
+      setShow(false);
+      return false;
+    }
+
+    const result = await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        try {
+          const cards = ref.current?.querySelectorAll('.flippable-card');
+
+          // If no cards found, consider it as "shown"
+          if (!cards || cards.length === 0) {
+            resolve(true);
+            return;
+          }
+
+          // Check if all cards are active
+          const allActive = Array.from(cards).every(card =>
+            card.getAttribute('data-active') === 'true'
+          );
+
+          resolve(allActive);
+        } catch (error) {
+          console.error('Error checking flippable cards:', error);
+          resolve(false);
+        }
+      }, 100); // Small delay to ensure DOM is ready
+    });
+
+    setShow(result);
+    return result;
+  } catch (error) {
+    console.error('Error in checkAllFlippableCardsActive:', error);
+    setShow(false);
+    return false;
+  }
+};
 
 export const MainContent = ({
   data,
   showReading,
-  showMeaning,
   showMeaning2,
   setShowReading,
-  setShowMeaning,
   setShowMeaning2,
 }: Props) => {
   const { chinese, content1, content2, sound } = data;
@@ -47,11 +86,39 @@ export const MainContent = ({
 
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
 
+  const meaning1Ref = useRef<HTMLDivElement>(null);
+  const meaning2Ref = useRef<HTMLDivElement>(null);
+
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setShowMeaning(null);
+  }, [data])
+
+  useEffect(() => {
+    checkAllFlippableCardsActive(meaning1Ref, setShowMeaning);
+  }, []);
+
+  const handleMeaning1Click = () => {
+    if (!showMeaning) {
+      const cards = meaning1Ref.current?.querySelectorAll('.flippable-card');
+      cards?.forEach(card => card.setAttribute('data-active', 'true'));
+    } else {
+      const cards = meaning1Ref.current?.querySelectorAll('.flippable-card');
+      cards?.forEach(card => card.setAttribute('data-active', 'false'));
+    }
+    setShowMeaning(!showMeaning);
+  };
+
+  const handleMeaning2Click = () => {
+    setShowMeaning2(!showMeaning2);
+  };
+
   if (!data) return null;
 
   return (
     <>
-      <div className="absolute top-[150px] pl-[120px]">
+      <div key={data.chinese[0].letter} className="absolute top-[150px] pl-[120px]">
         <div className="relative items-start left-[210px] w-[1100px]">
           <div className="flex mr-[250px]">
             {chinese.map(
@@ -109,7 +176,7 @@ export const MainContent = ({
         </div>
         <div className="grid grid-cols-[180px__1fr] gap-10 -mt-6">
           <PillButton
-            active={showReading}
+            active={showReading || false}
             onClick={() => {
               if (!showReading) SOUND(sound).play();
               setShowReading(!showReading);
@@ -122,25 +189,28 @@ export const MainContent = ({
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-14">
           <PillButton
             active={showMeaning || false}
-            onClick={() => setShowMeaning(!showMeaning)}
+            onClick={handleMeaning1Click}
             text="겉뜻"
             checkboxColor="#306875"
             backgroundColor="#4f9aab"
           />
           <div>
-            <div className="-mt-1">{content1 ?? null}</div>
+            <div ref={meaning1Ref} onClick={() => checkAllFlippableCardsActive(meaning1Ref, setShowMeaning)} className="-mt-1">
+              {content1 ?? null}
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-12">
           <PillButton
-            active={showMeaning2}
-            onClick={() => setShowMeaning2(!showMeaning2)}
+            active={showMeaning2 || false}
+            onClick={handleMeaning2Click}
             text="속뜻"
             checkboxColor="#4b4f77"
             backgroundColor="#7e83ac"
           />
           <div>
             <div
+              ref={meaning2Ref}
               className={`-mt-1 ${showMeaning2 ? "animate__animated animate__fadeIn animate__flipInX" : "hidden"}`}
             >
               {content2 ?? null}
@@ -160,13 +230,20 @@ export const MainContent = ({
 export const MainContent_SM = ({
   data,
   showReading,
-  showMeaning,
   showMeaning2,
   setShowReading,
-  setShowMeaning,
   setShowMeaning2,
 }: Props) => {
   const { chinese, content1, content2, sound } = data;
+
+  const meaning1Ref = useRef<HTMLDivElement>(null);
+  const meaning2Ref = useRef<HTMLDivElement>(null);
+
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setShowMeaning(null);
+  }, [data])
 
   const [showAdditionalModal, setShowAdditionalModal] = useState(false);
   const [selectedAdditional, setSelectedAdditional] = useState<
@@ -175,11 +252,26 @@ export const MainContent_SM = ({
 
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
 
+  const handleMeaning1Click = () => {
+    if (!showMeaning) {
+      const cards = meaning1Ref.current?.querySelectorAll('.flippable-card');
+      cards?.forEach(card => card.setAttribute('data-active', 'true'));
+    } else {
+      const cards = meaning1Ref.current?.querySelectorAll('.flippable-card');
+      cards?.forEach(card => card.setAttribute('data-active', 'false'));
+    }
+    setShowMeaning(!showMeaning);
+  };
+
+  const handleMeaning2Click = () => {
+    setShowMeaning2(!showMeaning2);
+  };
+
   if (!data) return null;
 
   return (
     <>
-      <div className="absolute top-[200px] pl-[120px]">
+      <div key={data.chinese[0].letter} className="absolute top-[200px] pl-[120px]">
         <div className="relative items-start left-[210px] w-[1100px]">
           <div className="flex ml-[140px] mr-[440px] bg-transparent">
             {chinese.map(
@@ -250,25 +342,28 @@ export const MainContent_SM = ({
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-14">
           <PillButton
             active={showMeaning || false}
-            onClick={() => setShowMeaning(!showMeaning)}
+            onClick={handleMeaning1Click}
             text="겉뜻"
             checkboxColor="#306875"
             backgroundColor="#4f9aab"
           />
           <div>
-            <div className="-mt-1">{content1 ?? null}</div>
+            <div ref={meaning1Ref} onClick={() => checkAllFlippableCardsActive(meaning1Ref, setShowMeaning)} className="-mt-1">
+              {content1 ?? null}
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-[180px__1100px] gap-10 mt-12">
           <PillButton
-            active={showMeaning2}
-            onClick={() => setShowMeaning2(!showMeaning2)}
+            active={showMeaning2 || false}
+            onClick={handleMeaning2Click}
             text="속뜻"
             checkboxColor="#4b4f77"
             backgroundColor="#7e83ac"
           />
           <div>
             <div
+              ref={meaning2Ref}
               className={`mt-1 leading-tight ${showMeaning2 ? "animate__animated animate__fadeIn animate__flipInX" : "hidden"}`}
             >
               {content2 ?? null}

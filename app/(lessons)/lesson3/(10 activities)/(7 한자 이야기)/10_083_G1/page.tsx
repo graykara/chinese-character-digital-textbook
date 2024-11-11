@@ -3,7 +3,7 @@
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Howl } from "howler";
 import VIDEO from "./video.png";
 import VIDEO2 from "./video2.png";
@@ -13,9 +13,18 @@ import BACKGROUND1 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 �
 import BACKGROUND2 from "@/app/bgpng_temp/10/중등한문_이야기가 담긴 성어226.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
+import { PageInfoContext } from "@/app/utils/page-info";
+
+const sound1 = new Howl({
+  src: "/sound/3/83_story_2.mp3"
+});
+
+const sound2 = new Howl({
+  src: "/sound/3/83_story_2.mp3"
+});
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
@@ -47,19 +56,14 @@ export default function Page() {
     },
   ];
 
-  const sounds = ["/sound/3/83_story_1.mp3", "/sound/3/83_story_2.mp3"];
-
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
-  
-
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
   }, []);
 
   return (
@@ -70,8 +74,14 @@ export default function Page() {
         className="absolute top-[110px] left-[1320px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          soundId && sound.stop(soundId);
-          setSoundId(sound.play());
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          }
+          else {
+            if (step === 1) setSoundId(sound1.play());
+            else setSoundId(sound2.play());
+          }
         }}
       />
 
@@ -79,9 +89,8 @@ export default function Page() {
         {step === 1 && (
           <div className="absolute top-[105px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-16 pr-4 pt-10 -mt-4 pb-10 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-16 pr-4 pt-10 -mt-4 pb-10 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               우리 선조들의 이야기에서 유래한 대표적인 성어로는 ‘함흥차사(
               <span className="font-haeseo">咸興差使</span>)’와 ‘계란유골(
@@ -150,7 +159,7 @@ export default function Page() {
         )}
       </ContentContainer>
 
-      <StepContainer maxStep={2} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={2} />
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"

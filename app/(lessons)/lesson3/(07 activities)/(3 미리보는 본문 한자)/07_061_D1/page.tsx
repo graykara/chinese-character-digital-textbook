@@ -4,7 +4,7 @@ import BUTTON_IMAGE from "./button.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { HeaderContainer } from "@/app/components/headers/header-container";
 import { TitleContainer } from "@/app/components/title-container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import HOW_BADGE from "./how-badge.png";
 import TASK_BADGE from "./task-badge.png";
 import IMAGE2_BEFORE from "./image2_before.png";
@@ -17,9 +17,10 @@ import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성
 import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어16.png";
 import { clickSound } from "@/app/utils/click-sound";
 import { SOUND } from "@/app/utils/sound-player";
+import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
-  const [step, setStep] = useState(1);
+  const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -44,7 +45,7 @@ export default function Page() {
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
 
-      <StepContainer maxStep={3} step={step} onStepChange={setStep} />
+      <StepContainer maxStep={3} />
       <img
         src={
           step === 1

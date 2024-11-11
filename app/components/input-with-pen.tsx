@@ -23,10 +23,12 @@ export const InputWithPen = ({
     useState<boolean>(false);
 
   useEffect(() => {
-    console.log(divRef.current);
     if (showAnswer && inputRef.current && divRef.current) {
       if (typeof answer === "string") setValue(answer || "");
-      else setShowAnswerReactNode(true);
+      else {
+        setShowAnswerReactNode(true);
+        setValue("")
+      }
       inputRef.current.className += isExample
         ? " text-example"
         : " text-answer";
@@ -66,9 +68,8 @@ export const InputWithPen = ({
         {value === "" && !showAnswer ? (
           <img
             src="/ui/textarea-pen.png"
-            className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${
-              penClassName || ""
-            }`}
+            className={`absolute top-1/2 -translate-y-1/2 pointer-events-none ${penClassName || ""
+              }`}
           />
         ) : null}
       </div>
