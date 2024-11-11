@@ -12,7 +12,6 @@ const sound = new Howl({
 
 export default function Page() {
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
 
   useEffect(() => {
     sound.on('play', () => setIsReading(true));
@@ -38,10 +37,8 @@ export default function Page() {
             onClick={() => {
               if (isReading) {
                 sound.stop();
-                setIsReading(false);
-                setSoundId(null);
               } else {
-                else setSoundId(sound.play());
+                sound.play();
               }
             }}
             className="relative top-[60px] left-[1510px] animate__animated animate__bounceIn animate__delay-2s z-10"
