@@ -12,6 +12,10 @@ import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아9.png";
 import { SOUND } from "@/app/utils/sound-player";
 
+const sound = new Howl({
+  src: "/sound/1/17/1.mp3",
+});
+
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("한자와 한문");
@@ -22,11 +26,12 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/17/1.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -46,8 +51,8 @@ export default function Page() {
           <SoundButton2
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if(isReading) sound.stop();
+              else setSoundId(sound.play());
             }}
             className="absolute top-1/2 -translate-y-1/2 left-[150px]"
           />

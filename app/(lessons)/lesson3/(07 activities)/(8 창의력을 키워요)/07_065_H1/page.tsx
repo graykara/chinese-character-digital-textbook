@@ -10,6 +10,10 @@ import { ContentContainer } from "@/app/components/content-container";
 import BACKGROUND1 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어131.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sound = new Howl({
+  src: "/sound/3/65-i.mp3",
+});
+
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -20,16 +24,11 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/3/65-i.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   const items = [
@@ -53,8 +52,8 @@ export default function Page() {
           className="absolute -top-[13px] left-[1095px] animate__animated animate__bounceIn animate__delay-1s z-10"
           active={isReading}
           onClick={() => {
-            soundId && sound.stop(soundId);
-            setSoundId(sound.play());
+            if (isReading) sound.stop();
+            else setSoundId(sound.play());
           }}
         />
 

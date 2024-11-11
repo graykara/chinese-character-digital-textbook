@@ -16,6 +16,10 @@ import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아16.png";
 import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아17.png";
 
+const sound = new Howl({
+  src: "/sound/1/19-2.mp3",
+});
+
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
   setSubtitle("모르는 한자는 어떻게 찾을까?");
@@ -24,19 +28,11 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/19-2.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
-  useEffect(() => {
-    sound.stop();
-  }, []);
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   const [showAnswer, setShowAnswer] = useState(false);
@@ -62,8 +58,8 @@ export default function Page() {
           <SoundButton2
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if(isReading) sound.stop();
+              else setSoundId(sound.play());
             }}
             className="absolute top-1/2 -translate-y-1/2 left-[400px]"
           />
@@ -100,9 +96,8 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[120px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[120px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
               {!values[1] && !showAnswer ? (
                 <img
@@ -124,9 +119,8 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[800px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[800px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
               {!values[2] && !showAnswer ? (
                 <img
@@ -148,9 +142,8 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1110px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[1110px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
               {!values[3] && !showAnswer ? (
                 <img
@@ -172,9 +165,8 @@ export default function Page() {
                     ),
                   )
                 }
-                className={`absolute left-[1290px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${
-                  showAnswer ? "text-answer" : ""
-                }`}
+                className={`absolute left-[1290px] bottom-[30px] w-[100px] bg-transparent text-center text-[50px] ${showAnswer ? "text-answer" : ""
+                  }`}
               />
             </div>
           </div>

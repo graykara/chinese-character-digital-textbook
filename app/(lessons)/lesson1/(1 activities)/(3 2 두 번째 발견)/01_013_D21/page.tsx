@@ -46,7 +46,7 @@ export default function Page() {
                 setSoundId(null);
               } else {
                 // 재생 시작
-                setSoundId(sound.play());
+                else setSoundId(sound.play());
               }
             }}
             className="relative top-[60px] left-[1510px] animate__animated animate__bounceIn animate__delay-2s z-10"

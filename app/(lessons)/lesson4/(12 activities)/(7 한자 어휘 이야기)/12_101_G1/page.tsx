@@ -43,14 +43,19 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/4/101_story.mp3",
+});
+
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
 
-  const sound = new Howl({
-    src: "/sound/4/101_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문 연구소이다.",
@@ -69,28 +74,21 @@ const Step1 = () => {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <SoundButton2
         className="absolute left-[1050px] top-[110px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
-          sound.stop();
-          sound.play();
+          if (isReading) sound.stop();
+          else sound.play();
         }}
       />
       <ContentContainer>
         <div className="relative -top-[70px] w-[1460px]">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] pl-9 pr-2 py-6 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] pl-9 pr-2 py-6 text-[45px] leading-[65px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+              }`}
           >
             규장각은 정조가 즉위한 1776년에 창설된 왕실 도서관이자 학문
             연구소이다.

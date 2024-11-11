@@ -36,19 +36,18 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/2/55-i-2.mp3",
+});
+
 const Content1 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/2/55-i-2.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   useEffect(() => {
@@ -63,11 +62,11 @@ const Content1 = () => {
         className="absolute top-[300px] left-[300px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
-          if (soundId) {
+          if (isReading) {
             console.log("stop");
-            sound.stop(soundId);
+            sound.stop();
           }
-          setTimeout(() => setSoundId(sound.play()), 100);
+          else sound.play();
         }}
       />
 
@@ -119,17 +118,17 @@ const Content2 = () => {
             />
 
             <InputWithPen
-            answer="(두 가지 일을 한꺼번에)
+              answer="(두 가지 일을 한꺼번에)
 아울러 행함.​"
-            showAnswer={showAnswer}
+              showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[352px]"
               className="bg-transparent text-[35px] w-[180px]"
               penClassName="w-[35px]"
               isExample
             />
             <InputWithPen
-            answer="수식 관계​"
-            showAnswer={showAnswer}
+              answer="수식 관계​"
+              showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[419px]"
               className="bg-transparent text-[35px] w-[180px]"
               penClassName="w-[35px]"

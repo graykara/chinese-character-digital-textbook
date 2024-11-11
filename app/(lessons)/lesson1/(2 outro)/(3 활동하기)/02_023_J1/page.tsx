@@ -105,11 +105,11 @@ const Content2 = () => {
         className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
-          if (soundId) {
+          if(isReading) {
             console.log("stop");
-            sound.stop(soundId);
+            sound.stop();
           }
-          setTimeout(() => setSoundId(sound.play()), 100);
+          else sound.play();
         }}
       />
 

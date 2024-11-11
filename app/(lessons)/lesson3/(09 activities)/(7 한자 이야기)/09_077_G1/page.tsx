@@ -71,8 +71,8 @@ export default function Page() {
           className="absolute top-[110px] left-[1220px] animate__animated animate__bounceIn animate__delay-2s z-10"
           active={isReading}
           onClick={() => {
-            soundId && sound.stop(soundId);
-            setSoundId(sound.play());
+            if(isReading) sound.stop();
+            else setSoundId(sound.play());
           }}
         />
       {/* )} */}

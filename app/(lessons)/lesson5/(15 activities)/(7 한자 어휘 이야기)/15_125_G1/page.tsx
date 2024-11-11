@@ -10,17 +10,28 @@ import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살23
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sound1 = new Howl({
+  src: "/sound/5/125_story-1.mp3",
+});
+const sound2 = new Howl({
+  src: "/sound/5/125_story-2.mp3",
+});
+
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/5/125_story-1.mp3", "/sound/5/125_story-2.mp3"];
 
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "선천적인 재능보다 중요한 것은 어떤 일을 이루고자 하는 진심 어린 의지이다.",
@@ -42,12 +53,6 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <CultureHeader title={"나로부터 나오는 집중하는 마음"} />
@@ -56,8 +61,13 @@ export default function Page() {
         className="absolute top-[110px] left-[1040px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          sound.stop();
-          sound.play();
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
+          }
         }}
       />
 
@@ -65,9 +75,8 @@ export default function Page() {
         {step === 1 && (
           <div className="absolute top-[55px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-2 pt-8 -mt-4 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               선천적인 재능보다 중요한 것은 어떤 일을 이루고자 하는 진심 어린
               의지이다. 그리고 마음을 집중하고 몰두하는 것은 전적으로 나
@@ -78,9 +87,8 @@ export default function Page() {
         {step === 2 && (
           <div className="-mt-[330px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-4 pt-8 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-4 pt-8 pb-8 text-[45px] leading-[70px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               어느 날 맹자가 말했다. “최고의 바둑 고수인 혁추가 두 사람에게
               바둑을 가르치는데, 한 사람은 혁추의 말에 집중하여 몰두하고, 다른

@@ -11,16 +11,29 @@ import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자36.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sounds = [
+  new Howl({ src: "/sound/2/31/1.mp3" }),
+  new Howl({ src: "/sound/2/31/2.mp3" }),
+  new Howl({ src: "/sound/2/31/3.mp3" }),
+  new Howl({ src: "/sound/2/31/4.mp3" }),
+  new Howl({ src: "/sound/2/31/5.mp3" }),
+];
+
+const sound = new Howl({
+  src: "/sound/2/33_story.mp3",
+});
+
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/2/33_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
 
   [
     {
@@ -40,24 +53,6 @@ export default function Page() {
     },
   ];
 
-  const sounds = [
-    new Howl({ src: "/sound/2/31/1.mp3" }),
-    new Howl({ src: "/sound/2/31/2.mp3" }),
-    new Howl({ src: "/sound/2/31/3.mp3" }),
-    new Howl({ src: "/sound/2/31/4.mp3" }),
-    new Howl({ src: "/sound/2/31/5.mp3" }),
-  ];
-
-  useEffect(() => {
-    sound.stop();
-  }, [step]);
-
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <CultureHeader title="갖은자 이야기" />
@@ -67,16 +62,15 @@ export default function Page() {
             className="absolute top-[110px] left-[750px] animate__animated animate__bounceIn animate__delay-2s z-10"
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if(isReading) sound.stop();
+              else setSoundId(sound.play());
             }}
           />
           <ContentContainer>
             <div className="relative -top-[55px] w-[1460px]">
               <div
-                className={`bg-[#f4ede1] rounded-[50px] px-20 pt-16 pb-12 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${
-                  isReading ? "text-reading" : ""
-                }`}
+                className={`bg-[#f4ede1] rounded-[50px] px-20 pt-16 pb-12 text-[55px] leading-[82px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                  }`}
               >
                 오늘날에는 아라비아 숫자를 주로 사용하지만, 예전에는 한자로
                 숫자를 적었다. 그런데 ‘

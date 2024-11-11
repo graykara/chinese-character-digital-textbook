@@ -56,19 +56,17 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/2/53_story.mp3",
+});
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/2/53_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
 
   return (
@@ -77,17 +75,16 @@ const Step1 = () => {
         className="absolute top-[110px] left-[710px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          soundId && sound.stop(soundId);
-          setSoundId(sound.play());
+          if (isReading) sound.stop();
+          else setSoundId(sound.play());
         }}
       />
 
       <ContentContainer>
         <div className="relative w-[1460px]">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1px] break-keep ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[55px] leading-[82px] tracking-[-1px] break-keep ${isReading ? "text-reading" : ""
+              }`}
           >
             둘 이상의 한자가 모여 한자 어휘를 형성할 때, 한자 사이의 결합 관계를
             단어의 짜임이라고 한다. 단어의 짜임에는 병렬 관계, 수식 관계, 주술

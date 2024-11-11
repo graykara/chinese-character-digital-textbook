@@ -11,16 +11,19 @@ import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘15.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sound = new Howl({
+  src: "/sound/2/47_story.mp3",
+});
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/2/47_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
   [
     {
       text: "“심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.",
@@ -39,12 +42,6 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <WordStoryHeader title={"‘심심한 감사’와 ‘심심한 위로’, 무슨 뜻일까?"} />
@@ -54,17 +51,16 @@ export default function Page() {
             className="absolute top-[110px] left-[1300px] animate__animated animate__bounceIn animate__delay-1s z-10"
             active={isReading}
             onClick={() => {
-              soundId && sound.stop(soundId);
-              setSoundId(sound.play());
+              if (isReading) sound.stop();
+              else setSoundId(sound.play());
             }}
           />
 
           <ContentContainer>
             <div className="relative -top-[5px] w-[1460px]">
               <div
-                className={`bg-[#f4ede1] rounded-[50px] px-20 py-14 text-[55px] leading-[84px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${
-                  isReading ? "text-reading" : ""
-                }`}
+                className={`bg-[#f4ede1] rounded-[50px] px-20 py-14 text-[55px] leading-[84px] tracking-[-1.5px] break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                  }`}
               >
                 “심심한 감사를 드립니다.”, “심심한 위로를 표합니다.” 이때의
                 ‘심심하다’라는 말은 ‘지루하고 재미가 없다’ 라는 뜻이 아니다.

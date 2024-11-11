@@ -36,14 +36,20 @@ export default function Page() {
   );
 }
 
+const sound = new Howl({
+  src: "/sound/3/65_story.mp3",
+});
+
 const Step1 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/3/65_story.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "중국 춘추 시대에 손양(孫陽)이라는 사람은 千里馬 (천리마)를 알아보는 재주를 가졌기에, 옥황상제의 天馬 (천마)를 관장하는 자리의 이름인 ‘백락(伯樂)’으로 불렸다.",
@@ -72,28 +78,21 @@ const Step1 = () => {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <SoundButton2
         className="absolute top-[115px] left-[980px] animate__animated animate__bounceIn animate__delay-2s"
         active={isReading}
         onClick={() => {
-          soundId && sound.stop(soundId);
-          setSoundId(sound.play());
+          if (isReading) sound.stop();
+          else setSoundId(sound.play());
         }}
       />
       <ContentContainer>
         <div className="relative w-[1460px] -top-8">
           <div
-            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[50px] leading-[78px] tracking-tighter break-keep ${
-              isReading ? "text-reading" : ""
-            }`}
+            className={`bg-[#f4ede1] rounded-[50px] px-12 pt-6 pb-4 text-[50px] leading-[78px] tracking-tighter break-keep ${isReading ? "text-reading" : ""
+              }`}
           >
             중국 춘추 시대에 손양(
             <span className="font-haeseo text-[54px] leading-tight">孫陽</span>

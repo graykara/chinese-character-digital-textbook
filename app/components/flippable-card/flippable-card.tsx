@@ -13,9 +13,11 @@ interface Props {
   width: number;
   height: number;
   className?: string;
+  iconClassName?: string;
   backClassName?: string;
   frontClassName?: string;
   contentClassName?: string;
+  flipIconClassName?: string;
   iconColor?: "default" | "white" | "black";
 }
 
@@ -25,9 +27,11 @@ export const FlippableCard = ({
   width,
   height,
   className = "",
+  iconClassName = "",
   backClassName = "",
   frontClassName = "",
   contentClassName = "",
+  flipIconClassName = "",
   iconColor = "default",
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -97,6 +101,7 @@ export const FlippableCard = ({
         >
           <img
             src={clickIcon.src}
+            className={iconClassName ?? ""}
             style={{
               height: height * 0.6,
             }}
@@ -106,15 +111,15 @@ export const FlippableCard = ({
           className={`absolute w-full h-full bg-white border-8 border-[#0090a2] rounded-2xl text-[#0090a2] flex items-center justify-center [backface-visibility:hidden] [transform:rotateX(180deg)] ${backClassName}`}
         >
           <div
-            className={`w-full h-full flex items-center justify-center ${contentClassName}`}
+            className={`w-full h-full flex items-center justify-center font-bold ${contentClassName}`}
           >
-            <p className="text-center px-4 font-bold [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+            <p className="text-center px-4 [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
               {text}
             </p>
           </div>
           <img
             src={FLIP_ICON.src}
-            className="absolute -top-8 -right-8 w-[70px]"
+            className={`absolute -top-8 -right-8 w-[70px] ${flipIconClassName}`}
             alt="Flip icon"
           />
         </div>
