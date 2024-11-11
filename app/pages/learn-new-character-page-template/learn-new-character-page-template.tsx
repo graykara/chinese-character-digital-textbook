@@ -148,13 +148,15 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
             );
           })}
       </div>
-
+      
+      {pages !== 1 ? (
       <StepContainerArrow
         maxStep={pages}
         step={step}
        
         className="absolute w-full bottom-[5px] mb-0"
       />
+      ) : null }
     </div>
   );
 };

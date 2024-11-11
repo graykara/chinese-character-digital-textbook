@@ -77,7 +77,7 @@ export const VideoThumbnail_big = ({
         <img src={thumbnail} className="w-full h-full object-contain" />
 
         <button
-          className="w-[138px] h-[138px] absolute left-1/2 mb-10 -translate-x-1/2 opacity-50 hover:opacity-100 transition-opacity"
+          className="w-[138px] h-[138px] absolute left-1/2 mb-0 -translate-x-1/2 opacity-50 hover:opacity-100 transition-opacity"
           onClick={() => {
             clickSound.play();
             setShowModal(true);

@@ -9,7 +9,6 @@ import { useContext, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { VideoThumbnail } from "@/app/components/video-thumbnail";
-import { Textarea } from "@/app/components/textarea";
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘2.png";
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘3.png";
@@ -97,30 +96,30 @@ const Step2 = () => {
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
-          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
-          penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[107px] left-[820px]"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-5 bg-transparent"
+          penClassName="left-8 -translate-x-1/2"
+          containerClassName="absolute top-[105px] left-[820px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[200px] mt-4 bg-transparent"
           penClassName="left-0 -translate-x-1/2"
-          containerClassName="absolute top-[183px] left-[200px]"
+          containerClassName="absolute top-[181px] left-[200px]"
         />
         <InputWithPen
           answer={answers[4]}
           showAnswer={showAnswer}
           className="text-[50px] text-center w-[220px] mt-4 bg-transparent"
           penClassName="left-4 -translate-x-1/2"
-          containerClassName="absolute top-[183px] left-[525px]"
+          containerClassName="absolute top-[181px] left-[525px]"
         />
         <InputWithPen
           answer={answers[5]}
           showAnswer={showAnswer}
-          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
-          penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[183px] left-[820px]"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-5 bg-transparent"
+          penClassName="left-8 -translate-x-1/2"
+          containerClassName="absolute top-[181px] left-[820px]"
         />
         <InputWithPen
           answer={answers[6]}
@@ -139,9 +138,9 @@ const Step2 = () => {
         <InputWithPen
           answer={answers[8]}
           showAnswer={showAnswer}
-          className="text-[47px] tracking-[-3px] w-[560px] mt-4 bg-transparent"
-          penClassName="left-10 -translate-x-1/2"
-          containerClassName="absolute top-[257px] left-[820px]"
+          className="text-[47px] tracking-[-3px] w-[560px] mt-5 bg-transparent"
+          penClassName="left-8 -translate-x-1/2"
+          containerClassName="absolute top-[255px] left-[820px]"
         />
       </ContentContainer>
 

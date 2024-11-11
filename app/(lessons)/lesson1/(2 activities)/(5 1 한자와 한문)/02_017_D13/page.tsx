@@ -25,7 +25,7 @@ export default function Page() {
 
       <ExerciseHeader
         text="내 이름을 한자로 쓰고 그 뜻을 사용하여 이름의 의미를 써보자."
-        sound="/sound/1/17-i2.mp3" 
+        sound="/sound/1/17-i2.mp3"
         className="mt-4"
       />
 
@@ -39,43 +39,27 @@ export default function Page() {
           <div className="relative top-2">
 
             <InputWithPen
-              answer="김대성"
-              showAnswer={showAnswer}
-              className="text-center w-[195px] text-[30px] tracking-tighter bg-transparent"
-              penClassName="h-[48px] -left-1 -mt-2"
-              containerClassName="absolute resize-none left-[752px] top-5"
-              isExample
-            />
-            <TextareaWithPen
-              answer="‘크게 이루다’라는 뜻으로, 큰 인물이 되라고 지은 이름이래"
-              showAnswer={showAnswer}
-              containerClassName={`absolute resize-none w-[400px] left-[640px] top-[155px] text-center text-[30px] leading-[65px] tracking-tighter break-keep bg-transparent text-example}`}
-              penClassName="h-[48px] top-[155px] left-[650px]"
-              rows={2}
-            />
-
-            <InputWithPen
               answer="金"
               showAnswer={showAnswer}
               className="text-center w-[110px] text-[70px] font-haeseo tracking-tighter bg-transparent"
-              penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none -left-[135px] -top-1"
+              penClassName="h-[48px] top-[50px] left-1/2 -translate-x-1/2"
+              containerClassName="absolute resize-none -left-[135px] -top-2"
               isExample
             />
             <InputWithPen
               answer="大"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[70px] font-haeseo tracking-tighter bg-transparent"
-              penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[39px] -top-1"
+              penClassName="h-[48px] top-[50px] left-1/2 -translate-x-1/2"
+              containerClassName="absolute resize-none left-[39px] -top-2"
               isExample
             />
             <InputWithPen
               answer="成"
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[70px] font-haeseo tracking-tighter bg-transparent"
-              penClassName="h-[48px] top-[47px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[312px] -top-1"
+              penClassName="h-[48px] top-[50px] left-1/2 -translate-x-1/2"
+              containerClassName="absolute resize-none left-[312px] -top-2"
               isExample
             />
 
@@ -84,7 +68,7 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-center w-[110px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none -left-[135px] top-[113px]"
+              containerClassName="absolute resize-none -left-[135px] top-[110px]"
               isExample
             />
             <InputWithPen
@@ -92,7 +76,7 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[39px] top-[113px]"
+              containerClassName="absolute resize-none left-[39px] top-[110px]"
               isExample
             />
             <InputWithPen
@@ -100,7 +84,7 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[312px] top-[113px]"
+              containerClassName="absolute resize-none left-[312px] top-[110px]"
               isExample
             />
 
@@ -109,7 +93,7 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[39px] top-[222px]"
+              containerClassName="absolute resize-none left-[39px] top-[219px]"
               isExample
             />
             <InputWithPen
@@ -117,8 +101,24 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-center w-[205px] text-[60px] tracking-tighter bg-transparent"
               penClassName="h-[48px] top-[40px] left-1/2 -translate-x-1/2"
-              containerClassName="absolute resize-none left-[312px] top-[222px]"
+              containerClassName="absolute resize-none left-[312px] top-[219px]"
               isExample
+            />
+
+            <InputWithPen
+              answer="김대성"
+              showAnswer={showAnswer}
+              className="text-center w-[195px] text-[30px] tracking-tighter bg-transparent"
+              penClassName="h-[48px] -mt-1"
+              containerClassName="absolute resize-none left-[752px] top-4"
+              isExample
+            />
+            <TextareaWithPen
+              answer="‘크게 이루다’라는 뜻으로, 큰 인물이 되라고 지은 이름이래"
+              showAnswer={showAnswer}
+              containerClassName={`absolute resize-none w-[400px] left-[640px] top-[155px] text-center text-[30px] leading-[65px] tracking-tighter break-keep bg-transparent text-example}`}
+              penClassName="h-[48px] top-[155px] left-[650px]"
+              rows={2}
             />
 
           </div>

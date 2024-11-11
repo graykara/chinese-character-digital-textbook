@@ -50,21 +50,21 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[165px] left-[510px]"
+          containerClassName="absolute top-[163px] left-[510px]"
         />
         <InputWithPen
           answer={answers[1]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[165px] left-[675px]"
+          containerClassName="absolute top-[163px] left-[677px]"
         />
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[165px] left-[845px]"
+          containerClassName="absolute top-[163px] left-[843px]"
         />
       </ContentContainer>
 
@@ -108,21 +108,21 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[162px] left-[620px]"
+          containerClassName="absolute top-[162px] left-[622px]"
         />
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[162px] left-[790px]"
+          containerClassName="absolute top-[162px] left-[787px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[162px] left-[955px]"
+          containerClassName="absolute top-[162px] left-[953px]"
         />
       </ContentContainer>
 

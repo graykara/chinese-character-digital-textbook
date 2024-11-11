@@ -68,7 +68,7 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="w-[1080px] pl-14 pt-3 text-[40px] tracking-tighter bg-transparent"
           penClassName="h-[60px] left-7 -mt-2"
-          containerClassName="absolute resize-none left-[130px] top-[107px]"
+          containerClassName="absolute resize-none left-[130px] top-[106px]"
           isExample
         />
         <InputWithPen
@@ -76,7 +76,7 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="w-[1080px] pl-14 pt-3 text-[40px] tracking-tighter bg-transparent"
           penClassName="h-[60px] left-7 -mt-2"
-          containerClassName="absolute resize-none left-[130px] top-[179px]"
+          containerClassName="absolute resize-none left-[130px] top-[178px]"
           isExample
         />
         <InputWithPen

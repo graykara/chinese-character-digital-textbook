@@ -53,18 +53,18 @@ export default function Page() {
         isExample
         answer={"낮말은 새가 듣고 밤말은 쥐가 듣는다."}
         showAnswer={showAnswer}
-        className="text-[40px] w-[480px] leading-[68px] bg-transparent"
-        containerClassName="!absolute top-[440px] left-[360px]"
-        penClassName="w-[40px] left-0 top-[20px]"
+        className="text-[40px] w-[480px] leading-[68px] break-keep bg-transparent"
+        containerClassName="!absolute top-[450px] left-[360px]"
+        penClassName="w-[40px] left-0 top-[10px]"
         rows={3}
       />
       <OLD_TextareaWithPen
         isExample
         answer={"아무도 안 듣는데서라도 말조심을 해야한다."}
         showAnswer={showAnswer}
-        className="text-[40px] w-[480px] leading-[68px] bg-transparent"
-        containerClassName="!absolute top-[440px] left-[930px]"
-        penClassName="w-[40px] left-0 top-[20px]"
+        className="text-[40px] w-[480px] leading-[68px] break-keep bg-transparent"
+        containerClassName="!absolute top-[450px] left-[930px]"
+        penClassName="w-[40px] left-0 top-[10px]"
         rows={3}
       />
 

@@ -63,21 +63,21 @@ const Step1 = () => {
                 showAnswer={showAnswer}
                 className="w-[50px] text-[40px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute top-[62px] left-[222px]"
+                containerClassName="absolute top-[62px] left-[224px]"
               />
               <InputWithPen
                 answer="질문"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[110px] left-[165px]"
+                containerClassName="absolute bottom-[100px] left-[165px]"
               />
               <InputWithPen
                 answer="안부"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[30px] left-[165px]"
+                containerClassName="absolute bottom-[25px] left-[165px]"
               />
             </div>
             <div className="relative">
@@ -88,28 +88,28 @@ const Step1 = () => {
                 showAnswer={showAnswer}
                 className="w-[50px] text-[40px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute top-[62px] left-[150px]"
+                containerClassName="absolute top-[62px] left-[151px]"
               />
               <InputWithPen
                 answer="1"
                 showAnswer={showAnswer}
                 className="w-[50px] text-[40px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute top-[62px] left-[222px]"
+                containerClassName="absolute top-[62px] left-[225px]"
               />
               <InputWithPen
                 answer="식물"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[110px] left-[165px]"
+                containerClassName="absolute bottom-[100px] left-[165px]"
               />
               <InputWithPen
                 answer="수목원"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[30px] left-[165px]"
+                containerClassName="absolute bottom-[25px] left-[165px]"
               />
             </div>
             <div className="relative">
@@ -120,28 +120,28 @@ const Step1 = () => {
                 showAnswer={showAnswer}
                 className="w-[50px] text-[40px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute top-[62px] left-[150px]"
+                containerClassName="absolute top-[62px] left-[152px]"
               />
               <InputWithPen
                 answer="2"
                 showAnswer={showAnswer}
                 className="w-[50px] text-[40px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute top-[62px] left-[222px]"
+                containerClassName="absolute top-[62px] left-[226px]"
               />
               <InputWithPen
                 answer="정의"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[110px] left-[165px]"
+                containerClassName="absolute bottom-[100px] left-[165px]"
               />
               <InputWithPen
                 answer="병사"
                 showAnswer={showAnswer}
                 className="w-[150px] text-[50px] text-center bg-transparent"
                 penClassName="w-[40px] left-1/2 -translate-x-1/2"
-                containerClassName="absolute bottom-[30px] left-[165px]"
+                containerClassName="absolute bottom-[25px] left-[165px]"
               />
             </div>
           </div>

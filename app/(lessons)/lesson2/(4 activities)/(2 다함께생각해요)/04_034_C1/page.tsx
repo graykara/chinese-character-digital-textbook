@@ -57,7 +57,7 @@ const Step2 = () => {
         <TextareaWithPen
           answer={answer}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[65px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+          containerClassName={`absolute resize-none w-[1200px] left-[130px] top-[225px] text-[50px] leading-[67px] tracking-tight indent-[75px] break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
           penClassName="h-[56px] top-[230px] left-[200px]"
           rows={3}
         />

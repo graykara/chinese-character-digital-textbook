@@ -77,7 +77,7 @@ export default function Page() {
       <TextareaWithPen
         answer={answers[0]}
         showAnswer={showAnswer}
-        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[535px] text-[35px] pl-4 leading-[45px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[532px] text-[35px] pl-4 leading-[45px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
         penClassName="h-[37px] top-[537px] left-[870px]"
         rows={2}
       />
@@ -85,7 +85,7 @@ export default function Page() {
       <TextareaWithPen
         answer={answers[1]}
         showAnswer={showAnswer}
-        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[692px] text-[35px] pl-4 leading-[45px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
+        containerClassName={`absolute resize-none w-[720px] left-[870px] top-[689px] text-[35px] pl-4 leading-[45px] tracking-tighter break-keep bg-transparent py-1  ${showAnswer ? "text-example" : ""}`}
         penClassName="h-[37px] top-[694px] left-[870px]"
         rows={2}
       />

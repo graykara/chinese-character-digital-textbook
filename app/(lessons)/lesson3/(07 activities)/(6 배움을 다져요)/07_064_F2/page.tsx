@@ -78,8 +78,8 @@ const Step1 = () => {
         <TextareaWithPen
           answer={showAnswer ? answer2 : value}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
-          penClassName="h-[50px] top-[260px] left-[550px]"
+          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[258px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[50px] top-[262px] left-[550px]"
           rows={4}
         />
       </ContentContainer>
@@ -122,14 +122,14 @@ const Step2 = () => {
           answer={answer1}
           showAnswer={showAnswer}
           className={`w-[480px] bg-transparent text-[40px]  tracking-tighter ${showAnswer ? "text-example" : ""}`}
-          penClassName="-left-1 -mt-2 w-[52px]"
+          penClassName="-left-0 -mt-2 w-[52px]"
           containerClassName="absolute top-[180px] left-[585px] mt-1 ml-1"
         />
         <TextareaWithPen
           answer={showAnswer ? answer2 : value}
           showAnswer={showAnswer}
-          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[255px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
-          penClassName="h-[50px] top-[260px] left-[550px]"
+          containerClassName={`absolute resize-none w-[480px] left-[550px] top-[258px] pt-0 ml-1 pr-10 text-[40px] tracking-tighter break-keep leading-[72px] bg-transparent ${showAnswer ? "text-example tracking-tighter break-keep" : ""}`}
+          penClassName="h-[50px] top-[262px] left-[552px]"
           rows={4}
         />
       </ContentContainer>

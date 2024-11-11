@@ -132,7 +132,7 @@ export default function Page() {
               <div className="relative -top-[80px] -right-[90px]">
                 <img src={CONTAINER.src} alt="container" />
                 <FlippableCard
-                  active={showMeaning}
+                  active={showContent}
                   key={step}
                   text={data[step - 2]?.content}
                   width={330}

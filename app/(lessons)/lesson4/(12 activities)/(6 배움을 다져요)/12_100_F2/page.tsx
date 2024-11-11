@@ -2,12 +2,15 @@
 
 import { StrengthenLearningWordHeader } from "@/app/components/headers/strengthen-learning-word-header";
 import EXAMPLE from "./example.png";
-import IMAGE1 from "./image1-before.png";
-import IMAGE1_AFTER from "./image1-after.png";
-import IMAGE2 from "./image2-before.png";
-import IMAGE2_AFTER from "./image2-after.png";
-import IMAGE3 from "./image3-before.png";
-import IMAGE3_AFTER from "./image3-after.png";
+import IMAGE1 from "./image1.png";
+import IMAGE2 from "./image2.png";
+import IMAGE3 from "./image3.png";
+// import IMAGE1 from "./image1-before.png";
+// import IMAGE1_AFTER from "./image1-after.png";
+// import IMAGE2 from "./image2-before.png";
+// import IMAGE2_AFTER from "./image2-after.png";
+// import IMAGE3 from "./image3-before.png";
+// import IMAGE3_AFTER from "./image3-after.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useEffect, useState } from "react";
@@ -108,7 +111,7 @@ export default function Page() {
               </div>
             )}
             {step === 2 && (
-              <div className="relative left-[335px] top-[60px]">
+              <div className="relative left-[335px] top-[55px]">
                 <img src={IMAGE2.src} />
 
                 <div className="absolute left-[75px] top-[25px]">
@@ -128,7 +131,7 @@ export default function Page() {
               </div>
             )}
             {step === 3 && (
-              <div className="relative left-[335px] top-[60px]">
+              <div className="relative left-[335px] top-[55px]">
                 <img src={IMAGE3.src} />
 
                 <div className="absolute left-[75px] top-[25px]">

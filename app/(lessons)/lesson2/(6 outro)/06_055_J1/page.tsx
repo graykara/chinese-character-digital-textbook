@@ -84,6 +84,15 @@ const Content2 = () => {
             <img src={IMAGE2.src} />
 
             <InputWithPen
+              answer="저출산 가장 큰 요인은, ‘일·육아 병행 어려움’"
+              showAnswer={showAnswer}
+              containerClassName="absolute left-[500px] top-[115px]"
+              className="text-center bg-transparent text-[35px] tracking-[-2.5px] w-[570px]"
+              penClassName="left-1/2 -translate-x-1/2 w-[35px]"
+              isExample
+            />
+
+            <InputWithPen
               answer="병행"
               showAnswer={showAnswer}
               containerClassName="absolute top-[370px] left-[171px] text-[50px]"
@@ -102,7 +111,7 @@ const Content2 = () => {
             <InputWithPen
               answer="行"
               showAnswer={showAnswer}
-              containerClassName="absolute top-[335px] left-[501px] font-haeseo text-[90px]"
+              containerClassName="absolute top-[335px] left-[499px] font-haeseo text-[90px]"
               className="text-center w-[130px] mt-4 bg-transparent"
               penClassName="left-10 top-[85px] h-[55px]"
               isExample
@@ -118,8 +127,7 @@ const Content2 = () => {
             />
 
             <InputWithPen
-              answer="(두 가지 일을 한꺼번에)
-아울러 행함.​"
+              answer="(두 가지 일을 한꺼번에)아울러 행함."
               showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[352px]"
               className="bg-transparent text-[35px] w-[180px]"
@@ -127,7 +135,7 @@ const Content2 = () => {
               isExample
             />
             <InputWithPen
-              answer="수식 관계​"
+              answer="수식 관계"
               showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[419px]"
               className="bg-transparent text-[35px] w-[180px]"

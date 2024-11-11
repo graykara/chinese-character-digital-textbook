@@ -51,14 +51,14 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[582px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[584px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers1[2]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[664px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[666px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers1[3]}
@@ -99,42 +99,42 @@ export default function Page() {
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[418px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[420px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[1]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[500px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[502px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[2]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[582px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[584px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[3]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[664px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[666px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[4]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[796px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[797px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[5]}
               showAnswer={showAnswer}
               className="text-answer text-[50px] text-center w-[68px] bg-transparent"
               penClassName="left-12 -translate-x-1/2 w-[40px] -mt-1 -ml-3"
-              containerClassName="absolute left-[879px] top-[50px] mt-1 pl-5"
+              containerClassName="absolute left-[880px] top-[50px] mt-1 pl-5"
             />
             <InputWithPen
               answer={answers2[6]}

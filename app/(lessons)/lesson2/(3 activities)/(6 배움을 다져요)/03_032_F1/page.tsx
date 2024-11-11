@@ -79,7 +79,7 @@ const Step1 = () => {
             showAnswer={showAnswer}
             className="font-haeseo text-[80px] text-center w-[100px] bg-transparent"
             penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute top-[80px] left-[440px]"
+            containerClassName="absolute top-[80px] left-[435px]"
           />
           <InputWithPen
             answer={answers[3]}
@@ -135,29 +135,29 @@ const Step2 = () => {
             answer={answers[0]}
             showAnswer={showAnswer}
             className="text-[55px] text-center w-[100px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute top-[30px] left-[440px]"
+            penClassName="left-1/2 -translate-x-1/2 -mt-3"
+            containerClassName="absolute top-[40px] left-[440px]"
           />
           <InputWithPen
             answer={answers[1]}
             showAnswer={showAnswer}
             className="text-[55px] text-center w-[100px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute top-[30px] left-[635px]"
+            penClassName="left-1/2 -translate-x-1/2 -mt-3"
+            containerClassName="absolute top-[40px] left-[635px]"
           />
           <InputWithPen
             answer={answers[2]}
             showAnswer={showAnswer}
             className="font-haeseo text-[65px] text-center w-[100px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute bottom-[50px] left-[315px]"
+            penClassName="left-1/2 -translate-x-1/2 -mt-[6px]"
+            containerClassName="absolute bottom-[45px] left-[315px]"
           />
           <InputWithPen
             answer={answers[3]}
             showAnswer={showAnswer}
             className="font-haeseo text-[65px] text-center w-[120px] bg-transparent"
-            penClassName="left-1/2 -translate-x-1/2"
-            containerClassName="absolute bottom-[50px] left-[492px]"
+            penClassName="left-1/2 -translate-x-1/2 -mt-[6px]"
+            containerClassName="absolute bottom-[45px] left-[492px]"
           />
         </div>
       </ContentContainer>

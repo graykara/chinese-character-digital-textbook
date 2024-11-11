@@ -35,7 +35,7 @@ const Step1 = () => {
   return (
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
-        <img src={IMAGE1.src} className="mx-20 mt-20" />
+        <img src={IMAGE1.src} className="ml-[10px] mt-20" />
         <button className="absolute top-[260px] h-[100px] w-[560px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p064_word000.mp3").play()}></button>
         <div
           className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]"
@@ -51,7 +51,7 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[480px]"
+          containerClassName="absolute top-[150px] left-[478px]"
         />
         <InputWithPen
           answer={answers[1]}
@@ -65,14 +65,14 @@ const Step1 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[780px]"
+          containerClassName="absolute top-[150px] left-[782px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[930px]"
+          containerClassName="absolute top-[150px] left-[934px]"
         />
       </ContentContainer>
 
@@ -111,28 +111,28 @@ const Step2 = () => {
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[480px]"
+          containerClassName="absolute top-[151px] left-[477px]"
         />
         <InputWithPen
           answer={answers[1]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[630px]"
+          containerClassName="absolute top-[151px] left-[629px]"
         />
         <InputWithPen
           answer={answers[2]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[780px]"
+          containerClassName="absolute top-[151px] left-[780px]"
         />
         <InputWithPen
           answer={answers[3]}
           showAnswer={showAnswer}
           className="text-[80px] text-center w-[100px] bg-transparent"
           penClassName="left-1/2 -translate-x-1/2 -mt-2"
-          containerClassName="absolute top-[150px] left-[930px]"
+          containerClassName="absolute top-[151px] left-[933px]"
         />
       </ContentContainer>
 
