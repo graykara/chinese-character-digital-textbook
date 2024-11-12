@@ -1,10 +1,11 @@
 "use client";
 
 import VIDEO_PLAY from "./assets/video-play.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "../modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
+import { Howler } from "howler";
 
 export const VideoThumbnail = ({
   thumbnail,
@@ -18,6 +19,12 @@ export const VideoThumbnail = ({
   height?: number;
 }) => {
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (showModal) {
+      Howler.stop();
+    }
+  }, [showModal])
 
   return (
     <>
@@ -67,6 +74,12 @@ export const VideoThumbnail_big = ({
   height?: number;
 }) => {
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (showModal) {
+      Howler.stop();
+    }
+  }, [showModal])
 
   return (
     <>
