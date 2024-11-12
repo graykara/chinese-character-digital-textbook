@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Howler } from "howler";
 
 export const ExampleAnswerButton = ({
   active,
@@ -11,6 +12,7 @@ export const ExampleAnswerButton = ({
     <button
       className="absolute bottom-0 right-28"
       onClick={() => {
+        Howler.stop();
         clickSound.play();
         onClick();
       }}

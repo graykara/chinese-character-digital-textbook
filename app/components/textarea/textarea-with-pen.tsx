@@ -13,6 +13,7 @@ export const TextareaWithPen = ({
   showAnswer,
   penClassName,
   containerClassName,
+  isExample = false,
   ...props
 }: Props) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -44,7 +45,7 @@ export const TextareaWithPen = ({
           setValue(e.currentTarget.value);
           props.onChange?.(e);
         }}
-        className={`resize-none ${containerClassName}`}
+        className={`resize-none ${containerClassName} ${isExample ? "text-example" : "text-answer"}`}
       ></textarea>
 
       {value === "" && !showAnswer ? (

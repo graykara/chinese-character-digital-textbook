@@ -119,6 +119,7 @@ export default function Page() {
               containerClassName={`absolute resize-none w-[400px] left-[640px] top-[155px] text-center text-[30px] leading-[65px] tracking-tighter break-keep bg-transparent text-example}`}
               penClassName="h-[48px] top-[155px] left-[650px]"
               rows={2}
+              isExample
             />
 
           </div>
