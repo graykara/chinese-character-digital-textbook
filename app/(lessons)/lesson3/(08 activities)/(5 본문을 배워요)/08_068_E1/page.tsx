@@ -41,6 +41,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           용 머리에 뱀
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
             text="꼬리."
@@ -108,6 +109,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 mr-6 inline-block"
             text="처지"
@@ -116,6 +118,7 @@ export default function Page() {
           />
           를 바꾸어 그것을
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="생각함."
@@ -156,6 +159,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           쓴 것이
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-8 inline-block"
             text="다하면"
@@ -182,6 +186,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 mr-8 inline-block"
             text="눈"
@@ -190,6 +195,7 @@ export default function Page() {
           />
           위에 서리가
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
             text="내림."

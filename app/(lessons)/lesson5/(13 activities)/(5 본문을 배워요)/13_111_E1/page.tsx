@@ -72,6 +72,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           비록
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="가축"
@@ -80,6 +81,7 @@ export default function Page() {
           />
           이라도 그 마음은
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="사람과"
@@ -168,6 +170,7 @@ export default function Page() {
           <div className="flex flex-wrap text-[50px] font-bold">
             이것(누런 소)이
             <FlippableCard_60
+              key="3"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="나으면"
@@ -178,6 +181,7 @@ export default function Page() {
           </div>
           <div className="flex flex-wrap mt-10 text-[50px] font-bold">
             <FlippableCard_60
+              key="4"
               active={showMeaning}
               className="-mt-2 mr-6 inline-block"
               text="못한 것이니"
@@ -233,6 +237,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           어찌
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="불평"

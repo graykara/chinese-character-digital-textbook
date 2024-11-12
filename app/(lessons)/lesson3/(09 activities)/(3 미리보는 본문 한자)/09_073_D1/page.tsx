@@ -24,6 +24,18 @@ export default function Page() {
     setShowAnswer(null);
   }, [step]);
 
+  useEffect(() => {
+    if (showAnswer) {
+      document.querySelectorAll(".flippable-card").forEach((card) => {
+        card.setAttribute("data-active", "true");
+      })
+    } else {
+      document.querySelectorAll(".flippable-card").forEach((card) => {
+        card.setAttribute("data-active", "false");
+      })
+    }
+  }, [showAnswer])
+
   return (
     <>
       <HeaderContainer>
@@ -54,7 +66,6 @@ export default function Page() {
               <div className="relative">
                 <img src={IMAGE1.src} />
                 <FlippableCard
-                  active={showAnswer}
                   width={150}
                   height={150}
                   text="馬"
@@ -65,7 +76,6 @@ export default function Page() {
                   iconColor="white"
                 />
                 <FlippableCard
-                  active={showAnswer}
                   width={150}
                   height={150}
                   text="鹿"
@@ -82,7 +92,6 @@ export default function Page() {
                 <img src={IMAGE2.src} />
 
                 <FlippableCard
-                  active={showAnswer}
                   width={150}
                   height={150}
                   text="모"
@@ -93,7 +102,6 @@ export default function Page() {
                   iconColor="white"
                 />
                 <FlippableCard
-                  active={showAnswer}
                   width={150}
                   height={150}
                   text="족"
@@ -110,7 +118,6 @@ export default function Page() {
                 <img src={IMAGE3.src} />
 
                 <FlippableCard
-                  active={showAnswer}
                   width={300}
                   height={150}
                   text="이롭다"
@@ -121,7 +128,6 @@ export default function Page() {
                   iconColor="white"
                 />
                 <FlippableCard
-                  active={showAnswer}
                   width={300}
                   height={150}
                   text="고기잡다"
@@ -138,7 +144,7 @@ export default function Page() {
       </ContentContainer>
 
       <CheckAnswerButton
-        active={showAnswer}
+        active={showAnswer || false}
         onClick={() => setShowAnswer(!showAnswer)}
       />
 

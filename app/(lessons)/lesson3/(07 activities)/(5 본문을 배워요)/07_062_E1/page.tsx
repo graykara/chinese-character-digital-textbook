@@ -45,6 +45,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           열 가운데
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-8 inline-block"
             text="여덟이나 아홉."
@@ -85,6 +86,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           말의 귀에
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-8 inline-block"
             text="동쪽 바람."
@@ -110,6 +112,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 mr-6 inline-block"
             text="위"
@@ -137,6 +140,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           우물 속에
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="앉아"
@@ -145,6 +149,7 @@ export default function Page() {
           />
           하늘을
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 ml-5 mr-5 inline-block"
             text="봄"

@@ -39,6 +39,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
+            key="1"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
@@ -47,6 +48,7 @@ export default function Page() {
           />
           와
           <FlippableCard_60
+            key="2"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
@@ -55,6 +57,7 @@ export default function Page() {
           />
           가 모여 이루어진 ‘
           <FlippableCard_60
+            key="3"
             active={showResource}
             className="-mt-4 ml-2 mr-2 inline-block"
             text="수풀"
@@ -90,6 +93,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
+            key="4"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="사람"
@@ -98,6 +102,7 @@ export default function Page() {
           />
           이
           <FlippableCard_60
+            key="5"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
@@ -106,6 +111,7 @@ export default function Page() {
           />
           에 기대어 ‘
           <FlippableCard_60
+            key="6"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="쉬다"
@@ -141,6 +147,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
+            key="7"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="해"
@@ -149,6 +156,7 @@ export default function Page() {
           />
           와
           <FlippableCard_60
+            key="8"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="달"
@@ -157,6 +165,7 @@ export default function Page() {
           />
           처럼 ‘
           <FlippableCard_60
+            key="9"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="밝다"
@@ -192,6 +201,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
+            key="10"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="여자"
@@ -200,6 +210,7 @@ export default function Page() {
           />
           가 자녀를 안으니 ‘
           <FlippableCard_60
+            key="11"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="좋다"
@@ -236,6 +247,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[40px] mt-10 ml-5 -mr-10">
           어두운
           <FlippableCard_60
+            key="12"
             active={showResource}
             className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="저녁"
@@ -244,6 +256,7 @@ export default function Page() {
           />
           에 상대를 알기 위해 입으로 부르는 ‘
           <FlippableCard_60
+            key="13"
             active={showResource}
             className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="이름"

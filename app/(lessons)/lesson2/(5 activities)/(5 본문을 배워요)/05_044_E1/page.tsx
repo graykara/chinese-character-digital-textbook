@@ -47,6 +47,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           안부를{" "}
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="물음."
@@ -66,6 +67,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           어려움이{" "}
           <FlippableCard_60
+            key="2"
             active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="없음."
@@ -100,6 +102,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold ">
           일을{" "}
           <FlippableCard_60
+            key="3"
             active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="쉼."
@@ -121,6 +124,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           나무를{" "}
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="심음."
@@ -140,6 +144,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           먹는{" "}
           <FlippableCard_60
+            key="5"
             active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="물."
@@ -161,6 +166,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold">
           의로운{" "}
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="사람."
@@ -180,6 +186,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           뜻과{" "}
           <FlippableCard_60
+            key="7"
             active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="생각."

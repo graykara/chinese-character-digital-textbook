@@ -45,6 +45,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap mb-2">
           선 하나를 그어서
           <FlippableCard_60
+            key="1"
             active={showResource}
             className="-mt-4 ml-5 mr-10 inline-block"
             text="하나"
@@ -65,6 +66,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap">
           기준선
           <FlippableCard_60
+            key="2"
             active={showResource}
             className="-mt-4 ml-5 mr-6 inline-block"
             text="위"
@@ -73,6 +75,7 @@ export default function Page() {
           />
           에 점을 찍어
           <FlippableCard_60
+            key="3"
             active={showResource}
             className="-mt-4 ml-6 mr-8 inline-block"
             text="위"
@@ -93,6 +96,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap">
           기준선
           <FlippableCard_60
+            key="4"
             active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="아래"
@@ -101,6 +105,7 @@ export default function Page() {
           />
           에 점을 찍어
           <FlippableCard_60
+            key="5"
             active={showResource}
             className="-mt-4 ml-4 mr-8 inline-block"
             text="아래"
@@ -121,6 +126,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap">
           나무
           <FlippableCard_60
+            key="6"
             active={showResource}
             className="-mt-4 ml-4 mr-5 inline-block"
             text="뿌리"
@@ -130,6 +136,7 @@ export default function Page() {
           {"\xa0"}
           부분에 선을 그어
           <FlippableCard_60
+            key="7"
             active={showResource}
             className="-mt-4 ml-5 mr-10 inline-block"
             text="근본"
@@ -150,6 +157,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap">
           나뭇가지 끝부분에 선을 그어
           <FlippableCard_60
+            key="8"
             active={showResource}
             className="-mt-4 ml-5 mr-8 inline-block"
             text="끝"

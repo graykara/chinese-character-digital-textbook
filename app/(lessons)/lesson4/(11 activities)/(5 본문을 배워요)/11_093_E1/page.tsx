@@ -117,6 +117,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           가는 말이 고와야{" "}
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="오는 말"
@@ -218,6 +219,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           자기가{" "}
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block tracking-tighter"
             text="하고자 하지 않는 바(것)"
@@ -325,6 +327,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           남의 단점을 말하지{" "}
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="말고"
@@ -333,6 +336,7 @@ export default function Page() {
           />
           자기의{" "}
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="장점"
@@ -381,6 +385,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           남을 사랑하는 사람은{" "}
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="남"
@@ -409,6 +414,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           남을{" "}
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="공경"
@@ -417,6 +423,7 @@ export default function Page() {
           />
           하는 사람은 남도{" "}
           <FlippableCard_60
+            key="7"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="항상"

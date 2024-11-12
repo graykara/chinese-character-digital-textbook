@@ -98,6 +98,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           풀 속의
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-4 mr-5 inline-block"
             text="돌"
@@ -106,6 +107,7 @@ export default function Page() {
           />
           을 보고
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="호랑이"
@@ -136,6 +138,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold mr-10">
           돌에 적중하여
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-3 mr-6 inline-block"
             text="화살"
@@ -144,6 +147,7 @@ export default function Page() {
           />
           이 박혔는데 그것을 보니
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="돌"
@@ -201,6 +205,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           인하여
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="다시"
@@ -242,6 +247,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           끝내
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-4 mr-6 inline-block"
             text="다시"

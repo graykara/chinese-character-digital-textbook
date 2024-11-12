@@ -74,6 +74,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           만덕이
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 mr-7 inline-block"
             text="십분의 일"
@@ -192,6 +193,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] leading-[95px] -mt-[10px] font-bold mr-20">
           굶주려 병든 사람들이 그것을 듣고 관청의 뜰에
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="mt-1 mr-6 inline-block"
             text="구름과 같이"
@@ -266,6 +268,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           남자와 여자들이 나와서
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="만덕의 은혜"

@@ -39,6 +39,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           물을
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6  inline-block"
             text="등지고"
@@ -94,6 +95,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           많으면 많을수록 더욱
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6  inline-block"
             text="좋음."
@@ -120,6 +122,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           세 사람이면
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6  inline-block"
             text="호랑이"
@@ -160,6 +163,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 mr-6  inline-block"
             text="풀"
@@ -168,6 +172,7 @@ export default function Page() {
           />
           을 엮어
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6  inline-block"
             text="은혜"
@@ -284,12 +289,12 @@ export default function Page() {
         <RightTopStepContainer maxStep={4} />
 
         {step === 1 ? (
-        <MainContentVideoButton
-          video="/video/animation/3/BaeSujin.mp4"
-          className="absolute left-[112px] top-[40px]"
-          buttomImage="/ui/video-button2.png"
-        />
-        ) : null }
+          <MainContentVideoButton
+            video="/video/animation/3/BaeSujin.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
         {step === 2 ? (
           <MainContentVideoButton
             video="/video/animation/3/Dadadikseon.mp4"

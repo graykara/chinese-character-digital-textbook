@@ -24,12 +24,16 @@ interface Props {
   data: Data;
   showReading: boolean;
   setShowReading: (value: boolean) => void;
+  // showMeaning: boolean | null;
+  // setShowMeaning: (value: boolean | null) => void;
 }
 
 export const MainContentChineseAndReading = ({
   data,
   showReading,
   setShowReading,
+  // showMeaning,
+  // setShowMeaning,
 }: Props) => {
   const meaningRef = useRef<HTMLDivElement>(null);
 
@@ -44,10 +48,11 @@ export const MainContentChineseAndReading = ({
   >("보충");
 
   const [showMeaning, setShowMeaning] = useState(false);
+  useEffect(() => {
+    setShowMeaning(false);
+  }, [data]);
 
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
-
-  if (!data) return null;
 
   // content 내의 모든 FlippableCard가 active인지 확인하는 함수
   const checkAllFlippableCardsActive = async () => {
@@ -81,7 +86,7 @@ export const MainContentChineseAndReading = ({
 
   // PillButton 클릭 핸들러 수정
   const handleMeaningClick = () => {
-    if(!showMeaning) {
+    if (!showMeaning) {
       const cards = meaningRef.current?.querySelectorAll('.flippable-card');
       if (cards) {
         cards.forEach(card => {
@@ -100,6 +105,7 @@ export const MainContentChineseAndReading = ({
     setShowMeaning(newShowMeaning);
   };
 
+  if (!data) return null;
   return (
     <>
       <div className="relative items-start left-[210px] w-[1270px]">

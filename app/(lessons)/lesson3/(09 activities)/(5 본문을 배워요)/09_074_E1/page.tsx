@@ -57,6 +57,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           뱀의
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
             text="발."
@@ -83,6 +84,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           사슴을
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-2 ml-5 mr-8 inline-block"
             text="가리켜"
@@ -91,6 +93,7 @@ export default function Page() {
           />
           말이라고
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 inline-block"
             text="함."
@@ -131,6 +134,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           어부의
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-5 inline-block"
             text="이익"
@@ -158,6 +162,7 @@ export default function Page() {
       content1: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 mr-6 inline-block"
             text="아침"
@@ -166,6 +171,7 @@ export default function Page() {
           />
           에 세 개,
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="저녁"
@@ -326,12 +332,12 @@ export default function Page() {
         <RightTopStepContainer maxStep={4} />
 
         {step === 1 ? (
-        <MainContentVideoButton
-          video="/video/animation/3/HwasaCheomJok.mp4"
-          className="absolute left-[112px] top-[40px]"
-          buttomImage="/ui/video-button2.png"
-        />
-        ) : null }
+          <MainContentVideoButton
+            video="/video/animation/3/HwasaCheomJok.mp4"
+            className="absolute left-[112px] top-[40px]"
+            buttomImage="/ui/video-button2.png"
+          />
+        ) : null}
         {step === 2 ? (
           <MainContentVideoButton
             video="/video/animation/3/JirokWima.mp4"

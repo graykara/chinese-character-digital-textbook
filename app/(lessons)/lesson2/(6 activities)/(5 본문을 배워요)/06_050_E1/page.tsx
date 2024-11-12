@@ -44,6 +44,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           <FlippableCard_60
+            key="1"
             active={showMeaning}
             className="-mt-2 -ml-3 mr-7 inline-block"
             text="국민이"
@@ -64,6 +65,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           표를
           <FlippableCard_60
+            key="2"
             active={showMeaning}
             className="-mt-1 ml-5 mr-5 inline-block"
             text="던짐"
@@ -82,6 +84,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 -ml-3 mr-10 inline-block"
             text="말하는"
@@ -101,6 +104,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           함께
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-1 ml-7 inline-block"
             text="느낌."
@@ -118,6 +122,7 @@ export default function Page() {
       content: (
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 -ml-3 mr-10 inline-block"
             text="듣는"
@@ -157,6 +162,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           습기가
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-1 ml-7 inline-block"
             text="많음."
@@ -175,6 +181,7 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tighter font-bold -mb-[75px]">
           빽빽한
           <FlippableCard_60
+            key="7"
             active={showMeaning}
             className="-mt-1 ml-7 inline-block"
             text="숲."

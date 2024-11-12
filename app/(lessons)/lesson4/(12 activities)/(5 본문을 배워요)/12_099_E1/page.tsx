@@ -62,6 +62,7 @@ export default function Page() {
           <div className="flex flex-wrap text-[50px] font-bold">
             뜻이 있는
             <FlippableCard_60
+              key="1"
               active={showMeaning}
               className="-mt-2 ml-4 mr-5 inline-block"
               text="사람(자)"
@@ -70,6 +71,7 @@ export default function Page() {
             />
             은/는 일이
             <FlippableCard_60
+              key="2"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="마침내"
@@ -115,6 +117,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold mr-10">
           세상에 한 가지의 재능도
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-3 mr-6 inline-block"
             text="없는"
@@ -123,6 +126,7 @@ export default function Page() {
           />
           사람은
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 mx-5 inline-block"
             text="없다."
@@ -183,6 +187,7 @@ export default function Page() {
           <div className="flex flex-wrap text-[50px] font-bold">
             한 가지
             <FlippableCard_60
+              key="5"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="일"
@@ -194,6 +199,7 @@ export default function Page() {
           <div className="flex flex-wrap mt-8 text-[50px] font-bold">
             한 가지 지혜가
             <FlippableCard_60
+              key="6"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="자라지"
@@ -266,6 +272,7 @@ export default function Page() {
           <div className="flex flex-wrap text-[50px] font-bold">
             남이
             <FlippableCard_60
+              key="7"
               active={showMeaning}
               className="-mt-2 ml-4 mr-6 inline-block"
               text="한 번에"
@@ -274,6 +281,7 @@ export default function Page() {
             />
             그것을 할 수 있으면
             <FlippableCard_60
+              key="8"
               active={showMeaning}
               className="-mt-2 ml-4 mr-6 inline-block"
               text="나"
@@ -319,6 +327,7 @@ export default function Page() {
       content: (
         <div className="flex flex-wrap text-[50px] tracking-normal font-bold">
           <FlippableCard_60
+            key="9"
             active={showMeaning}
             className="-mt-2 mr-6 inline-block"
             text="남"
@@ -327,6 +336,7 @@ export default function Page() {
           />
           이 열 번에 그것을 할 수 있으면 나는 그것을
           <FlippableCard_60
+            key="10"
             active={showMeaning}
             className="mt-6 mr-6 inline-block"
             text="천 번 한다."

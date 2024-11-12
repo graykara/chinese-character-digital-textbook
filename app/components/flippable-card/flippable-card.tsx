@@ -22,7 +22,7 @@ interface Props {
 }
 
 export const FlippableCard = ({
-  active,
+  active = false,
   text,
   width,
   height,
@@ -85,7 +85,7 @@ export const FlippableCard = ({
   return (
     <div
       ref={ref}
-      className={`[perspective:1000px] cursor-pointer ${className}`}
+      className={`flippable-card [perspective:1000px] cursor-pointer ${className}`}
       onClick={handleFlip}
       style={{
         width,

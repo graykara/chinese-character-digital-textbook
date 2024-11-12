@@ -72,6 +72,7 @@ export default function Page() {
           <div className="flex flex-wrap text-[50px] font-bold">
             사람으로서 만물을 보면
             <FlippableCard_60
+              key="1"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="사람"
@@ -80,6 +81,7 @@ export default function Page() {
             />
             이 귀하고
             <FlippableCard_60
+              key="2"
               active={showMeaning}
               className="-mt-2 ml-5 mr-6 inline-block"
               text="만물"
@@ -114,6 +116,7 @@ export default function Page() {
         <div className="flex flex-wrap text-[50px] font-bold">
           만물로서 사람을 보면
           <FlippableCard_60
+            key="3"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="만물"
@@ -122,6 +125,7 @@ export default function Page() {
           />
           이 귀하고
           <FlippableCard_60
+            key="4"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="사람"
@@ -178,7 +182,7 @@ export default function Page() {
               >
                 之
               </span>
-              : 그것 → 
+              : 그것 →
               <span
                 onClick={() => SOUND("/sound/5/p117_word006.mp3").play()}
                 className="font-haeseo text-[50px] leading-tight tracking-[-5px] pr-0 cursor-pointer"
@@ -214,6 +218,7 @@ export default function Page() {
       content: (
         <div className="flex flex-wrap text-[50px] font-bold">
           <FlippableCard_60
+            key="5"
             active={showMeaning}
             className="-mt-2 mr-5 inline-block"
             text="하늘"
@@ -222,6 +227,7 @@ export default function Page() {
           />
           로부터 그것을 보면 사람과 만물은
           <FlippableCard_60
+            key="6"
             active={showMeaning}
             className="-mt-2 ml-5 mr-6 inline-block"
             text="균등"
