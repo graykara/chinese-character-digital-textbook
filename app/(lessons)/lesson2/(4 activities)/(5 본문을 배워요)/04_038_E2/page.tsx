@@ -171,7 +171,7 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-[180px__1fr]">
                   <PillButton
-                    active={showMeaning}
+                    active={showMeaning ?? false}
                     onClick={() => setShowMeaning(!showMeaning)}
                     text="뜻"
                     checkboxColor="#306875"
@@ -185,7 +185,7 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-[180px__1fr] -mt-4">
                   <PillButton
-                    active={showResource}
+                    active={showResource ?? false}
                     onClick={() => setShowResource(!showResource)}
                     text="해설"
                     checkboxColor="#41466f"

@@ -3,7 +3,7 @@
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
 import IMAGE1 from "./image1.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -22,12 +22,12 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
-  const [showResource, setShowResource] = useState(false);
+  const [showResource, setShowResource] = useState<boolean | null>(null);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(null);
-    setShowResource(false);
+    setShowResource(null);
   }, [step]);
 
   const data = [
@@ -40,7 +40,6 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
             key="1"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
@@ -49,7 +48,6 @@ export default function Page() {
           와
           <FlippableCard_60
             key="2"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
@@ -58,7 +56,6 @@ export default function Page() {
           가 모여 이루어진 ‘
           <FlippableCard_60
             key="3"
-            active={showResource}
             className="-mt-4 ml-2 mr-2 inline-block"
             text="수풀"
             width={210}
@@ -94,7 +91,6 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
             key="4"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="사람"
             width={210}
@@ -103,7 +99,6 @@ export default function Page() {
           이
           <FlippableCard_60
             key="5"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="나무"
             width={210}
@@ -112,7 +107,6 @@ export default function Page() {
           에 기대어 ‘
           <FlippableCard_60
             key="6"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="쉬다"
             width={210}
@@ -148,7 +142,6 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
             key="7"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="해"
             width={210}
@@ -157,7 +150,6 @@ export default function Page() {
           와
           <FlippableCard_60
             key="8"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="달"
             width={210}
@@ -166,7 +158,6 @@ export default function Page() {
           처럼 ‘
           <FlippableCard_60
             key="9"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="밝다"
             width={210}
@@ -202,7 +193,6 @@ export default function Page() {
         <div className="flex items-center flex-wrap text-[50px] tracking-tight -mr-10">
           <FlippableCard_60
             key="10"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="여자"
             width={210}
@@ -211,7 +201,6 @@ export default function Page() {
           가 자녀를 안으니 ‘
           <FlippableCard_60
             key="11"
-            active={showResource}
             className="-mt-4 ml-5 mr-5 inline-block"
             text="좋다"
             width={210}
@@ -248,7 +237,6 @@ export default function Page() {
           어두운
           <FlippableCard_60
             key="12"
-            active={showResource}
             className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="저녁"
             width={205}
@@ -257,7 +245,6 @@ export default function Page() {
           에 상대를 알기 위해 입으로 부르는 ‘
           <FlippableCard_60
             key="13"
-            active={showResource}
             className="-mt-3 ml-2 mr-5 text-[50px] inline-block"
             text="이름"
             width={204}
@@ -285,6 +272,58 @@ export default function Page() {
       ],
     },
   ];
+
+  const resourceRef = useRef<HTMLDivElement>(null);
+  // content 내의 모든 FlippableCard가 active인지 확인하는 함수
+  const checkAllFlippableCardsActive = async () => {
+    let show = false;
+    if (!resourceRef.current) show = false;
+    show = await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        // resourceRef 내부의 모든 flippable-card를 찾음
+        const cards = resourceRef.current?.querySelectorAll('.flippable-card');
+
+        // flippable card가 없는 경우 true 반환
+        if (!cards || cards.length === 0) {
+          resolve(true);
+          return;
+        }
+
+        // 모든 카드가 data-active를 가지고 있고, 모든 값이 true인지 확인
+        const result = Array.from(cards).every(card =>
+          card.getAttribute('data-active') === 'true'
+        );
+        resolve(result);
+      }, 100);
+    });
+    setShowResource(show);
+    return show;
+  };
+
+  useEffect(() => {
+    checkAllFlippableCardsActive();
+  }, []);
+
+  // PillButton 클릭 핸들러 수정
+  const handleResourceClick = () => {
+    if (!showResource) {
+      const cards = resourceRef.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'true');
+        });
+      }
+    } else {
+      const cards = resourceRef.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'false');
+        });
+      }
+    }
+    const newShowResource = !showResource;
+    setShowResource(newShowResource);
+  };
 
   return (
     <>
@@ -333,13 +372,15 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-[180px__1fr] -mt-4">
                   <PillButton
-                    active={showResource}
-                    onClick={() => setShowResource(!showResource)}
+                    active={showResource ?? false}
+                    onClick={handleResourceClick}
                     text="해설"
                     checkboxColor="#41466f"
                     backgroundColor="#7278a6"
                   />
-                  <div key={step}>
+                  <div ref={resourceRef} key={step} onClick={() => {
+                    checkAllFlippableCardsActive()
+                  }}>
                     <div
                       className="flex items-center gap-4 -mt-2 ml-8 text-[50px] leading-[62px] tracking-[0.5px] -mr-[230px]">
                       <div

@@ -7,7 +7,7 @@ import IMAGE4 from "./bg_4.png";
 import IMAGE5 from "./bg_5.png";
 import VIDEO_PLAY_THUMBNAIL from "@/app/components/video-thumbnail/assets/video-play.png";
 import { LearnMainContentPageTemplate } from "@/app/pages/learn-main-content/learn-main-content-page-template";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FlippableCard_60 } from "@/app/components/flippable-card/flippable-card";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -48,7 +48,6 @@ export default function Page() {
           안부를{" "}
           <FlippableCard_60
             key="1"
-            active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="물음."
             width={220}
@@ -68,7 +67,6 @@ export default function Page() {
           어려움이{" "}
           <FlippableCard_60
             key="2"
-            active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="없음."
             width={220}
@@ -103,7 +101,6 @@ export default function Page() {
           일을{" "}
           <FlippableCard_60
             key="3"
-            active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="쉼."
             width={220}
@@ -125,7 +122,6 @@ export default function Page() {
           나무를{" "}
           <FlippableCard_60
             key="4"
-            active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="심음."
             width={220}
@@ -145,7 +141,6 @@ export default function Page() {
           먹는{" "}
           <FlippableCard_60
             key="5"
-            active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="물."
             width={220}
@@ -167,7 +162,6 @@ export default function Page() {
           의로운{" "}
           <FlippableCard_60
             key="6"
-            active={showMeaning}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="사람."
             width={220}
@@ -187,7 +181,6 @@ export default function Page() {
           뜻과{" "}
           <FlippableCard_60
             key="7"
-            active={showMeaning2}
             className="-mt-2 ml-5 mr-10 inline-block"
             text="생각."
             width={220}
@@ -201,6 +194,63 @@ export default function Page() {
       video: "/video/animation/2-5_45-2.mp4",
     },
   ];
+
+  const meaningRef1 = useRef<HTMLDivElement>(null);
+  const meaningRef2 = useRef<HTMLDivElement>(null);
+  // content 내의 모든 FlippableCard가 active인지 확인하는 함수
+  const checkAllFlippableCardsActive = async (ref: React.RefObject<HTMLDivElement>, setShow: (value: boolean) => void) => {
+    let show = false;
+    if (!ref.current) {
+      setShow(false);
+      return false;
+    }
+    show = await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        // ref 내부의 모든 flippable-card를 찾음
+        const cards = ref.current?.querySelectorAll('.flippable-card');
+
+        // flippable card가 없는 경우 true 반환
+        if (!cards || cards.length === 0) {
+          resolve(true);
+          return;
+        }
+
+        // 모든 카드가 data-active를 가지고 있고, 모든 값이 true인지 확인
+        const result = Array.from(cards).every(card =>
+          card.getAttribute('data-active') === 'true'
+        );
+        resolve(result);
+      }, 100);
+    });
+    setShow(show);
+    return show;
+  };
+
+  useEffect(() => {
+    checkAllFlippableCardsActive(meaningRef1, setShowMeaning);
+    checkAllFlippableCardsActive(meaningRef2, setShowMeaning2);
+  }, []);
+
+  // PillButton 클릭 핸들러 수정
+  const handleMeaningClick = (ref: React.RefObject<HTMLDivElement>, show: boolean | null, setShow: (value: boolean) => void) => {
+    if (!show) {
+      const cards = ref.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'true');
+        });
+      }
+    } else {
+      const cards = ref.current?.querySelectorAll('.flippable-card');
+      if (cards) {
+        cards.forEach(card => {
+          card.setAttribute('data-active', 'false');
+        });
+      }
+    }
+    const newShow = !show;
+    setShow(newShow);
+  };
 
   const [showModal, setShowModal] = useState(false);
 
@@ -234,25 +284,27 @@ export default function Page() {
               </div>
               <div className="grid grid-cols-[180px__1fr] gap-12 bg-transparent">
                 <PillButton
-                  active={showMeaning}
-                  onClick={() => setShowMeaning(!showMeaning)}
+                  active={showMeaning ?? false}
+                  onClick={() => handleMeaningClick(meaningRef1, showMeaning, setShowMeaning)}
                   text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                {data[step * 2 - 2]?.flippableCardData ? (
-                  <div>
-                    <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
-                  </div>
-                ) : (
-                  <div className="h-[75px]">
-                    <div key={step}
-                      className={`mt-2 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
-                    >
-                      {data[step * 2 - 2]?.content ?? null}
+                <div ref={meaningRef1} onClick={() => checkAllFlippableCardsActive(meaningRef1, setShowMeaning)}>
+                  {data[step * 2 - 2]?.flippableCardData ? (
+                    <div>
+                      <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    <div className="h-[75px]">
+                      <div key={step}
+                        className={`mt-2 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                      >
+                        {data[step * 2 - 2]?.content ?? null}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -281,13 +333,15 @@ export default function Page() {
               </div>
               <div className="grid grid-cols-[180px__1fr] gap-12 bg-transparent">
                 <PillButton
-                  active={showMeaning2}
-                  onClick={() => setShowMeaning2(!showMeaning2)}
+                  active={showMeaning2 ?? false}
+                  onClick={() => handleMeaningClick(meaningRef2, showMeaning2, setShowMeaning2)}
                   text="풀이"
                   checkboxColor="#306875"
                   backgroundColor="#4f9aab"
                 />
-                <div key={step}>{data[step * 2 - 1]?.content ?? null}</div>
+                <div key={step} ref={meaningRef2} onClick={() => checkAllFlippableCardsActive(meaningRef2, setShowMeaning2)}>
+                  {data[step * 2 - 1]?.content ?? null}
+                </div>
               </div>
             </div>
           </div>
