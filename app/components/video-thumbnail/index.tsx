@@ -6,6 +6,7 @@ import { Modal } from "../modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
 import { Howler } from "howler";
+import { VideoPlayer } from "../video-player";
 
 export const VideoThumbnail = ({
   thumbnail,
@@ -48,13 +49,14 @@ export const VideoThumbnail = ({
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">
           {video ? (
-            <ReactPlayer
-              url={video}
-              playing
-              controls
-              width={1760}
-              height={990}
-            />
+            // <ReactPlayer
+            //   url={video}
+            //   playing
+            //   controls
+            //   width={1760}
+            //   height={990}
+            // />
+            <VideoPlayer src={video} />
           ) : null}
         </div>
       </Modal>
@@ -103,13 +105,14 @@ export const VideoThumbnail_big = ({
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">
           {video ? (
-            <ReactPlayer
-              url={video}
-              playing
-              controls
-              width={1760}
-              height={990}
-            />
+            // <ReactPlayer
+            //   url={video}
+            //   playing
+            //   controls
+            //   width={1760}
+            //   height={990}
+            // />
+            <VideoPlayer src={video} />
           ) : null}
         </div>
       </Modal>

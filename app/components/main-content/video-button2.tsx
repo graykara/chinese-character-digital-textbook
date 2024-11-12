@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Modal } from "../modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
+import { VideoPlayer } from "../video-player";
 
 interface Props {
   video: string;
@@ -28,13 +29,14 @@ export const MainContentVideoButton2 = ({ className, buttomImage = "/ui/video-bu
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">
           {video ? (
-            <ReactPlayer
-              url={video}
-              playing
-              controls
-              width={1760}
-              height={990}
-            />
+            // <ReactPlayer
+            //   url={video}
+            //   playing
+            //   controls
+            //   width={1760}
+            //   height={990}
+            // />
+            <VideoPlayer src={video} />
           ) : null}
         </div>
       </Modal>

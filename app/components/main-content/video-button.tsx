@@ -29,14 +29,14 @@ export const MainContentVideoButton = ({ className, buttomImage = "/ui/video-but
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">
           {video ? (
-            <ReactPlayer
-              url={video}
-              playing
-              controls
-              width={1760}
-              height={990}
-            />
-            //<VideoPlayer src={video} />
+            // <ReactPlayer
+            //   url={video}
+            //   playing
+            //   controls
+            //   width={1760}
+            //   height={990}
+            // />
+            <VideoPlayer src={video} />
           ) : null}
         </div>
       </Modal>
