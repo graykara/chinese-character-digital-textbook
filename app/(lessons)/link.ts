@@ -854,7 +854,29 @@ export const NAVIGATION: {
     subChapter: "활동 창의력을 키워요",
     path: "lesson3/10_083_H1",
     page: 83,
+  },
+  {
+    lesson: 3,
+    chapter: -2,
+    subChapter: "정리하기",
+    path: "lesson3/10_084_I1",
+    page: 84,
   }, // 3단원 마무리
+  {
+    lesson: 3,
+    chapter: -2,
+    subChapter: "활동하기",
+    path: "lesson3/10_085_J1",
+    page: 85,
+  }, // 활동하기
+  {
+    lesson: 3,
+    chapter: -2,
+    subChapter: "문제 풀기",
+    path: "lesson3/10_086_K1",
+    page: "86~87",
+    isLastPage: true,
+  }, // 문제 풀기
   {
     lesson: 4,
     chapter: -1,
