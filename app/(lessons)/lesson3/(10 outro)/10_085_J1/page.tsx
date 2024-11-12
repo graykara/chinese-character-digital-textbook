@@ -1,9 +1,13 @@
 "use client";
 
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
-import IMAGE1 from "./image1.png";
+import IMAGE1_1 from "./image1-1.png";
+import IMAGE1_2 from "./image1-2.png";
+import IMAGE1_11 from "./image1-11.png";
+import IMAGE1_12 from "./image1-12.png";
+import IMAGE1_13 from "./image1-13.png";
 import IMAGE2 from "./image2.png";
-import IMAGE2_AFTER from "./image2-after.png";
+import IMAGE3 from "./image3.png";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
@@ -23,11 +27,12 @@ export default function Page() {
 
   return (
     <>
-      <ActivityPageTemplate lesson={2}>
-        {step === 1 ? <Content1 /> : null}
-        {step === 2 ? <Content2 /> : null}
-      </ActivityPageTemplate>
-      <StepContainer maxStep={2} />
+      {step === 3 ? <Content3 /> :
+        <ActivityPageTemplate lesson={3}>
+          {step === 1 ? <Content1 /> : null}
+          {step === 2 ? <Content2 /> : null}
+        </ActivityPageTemplate>}
+      <StepContainer maxStep={3} />
       <img
         src={step === 1 ? BACKGROUND1.src : BACKGROUND2.src}
         className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
@@ -55,110 +60,42 @@ const Content1 = () => {
   }, []);
 
   return (
-    <div className="animate__animated animate__fadeIn w-full h-full flex flex-col justify-center items-start -mt-20 -ml-5">
-      <img src={IMAGE1.src} />
+    <div className="animate__animated animate__fadeIn w-full h-full flex flex-col justify-center items-start">
+      <div className="relative -top-[45px] w-[1600px] h-full">
+        <img src={IMAGE1_1.src} />
+        <img src={IMAGE1_2.src} className="absolute top-0 right-0 z-[1]" />
 
-      <SoundButton2
-        className="absolute top-[300px] left-[300px] animate__animated animate__bounceIn animate__delay-1s"
-        active={isReading}
-        onClick={() => {
-          if (isReading) {
-            console.log("stop");
-            sound.stop();
-          }
-          else sound.play();
-        }}
-      />
+        <div className="absolute left-[260px] top-[350px]">
+          <img src={IMAGE1_11.src} className="animate__animated animate__delay-0_2s animate__fadeInBottomRight" />
+          <img src={IMAGE1_12.src} className="animate__animated animate__delay-0_4s animate__fadeInRight" />
+          <img src={IMAGE1_13.src} className="animate__animated animate__delay-0_6s animate__fadeInTopRight" />
+        </div>
+      </div>
 
     </div>
   );
 };
 
 const Content2 = () => {
-  const [showAnswer, setShowAnswer] = useState(false);
   return (
-    <>
-      <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-auto pt-20 pb-[120px]">
-        <div className="relative h-fit -mt-3 -ml-12">
-          <div className="relative">
-            <img src={IMAGE2.src} />
-
-            <InputWithPen
-              answer="저출산 가장 큰 요인은, ‘일·육아 병행 어려움’"
-              showAnswer={showAnswer}
-              containerClassName="absolute left-[500px] top-[115px]"
-              className="text-center bg-transparent text-[35px] tracking-[-2.5px] w-[570px]"
-              penClassName="left-1/2 -translate-x-1/2 w-[35px]"
-              isExample
-            />
-
-            <InputWithPen
-              answer="병행"
-              showAnswer={showAnswer}
-              containerClassName="absolute top-[370px] left-[171px] text-[50px]"
-              className="text-center w-[130px] mt-4"
-              penClassName="left-10 top-12 h-[55px]"
-              isExample
-            />
-            <InputWithPen
-              answer="竝"
-              showAnswer={showAnswer}
-              containerClassName="absolute top-[335px] left-[371px] font-haeseo text-[90px] leading-0"
-              className="text-center w-[130px] mt-4 bg-transparent"
-              penClassName="left-10 top-[85px] h-[55px]"
-              isExample
-            />
-            <InputWithPen
-              answer="行"
-              showAnswer={showAnswer}
-              containerClassName="absolute top-[335px] left-[499px] font-haeseo text-[90px]"
-              className="text-center w-[130px] mt-4 bg-transparent"
-              penClassName="left-10 top-[85px] h-[55px]"
-              isExample
-            />
-
-            <InputWithPen
-              answer="저출산 가장 큰 요인은, ‘일·육아 병행 어려움’"
-              showAnswer={showAnswer}
-              containerClassName="absolute left-[500px] top-[115px]"
-              className="text-center bg-transparent text-[35px] tracking-tighter w-[570px]"
-              penClassName="left-1/2 -translate-x-1/2 w-[35px]"
-              isExample
-            />
-
-            <InputWithPen
-              answer="(두 가지 일을 한꺼번에)아울러 행함."
-              showAnswer={showAnswer}
-              containerClassName="absolute left-[770px] top-[352px]"
-              className="bg-transparent text-[35px] w-[180px]"
-              penClassName="w-[35px]"
-              isExample
-            />
-            <InputWithPen
-              answer="수식 관계"
-              showAnswer={showAnswer}
-              containerClassName="absolute left-[770px] top-[419px]"
-              className="bg-transparent text-[35px] w-[180px]"
-              penClassName="w-[35px]"
-              isExample
-            />
-            <OLD_TextareaWithPen
-              answer="다이어트를 위해 운동과 식단 조절을 <span className='font-heaser'>竝行하는 중이다.</span>"
-              showAnswer={showAnswer}
-              containerClassName="!absolute left-[1020px] top-[350px]"
-              className="bg-transparent text-center text-[35px] leading-[50px] w-[300px] break-keep"
-              penClassName="top-[45px] left-1/2 -translate-x-1/2 h-[35px]"
-              rows={3}
-              isExample
-            />
-          </div>
-
+    <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-hidden">
+      <div className="relative h-fit">
+        <div className="relative">
+          <img src={IMAGE2.src} />
         </div>
       </div>
-      <ExampleAnswerButton
-        active={showAnswer}
-        onClick={() => setShowAnswer(!showAnswer)}
-      />
-    </>
+    </div>
+  );
+};
+
+const Content3 = () => {
+  return (
+    <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-hidden">
+      <div className="relative h-fit">
+        <div className="relative">
+          <img src={IMAGE3.src} />
+        </div>
+      </div>
+    </div>
   );
 };
