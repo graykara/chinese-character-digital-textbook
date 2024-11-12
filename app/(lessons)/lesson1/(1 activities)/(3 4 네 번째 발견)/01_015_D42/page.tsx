@@ -41,7 +41,7 @@ export default function Page() {
       fontSize: 50,
       answers: ["입구는\n'들어가는 길.'\n이라는 뜻이야."],
       sounds: ["/sound/1/15/3.mp3"],
-      position: { x: 640, y: 30 },
+      position: { x: 640, y: 60 },
       rows: 3,
     },
     {
@@ -160,7 +160,7 @@ export default function Page() {
                 }}
               >
                 {showAnswer ? (
-                  <div className="w-[450px] h-[250px] flex justify-start items-center overflow-y-auto">
+                  <div className="w-[380px] h-[220px] mt-3 translate-x-10 flex justify-start items-center overflow-y-auto bg-black bg-opacity-0">
                     <p style={{ lineHeight: 1.2 }} className="text-center h-full">
                       {quiz.answers.map((answer, idx) => (
                         <SoundText
