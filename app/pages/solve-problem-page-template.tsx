@@ -46,7 +46,7 @@ export const SolveProblemPageTemplate = ({
           ) : null}
 
           <div
-            className={`pt-1 text-[55px] tracking-tighter
+            className={`pt-1 text-[55px] tracking-tighter break-keep
               ${essayTypeNumbers.includes(number) ? "text-[#2a306d]1" : ""}
             `}
           >
