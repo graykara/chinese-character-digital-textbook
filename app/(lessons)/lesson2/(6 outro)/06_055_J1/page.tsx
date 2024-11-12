@@ -118,15 +118,6 @@ const Content2 = () => {
             />
 
             <InputWithPen
-              answer="저출산 가장 큰 요인은, ‘일·육아 병행 어려움’"
-              showAnswer={showAnswer}
-              containerClassName="absolute left-[500px] top-[115px]"
-              className="text-center bg-transparent text-[35px] tracking-tighter w-[570px]"
-              penClassName="left-1/2 -translate-x-1/2 w-[35px]"
-              isExample
-            />
-
-            <InputWithPen
               answer="(두 가지 일을 한꺼번에)아울러 행함."
               showAnswer={showAnswer}
               containerClassName="absolute left-[770px] top-[352px]"
@@ -143,7 +134,7 @@ const Content2 = () => {
               isExample
             />
             <OLD_TextareaWithPen
-              answer="다이어트를 위해 운동과 식단 조절을 <span className='font-heaser'>竝行하는 중이다.</span>"
+              answer={<>다이어트를 위해 운동과 식단 조절을 <span className='font-haeseo'>竝行</span>하는 중이다.</>}
               showAnswer={showAnswer}
               containerClassName="!absolute left-[1020px] top-[350px]"
               className="bg-transparent text-center text-[35px] leading-[50px] w-[300px] break-keep"

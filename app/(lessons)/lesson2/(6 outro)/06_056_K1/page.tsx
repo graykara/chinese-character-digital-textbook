@@ -411,7 +411,7 @@ const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
         <InputWithPen
           isExample
           answer={
-            <p>
+            <p className="-mt-1">
               아름답게 핀 진달래꽃이{" "}
               <span className="font-haeseo text-[45px]">山川</span>에 가득하다.
             </p>

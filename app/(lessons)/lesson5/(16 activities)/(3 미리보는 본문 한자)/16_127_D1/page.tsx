@@ -12,6 +12,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만�
 import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕4.png";
 import { StepContainer } from "@/app/components/step-container";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
