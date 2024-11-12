@@ -104,7 +104,7 @@ export default function RootLayout({
         setMaxStep,
         navigationDirection,
         setNavigationDirection,
-        pageNumber: Number(pageNumber) || 1,
+        pageNumber: pageNumber || 1,
         currentLesson,
         currentChapter,
         setCurrentLesson,
