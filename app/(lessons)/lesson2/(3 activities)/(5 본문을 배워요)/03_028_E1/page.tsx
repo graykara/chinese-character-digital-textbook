@@ -28,11 +28,13 @@ export default function Page() {
 
   const [showReading, setShowReading] = useState(false);
   const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
+  const [showContent, setShowContent] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setShowReading(false);
     setShowMeaning(null);
+    setShowContent(false);
     setShowModal(false);
   }, [step]);
 
