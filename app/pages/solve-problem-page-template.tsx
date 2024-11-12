@@ -42,11 +42,13 @@ export const SolveProblemPageTemplate = ({
       <div className="relative h-[calc(990px_-_160px)] ml-[100px] mt-[158px] px-[55px] flex flex-col">
         <header className="flex items-start gap-4">
           {!hideIconNumbers.includes(number) ? (
-            <ProblemNumberIcon number={number} />
+            <ProblemNumberIcon number={number} type={essayTypeNumbers.includes(number) ? "essay" : undefined} />
           ) : null}
 
           <div
-            className={`pt-1 text-[55px] tracking-tighter ${essayTypeNumbers.includes(number) ? "text-[#2a306d]" : ""}`}
+            className={`pt-1 text-[55px] tracking-tighter
+              ${essayTypeNumbers.includes(number) ? "text-[#2a306d]1" : ""}
+            `}
           >
             {question}
           </div>

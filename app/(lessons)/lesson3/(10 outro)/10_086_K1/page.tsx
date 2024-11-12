@@ -3,9 +3,10 @@
 import { SolveProblemPageTemplate } from "@/app/pages/solve-problem-page-template";
 import IMAGE2 from "./image2.png";
 import IMAGE3 from "./image3.png";
+import IMAGE4 from "./image4.png";
 import IMAGE5 from "./image5.png";
-import IMAGE8 from "./image8.png";
-import IMAGE9 from "./image9.png";
+import IMAGE6 from "./image6.png";
+import IMAGE7 from "./image7.png";
 import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
@@ -23,6 +24,7 @@ import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number-icon";
+import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
@@ -32,23 +34,48 @@ export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const questions = [
-    "한자의 음과 뜻이 옳은 것은?",
-    "대화 속 밑줄 친 부분을 한자로 바꿔 쓰시오.",
     <>
-      <span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>와 같은 원리로
-      만들어진 한자는?
+      성어 <span className="font-haeseo">‘十中八九’</span>속에 있는 숫자를 모두 더한 값은?
     </>,
-    "빈칸에 알맞은 한자를 쓰시오.",
     <>
-      단어장의 내용을 보고 <span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 mr-1 tracking-tighter align-text-top">ㄱ</span>에 들어갈 단어를 한자로 쓰시오.
+      활동지의 내용으로 보아
+      {" "}<span className="text-[42px] rounded-full bg-[#898989] text-white mr-1 pt-1 pb-0 px-2 align-text-top">ㄱ</span>
+      에 들어갈 것은?
     </>,
-    "단어의 짜임이 옳은 것은?",
     <>
-      한자 어휘의 활용이 옳지{" "}
-      <span className="underline underline-offset-[10px]">않은</span> 것은?
+      풀이 순서가 <span className="font-haeseo">‘指鹿爲馬’</span>와 같은 것을
+      {" "}<span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>{" "}
+      에서
+      {" "}<span className="underline underline-offset-[10px]">모두</span>{" "}
+      고른 것은?
     </>,
-    "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
-    "[8-9] 다음 대화의 내용을 보고, 물음에 답하시오.",
+    <>
+      게시판의 내용을 보아
+      {" "}<span className="text-[42px] rounded-full bg-[#898989] text-white mr-1 pt-1 pb-0 px-2 align-text-top">ㄱ</span>
+      에 알맞는 것은?
+    </>,
+    <>
+      글의 내용을 보아
+      {" "}<span className="text-[42px] rounded-full bg-[#898989] text-white mr-1 pt-1 pb-0 px-2 align-text-top">ㄱ</span>
+      에 들어갈 것은?
+    </>,
+    <>
+      대화의 내용을 보아
+      {" "}<span className="text-[42px] rounded-full bg-[#898989] text-white mr-1 pt-1 pb-0 px-2 align-text-top">ㄱ</span>
+      에 들어갈 것은?
+    </>,
+    "대화의 내용으로 보아 빈칸에 들어갈 성어로 옳은 것은?",
+    <>
+      성어의 활용이 적절하지
+      {" "}<span className="underline underline-offset-[10px]">않은</span>{" "}
+      것은?
+    </>,
+    <>
+      <span className="font-haeseo">‘結草報恩’</span>
+      의 겉뜻과 속뜻을 쓰고,
+      <span className="font-haeseo">‘結草報恩’</span>
+      에서 얻을 수 있는 교훈을 자기의 삶에서 실천해야 할 대상이 있다면 누구인지 밝히고 그 이유를 쓰시오.
+    </>
   ];
 
   useEffect(() => {
@@ -60,14 +87,14 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={9}
         step={step}
-       
+
         className="bg-transparent !top-[120px] !right-[200px]"
       />
       <SolveProblemPageTemplate
         lesson={2}
         number={step}
         question={questions[step - 1]}
-        hideIconNumbers={[8, 9]}
+        essayTypeNumbers={[9]}
       >
         <div className="h-full flex flex-col justify-between items-center">
           {step === 1 ? <Question1 showAnswer={showAnswer} /> : null}
@@ -123,33 +150,18 @@ export default function Page() {
 
 const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full h-full pl-[85px] pt-[20px] text-[40px] tracking-tight">
+    <div className="w-full h-full pl-[85px] pt-[20px] tracking-tight">
       <SelectionQuiz
         showAnswer={showAnswer}
         options={[
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">休</span>{" "}
-            <span className="text-[50px]">(목) 나무</span>
-          </p>,
-          <p key={2} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">聞</span>{" "}
-            <span className="text-[50px]">(문) 묻다</span>
-          </p>,
-          <p key={3} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">好</span>{" "}
-            <span className="text-[50px]">(호) 좋다</span>
-          </p>,
-          <p key={4} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">九</span>{" "}
-            <span className="text-[50px]">(칠) 일곱</span>
-          </p>,
-          <p key={5} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">末</span>{" "}
-            <span className="text-[50px]">(본) 근본, 뿌리</span>
-          </p>,
+          "25",
+          "27",
+          "29",
+          "31",
+          "33",
         ]}
-        answers={[3]}
-        className="flex flex-col gap-[16px]"
+        answers={[2]}
+        className="flex flex-col gap-[32px]"
       />
     </div>
   );
@@ -158,14 +170,27 @@ const Question1 = ({ showAnswer }: { showAnswer: boolean }) => {
 const Question2 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
     <div className="h-full flex flex-col justify-center items-center">
-      <div className="relative -top-16 -left-12">
-        <img src={IMAGE2.src} />
-        <InputWithPen
-          answer="五月八日"
+      <div className="relative -top-20 left-20 grid grid-cols-2 gap-[32px]">
+        <div className="relative">
+          <img src={IMAGE2.src} />
+
+          {/* {showAnswer ? (
+            <div className="absolute left-[375px] top-[135px] bg-white">
+              <p className="text-[80px] font-haeseo">甘</p>
+            </div>
+          ) : null} */}
+        </div>
+        <SelectionQuiz
           showAnswer={showAnswer}
-          containerClassName={`absolute left-[900px] top-[340px] w-[200px] text-center bg-transparent font-haeseo text-[55px]`}
-          className="text-center"
-          penClassName="left-1/2 -translate-x-1/2 h-[40px]"
+          options={[
+            <span className="font-haeseo text-[55px]">雪</span>,
+            <span className="font-haeseo text-[55px]">四</span>,
+            <span className="font-haeseo text-[55px]">甘</span>,
+            <span className="font-haeseo text-[55px]">日</span>,
+            <span className="font-haeseo text-[55px]">恩</span>,
+          ]}
+          answers={[3]}
+          className="flex flex-col gap-[32px]"
         />
       </div>
     </div>
@@ -174,30 +199,39 @@ const Question2 = ({ showAnswer }: { showAnswer: boolean }) => {
 
 const Question3 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full pl-[80px] pt-[40px] text-[40px] tracking-tight">
-      <img src={IMAGE3.src} className="mb-10" />
+    <div className="w-full pt-[40px] text-[40px] tracking-tight">
+      <div className="pl-[80px]">
+        <img src={IMAGE3.src} className="mb-10" />
+      </div>
 
       <SelectionQuiz
         showAnswer={showAnswer}
         options={[
-          <p key={1}>
-            <span className="font-haeseo text-[55px]">下</span>
-          </p>,
-          <p key={2}>
-            <span className="font-haeseo text-[55px]">火</span>
-          </p>,
-          <p key={3}>
-            <span className="font-haeseo text-[55px]">洋</span>
-          </p>,
-          <p key={4}>
-            <span className="font-haeseo text-[55px]">休</span>
-          </p>,
-          <p key={5}>
-            <span className="font-haeseo text-[55px]">問</span>
-          </p>,
+          <>
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄱ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄷ</span>
+          </>,
+          <>
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄱ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄹ</span>
+          </>,
+          <>
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄴ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄷ</span>
+          </>,
+          <>
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄱ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄴ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄹ</span>
+          </>,
+          <>
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄴ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄷ</span>,
+            <span className="inline-block w-14 h-14 text-[42px] rounded-full bg-[#898989] text-white px-2">ㄹ</span>
+          </>,
         ]}
-        answers={[4]}
-        className="flex gap-[135px]"
+        answers={[2]}
+        className="flex gap-[70px]"
       />
     </div>
   );
@@ -205,29 +239,29 @@ const Question3 = ({ showAnswer }: { showAnswer: boolean }) => {
 
 const Question4 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full flex gap-[100px] pl-[70px] pt-[80px]">
-      <div className="flex items-center text-[60px]">
-        <span className="text-[50px]">(1)</span>{" "}
-        <span className="font-haeseo">密</span>
-        <InputWithPen
+    <div className="h-full flex flex-col justify-center items-center">
+      <div className="relative -top-20 left-20 grid grid-cols-2 gap-[32px]">
+        <div className="relative">
+          <img src={IMAGE4.src} />
+
+          {/* {showAnswer ? (
+            <div className="absolute right-[40px] top-[240px] bg-white">
+              우물 안 개구리.
+            </div>
+          ) : null} */}
+        </div>
+        <SelectionQuiz
           showAnswer={showAnswer}
-          answer="林"
-          className="font-haeseo bg-transparent text-center w-[75px] h-[75px] relative"
-          containerClassName="relative border-[3px] border-[#c4c4c5] rounded-lg w-[80px] h-[80px]"
-          penClassName="left-1/2 -translate-x-1/2 w-[50px] -mt-2"
-        />{" "}
-        : 빽빽한 숲.
-      </div>
-      <div className="flex items-center text-[60px]">
-        <span className="text-[50px]">(2)</span>{" "}
-        <InputWithPen
-          showAnswer={showAnswer}
-          answer="民"
-          className="font-haeseo bg-transparent text-center w-[75px] h-[75px] relative"
-          containerClassName="relative border-[3px] border-[#c4c4c5] rounded-lg w-[80px] h-[80px]"
-          penClassName="left-1/2 -translate-x-1/2 w-[50px] -mt-2"
+          options={[
+            "울며 겨자먹가.",
+            "우물 안 개구리.",
+            "쇠귀에 경 읽기.",
+            "가는 말에 채찍질.",
+            "하나만 알고 둘은 모른다.",
+          ]}
+          answers={[2]}
+          className="flex flex-col gap-[32px]"
         />
-        <span className="font-haeseo">主</span> : 백성이 주인임.
       </div>
     </div>
   );
@@ -239,12 +273,17 @@ const Question5 = ({ showAnswer }: { showAnswer: boolean }) => {
       <div className="relative -top-8">
         <img src={IMAGE5.src} />
 
-        <InputWithPen
+        <SelectionQuiz
           showAnswer={showAnswer}
-          answer="本末"
-          className="font-haeseo text-[65px] bg-transparent w-[300px] text-center"
-          penClassName="left-1/2 -translate-x-1/2"
-          containerClassName="!absolute left-[535px] top-[70px]"
+          options={[
+            <span className="font-haeseo text-[55px]">蛇足</span>,
+            <span className="font-haeseo text-[55px]">三人成虎</span>,
+            <span className="font-haeseo text-[55px]">易地思之</span>,
+            <span className="font-haeseo text-[55px]">十中八九</span>,
+            <span className="font-haeseo text-[55px]">雪上加霜</span>,
+          ]}
+          answers={[5]}
+          className="flex gap-[32px] mt-20"
         />
       </div>
     </div>
@@ -253,132 +292,91 @@ const Question5 = ({ showAnswer }: { showAnswer: boolean }) => {
 
 const Question6 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full h-full pl-[85px] pt-[20px] text-[40px] tracking-tight">
-      <SelectionQuiz
-        showAnswer={showAnswer}
-        options={[
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">有無</span>{" "}
-            <span className="text-[50px]">- 술보 관계</span>
-          </p>,
-          <p key={2} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">讀書</span>{" "}
-            <span className="text-[50px]">- 병렬 관계</span>
-          </p>,
-          <p key={3} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">年少</span>{" "}
-            <span className="text-[50px]">- 술목 관계</span>
-          </p>,
-          <p key={4} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">休日</span>{" "}
-            <span className="text-[50px]">- 수식 관계</span>
-          </p>,
-          <p key={5} className="-mt-[2px] -mb-[10px]">
-            <span className="font-haeseo text-[55px]">難讀</span>{" "}
-            <span className="text-[50px]">- 주술 관계</span>
-          </p>,
-        ]}
-        answers={[4]}
-        className="flex flex-col gap-[16px]"
-      />
+    <div className="h-full flex flex-col justify-center items-center">
+      <div className="relative -top-20 left-20 grid grid-cols-2 gap-[32px]">
+        <div className="relative">
+          <img src={IMAGE6.src} />
+
+          {/* {showAnswer ? (
+            <div className="absolute right-[40px] top-[240px] bg-white">
+              우물 안 개구리.
+            </div>
+          ) : null} */}
+        </div>
+        <SelectionQuiz
+          showAnswer={showAnswer}
+          options={[
+            <span className="font-haeseo text-[55px]">十中八九</span>,
+            <span className="font-haeseo text-[55px]">多多益善</span>,
+            <span className="font-haeseo text-[55px]">結草報恩</span>,
+            <span className="font-haeseo text-[55px]">莫上莫下</span>,
+            <span className="font-haeseo text-[55px]">朝三暮四</span>,
+          ]}
+          answers={[4]}
+          className="flex flex-col gap-[32px]"
+        />
+      </div>
     </div>
   );
 };
 
 const Question7 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full h-full pl-[85px] pt-[20px] text-[40px] tracking-tight">
-      <SelectionQuiz
-        showAnswer={showAnswer}
-        options={[
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">매주 월요일은</span>{" "}
-            <span className="font-haeseo text-[55px]">休業</span>{" "}
-            <span className="text-[50px]">합니다.</span>
-          </p>,
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">그는 예심을</span>{" "}
-            <span className="font-haeseo text-[55px]">無難</span>{" "}
-            <span className="text-[50px]">하게 통과했다.</span>
-          </p>,
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">이야기할 때는</span>{" "}
-            <span className="font-haeseo text-[55px]">聽者</span>{" "}
-            <span className="text-[50px]">의 상황을 고려해야 한다.</span>
-          </p>,
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">그 책은 특히 학생들에게 많은 </span>
-            <span className="font-haeseo text-[55px]">共感</span>{" "}
-            <span className="text-[50px]">을 불러일으켰다.</span>
-          </p>,
-          <p key={1} className="-mt-[2px] -mb-[10px]">
-            <span className="text-[50px]">이번 일은 나의</span>{" "}
-            <span className="font-haeseo text-[55px]">義士</span>{" "}
-            <span className="text-[50px]">
-              와는 상관없이 그가 독단적으로 결정한 것이다.
-            </span>
-          </p>,
-        ]}
-        answers={[5]}
-        className="flex flex-col gap-[16px]"
-      />
+    <div className="h-full flex items-center">
+      <div className="relative -top-8">
+        <img src={IMAGE7.src} />
+
+        <SelectionQuiz
+          showAnswer={showAnswer}
+          options={[
+            <span className="font-haeseo text-[55px]">蛇足</span>,
+            <span className="font-haeseo text-[55px]">背水陣</span>,
+            <span className="font-haeseo text-[55px]">朝三暮四</span>,
+            <span className="font-haeseo text-[55px]">多多益善</span>,
+            <span className="font-haeseo text-[55px]">易地思之</span>,
+          ]}
+          answers={[2]}
+          className="flex gap-[60px] mt-5"
+        />
+      </div>
     </div>
   );
 };
 
 const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
-    <div className="w-full">
-      <div className="flex justify-center mb-5">
-        <img src={IMAGE8.src} />
-      </div>
-      <div className="flex items-center gap-4 mb-5">
-        <ProblemNumberIcon number={8} />
-        <p className="text-[50px] mt-0 -ml-1 tracking-tighter"><span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 pl-1.5 pr-2 tracking-tighter align-text-top">ㄱ</span>~<span className="text-[40px] bg-[#848586] text-white rounded-full pt-1 pb-0 px-2 mr-1 tracking-tighter align-text-top">ㄹ</span>에 들어갈 내용을 한글로 쓰시오.</p>
-      </div>
-
-      <div className="grid grid-cols-2 w-[1300px] gap-y-[32px] px-[32px] pl-10">
-        <div className="flex items-center">
-          (1) ㉠ :{" "}
-          <InputWithPen
-            answer="자연"
-            showAnswer={showAnswer}
-            containerClassName="border-b border-black ml-4"
-            className="bg-transparent w-[400px] text-center"
-            penClassName="h-[40px] left-1/2 -translate-x-1/2"
-          />
-        </div>
-        <div className="flex items-center">
-          (2) ㉡ :{" "}
-          <InputWithPen
-            answer="상하"
-            showAnswer={showAnswer}
-            containerClassName="border-b border-black ml-4"
-            className="bg-transparent w-[400px] text-center"
-            penClassName="h-[40px] left-1/2 -translate-x-1/2"
-          />
-        </div>
-        <div className="flex items-center">
-          (3) ㉢ :{" "}
-          <InputWithPen
-            answer="물수"
-            showAnswer={showAnswer}
-            containerClassName="border-b border-black ml-4"
-            className="bg-transparent w-[400px] text-center"
-            penClassName="h-[40px] left-1/2 -translate-x-1/2"
-          />
-        </div>
-        <div className="flex items-center">
-          (4) ㉣ :{" "}
-          <InputWithPen
-            answer="물"
-            showAnswer={showAnswer}
-            containerClassName="border-b border-black ml-4"
-            className="bg-transparent w-[400px] text-center"
-            penClassName="h-[40px] left-1/2 -translate-x-1/2"
-          />
-        </div>
-      </div>
+    <div className="w-full h-full pl-[85px] pt-[20px] tracking-tight">
+      <SelectionQuiz
+        showAnswer={showAnswer}
+        options={[
+          <>
+            회의 시간이 이렇게 길어지다니, 군말이
+            <span className="font-haeseo">蛇足</span>
+            이었어.
+          </>,
+          <>
+            소외된 어려운 이웃을 돕는 손길은
+            <span className="font-haeseo">多多益善</span>
+            이지요.
+          </>,
+          <>
+            <span className="font-haeseo">龍頭蛇尾</span>
+            라더니 정말 거짓말도 여러 사람이 하니 진짜 같아.
+          </>,
+          <>
+            서로 타협점을 찾지 못한다면
+            <span className="font-haeseo">易地思之</span>
+            해 보는 것이 좋겠습니다.
+          </>,
+          <>
+            앞서 달리던 두 선수가 넘어져 다른 선수가
+            <span className="font-haeseo">漁父之利</span>
+            로 우승하였다.
+          </>,
+        ]}
+        answers={[3]}
+        className="flex flex-col gap-[32px]"
+      />
     </div>
   );
 };
@@ -386,41 +384,51 @@ const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {
 const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
     <div className="w-full">
-      <div className="flex justify-center mb-5">
-        <img src={IMAGE8.src} />
-      </div>
-      <div className="flex items-start gap-4 mb-5">
-        <ProblemNumberIcon number={9} />
-        <p className="text-[45px] mt-1 -ml-1 leading-snug tracking-tighter">칠판에 쓰인 세 개의 단어 중 하나를 선택하고, 그 단어를 활용하여
-        <br />
-        짧은 글을 쓰시오. ※ 선택한 단어는 한자로 쓰기.</p>
-      </div>
-
-      <div className="relative ml-20 -mt-5">
-        <img src={IMAGE9.src} />
-
-        <InputWithPen
-          isExample
-          answer="산천"
-          showAnswer={showAnswer}
-          containerClassName="!absolute left-[12px] top-[78px]"
-          className="bg-transparent w-[400px] text-center text-[40px]"
-          penClassName="h-[40px] left-1/2 -translate-x-1/2"
-        />
-
-        <InputWithPen
-          isExample
-          answer={
-            <p>
-              아름답게 핀 진달래꽃이{" "}
-              <span className="font-haeseo text-[45px]">山川</span>에 가득하다.
-            </p>
-          }
-          showAnswer={showAnswer}
-          containerClassName="!absolute left-[420px] top-[78px]"
-          className="bg-transparent w-[720px] text-center text-[40px]"
-          penClassName="h-[40px] left-1/2 -translate-x-1/2"
-        />
+      <div className="relative ml-20 mt-10">
+        <div className="flex flex-col gap-5">
+          <div className="flex gap-x-5">
+            <p className="flex-none">&#183;겉뜻:</p>
+            <InputWithPen
+              answer="풀을 엮어 은혜를 갚음."
+              showAnswer={showAnswer}
+              containerClassName="w-full border-b-2 border-black"
+              className="bg-transparent w-[1350px]"
+              penClassName="h-[40px]"
+            />
+          </div>
+          <div className="flex gap-x-5">
+            <p className="flex-none">&#183;속뜻:</p>
+            <InputWithPen
+              answer="죽은 뒤에라도 은혜를 잊지 않고 갚음."
+              showAnswer={showAnswer}
+              containerClassName="w-full border-b-2 border-black"
+              className="bg-transparent w-[1350px]"
+              penClassName="h-[40px]"
+            />
+          </div>
+          <div className="flex gap-x-5">
+            <p className="flex-none">&#183;실천 대상:</p>
+            <InputWithPen
+              isExample
+              answer="선생님"
+              showAnswer={showAnswer}
+              containerClassName="w-full border-b-2 border-black"
+              className="bg-transparent w-[1250px]"
+              penClassName="h-[40px]"
+            />
+          </div>
+          <div className="flex gap-x-5">
+            <p className="flex-none">&#183;이유:</p>
+            <OLD_TextareaWithPen
+              isExample
+              answer="친구들과의 갈등으로 학교생활에 어려움이 많았는데 선생님께서 따뜻한 위로와 도움으로 잘 적응할 수 있었기 때문이다."
+              showAnswer={showAnswer}
+              containerClassName="w-full border-b-2 border-black"
+              className="bg-transparent w-full"
+              penClassName="h-[40px] top-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
