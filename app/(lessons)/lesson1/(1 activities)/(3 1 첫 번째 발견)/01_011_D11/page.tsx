@@ -42,7 +42,7 @@ export default function Page() {
                 // 재생 중일 때는 정지
                 sound.stop();
               } else {
-                sound.play()
+                sound.play();
               }
             }}
             className="relative top-[60px] left-[1510px] animate__animated animate__bounceIn animate__delay-2s z-10"
