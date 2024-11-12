@@ -28,10 +28,12 @@ export default function Page() {
     {
       image: IMAGE1.src,
       fontSize: 40,
-      answers: [
-        "여기는 일본이야.\n저기 표지판을 봐!\n",
-        "출구 전용은 '나가는 길로만 씀.'이라는 뜻이야.",
-      ],
+      answers: [<>
+        <p>여기는 일본이야.<br />저기 표지판을 봐!</p>
+      </>,
+      <>
+        <p>출구 전용은 ‘나가는 길로만 씀.’이라는 뜻이야.</p>
+      </>],
       sounds: ["/sound/1/15/1.mp3", "/sound/1/15/2.mp3"],
       position: { x: 640, y: 30 },
       rows: 4,
@@ -39,50 +41,62 @@ export default function Page() {
     {
       image: IMAGE2.src,
       fontSize: 50,
-      answers: ["입구는\n'들어가는 길.'\n이라는 뜻이야."],
+      answers: [<>
+        <p>입구는<br />‘들어가는 길.’<br />이라는 뜻이야.</p>
+      </>],
       sounds: ["/sound/1/15/3.mp3"],
-      position: { x: 640, y: 30 },
+      position: { x: 640, y: 40 },
       rows: 3,
     },
     {
-      image: IMAGE3.src,
+      image: IMAGE4.src,
       fontSize: 40,
-      answers: [
-        "나는 지금 일본의 어느 신호등 앞에 서 있어.",
-        "'보행자 전용'은 '걸어 다니는 사람만 다니는 길'이고,",
+      answers: [<>
+        <p>나는 지금 일본의 어느<br />신호등 앞에 서 있어.</p>
+      </>,
+      <>
+        <p>‘보행자 전용’은 ‘걸어 다니는 사람만 다니는 길’이고,</p>
+      </>,
       ],
       sounds: ["/sound/1/15/4.mp3", "/sound/1/15/5.mp3"],
-      position: { x: 820, y: 30 },
+      position: { x: 810, y: 35 },
       rows: 4,
     },
     {
-      image: IMAGE4.src,
+      image: IMAGE3.src,
       fontSize: 50,
-      answers: ["'자전거 전용'은 ‘자전거만 다니는 길’이야."],
+      answers: [<>
+        <p>‘자전거 전용’은 ‘자전거만 다니는 길’이야.</p>
+      </>],
       sounds: ["/sound/1/15/6.mp3"],
-      position: { x: 820, y: 40 },
+      position: { x: 810, y: 50 },
       rows: 4,
     },
     {
       image: IMAGE5.src,
       fontSize: 40,
-      answers: [
-        "여기는 중국의 거리야.\n",
-        "저기 보이는 한자는 '열구'라고 읽는데 '핫도그'라는 뜻이야.",
-      ],
+      answers: [<>
+        <p>여기는 중국의 거리야.</p>
+      </>,
+      <>
+        <p>저기 보이는 한자는 ‘열구’라고 읽는데 ‘핫도그’라는 뜻이야.</p>
+      </>],
       sounds: ["/sound/1/15/7.mp3", "/sound/1/15/8.mp3"],
-      position: { x: 820, y: 30 },
+      position: { x: 810, y: 60 },
       rows: 4,
     },
     {
       image: IMAGE6.src,
       fontSize: 40,
-      answers: [
-        "지금 여기 중국에는 방금 비가 내렸다가 그쳤어.",
-        "그래서 '소심지활' 즉 '바닥이 미끄러우니 조심하세요'라는 뜻의 표지판이 보이네.",
-      ],
+      answers:
+        [<>
+          <p>지금 여기 중국에는 방금<br />비가 내렸다가 그쳤어.</p>
+        </>,
+        <>
+          <p>그래서 ‘소심지활’ 즉 ‘바닥이 미끄러우니 조심하세요’라는 뜻의 표지판이 보이네.</p>
+        </>],
       sounds: ["/sound/1/15/9.mp3", "/sound/1/15/10.mp3"],
-      position: { x: 640, y: 30 },
+      position: { x: 660, y: 40 },
       rows: 4,
     },
   ];
@@ -160,20 +174,41 @@ export default function Page() {
                 }}
               >
                 {showAnswer ? (
-                  <div className="w-[450px] h-[250px] flex justify-start items-center overflow-y-auto">
-                    <p style={{ lineHeight: 1.2 }} className="text-center h-full">
-                      {quiz.answers.map((answer, idx) => (
-                        <SoundText
-                          key={idx}
-                          isPlaying={showAnswer && isPlaying && currentSoundIndex === idx}
-                          className={`leading-tight tracking-tighter break-keep text-example`}
-                          style={{ fontSize: quiz.fontSize + "px" }}
-                        >
-                          {answer}{" "}
-                        </SoundText>
-                      ))}
-                    </p>
-                  </div>
+                  step !== 6 ? (
+                    <>
+                      <div className="w-[450px] h-[200px] mt-4 translate-x-3 flex justify-start items-center overflow-y-auto bg-black bg-opacity-0">
+                        <p style={{ lineHeight: 1.2 }} className="w-[450px] text-center h-full">
+                          {quiz.answers.map((answer, idx) => (
+                            <SoundText
+                              key={idx}
+                              isPlaying={showAnswer && isPlaying && currentSoundIndex === idx}
+                              className={`leading-tight tracking-tighter break-keep text-example`}
+                              style={{ fontSize: quiz.fontSize + "px" }}
+                            >
+                              {answer}{" "}
+                            </SoundText>
+                          ))}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="w-[400px] h-[190px] mt-4 translate-x-3 flex justify-start items-center overflow-y-auto bg-black bg-opacity-0">
+                        <p style={{ lineHeight: 1.2 }} className="w-[450px] text-center h-full">
+                          {quiz.answers.map((answer, idx) => (
+                            <SoundText
+                              key={idx}
+                              isPlaying={showAnswer && isPlaying && currentSoundIndex === idx}
+                              className={`leading-tight tracking-tighter break-keep text-example`}
+                              style={{ fontSize: quiz.fontSize + "px" }}
+                            >
+                              {answer}{" "}
+                            </SoundText>
+                          ))}
+                        </p>
+                      </div>
+                    </>
+                  )
                 ) : (
                   <TextareaWithPen
                     answer={value}

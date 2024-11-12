@@ -79,21 +79,19 @@ const Content1 = () => {
   );
 };
 
+const sound = new Howl({
+  src: "/sound/1/23-2.mp3",
+});
+
 const Content2 = () => {
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);
-  const sound = new Howl({
-    src: "/sound/1/23-2.mp3",
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
 
   useEffect(() => {
-    return () => {
-      sound.stop();
-    };
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
   }, []);
-
 
   return (
     <div className="h-full flex flex-col justify-center items-center -mt-[120px]">

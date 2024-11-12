@@ -50,7 +50,7 @@ export default function Page() {
           } className="w-[1210px] -ml-5 mt-10" />
 
           <SoundButton2
-            className="absolute top-[285px] left-[435px] animate__animated animate__bounceIn animate__delay-1s"
+            className="absolute top-[285px] left-[385px] animate__animated animate__bounceIn animate__delay-1s"
             active={isReading}
             onClick={() => {
               if (isReading) sound.stop();
