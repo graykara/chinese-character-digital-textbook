@@ -13,7 +13,6 @@ const sound = new Howl({
 
 export default function Page() {
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
 
   useEffect(() => {
     // sound 이벤트 리스너 등록
@@ -42,11 +41,8 @@ export default function Page() {
               if (isReading) {
                 // 재생 중일 때는 정지
                 sound.stop();
-                setIsReading(false);
-                setSoundId(null);
               } else {
-                // 재생 시작
-                setSoundId(sound.play());
+                sound.play();
               }
             }}
             className="relative top-[60px] left-[1510px] animate__animated animate__bounceIn animate__delay-2s z-10"
