@@ -10,18 +10,21 @@ import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sound = new Howl({
+  src: "/sound/3/71_story.mp3",
+});
+
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const sounds = ["/sound/3/71_story.mp3", ""];
-  const [soundId, setSoundId] = useState<number | null>(null);
 
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "한·중·일 삼국은 지리적으로 매우 가깝고 ‘한자 문화권’이라는 공통점이 있는 만큼 성어를 사용하는 문화 역시 비슷하다.",
@@ -55,8 +58,11 @@ export default function Page() {
           className="absolute top-[110px] left-[1210px] animate__animated animate__bounceIn animate__delay-2s z-10"
           active={isReading}
           onClick={() => {
-            if(isReading) sound.stop();
-            else setSoundId(sound.play());
+            if(isReading) {
+              console.log("stop");
+              sound.stop();
+            }
+            else sound.play();
           }}
         />
       )}

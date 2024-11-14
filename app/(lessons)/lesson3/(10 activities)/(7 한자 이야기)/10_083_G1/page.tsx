@@ -16,7 +16,7 @@ import { VideoThumbnail } from "@/app/components/video-thumbnail";
 import { PageInfoContext } from "@/app/utils/page-info";
 
 const sound1 = new Howl({
-  src: "/sound/3/83_story_2.mp3"
+  src: "/sound/3/83_story_1.mp3"
 });
 
 const sound2 = new Howl({
@@ -27,12 +27,17 @@ export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
-  // const sound = new Howl({
-  //   src: sounds[step - 1],
-  //   onplay: () => setIsReading(true),
-  //   onend: () => setIsReading(false),
-  // });
+
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "우리 선조들의 이야기에서 유래한 대표적인 성어로는 ‘함흥차사(咸興差使)’와 ‘계란유골(鷄卵有骨)’이 있는데 그 유래를 소개하면 다음과 같다.",
@@ -56,16 +61,6 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    sound1.on("play", () => setIsReading(true));
-    sound1.on("end", () => setIsReading(false));
-    sound1.on("stop", () => setIsReading(false));
-
-    sound2.on("play", () => setIsReading(true));
-    sound2.on("end", () => setIsReading(false));
-    sound2.on("stop", () => setIsReading(false));
-  }, []);
-
   return (
     <>
       <CultureHeader title={"우리 선조들의 이야기에서 유래한 한자 성어"} />
@@ -77,10 +72,9 @@ export default function Page() {
           if (isReading) {
             sound1.stop();
             sound2.stop();
-          }
-          else {
-            if (step === 1) setSoundId(sound1.play());
-            else setSoundId(sound2.play());
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
           }
         }}
       />
