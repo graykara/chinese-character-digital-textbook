@@ -10,6 +10,7 @@ import IMAGE2 from "./image2.png";
 import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자35.png";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자36.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 const sounds = [
   new Howl({ src: "/sound/2/31/1.mp3" }),
@@ -113,7 +114,7 @@ export default function Page() {
 
               <div className="absolute top-0 left-[50px] grid grid-cols-5">
                 {sounds.map((sound, index) => (
-                  <button
+                  <Button
                     key={index}
                     className="w-[150px] h-[200px]"
                     onClick={() => {

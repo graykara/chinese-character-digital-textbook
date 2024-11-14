@@ -22,6 +22,7 @@ import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자16.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자18.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -163,7 +164,7 @@ export default function Page() {
               <source src={data[step - 2]?.resource} type="video/webm" />
             </video>
 
-            <button
+            <Button
               className="animate__animated animate__delay-1s animate__rotateIn absolute top-6 right-6"
               onClick={() => {
                 clickSound.play();
@@ -171,7 +172,7 @@ export default function Page() {
               }}
             >
               <img src={MODAL_CLOSE.src} />
-            </button>
+            </Button>
           </div>
         </div>
       </Modal>

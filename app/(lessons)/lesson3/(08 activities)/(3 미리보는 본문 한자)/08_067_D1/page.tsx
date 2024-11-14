@@ -23,6 +23,7 @@ import { DropZone } from "@/app/components/new-drag-and-drop/drop-zone";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -52,15 +53,15 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-5 pl-12">
         <img src={EXAMPLE.src} className="mt-6 -ml-14 mb-10" />
         <div className="absolute left-[0px] top-[40px] grid grid-cols-9 gap-[50px] w-full h-[90px] px-[35px]">
-          <button onClick={() => SOUND("/sound/3/p067_word000.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word001.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word002.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word003.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word004.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word005.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word006.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word007.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p067_word008.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word000.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word001.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word002.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word003.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word004.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word005.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word006.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word007.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p067_word008.mp3").play()} />
         </div>
 
         {/* <div className="absolute left-[15px] top-[30px] grid grid-cols-9 gap-[15px]">

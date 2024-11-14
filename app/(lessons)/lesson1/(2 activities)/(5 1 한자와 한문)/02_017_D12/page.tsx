@@ -11,6 +11,7 @@ import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아9.png";
 import { SOUND } from "@/app/utils/sound-player";
+import { Button } from "@/app/components/buttons/button";
 
 const sound = new Howl({
   src: "/sound/1/17/1.mp3",
@@ -71,7 +72,7 @@ export default function Page() {
           <img src={IMAGE.src} />
 
           {show1 ? null : (
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 SOUND("/sound/1/17/2.mp3").play();
@@ -80,10 +81,10 @@ export default function Page() {
               className="absolute left-[-20px] top-[40px] flex justify-center items-center bg-white w-[150px] h-[150px]"
             >
               <img src="/ui/click-icon.png" />
-            </button>
+            </Button>
           )}
           {show2 ? null : (
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 SOUND("/sound/1/17/3.mp3").play();
@@ -92,10 +93,10 @@ export default function Page() {
               className="absolute left-[240px] top-[40px] flex justify-center items-center bg-white w-[150px] h-[150px]"
             >
               <img src="/ui/click-icon.png" />
-            </button>
+            </Button>
           )}
           {show3 ? null : (
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 SOUND("/sound/1/17/4.mp3").play();
@@ -104,7 +105,7 @@ export default function Page() {
               className="absolute left-[550px] top-[40px] flex justify-center items-center bg-white w-[220px] h-[150px]"
             >
               <img src="/ui/click-icon.png" />
-            </button>
+            </Button>
           )}
         </div>
       </ContentContainer>

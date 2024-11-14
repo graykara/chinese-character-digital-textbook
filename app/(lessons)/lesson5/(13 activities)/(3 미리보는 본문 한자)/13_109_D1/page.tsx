@@ -11,6 +11,7 @@ import DotConnectionQuiz from "./dot-connection-quiz";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -70,39 +71,39 @@ export default function Page() {
         <div className="relative w-full flex">
           <img src={IMAGE.src} />
 
-            <button
+            <Button
               className="absolute top-[45px] left-[55px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[0]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[45px] left-[215px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[1]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[45px] left-[375px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[2]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[45px] left-[535px] w-[80px] h-[80px]  z-10 bg-transparent"
               onClick={() => SOUND(sounds[3]).play()}
-            ></button>
+            ></Button>
 
-            <button
+            <Button
               className="absolute top-[310px] left-[55px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[4]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[310px] left-[215px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[5]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[310px] left-[375px] w-[80px] h-[80px] z-10 bg-transparent"
               onClick={() => SOUND(sounds[6]).play()}
-            ></button>
-            <button
+            ></Button>
+            <Button
               className="absolute top-[310px] left-[535px] w-[80px] h-[80px]  z-10 bg-transparent"
               onClick={() => SOUND(sounds[7]).play()}
-            ></button>
+            ></Button>
 
           <div className="absolute right-0 top-[150px] w-[750px] h-[230px] overflow-hidden">
             <DotConnectionQuiz

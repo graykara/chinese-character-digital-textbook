@@ -48,44 +48,44 @@ export default function Page() {
 
         {/* {showAnswer ? (
           <>
-            <button
+            <Button
               className="absolute top-[150px] left-1/2 -translate-x-[265px] w-[100px] h-[100px] bg-black bg-opacity-50"
               onClick={() => {
                 clickSound.play();
                 setShowModal1(true);
               }}
             >
-            </button>
-            <button
+            </Button>
+            <Button
               className="absolute top-[150px] left-1/2 translate-x-[495px] w-[100px] h-[100px] bg-black bg-opacity-50"
               onClick={() => {
                 clickSound.play();
                 setShowModal2(true);
               }}
             >
-            </button>
-            <button
+            </Button>
+            <Button
               className="absolute top-[465px] left-1/2 -translate-x-[265px] w-[100px] h-[100px] bg-black bg-opacity-50"
               onClick={() => {
                 clickSound.play();
                 setShowModal3(true);
               }}
             >
-            </button>
-            <button
+            </Button>
+            <Button
               className="absolute top-[465px] left-1/2 translate-x-[495px] w-[100px] h-[100px] bg-black bg-opacity-50"
               onClick={() => {
                 clickSound.play();
                 setShowModal4(true);
               }}
             >
-            </button>
+            </Button>
 
             {showModal1 ? (
               <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
                 <div className="animate__animated animate__flipInX relative">
                   <img src={MODAL1.src} />
-                  <button
+                  <Button
                     className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                     onClick={() => {
                       clickSound.play();
@@ -93,7 +93,7 @@ export default function Page() {
                     }}
                   >
                     <img src={CLOSE.src} />
-                  </button>
+                  </Button>
                 </div>
               </div>
             ) : null}
@@ -102,7 +102,7 @@ export default function Page() {
               <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
                 <div className="animate__animated animate__flipInX relative">
                   <img src={MODAL2.src} />
-                  <button
+                  <Button
                     className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                     onClick={() => {
                       clickSound.play();
@@ -110,7 +110,7 @@ export default function Page() {
                     }}
                   >
                     <img src={CLOSE.src} />
-                  </button>
+                  </Button>
                 </div>
               </div>
             ) : null}
@@ -119,7 +119,7 @@ export default function Page() {
               <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
                 <div className="animate__animated animate__flipInX relative">
                   <img src={MODAL3.src} />
-                  <button
+                  <Button
                     className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                     onClick={() => {
                       clickSound.play();
@@ -127,7 +127,7 @@ export default function Page() {
                     }}
                   >
                     <img src={CLOSE.src} />
-                  </button>
+                  </Button>
                 </div>
               </div>
             ) : null}
@@ -136,7 +136,7 @@ export default function Page() {
               <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
                 <div className="animate__animated animate__flipInX relative">
                   <img src={MODAL4.src} />
-                  <button
+                  <Button
                     className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                     onClick={() => {
                       clickSound.play();
@@ -144,7 +144,7 @@ export default function Page() {
                     }}
                   >
                     <img src={CLOSE.src} />
-                  </button>
+                  </Button>
                 </div>
               </div>
             ) : null}

@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자37.png";
 import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -38,7 +39,7 @@ export default function Page() {
           <img src={showAnswer ? IMAGE_After.src : IMAGE_Before.src} />
         </ContentContainer>
 
-        <button
+        <Button
           onClick={() => !showAnswer && setChecked(1)}
           className="absolute top-[695px] left-[1165px]"
         >
@@ -46,8 +47,8 @@ export default function Page() {
             src="/ui/blue-check-icon.png"
             className={checked !== 1 ? "opacity-0" : ""}
           />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => !showAnswer && setChecked(2)}
           className="absolute top-[695px] left-[1290px]"
         >
@@ -55,7 +56,7 @@ export default function Page() {
             src="/ui/blue-check-icon.png"
             className={checked !== 2 ? "opacity-0" : ""}
           />
-        </button>
+        </Button>
       </CreativityPageTemplate>
 
       <InputWithPen

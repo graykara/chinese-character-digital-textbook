@@ -13,6 +13,7 @@ import {
   OLD_TextareaWithPen,
 } from "@/app/components/textarea/textarea-with-pen";
 import { Howl } from "howler";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -68,7 +69,7 @@ export default function Page() {
         rows={3}
       />
 
-      <button
+      <Button
         onClick={(e) => {
           clickSound.play();
           e.currentTarget.remove();
@@ -76,8 +77,8 @@ export default function Page() {
         className="absolute left-[580px] bottom-[93px]"
       >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={(e) => {
           clickSound.play();
           e.currentTarget.remove();
@@ -85,8 +86,8 @@ export default function Page() {
         className="absolute left-[827px] bottom-[93px]"
       >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={(e) => {
           clickSound.play();
           e.currentTarget.remove();
@@ -94,8 +95,8 @@ export default function Page() {
         className="absolute left-[1074px] bottom-[93px]"
       >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={(e) => {
           clickSound.play();
           e.currentTarget.remove();
@@ -103,7 +104,7 @@ export default function Page() {
         className="absolute left-[1322px] bottom-[93px]"
       >
         <img src={IMAGE_BUTTON.src} className="w-[187px] h-[100px]" />
-      </button>
+      </Button>
 
       <ExampleAnswerButton
         active={showAnswer}

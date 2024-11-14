@@ -5,6 +5,7 @@ import { PillButton } from "../buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "../buttons/button";
 
 type Data = {
   chinese: {
@@ -126,7 +127,7 @@ export const MainContentChineseAndReading = ({
                 <div key={index} className="relative">
                   {additional &&
                     (index === firstAdditonalIndex ? (
-                      <button
+                      <Button
                         onClick={() => {
                           clickSound.play();
                           setSelectedAdditional(additional);
@@ -136,9 +137,9 @@ export const MainContentChineseAndReading = ({
                         className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
                       >
                         <img src="/ui/additional-bubble-button.png" />
-                      </button>
+                      </Button>
                     ) : (
-                      <button
+                      <Button
                         onClick={() => {
                           clickSound.play();
                           setSelectedAdditional(additional);
@@ -148,7 +149,7 @@ export const MainContentChineseAndReading = ({
                         className="w-[128px] absolute bottom-[150px] left-1/2 -translate-x-1/2 flex justify-center"
                       >
                         <img src="/ui/additional-button.png" />
-                      </button>
+                      </Button>
                     ))}
                   <span
                     className={`text-left ${isKor ? "text-[50px] relative bottom-3" : "font-haeseo text-[100px]"} ${className || ""}`}

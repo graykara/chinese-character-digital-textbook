@@ -7,6 +7,7 @@ import CAN_PRESS_RIGHT from "./right-button-can-press.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { Button } from "../buttons/button";
 
 export const StepContainerArrow = ({
   maxStep,
@@ -21,12 +22,12 @@ export const StepContainerArrow = ({
 
   return (
     <nav className={`flex justify-center gap-6 ${className}`}>
-      <button onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep <= 1}>
+      <Button onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep <= 1}>
         <img src={currentStep <= 1 ? LEFT.src : CAN_PRESS_LEFT.src} alt="left" />
-      </button>
+      </Button>
       <div className="flex items-center gap-5">
         {Array.from({ length: maxStep }).map((_, index) => (
-          <button
+          <Button
             key={index}
             onClick={() => setCurrentStep(index + 1)}
             className={`w-6 h-6 m-1 rounded-full ${currentStep === index + 1 ? "bg-[#2d6879]" : "bg-[#bcbac4]"
@@ -34,12 +35,12 @@ export const StepContainerArrow = ({
           />
         ))}
       </div>
-      <button onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep >= maxStep}>
+      <Button onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep >= maxStep}>
         <img
           src={currentStep >= maxStep ? RIGHT.src : CAN_PRESS_RIGHT.src}
           alt="right"
         />
-      </button>
+      </Button>
     </nav>
   );
 };

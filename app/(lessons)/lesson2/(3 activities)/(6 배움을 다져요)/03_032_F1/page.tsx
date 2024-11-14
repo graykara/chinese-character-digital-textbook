@@ -16,6 +16,8 @@ import BACKGROUND1 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자30.png";
 import BACKGROUND3 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자31.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
+import { clickSound } from "@/app/utils/click-sound";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -92,7 +94,7 @@ const Step1 = () => {
           {showAnswer ? (
             <div className="absolute left-0 bottom-0 grid grid-cols-7">
               {sounds.map((sound) => (
-                <button
+                <Button
                   key={sound}
                   className="w-[200px] h-[150px]"
                   onClick={() =>
@@ -201,13 +203,14 @@ const Step3 = () => {
           <div className="absolute left-[390px] top-[65px] grid grid-cols-[293px__295px__310px__48px] gap-y-[110px]">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((v) => (
               <div key={v} className={`relative w-12 h-12`}>
-                <button
+                <Button
                   className="w-12 h-12"
-                  onClick={() =>
+                  onClick={() => {
+                    clickSound.play();
                     selected.includes(v)
                       ? setSelected(selected.filter((value) => value !== v))
                       : setSelected(selected.concat(v))
-                  }
+                  }}
                   disabled={v === 1 || showAnswer}
                 />
                 {selected.includes(v) ? (

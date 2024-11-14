@@ -8,6 +8,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭21.png";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -27,24 +28,24 @@ export default function Page() {
       <ContentContainer className="!justify-start -top-[50px] left-16">
         <img src={IMAGE1.src} />
         <div className="absolute left-[230px] top-[50px] grid grid-cols-6 gap-[55px] w-[1040px] h-[90px] bg-transparent ">
-          <button
+          <Button
             onClick={() => SOUND("/sound/5/p112_word000.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/5/p112_word001.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/5/p112_word002.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/5/p112_word003.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/5/p112_word004.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/5/p112_word005.mp3").play()}
-          ></button>
+          ></Button>
         </div>
 
         <InputWithPen

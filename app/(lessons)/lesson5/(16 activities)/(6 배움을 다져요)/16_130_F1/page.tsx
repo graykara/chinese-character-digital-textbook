@@ -6,8 +6,6 @@ import IMAGE2 from "./bg_2.png";
 import { ContentContainer } from "@/app/components/content-container";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useEffect, useState } from "react";
-import { DraggableHanjaCard } from "@/app/components/drag-and-drop/draggable-hanja-card";
-import { DndProvider } from "react-dnd";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";

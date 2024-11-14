@@ -14,6 +14,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/8/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/8/중등한문_언어생활 속의 성어227.png";
 import { StepContainer } from "@/app/components/step-container";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -102,10 +103,10 @@ const Step2 = () => {
       </div>
       <ContentContainer className="!justify-start -top-[45px] left-5">
         <img src={IMAGE2.src} />
-        <button className="absolute top-[215px] left-[90px] w-[200px] h-[100px] bg-tranparent z-10" onClick={() => SOUND("/sound/3/p070_word004.mp3").play()}>
-        </button>
-        <button className="absolute top-[395px] left-[90px] w-[200px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word005.mp3").play()}>
-        </button>
+        <Button className="absolute top-[215px] left-[90px] w-[200px] h-[100px] bg-tranparent z-10" onClick={() => SOUND("/sound/3/p070_word004.mp3").play()}>
+        </Button>
+        <Button className="absolute top-[395px] left-[90px] w-[200px] h-[100px] bg-transparent z-10" onClick={() => SOUND("/sound/3/p070_word005.mp3").play()}>
+        </Button>
         <InputWithPen
           answer={answer1[0]}
           showAnswer={showAnswer}

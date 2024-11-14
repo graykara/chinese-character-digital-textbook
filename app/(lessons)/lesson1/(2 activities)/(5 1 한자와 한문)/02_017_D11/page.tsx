@@ -13,6 +13,7 @@ import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아8.png";
+import { Button } from "@/app/components/buttons/button";
 
 const sound = new Howl({
   src: "/sound/1/17-1.mp3",
@@ -86,7 +87,7 @@ export default function Page() {
             <img src={IMAGE.src} />
 
             {isButton1Clicked ? null : (
-              <button
+              <Button
                 className="absolute left-[250px] top-[80px]"
                 onClick={() => {
                   clickSound.play();
@@ -94,10 +95,10 @@ export default function Page() {
                 }}
               >
                 <img src={BUTTON_1.src} alt="button" />
-              </button>
+              </Button>
             )}
             {isButton2Clicked ? null : (
-              <button
+              <Button
                 className="absolute left-[50px] top-[360px]"
                 onClick={() => {
                   clickSound.play();
@@ -105,10 +106,10 @@ export default function Page() {
                 }}
               >
                 <img src={BUTTON_2.src} alt="button" />
-              </button>
+              </Button>
             )}
             {isButton3Clicked ? null : (
-              <button
+              <Button
                 className="absolute left-[455px] top-[360px]"
                 onClick={() => {
                   clickSound.play();
@@ -116,7 +117,7 @@ export default function Page() {
                 }}
               >
                 <img src={BUTTON_3.src} alt="button" />
-              </button>
+              </Button>
             )}
           </div>
         </div>

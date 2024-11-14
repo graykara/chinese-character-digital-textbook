@@ -20,6 +20,7 @@ import { Modal } from "@/app/components/modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -355,7 +356,7 @@ export default function Page() {
                       step === 4 ? "pointer-events-none opacity-60 w-[80px] absolute bottom-[170px] translate-x-[200px] z-10"
                         : ""
               } />
-              <button
+              <Button
                 className={`z-[3]`}
                 onClick={() => {
                   clickSound.play();
@@ -373,7 +374,7 @@ export default function Page() {
                             : ""
                   }
                 />
-              </button>
+              </Button>
 
               <Modal open={showModal} onClose={() => setShowModal(false)}>
                 <div className="w-full h-full bg-white bg-opacity-70 ">

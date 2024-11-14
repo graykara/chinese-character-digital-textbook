@@ -13,6 +13,7 @@ import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살5.
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -35,24 +36,24 @@ export default function Page() {
           <div className="w-full flex mt-10">
             <img src={IMAGE1.src} />
             <div className="absolute left-[50px] top-[100px] grid grid-cols-6 gap-[70px] w-full h-[90px] pr-[80px]">
-              <button
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word000.mp3").play()}
-              ></button>
-              <button
+              ></Button>
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word001.mp3").play()}
-              ></button>
-              <button
+              ></Button>
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word002.mp3").play()}
-              ></button>
-              <button
+              ></Button>
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word003.mp3").play()}
-              ></button>
-              <button
+              ></Button>
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word004.mp3").play()}
-              ></button>
-              <button
+              ></Button>
+              <Button
                 onClick={() => SOUND("/sound/5/p121_word005.mp3").play()}
-              ></button>
+              ></Button>
             </div>
           </div>
         </ContentContainer>
@@ -90,7 +91,7 @@ const Step2 = () => {
 
         <div className="absolute left-[700px] top-[0px] w-[600px] h-[630px] grid grid-cols-5 grid-rows-5 gap-[10px] p-[15px]">
           {Array.from(Array(25)).map((_, i) => (
-            <button
+            <Button
               key={i}
               className={
                 selectedAnswer.includes(i)

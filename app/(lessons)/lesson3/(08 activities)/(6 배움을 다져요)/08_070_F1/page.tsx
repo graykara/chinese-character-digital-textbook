@@ -16,6 +16,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { SmartButton } from "@/app/components/buttons/smart-button";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -57,10 +58,10 @@ const Step1 = () => {
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE1.src} />
-        <button
+        <Button
           className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
           onClick={() => SOUND("/sound/3/p070_word000.mp3").play()}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[150px] -ml-4 text-[87px]"
         >
@@ -104,10 +105,10 @@ const Step2 = () => {
 
       <ContentContainer className="!justify-start top-[30px] ">
         <img src={IMAGE2.src} />
-        <button
+        <Button
           className="absolute top-[20px] left-[550px] w-[400px] h-[100px] bg-transparent z-10"
           onClick={() => SOUND("/sound/3/p070_word001.mp3").play()}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[150px] -ml-4 text-[87px]"
         >
@@ -151,7 +152,7 @@ const Step3 = () => {
     <>
       <ContentContainer className="!justify-start top-[10px] left-0">
         <img src={IMAGE3.src} />
-        <button
+        <Button
           className={`absolute top-[20px] left-[220px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(1) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
             clickSound.play();
@@ -162,7 +163,7 @@ const Step3 = () => {
               SOUND("/sound/3/p070_word002.mp3").play();
             }
           }}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[425px] -ml-4 text-[87px]"
         >
@@ -171,7 +172,7 @@ const Step3 = () => {
           <span className="font-haeseo">思</span>
           <span className="font-haeseo">之</span>
         </div>
-        <button
+        <Button
           className={`absolute top-[20px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(2) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
             clickSound.play();
@@ -182,7 +183,7 @@ const Step3 = () => {
               SOUND("/sound/3/p070_word001.mp3").play();
             }
           }}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 translate-x-[225px] -ml-4 text-[87px]"
         >
@@ -191,7 +192,7 @@ const Step3 = () => {
           <span className="font-haeseo">甘</span>
           <span className="font-haeseo">來</span>
         </div>
-        <button
+        <Button
           className={`absolute top-[230px] left-[220px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(3) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
             clickSound.play();
@@ -202,7 +203,7 @@ const Step3 = () => {
               SOUND("/sound/3/p070_word003.mp3").play();
             }
           }}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 -translate-x-[425px] top-[220px] -ml-4 text-[87px]"
         >
@@ -211,7 +212,7 @@ const Step3 = () => {
           <span className="font-haeseo">蛇</span>
           <span className="font-haeseo">尾</span>
         </div>
-        <button
+        <Button
           className={`absolute top-[230px] left-[870px] w-[500px] h-[100px] bg-transparent z-10 ${selectedAnswer.includes(4) ? "border-4 rounded-[50%] border-answer" : ""}`}
           onClick={() => {
             clickSound.play();
@@ -222,7 +223,7 @@ const Step3 = () => {
               SOUND("/sound/3/p070_word000.mp3").play();
             }
           }}
-        ></button>
+        ></Button>
         <div
           className="w-[320px] absolute grid grid-cols-4 left-1/2 translate-x-[225px] top-[220px] -ml-4 text-[87px]"
         >

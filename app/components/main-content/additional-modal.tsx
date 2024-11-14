@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Modal } from "../modal";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "../buttons/button";
 
 interface Props {
   open: boolean;
@@ -26,7 +27,7 @@ export const AdditionalModal = ({
             backgroundColor: bgColor,
           }}
         >
-          <button
+          <Button
             className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
             onClick={() => {
               clickSound.play();
@@ -34,7 +35,7 @@ export const AdditionalModal = ({
             }}
           >
             <img src="/ui/close-icon-white.png" />
-          </button>
+          </Button>
           <p className="text-white text-[40px] mt-4 mb-2 ml-4">{title}</p>
           <div className="bg-white rounded-[20px] px-[24px] pt-[30px] pb-[30px]">
             {items.map((item, index) => (

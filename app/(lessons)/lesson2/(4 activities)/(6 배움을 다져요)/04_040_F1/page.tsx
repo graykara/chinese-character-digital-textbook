@@ -8,6 +8,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자20.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -57,7 +58,7 @@ export default function Page() {
 
           <div className="absolute left-[25px] -top-[10px] grid grid-cols-5 gap-x-[95px] gap-y-[305px]">
             {sounds.map((sound, index) => (
-              <button
+              <Button
                 key={sound}
                 className="w-[150px] h-[70px] bg-white flex justify-center items-center"
                 onClick={() => SOUND(sound).play()}
@@ -65,7 +66,7 @@ export default function Page() {
                 <span className="font-haeseo text-[55px]">
                   {characters[index]}
                 </span>
-              </button>
+              </Button>
             ))}
           </div>
 

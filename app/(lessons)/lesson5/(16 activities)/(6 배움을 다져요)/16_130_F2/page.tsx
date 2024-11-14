@@ -10,6 +10,7 @@ import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕24.png";
 import { clickSound } from "@/app/utils/click-sound";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -60,40 +61,40 @@ export default function Page() {
         <img src={IMAGE1.src} />
 
         <div className="absolute left-[64px] top-[10px] grid grid-cols-5 gap-[0px] w-[540px] h-[90px] bg-transparent z-10">
-          <button onClick={() => SOUND(sounds[0]).play()}>
-          </button>
-          <button onClick={() => SOUND(sounds[2]).play()}></button>
+          <Button onClick={() => SOUND(sounds[0]).play()}>
+          </Button>
+          <Button onClick={() => SOUND(sounds[2]).play()}></Button>
           <div></div>
           <div></div>
-          <button onClick={() => SOUND(sounds[3]).play()}></button>
+          <Button onClick={() => SOUND(sounds[3]).play()}></Button>
         </div>
 
         <div className="absolute left-[64px] top-[118px] grid grid-cols-5 gap-[0px] w-[540px] h-[90px] bg-transparent z-10">
-          <button onClick={() => SOUND(sounds[1]).play()}>
-          </button>
+          <Button onClick={() => SOUND(sounds[1]).play()}>
+          </Button>
           <div></div>
           <div></div>
-          <button onClick={() => SOUND(sounds[5]).play()}></button>
-          <button onClick={() => SOUND(sounds[4]).play()}></button>
+          <Button onClick={() => SOUND(sounds[5]).play()}></Button>
+          <Button onClick={() => SOUND(sounds[4]).play()}></Button>
         </div>
 
         <div className="absolute left-[64px] top-[334px] grid grid-cols-5 gap-[0px] w-[540px] h-[90px] bg-transparent z-10">
           <div></div>
-          <button onClick={() => SOUND(sounds[8]).play()}>
-          </button>
+          <Button onClick={() => SOUND(sounds[8]).play()}>
+          </Button>
           <div></div>
           <div></div>
-          <button onClick={() => SOUND(sounds[9]).play()}></button>
+          <Button onClick={() => SOUND(sounds[9]).play()}></Button>
         </div>
 
         <div className="absolute left-[64px] top-[442px] grid grid-cols-5 gap-[0px] w-[540px] h-[90px] bg-transparent z-10">
-          <button onClick={() => SOUND(sounds[6]).play()}>
-          </button>
-          <button onClick={() => SOUND(sounds[7]).play()}>
-          </button>
+          <Button onClick={() => SOUND(sounds[6]).play()}>
+          </Button>
+          <Button onClick={() => SOUND(sounds[7]).play()}>
+          </Button>
           <div></div>
-          <button onClick={() => SOUND(sounds[11]).play()}></button>
-          <button onClick={() => SOUND(sounds[10]).play()}></button>
+          <Button onClick={() => SOUND(sounds[11]).play()}></Button>
+          <Button onClick={() => SOUND(sounds[10]).play()}></Button>
         </div>
 
         {/* <FlippableCard
@@ -108,26 +109,26 @@ export default function Page() {
           iconClassName="grayscale-[100%]"
         /> */}
 
-        {!showAnswer1 ? <button
+        {!showAnswer1 ? <Button
           className="z-10 absolute -top-[2.5px] left-[59px]"
           onClick={() => { clickSound.play(); setShowAnswer1(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center -top-[2.5px] left-[59px]">{answers[0]}</div>}
-        {!showAnswer2 ? <button
+        </Button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center -top-[2.5px] left-[59px]">{answers[0]}</div>}
+        {!showAnswer2 ? <Button
           className="z-10 absolute top-[104px] left-[489px]"
           onClick={() => { clickSound.play(); setShowAnswer2(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[104px] left-[489px]">{answers[1]}</div>}
-        {!showAnswer3 ? <button
+        </Button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[104px] left-[489px]">{answers[1]}</div>}
+        {!showAnswer3 ? <Button
           className="z-10 absolute top-[427px] left-[166px]"
           onClick={() => { clickSound.play(); setShowAnswer3(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[166px]">{answers[2]}</div>}
-        {!showAnswer4 ? <button
+        </Button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[166px]">{answers[2]}</div>}
+        {!showAnswer4 ? <Button
           className="z-10 absolute top-[427px] left-[489px]"
           onClick={() => { clickSound.play(); setShowAnswer4(true) }}>
           <img src={BUTTON_FRONT.src} />
-        </button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[489px]">{answers[3]}</div>}
+        </Button> : <div className="absolute w-[120px] h-[120px] font-haeseo text-[55px] font-normal flex justify-center items-center top-[427px] left-[489px]">{answers[3]}</div>}
 
       </ContentContainer>
 

@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "./button";
 
 type Props = {
   onClick: () => void;
@@ -7,7 +8,7 @@ type Props = {
 
 export const AdditionalDataButton = ({ onClick, className = "" }: Props) => {
   return (
-    <button
+    <Button
       className={className}
       onClick={() => {
         clickSound.play();
@@ -15,6 +16,6 @@ export const AdditionalDataButton = ({ onClick, className = "" }: Props) => {
       }}
     >
       <img src="/ui/additional-data-button.png" alt="부가자료" />
-    </button>
+    </Button>
   );
 };

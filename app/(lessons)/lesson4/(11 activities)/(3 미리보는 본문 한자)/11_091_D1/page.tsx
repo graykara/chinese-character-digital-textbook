@@ -9,6 +9,7 @@ import IMAGE from "./image.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리3.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -28,12 +29,12 @@ export default function Page() {
       <ContentContainer className="!justify-start pt-5 left-16">
         <img src={IMAGE.src} alt="" />
         <div className="absolute left-[250px] top-[75px] grid grid-cols-4 gap-[120px] w-[860px] h-[90px]">
-          <button onClick={() => SOUND("/sound/4/p091_word000.mp3").play()}>
-          </button>
-          <button onClick={() => SOUND("/sound/4/p091_word001.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/4/p091_word002.mp3").play()}></button>
-          <button onClick={() => SOUND("/sound/4/p091_word003.mp3").play()}>
-          </button>
+          <Button onClick={() => SOUND("/sound/4/p091_word000.mp3").play()}>
+          </Button>
+          <Button onClick={() => SOUND("/sound/4/p091_word001.mp3").play()}></Button>
+          <Button onClick={() => SOUND("/sound/4/p091_word002.mp3").play()}></Button>
+          <Button onClick={() => SOUND("/sound/4/p091_word003.mp3").play()}>
+          </Button>
         </div>
 
         <InputWithPen

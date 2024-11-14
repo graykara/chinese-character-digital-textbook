@@ -12,6 +12,7 @@ import BACKGROUND2 from "@/app/bgpng_temp/9/중등한문
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -38,8 +39,8 @@ const Step1 = () => {
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <div className="relative inline-block">
           <img src={IMAGE1.src} className="ml-[11px] mt-[80px]" />
-          <button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/4.mp3").play()}>
-          </button>
+          <Button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/4.mp3").play()}>
+          </Button>
         </div>
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]">
           <span className="font-haeseo">朝</span>
@@ -98,8 +99,8 @@ const Step2 = () => {
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <div className="relative inline-block">
           <img src={IMAGE2.src} className="ml-[10px] mt-[80px]" />
-          <button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/3.mp3").play()}>
-          </button>
+          <Button className="absolute top-[250px] left-[150px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/74/3.mp3").play()}>
+          </Button>
         </div>
 
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[3px] top-[240px] ml-[35px] text-[90px]">

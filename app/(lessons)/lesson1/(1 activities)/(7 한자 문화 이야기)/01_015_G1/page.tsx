@@ -11,6 +11,7 @@ import CLOSE from "./close.png";
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어27.png";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "@/app/components/buttons/button";
 
 const sound = new Howl({
   src: "/sound/1/15_story.mp3",
@@ -93,7 +94,7 @@ export default function Page() {
           </div>
         </div>
 
-        <button
+        <Button
           className="absolute right-[45px] bottom-[260px] z-10"
           onClick={() => {
             clickSound.play();
@@ -101,14 +102,14 @@ export default function Page() {
           }}
         >
           <img src={PLUS.src} />
-        </button>
+        </Button>
 
         {showModal ? (
           <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
             <div className="animate__animated animate__flipInX relative">
               <img src={MODAL.src} />
 
-              <button
+              <Button
                 className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
                 onClick={() => {
                   clickSound.play();
@@ -116,7 +117,7 @@ export default function Page() {
                 }}
               >
                 <img src={CLOSE.src} />
-              </button>
+              </Button>
             </div>
           </div>
         ) : null}

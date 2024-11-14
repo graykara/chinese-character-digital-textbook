@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "./button";
 
 export const SoundButton1 = ({
   active,
@@ -10,7 +11,7 @@ export const SoundButton1 = ({
   className?: string;
 }) => {
   return (
-    <button
+    <Button
       onClick={() => {
         clickSound.play();
         onClick();
@@ -23,6 +24,6 @@ export const SoundButton1 = ({
         }
         className="animate__animated animate__pulse animate__repeat-3"
       />
-    </button>
+    </Button>
   );
 };

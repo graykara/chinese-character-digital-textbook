@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "./button";
 
 export const QRButton = ({
   src,
@@ -10,7 +11,7 @@ export const QRButton = ({
   className?: string;
 }) => {
   return (
-    <button
+    <Button
       onClick={() => {
         clickSound.play();
         window.open(link);
@@ -18,7 +19,7 @@ export const QRButton = ({
       className={className}
     >
       <img src={src} className="flex-none w-fit h-fit" />
-    </button>
+    </Button>
   );
 };
 

@@ -1,5 +1,6 @@
 import { clickSound } from "@/app/utils/click-sound";
 import { PropsWithChildren } from "react";
+import { Button } from "../buttons/button";
 
 interface Props extends PropsWithChildren {
   open: boolean;
@@ -22,7 +23,7 @@ export const Modal = ({
         className={`w-full h-full ${showAnimation ? "animate__animated animate__flipInX" : ""}`}
       >
         {!hideCloseButtom ? (
-          <button
+          <Button
             className="absolute z-10 top-10 right-10 animate__animated animate__delay-1s animate__rotateIn"
             onClick={() => {
               clickSound.play();
@@ -30,7 +31,7 @@ export const Modal = ({
             }}
           >
             <img src="/ui/close-icon.png" />
-          </button>
+          </Button>
         ) : null}
         {children}
       </div>

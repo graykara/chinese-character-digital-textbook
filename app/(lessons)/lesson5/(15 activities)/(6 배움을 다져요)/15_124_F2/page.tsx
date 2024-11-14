@@ -8,6 +8,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { useState } from "react";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살21.png";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -22,14 +23,14 @@ export default function Page() {
 
       <ContentContainer className="!justify-start -top-[75px] left-[100px]">
         <img src={IMAGE1.src} />
-        <button className="absolute top-[40px] left-[630px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word000.mp3").play()}>
-        </button>
-        <button className="absolute top-[150px] left-[815px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word001.mp3").play()}>
-        </button>
-        <button className="absolute top-[345px] left-[775px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word002.mp3").play()}>
-        </button>
-        <button className="absolute top-[455px] left-[820px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word003.mp3").play()}>
-        </button>
+        <Button className="absolute top-[40px] left-[630px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word000.mp3").play()}>
+        </Button>
+        <Button className="absolute top-[150px] left-[815px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word001.mp3").play()}>
+        </Button>
+        <Button className="absolute top-[345px] left-[775px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word002.mp3").play()}>
+        </Button>
+        <Button className="absolute top-[455px] left-[820px] w-[120px] h-[80px] z-10" onClick={() => SOUND("/sound/5/p124_word003.mp3").play()}>
+        </Button>
         {/* <InputWithPen
           answer={answers[0]}
           showAnswer={showAnswer}

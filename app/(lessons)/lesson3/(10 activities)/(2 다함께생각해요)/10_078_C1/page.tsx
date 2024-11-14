@@ -23,6 +23,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/10/중등한무�
 import { StepContainer } from "@/app/components/step-container";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -58,11 +59,11 @@ export default function Page() {
         {step === 10 && <Step10 setStep={setStep} />}
 
         {/* restart button hidden */}
-        {/* <button
+        {/* <Button
           onClick={() => { setStep(1) }}
           className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-black bg-opacity-0"
         >
-        </button> */}
+        </Button> */}
       </ContentContainer>
 
       {/* <StepContainer maxStep={10} /> */}
@@ -89,7 +90,7 @@ const Step1 = ({ setStep }) => {
       <img src={BG.src} className="ml-5 -mt-24" />
       <p className="absolute top-[220px] text-[40px] text-[#154f71]">
         성어 성격 유형 검사를 풀어 보자.</p>
-      <button
+      <Button
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -99,7 +100,7 @@ const Step1 = ({ setStep }) => {
           src={isClicked ? BTN1p.src : isHovered ? BTN1p.src : BTN1.src}
           alt="Step 1 Button"
         />
-      </button>
+      </Button>
     </>
   )
 };
@@ -130,7 +131,7 @@ const Step2 = ({ setStep }) => {
         준비가 안 된 상태로 등교하는 것은
         있을 수 없다.</p>
       <div className="absolute translate-y-[45px] grid grid-cols-2 gap-[60px] ">
-        <button
+        <Button
           onClick={handleClick1}
           onMouseEnter={handleMouseEnter1}
           onMouseLeave={handleMouseLeave1}
@@ -139,8 +140,8 @@ const Step2 = ({ setStep }) => {
             src={isClicked ? BTN2p.src : isHovered1 ? BTN2p.src : BTN2.src}
             alt="Step 2 Button 1"
           />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleClick2}
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
@@ -149,7 +150,7 @@ const Step2 = ({ setStep }) => {
             src={isClicked ? BTN3p.src : isHovered2 ? BTN3p.src : BTN3.src}
             alt="Step 2 Button 2"
           />
-        </button>
+        </Button>
       </div>
     </>
   )
@@ -179,7 +180,7 @@ const Step3 = ({ setStep }) => {
       <p className="absolute top-[150px] w-[550px] text-center leading-tight break-keep text-[40px] text-[#154f71]">
         이해가 가지 않는 부분은<br />밤을 새우는 한이 있더라도<br />끝까지 해결한다.</p>
       <div className="absolute translate-y-[45px] grid grid-cols-2 gap-[60px] ">
-        <button
+        <Button
           onClick={handleClick1}
           onMouseEnter={handleMouseEnter1}
           onMouseLeave={handleMouseLeave1}
@@ -188,8 +189,8 @@ const Step3 = ({ setStep }) => {
             src={isClicked ? BTN2p.src : isHovered1 ? BTN2p.src : BTN2.src}
             alt="Step 3 Button 1"
           />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleClick2}
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
@@ -198,7 +199,7 @@ const Step3 = ({ setStep }) => {
             src={isClicked ? BTN3p.src : isHovered2 ? BTN3p.src : BTN3.src}
             alt="Step 3 Button 2"
           />
-        </button>
+        </Button>
       </div>
     </>
   )
@@ -228,7 +229,7 @@ const Step4 = ({ setStep }) => {
       <p className="absolute top-[150px] w-[550px] text-center leading-tight break-keep text-[40px] text-[#154f71]">
         학교에 갔더니 친구들이<br />수행 평가 준비로 바쁘다.<br />나도 늦었지만 동참한다.</p>
       <div className="absolute translate-y-[45px] grid grid-cols-2 gap-[60px] ">
-        <button
+        <Button
           onClick={handleClick1}
           onMouseEnter={handleMouseEnter1}
           onMouseLeave={handleMouseLeave1}
@@ -237,8 +238,8 @@ const Step4 = ({ setStep }) => {
             src={isClicked ? BTN2p.src : isHovered1 ? BTN2p.src : BTN2.src}
             alt="Step 4 Button 1"
           />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleClick2}
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
@@ -247,7 +248,7 @@ const Step4 = ({ setStep }) => {
             src={isClicked ? BTN3p.src : isHovered2 ? BTN3p.src : BTN3.src}
             alt="Step 4 Button 2"
           />
-        </button>
+        </Button>
       </div>
     </>
   )
@@ -277,7 +278,7 @@ const Step5 = ({ setStep }) => {
       <p className="absolute top-[240px] left-[275px] w-[350px] text-center leading-tight break-keep text-[40px] text-[#154f71]">
         한문 수행 평가 결과가 그다지 좋지 않다. 어떻게 할 것인가?</p>
       <div className="absolute translate-x-[205px] -translate-y-[50px] grid grid-rows-2 gap-[40px] ">
-        <button
+        <Button
           onClick={handleClick1}
           onMouseEnter={handleMouseEnter1}
           onMouseLeave={handleMouseLeave1}
@@ -286,8 +287,8 @@ const Step5 = ({ setStep }) => {
             src={isClicked ? BTN4p.src : isHovered1 ? BTN4p.src : BTN4.src}
             alt="Step 5 Button 1"
           />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleClick2}
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
@@ -296,7 +297,7 @@ const Step5 = ({ setStep }) => {
             src={isClicked ? BTN5p.src : isHovered2 ? BTN5p.src : BTN5.src}
             alt="Step 5 Button 2"
           />
-        </button>
+        </Button>
       </div>
     </>
   )
