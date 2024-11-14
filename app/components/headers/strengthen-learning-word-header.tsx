@@ -24,13 +24,7 @@ export const StrengthenLearningWordHeader = ({
   // after
   useEffect(() => {
     if (sound) {
-      const soundInstance = SOUND(sound);
-      soundInstance.stop();
-      soundInstance.play();
-
-      return () => {
-        soundInstance.stop();
-      };
+      setTimeout(() => SOUND(sound).play(), 100);
     }
   }, [sound]);
 

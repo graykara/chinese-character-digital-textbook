@@ -55,13 +55,7 @@ const Step2 = () => {
   const sound = "/sound/1/10-i2.mp3";
   useEffect(() => {
     if (sound) {
-      const soundInstance = SOUND(sound);
-      soundInstance.stop();
-      soundInstance.play();
-
-      return () => {
-        soundInstance.stop();
-      };
+      setTimeout(() => SOUND(sound).play(), 100);
     }
   }, [sound]);
 

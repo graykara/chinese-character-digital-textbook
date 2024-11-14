@@ -29,7 +29,8 @@ export const Navbar = () => {
     currentChapter,
     currentSubChapter,
     setCurrentStep,
-    setNavigationDirection
+    setNavigationDirection,
+    setIsPageReady
   } = useContext(PageInfoContext);
 
   useEffect(() => {
@@ -173,6 +174,7 @@ export const Navbar = () => {
                   ""
                 }
                 onClick={() => {
+                  setIsPageReady(false);
                   setNavigationDirection(null)
                   setCurrentStep(1);
                   setShowMenu(false);

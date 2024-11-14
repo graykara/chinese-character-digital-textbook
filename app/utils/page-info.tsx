@@ -21,24 +21,30 @@ export const PageInfoContext = createContext<{
   setCurrentSubChapter: Dispatch<SetStateAction<string>>;
 
   scale: number;
+
+  isPageReady: boolean;
+  setIsPageReady: Dispatch<SetStateAction<boolean>>;
 }>({
   title: "",
   subtitle: "",
-  setTitle: () => {},
-  setSubtitle: () => {},
+  setTitle: () => { },
+  setSubtitle: () => { },
   currentStep: 1,
   maxStep: 1,
-  setCurrentStep: () => {},
-  setMaxStep: () => {},
+  setCurrentStep: () => { },
+  setMaxStep: () => { },
   navigationDirection: null,
-  setNavigationDirection: () => {},
+  setNavigationDirection: () => { },
   pageNumber: 1,
   currentLesson: 1,
-  setCurrentLesson: () => {},
+  setCurrentLesson: () => { },
   currentChapter: 1,
-  setCurrentChapter: () => {},
+  setCurrentChapter: () => { },
   currentSubChapter: "",
-  setCurrentSubChapter: () => {},
+  setCurrentSubChapter: () => { },
 
   scale: 1,
+
+  isPageReady: false,
+  setIsPageReady: () => { },
 });

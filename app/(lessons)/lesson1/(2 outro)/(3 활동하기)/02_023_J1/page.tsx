@@ -53,13 +53,9 @@ const Content1 = () => {
   const sound = "/sound/1/23-1.mp3"
   useEffect(() => {
     if (sound) {
-      const soundInstance = SOUND(sound);
-      soundInstance.stop();
-      soundInstance.play();
-
-      return () => {
-        soundInstance.stop();
-      };
+      setTimeout(() => {
+        SOUND(sound).play();
+      }, 100)
     }
   }, [sound]);
 
@@ -103,7 +99,7 @@ const Content2 = () => {
         className="absolute top-[25px] left-[230px] animate__animated animate__bounceIn animate__delay-1s"
         active={isReading}
         onClick={() => {
-          if(isReading) {
+          if (isReading) {
             console.log("stop");
             sound.stop();
           }

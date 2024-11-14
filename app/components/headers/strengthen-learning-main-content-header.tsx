@@ -16,21 +16,9 @@ export const StrengthenLearningMainContentHeader = ({
   className,
   titleClassName,
 }: Props) => {
-  // before
-  // useEffect(() => {
-  //   sound && SOUND(sound).play();
-  // }, []);
-
-  // after
   useEffect(() => {
     if (sound) {
-      const soundInstance = SOUND(sound);
-      soundInstance.stop();
-      soundInstance.play();
-
-      return () => {
-        soundInstance.stop();
-      };
+      setTimeout(() => SOUND(sound).play(), 100);
     }
   }, [sound]);
 
