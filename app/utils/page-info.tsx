@@ -26,6 +26,9 @@ export const PageInfoContext = createContext<{
   setIsPageReady: Dispatch<SetStateAction<boolean>>;
   ignoreRightStep: boolean;
   setIgnoreRightStep: Dispatch<SetStateAction<boolean>>;
+
+  soundOnStep: Howl | string | null;
+  setSoundOnStep: Dispatch<SetStateAction<Howl | string | null>>;
 }>({
   title: "",
   subtitle: "",
@@ -51,4 +54,7 @@ export const PageInfoContext = createContext<{
   setIsPageReady: () => { },
   ignoreRightStep: false,
   setIgnoreRightStep: () => { },
+
+  soundOnStep: null,
+  setSoundOnStep: () => { },
 });

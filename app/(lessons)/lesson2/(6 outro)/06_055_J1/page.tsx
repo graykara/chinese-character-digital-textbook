@@ -42,7 +42,8 @@ const sound = new Howl({
 
 const Content1 = () => {
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
+
+  const { isPageReady } = useContext(PageInfoContext);
 
   useEffect(() => {
     sound.on("play", () => setIsReading(true));
@@ -51,7 +52,10 @@ const Content1 = () => {
   }, []);
 
   useEffect(() => {
-    SOUND("/sound/2/55-i-1.mp3").play();
+    setTimeout(() => {
+      if (isPageReady)
+        SOUND("/sound/2/55-i-1.mp3").play();
+    }, 1000)
   }, []);
 
   return (

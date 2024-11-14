@@ -25,7 +25,8 @@ import { PageInfoContext } from "@/app/utils/page-info";
 import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
-  const { currentStep: step, setCurrentStep: setStep, setMaxStep, setIgnoreRightStep } = useContext(PageInfoContext);
+  const { currentStep: step, setCurrentStep: setStep, setMaxStep, setIgnoreRightStep, setSoundOnStep } = useContext(PageInfoContext);
+  setSoundOnStep(clickSound);
   setIgnoreRightStep(true);
   setMaxStep(5);
 

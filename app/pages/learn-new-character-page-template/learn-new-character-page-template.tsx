@@ -10,6 +10,7 @@ import { PageInfoContext } from "@/app/utils/page-info";
 import { StepContainerArrow } from "@/app/components/step-container-arrow/step-container-arrow";
 import { clickSound } from "@/app/utils/click-sound";
 import { Button } from "@/app/components/buttons/button";
+import { activityStartSound } from "@/app/utils/activity-start-sound";
 
 type Props = {
   characters: {
@@ -57,6 +58,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
     setShowKorean(false);
     resetState();
     Howler.stop();
+    // activityStartSound.play();
   }, [step]);
 
   return (
@@ -149,15 +151,15 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
             );
           })}
       </div>
-      
+
       {pages !== 1 ? (
-      <StepContainerArrow
-        maxStep={pages}
-        step={step}
-       
-        className="absolute w-full bottom-[5px] mb-0"
-      />
-      ) : null }
+        <StepContainerArrow
+          maxStep={pages}
+          step={step}
+
+          className="absolute w-full bottom-[5px] mb-0"
+        />
+      ) : null}
     </div>
   );
 };

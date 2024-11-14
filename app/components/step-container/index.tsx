@@ -1,8 +1,7 @@
 "use client";
 
 import { PageInfoContext } from "@/app/utils/page-info";
-import { usePathname } from "next/navigation";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Button } from "../buttons/button";
 
 export const StepContainer = ({

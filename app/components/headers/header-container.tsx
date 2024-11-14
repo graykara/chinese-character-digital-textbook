@@ -5,9 +5,10 @@ import { PropsWithChildren, useContext, useEffect } from "react";
 interface Props extends PropsWithChildren {
   className?: string;
   sound?: string;
+  gap?: number;
 }
 
-export const HeaderContainer = ({ className, sound, children }: Props) => {
+export const HeaderContainer = ({ className, sound, children, gap = 0 }: Props) => {
 
   const { isPageReady } = useContext(PageInfoContext)
 
@@ -16,7 +17,7 @@ export const HeaderContainer = ({ className, sound, children }: Props) => {
       setTimeout(() => {
         if (isPageReady)
           SOUND(sound).play();
-      }, 100)
+      }, 100 + gap)
     }
   }, [sound]);
 

@@ -48,7 +48,7 @@ export default function Page() {
     <>
       <CultureHeader title={"다른 사람의 처지에서 생각하기"} />
       <SoundButton2
-        className="absolute left-[1080px] top-[112px] animate__animated animate__bounceIn animate__delay-1s z-10"
+        className="absolute left-[1080px] top-[112px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
           if (isReading) {

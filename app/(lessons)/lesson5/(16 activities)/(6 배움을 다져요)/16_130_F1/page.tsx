@@ -76,6 +76,7 @@ const Step1 = () => {
               key={index}
               className="flex justify-center"
               onClick={() => {
+                Howler.stop();
                 new Howl({
                   src: hanjaSounds[index],
                 }).play();

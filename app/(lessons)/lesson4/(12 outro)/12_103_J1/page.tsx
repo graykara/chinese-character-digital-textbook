@@ -25,6 +25,7 @@ export default function Page() {
             <HeaderContainer
               sound="/sound/4/p103_intro.mp3"
               className="text-center text-[35px] tracking-tighter animate__animated animate__flipInX"
+              gap={1000}
             >
               Ⅳ단원에서 배운 문장을 하나 골라, 문장에 담긴 교훈을 <br />
               일주일간 내 삶에 적용해 보고 성찰 일기를 작성해 보자.

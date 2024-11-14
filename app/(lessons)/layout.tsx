@@ -46,9 +46,20 @@ export default function RootLayout({
   const [isPageReady, setIsPageReady] = useState(false);
 
   const [ignoreRightStep, setIgnoreRightStep] = useState(false);
+  const [soundOnStep, setSoundOnStep] = useState<Howl | string | null>(null);
 
   useEffect(() => {
+    // Get direction from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const direction = urlParams.get('d');
+    if (direction === 'p') {
+      setNavigationDirection('prev');
+    } else if (direction === 'n') {
+      setNavigationDirection('next');
+    }
+
     // Howler.stop();
+    setSoundOnStep(null);
     setIsPageReady(false);
     setIgnoreRightStep(false);
     setMaxStep(1);
@@ -61,6 +72,7 @@ export default function RootLayout({
 
   useEffect(() => {
     const initializePage = () => {
+      console.log("initializePage", ignoreRightStep, navigationDirection, maxStep);
       if (ignoreRightStep) { setCurrentChapter(1) }
       else {
         if (navigationDirection === "prev") {
@@ -75,7 +87,7 @@ export default function RootLayout({
 
     const timeout = setTimeout(() => {
       setIsPageReady(true);
-    }, 150);
+    }, 100);
 
     return () => clearTimeout(timeout);
   }, [pathname, navigationDirection, maxStep]);
@@ -99,44 +111,43 @@ export default function RootLayout({
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
-  if (!isPageReady) return null;
-  // <>
-  //   <Navbar />
+  if (!isPageReady) return (<>
+    <Navbar />
 
-  //   <div className="grid grid-cols-[40px__1760px__1fr]">
-  //     <div className="flex justify-end items-center">
-  //       <div className="mt-0">
-  //         <Button className="group">
-  //           <img
-  //             src="/ui/prev-button-off.png"
-  //             className={"block group-hover:hidden"}
-  //           />
-  //           <img
-  //             src="/ui/prev-button-on.png"
-  //             className={"hidden group-hover:block"}
-  //           />
-  //         </Button>
-  //       </div>
-  //     </div>
-  //     <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden" />
-  //     <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
-  //       <div className="mt-0">
-  //         <Button className="group">
-  //           <img
-  //             src="/ui/next-button-off.png"
-  //             className={"block group-hover:hidden"}
-  //           />
-  //           <img
-  //             src="/ui/next-button-on.png"
-  //             className={"hidden group-hover:block"}
-  //           />
-  //         </Button>
-  //       </div>
-  //     </div>
-  //   </div>
+    <div className="grid grid-cols-[40px__1760px__1fr]">
+      <div className="flex justify-end items-center">
+        <div className="mt-0">
+          <Button className="group">
+            <img
+              src="/ui/prev-button-off.png"
+              className={"block group-hover:hidden"}
+            />
+            <img
+              src="/ui/prev-button-on.png"
+              className={"hidden group-hover:block"}
+            />
+          </Button>
+        </div>
+      </div>
+      <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden" />
+      <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
+        <div className="mt-0">
+          <Button className="group">
+            <img
+              src="/ui/next-button-off.png"
+              className={"block group-hover:hidden"}
+            />
+            <img
+              src="/ui/next-button-on.png"
+              className={"hidden group-hover:block"}
+            />
+          </Button>
+        </div>
+      </div>
+    </div>
 
-  //   <FloatingButtonContainer />
-  // </>
+    <FloatingButtonContainer />
+  </>);
 
   return (
     <PageInfoContext.Provider
@@ -163,6 +174,8 @@ export default function RootLayout({
         setIsPageReady,
         ignoreRightStep,
         setIgnoreRightStep,
+        soundOnStep,
+        setSoundOnStep,
       }}
     >
       <SoundStopper />
@@ -191,12 +204,12 @@ export default function RootLayout({
                 </Button>
               </div>
             ) : (
-              <Link href={getPrevPage(pathname) ?? ""}>
+              <Link href={getPrevPage(pathname) + "?d=p" ?? ""}>
                 <Button
                   className="group"
                   onClick={() => {
-                    setIsPageReady(false);
                     setNavigationDirection("prev")
+                    setIsPageReady(false);
                   }}
                 >
                   <img
@@ -234,12 +247,12 @@ export default function RootLayout({
                 </Button>
               </div>
             ) : (
-              <Link href={getNextPage(pathname) ?? ""}>
+              <Link href={getNextPage(pathname) + "?d=n" ?? ""}>
                 <Button
                   className="group"
                   onClick={() => {
-                    setIsPageReady(false);
                     setNavigationDirection("next")
+                    setIsPageReady(false);
                   }}
                 >
                   <img
