@@ -14,6 +14,10 @@ import { MainContent } from "../../../main-content";
 import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 import { PageInfoContext } from "@/app/utils/page-info";
+import MODAL_IMAGE1 from "./modal_img1.png"
+import MODAL_IMAGE2 from "./modal_img2.png"
+import MODAL_IMAGE3 from "./modal_img3.png"
+import MODAL_IMAGE4 from "./modal_img4.png"
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -221,8 +225,9 @@ export default function Page() {
       ),
       content: (
         <>
-          <div className="flex flex-none text-[50px] tracking-tight">
-            <p> 중국 한(<span className="font-haeseo font-bold leading-tight text-[55px] tracking-[-5px]">漢</span>)나라의 장수 한신이 강을 등지고 진을 쳐서 병사들이 물러서지 못하고 힘을 다해 싸우도록 하여 조(<span className="font-haeseo font-bold text-[55px] leading-tight tracking-[-5px]">趙</span>)나라의 군사를 물리친 이야기에서 유래함.</p>
+          <div className="flex items-center">
+            <p className="text-[50px] tracking-tight break-keep"> 중국 한(<span className="font-haeseo font-bold leading-tight text-[55px] tracking-[-5px]">漢</span>)나라의 장수 한신이 강을 등지고 진을 쳐서 병사들이 물러서지 못하고 힘을 다해 싸우도록 하여 조(<span className="font-haeseo font-bold text-[55px] leading-tight tracking-[-5px]">趙</span>)나라의 군사를 물리친 이야기에서 유래함.</p>
+            <img src={MODAL_IMAGE1.src} className="pl-3" />
           </div>
         </>
       ),
@@ -239,8 +244,9 @@ export default function Page() {
       ),
       content: (
         <>
-          <div className="flex flex-none text-[50px] tracking-tight break-keep">
-            <p> 중국 한(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">漢</span>)나라의 장수 한신이 자신의 군주인 고조와 장수의 능력을 이야기할 때, 고조는 10만 정도의 장수를 지휘할 수 있지만 자신은 병사의 수가 많으면 많을수록 좋다고 말한 이야기에서 유래함.</p>
+          <div className="flex items-center">
+            <p className="text-[50px] tracking-tight break-keep"> 중국 한(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">漢</span>)나라의 장수 한신이 자신의 군주인 고조와 장수의 능력을 이야기할 때, 고조는 10만 정도의 장수를 지휘할 수 있지만 자신은 병사의 수가 많으면 많을수록 좋다고 말한 이야기에서 유래함.</p>
+            <img src={MODAL_IMAGE2.src} className="pl-3 h-[100%]" />
           </div>
         </>
       ),
@@ -257,8 +263,9 @@ export default function Page() {
       ),
       content: (
         <>
-          <div className="flex flex-none text-[50px] tracking-tight break-keep">
-            <p> 중국 위(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">魏</span>)나라 방공이 태자와 함께 조(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">趙</span>)나라에 볼모로 잡혀가기 전 왕을 찾아갔다. 방공이 왕에게 한 사람이 시장에 호랑이가 나타났다고 말하면 믿지 않겠지만 세 사람이 찾아와 말하면 믿게 된다면서 자신이 조나라로 떠나면 자신을 모함하는 사람들이 많을 텐데 이를 믿지 말라고 말한 대화에서 유래함.</p>
+          <div className="flex items-center">
+            <p className="text-[50px] tracking-tight break-keep"> 중국 위(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">魏</span>)나라 방공이 태자와 함께 조(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">趙</span>)나라에 볼모로 잡혀가기 전 왕을 찾아갔다. 방공이 왕에게 한 사람이 시장에 호랑이가 나타났다고 말하면 믿지 않겠지만 세 사람이 찾아와 말하면 믿게 된다면서 자신이 조나라로 떠나면 자신을 모함하는 사람들이 많을 텐데 이를 믿지 말라고 말한 대화에서 유래함.</p>
+            <img src={MODAL_IMAGE3.src} className="pl-3 h-[100%]" />
           </div>
         </>
       ),
@@ -275,8 +282,9 @@ export default function Page() {
       ),
       content: (
         <>
-          <div className="flex flex-none text-[50px] tracking-tight break-keep">
-            <p> 중국 진(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">晉</span>)나라 위과는 아버지가 세상을 떠나자, 새어머니를 순장(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">殉葬</span>)하지 않고 새로 시집보냈다. 이후 위과가 전쟁터에서 적군에게 쫓기다가 풀에 걸려 넘어진 적장을 잡아 큰 공을 세우게 되었다. 그날 밤, 꿈에 한 노인이 나타나 “나는 당신이 살려 준 여인의 죽은 아비요. 당신이 내 딸을 살려 주었기에 내가 오늘 풀을 묶어 그 은혜를 갚은 것이라오.”라고 말한 것에서 유래함.</p>
+          <div className="flex items-center">
+            <p className="text-[50px] tracking-tight break-keep text-wrap"> 중국 진(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">晉</span>)나라 위과는 아버지가 세상을 떠나자, 새어머니를 순장(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">殉葬</span>)하지 않고 새로 시집보냈다. 이후 위과가 전쟁터에서 적군에게 쫓기다가 풀에 걸려 넘어진 적장을 잡아 큰 공을 세우게 되었다. 그날 밤, 꿈에 한 노인이 나타나 “나는 당신이 살려 준 여인의 죽은 아비요. 당신이 내 딸을 살려 주었기에 내가 오늘 풀을 묶어 그 은혜를 갚은 것이라오.”라고 말한 것에서 유래함.</p>
+            <img src={MODAL_IMAGE4.src} className="pl-3 h-[100%] float-right" />
           </div>
         </>
       ),

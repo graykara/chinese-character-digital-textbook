@@ -11,15 +11,6 @@ import { useContext, useEffect, useState } from "react";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { RightTopStepContainer } from "@/app/components/right-top-step-container";
-import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘28.png";
-import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘29.png";
-import BACKGROUND3 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘30.png";
-import BACKGROUND4 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘31.png";
-import BACKGROUND5 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘32.png";
-import BACKGROUND6 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘33.png";
-import BACKGROUND7 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘34.png";
-import BACKGROUND8 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘35.png";
-import BACKGROUND9 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘36.png";
 import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
@@ -35,7 +26,7 @@ export default function Page() {
 
   const questions = [
     <>
-      성어 <span className="font-haeseo">‘十中八九’</span>속에 있는 숫자를 모두 더한 값은?
+      성어 ‘<span className="font-haeseo">十中八九</span>’ 속에 있는 숫자를 모두 더한 값은?
     </>,
     <>
       활동지의 내용으로 보아
@@ -43,8 +34,8 @@ export default function Page() {
       에 들어갈 것은?
     </>,
     <>
-      풀이 순서가 <span className="font-haeseo">‘指鹿爲馬’</span>와 같은 것을
-      {" "}<span className="text-[42px] border-[3px] border-black rounded-full mr-1 pt-1 pb-0 px-4 align-text-top">보기</span>{" "}
+      풀이 순서가 ‘<span className="font-haeseo">指鹿爲馬</span>’와 같은 것을
+      {" "}<span className="text-[42px] border-[3px] border-black rounded-full ml-3 mr-0 pt-1 pb-0 px-4 align-text-top">보기</span>{" "}
       에서
       {" "}<span className="underline underline-offset-[10px]">모두</span>{" "}
       고른 것은?
@@ -71,9 +62,9 @@ export default function Page() {
       것은?
     </>,
     <>
-      <span className="font-haeseo">‘結草報恩’</span>
+      ‘<span className="font-haeseo">結草報恩</span>’
       의 겉뜻과 속뜻을 쓰고,
-      <span className="font-haeseo">‘結草報恩’</span>
+      ‘<span className="font-haeseo">結草報恩</span>’
       에서 얻을 수 있는 교훈을 자기의 삶에서 실천해야 할 대상이 있다면 누구인지 밝히고 그 이유를 쓰시오.
     </>
   ];
@@ -120,30 +111,6 @@ export default function Page() {
           onClick={() => setShowAnswer(!showAnswer)}
         />
       )}
-      <img
-        src={
-          step === 1
-            ? BACKGROUND1.src
-            : step === 2
-              ? BACKGROUND2.src
-              : step === 3
-                ? BACKGROUND3.src
-                : step === 4
-                  ? BACKGROUND4.src
-                  : step === 5
-                    ? BACKGROUND5.src
-                    : step === 6
-                      ? BACKGROUND6.src
-                      : step === 7
-                        ? BACKGROUND7.src
-                        : step === 8
-                          ? BACKGROUND8.src
-                          : step === 9
-                            ? BACKGROUND9.src
-                            : ""
-        }
-        className="debug absolute left-0 top-0 opacity-25 pointer-events-none"
-      />
     </>
   );
 }
@@ -200,7 +167,7 @@ const Question2 = ({ showAnswer }: { showAnswer: boolean }) => {
 const Question3 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
     <div className="w-full pt-[40px] text-[40px] tracking-tight">
-      <div className="pl-[80px]">
+      <div className="pl-0">
         <img src={IMAGE3.src} className="mb-10" />
       </div>
 
@@ -270,7 +237,7 @@ const Question4 = ({ showAnswer }: { showAnswer: boolean }) => {
 const Question5 = ({ showAnswer }: { showAnswer: boolean }) => {
   return (
     <div className="h-full flex items-center">
-      <div className="relative -top-8">
+      <div className="relative -top-20">
         <img src={IMAGE5.src} />
 
         <SelectionQuiz
@@ -351,26 +318,26 @@ const Question8 = ({ showAnswer }: { showAnswer: boolean }) => {
         options={[
           <>
             회의 시간이 이렇게 길어지다니, 군말이
-            <span className="font-haeseo">蛇足</span>
+            <span className="font-haeseo text-[50px] leading-[50px] tracking-[-2.5px]">蛇足</span>
             이었어.
           </>,
           <>
             소외된 어려운 이웃을 돕는 손길은
-            <span className="font-haeseo">多多益善</span>
+            <span className="font-haeseo text-[50px] leading-[50px] tracking-[-2.5px]">多多益善</span>
             이지요.
           </>,
           <>
-            <span className="font-haeseo">龍頭蛇尾</span>
+            <span className="font-haeseo text-[50px] leading-[50px] tracking-[-2.5px]">龍頭蛇尾</span>
             라더니 정말 거짓말도 여러 사람이 하니 진짜 같아.
           </>,
           <>
             서로 타협점을 찾지 못한다면
-            <span className="font-haeseo">易地思之</span>
+            <span className="font-haeseo text-[50px] leading-[50px] tracking-[-2.5px]">易地思之</span>
             해 보는 것이 좋겠습니다.
           </>,
           <>
             앞서 달리던 두 선수가 넘어져 다른 선수가
-            <span className="font-haeseo">漁父之利</span>
+            <span className="font-haeseo text-[50px] leading-[50px] tracking-[-2.5px]">漁父之利</span>
             로 우승하였다.
           </>,
         ]}
@@ -424,7 +391,7 @@ const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
               answer="친구들과의 갈등으로 학교생활에 어려움이 많았는데 선생님께서 따뜻한 위로와 도움으로 잘 적응할 수 있었기 때문이다."
               showAnswer={showAnswer}
               containerClassName="w-full border-b-2 border-black"
-              className="bg-transparent w-full"
+              className="bg-transparent w-full break-keep"
               penClassName="h-[40px] top-1/2 -translate-y-1/2"
             />
           </div>

@@ -10,16 +10,29 @@ import BACKGROUND1 from "@/app/bgpng_temp/9/중등한문
 import { CultureHeader } from "@/app/components/headers/culture-header";
 import { PageInfoContext } from "@/app/utils/page-info";
 
+const sound1 = new Howl({
+  src: "/sound/3/77_story_1.mp3"
+});
+
+const sound2 = new Howl({
+  src: "/sound/3/77_story_2.mp3"
+});
+
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
-  // const sound = new Howl({
-  //   src: sounds[step - 1],
-  //   onplay: () => setIsReading(true),
-  //   onend: () => setIsReading(false),
-  // });
+
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+
   [
     {
       text: "이 그림은 조선 시대 화가 김홍도의 「해탐노화도(蟹貪蘆花圖)」로 ‘게가 갈대꽃을 탐한다.’ 라는 뜻이다.",
@@ -48,42 +61,30 @@ export default function Page() {
     },
   ];
 
-  const sounds = ["/sound/3/77_story_1.mp3", "/sound/3/77_story_2.mp3"];
-
-  const sound = new Howl({
-    src: sounds[step - 1],
-    onplay: () => setIsReading(true),
-    onend: () => setIsReading(false),
-  });
-
-  useEffect(() => {
-    return () => {
-      sound.stop();
-    };
-  }, []);
-
   return (
     <>
       <CultureHeader title={"어떤 권력에도 굴하지 않는 신하의 걸음"} />
 
-      {/* {step === 1 && ( */}
-        <SoundButton2
-          className="absolute top-[110px] left-[1220px] animate__animated animate__bounceIn animate__delay-2s z-10"
-          active={isReading}
-          onClick={() => {
-            if(isReading) sound.stop();
-            else setSoundId(sound.play());
-          }}
-        />
-      {/* )} */}
+      <SoundButton2
+        className="absolute top-[110px] left-[1220px] animate__animated animate__bounceIn animate__delay-2s z-10"
+        active={isReading}
+        onClick={() => {
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
+          }
+        }}
+      />
 
       <ContentContainer>
         {step === 1 && (
           <div className="absolute top-[50px] w-[1460px]">
             <div
-              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-10 py-7 -mt-4 text-[55px] leading-[80px] tracking-tight break-keep transition-colors duration-[2000ms] ${
-                isReading ? "text-reading" : ""
-              }`}
+              className={`bg-[#f4ede1] rounded-[50px] pl-14 pr-10 py-7 -mt-4 text-[55px] leading-[80px] tracking-tight break-keep transition-colors duration-[2000ms] ${isReading ? "text-reading" : ""
+                }`}
             >
               이 그림은 조선 시대 화가 김홍도의 「해탐노화도(
               <span className="font-haeseo leading-tight tracking-[-8px]">

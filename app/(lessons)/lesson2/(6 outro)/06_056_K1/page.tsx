@@ -401,7 +401,11 @@ const Question9 = ({ showAnswer }: { showAnswer: boolean }) => {
 
         <InputWithPen
           isExample
-          answer="산천"
+          answer={
+            <p className="-mt-1">
+            <span className="font-haeseo text-[45px]">山川</span>
+            </p>
+          }
           showAnswer={showAnswer}
           containerClassName="!absolute left-[12px] top-[78px]"
           className="bg-transparent w-[400px] text-center text-[40px]"

@@ -23,7 +23,6 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
 
-
   useEffect(() => {
     sound1.on("play", () => setIsReading(true));
     sound1.on("end", () => setIsReading(false));
@@ -67,8 +66,13 @@ export default function Page() {
         className="absolute top-[110px] left-[1370px] animate__animated animate__bounceIn animate__delay-2s z-10"
         active={isReading}
         onClick={() => {
-          if (isReading) sound.stop();
-          else sound.play();
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
+          }
         }}
       />
 

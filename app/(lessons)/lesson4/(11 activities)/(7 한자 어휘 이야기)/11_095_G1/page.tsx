@@ -23,6 +23,16 @@ export default function Page() {
 
   const [isReading, setIsReading] = useState(false);
 
+  useEffect(() => {
+    sound1.on("play", () => setIsReading(true));
+    sound1.on("end", () => setIsReading(false));
+    sound1.on("stop", () => setIsReading(false));
+
+    sound2.on("play", () => setIsReading(true));
+    sound2.on("end", () => setIsReading(false));
+    sound2.on("stop", () => setIsReading(false));
+  }, []);
+  
   [
     { text: "중국 춘추 시대의 제나라 때, 군주인 경공의 暴政(폭정)으로 백성 모두 고통이 극심했다.", start: 0, end: 7670 },
     { text: "그러던 어느 겨울에 사흘 동안 눈이 쉼 없이 내리자, 경공은 여우 털로 만든 가볍고 따뜻한 옷을 입고 설경의 아름다움에 취한 채 재상인 안자에게 말했다.", start: 7670, end: 20180 },
@@ -34,32 +44,21 @@ export default function Page() {
     { text: "이 말을 들은 경공은 부끄러워 아무 말도 못 했다.", start: 26204, end: 31294 },
   ];
 
-  useEffect(() => {
-    sound1.on("play", () => setIsReading(true));
-    sound1.on("end", () => setIsReading(false));
-    sound1.on("stop", () => setIsReading(false));
-
-    sound2.on("play", () => setIsReading(true));
-    sound2.on("end", () => setIsReading(false));
-    sound2.on("stop", () => setIsReading(false));
-  }, []);
-
-  useEffect(() => {
-    sound1.stop();
-    sound2.stop();
-    return () => {
-      sound1.stop();
-      sound2.stop();
-    };
-  }, [step]);
-
   return (
     <>
       <CultureHeader title={"다른 사람의 처지에서 생각하기"} />
       <SoundButton2
         className="absolute left-[1080px] top-[112px] animate__animated animate__bounceIn animate__delay-1s z-10"
         active={isReading}
-        onClick={() => (step === 1 ? sound1.play() : sound2.play())}
+        onClick={() => {
+          if (isReading) {
+            sound1.stop();
+            sound2.stop();
+          } else {
+            if (step === 1) sound1.play();
+            else sound2.play();
+          }
+        }}
       />
 
       <ContentContainer>
