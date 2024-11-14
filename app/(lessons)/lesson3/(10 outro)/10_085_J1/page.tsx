@@ -11,15 +11,8 @@ import IMAGE3 from "./image3.png";
 import { StepContainer } from "@/app/components/step-container";
 import { useContext, useEffect, useState } from "react";
 import { ActivityPageTemplate } from "@/app/pages/activity-page-template";
-import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘25.png";
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘26.png";
-import { InputWithPen } from "@/app/components/input-with-pen";
-import {
-  OLD_TextareaWithPen,
-  TextareaWithPen,
-} from "@/app/components/textarea/textarea-with-pen";
-import { SOUND } from "@/app/utils/sound-player";
 import { PageInfoContext } from "@/app/utils/page-info";
 
 export default function Page() {
@@ -41,24 +34,7 @@ export default function Page() {
   );
 }
 
-const sound = new Howl({
-  src: "/sound/2/55-i-2.mp3",
-});
-
 const Content1 = () => {
-  const [isReading, setIsReading] = useState(false);
-  const [soundId, setSoundId] = useState<number | null>(null);
-
-  useEffect(() => {
-    sound.on("play", () => setIsReading(true));
-    sound.on("end", () => setIsReading(false));
-    sound.on("stop", () => setIsReading(false));
-  }, []);
-
-  useEffect(() => {
-    SOUND("/sound/2/55-i-1.mp3").play();
-  }, []);
-
   return (
     <div className="animate__animated animate__fadeIn w-full h-full flex flex-col justify-center items-start">
       <div className="relative -top-[45px] w-[1600px] h-full">
@@ -76,15 +52,40 @@ const Content1 = () => {
   );
 };
 
+const sound = new Howl({
+  src: "/sound/3/85-i.mp3",
+});
+
 const Content2 = () => {
+  const [isReading, setIsReading] = useState(false);
+
+  useEffect(() => {
+    sound.on("play", () => setIsReading(true));
+    sound.on("end", () => setIsReading(false));
+    sound.on("stop", () => setIsReading(false));
+  }, []);
+
   return (
-    <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-hidden">
-      <div className="relative h-fit">
-        <div className="relative">
-          <img src={IMAGE2.src} />
+    <>
+      <SoundButton2
+        className="absolute top-[50px] left-[220px] animate__animated animate__bounceIn animate__delay-1s z-10"
+        active={isReading}
+        onClick={() => {
+          if (isReading) {
+            sound.stop();
+          }
+          else sound.play();
+        }}
+      />
+
+      <div className="animate__animated animate__fadeIn h-full flex justify-center overflow-y-hidden">
+        <div className="relative h-fit">
+          <div className="relative">
+            <img src={IMAGE2.src} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
