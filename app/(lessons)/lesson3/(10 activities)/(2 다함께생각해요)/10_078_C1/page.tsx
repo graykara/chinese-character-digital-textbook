@@ -47,22 +47,22 @@ export default function Page() {
         {step === 5 && <Step5 setStep={setStep} />}
 
         {/* 대기만성형 */}
-        {step === 6 && <Step6 />}
+        {step === 6 && <Step6 setStep={setStep} />}
         {/* 무사태평형 */}
-        {step === 7 && <Step7 />}
+        {step === 7 && <Step7 setStep={setStep} />}
         {/* 형설지공형 */}
-        {step === 8 && <Step8 />}
+        {step === 8 && <Step8 setStep={setStep} />}
         {/* 괄목상대형 */}
-        {step === 9 && <Step9 />}
+        {step === 9 && <Step9 setStep={setStep} />}
         {/* 우공이산형 */}
-        {step === 10 && <Step10 />}
+        {step === 10 && <Step10 setStep={setStep} />}
 
         {/* restart button hidden */}
-        <button
+        {/* <button
           onClick={() => { setStep(1) }}
           className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-black bg-opacity-0"
         >
-        </button>
+        </button> */}
       </ContentContainer>
 
       {/* <StepContainer maxStep={10} /> */}
@@ -74,7 +74,7 @@ export default function Page() {
   );
 }
 
-const Step1 = ({ setStep }) => { 
+const Step1 = ({ setStep }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => setIsHovered(true);
@@ -104,7 +104,7 @@ const Step1 = ({ setStep }) => {
   )
 };
 
-const Step2 = ({ setStep }) => { 
+const Step2 = ({ setStep }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -155,7 +155,7 @@ const Step2 = ({ setStep }) => {
   )
 };
 
-const Step3 = ({ setStep }) => { 
+const Step3 = ({ setStep }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -204,7 +204,7 @@ const Step3 = ({ setStep }) => {
   )
 };
 
-const Step4 = ({ setStep }) => { 
+const Step4 = ({ setStep }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -253,7 +253,7 @@ const Step4 = ({ setStep }) => {
   )
 };
 
-const Step5 = ({ setStep }) => { 
+const Step5 = ({ setStep }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -302,33 +302,73 @@ const Step5 = ({ setStep }) => {
   )
 };
 
-const Step6 = () => { 
+const Step6 = ({ setStep }) => {
   return (
-    <img src={RESULT1.src} className="ml-5 -mt-32" />
+    <>
+      <img src={RESULT1.src} className="ml-5 -mt-32" />
+      <button
+        onClick={() => { setStep(1) }}
+        className="absolute bottom-0 right-28"
+      >
+        <img src="/ui/start-again-button.png" />
+      </button>
+    </>
   )
 };
 
-const Step7 = () => { 
+const Step7 = ({ setStep }) => {
   return (
-    <img src={RESULT2.src} className="ml-5 -mt-32" />
+    <>
+      <img src={RESULT2.src} className="ml-5 -mt-32" />
+      <button
+        onClick={() => { setStep(1) }}
+        className="absolute bottom-0 right-28"
+      >
+        <img src="/ui/start-again-button.png" />
+      </button>
+    </>
   )
 };
 
-const Step8 = () => { 
+const Step8 = ({ setStep }) => {
   return (
-    <img src={RESULT3.src} className="ml-5 -mt-32" />
+    <>
+      <img src={RESULT3.src} className="ml-5 -mt-32" />
+      <button
+        onClick={() => { setStep(1) }}
+        className="absolute bottom-0 right-28"
+      >
+        <img src="/ui/start-again-button.png" />
+      </button>
+    </>
   )
 };
 
-const Step9 = () => {
+const Step9 = ({ setStep }) => {
   return (
-    <img src={RESULT4.src} className="ml-5 -mt-32" />
+    <>
+      <img src={RESULT4.src} className="ml-5 -mt-32" />
+      <button
+        onClick={() => { setStep(1) }}
+        className="absolute bottom-0 right-28"
+      >
+        <img src="/ui/start-again-button.png" />
+      </button>
+    </>
   )
 };
 
-const Step10 = () => { 
+const Step10 = ({ setStep }) => {
   return (
-    <img src={RESULT5.src} className="ml-5 -mt-32" />
+    <>
+      <img src={RESULT5.src} className="ml-5 -mt-32" />
+      <button
+        onClick={() => { setStep(1) }}
+        className="absolute bottom-0 right-28"
+      >
+        <img src="/ui/start-again-button.png" />
+      </button>
+    </>
   )
 };
 
