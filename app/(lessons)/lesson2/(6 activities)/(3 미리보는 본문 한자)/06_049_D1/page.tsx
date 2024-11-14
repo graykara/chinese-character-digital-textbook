@@ -15,6 +15,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운
 import BACKGROUND2 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘5.png";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -50,12 +51,12 @@ export default function Page() {
         <img src={EXAMPLE.src} />
         <div className="absolute w-full flex z-10">
           <div className="absolute left-[7px] -top-[270px] grid grid-cols-6 gap-[60px] w-[1400px] h-[100px] z-10">
-            <button onClick={() => SOUND(sounds[0]).play()}></button>
-            <button onClick={() => SOUND(sounds[1]).play()}></button>
-            <button onClick={() => SOUND(sounds[2]).play()}></button>
-            <button onClick={() => SOUND(sounds[3]).play()}></button>
-            <button onClick={() => SOUND(sounds[4]).play()}></button>
-            <button onClick={() => SOUND(sounds[5]).play()}></button>
+            <Button onClick={() => SOUND(sounds[0]).play()}></Button>
+            <Button onClick={() => SOUND(sounds[1]).play()}></Button>
+            <Button onClick={() => SOUND(sounds[2]).play()}></Button>
+            <Button onClick={() => SOUND(sounds[3]).play()}></Button>
+            <Button onClick={() => SOUND(sounds[4]).play()}></Button>
+            <Button onClick={() => SOUND(sounds[5]).play()}></Button>
           </div>
         </div>
       </div>
@@ -68,7 +69,7 @@ export default function Page() {
               <img src={IMAGE1.src} alt="" />
               {!showAnswer && (
                 <div>
-                  <button
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -76,8 +77,8 @@ export default function Page() {
                     className="absolute left-[335px] top-[78px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -85,8 +86,8 @@ export default function Page() {
                     className="absolute left-[1145px] top-[78px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -94,8 +95,8 @@ export default function Page() {
                     className="absolute left-[335px] top-[338px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -103,7 +104,7 @@ export default function Page() {
                     className="absolute left-[1145px] top-[338px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
+                  </Button>
                 </div>
               )}
             </div>
@@ -114,7 +115,7 @@ export default function Page() {
 
               {!showAnswer && (
                 <div>
-                  <button
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -122,8 +123,8 @@ export default function Page() {
                     className="absolute left-[335px] top-[78px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={(e) => {
                       clickSound.play();
                       e.currentTarget.remove();
@@ -131,7 +132,7 @@ export default function Page() {
                     className="absolute left-[1145px] top-[78px]"
                   >
                     <img src={BUTTON.src} />
-                  </button>
+                  </Button>
                 </div>
               )}
             </div>

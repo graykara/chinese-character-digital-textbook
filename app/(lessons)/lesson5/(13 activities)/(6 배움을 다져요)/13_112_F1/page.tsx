@@ -16,6 +16,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/13/중등한무�
 import BACKGROUND2 from "@/app/bgpng_temp/13/중등한문_귀에 대고 말한 까닭20.png";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -101,65 +102,65 @@ const Step2 = () => {
       <ContentContainer className="!justify-start -top-[50px] left-9">
         <img src={IMAGE2.src} />
         <div className="absolute top-[57px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
-          <button
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group1, setGroup1, 0)}
           >
             <img src={group1[0] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group1, setGroup1, 1)}
           >
             <img src={group1[1] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group1, setGroup1, 2)}
           >
             <img src={group1[2] ? CHECK.src : ""} />
-          </button>
+          </Button>
 
         </div>
         <div className="absolute top-[140px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
-          <button
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group2, setGroup2, 0)}
           >
             <img src={group2[0] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group2, setGroup2, 1)}
           >
             <img src={group2[1] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group2, setGroup2, 2)}
           >
             <img src={group2[2] ? CHECK.src : ""} />
-          </button>
+          </Button>
         </div>
         <div className="absolute top-[223px] right-[53px] w-[810px] h-[83px] grid grid-cols-3">
-        <button
+        <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group3, setGroup3, 0)}
           >
             <img src={group3[0] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group3, setGroup3, 1)}
           >
             <img src={group3[1] ? CHECK.src : ""} />
-          </button>
-          <button
+          </Button>
+          <Button
             className="w-[270px] justify-items-center"
             onClick={() => handleClick(group3, setGroup3, 2)}
           >
             <img src={group3[2] ? CHECK.src : ""} />
-          </button>
+          </Button>
         </div>
       </ContentContainer >
       <img

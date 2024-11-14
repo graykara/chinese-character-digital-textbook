@@ -14,6 +14,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { WritingButton } from "@/app/components/buttons/writing-button";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -39,7 +40,7 @@ const Step1 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-7">
         <img src={IMAGE1.src} className="-ml-12 mt-20" />
-        <button className="absolute top-[300px] left-[500px] w-[450px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/80/1.mp3").play()}></button>
+        <Button className="absolute top-[300px] left-[500px] w-[450px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/80/1.mp3").play()}></Button>
         <div className="w-[610px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[50px] top-[285px] ml-[70px] text-[90px]">
           <span className="font-haeseo">背</span>
           <span className="font-haeseo">水</span>
@@ -88,8 +89,8 @@ const Step2 = () => {
     <>
       <ContentContainer className="!justify-start -top-[90px] left-0">
         <img src={IMAGE2.src} className="ml-[10px] mt-20" />
-        <button className="absolute top-[280px] left-[450px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/80/3.mp3").play()}>
-          </button>
+        <Button className="absolute top-[280px] left-[450px] w-[600px] h-[100px] bg-transparent border-none cursor-pointer z-10" onClick={() => SOUND("/sound/3/80/3.mp3").play()}>
+          </Button>
         <div className="w-[650px] absolute grid grid-cols-4 left-1/2 -translate-x-1/2 gap-[10px] top-[265px] ml-[30px] text-[90px]">
           <span className="font-haeseo">三</span>
           <span className="font-haeseo">人</span>

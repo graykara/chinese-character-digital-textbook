@@ -22,6 +22,7 @@ import BACKGROUND5 from "@/app/bgpng_temp/3/중등한문
 import BACKGROUND6 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자26.png";
 import BACKGROUND7 from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자27.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -184,7 +185,7 @@ export default function Page() {
             <img src={IMAGE7.src} alt="image1" className="mt-[65px]" />
             <div className="absolute w-full left-1/2 -translate-x-1/2 bottom-[100px] grid grid-cols-5 gap-x-[50px] gap-y-[50px] px-[100px]">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => (
-                <button
+                <Button
                   onClick={() =>
                     new Howl({
                       src: `/sound/2/31/${v}.mp3`,

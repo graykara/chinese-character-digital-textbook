@@ -14,6 +14,7 @@ import { StepContainer } from "@/app/components/step-container";
 import { SOUND } from "@/app/utils/sound-player";
 import { FlippableCard } from "@/app/components/flippable-card/flippable-card";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -52,12 +53,12 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-5 pl-12 pb-20">
         <img src={EXAMPLE.src} className="mb-10" />
         <div className="absolute left-[60px] top-[40px] w-[1420px] grid grid-cols-6 gap-[40px] h-[250px]">
-          <button onClick={() => SOUND("/sound/3/p073_word000.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p073_word001.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p073_word002.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p073_word003.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p073_word004.mp3").play()} />
-          <button onClick={() => SOUND("/sound/3/p073_word005.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word000.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word001.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word002.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word003.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word004.mp3").play()} />
+          <Button onClick={() => SOUND("/sound/3/p073_word005.mp3").play()} />
         </div>
 
         <div className="flex items-center gap-10">

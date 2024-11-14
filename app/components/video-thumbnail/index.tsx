@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
 import { Howler } from "howler";
 import { VideoPlayer } from "../video-player";
+import { Button } from "../buttons/button";
 
 export const VideoThumbnail = ({
   thumbnail,
@@ -35,7 +36,7 @@ export const VideoThumbnail = ({
       >
         <img src={thumbnail} className="w-full h-full object-contain" />
 
-        <button
+        <Button
           className="w-[95px] h-[95px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 transition-opacity"
           onClick={() => {
             clickSound.play();
@@ -43,7 +44,7 @@ export const VideoThumbnail = ({
           }}
         >
           <img src={VIDEO_PLAY.src} />
-        </button>
+        </Button>
       </div>
 
       <Modal open={showModal} onClose={() => setShowModal(false)}>
@@ -91,7 +92,7 @@ export const VideoThumbnail_big = ({
       >
         <img src={thumbnail} className="w-full h-full object-contain" />
 
-        <button
+        <Button
           className="w-[138px] h-[138px] absolute left-1/2 mb-0 -translate-x-1/2 opacity-50 hover:opacity-100 transition-opacity"
           onClick={() => {
             clickSound.play();
@@ -99,7 +100,7 @@ export const VideoThumbnail_big = ({
           }}
         >
           <img src={VIDEO_PLAY.src} />
-        </button>
+        </Button>
       </div>
 
       <Modal open={showModal} onClose={() => setShowModal(false)}>

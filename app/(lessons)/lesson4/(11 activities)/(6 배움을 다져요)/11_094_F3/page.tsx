@@ -12,6 +12,7 @@ import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리29.png";
 import BACKGROUND2 from "@/app/bgpng_temp/11/중등한문_너와 나, 우리30.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -52,10 +53,10 @@ export default function Page() {
               <span className="font-haeseo text-[55px] tracking-[-5px]"> 美</span>
               [곱다]
             </p>
-            <button className="absolute top-[80px] left-[140px] w-[150px] h-[80px] z-10" onClick={() => SOUND(sounds[0]).play()}>
-            </button>
-            <button className="absolute top-[80px] left-[600px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[1]).play()}>
-            </button>
+            <Button className="absolute top-[80px] left-[140px] w-[150px] h-[80px] z-10" onClick={() => SOUND(sounds[0]).play()}>
+            </Button>
+            <Button className="absolute top-[80px] left-[600px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[1]).play()}>
+            </Button>
 
             <p className="absolute top-[380px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
               <span className="font-haeseo text-[55px] tracking-[0px]">人</span>
@@ -67,14 +68,14 @@ export default function Page() {
               <span className="font-haeseo text-[55px] tracking-[-5px]"> 之</span>
               [그를]
             </p>
-            <button className="absolute top-[375px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[2]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[380px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[3]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[455px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[4]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[925px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[5]).play()}>
-            </button>
+            <Button className="absolute top-[375px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[2]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[380px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[3]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[455px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[4]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[925px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[5]).play()}>
+            </Button>
 
           </div>
         )}
@@ -89,12 +90,12 @@ export default function Page() {
               <span className="font-haeseo text-[55px] tracking-[-5px]"> 成</span>
               [이루기가]
             </p>
-            <button className="absolute top-[80px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[6]).play()}>
-            </button>
-            <button className="absolute top-[80px] left-[405px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[7]).play()}>
-            </button>
-            <button className="absolute top-[80px] left-[690px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[8]).play()}>
-            </button>
+            <Button className="absolute top-[80px] left-[120px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[6]).play()}>
+            </Button>
+            <Button className="absolute top-[80px] left-[405px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[7]).play()}>
+            </Button>
+            <Button className="absolute top-[80px] left-[690px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[8]).play()}>
+            </Button>
 
             <p className="absolute top-[380px] left-[135px] w-[1250px] text-[55px] leading-tight tracking-tighter">
               <span className="font-haeseo text-[55px] tracking-[2px]">孔子</span>
@@ -106,14 +107,14 @@ export default function Page() {
               <span className="font-haeseo text-[55px] tracking-[-5px]"> 於老子</span>
               [노자에게]
             </p>
-            <button className="absolute top-[375px] left-[130px] w-[135px] h-[80px] z-10" onClick={() => SOUND(sounds[9]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[465px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[10]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[710px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[11]).play()}>
-            </button>
-            <button className="absolute top-[375px] left-[945px] w-[180px] h-[80px] z-10" onClick={() => SOUND(sounds[12]).play()}>
-            </button>
+            <Button className="absolute top-[375px] left-[130px] w-[135px] h-[80px] z-10" onClick={() => SOUND(sounds[9]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[465px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[10]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[710px] w-[80px] h-[80px] z-10" onClick={() => SOUND(sounds[11]).play()}>
+            </Button>
+            <Button className="absolute top-[375px] left-[945px] w-[180px] h-[80px] z-10" onClick={() => SOUND(sounds[12]).play()}>
+            </Button>
           </div>
         )}
       </ContentContainer>

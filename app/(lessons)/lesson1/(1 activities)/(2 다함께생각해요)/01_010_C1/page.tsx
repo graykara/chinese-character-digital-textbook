@@ -89,12 +89,12 @@ const Step2 = () => {
         </div>
       </div>
     </div>
-    {/* <button
+    {/* <Button
       className="absolute bottom-0 right-32"
       onClick={() => setShowAnswer(!showAnswer)}
     >
       <img src={EXAMPLE_ANSWER.src} />
-    </button> */}
+    </Button> */}
           <ExampleAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}

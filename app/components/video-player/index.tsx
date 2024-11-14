@@ -12,6 +12,7 @@ import {
   RotateCcw,
   Square,
 } from "lucide-react";
+import { Button } from "../buttons/button";
 
 export const VideoPlayer = ({ src }: { src: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -162,12 +163,12 @@ export const VideoPlayer = ({ src }: { src: string }) => {
         </video>
         {showReplay && (
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <button
+            <Button
               onClick={handleReplay}
               className="p-4 bg-white rounded-full"
             >
               <RotateCcw size={32} color="black" />
-            </button>
+            </Button>
           </div>
         )}
       </div>
@@ -186,7 +187,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
               </option>
             ))}
           </select>
-          <button
+          <Button
             onClick={togglePlay}
             className="p-2 rounded"
             onMouseEnter={() => setHoverState("play", true)}
@@ -205,8 +206,8 @@ export const VideoPlayer = ({ src }: { src: string }) => {
                 size={24}
               />
             )}
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={handleStop}
             className="p-2 rounded"
             onMouseEnter={() => setHoverState("stop", true)}
@@ -217,7 +218,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
               stroke={hoverStates.stop ? "black" : "white"}
               size={24}
             />
-          </button>
+          </Button>
           <span className="text-[24px] flex-none text-white">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
@@ -230,7 +231,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
             className="w-full"
           />
           <div className="flex items-center">
-            <button
+            <Button
               onClick={toggleMute}
               className="mr-2 text-white"
               onMouseEnter={() => setHoverState("mute", true)}
@@ -252,7 +253,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
                   size={24}
                 />
               )}
-            </button>
+            </Button>
             <input
               type="range"
               min="0"
@@ -263,7 +264,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
               className="w-24"
             />
           </div>
-          <button
+          <Button
             onClick={toggleFullscreen}
             className="p-2 rounded"
             onMouseEnter={() => setHoverState("fullscreen", true)}
@@ -282,7 +283,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
                 size={24}
               />
             )}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

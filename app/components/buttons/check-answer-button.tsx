@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "./button";
 
 export const CheckAnswerButton = ({
   active,
@@ -8,7 +9,7 @@ export const CheckAnswerButton = ({
   onClick: () => void;
 }) => {
   return (
-    <button
+    <Button
       className="absolute bottom-0 right-28"
       onClick={() => {
         clickSound.play();
@@ -23,6 +24,6 @@ export const CheckAnswerButton = ({
         src="/ui/check-answer-button-again.png"
         className={active ? "" : "hidden"}
       />
-    </button>
+    </Button>
   );
 };

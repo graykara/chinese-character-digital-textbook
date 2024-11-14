@@ -2,6 +2,7 @@
 
 import { clickSound } from "@/app/utils/click-sound";
 import { useState } from "react";
+import { Button } from "./button";
 
 interface Props {
   active: boolean;
@@ -26,7 +27,7 @@ export const PillButton = ({
   };
 
   return (
-    <button
+    <Button
       className="w-[180px] h-[64px] rounded-full flex items-center px-[11px]"
       onClick={handleClick}
       style={{
@@ -49,6 +50,6 @@ export const PillButton = ({
         />
       </div>
       <p className="text-white w-[116px] text-center">{text}</p>
-    </button>
+    </Button>
   );
 };

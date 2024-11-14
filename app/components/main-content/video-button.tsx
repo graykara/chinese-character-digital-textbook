@@ -5,6 +5,7 @@ import { Modal } from "../modal";
 import ReactPlayer from "react-player";
 import { clickSound } from "@/app/utils/click-sound";
 import { VideoPlayer } from "@/app/components/video-player";
+import { Button } from "../buttons/button";
 
 interface Props {
   video: string;
@@ -17,7 +18,7 @@ export const MainContentVideoButton = ({ className, buttomImage = "/ui/video-but
 
   return (
     <>
-      <button
+      <Button
         className={`z-[3] ${className ?? ""}`}
         onClick={() => {
           clickSound.play();
@@ -25,7 +26,7 @@ export const MainContentVideoButton = ({ className, buttomImage = "/ui/video-but
         }}
       >
         <img src={buttomImage} />
-      </button>
+      </Button>
       <Modal open={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full h-full bg-white">
           {video ? (

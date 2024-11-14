@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "./buttons/button";
 
 export const FloatingButtonContainer = () => {
   const [showClassIcons, setShowClassIcons] = useState(false);
@@ -42,12 +43,12 @@ export const FloatingButtonContainer = () => {
   return (
     <div className="fixed right-[0px] top-[120px] w-[60px]">
       <section className="mb-4">
-        <button
+        <Button
           onClick={() => setShowClassIcons(!showClassIcons)}
           className="hover:shadow-lg transition"
         >
           <img src="/icons/floating/class_icon.png" />
-        </button>
+        </Button>
 
         {showClassIcons ? (
           <div className="bg-white p-1 rounded-xl flex flex-col gap-13 shadow-lg">
@@ -60,12 +61,12 @@ export const FloatingButtonContainer = () => {
         ) : null}
       </section>
 
-      <button
+      <Button
         onClick={() => setShowSpecialIcons(!showSpecialIcons)}
         className="hover:shadow-lg transition"
       >
         <img src="/icons/floating/special_icon.png" />
-      </button>
+      </Button>
 
       {showSpecialIcons ? (
         <div className="bg-white p-1 rounded-xl flex flex-col gap-13 shadow-lg">

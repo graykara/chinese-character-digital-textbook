@@ -11,6 +11,7 @@ import { useState } from "react";
 import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만덕2.png";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -40,7 +41,7 @@ export default function Page() {
 
       <div>
         {isButton1Clicked ? null : (
-          <button
+          <Button
             className="absolute left-[240px] top-[365px]"
             onClick={() => {
               clickSound.play();
@@ -48,10 +49,10 @@ export default function Page() {
             }}
           >
             <img src={BUTTON_1.src} alt="button" />
-          </button>
+          </Button>
         )}
         {isButton2Clicked ? null : (
-          <button
+          <Button
             className="absolute left-[445px] top-[337px]"
             onClick={() => {
               clickSound.play();
@@ -59,10 +60,10 @@ export default function Page() {
             }}
           >
             <img src={BUTTON_2.src} alt="button" />
-          </button>
+          </Button>
         )}
         {isButton3Clicked ? null : (
-          <button
+          <Button
             className="absolute left-[585px] top-[405px]"
             onClick={() => {
               clickSound.play();
@@ -70,7 +71,7 @@ export default function Page() {
             }}
           >
             <img src={BUTTON_3.src} alt="button" />
-          </button>
+          </Button>
         )}
       </div>
 

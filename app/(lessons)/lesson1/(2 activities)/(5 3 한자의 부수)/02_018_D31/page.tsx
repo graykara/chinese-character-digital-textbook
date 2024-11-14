@@ -13,6 +13,7 @@ import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png";
 import { SOUND } from "@/app/utils/sound-player";
+import { Button } from "@/app/components/buttons/button";
 
 const sound = new Howl({
   src: "/sound/1/18.mp3",
@@ -74,10 +75,10 @@ export default function Page() {
           <div className="relative">
             <img src={TEXT2.src} alt="text1" className="mt-4" />
             <div className="absolute left-[50px] top-0 grid grid-cols-3 gap-[10px] w-[700px] h-[60px] bg-transparent">
-              <button onClick={() => SOUND("/sound/1/p018_word000.mp3").play()}>
-              </button>
-              <button onClick={() => SOUND("/sound/1/p018_word001.mp3").play()}></button>
-              <button onClick={() => SOUND("/sound/1/p018_word002.mp3").play()}></button>
+              <Button onClick={() => SOUND("/sound/1/p018_word000.mp3").play()}>
+              </Button>
+              <Button onClick={() => SOUND("/sound/1/p018_word001.mp3").play()}></Button>
+              <Button onClick={() => SOUND("/sound/1/p018_word002.mp3").play()}></Button>
             </div>
           </div>
         </div>
@@ -94,7 +95,7 @@ export default function Page() {
                 buttonActive.includes(index) ? (
                   <div key={index} className="w-[80px] h-[80px]" />
                 ) : (
-                  <button
+                  <Button
                     key={index}
                     className="bg-white w-[80px] h-[80px] flex justify-center items-center"
                     onClick={() => {
@@ -108,7 +109,7 @@ export default function Page() {
                     }}
                   >
                     <img src="/ui/click-icon.png" />
-                  </button>
+                  </Button>
                 ),
               )}
             </div>

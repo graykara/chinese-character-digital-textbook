@@ -18,6 +18,7 @@ import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성
 import { clickSound } from "@/app/utils/click-sound";
 import { SOUND } from "@/app/utils/sound-player";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -68,10 +69,10 @@ const Step1 = () => {
       <div className="-ml-[10px]">
         <header className="mb-5">
           <img src={HOW_BADGE.src} />
-          <button
+          <Button
             className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10"
             onClick={() => SOUND("/sound/3/61-i-2.mp3").play()}
-          ></button>
+          ></Button>
         </header>
 
         <div className="flex gap-5 text-[50px] leading-tight tracking-tight break-keep mt-12">
@@ -107,10 +108,10 @@ const Step2 = () => {
         <div className="">
           <header className="" onClick={() => SOUND("/sound").play()}>
             <img src={TASK_BADGE.src} />
-            <button
+            <Button
               className="absolute -mt-[60px] h-[60px] w-[110px] bg-transparnt z-10"
               onClick={() => SOUND("/sound/3/61-i-3.mp3").play()}
-            ></button>
+            ></Button>
           </header>
           <div className="relative pl-2 mt-1 w-[1526px] ">
             {showAnswer ? (
@@ -119,7 +120,7 @@ const Step2 = () => {
               <img src={IMAGE2_BEFORE.src} />
             )}
 
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setShowButtons(showButtons.map((v, i) => (i === 0 ? !v : v))); // Toggle the state
@@ -130,9 +131,9 @@ const Step2 = () => {
                 src={BUTTON_IMAGE.src}
                 style={{ opacity: showButtons[0] ? 1 : 0 }}
               />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setShowButtons(showButtons.map((v, i) => (i === 1 ? !v : v))); // Toggle the state
@@ -143,9 +144,9 @@ const Step2 = () => {
                 src={BUTTON_IMAGE.src}
                 style={{ opacity: showButtons[1] ? 1 : 0 }}
               />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setShowButtons(showButtons.map((v, i) => (i === 2 ? !v : v))); // Toggle the state
@@ -156,9 +157,9 @@ const Step2 = () => {
                 src={BUTTON_IMAGE.src}
                 style={{ opacity: showButtons[2] ? 1 : 0 }}
               />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setShowButtons(showButtons.map((v, i) => (i === 3 ? !v : v))); // Toggle the state
@@ -169,9 +170,9 @@ const Step2 = () => {
                 src={BUTTON_IMAGE.src}
                 style={{ opacity: showButtons[3] ? 1 : 0 }}
               />
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setShowButtons(showButtons.map((v, i) => (i === 4 ? !v : v))); // Toggle the state
@@ -182,7 +183,7 @@ const Step2 = () => {
                 src={BUTTON_IMAGE.src}
                 style={{ opacity: showButtons[4] ? 1 : 0 }}
               />
-            </button>
+            </Button>
     
           </div>
         </div>
@@ -213,7 +214,7 @@ const Step3 = () => {
           <img src={IMAGE3.src} />
 
           {hideAnswer && (
-            <button
+            <Button
               onClick={() => {
                 clickSound.play();
                 setHideAnswer(false);
@@ -221,7 +222,7 @@ const Step3 = () => {
               className="absolute right-[35px] top-[315px] w-[120px] h-[120px] bg-white flex justify-center items-center"
             >
               <img src="/ui/click-icon.png" className="w-[70px]" />
-            </button>
+            </Button>
           )}
         </div>
       </ContentContainer>

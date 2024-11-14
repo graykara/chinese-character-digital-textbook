@@ -13,6 +13,7 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 import { ContentContainer } from "@/app/components/content-container";
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘11.png";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const sounds = ["44/4", "45/1", "44/3", "44/2", "45/3"].map(
@@ -72,7 +73,7 @@ export default function Page() {
         <img src={EXAMPLE.src} />
         <div className="absolute w-[990px] left-[290px] grid grid-cols-5 gap-[50px]">
           {sounds.map((sound) => (
-            <button
+            <Button
               key={sound}
               className="w-100 h-20"
               onClick={() => SOUND(sound).play()}
@@ -107,7 +108,7 @@ export default function Page() {
                 penClassName="left-1/2 -translate-x-1/2"
               />
             </div>
-            <button
+            <Button
               onClick={() =>
                 setShowAnswers(
                   showAnswers.map((v, i) => (i === index ? !v : v)),
@@ -115,7 +116,7 @@ export default function Page() {
               }
             >
               <img src={ANSWER_BUTTON.src} />
-            </button>
+            </Button>
           </div>
         ))}
       </ContentContainer>

@@ -1,5 +1,6 @@
 import { clickSound } from "@/app/utils/click-sound";
 import { Howler } from "howler";
+import { Button } from "./button";
 
 export const ExampleAnswerButton = ({
   active,
@@ -9,7 +10,7 @@ export const ExampleAnswerButton = ({
   onClick: () => void;
 }) => {
   return (
-    <button
+    <Button
       className="absolute bottom-0 right-28"
       onClick={() => {
         Howler.stop();
@@ -25,6 +26,6 @@ export const ExampleAnswerButton = ({
         src="/ui/example-answer-button-again.png"
         className={active ? "" : "hidden"}
       />
-    </button>
+    </Button>
   );
 };

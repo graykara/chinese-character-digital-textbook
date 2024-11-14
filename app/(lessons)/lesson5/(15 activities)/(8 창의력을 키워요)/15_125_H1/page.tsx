@@ -15,6 +15,7 @@ import BACKGROUND2 from "@/app/bgpng_temp/15/중등한문_돌에 꽂힌 화살25
 import { ContentContainer } from "@/app/components/content-container";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -71,7 +72,7 @@ const Step1 = () => {
               {checked.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   <td className="w-[90px] h-[54.5px] justify-items-center pl-4">
-                    <button
+                    <Button
                       onClick={() => handleButtonClick(rowIndex, 'left')}
                       className="w-[50px] h-[50px] flex justify-center items-center"
                     >
@@ -80,10 +81,10 @@ const Step1 = () => {
                       ) : (
                         null
                       )}
-                    </button>
+                    </Button>
                   </td>
                   <td className="w-[90px] h-[54.5px] justify-items-center">
-                    <button
+                    <Button
                       onClick={() => handleButtonClick(rowIndex, 'right')}
                       className="w-[50px] h-[50px] flex justify-center items-center"
                     >
@@ -92,7 +93,7 @@ const Step1 = () => {
                       ) : (
                         null
                       )}
-                    </button>
+                    </Button>
                   </td>
                 </tr>
               ))}

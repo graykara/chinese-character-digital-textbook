@@ -20,6 +20,7 @@ import { FloatingButtonContainer } from "../components/floating-button-container
 import { PageInfoContext } from "../utils/page-info";
 import { SoundStopper } from "./sound-stopper";
 import Link from "next/link";
+import { Button } from "../components/buttons/button";
 
 export default function RootLayout({
   children,
@@ -123,7 +124,7 @@ export default function RootLayout({
           <div className="flex justify-end items-center">
             {1 < currentStep ? (
               <div className="mt-0">
-                <button
+                <Button
                   onClick={() => {
                     setCurrentStep((prev) => prev - 1);
                   }}
@@ -137,11 +138,11 @@ export default function RootLayout({
                     src="/ui/prev-button-on.png"
                     className={"hidden group-hover:block"}
                   />
-                </button>
+                </Button>
               </div>
             ) : (
               <Link href={getPrevPage(pathname) ?? ""}>
-                <button
+                <Button
                   className="group"
                   onClick={() => setNavigationDirection("prev")}
                 >
@@ -153,7 +154,7 @@ export default function RootLayout({
                     src="/ui/prev-button-on.png"
                     className={"hidden group-hover:block"}
                   />
-                </button>
+                </Button>
               </Link>
             )}
           </div>
@@ -163,7 +164,7 @@ export default function RootLayout({
           <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
             {currentStep < maxStep ? (
               <div className="mt-0">
-                <button
+                <Button
                   className="group"
                   onClick={() => {
                     setCurrentStep((prev) => prev + 1);
@@ -177,11 +178,11 @@ export default function RootLayout({
                     src="/ui/next-button-on.png"
                     className={"hidden group-hover:block"}
                   />
-                </button>
+                </Button>
               </div>
             ) : (
               <Link href={getNextPage(pathname) ?? ""}>
-                <button
+                <Button
                   className="group"
                   onClick={() => setNavigationDirection("next")}
                 >
@@ -193,7 +194,7 @@ export default function RootLayout({
                     src="/ui/next-button-on.png"
                     className={"hidden group-hover:block"}
                   />
-                </button>
+                </Button>
               </Link>
             )}
           </div>

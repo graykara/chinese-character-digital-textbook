@@ -1,4 +1,5 @@
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "./button";
 
 export const SmartButton = ({
   link,
@@ -8,7 +9,7 @@ export const SmartButton = ({
   className?: string;
 }) => {
   return (
-    <button
+    <Button
       onClick={() => {
         clickSound.play();
         window.open(link);
@@ -16,6 +17,6 @@ export const SmartButton = ({
       className={className}
     >
       <img src="/ui/smart-button.png" className="flex-none w-fit h-fit" />
-    </button>
+    </Button>
   );
 };

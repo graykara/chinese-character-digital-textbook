@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Modal } from "../modal";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "../buttons/button";
 
 type Data = {
   className?: string;
@@ -25,14 +26,14 @@ export const MainContentModalButton = ({
   return (
     <>
       <div className="relative mr-4 z-10">
-        <button
+        <Button
           onClick={() => {
             clickSound.play();
             setShowModal(true);
           }}
         >
           <img src={image} />
-        </button>
+        </Button>
       </div>
 
       <Modal open={showModal} onClose={() => setShowModal(false)} hideCloseButtom>
@@ -44,7 +45,7 @@ export const MainContentModalButton = ({
               backgroundColor: bgColor,
             }}
           >
-            <button
+            <Button
               className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
               onClick={() => {
                 clickSound.play();
@@ -52,7 +53,7 @@ export const MainContentModalButton = ({
               }}
             >
               <img src="/ui/close-icon-white.png" />
-            </button>
+            </Button>
             <div className="flex items-center gap-4 ml-2 mt-4 mb-2 text-white text-[45px]">
               {meaningsTitle}
             </div>

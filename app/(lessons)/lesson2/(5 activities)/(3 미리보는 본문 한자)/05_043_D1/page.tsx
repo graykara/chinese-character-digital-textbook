@@ -9,6 +9,7 @@ import IMAGE from "./image.png";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘4.png";
 import DotConnectionQuiz from "@/app/(lessons)/lesson5/(13 activities)/(3 미리보는 본문 한자)/13_109_D1/dot-connection-quiz";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -95,26 +96,26 @@ export default function Page() {
           <p><span className="text-red-600">안</span> 편안하다</p>
         </div>
 
-        <button
+        <Button
           className="absolute top-[30px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[0]).play()}
-        ></button>
-        <button
+        ></Button>
+        <Button
           className="absolute top-[160px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[1]).play()}
-        ></button>
-        <button
+        ></Button>
+        <Button
           className="absolute top-[295px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[2]).play()}
-        ></button>
-        <button
+        ></Button>
+        <Button
           className="absolute top-[430px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[3]).play()}
-        ></button>
-        <button
+        ></Button>
+        <Button
           className="absolute top-[565px] left-[160px] w-[220px] h-[70px] z-10"
           onClick={() => SOUND(sounds[4]).play()}
-        ></button>
+        ></Button>
 
         <div className="absolute left-[540px] top-[30px] w-[400px] h-[600px]">
           <DotConnectionQuiz

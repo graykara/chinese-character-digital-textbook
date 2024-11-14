@@ -10,6 +10,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘13.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { SOUND } from "@/app/utils/sound-player";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   return (
@@ -40,7 +41,7 @@ const Step1 = () => {
 
           <div className="absolute w-[1070px] top-[125px] left-[120px] grid grid-cols-3 gap-[250px] z-10">
             {sounds.map((sound) => (
-              <button
+              <Button
                 key={sound}
                 className="h-20"
                 onClick={() => SOUND(sound).play()}

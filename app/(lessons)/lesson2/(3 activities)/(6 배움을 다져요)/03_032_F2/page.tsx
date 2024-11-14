@@ -68,6 +68,7 @@ export default function Page() {
                 key={index}
                 className="flex justify-center"
                 onClick={() => {
+                  Howler.stop();
                   new Howl({
                     src: hanjaSounds[index],
                   }).play();

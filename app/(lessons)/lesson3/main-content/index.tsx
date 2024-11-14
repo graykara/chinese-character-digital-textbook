@@ -5,6 +5,7 @@ import { PillButton } from "@/app/components/buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "@/app/components/buttons/button";
 
 type Data = {
   chinese: {
@@ -128,7 +129,7 @@ export const MainContent = ({
                     <div className="relative">
                       {additional &&
                         (index === firstAdditonalIndex ? (
-                          <button
+                          <Button
                             onClick={() => {
                               clickSound.play();
                               setSelectedAdditional(additional);
@@ -137,9 +138,9 @@ export const MainContent = ({
                             className="w-[128px] absolute -top-[110px] left-1/2 -translate-x-1/2 flex justify-center"
                           >
                             <img src="/ui/additional-bubble-button.png" />
-                          </button>
+                          </Button>
                         ) : (
-                          <button
+                          <Button
                             onClick={() => {
                               clickSound.play();
                               setSelectedAdditional(additional);
@@ -148,7 +149,7 @@ export const MainContent = ({
                             className="w-[128px] absolute -top-[40px] left-1/2 -translate-x-1/2 flex justify-center"
                           >
                             <img src="/ui/additional-button.png" />
-                          </button>
+                          </Button>
                         ))}
                       <span
                         className={`${isKor ? "text-[50px]" : "font-haeseo text-[180px]"} mx-2 ${className || ""}`}
@@ -281,7 +282,7 @@ export const MainContent_SM = ({
                     <div className="relative">
                       {additional &&
                         (index === firstAdditonalIndex ? (
-                          <button
+                          <Button
                             onClick={() => {
                               clickSound.play();
                               setSelectedAdditional(additional);
@@ -290,9 +291,9 @@ export const MainContent_SM = ({
                             className="w-[128px] absolute -top-[100px] left-1/2 -translate-x-1/2 flex justify-center"
                           >
                             <img src="/ui/additional-bubble-button.png" />
-                          </button>
+                          </Button>
                         ) : (
-                          <button
+                          <Button
                             onClick={() => {
                               clickSound.play();
                               setSelectedAdditional(additional);
@@ -301,7 +302,7 @@ export const MainContent_SM = ({
                             className="w-[128px] absolute -top-[30px] left-1/2 -translate-x-1/2 flex justify-center"
                           >
                             <img src="/ui/additional-button.png" />
-                          </button>
+                          </Button>
                         ))}
                       <span
                         className={`${isKor ? "text-[50px]" : "font-haeseo text-[130px]"} ${className || ""}`}

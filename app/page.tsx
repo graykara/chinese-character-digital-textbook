@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "./components/buttons/button";
 
 type Menu = {
   mark: string;
@@ -48,13 +49,13 @@ export default function Home() {
     >
       <div className="absolute left-[610px] top-[174px] flex flex-col">
         {menu.map((item, index) => (
-          <button
+          <Button
             className="flex items-center gap-4 my-[-1px]"
             onClick={() => setSelectedMenu(item)}
           >
             <img src={item.mark} alt="mark" />
             <img src={item.text} alt="text" />
-          </button>
+          </Button>
         ))}
       </div>
 

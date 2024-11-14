@@ -13,6 +13,7 @@ import BACKGROUND2 from "@/app/bgpng_temp/16/중등한문_제주 거상 김만�
 import { StepContainer } from "@/app/components/step-container";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -44,12 +45,12 @@ export default function Page() {
           <div className="w-full flex mt-[130px] -ml-3">
             <img src={IMAGE1.src} />
             <div className="absolute left-[50px] top-[165px] grid grid-cols-5 gap-[60px] w-[1400px] h-[90px]">
-              <button onClick={() => SOUND("/sound/5/p124_word004.mp3").play()}>
-              </button>
-              <button onClick={() => SOUND("/sound/5/p124_word005.mp3").play()}></button>
-              <button onClick={() => SOUND("/sound/5/p124_word006.mp3").play()}></button>
-              <button onClick={() => SOUND("/sound/5/p124_word007.mp3").play()}></button>
-              <button onClick={() => SOUND("/sound/5/p124_word008.mp3").play()}></button>
+              <Button onClick={() => SOUND("/sound/5/p124_word004.mp3").play()}>
+              </Button>
+              <Button onClick={() => SOUND("/sound/5/p124_word005.mp3").play()}></Button>
+              <Button onClick={() => SOUND("/sound/5/p124_word006.mp3").play()}></Button>
+              <Button onClick={() => SOUND("/sound/5/p124_word007.mp3").play()}></Button>
+              <Button onClick={() => SOUND("/sound/5/p124_word008.mp3").play()}></Button>
             </div>
           </div>
         )}

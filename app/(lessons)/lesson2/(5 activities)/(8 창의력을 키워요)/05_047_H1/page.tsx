@@ -12,6 +12,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/5/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/5/중등한문_한자를 알면 틀리지 않는 일상 어휘17.png";
 import { clickSound } from "@/app/utils/click-sound";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -138,25 +139,25 @@ const Step2 = () => {
       <div className="relaitve h-full flex justify-end items-end pr-3">
         <img src={IMAGE2.src} />
 
-        {!showAnswer && <button
+        {!showAnswer && <Button
           className={`absolute top-[280px] left-[80px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet1 === 1 ? "border-8 rounded-[50%] border-answer" : ""}`}
           onClick={() => handleSet1ButtonClick(1)}
-        ></button>}
+        ></Button>}
 
-        {!showAnswer && <button
+        {!showAnswer && <Button
           className={`absolute top-[280px] left-[225px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet1 === 2 ? "border-8 rounded-[50%] border-answer" : ""}`}
           onClick={() => handleSet1ButtonClick(2)}
-        ></button>}
+        ></Button>}
 
-        {!showAnswer && <button
+        {!showAnswer && <Button
           className={`absolute top-[360px] left-[455px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet2 === 1 ? "border-8 rounded-[50%] border-answer" : ""}`}
           onClick={() => handleSet2ButtonClick(1)}
-        ></button>}
+        ></Button>}
 
-        {!showAnswer && <button
+        {!showAnswer && <Button
           className={`absolute top-[360px] left-[600px] w-[100px] h-[100px] bg-transparent z-10 ${selectedSet2 === 2 ? "border-8 rounded-[50%] border-answer" : ""}`}
           onClick={() => handleSet2ButtonClick(2)}
-        ></button>}
+        ></Button>}
 
 
         {showAnswer && (

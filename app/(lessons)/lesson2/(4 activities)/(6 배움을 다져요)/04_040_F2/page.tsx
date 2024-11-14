@@ -13,6 +13,7 @@ import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자21.png";
 import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자22.png";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -57,7 +58,7 @@ const Step1 = () => {
 
           <div className="absolute w-[800px] left-[350px] top-[220px] grid grid-cols-6 gap-[55px]">
             {sounds.map((sound) => (
-              <button
+              <Button
                 key={sound}
                 className="w-20 h-20"
                 onClick={() => SOUND(sound).play()}
@@ -169,7 +170,7 @@ const Step2 = () => {
 
           <div className="absolute left-[50px] top-[0px] grid grid-cols-6 gap-[500px]">
             {sounds.map((sound) => (
-              <button
+              <Button
                 key={sound}
                 className="w-[400px] h-[150px]"
                 onClick={() => SOUND(sound).play()}

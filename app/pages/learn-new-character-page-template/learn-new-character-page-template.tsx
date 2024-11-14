@@ -9,6 +9,7 @@ import { Howl } from "howler";
 import { PageInfoContext } from "@/app/utils/page-info";
 import { StepContainerArrow } from "@/app/components/step-container-arrow/step-container-arrow";
 import { clickSound } from "@/app/utils/click-sound";
+import { Button } from "@/app/components/buttons/button";
 
 type Props = {
   characters: {
@@ -65,7 +66,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         background: `url('${BACKGROUND.src}') no-repeat center center`,
       }}
     >
-      <button
+      <Button
         className="absolute right-[110px] top-[60px] animate__animated animate__slideInRight"
         onClick={() => {
           clickSound.play();
@@ -73,7 +74,7 @@ export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
         }}
       >
         <img src={showKorean ? ACTIVE_BUTTON.src : BUTTON.src} alt="button" />
-      </button>
+      </Button>
       <div className="w-[1540px] absolute left-1/2 -translate-x-1/2 top-[160px] grid grid-cols-4 gap-x-[20px] gap-y-[12px]">
         {characters
           .filter((_, i) => (step - 1) * 8 <= i && i < step * 8)

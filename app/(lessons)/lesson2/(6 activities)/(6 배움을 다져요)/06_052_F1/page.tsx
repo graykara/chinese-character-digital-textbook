@@ -8,6 +8,7 @@ import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button"
 import { SOUND } from "@/app/utils/sound-player";
 import BACKGROUND1 from "@/app/bgpng_temp/6/중등한문_한자를 알면 쉬운 교과서 속 어휘17.png";
 import { InputWithPen } from "@/app/components/input-with-pen";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -120,12 +121,12 @@ export default function Page() {
                           key={chinese}
                           className="w-[200px] border-b-4 border-x-4 border-[#d2c5ac]"
                         >
-                          <button
+                          <Button
                             onClick={() => SOUND(sound).play()}
                             className="w-full flex items-center justify-center font-haeseo text-[80px] border-b-4 border-[#d2c5ac]"
                           >
                             {chinese}
-                          </button>
+                          </Button>
                           <div className="text-center text-[35px] py-1">
                             <InputWithPen
                               answer={meaning}

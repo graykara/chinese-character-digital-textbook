@@ -14,6 +14,7 @@ import BACKGROUND2 from "@/app/bgpng_temp/10/중등한무�
 import { StepContainer } from "@/app/components/step-container";
 import { InputWithPen } from "@/app/components/input-with-pen";
 import { PageInfoContext } from "@/app/utils/page-info";
+import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
@@ -41,30 +42,30 @@ export default function Page() {
       <ContentContainer className="!justify-start mt-10 pl-1">
         <img src={EXAMPLE.src} className="mb-10" />
         <div className="absolute left-[50px] top-[50px] grid grid-cols-8 gap-[30px] w-full h-[90px] bg-transparent pr-[50px]">
-          <button
+          <Button
             onClick={() => SOUND("/sound/3/p079_word000.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word001.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word002.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word003.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word004.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word005.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word006.mp3").play()}
-          ></button>
-          <button
+          ></Button>
+          <Button
             onClick={() => SOUND("/sound/3/p079_word007.mp3").play()}
-          ></button>
+          ></Button>
         </div>
         <div className="flex items-center gap-10">
           <div className="flex justify-center items-center">

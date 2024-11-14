@@ -3,6 +3,7 @@
 import { PageInfoContext } from "@/app/utils/page-info";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect } from "react";
+import { Button } from "../buttons/button";
 
 export const StepContainer = ({
   maxStep,
@@ -16,14 +17,14 @@ export const StepContainer = ({
   return (
     <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-7 flex justify-center gap-[40px]">
       {Array.from({ length: maxStep }).map((_, index) => (
-        <button
+        <Button
           key={index}
           onClick={() => setCurrentStep(index + 1)}
           className={`w-[44px] h-[44px] rounded-full border-[6px] ${currentStep === index + 1
             ? "bg-[#a26032] border-[#d7ac8c]"
             : "bg-[#717271] border-[#b8b9b9]"
             }`}
-        ></button>
+        ></Button>
       ))}
     </nav>
   );

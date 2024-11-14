@@ -10,6 +10,7 @@ import { Ellipsis, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useMemo, useState } from "react";
+import { Button } from "../buttons/button";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -82,13 +83,13 @@ export const Navbar = () => {
     <>
       <nav className="w-full h-[90px] flex items-center">
         <div className="pl-[80px] bg-[#85bc74] h-full flex items-center w-[600px] flex-none">
-          <button className="px-5" onClick={() => setShowMenu(!showMenu)}>
+          <Button className="px-5" onClick={() => setShowMenu(!showMenu)}>
             {!showMenu ? (
               <Menu size={50} color="white" />
             ) : (
               <X size={50} color="white" />
             )}
-          </button>
+          </Button>
           <p className="text-white text-[35px] tracking-normal">{title}</p>
         </div>
         <div className="pl-[40px] bg-[#a4d896] h-full flex items-center flex-1">
@@ -97,9 +98,9 @@ export const Navbar = () => {
 
         <div className="absolute right-[130px] flex items-center gap-[50px]">
           <p className="text-white text-[20px]">교과서 P.{pageNumber}</p>
-          <button className="">
+          <Button className="">
             <Ellipsis color="white" size={48} />
-          </button>
+          </Button>
         </div>
       </nav>
 
