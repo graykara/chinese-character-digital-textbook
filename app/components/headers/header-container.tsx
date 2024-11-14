@@ -1,5 +1,6 @@
+import { PageInfoContext } from "@/app/utils/page-info";
 import { SOUND } from "@/app/utils/sound-player";
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren, useContext, useEffect } from "react";
 
 interface Props extends PropsWithChildren {
   className?: string;
@@ -8,16 +9,13 @@ interface Props extends PropsWithChildren {
 
 export const HeaderContainer = ({ className, sound, children }: Props) => {
 
-  // before
-  // useEffect(() => {
-  //   sound && SOUND(sound).play();
-  // }, []);
+  const { isPageReady } = useContext(PageInfoContext)
 
-  // after
   useEffect(() => {
     if (sound) {
       setTimeout(() => {
-        SOUND(sound).play();
+        if (isPageReady)
+          SOUND(sound).play();
       }, 100)
     }
   }, [sound]);

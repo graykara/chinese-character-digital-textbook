@@ -14,15 +14,14 @@ export const CreativityTitleHeader = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  // before
-  // useEffect(() => {
-  //   sound && SOUND(sound).play();
-  // }, []);
-
-  // after
   useEffect(() => {
+    let soundInstance: Howl | null = null;
     if (sound) {
-      setTimeout(() => SOUND(sound).play(), 100);
+      soundInstance = new Howl({ src: sound });
+      setTimeout(() => soundInstance.play(), 100);
+    }
+    return () => {
+      soundInstance?.unload();
     }
   }, [sound]);
 

@@ -282,9 +282,18 @@ export default function Page() {
       ),
       content: (
         <>
-          <div className="flex items-center">
-            <p className="text-[50px] tracking-tight break-keep text-wrap"> 중국 진(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">晉</span>)나라 위과는 아버지가 세상을 떠나자, 새어머니를 순장(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">殉葬</span>)하지 않고 새로 시집보냈다. 이후 위과가 전쟁터에서 적군에게 쫓기다가 풀에 걸려 넘어진 적장을 잡아 큰 공을 세우게 되었다. 그날 밤, 꿈에 한 노인이 나타나 “나는 당신이 살려 준 여인의 죽은 아비요. 당신이 내 딸을 살려 주었기에 내가 오늘 풀을 묶어 그 은혜를 갚은 것이라오.”라고 말한 것에서 유래함.</p>
-            <img src={MODAL_IMAGE4.src} className="pl-3 h-[100%] float-right" />
+          <div className="relative">
+            <p className="text-[45px] tracking-tight break-keep text-wrap">
+              중국 진(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">晉</span>)나라 위과는 아버지가 세상을 떠나자,<br />
+              새어머니를 순장(<span className="font-haeseo text-[55px] leading-tight tracking-[-5px]">殉葬</span>)하지 않고 새로 시집<br/>
+              보냈다. 이후 위과가 전쟁터에서 적군에게<br/>
+              쫓기다가 풀에 걸려 넘어진 적장을 잡아 큰 공을<br />
+              세우게 되었다. 그날 밤, 꿈에 한 노인이 나타나<br />
+              “나는 당신이 살려 준 여인의 죽은 아비요.
+              당신이 내 딸을 살려 주었기에 내가 오늘 풀을
+              묶어 그 은혜를 갚은 것이라오.”라고 말한 것에서 유래함.
+            </p>
+            <img src={MODAL_IMAGE4.src} className="pl-3 h-[330px] float-right absolute right-[10px] top-[10px]" />
           </div>
         </>
       ),

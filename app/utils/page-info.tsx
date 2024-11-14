@@ -24,6 +24,8 @@ export const PageInfoContext = createContext<{
 
   isPageReady: boolean;
   setIsPageReady: Dispatch<SetStateAction<boolean>>;
+  ignoreRightStep: boolean;
+  setIgnoreRightStep: Dispatch<SetStateAction<boolean>>;
 }>({
   title: "",
   subtitle: "",
@@ -47,4 +49,6 @@ export const PageInfoContext = createContext<{
 
   isPageReady: false,
   setIsPageReady: () => { },
+  ignoreRightStep: false,
+  setIgnoreRightStep: () => { },
 });

@@ -1,7 +1,8 @@
 "use client";
 
+import { PageInfoContext } from "@/app/utils/page-info";
 import { SOUND } from "@/app/utils/sound-player";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useContext, useEffect } from "react";
 
 interface Props {
   title: string | ReactNode;
@@ -16,9 +17,18 @@ export const StrengthenLearningMainContentHeader = ({
   className,
   titleClassName,
 }: Props) => {
+  const { currentStep, isPageReady } = useContext(PageInfoContext)
+
+  console.log(currentStep, isPageReady)
+
   useEffect(() => {
+    let soundInstance: Howl | null = null;
     if (sound) {
-      setTimeout(() => SOUND(sound).play(), 100);
+      soundInstance = new Howl({ src: sound });
+      setTimeout(() => soundInstance.play(), 100);
+    }
+    return () => {
+      soundInstance?.unload();
     }
   }, [sound]);
 

@@ -45,9 +45,12 @@ export default function RootLayout({
 
   const [isPageReady, setIsPageReady] = useState(false);
 
+  const [ignoreRightStep, setIgnoreRightStep] = useState(false);
+
   useEffect(() => {
     // Howler.stop();
     setIsPageReady(false);
+    setIgnoreRightStep(false);
     setMaxStep(1);
     setCurrentStep(1);
     setCurrentLesson(getLessonNumberOfPath(pathname) || 1);
@@ -58,17 +61,23 @@ export default function RootLayout({
 
   useEffect(() => {
     const initializePage = () => {
-      if (navigationDirection === "prev") {
-        setCurrentStep(maxStep);
-      } else {
-        setCurrentStep(1);
+      if (ignoreRightStep) { setCurrentChapter(1) }
+      else {
+        if (navigationDirection === "prev") {
+          setCurrentStep(maxStep);
+        } else {
+          setCurrentStep(1);
+        }
       }
-      setTimeout(() => {
-        setIsPageReady(true);
-      }, 50);
     };
 
     initializePage();
+
+    const timeout = setTimeout(() => {
+      setIsPageReady(true);
+    }, 150);
+
+    return () => clearTimeout(timeout);
   }, [pathname, navigationDirection, maxStep]);
 
   const [scale, setScale] = useState(1);
@@ -90,43 +99,44 @@ export default function RootLayout({
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
-  if (!isPageReady) return <>
-    <Navbar />
+  if (!isPageReady) return null;
+  // <>
+  //   <Navbar />
 
-    <div className="grid grid-cols-[40px__1760px__1fr]">
-      <div className="flex justify-end items-center">
-        <div className="mt-0">
-          <Button className="group">
-            <img
-              src="/ui/prev-button-off.png"
-              className={"block group-hover:hidden"}
-            />
-            <img
-              src="/ui/prev-button-on.png"
-              className={"hidden group-hover:block"}
-            />
-          </Button>
-        </div>
-      </div>
-      <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden" />
-      <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
-        <div className="mt-0">
-          <Button className="group">
-            <img
-              src="/ui/next-button-off.png"
-              className={"block group-hover:hidden"}
-            />
-            <img
-              src="/ui/next-button-on.png"
-              className={"hidden group-hover:block"}
-            />
-          </Button>
-        </div>
-      </div>
-    </div>
+  //   <div className="grid grid-cols-[40px__1760px__1fr]">
+  //     <div className="flex justify-end items-center">
+  //       <div className="mt-0">
+  //         <Button className="group">
+  //           <img
+  //             src="/ui/prev-button-off.png"
+  //             className={"block group-hover:hidden"}
+  //           />
+  //           <img
+  //             src="/ui/prev-button-on.png"
+  //             className={"hidden group-hover:block"}
+  //           />
+  //         </Button>
+  //       </div>
+  //     </div>
+  //     <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden" />
+  //     <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
+  //       <div className="mt-0">
+  //         <Button className="group">
+  //           <img
+  //             src="/ui/next-button-off.png"
+  //             className={"block group-hover:hidden"}
+  //           />
+  //           <img
+  //             src="/ui/next-button-on.png"
+  //             className={"hidden group-hover:block"}
+  //           />
+  //         </Button>
+  //       </div>
+  //     </div>
+  //   </div>
 
-    <FloatingButtonContainer />
-  </>
+  //   <FloatingButtonContainer />
+  // </>
 
   return (
     <PageInfoContext.Provider
@@ -151,6 +161,8 @@ export default function RootLayout({
         scale,
         isPageReady,
         setIsPageReady,
+        ignoreRightStep,
+        setIgnoreRightStep,
       }}
     >
       <SoundStopper />
@@ -203,7 +215,7 @@ export default function RootLayout({
             {children}
           </div>
           <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
-            {currentStep < maxStep ? (
+            {currentStep < maxStep && !ignoreRightStep ? (
               <div className="mt-0">
                 <Button
                   className="group"

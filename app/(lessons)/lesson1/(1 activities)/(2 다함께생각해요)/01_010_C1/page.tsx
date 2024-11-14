@@ -38,14 +38,14 @@ export default function Page() {
 
 const Step1 = () => {
   return (
-  <div className="h-full flex justify-center items-center -mt-10">
-    <VideoThumbnail_big
-      thumbnail={VIDEO_THUMBNAIL.src}
-      video="/video/animation/1-1_10.mp4"
-      width={972}
-      height={526}
-    />
-  </div>
+    <div className="h-full flex justify-center items-center -mt-10">
+      <VideoThumbnail_big
+        thumbnail={VIDEO_THUMBNAIL.src}
+        video="/video/animation/1-1_10.mp4"
+        width={972}
+        height={526}
+      />
+    </div>
   )
 };
 
@@ -53,46 +53,52 @@ const Step2 = () => {
   const answer = "도로와 유적 표지판에서 한자 표기를 보았다.";
   const [showAnswer, setShowAnswer] = useState(false);
   const sound = "/sound/1/10-i2.mp3";
+
   useEffect(() => {
+    let soundInstance: Howl | null = null;
     if (sound) {
-      setTimeout(() => SOUND(sound).play(), 100);
+      soundInstance = new Howl({ src: sound });
+      setTimeout(() => soundInstance.play(), 100);
+    }
+    return () => {
+      soundInstance?.unload();
     }
   }, [sound]);
 
   return (
-  <>
-    <div className="h-full flex justify-center items-center -mt-[130px]">
-      <div>
-        <div className="animate__animated animate__flipInX flex items-center gap-4">
-          <img src={SYMBOL.src} className="mb-3" />
-          <p className="text-[55px]">
-            한자를 어디에서 보았는지 자기 경험을 써 보자.
-            {/* sound="/sound/1/10-i2.mp3" */}
-          </p>
-        </div>
+    <>
+      <div className="h-full flex justify-center items-center -mt-[130px]">
+        <div>
+          <div className="animate__animated animate__flipInX flex items-center gap-4">
+            <img src={SYMBOL.src} className="mb-3" />
+            <p className="text-[55px]">
+              한자를 어디에서 보았는지 자기 경험을 써 보자.
+              {/* sound="/sound/1/10-i2.mp3" */}
+            </p>
+          </div>
 
-        <div className="relative top-3">
-          <TextareaWithPen
-            answer={answer}
-            showAnswer={showAnswer}
-            containerClassName={`absolute resize-none left-0 top-11 text-[55px] bg-transparent w-full ml-3 px-16 leading-[76px] ${showAnswer ? "text-example ml-3" : ""}`}
-            penClassName="h-[62px] top-[48px] left-[70px]"
-            rows={3}
-          />
-          <img src={TEXTAREA.src} className="" />
+          <div className="relative top-3">
+            <TextareaWithPen
+              answer={answer}
+              showAnswer={showAnswer}
+              containerClassName={`absolute resize-none left-0 top-11 text-[55px] bg-transparent w-full ml-3 px-16 leading-[76px] ${showAnswer ? "text-example ml-3" : ""}`}
+              penClassName="h-[62px] top-[48px] left-[70px]"
+              rows={3}
+            />
+            <img src={TEXTAREA.src} className="" />
+          </div>
         </div>
       </div>
-    </div>
-    {/* <Button
+      {/* <Button
       className="absolute bottom-0 right-32"
       onClick={() => setShowAnswer(!showAnswer)}
     >
       <img src={EXAMPLE_ANSWER.src} />
     </Button> */}
-          <ExampleAnswerButton
+      <ExampleAnswerButton
         active={showAnswer}
         onClick={() => setShowAnswer(!showAnswer)}
       />
-  </>
+    </>
   )
 };
