@@ -23,6 +23,7 @@ export default function Page() {
   return (
     <>
       <ThinkTogetherHeader
+        key={step}
         title={
           <p className="-ml-2 text-[55px] leading-[66px] tracking-[-3px]">아래 성어의 의미를 디지털 도구 등을 활용하여 찾고, 성어를 사용하면 어떤 효과가 있을지 써 보자.</p>
         }

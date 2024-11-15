@@ -23,9 +23,6 @@ type Props = {
 };
 
 export const LearnNewCharacterPageTemplate = ({ characters }: Props) => {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("새로 익힐 한자");
-
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const pages = useMemo(() => Math.ceil(characters.length / 8), [characters]);
 
