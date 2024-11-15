@@ -13,7 +13,7 @@ import QR from "./qr.png";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("모르는 한자는 어떻게 찾을까?");
+  
 
   return (
     <>

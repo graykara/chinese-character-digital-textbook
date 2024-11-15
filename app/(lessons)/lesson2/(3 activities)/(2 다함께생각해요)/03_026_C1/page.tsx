@@ -16,7 +16,7 @@ import { InputWithPen } from "@/app/components/input-with-pen";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("다 함께 생각해요");
+  
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 

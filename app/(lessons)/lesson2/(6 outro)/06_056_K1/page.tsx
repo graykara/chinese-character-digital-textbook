@@ -26,7 +26,7 @@ import { ProblemNumberIcon } from "@/app/components/solve-problem/problem-number
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("문제 풀기");
+  
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);

@@ -12,7 +12,7 @@ import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아2
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("다 함께 생각해요");
+  
 
   const [showModal, setShowModal] = useState(false);
 

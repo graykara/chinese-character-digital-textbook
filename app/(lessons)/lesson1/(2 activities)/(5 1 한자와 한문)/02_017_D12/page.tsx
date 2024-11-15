@@ -19,7 +19,7 @@ const sound = new Howl({
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("한자와 한문");
+  
 
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);

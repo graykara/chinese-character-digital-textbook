@@ -18,7 +18,10 @@ export const CreativityTitleHeader = ({
     let soundInstance: Howl | null = null;
     if (sound) {
       soundInstance = new Howl({ src: sound });
-      setTimeout(() => soundInstance.play(), 100);
+      setTimeout(() => {
+        Howler.stop();
+        soundInstance.play()
+      }, 700);
     }
     return () => {
       soundInstance?.unload();

@@ -17,7 +17,7 @@ import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("다 함께 생각해요");
+  
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
@@ -58,7 +58,10 @@ const Step2 = () => {
     let soundInstance: Howl | null = null;
     if (sound) {
       soundInstance = new Howl({ src: sound });
-      setTimeout(() => soundInstance.play(), 100);
+      setTimeout(() => {
+        Howler.stop();
+        soundInstance.play()
+      }, 700);
     }
     return () => {
       soundInstance?.unload();

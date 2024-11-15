@@ -1,13 +1,8 @@
 "use client";
 
 import { LearnNewCharacterPageTemplate } from "@/app/pages/learn-new-character-page-template/learn-new-character-page-template";
-import { PageInfoContext } from "@/app/utils/page-info";
-import { useContext } from "react";
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("새로 익힐 한자");
-
   return (
     <LearnNewCharacterPageTemplate
       characters={[

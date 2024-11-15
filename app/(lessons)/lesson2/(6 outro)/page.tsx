@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("정리하기");
+  
 
   return (
     <>

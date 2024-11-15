@@ -12,7 +12,7 @@ import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아1
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("한자는 어떻게 쓸까?");
+  
 
   return (
     <>

@@ -11,7 +11,7 @@ import BACKGROUND1 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("문제 풀기");
+  
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);

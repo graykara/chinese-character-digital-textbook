@@ -9,7 +9,7 @@ import { IntroWhyHeader } from "@/app/components/intro/intro-why-header";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("단원도입");
+  setSubtitle("단원 도입");
 
   const sound = [
     {

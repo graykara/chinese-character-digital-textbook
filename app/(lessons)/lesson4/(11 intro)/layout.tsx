@@ -5,7 +5,7 @@ import { PropsWithChildren, useContext } from "react";
 
 export default function ActivityLayout({ children }: PropsWithChildren) {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("단원도입");
+  setSubtitle("단원 도입");
 
   return <>{children}</>;
 }

@@ -19,7 +19,7 @@ import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("문제 풀기");
+  
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);

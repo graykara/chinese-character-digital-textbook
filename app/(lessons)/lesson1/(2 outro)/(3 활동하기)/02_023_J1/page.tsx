@@ -16,9 +16,6 @@ import BACKGROUND2 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아
 import BACKGROUND3 from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아36.png";
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("활동하기");
-
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (

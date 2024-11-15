@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("단원도입");
+  setSubtitle("단원 도입");
 
   const [muted, setMuted] = useState(true);
 

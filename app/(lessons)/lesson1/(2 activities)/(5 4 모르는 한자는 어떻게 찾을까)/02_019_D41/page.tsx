@@ -16,7 +16,7 @@ const sound = new Howl({
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("모르는 한자는 어떻게 찾을까?");
+  
 
   const [isReading, setIsReading] = useState(false);
   const [soundId, setSoundId] = useState<number | null>(null);

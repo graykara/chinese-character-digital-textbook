@@ -7,10 +7,9 @@ import TEXT2 from "./text2.png";
 import IMAGE from "./image.png";
 import { SoundButton2 } from "@/app/components/buttons/sound-button2";
 import { ContentContainer } from "@/app/components/content-container";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import { clickSound } from "@/app/utils/click-sound";
-import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND from "@/app/bgpng_temp/2/중등한문_한자,얼마나 알아13.png";
 import { SOUND } from "@/app/utils/sound-player";
 import { Button } from "@/app/components/buttons/button";
@@ -20,8 +19,6 @@ const sound = new Howl({
 });
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("한자의 부수");
 
   const [buttonActive, setButtonActive] = useState<number[]>([]);
 
@@ -52,7 +49,7 @@ export default function Page() {
         className="absolute top-[60px] left-[470px]"
         active={isReading}
         onClick={() => {
-          if(isReading) sound.stop();
+          if (isReading) sound.stop();
           else setSoundId(sound.play());
         }}
       />

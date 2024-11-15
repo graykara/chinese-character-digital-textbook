@@ -7,9 +7,6 @@ import { useContext } from "react";
 import BACKGROUND from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어1.png"
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("학습목표");
-
   return (
     <>
       <GoalPageTemplate

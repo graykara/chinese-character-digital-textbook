@@ -14,9 +14,6 @@ import BACKGROUND1 from "@/app/bgpng_temp/4/중등한문
 import BACKGROUND2 from "@/app/bgpng_temp/4/중등한문_합쳐서 만든 한자3.png";
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("다 함께 생각해");
-
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (

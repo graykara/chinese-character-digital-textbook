@@ -8,7 +8,7 @@ import BACKGROUND from "@/app/bgpng_temp/3/중등한문_그려서 만든 한자1
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  setSubtitle("학습목표");
+  ;
 
   return (
     <>
