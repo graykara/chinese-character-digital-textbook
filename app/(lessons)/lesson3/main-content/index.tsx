@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useEffect, useRef } from "react";
+import { ReactNode, useState, useEffect, useRef, memo, useMemo } from "react";
 import { PillButton } from "@/app/components/buttons/pill-button";
 import { SOUND } from "@/app/utils/sound-player";
 import { AdditionalModal } from "./additional-modal";
@@ -22,15 +22,11 @@ type Data = {
 
 interface Props {
   data: Data;
-  showReading: boolean | null;
-  showMeaning2: boolean | null;
-  setShowReading: (value: boolean) => void;
-  setShowMeaning2: (value: boolean) => void;
 }
 
 const checkAllFlippableCardsActive = async (
   ref: React.RefObject<HTMLDivElement>,
-  setShow: (value: boolean) => void
+  setShow: (value: boolean | null) => void
 ): Promise<boolean> => {
   try {
     if (!ref.current) {
@@ -71,13 +67,12 @@ const checkAllFlippableCardsActive = async (
   }
 };
 
-export const MainContent = ({
-  data,
-  showReading,
-  showMeaning2,
-  setShowReading,
-  setShowMeaning2,
+export const MainContent = memo(({
+  data: _data,
 }: Props) => {
+  const data = useMemo(() => {
+    return _data;
+  }, [_data]);
   const { chinese, content1, content2, sound } = data;
 
   const [showAdditionalModal, setShowAdditionalModal] = useState(false);
@@ -90,10 +85,14 @@ export const MainContent = ({
   const meaning1Ref = useRef<HTMLDivElement>(null);
   const meaning2Ref = useRef<HTMLDivElement>(null);
 
+  const [showReading, setShowReading] = useState<boolean | null>(null);
   const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
+  const [showMeaning2, setShowMeaning2] = useState<boolean | null>(null);
 
   useEffect(() => {
+    setShowReading(null);
     setShowMeaning(null);
+    setShowMeaning2(null);
   }, [data])
 
   useEffect(() => {
@@ -226,24 +225,26 @@ export const MainContent = ({
       />
     </>
   );
-};
+}, (prev, next) => {
+  return prev.data === next.data;
+});
 
 export const MainContent_SM = ({
   data,
-  showReading,
-  showMeaning2,
-  setShowReading,
-  setShowMeaning2,
 }: Props) => {
   const { chinese, content1, content2, sound } = data;
 
   const meaning1Ref = useRef<HTMLDivElement>(null);
   const meaning2Ref = useRef<HTMLDivElement>(null);
 
+  const [showReading, setShowReading] = useState<boolean | null>(null);
   const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
+  const [showMeaning2, setShowMeaning2] = useState<boolean | null>(null);
 
   useEffect(() => {
+    setShowReading(null);
     setShowMeaning(null);
+    setShowMeaning2(null);
   }, [data])
 
   const [showAdditionalModal, setShowAdditionalModal] = useState(false);

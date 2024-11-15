@@ -15,7 +15,6 @@ import BACKGROUND2 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성
 import BACKGROUND3 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어114.png"; //114-115
 import BACKGROUND4 from "@/app/bgpng_temp/7/중등한문_언어생활 속의 성어116.png"; //116-117
 import { MainContent } from "../../../main-content";
-import { MainContentVideoButton } from "@/app/components/main-content/video-button";
 import { MainContentModalButton } from "@/app/components/main-content/modal-button";
 import { PageInfoContext } from "@/app/utils/page-info";
 
@@ -373,7 +372,9 @@ export default function Page() {
             showReading={showReading}
             setShowReading={setShowReading}
             showMeaning={showMeaning}
-            setShowMeaning={setShowMeaning}
+            setShowMeaning={(value) => {
+              alert(value); setShowMeaning(value);
+            }}
             showMeaning2={showMeaning2}
             setShowMeaning2={setShowMeaning2}
           />

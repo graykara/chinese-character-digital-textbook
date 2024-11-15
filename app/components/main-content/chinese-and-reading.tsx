@@ -23,18 +23,10 @@ type Data = {
 
 interface Props {
   data: Data;
-  showReading: boolean;
-  setShowReading: (value: boolean) => void;
-  // showMeaning: boolean | null;
-  // setShowMeaning: (value: boolean | null) => void;
 }
 
 export const MainContentChineseAndReading = ({
   data,
-  showReading,
-  setShowReading,
-  // showMeaning,
-  // setShowMeaning,
 }: Props) => {
   const meaningRef = useRef<HTMLDivElement>(null);
 
@@ -48,9 +40,11 @@ export const MainContentChineseAndReading = ({
     string | ReactNode | null
   >("보충");
 
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [showReading, setShowReading] = useState<boolean | null>(null);
+  const [showMeaning, setShowMeaning] = useState<boolean | null>(null);
   useEffect(() => {
-    setShowMeaning(false);
+    setShowReading(null);
+    setShowMeaning(null);
   }, [data]);
 
   const firstAdditonalIndex = chinese.findIndex((c) => c.additional);
