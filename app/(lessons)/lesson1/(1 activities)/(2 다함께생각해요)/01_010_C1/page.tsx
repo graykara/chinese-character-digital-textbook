@@ -9,21 +9,18 @@ import { ExampleAnswerButton } from "@/app/components/buttons/example-answer-but
 import VIDEO_THUMBNAIL from "./video-thumbnail.png";
 import SYMBOL from "./symbol.png";
 import TEXTAREA from "./textarea.png";
-import EXAMPLE_ANSWER from "./example-answer.png";
 import { PageInfoContext } from "@/app/utils/page-info";
 import BACKGROUND1 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어2.png"
 import BACKGROUND2 from "@/app/bgpng_temp/1/중등한문_한자,어디서봤어3.png"
 import { SOUND } from "@/app/utils/sound-player";
 
 export default function Page() {
-  const { setSubtitle } = useContext(PageInfoContext);
-  
-
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
 
   return (
     <>
       <ThinkTogetherHeader
+        key={step}
         title={<p className="-ml-2">한자를 만난 경험을 떠올려 보자.</p>}
         sound="/sound/1/10-i.mp3"
       />
