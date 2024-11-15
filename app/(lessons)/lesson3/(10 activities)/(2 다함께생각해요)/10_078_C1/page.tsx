@@ -26,7 +26,7 @@ import { Button } from "@/app/components/buttons/button";
 
 export default function Page() {
   const { currentStep: step, setCurrentStep: setStep, setMaxStep, setIgnoreRightStep, setSoundOnStep } = useContext(PageInfoContext);
-  setSoundOnStep(clickSound);
+  setSoundOnStep(null);
   setIgnoreRightStep(true);
   setMaxStep(5);
 
@@ -352,12 +352,12 @@ const Result = ({ answer1, answer2, answer3, setShowResult, setStep }) => {
   return (
     <>
       <ResultImage />
-      <button
-        onClick={() => { setShowResult(false); setStep(1) }}
+      <Button
+        onClick={() => { clickSound.play(); setShowResult(false); setStep(1) }}
         className="absolute bottom-0 right-28"
       >
         <img src="/ui/start-again-button.png" />
-      </button>
+      </Button>
     </>
   )
 }

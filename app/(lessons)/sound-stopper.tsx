@@ -8,10 +8,13 @@ export const SoundStopper = () => {
         useContext(PageInfoContext);
 
     useEffect(() => {
-        Howler.stop();
-        if (!soundOnStep) activityStartSound.play();
-        else if (typeof soundOnStep === "string") SOUND(soundOnStep).play();
-        else soundOnStep.play();
+        if (soundOnStep) {
+            Howler.stop();
+            if (typeof soundOnStep === "string") SOUND(soundOnStep).play();
+            else soundOnStep.play();
+        } else {
+            
+        }
     }, [currentStep, currentChapter, currentLesson, currentSubChapter]);
 
     return null;

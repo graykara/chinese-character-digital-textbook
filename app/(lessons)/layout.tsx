@@ -21,6 +21,7 @@ import { PageInfoContext } from "../utils/page-info";
 import { SoundStopper } from "./sound-stopper";
 import Link from "next/link";
 import { Button } from "../components/buttons/button";
+import { activityStartSound } from "../utils/activity-start-sound";
 
 export default function RootLayout({
   children,
@@ -59,7 +60,7 @@ export default function RootLayout({
     }
 
     // Howler.stop();
-    setSoundOnStep(null);
+    setSoundOnStep(activityStartSound);
     setIsPageReady(false);
     setIgnoreRightStep(false);
     setMaxStep(1);
