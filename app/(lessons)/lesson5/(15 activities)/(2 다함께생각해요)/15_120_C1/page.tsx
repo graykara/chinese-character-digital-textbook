@@ -39,7 +39,7 @@ export default function Page() {
 const Step1 = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const answer = [
-    "정", "신", "정", "신"
+    "정", "신", "집", "중"
   ];
   return (
     <>

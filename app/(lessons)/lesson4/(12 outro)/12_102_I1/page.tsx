@@ -58,7 +58,7 @@ const Step2 = () => {
     <div className="relative pl-[90px]">
       <div className="flex items-center gap-5">
         <div className="animate__animated animate__flipInX absolute -left-11 -top-1 w-[60px] h-[60px]  rounded-full bg-[#e94f39] flex justify-center items-center">
-          <span className="font-cookierun text-white">11</span>
+          <span className="font-cookierun text-white">12</span>
         </div>
         <div className="relative -ml-14 -mt-2">
           <span className="font-cookierun text-[#7e1700]">나에게 힘이 되는 글</span>
