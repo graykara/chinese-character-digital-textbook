@@ -297,9 +297,9 @@ export default function Page() {
                       <div key={step}>{data[step * 2 - 2]?.content ?? null}</div>
                     </div>
                   ) : (
-                    <div className="h-[75px]">
+                    <div className="h-[150px] -mb-[75px]">
                       <div key={step}
-                        className={`mt-2 ${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
+                        className={`${showMeaning ? 'animate__animated animate__fadeIn animate__flipInX' : 'hidden'}`}
                       >
                         {data[step * 2 - 2]?.content ?? null}
                       </div>
