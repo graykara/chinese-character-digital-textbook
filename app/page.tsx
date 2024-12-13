@@ -59,8 +59,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* 219 */}
-
       {selectedMenu ? (
         <div
           className="absolute left-[828px] top-[219px] w-[610px] h-[636px] rounded-r-3xl text-white pl-[63px] pt-[37px]"

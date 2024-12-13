@@ -105,7 +105,7 @@ export default function Page() {
         </Button>
 
         {showModal ? (
-          <div className="fixed left-[80px] top-[90px] w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
+          <div className="fixed left-0 top-0 w-[1760px] h-[990px] bg-white bg-opacity-80 flex justify-center items-center">
             <div className="animate__animated animate__flipInX relative">
               <img src={MODAL.src} />
 

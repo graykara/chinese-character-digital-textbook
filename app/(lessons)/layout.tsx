@@ -93,62 +93,7 @@ export default function RootLayout({
     return () => clearTimeout(timeout);
   }, [pathname, navigationDirection, maxStep]);
 
-  const [scale, setScale] = useState(1);
-
-  const handleWindowResize = () => {
-    let ratio = 1;
-    if (window.innerWidth / window.innerHeight > 1.78) {
-      // 세로가 더 길어져서 짤릴 때
-      ratio = (window.innerHeight * 1920) / 1080 / 1920;
-    } else {
-      ratio = window.innerWidth < 1920 ? window.innerWidth / 1920 : 1;
-    }
-    setScale(ratio);
-  };
-
-  useEffect(() => {
-    handleWindowResize();
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
-
-  if (!isPageReady) return (<>
-    <Navbar />
-
-    <div className="grid grid-cols-[40px__1760px__1fr]">
-      <div className="flex justify-end items-center">
-        <div className="mt-0">
-          <Button className="group">
-            <img
-              src="/ui/prev-button-off.png"
-              className={"block group-hover:hidden"}
-            />
-            <img
-              src="/ui/prev-button-on.png"
-              className={"hidden group-hover:block"}
-            />
-          </Button>
-        </div>
-      </div>
-      <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden" />
-      <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
-        <div className="mt-0">
-          <Button className="group">
-            <img
-              src="/ui/next-button-off.png"
-              className={"block group-hover:hidden"}
-            />
-            <img
-              src="/ui/next-button-on.png"
-              className={"hidden group-hover:block"}
-            />
-          </Button>
-        </div>
-      </div>
-    </div>
-
-    <FloatingButtonContainer />
-  </>);
+  if (!isPageReady) return null;
 
   return (
     <PageInfoContext.Provider
@@ -170,7 +115,7 @@ export default function RootLayout({
         setCurrentChapter,
         currentSubChapter,
         setCurrentSubChapter,
-        scale,
+        scale: 1,
         isPageReady,
         setIsPageReady,
         ignoreRightStep,
@@ -181,97 +126,9 @@ export default function RootLayout({
     >
       <SoundStopper />
       <DndProvider backend={HTML5Backend}>
-        {/* <AudioProvider> */}
-        <Navbar />
-
-        <div className="grid grid-cols-[40px__1760px__1fr]">
-          <div className="flex justify-end items-center">
-            {1 < currentStep ? (
-              <div className="mt-0">
-                <Button
-                  onClick={() => {
-                    setCurrentStep((prev) => prev - 1);
-                  }}
-                  className="group"
-                >
-                  <img
-                    src="/ui/prev-button-off.png"
-                    className={"block group-hover:hidden"}
-                  />
-                  <img
-                    src="/ui/prev-button-on.png"
-                    className={"hidden group-hover:block"}
-                  />
-                </Button>
-              </div>
-            ) : (
-              <Link href={getPrevPage(pathname) + "?d=p" ?? ""}>
-                <Button
-                  className="group"
-                  onClick={() => {
-                    setNavigationDirection("prev")
-                    setIsPageReady(false);
-                  }}
-                >
-                  <img
-                    src="/ui/prev-button-off.png"
-                    className={"block group-hover:hidden"}
-                  />
-                  <img
-                    src="/ui/prev-button-on.png"
-                    className={"hidden group-hover:block"}
-                  />
-                </Button>
-              </Link>
-            )}
-          </div>
-          <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden">
-            {children}
-          </div>
-          <div className={`flex justify-start items-center ${isLastPage && currentStep === maxStep ? "hidden" : ""}`}>
-            {currentStep < maxStep && !ignoreRightStep ? (
-              <div className="mt-0">
-                <Button
-                  className="group"
-                  onClick={() => {
-                    setCurrentStep((prev) => prev + 1);
-                  }}
-                >
-                  <img
-                    src="/ui/next-button-off.png"
-                    className={"block group-hover:hidden"}
-                  />
-                  <img
-                    src="/ui/next-button-on.png"
-                    className={"hidden group-hover:block"}
-                  />
-                </Button>
-              </div>
-            ) : (
-              <Link href={getNextPage(pathname) + "?d=n" ?? ""}>
-                <Button
-                  className="group"
-                  onClick={() => {
-                    setNavigationDirection("next")
-                    setIsPageReady(false);
-                  }}
-                >
-                  <img
-                    src="/ui/next-button-off.png"
-                    className={"block group-hover:hidden"}
-                  />
-                  <img
-                    src="/ui/next-button-on.png"
-                    className={"hidden group-hover:block"}
-                  />
-                </Button>
-              </Link>
-            )}
-          </div>
+        <div className="relative w-[1760px] h-[990px] bg-white flex flex-col overflow-hidden">
+          {children}
         </div>
-
-        <FloatingButtonContainer />
-        {/* </AudioProvider> */}
       </DndProvider>
     </PageInfoContext.Provider>
   );
