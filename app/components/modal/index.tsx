@@ -18,7 +18,7 @@ export const Modal = ({
 }: Props) => {
   if (!open) return null;
   return (
-    <div className="z-30 fixed left-[40px] top-[90px] w-[1760px] h-[990px] overflow-hidden">
+    <div className="z-30 fixed left-0 top-0 w-[1760px] h-[990px] overflow-hidden">
       <div
         className={`w-full h-full ${showAnimation ? "animate__animated animate__flipInX" : ""}`}
       >
