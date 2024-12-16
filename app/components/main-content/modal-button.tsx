@@ -37,7 +37,7 @@ export const MainContentModalButton = ({
       </div>
 
       <Modal open={showModal} onClose={() => setShowModal(false)} hideCloseButtom>
-        {/* <div className="fixed w-[1760px] h-[990px] left-[40px] bg-white bg-opacity-50 flex justify-center items-center"> */}
+        {/* <div className="fixed w-[1760px] h-[990px] left-0 bg-white bg-opacity-50 flex justify-center items-center"> */}
         <div className="fixed w-[1760px] h-[990px] bg-white bg-opacity-50 flex justify-center items-center">
           <div
             className={`relative rounded-[24px] min-w-[400px] px-[24px] pb-[24px] ${className}`}

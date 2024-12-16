@@ -18,6 +18,11 @@
 # production
 /build
 
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-*
+
 # misc
 .DS_Store
 *.pem

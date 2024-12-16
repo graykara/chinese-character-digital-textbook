@@ -12,7 +12,7 @@ interface Props {
 export const AdditionalModal = ({ open, onClose, items }: Props) => {
   return (
     <Modal open={open} onClose={onClose} hideCloseButtom showAnimation={false}>
-      <div className="fixed w-[1760px] h-[990px] left-[40px] bg-white bg-opacity-50 flex justify-center items-center">
+      <div className="fixed w-[1760px] h-[990px] left-0 bg-white bg-opacity-50 flex justify-center items-center">
         <div className="relative bg-[#7278a6] rounded-[24px] w-[850px] px-[24px] pb-[24px] -translate-y-[10%]">
           <Button
             className="absolute top-5 right-5 animate__animated animate__delay-1s animate__rotateIn"
