@@ -82,28 +82,28 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-[90px] flex items-center">
-        <div className="pl-[80px] bg-[#85bc74] h-full flex items-center w-[600px] flex-none">
-          <Button className="px-5" onClick={() => setShowMenu(!showMenu)}>
-            {!showMenu ? (
-              <Menu size={50} color="white" />
-            ) : (
-              <X size={50} color="white" />
-            )}
-          </Button>
-          <p className="text-white text-[35px] tracking-normal">{title}</p>
-        </div>
-        <div className="pl-[40px] bg-[#a4d896] h-full flex items-center flex-1">
-          <p className="text-white text-[35px] tracking-normal">{subtitle}</p>
-        </div>
+      {/*<nav className="w-full h-[90px] flex items-center">*/}
+      {/*  <div className="pl-[80px] bg-[#85bc74] h-full flex items-center w-[600px] flex-none">*/}
+      {/*    <Button className="px-5" onClick={() => setShowMenu(!showMenu)}>*/}
+      {/*      {!showMenu ? (*/}
+      {/*        <Menu size={50} color="white" />*/}
+      {/*      ) : (*/}
+      {/*        <X size={50} color="white" />*/}
+      {/*      )}*/}
+      {/*    </Button>*/}
+      {/*    <p className="text-white text-[35px] tracking-normal">{title}</p>*/}
+      {/*  </div>*/}
+      {/*  <div className="pl-[40px] bg-[#a4d896] h-full flex items-center flex-1">*/}
+      {/*    <p className="text-white text-[35px] tracking-normal">{subtitle}</p>*/}
+      {/*  </div>*/}
 
-        <div className="absolute right-[130px] flex items-center gap-[50px]">
-          <p className="text-white text-[20px]">교과서 P.{pageNumber}</p>
-          <Button className="">
-            <Ellipsis color="white" size={48} />
-          </Button>
-        </div>
-      </nav>
+      {/*  <div className="absolute right-[130px] flex items-center gap-[50px]">*/}
+      {/*    <p className="text-white text-[20px]">교과서 P.{pageNumber}</p>*/}
+      {/*    <Button className="">*/}
+      {/*      <Ellipsis color="white" size={48} />*/}
+      {/*    </Button>*/}
+      {/*  </div>*/}
+      {/*</nav>*/}
 
       {showMenu ? (
         <div className="fixed top-[90px] left-0 w-[1920px] h-[990px] bg-white bg-opacity-60 z-40">

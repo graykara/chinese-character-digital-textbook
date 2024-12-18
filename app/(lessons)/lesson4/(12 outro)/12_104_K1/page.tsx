@@ -32,7 +32,7 @@ import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  
+
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -65,8 +65,8 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={9}
         step={step}
-       
-        className="bg-transparent !top-[120px] !right-[200px]"
+
+        className="bg-transparent !top-[10px]"
       />
       <SolveProblemPageTemplate
         lesson={4}
@@ -317,7 +317,7 @@ const Question6 = () => {
               className="w-[350px] text-[60px] text-center bg-transparent font-haeseo"
               containerClassName="absolute left-[820px] top-[-35px]"
               penClassName="w-[50px]"
-            /> 
+            />
           </div>
         </div>
       </ContentContainer>

@@ -19,7 +19,7 @@ import { OLD_TextareaWithPen } from "@/app/components/textarea/textarea-with-pen
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  
+
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -79,7 +79,7 @@ export default function Page() {
         maxStep={9}
         step={step}
 
-        className="bg-transparent !top-[120px] !right-[200px]"
+        className="bg-transparent !top-[10px]"
       />
       <SolveProblemPageTemplate
         lesson={2}

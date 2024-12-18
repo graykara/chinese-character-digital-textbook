@@ -18,7 +18,7 @@ export const RightTopStepContainer = ({
 
   return (
     <nav
-      className={`fixed right-[calc(100vw_-_1760px)] top-[130px] flex justify-start items-center gap-[20px] rounded-l-full bg-[#e3e3e3] h-[90px] pl-[18px] pr-[40px] z-[1] ${className}`}
+      className={`fixed right-[calc(100vw_-_1760px)] top-[80px] flex justify-start items-center gap-[20px] rounded-l-full bg-[#e3e3e3] h-[90px] pl-[18px] pr-[40px] z-[1] ${className}`}
     >
       {Array.from({ length: maxStep }).map((_, index) => (
         <Button

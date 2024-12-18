@@ -29,7 +29,7 @@ import { SelectionQuiz } from "@/app/components/quiz/selection-quiz";
 
 export default function Page() {
   const { setSubtitle } = useContext(PageInfoContext);
-  
+
 
   const { currentStep: step, setCurrentStep: setStep } = useContext(PageInfoContext);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -56,8 +56,8 @@ export default function Page() {
       <RightTopStepContainer
         maxStep={10}
         step={step}
-       
-        className="bg-transparent !top-[120px] !right-[200px]"
+
+        className="bg-transparent !top-[10px]"
       />
       <SolveProblemPageTemplate
         lesson={5}

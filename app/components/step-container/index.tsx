@@ -14,7 +14,7 @@ export const StepContainer = ({
   setMaxStep(maxStep);
 
   return (
-    <nav className="fixed left-[calc(50%_-_40px)] -translate-x-1/2 bottom-[calc(100vh_-_990px_+_28px)] flex justify-center gap-[40px]">
+    <nav className="absolute left-[calc(50%_-_40px)] -translate-x-1/2 bottom-[calc(100vh_-_990px_+_28px)] flex justify-center gap-[40px]">
       {Array.from({ length: maxStep }).map((_, index) => (
         <Button
           key={index}
