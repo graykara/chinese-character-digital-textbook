@@ -25,7 +25,7 @@ export default function Page() {
           {step === 1 ? <Content1 /> : null}
           {step === 2 ? <Content2 /> : null}
           {step === 3 ? <Content3 /> : null}
-          <div className="fixed bottom-0">
+          <div className="absolute bottom-0">
             <StepContainer maxStep={3} />
           </div>
         </div>
