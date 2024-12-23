@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <>
-      <ActivityPageTemplate lesson={2}>
+      <ActivityPageTemplate lesson={1}>
         {step === 1 ? <Content1 /> : null}
         {step === 2 ? <Content2 /> : null}
       </ActivityPageTemplate>

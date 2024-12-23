@@ -82,7 +82,7 @@ export default function Page() {
         className="bg-transparent !top-[10px]"
       />
       <SolveProblemPageTemplate
-        lesson={2}
+        lesson={3}
         number={step}
         question={questions[step - 1]}
         essayTypeNumbers={[9]}

@@ -32,7 +32,7 @@ export const TextareaWithPen = ({
       );
       inputRef.current.readOnly = false;
     }
-  }, [showAnswer]);
+  }, [showAnswer, answer]);
 
   return (
     <>

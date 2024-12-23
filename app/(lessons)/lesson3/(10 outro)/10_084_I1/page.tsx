@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <>
-      <SummaryPageTemplate lesson={2}>
+      <SummaryPageTemplate lesson={3}>
         <div className="w-full h-full">
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}

@@ -13,7 +13,7 @@ export const TitleContainer = ({ className = "", sound, children }: Props) => {
       soundInstance = new Howl({ src: sound });
       setTimeout(() => {
         Howler.stop();
-        soundInstance.play()
+        soundInstance?.play()
       }, 700);
     }
     return () => {
@@ -33,8 +33,18 @@ export const TitleContainer = ({ className = "", sound, children }: Props) => {
 
 export const TitleContainer2 = ({ className = "", sound, children }: Props) => {
   useEffect(() => {
-    sound && SOUND(sound).play();
-  }, []);
+    let soundInstance: Howl | null = null;
+    if (sound) {
+      soundInstance = new Howl({ src: sound });
+      setTimeout(() => {
+        Howler.stop();
+        soundInstance?.play()
+      }, 700);
+    }
+    return () => {
+      soundInstance?.unload();
+    }
+  }, [sound]);
   // flower + sentence 2 lines
   return (
     <div

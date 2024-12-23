@@ -7,7 +7,7 @@ import THUMBNAIL1 from "./thumbnail1.png";
 import THUMBNAIL2 from "./thumbnail2.png";
 import { TextareaWithPen } from "@/app/components/textarea/textarea-with-pen";
 import TEXTAREA from "./bgTextArea1.png";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ExerciseHeader } from "@/app/components/exercise-header";
 import { CheckAnswerButton } from "@/app/components/buttons/check-answer-button";
 import { ContentContainer } from "@/app/components/content-container";
@@ -22,6 +22,11 @@ export default function Page() {
   const answer1 = "비가 올 때.";
   const answer2 = "연달아 우승을 함.";
   const [showAnswer, setShowAnswer] = useState(false);
+
+  // currentStep 변경 시 showAnswer을 false로 설정
+  useEffect(() => {
+    setShowAnswer(false);
+  }, [step]);
 
   return (
     <>
